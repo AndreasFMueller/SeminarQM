@@ -1,0 +1,29 @@
+#
+# Makefile zum Skript ueber High Performance Computing
+#
+# (c) 2013 Prof Dr Andreas Mueller, Hochschule Rapperswil
+#
+all:	subdirs skript.pdf
+
+subdirs:
+	for d in graphics ; \
+	do \
+		cd $${d}; make; cd ..; \
+	done
+
+TEXFILES = vorwort.tex einleitung.tex 
+
+skript.pdf:	skript.tex $(TEXFILES) skript.ind $(IMAGES) $(BLXFILES)
+	pdflatex skript.tex
+	bibtex skript
+
+skript.ind:	skript.tex $(TEXFILES)
+	touch skript.ind
+	pdflatex skript.tex
+	makeindex skript.idx
+
+# References
+
+skript.bbl:		skript.aux
+	bibtex skript
+
