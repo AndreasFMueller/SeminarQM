@@ -19,7 +19,176 @@ hier wieder Regeln, die sicherstellen, dass Messresultate reell sind
 die ganze Quantenmechanik auf eine Art zu beschreiben, die ohne komplexe
 Zahlen auskommt.
 
-\section{Der K"orper der komplexen Zahlen $\mathbb C$}
+\section{Der K"orper $\mathbb C$ der komplexen Zahlen}
+In den reellen Zahlen $\mathbb R$ k"onnen alle Grundoperationen ausgef"uhrt
+werden, es ist jedoch nicht m"oglich, die Quadratwurzeln aus negativen
+Zahlen zu ziehen. Eine analoge Situation trifft man schon viel fr"uher.
+In den nat"urlichen Zahlen $\mathbb N$ kann man zwar addieren und
+multiplizieren, aber nicht subtrahieren.
+F"ugt man die negativen Zahlen hinzu erh"alt man eine Menge $\mathbb Z$,
+in der die Subtraktion uneingeschr"ankt m"oglich ist. Division ist aber
+immer noch nur f"ur spezielle Divisoren m"oglich. F"ugt man jedoch die
+Br"uche zu $\mathbb Z$ hinzu, erh"alt man die Menge der rationalen Zahlen
+$\mathbb Q$, in der Division uneingeschr"ankt m"oglich ist.
+Doch auch $\mathbb Q$ ist nicht vollst"andig, die Zahl $\sqrt{2}$ ist
+keine rationale Zahl. Nat"urlich kann man $\sqrt{2}$ durch eine
+Folge von Br"uchen $r_n\in\mathbb Q$ approximieren, doch der Grenzwert
+dieser Folge $\lim_{n\to\infty}r_n=\sqrt{2}$ ist nicht in $\mathbb Q$.
+F"ugt man jedoch alle Grenzwerte von konvergenten Folgen zu $\mathbb Q$
+hinzu, erh"alt man die Menge $\mathbb R$ der reellen Zahlen, in der
+auch beliebige Wurzeln von positiven Zahlen gezogen werden k"onnen,
+oder andere Grenzwerte wie $\pi$, $e$, die Werte von $\sin x$ und $\cos x$
+und weitere.
+
+\subsection{Grundoperationen f"ur die komplexen Zahlen}
+Nach analogem Muster k"onnen wir auch $\mathbb R$ erweitern, so dass auch
+die Wurzeln aus negativen Zahlen bestimmt werden k"onnen. Es reicht
+sogar, nur die Wurzel von $-1$ hinzuzuf"ugen, denn jede andere Wurzel
+einer negativen Zahl ist $\sqrt{-a}=\sqrt{-1}\cdot\sqrt{\mathstrut a}$.
+Euler hat die Bezeichnung $i=\sqrt{-1}$ f"ur die imagin"are Einheit eingef"uhrt.
+Es gilt nat"urlich $i^2=-1$.
+
+\begin{definition}
+Die Menge $\mathbb C=\{a+bi\,|\,a,b\in\mathbb R\}$ heisst die Menge der
+komplexen Zahlen. Die komplexe Zahl $z=a+bi$ hat
+Realteil $\operatorname{Re}z=a$ und Imagin"arteil $\operatorname{Im}z=b$.
+Die Rechenoperationen sind so zu verstehen, die Rechenregeln
+der Algebra erhalten bleiben\footnote{Man nennt dies das Permanenz-Prinzip}.
+\end{definition}
+
+Die Rechenoperationen folgen aus der Definition:
+\begin{align*}
+(a+bi)+(c+di)&=(a+c)+(b+d)i\\
+(a+bi)(c+di)&=ac-i^2bd+(ad+bc)i=ac-bd+(ad+bc)i
+\end{align*}
+Die Division stellt noch ein Problem dar. Hier hilft das Konzept der
+konjugiert komplexen Zahl.
+
+\begin{definition}
+Die Zahl $\bar z=a-bi$ heisst die zu $z=a+bi$ konjugiert komplexe Zahl.
+\end{definition}
+
+Zun"achst kann man mit der konjugiert komplexen Zahl den Betrag einer
+komplexen Zahl definieren:
+\[
+z\bar z=(a+bi)(a-bi)=a^2+abi-abi-i^2b^2=a^2+b^2\qquad\Rightarrow\qquad
+|z|^2=z\bar z.
+\]
+Andererseits kann man damit auch komplexe Br"uche berechnen, indem man
+mit der konjugiert komplexen Zahl des Nenners erweitert:
+\begin{align*}
+\frac{a+bi}{c+di}&=
+\frac{a+bi}{c+di}
+\cdot
+\frac{c-di}{c-di}=\frac{ac-bd+(ad+bd)i}{c^2+d^2}
+\end{align*}
+Die komplexen Zahlen k"onnen in einer Ebene visualisert werden: 
+Realteil und Imagin"arteil werden entlang orthogonaler Achsen abgetragen.
+Die Punkte $(x,y)$ der $x$-$y$-Ebene entsprechen also der komplexen Zahl
+$x+yi$ der komplexen Zahlenebene.
+
+\subsection{Polardarstellung}
+Die Darstellung der komplexen Zahlen als Punkte einer Ebene suggeriert
+auch eine alternative Schreibweise.
+Ein Punkt $z$ der komplexen Ebene kann auch charakterisiert werden mit Hilfe von
+Polarkoordinaten, also durch seine Entfernung $r=|z|$ vom Nullpunkt,
+und durch Polarwinkel zwischen der reellen Achse und der Richtung
+zur komplexen Zahl. Der Polarwinkel heisst auch Argument $\operatorname{arg}z$,
+und es gilt
+\[
+\tan\operatorname{arg}z=\frac{\operatorname{Re}z}{\operatorname{Im}z}.
+\]
+Die Multiplikation von komplexen Zahlen bekommt in der Polardarstellung
+eine besondere Interpretation:
+\begin{align*}
+z_1z_2
+&=
+(r_1\cos\varphi_1+ir_1\sin\varphi_1) (r_2\cos\varphi_2+ir_2\sin\varphi_2)
+\\
+&=
+r_1r_2(\cos\varphi_1+i\sin\varphi_1) (\cos\varphi_2+i\sin\varphi_2)
+\\
+&=
+r_1r_2\bigl(
+\cos\varphi_1\cos\varphi_2-\sin\varphi_1\sin\varphi_2 +
+(\cos\varphi_1\sin\varphi_2+\sin\varphi_1\cos\varphi_2)i\bigr)
+\\
+&=
+r_1r_2(\cos(\varphi_1+\varphi_2)+i\sin(\varphi_1+\varphi_2))
+\\
+\Rightarrow \operatorname{arg}z_1z_2&=\arg z_1 + \arg z_2
+\end{align*}
+Die Multiplikation zweier komplexen Zahlen entspricht also der
+Multiplikation der Betr"age, und der Addition der Argumente.
+
+Wir versuchen jetzt, die Werte der Exponentialfunktion zu $e^z$ zu
+bestimmen.
+Die Exponentialgesetze sollten auch weiterhin gelten.
+Sei also $z=a+bi$, dann ist
+\[
+e^z=e^{a+bi}=e^a\cdot e^{bi}.
+\]
+Die Exponentialfunktion reeller Zahlen ist bereits wohlbekannt, es muss
+also nur noch untersucht werden, welche Bedeutung $e^{bi}$ hat.
+
+Betrachten wir die Funktion $f(t)= e^{ti}$. Die Ableitungen von $f$ sind
+\begin{align}
+f'(t)&=ie^{ti}=if(t)\notag\\
+f''(t)&=-f(t).\label{exp-dgl}
+\end{align}
+Die Funktion $f$ muss also eine L"osung der Differentialgleichung
+(\ref{exp-dgl}) sein, welche die Anfangsbedingungen $f(0)=1$
+$f'(0)=if(0)=i$ erf"ullen muss.
+Doch die Differentialgleichung (\ref{exp-dgl}) hat die L"osungen
+\[
+f(t)=a\cos t+b\sin t.
+\]
+Setzt man die Anfangsbedingungen ein findet man
+\begin{align*}
+f(0)&=1&\Rightarrow&&a&=1\\
+f'(0)&=1&\Rightarrow&&b&=i,
+\end{align*}
+so dass wir jetzt $e^{ti}$ ausrechnen k"onnen:
+\begin{satz}[Euler]
+\begin{align}
+e^{it}=\cos t+i\sin t.
+\label{euler-formula}
+\end{align}
+\end{satz}
+Mit dieser Formel sind wir jetzt auch in der Lage, den Zusammenhang
+zwischen einer komplexen Zahl und ihrem Betrag und Argument sehr pr"agnant
+auszudr"ucken:
+\[
+z=|r|\cdot e^{i\operatorname{arg}z}.
+\]
+
+\subsection{Matrixdarstellung der komplexen Zahlen}
+Die Algebra der komplexen Zahlen kann man auch als eine Algebra von Matrizen
+schreiben. Dazu betrachten wir die Abbildung
+\[
+\varphi\colon
+\mathbb C\to M_2(\mathbb R):
+a+bi\mapsto\begin{pmatrix}a&b\\-b&a\end{pmatrix}
+\]
+Die imagin"are Einheit $i$ wird von $\varphi$ auf die Matrix
+\[
+\varphi(i)=J=\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+\]
+abgebildet. Man kann nachrechnen, dass $J^2=-E$, und dass die Rechenregeln
+f"ur die komplexen Zahlen durch die Abbildung $\varphi$ in die Rechenregeln
+f"ur Matrizen transformiert werden.
+Wir illustrieren dies f"ur die Multiplikation:
+\begin{align*}
+&(a+bi)(c+di)&&\mapsto&
+&\begin{pmatrix}a&b\\-b&a\end{pmatrix}
+\begin{pmatrix}c&d\\-d&c\end{pmatrix}
+\\
+&(ac-bd) + i(ad-bc)&&\mapsto&
+&=\begin{pmatrix}
+ac-bd&ad-bc\\
+-ad+bc&ac-bd
+\end{pmatrix}
+\end{align*}
 
 \section{Komplexe Matrizen}
 
