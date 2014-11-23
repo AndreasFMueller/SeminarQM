@@ -12,7 +12,8 @@ subdirs:
 	done
 
 TEXFILES = vorwort.tex einleitung.tex hamilton.tex stoerungstheorie.tex \
-	drehimpuls.tex komplex.tex quantisierung.tex hilbert.tex
+	drehimpuls.tex komplex.tex quantisierung.tex hilbert.tex \
+	spin.tex magnetfeld.tex h.tex
 
 skript.pdf:	skript.tex $(TEXFILES) skript.ind $(IMAGES) $(BLXFILES)
 	pdflatex skript.tex
