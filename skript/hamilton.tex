@@ -1,0 +1,152 @@
+\chapter{Hamiltonsche Mechanik}
+\lhead{Hamilton Mechanik}
+\rhead{}
+\section{Motivation}
+W"ahrend Galileo Galileis Beschreibung von Bewegungen im wesentlichen
+eine kinematische war, haben Isaac
+Newtons Gesetze erstmals einen Zusammenhang zwischen
+der Bewegung und den Kr"aften hergestellt, also von Ursache und
+Wirkung. Sein erstes Gesetz besagt zum Beispiel
+\[
+F=ma\qquad\text{oder}\qquad
+F(x)=m\frac{d^2x}{dt^2}.
+\]
+Mit geeigneten Anfangsbedingungen l"asst sich daraus jede Bewegung 
+vorhersagen.
+
+Diese Formulierung ist jedoch nicht allgemein genug, insbesondere f"ur die
+Zwecke der Quantenmechanik. Wenn Teilchen auch Wellen sind, wie soll man
+sich dann die Kraftwirkung einer Welle auf eine andere Welle vorstellen?
+
+Die Antwort ist die Hamiltonsche Formulierung der Mechanik, die von der
+Energie als der alles bestimmenden Gr"osse ausgeht.
+Mit Hilfe eines Standardformalismus lassen sich daraus die Newtonschen
+Bewegungsgleichungen wieder gewinnen.
+Viel wichtiger ist aber, dass sich daraus auch ein Methode gewinnen
+l"asst, besonders geeignete Koordinaten zur Beschreibung eines
+physikalischen Systems zu finden.
+Diese Hamilton-Jacobi-Theorie genannte Methode ist die Basis eines
+allgemein anwendbaren Quantisierungs-Verfahrens.
+
+\section{Hamilton-Funktion}
+Die Hamilton-Funktion $H(p,q)$ ist die Energie eines physikalischen
+Systems. Darin sind $q$ die allgemeinen Koordinaten, also
+zum Beispiel die Raumkoordinaten $x$, $y$ und $z$, oder Winkel, mit
+denen man die r"aumliche Ausrichtung eines Systems beschreibt.
+Die Variablen $p$ sind die zugeh"origen Impulse, f"ur Ortskoordinaten
+sind dies die gew"ohnlichen Impulskomponenten, f"ur die Drehwinkel ist
+es der Drehimpuls.
+
+Die Energie $H$ setzt sich zusammen aus der kinetischen Energie $T$ und der
+potentiellen Energie $V$. F"ur ein kr"aftefreies Teilchen der Masse $m$
+ist die Energie 
+\[
+H=\frac12mv^2=\frac1{2m}p^2.
+\]
+Befindet sich das Teilchen dagegen in einem Potential $V(q)$, dann 
+ist die zugeh"orige Hamilton-Funktion
+\begin{equation}
+H=T+V=\frac1{2m}p^2+V(q).
+\label{hamilton-potential}
+\end{equation}
+Ein Elektron im elektrischen Feld eines Protons, welches im Nullpunkt
+des $q$-Koordinatensystems sitzt, hat daher die Hamilton-Funktion
+\[
+H=\frac1{2m}p^2+\frac{e^2}{4\pi\varepsilon_0|q|}.
+\]
+
+Eine noch zu "uberwindende Schwierigkeit dieses Formalismus wird hier
+bereits erkennbar: Kr"afte, die keine Arbeit leisten, k"onnen auch
+keinen Beitrag zur Energie leisten.
+Ein Beispiel ist
+die Lorentzkraft eines Magnetfelds, welche die Bahn eines Elektrons 
+kr"ummt, aber immer senkrecht auf der Bahn steht und daher keine Arbeit
+leistet.
+
+\section{Bewegungsgleichungen}
+Die Newtonschen Bewegungsgleichungen lassen sich aus der Hamilton-Funktion
+gewinnen. Um dies zu verstehen, berechnen wir die partiellen Ableitungen
+von $H$ nach Koordinaten $q$ und Impulsen $p$:
+\begin{align*}
+\frac{\partial H}{\partial p}&=\frac{1}{m}p=v=\frac{dq}{dt} \\
+\frac{\partial H}{\partial q}&=\frac{\partial V}{\partial q}
+\end{align*}
+Die erste Gleichung ist nichts anders als die Aussage, dass die
+Geschwindigkeit die Zeitableitung der Ortskoordinaten ist, sie
+stellt den Zusammenhang zwischen $p$ und $q$ her.
+Die Ableitung des Potentials auf der rechten Seite der zweiten
+Gleichung hat die Bedeutung einer Kraft.
+Die Newtonschen Bewegungsgleichungen sagen, dass die "Anderung des
+Impulses durch die Kr"afte verursacht wird, also durch die Ableitungen
+des Potentials:
+\[
+\frac{dp}{dt}=-\frac{\partial V}{\partial q}
+\]
+Damit sind die Bewegungsgleichungen jetzt:
+\begin{align}
+\frac{dq}{dt}&= \frac{\partial H}{\partial p},\label{hamilton-v}\\
+\frac{dp}{dt}&=-\frac{\partial H}{\partial q}.\label{hamilton-newton}
+\end{align}
+
+\begin{beispiel} Harmonischer Oszillator. Ein harmonischer Oszillator
+mit Masse $m$ und Federkonstante $K$ hat die potentielle Energie $\frac12Kx^2$,
+die Hamilton-Funktion ist daher
+\[
+H=\frac1{2m}p^2+\frac12Kx^2.
+\]
+Die Bewegungsgleichungen nach dem Hamilton-Formalismus sind:
+\begin{align*}
+\frac{dx}{dt}&=\frac{\partial H}{\partial p}=\frac{p}{m}&&\Rightarrow&\dot x&=v\\
+\frac{dp}{dt}&=\frac{\partial H}{\partial x}=-Kx&&\Rightarrow&ma&=-Kx
+\end{align*}
+Die erste Gleichung besagt, dass die Geschwindigkeit die Ableitung
+der Ortskoordinate ist.
+Die zweite Gleichung ist das erste Newtonsche Gesetz, denn die
+r"ucktreibende Kraft einer um die Koordinate $x$ ausgelenkten Feder
+mit Federkonstanten $K$ ist $-Kx$.
+Insbesondere reproduziert der Hamilton-Formalismus die bekannten
+Newtonschen Bewegungsgleichungen.
+\end{beispiel}
+
+Ein besonderer Fall liegt vor, wenn die Hamilton-Funktion nicht von
+der Zeit abh"angt. Dann ist
+\[
+\frac{\partial H}{\partial t}=0,
+\]
+die Energie ist erhalten. Diese Situation tritt in abgeschlossenen
+Systemen immer auf, insbesondere waren alle bisherigen Beispiel
+von dieser Art.
+
+\section{Kanonische Transformation}
+Kartesische Koordinaten sind nicht unbedingt die optimale Wahl.
+Eine zweckm"assige Wahl der Koordinaten nimmt R"ucksicht auf die
+Symmetrieeigenschaften des Systems.
+Ein zweidimensional rotationssymmetrischer harmonischer Oszillator mit 
+der Hamilton-Funktion
+\[
+H=\frac1{2m}(p_x^2+p_y^2)+K(x^2 + y^2)
+\]
+sollte sich auch in Polarkoordinaten $(r,\varphi)$ ausdr"ucken lassen. 
+Doch welche Impulse sind dann zu verwenden, damit die Gleichungen
+(\ref{hamilton-v}) und (\ref{hamilton-newton}) auch in den neuen
+Koordinaten G"ultigkeit haben?
+
+\section{Hamilton-Jacobi-Theorie}
+Die Technik der kanonischen Transformationen erlaubt sogar, ein mechanisches
+Problem mit Hilfe einer geeigneten Transformation vollst"andig zu l"osen.
+Wie dies funktionieren k"onnte zeigt ein Vergleich mit einem freien
+Teilchen, also der Hamilton-Funktion
+\[
+H=\frac1{2m}(p_x^2+p_y^2+p_z^2).
+\]
+Da die Koordinaten $x$, $y$ und $z$ gar nicht vorkommen, verschwinden
+die Ableitungen von $H$ nach den Koordinaten und die Bewegungsgleichungen
+sind
+\begin{align*}
+\frac{dp}{dt}&=0\\
+\frac{dq}{dt}&=\frac{p}{m}
+&&\Rightarrow&q=q_0+t\frac{p}{m}
+\end{align*}
+Die Ortskoordinaten h"angen linear von der Zeit ab.
+
+\section{Wellen und Teilchen}

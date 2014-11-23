@@ -11,7 +11,8 @@ subdirs:
 		cd $${d}; make; cd ..; \
 	done
 
-TEXFILES = vorwort.tex einleitung.tex 
+TEXFILES = vorwort.tex einleitung.tex hamilton.tex stoerungstheorie.tex \
+	drehimpuls.tex komplex.tex quantisierung.tex hilbert.tex
 
 skript.pdf:	skript.tex $(TEXFILES) skript.ind $(IMAGES) $(BLXFILES)
 	pdflatex skript.tex

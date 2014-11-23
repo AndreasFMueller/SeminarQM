@@ -1,0 +1,74 @@
+\chapter{St"orungstheorie}
+\lhead{St"orungstheorie}
+\rhead{}
+Die St"orungstheorie geht davon aus, dass die Zust"ande eines
+quantenmechanischen Systems bereits bekannt sind. Eine kleine
+"Anderung des Systems sollte sich dann in nur kleinen "Anderungen
+der Zust"ande und Ihrer Energieniveaus "aussern.
+
+\section{Problemstellung}
+Es sei $H_0$ der Hamilton-Operator eines quantenmechanischen Systems
+mit den Eigenvektoren $\psi_0,\psi_1,\dots$ und Energien $E_0,E_1,\dots$.
+Es gilt also 
+\[
+H_0\psi_i = E_i\psi_i.
+\]
+Der Hamilton-Operator $H_0$ wird nun durch einen zus"atzlichen Term
+$H_1$ ver"andert. Wir gehen davon aus, dass $H_1$ im Vergleich zu
+$H_0$ nur schwache Effekte beschreibt. Der neue Operator ist
+\[
+H(\varepsilon)=H_0+\varepsilon H_1.
+\]
+Darin ist $\varepsilon\ll 1$ ein kleiner Parameter, der ausdr"ucken
+soll, dass $H_1$ den Operator nur ganz wenig "andert, insbesondere
+sind die Zust"ande und Eigenwerte von $E(\varepsilon)$ nahe bei 
+den $E_i$ und $\psi_i$.
+
+Die Aufgabe der St"orungstheorie ist, die Zust"ande $\psi_i(\varepsilon)$
+und Energien $E_i(\varepsilon)$ mit
+\[
+H(\varepsilon)\psi_i(\varepsilon)=E_i(\varepsilon)\psi_i(\varepsilon)
+\]
+mindestens n"aherungsweise zu bestimmen.
+
+Die Eigenvektoren bilden eine Basis des Hilbertraumes $L^2(\mathbb R)$, 
+also m"ussen sich auch die modifizierten Eigenvektoren in dieser Basis
+ausdr"ucken lassen:
+\[
+\psi_i(\varepsilon)=\psi_i +\sum_{j=0}^\infty a_{ij}(\varepsilon)\psi_j,
+\]
+wobei die Koeffizienten $a_{ij}(\varepsilon)$ klein sind.
+Das Problem ist gel"ost, wenn die $a_{ij}(\varepsilon)$ bestimmt sind.
+
+\begin{beispiel}
+Als Beispiel verwenden wir ein Teilchen in einem Potentialtopf, welches
+wir fr"uher bereits untersucht haben. Der Hamilton-Operator wird jetzt
+gest"ort um einen zus"atzlichen Potentialterm $H_1=V_1$ im Inneren
+des Potentialtopfes.
+W"are der zus"atzliche Term eine Konstante w"urde sich an den Eigenfunktionen
+gar nichts "andern, und f"ur Eigenwerte w"urde man finden
+\[
+H(\varepsilon)\psi_i=(E_i + \varepsilon V_1)\psi_i,
+\]
+es w"are also
+\begin{align*}
+\psi_i(\varepsilon)&=\psi_i\\
+E_i(\varepsilon)&=E_i+\varepsilon V_i
+\end{align*}
+Nun ist aber $V_i$ ortsabh"angig, nur im Inneren des Potentialtopfes 
+unterscheidet sich $H(\varepsilon)$ von $H_0$. Da sich das Teilchen
+aber praktisch nie ausserhalb des Potentialtopfes befindet, sollte
+sich in erster N"aherung Eigenfunktion und Eigenwerte genau gleich
+"andern.
+\end{beispiel}
+
+
+
+\section{Erste N"aherung}
+
+
+\section{Nicht entartete Zust"ande}
+
+\section{Entartung}
+
+\section{St"orungsreihe}
