@@ -5,8 +5,202 @@ Die St"orungstheorie geht davon aus, dass die Zust"ande eines
 quantenmechanischen Systems bereits bekannt sind. Eine kleine
 "Anderung des Systems sollte sich dann in nur kleinen "Anderungen
 der Zust"ande und Ihrer Energieniveaus "aussern.
+Diese Methode sollte anwendbar sein um die Ver"anderung der Energieniveaus
+eines Atoms zu berechnen, wenn dieses in ein "ausseres elektrisches Feld
+oder ein "ausseres Magnetfeld gebracht wird.
 
-\section{Problemstellung}
+
+\section{Grundprinzip der St"orungstheorie}
+Wir beginnen die Untersuchung mit einer Anwendung auf die Nullstellen
+eines quadratischen Polynoms. Sei also
+\[
+p(x) = ax^2 + bx + c
+\]
+ein quadratisches Polynom, nat"urlich k"onnen wir sofort die Nullstellen
+mit Hilfe der L"osungsformel
+\begin{equation}
+x_{\pm}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\label{mitternachtsformel}
+\end{equation}
+finden.  Ver"andert man die Koeffizienten von $p(x)$, werden sich auch
+die beiden Nullstellen ver"andern, sie k"onnen mit der Formel
+(\ref{mitternachtsformel}) bestimmt werden.
+
+Nehmen wir also an, dass die Koeffizienten $a$, $b$ und $c$ von $p(x)$
+von einem Parameter $\varepsilon$ abh"angen. Statt der Konstanten verwenden
+wir also Funktionen
+\begin{align*}
+a(\varepsilon)&=a_0+a_1\varepsilon+a_2\varepsilon^2+\dots\\
+b(\varepsilon)&=b_0+b_1\varepsilon+b_2\varepsilon^2+\dots\\
+c(\varepsilon)&=c_0+c_1\varepsilon+c_2\varepsilon^2+\dots
+\end{align*}
+von $\varepsilon$. Mit diesen Koeffizienten wird aus dem Polynom $p(x)$
+eine Familie von Polynomen
+\[
+p_\varepsilon(x)=a(\varepsilon)x^2 + b(\varepsilon)x+c(\varepsilon).
+\]
+Die L"osungsformel (\ref{mitternachtsformel}) liefert weiterhin die
+Nullstellen von $p_{\varepsilon}(x)=0$.
+Sei $x_0$ eine der Nullstellen von $p_0(x) = 0$.
+
+Statt die L"osungen von $p_{\varepsilon}(x)=0$ mit Hilfe der L"osungsformel
+zu finden, k"onnen wir auch versuchen, von $x_0$ ausgehend eine N"aherung
+zu finden. Diese L"osung wird von $\varepsilon$ abh"angen, wir setzen
+die Abh"angigkeit als Potenzreihe
+\begin{equation}
+x_\varepsilon = x_0 + x_1\varepsilon +x_2 \varepsilon^2+\dots
+\label{stoerungsansatz}
+\end{equation}
+an.
+Wir nennen die Potenzreihe (\ref{stoerungsansatz}) f"ur die L"osung
+von $p_\varepsilon(x)=0$ die St"orungsreihe f"ur $x_\varepsilon$.
+Setzen wir (\ref{stoerungsansatz}) in die Gleichung $p_{\varepsilon}(x)=0$
+ein, ergibt sich die Gleichung
+\begin{align*}
+0&=a(\varepsilon)x_\varepsilon^2+b(\varepsilon)x_\varepsilon+c(\varepsilon)
+\\
+&=
+(a_0+a_1\varepsilon+a_2\varepsilon^2+\dots)
+(x_0+x_1\varepsilon+x_2\varepsilon^2+\dots)^2\\
+&\qquad
++
+(b_0+b_1\varepsilon+b_2\varepsilon^2+\dots)
+(x_0+x_1\varepsilon+x_2\varepsilon^2+\dots)\\
+&\qquad
++
+(c_0+c_1\varepsilon+c_2\varepsilon^2+\dots)
+\\
+&=
+(a_0+a_1\varepsilon+a_2\varepsilon^2+\dots)
+(x_0^2+2x_0x_1\varepsilon +x_1^2\varepsilon^2+2x_0x_2\varepsilon^2+\dots)
+\\
+&\qquad
++
+b_0x_0 + (b_0x_1+b_1x_0)\varepsilon+(b_0x_2+b_1x_1+b_2x_0)\varepsilon+\dots\\
+&\qquad
++
+c_0+c_1\varepsilon+c_2\varepsilon^2+\dots
+\\
+&=
+a_0x_0^2 + (2a_0x_0x_1 + a_1x_0^2)\varepsilon +
+(a_2x_0^2 + 2a_1x_0x_1 + a_0x_1^2 +2a_0x_0x_2)\varepsilon^2+\dots
+\\
+&\qquad
++
+b_0x_0 + (b_0x_1+b_1x_0)\varepsilon+(b_0x_2+b_1x_1+b_2x_0)\varepsilon^2+\dots\\
+&\qquad
++
+c_0+c_1\varepsilon+c_2\varepsilon^2+\dots
+\\
+&=
+a_0x_0^2 + b_0x_0+c_0
++(2a_0x_0x_1+a_1x_0^2+b_0x_1+b_1x_0+c_1)\varepsilon
+\\
+&\qquad
++(
+a_2x_0^2 + 2a_1x_0x_1 + a_0x_1^2 +2a_0x_0x_2
++b_0x_2+b_1x_1+b_2x_0
++c_2
+)\varepsilon^2+\dots
+\end{align*}
+Der konstante Term in der letzten Form dieser Gleichung ist $p_0(x_0)$, 
+da $x_0$ eine Nullstelle ist, muss er verschwinden. Wenn die Gleichung
+f"ur alle $\varepsilon$ erf"ullt sein soll, dann muss auch der
+Koeffizient von $\varepsilon$ verschwinden, es muss also gelten
+\begin{align*}
+2a_0x_0x_1+a_1x_0^2+b_0x_1+b_1x_0+c_1&= 0
+\\
+(2a_0x_0+b_0)x_1&=-(a_1x_0^2+b_1x_0+c_1)\\
+x_1&=-
+\frac{a_1x_0^2+b_1x_0+c_1}{2a_0x_0+b_0}.
+\end{align*}
+Damit ist eine erste Approximation von $x_\varepsilon$ gefunden:
+\[
+x_\varepsilon\simeq x_0 -
+\frac{a_1x_0^2+b_1x_0+c_1}{2a_0x_0+b_0}\varepsilon.
+\]
+Man nennt dies die St"orungsapproximation erster Ordnung (in $\varepsilon$).
+
+Man kann die Approximation noch verbessern, indem man auch noch den
+Koeffizienten von $\varepsilon^2$ in $x_\varepsilon$ berechnet.
+Dazu verwendet man, dass in der Gleichung auch der Koeffizient von
+$\varepsilon^2$ verschwinden muss:
+\begin{align*}
+a_2x_0^2 + 2a_1x_0x_1 + a_0x_1^2 +2a_0x_0x_2
++b_0x_2+b_1x_1+b_2x_0
++c_2
+&=0
+\\
+(2a_0x_0+b_0)x_2
++a_2x_0^2 + 2a_1x_0x_1 + a_0x_1^2
++b_1x_1+b_2x_0
++c_2&=0
+\end{align*}
+Daraus kann man schliessen, dass
+\[
+x_2=-\frac{
+a_2x_0^2 + 2a_1x_0x_1 + a_0x_1^2
++b_1x_1+b_2x_0
++c_2
+}{2a_0x_0+b_0}.
+\]
+Mit den Koeffizienten $x_1$ und $x_2$ erh"alt man die St"orungsapproximation
+zweiter Ordnungn.
+
+Die St"orungsapproximation scheint also zu funktionieren, solange
+der Nenner $2a_0x_0+b_0$ gross ist. Dann werden n"amlich die 
+Koeffizienten $x_1$ und $x_2$ klein sein. Problematisch wird
+die Approximation in dem Falle, wo $2a_0x_0+b_0$ verschwindet.
+Setzt man allerdings die L"osungsformel (\ref{mitternachtsformel}) f"ur
+$x_0$ ein, erh"alt man
+\begin{align*}
+2a_0x_0+b_0&=2a_0\frac{-b_0\pm\sqrt{b_0^2-4a_0c_0}}{2a_0}+b_0      \\
+           &=\pm\sqrt{b_0^2-4a_0c_0}.
+\end{align*}
+Der Radikand ist die Diskriminante.
+Der Nenner verschwindet also genau dann, wenn die quadratische
+Gleichung eine doppelte Nullstelle hat. In diesem Fall spaltet sich
+die eine doppelte L"osung in zwei verschiedene L"osungen $x_{\pm}$ auf,
+es kann also kein Funktion der Form
+(\ref{stoerungsansatz}) 
+geben, die diese Aufspaltung wiedergeben kann.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.55\hsize]{images/pert-1.pdf}
+\caption{St"orungsl"osung f"ur die Abh"angigkeit der L"osung einer
+quadratischen Gleichung $a(\varepsilon)x^2+b(\varepsilon)x+c(\varepsilon)=0$
+in Abh"angigkeit von $\varepsilon$,
+mit $a(\varepsilon)=1+\varepsilon$, $b(\varepsilon)=\varepsilon$ und
+$c(\varepsilon)=-1+\varepsilon$. Exakte L"osung {\color{red} rot}, 
+St"orungsapproximation erster Ordnung {\color{blue} blau}.
+\label{stoerungsloesung}}
+\end{figure}
+
+Wir fassen zusammen, was wir hier als L"osungsmethode gefunden haben:
+\begin{enumerate}
+\item Gegeben ist eine Gleichung $F_\varepsilon(x)=0$, gesucht
+sind die L"osungen $x_\varepsilon$ der Gleichung in Abh"angigkeit von
+$\varepsilon$.
+\item Die L"osung $x_0$ der Gleichung f"ur den Parameterwert $\varepsilon=0$
+ist bekannt.
+\item Setze die L"osung in Form einer Potenzreihe an:
+$x_\varepsilon = x_0+x_1\varepsilon+x_2\varepsilon^2+\dots$
+\item Setze den L"osungsansatz in die Gleichung $F_\varepsilon(x)=0$ ein
+und ermittle die Koeffizienten $x_1,x_2,\dots$ durch Koeffizientenvergleich.
+\end{enumerate}
+Schritt~4 ist eventuell nicht direkt durchf"uhrbar, wenn die Funktion
+$F_\varepsilon(x)$ zu kompliziert ist. Man kann aber immer versuchen, die
+Funktion als Potenzreihe in $x$ auszudr"ucken, 
+\[
+F_\varepsilon(x)=F_\varepsilon(x_0) + DF_\varepsilon(x_0)\cdot x
++ \frac12 D^2F_\varepsilon(x_0)\cdot(x,x)+\dots,
+\]
+und dann die Koeffizienten dieser Potenzreihe als Potenzreihe in $\varepsilon$.
+So entsteht auf jeden Fall eine Vektorgleichung, deren Komponenten nur
+Polynome in $\varepsilon$ sind, f"ur die sich Schritt~4 durchf"uhren l"asst.
+
+\section{St"orungstheorie in der Quantenmechanik}
 Es sei $H_0$ der Hamilton-Operator eines quantenmechanischen Systems
 mit den Eigenvektoren $\psi_0,\psi_1,\dots$ und Energien $E_0,E_1,\dots$.
 Es gilt also 

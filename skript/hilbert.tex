@@ -1,7 +1,8 @@
 \chapter{Hilbertr"aume}
 \lhead{Hilbertr"aume}
 \rhead{}
-Wir wissen schon, dass Zust"ande Eigenvektoren sein sollen, wir brauchen
+Wir wissen schon, dass Zust"ande Eigenvektoren des Hamilton-Operators
+sein sollen, wir brauchen
 also einen Vektorraum, der ausreichend gross ist, alle Zust"ande aufzunehmen.
 Ein typisches Quantensystem hat eine sehr grosse Zahl von Zust"anden,
 vielleicht sogar unendlich viele.
@@ -27,7 +28,394 @@ k"onnen.
 \end{enumerate}
 
 \section{Komplexe Vektorr"aume}
+Ein Vektorraum "uber $\mathbb C$ ist einem Menge $V$ von Vektoren, mit
+einer Addition von Vektoren und einer Multiplikation von Vektoren mit
+komplexen Zahlen, mit folgenden Eigenschaften
+\begin{compactenum}
+\item Es gibt ein Element $0\in V$ mit der Eigenschaft $0+v=v,\forall v\in V$
+und $0v=0$.
+\item Zu jedem $v\in V$ gibt es ein Elemente $-v=(-1)v$ mit der Eigenschaft
+$v+(-v)=0$
+\item $u+v=v+u$
+\item $(u+v)+w=u+(v+w)$
+\item $(\lambda\mu)v=\lambda (\mu v)$
+\item $\lambda(u+v)=\lambda u+ \lambda v$, $\lambda\in\mathbb C$, $u,v\in V$
+\item $(\lambda+\mu)u=\lambda u+\mu u$
+\end{compactenum}
+Wie im Falle reeller Vektorr"aume kann man den Vektorraum
+\[
+{\mathbb C}^n = \left\{\left .
+\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}
+\right|
+x_i\in\mathbb C
+\right\}
+\]
+mit komponentenweisen Operationen konstruieren.
+Ebenso kann man lineare Gleichungssysteme mit komplexen Koeffizienten,
+komplexe Matrizen und das Matrizenprodukt f"ur komplexe Matrizenprodukt
+konstruieren.
+
+Der Gauss-Algorithmus kann unver"andert auch f"ur komplexe Gleichungssysteme
+verwendet werden, so dass alle Eigenschaften, die man mit Hilfe des
+Gauss-Algorithmus hergeleitet hat, auch f"ur komplexe Vektorr"aume
+gelten.
+Insbesondere ist der Rang definiert, die L"osungsmenge
+eines Gleichungssystems ist eine Menge von komplexen Linearkombinationen
+von Vektoren, und die (komplexe) Determinate ist genau dann 0, wenn
+die Matrix singul"ar ist.
+
 \section{Komplexes Skalarprodukt}
+Das Skalarprodukt in reellen Vektorr"aumen ist eine Funktion von
+zwei Vektoren, die linear ist in jedem Faktor:
+\begin{align*}
+(a+b,c)&=(a,c)+(b,c)&(a,b+c)&=(a,b)+(a,c)\\
+(\lambda a,b)&=\lambda(a,b)&(a,\lambda b)&=\lambda(a,b)
+\end{align*}
+W"urde man diese Definition f"ur komplexe Zahlen verwenden, dann
+m"usste das Skalarprodukt eines komplexen Vektors mit sich selbst
+die Eigenschaft 
+\[
+(ia,ia)=i^2(a,a)=-(a,a)
+\]
+haben. Insbesondere k"onnte man $(a,a)$ nicht mehr als das Quadrat der
+L"ange des Vektors $a$ interpretieren, denn die f"ur reelle Vektoren
+geltende Formel
+\[
+(\lambda a,\lambda a)=|\lambda |\, (a,a)
+\]
+w"urde nicht mehr gelten.
+
+Man verlangt daher, dass das Skalarprodukt eine Funktion von zwei Vektoren
+ist, die linear ist im ersten Faktor, aber konjugiert linear im zweiten:
+\begin{definition}
+Ein Funktion $(a,b)$ von zwei Vektoren heisst Sesquilinearform, wenn
+sie linear im zweiten Faktor und konjugiert linear im ersten Faktor ist.
+\begin{align*}
+(a,\lambda b)&=\lambda (a,b)&(\lambda a,b)=\bar\lambda (a,b).
+\end{align*}
+\end{definition}
+Dies reicht aber nicht f"ur die Definition eines Skalarproduktes.
+Das reelle Skalarprodukt hat die Eigenschaft, dass man die Faktoren
+vertauschen kann. F"ur eine Sesquilinearform reicht das auch nicht:
+\[
+i(u,v)=(u,iv)=(iv,u)=-i(v,u)=-i(u,v),
+\]
+was nur richtig sein kann, wenn $(u,v)=0$. Man verlangt daher mehr:
+
+\begin{definition}
+Ein Sesquilinearform heist hermitesch, wenn gilt
+\[
+(u,v)=\overline{(v,u)}.
+\]
+\end{definition}
+F"ur eine hermitesche Sesquilinearform ist sichergestellt, dass
+das Skalarprodukt eines Vektors mit sich selbst eine reelle Zahl
+ist. Man kann das einsehen, indem man im Produkt $(u,u)$ die beiden
+Faktoren vertauscht:
+\[
+(u,u)=\overline{(u,u)}\quad\Rightarrow\quad (u,u)\in\mathbb R.
+\]
+Es ist aber immer noch nicht sichergestellt, dass man $(u,u)$ als
+L"ange des Vektors interpretieren kann. 
+
+\begin{definition}
+Ein hermitesche Sesquilinearform heist {\em positiv definit}, wenn
+$(u,u)>0$ f"ur $u\ne 0$. Ein positive definite hermitesche Sesquilinearform
+heisst ein Skalarprodukt. Ein komplexer Vektorraum mit einem Skalarprodukt
+heisst ein Pr"ahilbertraum.
+\end{definition}
+
+
+F"ur die Vektorr"aume $\mathbb C^n$ kann man dann auch eine Formel
+f"ur das Skalarprodukt angeben. Sind $a_i$ die Komponenten von $a$ und
+$b_i$ die Komponenten von $b$, dann ist das Skalarprodukt
+\[
+(a,b)=\sum_{i=1}^n \bar a_ib_i.
+\]
+
+Im Falle der reellen Vektorr"aume konnte man das Skalarprodukt
+auch mit Hilfe des Matrizenproduktes schreiben: $u\cdot v=u^tv$.
+Dies ist f"ur das Skalarprodukt nicht mehr m"oglich, denn $u^tv$
+ist linear in beiden Vektoren.
+Damit das Produkt konjugiert linear ist im ersten Faktor, m"ussen
+wir $u$ nicht nur transponieren, sondern die Komponenten komplex konjugieren.
+Wir efinieren daher:
+\[
+u=\begin{pmatrix}u_1\\\vdots\\u_n\end{pmatrix}
+\quad\Rightarrow\quad
+u^*=\begin{pmatrix}\bar u_1&\dots&\bar u_n\end{pmatrix}
+\]
+Das Skalarprodukt ist dann $(u,v)=u^*v$.
+
 \section{Norm und Grenzwert}
+Ein Skalarprodukt in einem Pr"ahilbertraum kann dazu benutzt werden,
+die L"ange von Vektoren zu definieren und damit auch das Konzept eines
+Grenzwertes einer Folge von Vektoren.
+
+\begin{definition}
+Die Norm eines Vektors in einem Pr"ahilbertraum ist
+\[
+\| v\| = \sqrt{(v,v)}.
+\]
+\end{definition}
+
+\begin{satz}[Cauchy-Schwarz-Ungleichung] F"ur zwei Vektoren $u$ und $v$
+in einem Pr"ahilbertraum gilt die Ungleichung
+\[
+|(u,v)| \le \| u\|\cdot \| v\|
+\]
+\end{satz}
+
+\begin{proof}[Beweis]
+F"ur $t\in\mathbb C$ berechnen wir das Produkt $(u-tv, u-tv)$
+\begin{align*}
+0&\le (u-tv,u-tv)\\
+ &=   (u,u) - t(u,v) - \bar t(v,u) +   t\bar t(v,v) 
+\end{align*}
+Jetzt setzen wir $t=\frac{(v,u)}{(v,v)}$:
+\begin{align*}
+0&\le (u,u) - \frac{(u,v)(u,v)}{(v,v)} - \frac{(u,v)(v,u)}{(v,v)} + \frac{(u,v)(v,u)}{(v,v)^2}(v,v)\\
+ &=(u,u) - 2\frac{|(u,v)|^2}{(v,v)} +\frac{|(u,v)|^2}{(v,v)}\\
+ &=(u,u) -\frac{|(u,v)|^2}{(v,v)}\\
+|(u,v)|^2&\le (u,u)\cdot (v,v) = \|u\|^2\cdot \|v\|^2.
+\end{align*}
+\end{proof}
+
 \section{Hilbertbasis}
+Die endlichdimensionalen Hilbertr"aume $\mathbb C^n$ haben die
+Standardbasisvektoren als Basis, jeder Vektor in $\mathbb C^n$
+kann als komplexe Linearkombination der Standardbasisvektoren
+$e_i,i=1,\dots,n$ dargestellt werden.
+
+Gr"ossere Hilbertr"aume $\cal H$ m"ussen nicht unbedingt endlich dimensional
+sein. Dies bedeutet, dass es eine nicht endende Folge von Vektoren
+$v_i\in\cal H$ gibt, die alle orthogonal und von L"ange $1$ sind:
+\[
+(v_i,v_j)=\delta_{ij}.
+\]
+Ein Hilbertraum $\cal H$ heisst separabel, wenn es eine solche Folge
+gibt, so dass sich jeder Vektor $v\in\cal H$ beliebig genau als
+Linearkombination von Vektoren $v_i$ approximiert werden kann.
+Die Vektoren $v_i$ heissen Hilbertbasis von $\cal H$.
+
+Um die Darstellung von $v\in\cal H$ als Linearkombination von Vektoren
+der Hilbertbasis zu finden, setzen wir die unbekannten Koeffizienten
+als 
+\[
+v=\sum_{i\in\mathbb N}c_iv_i
+\]
+an. Um die Koeffizienten $c_i$ zu bestimmen, berechnen wir die
+Skalarprodukte
+\[
+(v_i,v)
+=\sum_{j\in\mathbb N} c_j(v_i,v_j)=\sum_{j\in\mathbb N}c_j\delta_{ij}=c_i.
+\]
+Insbesondere folgt
+\begin{align*}
+v&=\sum_{i\in\mathbb N}(v_i,v) v_i,\\
+\| v\|^2&=\sum_{i\in\mathbb N} |(v_i,v)|^2.
+\end{align*}
+Die zweite Gleichung heist auch die Parseval-Gleichung.
+
+Es gibt Hilbertr"aume, die nicht separabel sind, doch f"ur unsere Zwecke
+der Quantenmechanik reichen die separablen Hilbertr"aume aus.
+
 \section{Hilbertr"aume $l^2$ und $L^2$}
+In diesem Abschnitt betrachten wir zwei Hilbertr"aume, die als 
+Modelle f"ur quantenmechanische Zustandsr"aume dienen werden.
+
+\subsection{$l^2$ als Erweiterung von $\mathbb C^n$}
+Der Hilbertraum $l^2$ ist eine Erweiterung des endlichdimensionalen
+Raumes $\mathbb C^n$. Als Vektorraum besteht $l^2$ aus Folgen von
+komplexen Zahlen:
+\[
+l^2=\left\{
+(c_i)_{i\in\mathbb N}\,\left|\,c_i\in\mathbb C,
+\sum_{i\in\mathbb N} |c_i|^2 <\infty
+\right.\right\}
+\]
+Addition von Folgen und Multiplikation mit komplexen Zahlen erfolgt 
+komponentenweise. Das Skalarprodukt zweier Folgen ist
+\[
+(a, b)=\sum_{i\in\mathbb N} \bar a_i b_i.
+\]
+Die Folgen $e_i=(\delta_{ij})_{j\in\mathbb N}$ bilden eine Hilbertbasis
+des Hilbertraumes $l^2$.
+
+\section{Bra-Ket-Notation}
+Richard Feynman hat eine Notation eingef"uhrt, welche die vielen verschiedenen
+Notationen f"ur in der Quantenmechanik n"utzliche Hilbertr"aume
+vereinheitlicht.
+F"ur die physikalische Interpretation ist egal, welche Art von
+Vektorraum f"ur die Beschreibung der Zust"ande eines Teilchens verwendet
+wird.
+Die Notation sollte sich also nicht "andern, wenn wir die Zust"ande eines
+Elektrons in einem Atom mit Hilfe einer Wellenfunktion (also mit dem
+Hilbertraum $L^2$) beschreiben. Alternativ k"onnten wir die diskreten
+Zust"ande mit Hilfe eines Hilbertraumes $l^2$ verwenden.
+
+Die Notation sollte alle Operationen mit Vektoren abzubilden erlauben,
+und sie soll die f"ur die Quantenmechanik wichtigen Operationen besonders
+bequem machen.
+
+\subsection{Zustandsvektoren}
+Die Zust"ande eines Teilchens k"onnen durch ganz verschiedene Parameter
+beschrieben werden. Ein freies Teilchen kann zum Beispiel durch seinen
+Impuls oder seine Position beschrieben werden. Ein Elektron in einem
+Atom kann durch die Nummer der Schale beschrieben, in der es sich befindet. 
+Statt von Vektoren (in $l^2$) oder Funktionen (in $L^2$) zu sprechen, k"onnen
+wir also von irgend einer Art von Vektor in einem passenden Hilbertraum 
+sprechen. Wir schreiben 
+$|n=3,m=5\rangle$ f"ur einen Zustandsvektor, welcher zu den Quantenzahlen $n=3$ und $m=5$ geh"ort. Oder $|p\rangle$ f"ur den Zustandsvektor eines Teilchens
+mit Impuls $p$. Oder $|x\rangle$ f"ur den Zustandsvektor eines Teilchens
+mit Position $x$.
+
+\subsection{Skalarprodukt}
+Das Skalarprodukt wird in jedem Hilbertraum im Detail anders definiert,
+einzig die algebraischen Eigenschaften sind dieselben. In der Bra-Ket-Notation
+schreiben wir  f"ur das Skalarprodukt der Zustandsvektoren 
+$|a\rangle$ und $|b\rangle$
+\[
+\langle a|b\rangle.
+\]
+In allen Beispielen von Hilbert-R"aumen hatten wir ein Art ``dualer''
+Vektoren, im Falle eines endlichdimensionalen Vektorraumes waren dies
+die hermitesch adjungierten Vektoren. Der Vektor $\langle a|$ ist eine
+Verallgemeinerung dieser Idee, man k"onnte also schreiben
+$\langle a|=|a\rangle^*$.
+
+\subsection{Operatoren}
+Operatoren sind lineare Abbildungen des Hilbertraumes. Der Operator $A$
+erzeugt aus einem Zustandsvektor $|u\rangle$ einen neuen Vektor
+$A|u\rangle$. Die Linearit"at von $A$ bedeutet
+\[
+A(\lambda |u\rangle + \mu |v\rangle)=\lambda A|u\rangle + \mu A|v\rangle.
+\]
+
+Ein Operator $A$ heisst selbstadjungiert, wenn $A^*=A$ gilt.
+F"ur das Skalarprodukt bedeutet diese Eigenschaft, dass $(u, Av)=(Au,v)$ 
+In der Bra-Ket-Notation schreiben wir 
+\begin{equation}
+(u,Av)=(Au,v)=\langle u|A|v\rangle.
+\label{skalar-operator}
+\end{equation}
+F"ur selbstadjungierte Operatioren spielt es gar keine Rolle, auf welchen
+der beiden Vektoren in einem Skalarprodukt er wirkt, und die Notation
+(\ref{skalar-operator}) tr"agt dieser Eigenschaft Rechnung, indem sie
+bez"uglich der beiden Vektoren symmetrisch ist.
+
+Hat der Hilbertraum $\cal H$ eine Hilbertbasis $|i\rangle$, dann kann
+man die Wirkung eines Operators auf einem beliebigen Zustandsvektor
+bestimmen, wenn man seine Wirkung auf den Basisvektoren kennt.
+Dazu muss man den Vektor $|u\rangle$ erst in der Hilbertbasis
+ausgedr"ucken:
+\[
+|u\rangle = \sum_{i=0}^\infty u_i\, |i\rangle.
+\]
+Dann kann man $A|u\rangle$ mit Hilfe der Linearit"at berechnen:
+\[
+A|u\rangle = \sum_{i=0}^\infty u_iA|i\rangle.
+\]
+Wenn man das Resultat wieder in der Hilbertbasis ausdr"ucken will, 
+muss man den Resultatvektor mit den Basisvektoren multiplizieren.
+Der Koeffizient der Komponente $|j\rangle$ ist
+\begin{equation}
+\langle j|A|u\rangle
+=
+\sum_{i=0}^\infty u_i \langle j|A|i\rangle
+=
+\sum_{i=0}^\infty \langle j|A|i\rangle u_i
+\label{matrixmultiplikation}
+\end{equation}
+Man nennt die Zahlen
+\[
+a_{ji}=\langle j|A|i\rangle
+\]
+die Matrixelemente des Operators $A$. Die Formel (\ref{matrixmultiplikation})
+entspricht der bekannten Formel f"ur die Multiplikation einer Matrix
+mit einem Vektor.
+
+Wenn zwei Operatoren die gleichen Matrixelemente haben, dann stimmen
+die Operatoren "uberein. Haben n"amlich zwei Operatoren $A$ und $A'$
+die gleichen Matrixelemente, dann hat $A-A'$ die Matrixelemente $0$:
+\[
+\langle i|A-A'|j\rangle =0\qquad\forall i,j
+\]
+
+F"ur eine grosse Klasse von selbstadjungierten Operatoren $A$ gilt ein
+Spektralsatz: es gibt eine Hilbertbasis des Hilbertraumes $\cal H$
+von Eigenvektoren von $A$, d.~h.~Vektoren $|i\rangle>$, $i\in\mathbb N$
+mit der Eigenschaft, dass 
+\[
+\langle i|j\rangle = \delta_{ij}=\begin{cases}
+1&\qquad i=j\\
+0&\qquad i\ne j
+\end{cases}
+\]
+und 
+\[
+A|i\rangle=\alpha_i|i\rangle\qquad\forall i,
+\]
+d.~h.~$\alpha_i$ sind die Eigenwerte von $A$.
+F"ur endlichdimensionale komplexe Vektorr"aume ist dies der bekannte
+Satz, dass hermitesche Matrizen diagonalisiert werden k"onnen.
+
+\subsection{Projektion}
+Projektionen sind Operatoren $P$ mit der Eigenschaft $P^2=P$.
+Ist $|u\rangle$ ein Zustandsvektor, dann kann man eine Projektion $P_u$
+auf diesen Zustandsvektor konstruieren:
+\begin{align*}
+P_u|u\rangle&=|u\rangle,\\
+P_u|v\rangle&=0\qquad \text{f"ur $|v\rangle$ mit $\langle v|u\rangle=0$}
+\end{align*}
+Wir schreiben 
+\[
+P_u=
+|u\rangle\langle u|
+.
+\]
+Diese Notation ist konsistent, denn 
+\begin{align*}
+|u\rangle\langle u|u\rangle&=|u\rangle\cdot 1\\
+|u\rangle\langle u|v\rangle&=|u\rangle\cdot 0=0,\qquad
+\text{f"ur $langle u|v\rangle = 0$}
+\end{align*}
+Sind $|i\rangle$ mit $i=1,\dots, n$ orthonormale Zustandsvektoren, also
+\[
+\langle i|j\rangle =\delta_{ij},
+\]
+dann ist der Operator
+\[
+P=\sum_{i=1}^n |i\rangle \langle i|
+\]
+eine Projektion, denn
+\[
+P^2=
+\sum_{i=1, j = 1}^n
+|i\rangle \langle i|j\rangle \langle j|
+=
+\sum_{i=1, j = 1}^n
+\delta_{ij} |i\rangle\langle j|=\sum_{i=1}^n|i\rangle\langle i|=P.
+\]
+
+Wenn es f"ur den Operator $A$ auf dem Hilbertraum $\cal H$ eine
+Hilbertbasis aus Eigenvektoren $|i\rangle$ mit Eigenwerten $\alpha_i$ gibt,
+dann kann der Operator selbst
+als eine Linearkombination von Projektoren geschrieben werden. Wir setzen
+\[
+A'=\sum_{i=0}^\infty |i\rangle \alpha_i \langle i|.
+\]
+Wir vergleichen die Matrixelemente von $A'$ und $A$:
+\begin{align*}
+\langle k| A' |l\rangle
+&=
+\sum_{i=0}^\infty \langle k|i\rangle \alpha_i \langle i|l\rangle
+=\sum_{i=0}^\infty \delta_{ki}\alpha_i\delta_{il}
+=\alpha_l\delta_{kl}
+\\
+\langle k|A|l\rangle
+&=
+\langle k|\alpha_l|l\rangle=\alpha_l\delta_{kl}
+\end{align*}
+Die Matrixelemente stimmen "uberein, also ist $A=A'$.
+
