@@ -1,0 +1,447 @@
+\chapter{Harmonischer Oszillator\label{chapter:harmonischeroszillator}}
+\lhead{Harmonischer Oszillator}
+\rhead{}
+Das klassische Federpendel ist eines der einfachsten mechanischen 
+Systeme. Es ist nicht nur von theoretischer Bedeutung, denn sehr
+viele schwingende Systeme k"onnen mit dem gleichen Modell
+oder als eine Zusammensetzung solcher einfacher Oszillatoren
+beschrieben werden.
+
+In der Quantenmechanik ist die Bedeutung der quantisierten Version
+dieses einfachen Systems nicht geringer. Viele Systeme k"onnen
+n"aherungsweise durch einen harmonischen Oszillator beschrieben
+werden, zum Beispiel die Schwingungen von einfachen Molek"ulen.
+
+Der quantenmechanische harmonische Oszillator hat aber eine Eigenschaft,
+die der klassische Oszillator nicht hat: seine Energie ist nicht
+kontinuierlich, nur eine diskrete Menge von Energieniveaus sind
+m"oglich. Dies ist zwar nicht "uberraschend nach den bisher studierten
+Beispielen, doch werden wir hier die mathemtische Technik  der
+Auf- und Absteige-Opertoren kennen lernen, mit der die Energieniveaus
+und auch die Zustandsvektoren leicht berechnet werden k"onnen.
+
+In der Anwendung auf die Schwingungen einfacher Molek"ule
+bedeutet das diskrete Spektrum, dass solche Molek"ule Energie nur in
+fest definierten Paketen aufnehmen k"onnen.
+Jedes Molek"ul hat also eine charakteristische Menge von Wellenl"angen
+von typischerweise infrarotem Licht, welche es absorbieren kann.
+Tats"achlich stellt die Infrarotsprektroskopie eine wichtige
+Technik in der Chemie dar, mit der Molek"ule identifiziert werden k"onnen.
+Wenn ein Molek"ul nur bestimmte Energiepakete aufnehmen kann, dann
+wird die W"armekapazit"at ebenfalls temperaturabh"angig sein, und
+mit charakteristischen Spr"ungen ansteigen, welche der Anregung
+von h"oherenergetischen Molek"ulschwingungen entsprechen.
+
+\section{Der klassische Oszillator}
+Ein Federpendel ist eine Masse $m$, welches sich unter dem Einfluss
+einer Feder mit Federkonstante $K$ bewegt. Ist $x$ die Auslenkung
+der Masse aus der Ruhelage, dann "ubt die Feder eine Kraft $-Kx$ 
+auf die Masse aus. Die potentielle Energie bei der Auslenkun
+$x$ ist daher:
+\[
+V(x)=\int_0^xK\xi\,d\xi=\frac12Kx^2.
+\]
+Die Hamilton-Funktion ist daher
+\[
+H(p,x)=\frac1{2m}p^2+\frac12Kx^2.
+\]
+Zur Kontrolle leiten wir mit Hilfe der Hamiltonschen Gleichungen
+die Bewegungsgleichungen ab:
+\begin{align*}
+\frac{\partial H}{\partial x}&=Kx
+&
+&\Rightarrow&
+\dot p&=-\frac{\partial H}{\partial x}=-Kx
+\\
+\frac{\partial H}{\partial p}&=\frac{p}{m}
+&
+&\Rightarrow&
+\dot x&=\frac{\partial H}{\partial p}=\frac{p}{m}.
+\end{align*}
+Wir erhalten also die klassischen  Bewegungsgleichungen eines harmonischen
+Oszillators. 
+
+Die L"osungen dieser Bewegungsgleichungen sind Schwingungen mit 
+Frequenz
+\[
+\omega = \sqrt{\frac{K}{m}},
+\]
+statt der Konstanten $K$ k"onnten wir als auch $K=m\omega^2$ verwenden,
+die Hamilton-Funktion ist dann
+\[
+H=\frac1{2m}p^2+\frac12m\omega^2x^2
+\]
+
+
+\section{Quantisierung}
+Die Quantisierungsregeln verlangen wieder, dass die Impuls-Variable
+durch
+\[
+p\rightarrow\frac{\hbar}{i}\frac{\partial}{\partial x}
+\]
+ersetzt wird. Der Hamilton-Operator ist also
+\begin{equation}
+\hat H
+=
+-\frac{\hbar^2}{2m}
+\frac{\partial^2}{\partial x^2}
++\frac12m\omega^2x^2.
+\label{harmoszhamilton}
+\end{equation}
+
+Wir suchen jetzt Eigenfunktionen des Hamilton-Operators (\ref{harmoszhamilton}),
+also Funktionen $\psi(x)$ und Konstanten $E$ so, dass
+\[
+\hat H\psi=E\psi.
+\]
+Da in diesem Problem nur eine einzige Variable auftritt, ist dies ein
+Problem "uber gew"ohnliche Differentialgleichungen:
+\begin{equation}
+-\frac{\hbar^2}{2m} \psi''(x)+\frac12m\omega^2x^2\psi(x)=E\psi(x).
+\label{harmoszgleichung}
+\end{equation}
+In dieser Form ist das Problem etwas umst"andlich zu l"osen.
+Wir verwenden statt $x$ die Variablen 
+\[
+q=\sqrt{\frac{m\omega}{\hbar}}x.
+\]
+Nennen wir die Funktion $u(q)=\psi(x)$, dann gilt
+\begin{align*}
+\frac{d}{dq}u(q)&=\frac{d\psi(x)}{dx}\frac{dx}{dq}
+=\psi'(x)\sqrt{\frac{\hbar}{m\omega}}
+&
+\psi'(x)&=\sqrt{\frac{m\omega}{\hbar}}u'(q)
+\\
+\frac{d^2}{dq^2}u(q)&=\psi''(x)\frac{\hbar}{m\omega}
+&
+\psi''(x)&=\frac{m\omega}{\hbar}u''(q).
+\end{align*}
+Setzen wir dies in die Differentialgleichung (\ref{harmoszgleichung})
+ein, erhalten wir
+\begin{equation}
+-\frac{\hbar\omega}{2} u''(q)
++\frac12m\omega^2x^2\psi(x)=E\psi(x).
+\end{equation}
+Teilen wir dies durch $-\hbar\omega/2$, erhalten wir
+\begin{align*}
+u''(q) -\frac{m\omega}{\hbar}x^2u(q)=-\frac{2E}{\hbar\omega}u(q),
+\end{align*}
+oder mit den Abk"urzungen
+\[
+q=\sqrt{\frac{m\omega}{\hbar}}
+\quad\text{und}\quad
+\varepsilon=\frac{E}{\hbar \omega}
+\]
+die endg"ultige Form der Differentialgleichung
+\begin{equation}
+u''(q)+(2\varepsilon-q^2) u(q)=0.
+\label{harmq}
+\end{equation}
+
+\section{L"osungen}
+In diesem Abschnitt l"osen wir die Differentialgleichung (\ref{harmq}).
+\subsection{Grundzustand\label{hogrundzustand}}
+Da das Potential f"ur grosse Werte von $q$ beliebig gross wird,
+muss die Wellenfunktion $u(q)$ f"ur grosse Werte von $q$ exponentiell
+schnell abfallen.
+Wir versuchen daher einen Ansatz in der Form $u_0(q)=e^{-alpha q^2}$.
+Die Ableitungen von
+$u_0(x)$ sind
+\begin{align*}
+u_0'(q)&=-2\alpha qe^{-\alpha q^2}\\
+u_0''(q)&=-2\alpha e^{-\alpha q^2}+4\alpha^2q^2e^{-\alpha q^2}.
+\end{align*}
+Einsetzen in (\ref{harmoszgleichung})  liefert
+\begin{align*}
+(-2\alpha e^{-\alpha q^2}+4\alpha^2q^2e^{-\alpha q^2})
++
+(2\varepsilon - q^2)e^{-\alpha q^2}&=0
+\\
+\Leftrightarrow\qquad
+\biggl(
+-2\alpha +4\alpha^2q^2
++
+2\varepsilon - q^2
+\biggr)e^{-\alpha q^2}
+&=0
+\end{align*}
+Die letzte Gleichung kann nur erf"ullt werden, wenn der grosse Klammerausdruck
+verschwindet, wenn also gilt
+\begin{align*}
+-2\alpha +4\alpha^2q^2
++
+2\varepsilon - q^2
+&=0
+\\
+\Leftrightarrow\qquad
+(2\varepsilon-2\alpha)
++
+(4\alpha^2-1)q^2
+&=0
+\end{align*}
+Diese Gleichung muss f"ur alle $x$ gelten, die Klammerausdr"ucke
+m"ussen also beide verschwinden:
+\begin{align*}
+(4\alpha^2-1)q^2&=0
+&
+\alpha&=\frac12
+\\
+\varepsilon-\alpha&=0
+&
+\varepsilon&=\frac12.
+\end{align*}
+Es gibt also tats"achlich eine L"osung, sie muss von der Form
+\[
+u_0(q)=e^{-\frac{q^2}2}
+\]
+sein. Der zugeh"orige Eigenwert ist $\varepsilon_0=\frac12$.
+
+In den urspr"unglichen Koordinaten ist der Grundzustand also
+\begin{equation}
+\psi_0(x)=u_0\biggl(\sqrt{\frac{m\omega}{\hbar}}\biggr)
+=
+e^{-\frac{m\omega}{2\hbar}}.
+\label{grundzustandwellenfunktion}
+\end{equation}
+
+% XXX Normierung dieser L"osung
+\subsection{Angeregte Zust"ande}
+Wir versuchen weitere L"osungen in der Form $u_n(q)=h_n(q)e^{-\frac{q^2}2}$
+zu finden, wobei $h_n(q)$ ein Polynom $n$-ten Grades ist.
+Wir brauchen wieder die Ableitungen:
+\begin{align*}
+u'(q)
+&=
+\bigl(h_n'(q)- qh_n(q)\bigr)e^{-\frac{q^2}2}
+\\
+u''(q)
+&=
+\bigl(
+h_n''(q)- qh_n'(q)
+- h_n(q)
+- q h_n'(q)
++q^2h_n(q)
+\bigr)e^{-\frac{q^2}2}
+\\
+&=
+\bigl(
+h_n''(x)-2 qh_n'(q)
++(q^2-1)h_n(q)
+\bigr)e^{-\frac{q^2}2}
+\end{align*}
+Eingesetzt in die Differentialgleichung erhalten wir
+\begin{align}
+\bigl(
+h_n''(x)-2 qh_n'(q)
++(q^2-1)h_n(q)
+\bigr)e^{-\frac{q^2}2}
++(\varepsilon-q^2)h_n(q)e^{-\frac{q^2}2}&=0
+\notag
+\\
+\Leftrightarrow\qquad
+h_n''(x)-2 qh_n'(q)
++(\varepsilon - 1)h_n(q)&=0
+\label{hermiteequation}
+\end{align}
+Die Gleichung (\ref{hermiteequation}) heisst auch die 
+Hermitesche Differentialgleichung.
+Die Funktionen $h_n(q)$ heissen die Hermiteschen Polynome.
+
+Wir werden die Polynome hier nicht ausrechnen, da die Technik der
+Auf- und Absteigeoperatoren eine einfachere Methode hierf"ur liefern
+wird.
+
+\section{Auf- und Absteigeoperatoren}
+Wir wollen jetzt die Eigenwerte auf rein algebraische Art berechnen.
+\subsection{Dimensionslose Operatoren}
+Dazu gehen wir zur"uck zum Hamilton-Operator
+\[
+\hat H=-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
++\frac12m\omega^2 x^2
+\]
+und schreiben ihn unter Verwendung der Operatoren
+\[
+P=\frac{1}{\sqrt{\hbar m\omega}}p 
+\qquad
+\text{und}
+\qquad
+Q=\sqrt{\frac{m\omega}{\hbar}}x
+\]
+Man kann nachrechnen, dass 
+\[
+\frac12(P^2+Q^2)
+=
+\frac{1}{2\hbar m \omega}p^2
++
+\frac{m\omega}{2\hbar}x^2
+=
+-\frac{\hbar}{2 m \omega}\frac{\partial^2}{\partial x^2}
++
+\frac{m\omega}{2\hbar}x^2
+=\frac{\hat H}{\hbar\omega}
+=:\hat{\cal H}
+\]
+Wir haben den Hamiltonoperator also umgeschrieben mit neuen Operatoren 
+$P$ und $Q$.
+
+\subsection{Vertauschungsrelationen}
+Wir sollten uns davon "uberzeugen, dass die Operatoren $P$ und $Q$ 
+mit den urspr"unglichen $p$ und $x$ vergleichbar sind, und berechnen
+daher die Vertauschungsrelationen:
+\begin{align*}
+[P,Q]
+&=
+\frac{1}{\sqrt{\hbar m\omega}} \sqrt{\frac{m\omega}{\hbar}}[p, x]
+=
+\frac1{\hbar}[p,x]
+\end{align*}
+Wir erinnern an die Vertauschungsrelationen f"ur die Operatoren $p$ und $x$:
+\begin{align*}
+\left[\frac{\hbar}{i}\frac{\partial}{\partial x}, x\right]\psi(x)
+&=
+\frac{\hbar}{i}\frac{\partial}{\partial x}(x\psi(x))
+-x\frac{\hbar}{i}\frac{\partial}{\partial x}\psi(x)
+=
+\frac{\hbar}{i}\psi(x)
+x\frac{\hbar}{i}\frac{\partial \psi(x)}{\partial x}
+-x\frac{\hbar}{i}\frac{\partial}{\partial x}\psi(x)
+=\frac{\hbar}{i}\psi(x)
+\\
+[p,x]&=\frac{\hbar}{i}\operatorname{id}.
+\end{align*}
+Damit sind jetzt auch die Vertauschungsoperatoren f"ur $P$ und $Q$ 
+bekannt:
+\[
+[P,Q]=\frac1{i}\operatorname{id}=-i\operatorname{id}.
+\]
+
+\section{Auf- und Absteigeoperatoren}
+\subsection{Definition}
+Wir definieren jetzt die Operatoren
+\[
+a=\frac1{\sqrt{2}}(Q+iP)
+\qquad\text{und}\qquad
+a^+=\frac1{\sqrt{2}}(Q-iP).
+\]
+Zun"achst ist klar, dass $a$ und $a^+$ nicht selbstadjungiert sind,
+vielmehr ist
+\[
+a^*=\frac1{\sqrt{2}}(Q^*-iP^*)=\frac1{\sqrt{2}}(Q-iP)=a^+.
+\]
+Damit entsprechen die Operatoren $a$ und $a^+$ nicht einer physikalisch
+messbaren Gr"osse. 
+
+Unser Ziel ist die Berechnung der Eigenwerte und Eigenvektoren
+des harmonischen Oszillators mit algebraischen Mitteln. Dazu brauchen
+wir die algebraischen Eigenschaften der Operatoren $a$ und $a^+$.
+\begin{align*}
+aa^+
+&=
+\frac1{\sqrt{2}}(Q+iP)\frac1{\sqrt{2}}(Q-iP)
+=
+\frac12(Q^2+P^2+i[P,Q])
+=
+\hat{\cal H}+\frac12
+\\
+a^+a
+&=
+\frac1{\sqrt{2}}(Q-iP)\frac1{\sqrt{2}}(Q+iP)
+=
+\frac12(Q^2+P^2+i[Q,P])
+=
+\hat{\cal H}-\frac12=:N
+\end{align*}
+Daraus folgt auch
+\[
+[a,a^+]=\operatorname{id},
+\]
+und die weiteren Vertauschungsrelationen
+\begin{align*}
+[N,a^+]
+&=a^+aa^+-aa^+a^+=[a,a^+]a^+=a^+
+&
+[N,a]
+&=a^+aa-aa^+a=[a^+,a]a=-a
+\\
+&=[\hat{\cal H},a^+]
+&
+&=[\hat{\cal H}, a].
+\end{align*}
+
+\subsection{Wirkung auf Zustandsvektoren}
+Nehmen wir an, $|n\rangle$ sei der $n$-te Eigenvektor von $\hat{\cal H}$,
+mit Energie $\varepsilon_n$, also
+\[
+\hat{\cal H}|n\rangle = \varepsilon_n|n\rangle.
+\]
+Wenden wir die Operatoren $a$ und $a^+$ auf $|n\rangle$ anwenden, erhalten
+wir einen neuen Eigenvektor:
+\begin{align*}
+\hat{\cal H}a^+|n\rangle
+&=
+([\hat{\cal H}, a^+] + a^+\hat{\cal H})|n\rangle
+=
+(1 + \varepsilon_n)a^+|n\rangle
+\\
+\hat{\cal H}a|n\rangle
+&=
+([\hat{\cal H}, a] + a\hat{\cal H})|n\rangle
+=
+(\varepsilon_n - 1)a|n\rangle
+\end{align*}
+Insbesonder ist $a^+|n\rangle$ ein Eigenvektor mit Energie
+$E_n+1$, und $a|n\rangle$ ein Eigenvektor mit Energie $\varepsilon_n-1$.
+Man kann also mit dem Operator $a^+$ zu Zust"anden h"oherer Energie
+aufsteigen, und mit $a$ zu Zust"anden niedrigerer Energie absteigen.
+
+\subsection{Eigenwerte und Zustandsvektoren}
+Die Energie eines harmonischen Operators ist immer positiv,
+also kann man mit $a$ nicht beliebig lange absteigen. Es muss einen
+Zustand $|0\rangle$ kleinster Energie geben. M"ochte man weiter
+absteigen, darf kein Zustandsvektor mehr entstehen, es muss also
+$a|0\rangle=0$ sein. Durch Multiplikation mit $a^+$ folgt
+\[
+0=a^+a|0\rangle=(\hat{\cal H}-\textstyle\frac12)|0\rangle
+\quad
+\Rightarrow
+\quad
+\hat{\cal H}|0\rangle=\frac12|0\rangle
+\quad
+\Rightarrow
+\quad
+\varepsilon_0=\frac12.
+\]
+Der Grundzustand hat also immer den Eigenwert $\frac12$, oder die
+Energie $\frac12\hbar\omega$. Diesen Wert haben wir auch schon in
+Abschnitt~\ref{hogrundzustand} erhalten.
+
+Der Aufsteigeoperator $a^+$ erm"oglicht jetzt auch, aus dem Grundzustand
+alle h"oheren Zust"ande konstruieren:
+\[
+|n\rangle = (a^+)^n|0\rangle.
+\]
+Da wir den Grundzustand bereits aus Abschnitt~\ref{hogrundzustand} kennen,
+k"onnen wir die Wellenfunktionen f"ur die h"oheren Zust"ande berechnen,
+indem wir den Operator $a^+$ wieder in den urspr"unglichen Koordinaten
+ausdr"ucken:
+\begin{equation}
+a^+=\frac1{\sqrt{2}}(Q+iP)
+=
+\frac1{\sqrt{2}}\biggl(
+\sqrt{\frac{m\omega}{\hbar}}x
++i
+\frac{1}{\sqrt{\hbar m\omega}}\frac{\hbar}{i}\frac{\partial}{\partial x}
+\biggr)
+=
+\frac1{\sqrt{2}}
+\biggl(
+\sqrt{\frac{m\omega}{\hbar}}x
++
+\sqrt{\frac{\hbar}{m\omega}}\frac{\partial}{\partial x}
+\biggr)
+\label{aufsteigeho}
+\end{equation}
+Die Wellenfunktionen des Zustands $|n\rangle$ erh"alt man also, indem
+man den Operator $a^+$ in der Form \ref{aufsteigeho} auf die Wellenfunktion
+$\psi_0$ wie in (\ref{grundzustandwellenfunktion}) anwendet.
+
