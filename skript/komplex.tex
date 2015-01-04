@@ -137,7 +137,7 @@ f'(t)&=ie^{ti}=if(t)\notag\\
 f''(t)&=-f(t).\label{exp-dgl}
 \end{align}
 Die Funktion $f$ muss also eine L"osung der Differentialgleichung
-(\ref{exp-dgl}) sein, welche die Anfangsbedingungen $f(0)=1$
+(\ref{exp-dgl}) sein, welche die Anfangsbedingungen $f(0)=1$ und
 $f'(0)=if(0)=i$ erf"ullen muss.
 Doch die Differentialgleichung (\ref{exp-dgl}) hat die L"osungen
 \[
@@ -201,8 +201,275 @@ $\mathbb C^n$ ist die Menge
 \left\{\left.\begin{pmatrix}c_1\\\vdots\\c_n\end{pmatrix}\,\right|
 c_i\in\mathbb C\right\},
 \]
-mit der komponentenweisen Addition und Multiplikation mit einem
-komplexen
+mit der komponentenweisen Addition und der Multiplikation mit einer
+komplexen Zahl. Nichts an der elementaren linearen Algebra hat besondere
+Eigenschaften der reellen Zahlen verwendet, die nicht auch die komplexen
+Zahlen haben. Der Gauss-Algorithmus, die Konstruktion der Determinanten,
+ja sogar der grundlegende Algorithmus zur L"osung des Eigenwertprobems
+funktioniert genau gleich auch f"ur komplexe Matrizen. Nur im Bereich
+des Skalarproduktes sind minimale Modifikationen notwendig, damit
 
-\section{Eigenwertproblem f"ur komplexe Matrizen}
+\subsection{Skalarprodukt f"ur komplexe Vektorr"aume}
+In der linearen Algebra im ersten Semester wird das Skalarprodukt
+geometrisch mit Hilfe der Projektion eingef"uhrt.
+Eine solche Konstruktion ist f"ur komplexe Vektoren nicht m"oglich,
+weil es keine anschauliche komplexe Geometrie gibt.
+
+\subsubsection{Komplexes Skalarprodukt}
+Um ein komplexes Skalarprodukt zu bekommen, gehen wir daher von den
+algebraischen Eingeschaften des Skalarproduktes aus:
+\begin{compactenum}
+\item Das Skalarprodukt $(u,v)$ von komplexen Vektoren $u$ und $v$ ist linear
+in $v$.
+\item $(u,u) > 0$ falls $u\ne 0$.
+\item Falls $(u,v)\in\mathbb R$, dann ist $(u,v)=(v,u)$.
+\end{compactenum}
+Diese Eigenschaften m"ussen auch f"ur ein komplexes Skalarprodukt gelten.
+Wir zeigen, dass diese Eigenschaften auch ein komplexes Skalarprodukt 
+weitgehend festlegt.
+
+Zun"achst stellen wir fest, dass wir nicht erwarten k"onnen, dass
+ein Skalarprodukt linear sein kann.
+Betrachten wir dazu einen eindimensionalen Vektorraum $\mathbb C^1$.
+Vektoren sind hier nur komplexe Zahlen, und ein Produkt, welches
+linear in beiden Faktoren ist, ist von der Form $(u,v)=uv$. Dann ist
+aber $(u,u)=u^2$, aber $u^2$ kann auch negativ sein, zum Beispiel f"ur $u=i$.
+Das einzige Produkt, welches immer positiv ist, ist $(u,v)=\bar uv$.
+Dieses Produkt ist aber nicht linear im Faktor $u$:
+\[
+(\lambda u,v)=\overline{(\lambda u)}v=\bar\lambda (\bar uv)=\bar\lambda (u,v).
+\]
+Wir m"ussen also von einem komplexen Skalarprodukt verlangen, dass es
+im ersten Faktor {\em konjugiert linear} ist:
+\[
+(\lambda u,v)=\bar\lambda(u,v)
+\]
+Eine Funktion von zwei Vektoren, welche linear im zweiten Vektor ist
+und konjugiert linear im ersten heisst {\em sesquilinear}.
+
+Sei jetzt also $(\,\cdot\,|\,\cdot\,)$ eine Sesquilinearform.
+Wir setzen $\lambda = 1/(u,v)$, dann gilt
+$(u,\lambda v)$ reell ist. Dann gilt
+\begin{align*}
+1&=\lambda (u,v)=(u,\lambda v)=(\lambda v,u)=\bar\lambda(v,u)
+&
+&\Rightarrow&
+\frac1{(\bar\lambda)}&=(v,u)
+&
+&\Rightarrow&
+\overline{(u,v)}&=(v,u).
+\end{align*}
+Vertauschung der Faktoren ist also gleichbedeutend mit komplexer Konjugation
+des Wertes des Skalarproduktes. Man nennt eine Funktion von zwei komplexen
+Vektoren {\em hermitesch}, wenn $(u,v)=\overline{(v,u)}$ gilt.
+
+Eine hermitesche Sesquilinearform heisst {\em positiv definit}, wenn
+f"ur jeden Vektor $u\ne 0$ gilt $(u,u)>0$. Diese Eigenschaft stellt
+sicher, dass $(u,u)$ sinnvoll als die ``L"ange'' eines Vektors interpretiert
+werden kann.
+
+\begin{definition}
+Ein komplexes Skalarprodukt ist eine positiv definite,
+hermitesche Sesquilinearform.
+\end{definition}
+
+Das einfachste Beispiel eines komplexen Skalarproduktes ist
+\[
+(u,v)=\sum_i \bar u_iv_i.
+\]
+Die Standardbasisvektoren sind auch in diesem Skalarprodukt
+orthonormiert.
+
+\subsubsection{Adjungierte Matrix}
+In den reellen Vektorr"aumen konnte man zu einer linearen $A$ immer
+eine lineare Abbildung $A^t$ finden mit der Eigenschaft
+$(u,Av)=(A^tu,v)$. Mit Hilfe der Standardbasisvektoren konnte
+man auch ausrechnen, was dies f"ur die Matrizen von $A$ bedeutet:
+\[
+(e_i,A^te_j),
+=
+(A^te_j, e_i)
+=
+(e_j,Ae_i)=a_{ij}
+\]
+d.~h.~die Matrix von $A^t$ ist die transponierte Matrix von $A$.
+Eine symmetrische Matrix war eine, die sich beim Transponieren nicht
+"andert, also $A^t=A$.
+
+Dasselbe kann man jetzt auch f"ur ein komplexes Skalarprodukt
+versuchen. Zu einer komplexen Matrix $A$ ist also eine neue
+Matrix $A^*$ gesucht, mit der Eigenschaft, $(A^*u,v)=(u,Av)$ f"ur 
+jedes Paar von Vektoren $u$ und $v$. F"ur die Standardbasisvektoren
+gilt dann
+\[
+(e_i,A^*e_j),
+=
+\overline{(A^*e_j, e_i)}
+=
+\overline{(e_j,Ae_i)=a_{ij}},
+\]
+die Matrix von $A^*$ ist also nicht nur transponiert, sondern auch komplex
+konjugiert. Hat $A$ die Matrixelement $a_{ij}$ dann nennt man
+die Matrix $A^*$ mit den Matrixelementen $\bar a_{ji}$ die
+adjungiert Matrix. Eine Matrix, die sich beim adjungieren nicht
+"andert heisst selbstadjungiert.
+
+\subsubsection{Unit"are Matrizen}
+Matrizen, die in reellen Vektorr"aumen das Skalarprodukt nicht "andern,
+heissen orthogonal. Sie sind charakterisiert durch die Eigenschaft
+$(Ox,Oy)=(x,y)$, woraus sich mit Hilfe der Transposition ergibt:
+\[
+(Ox,Oy)=(O^tOx,y)=(x,y)\qquad\Rightarrow\qquad O^tO=E,
+\]
+woraus man weiter ablesen kann, dass bei orthogonalen Matrizen
+die transponierte Matrix mit der invertierten Matrix zusammenf"allt.
+
+F"ur komplexen Vekoren kann man wieder nach den Matrizen fragen, die das
+komplexe Skalarprodukt nicht ver"andern. Eine Matrix $U$ hat diese
+Eigenschaft, wenn
+\[
+(Ux,Uv)=(U^*Ux,y)=(x,y)\;\forall x,y
+\qquad\Rightarrow\qquad
+U^*U=E,
+\]
+eine solche Matrix heisst unit"ar. 
+
+F"ur reelle Matrizen $A$ ist $A^t=A^*$, also sind orthogonale Matrizen
+auch unit"ar.
+
+\begin{beispiel}
+Die unit"aren $1\times 1$-Matrizen sind komplexe Zahlen $z$, welche
+die zus"atzliche Bedingung $\bar zz=1$ erf"ullen m"ussen.
+Die Menge der unit"aren $1\times 1$-Matrizen ist also
+\[
+U(1)=\left\{ z\in\mathbb C\,|\, |z|=1
+\right\}.
+\]
+In der Quantenmechanik k"onnen Zustandsvektoren in der Regel nur bis auf
+einen komplesen Faktor vom Betrag $1$, also bis auf ein Element
+von $U(1)$ festgelegt werden.
+Man spricht oft von ``bedeutungslosen'' Phasenfaktoren.
+\end{beispiel}
+
+\begin{beispiel}
+Wir betrachten Matrizen der Form
+\[
+U=
+\begin{pmatrix}
+a&b\\-\bar b&\bar a
+\end{pmatrix}
+\]
+mit der zus"atzlichen Bedingung $|a|^2 + |b|^2=1$. Sie erf"ullen
+\begin{align*}
+U^*U
+&=
+\begin{pmatrix}
+\bar a&-b\\\bar b&a
+\end{pmatrix}
+\begin{pmatrix}
+a&b\\-\bar b&\bar a
+\end{pmatrix}
+=
+\begin{pmatrix}
+\bar aa+b\bar b & \bar ab-b\bar a\\
+\bar ba-a\bar b & \bar bb+a\bar a
+\end{pmatrix}
+=
+E
+\\
+\det(U)&=\left|
+\begin{matrix}
+a&b\\-\bar b&\bar a
+\end{matrix}
+\right|
+=
+a\bar a+\bar bb = |a|^2 + |b|^2=1.
+\end{align*}
+Solche Matrizen sind also nicht nur unit"ar, sondern haben auch Determinante 1,
+man nennt diese Matrizen die speziellen unit"aren Matrizen:
+\[
+\textsl{SU}(2)=\left\{
+\left.
+\begin{pmatrix}
+a&b\\-\bar b&\bar a
+\end{pmatrix}
+\,
+\right|
+\,
+a,b\in\mathbb C\wedge
+|a|^2+|b|^2=1
+\right\}.
+\]
+Die Gruppe $\textsl{SU}(2)$ spielt bei der Analyse des Elektronenspins eine 
+wichtige Rolle.
+\end{beispiel}
+
+\subsection{Eigenwertproblem f"ur komplexe Matrizen}
+Ein Vektor $v\ne 0$ heisst Eigenvektor zum Eigenwert $\lambda$ einer
+Matrix $A$, wenn $Av=\lambda v$ gilt. Diese Definition ist auch f"ur
+komplexe Matrizen g"ultig, ebenso funktioniert der Standardalgorithmus
+f"ur die L"osung des Eigenwertproblems nach wie vor:
+\begin{enumerate}
+\item Finde die Nullstellen der charakteristischen Gleichung
+$\det(A-\lambda E)=0$.
+\item F"ur jede Nullstelle $\lambda_i$, finde Eigenvektoren
+durch L"osung des Gleichungssystems $(A-\lambda_i E)v=0$.
+\end{enumerate}
+Der wesentliche Unterschied ist jedoch, dass in den komplexen
+Zahlen ein Polynom vom Grade $n$ immer $n$ Nullstellen hat.
+Die bei reellen Matrizen vorkommende Situation, dass weniger
+als $n$ reelle Nullstellen existieren, und daher nicht gen"ugend
+Eigenvektoren f"ur eine Eigenvektorbasis gefunden werden k"onnen,
+tritt also bei komplexen Matrizen seltener auf.
+
+Der quantenmechanische Formalismus beschreibt physikalische Gr"ossen
+als selbstadjungierte Matrizen. Die m"oglichen Werte einer solchen Gr"osse
+sind die Eigenwerte der Matrix, und es muss sichergestellt werden,
+dass keine komplexen Eigenwerte auftreten k"onnen.
+
+\begin{satz}
+\label{ewreell}
+Die Eigenwerte einer selbstadjungierten Matrix sind reell.
+\end{satz}
+\begin{proof}[Beweis]
+Sei $v$ ein Eigenvektor zum Eigenwert $\lambda$ einer selbstadjungierten
+Matrix $A$. Dann gilt
+\begin{align*}
+(v,Av)
+&=
+\lambda(v,v)
+\\
+&=(Av,v)=(\lambda v,v)=\bar\lambda(v,v)
+\\
+\Rightarrow \lambda&=\bar\lambda,
+\end{align*}
+also ist $\lambda\in\mathbb R$.
+\end{proof}
+
+Bei reellen Matrizen hat sich gezeigt, dass symmetrische Matrizen immer
+diagonalisierbar sind. Dies gilt auch f"ur selbstadjungierte Matrizen
+in komplexen Vektorr"aumen:
+
+\begin{satz}
+Eine selbstadjungierte Matrix ist diagonalisierbar und die Eigenvektoren zu
+verschiedenen Eigenwerten sind orthogonal.
+\end{satz}
+
+\begin{proof}[Beweis]
+Wir beweisen nur die Orthogonalit"at von Eigenvektoren zu verschiedenen 
+Eigenwerten. Seien also $v_1,v_2$ Eigenvektoren zu zwei verschiedenen
+Eigenwerten $\lambda_1,\lambda_2$. Die beiden Eigenwerte sind nach
+\label{ewreell} reell. Dann gilt
+\begin{align*}
+(v_1,Av_2)&=\lambda_2(v_1,v_2)
+\\
+          &=(Av_1,v_2)=\bar\lambda_1(v_1,v_2)=\lambda_1(v_1,v_2)
+\\
+\Rightarrow\quad
+(\lambda_1-\lambda_2)(v_2,v_2)&=0
+\end{align*}
+Die letzte Gleichung kann wegen $\lambda_1\ne\lambda_2$ nur wahr sein,
+wenn $(v_1,v_2)=0$, die Vektoren $v_1$ und $v_2$ m"ussen also orthogonal sein.
+\end{proof}
+
 
