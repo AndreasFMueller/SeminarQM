@@ -220,14 +220,18 @@ Die zweite Gleichung heisst auch die Parseval-Gleichung.
 Es gibt Hilbertr"aume, die nicht separabel sind, doch f"ur unsere Zwecke
 der Quantenmechanik reichen die separablen Hilbertr"aume aus.
 
+%
+% Hilbertraeume l^2 und L^2
+%
 \section{Hilbertr"aume $l^2$ und $L^2$}
 In diesem Abschnitt betrachten wir zwei Hilbertr"aume, die als 
 Modelle f"ur quantenmechanische Zustandsr"aume dienen werden.
 
 \subsection{$l^2$ als Erweiterung von $\mathbb C^n$}
 Der Hilbertraum $l^2$ ist eine Erweiterung des endlichdimensionalen
-Raumes $\mathbb C^n$. Als Vektorraum besteht $l^2$ aus Folgen von
-komplexen Zahlen:
+Raumes $\mathbb C^n$.
+Als Vektorraum besteht $l^2$ aus Folgen von komplexen Zahlen,
+so dass die Summe der Betragsquadrate beschr"ankt ist:
 \[
 l^2=\left\{
 (c_i)_{i\in\mathbb N}\,\left|\,c_i\in\mathbb C,
@@ -235,12 +239,177 @@ l^2=\left\{
 \right.\right\}
 \]
 Addition von Folgen und Multiplikation mit komplexen Zahlen erfolgt 
-komponentenweise. Das Skalarprodukt zweier Folgen ist
+komponentenweise.
+Das Skalarprodukt zweier Folgen ist
 \[
 (a, b)=\sum_{i\in\mathbb N} \bar a_i b_i.
 \]
+Diese Summe existiert, denn die Cauchy-Schwarz-Ungleichung zeigt,
+dass
+\begin{align*}
+|(a,b)|^2
+=
+\biggl|
+\sum_{i\in\mathbb N} \bar a_ib_i
+\biggr|^2
+=
+\biggl(
+\sum_{i\in\mathbb N} |a_i|^2
+\biggr)
+\biggl(
+\sum_{i\in\mathbb N} |b_i|^2
+\biggr)
+<\infty.
+\end{align*}
+Damit wird der Raum der Folgen zu einem Hilbertraum.
+
 Die Folgen $e_i=(\delta_{ij})_{j\in\mathbb N}$ bilden eine Hilbertbasis
-des Hilbertraumes $l^2$.
+des Hilbertraumes $l^2$. 
+
+Nat"urlich kann man den Raum $l^2$ auch f"ur andere Indexmengen als
+$\mathbb N$ bilden, solange sie abz"ahlbar sind. Zum Beispiel kann man
+die Menge der beidseitig unendlichen, quadratisch summierbaren Folgen
+\[
+l^2(\mathbb Z)=
+\left\{
+(c_k)_{k\in\mathbb Z}\,\left|\,
+\sum_{k\in\mathbb Z}|c_k|^2<\infty
+\right.
+\right\}
+\]
+bilden, der mit
+\[
+(c,d)=\sum_{k\in\mathbb Z} \bar c_kb_k
+\]
+als Skalarprodukt.
+
+\subsection{Quadratintegrierbare Funktionen: $L^2$}
+Zu einem Interval $I=[a,b]$ k"onnen wir den Vektorraum der stetigen Funktionen
+bilden, deren Quadrat integrierbar ist:
+\[
+V=\left\{
+f:I\to\mathbb C\,\left|\,
+\text{$f$ stetig und $\displaystyle \int_a^b|f(x)|^2\,dx$ existiert}
+\right. \right\}
+\]
+Die Vektorraumoperationen sind die punktweise Addition von Funktionen
+und Multiplikation mit einer Zahl:
+\begin{align*}
+(f+g)(x)&=f(x)+g(x)\\
+(\lambda f)(x)=\lambda f(x).
+\end{align*}
+Wir k"onnen diesen Vektorraum mit einem Skalarprodukt ausstatten:
+\[
+(f,g)=\int_a^b \bar f(x)g(x)\,dx.
+\]
+Dies ist tats"achlich ein Skalarprodukt, denn
+\begin{enumerate}
+\item $(f,g)$ ist sesquilinear:
+\begin{align*}
+(f,\lambda g)&=\int_a^b\bar f(x)\lambda g(x)\,dx
+=\lambda\int_a^b\bar f(x)g(x)\,dx = \lambda(f,g)
+\\
+(\lambda f,g)&=\int_a^b\overline{(\lambda f(x))}g(x)\,dx
+=
+\bar\lambda\int_a^b\bar f(x)g(x)\,dx=\bar\lambda (f,g).
+\end{align*}
+\item $(f,g)$ ist hermitesch:
+\begin{align*}
+(f,g)&=\int_a^b\bar f(x)g(x)\,dx = \overline{
+\int_a^b f(x)\bar g(x)\,dx
+}
+=
+\overline{(g,f)}
+\end{align*}
+\item $f$ ist positiv definit, also $f\ne 0\Rightarrow (f,f) >0$:
+\begin{align*}
+(f,f)&=\int_a^b \bar f(x)f(x)\,dx=\int_a^b|f(x)|^2\,dx
+\end{align*}
+Wenn $f\ne 0$, dann ist $|f(x)|>\varepsilon$ auf einem kleinen Interval,
+also ist auch das rechte Integral positiv.
+\end{enumerate}
+Allerdings ist die Menge $V$ noch kein Hilbertraum, weil Grenzwerte von
+Folgen nicht unbedingt existieren m"ussen. Zum Beispiel kann man aus
+der logistischen Funktion
+\[
+f(x)=\frac{2e^x}{e^x+1}-1=\frac{e^x-1}{e^x+1}
+\]
+die Folge
+% XXX Bild der Funktionenfolge und Grenzfolge
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{graphics/arctan-1.pdf}
+\caption{In $L^2$ konvergente Folge von stetigen Funktionen, mit einer
+unstetigen Grenzfunktion.
+\label{logisticfunction}}
+\end{figure}
+\[
+f_n(x)=f(nx)
+\]
+von Funktionen auf dem Interval $[-1,1]$ konstruieren. Die Funktionen
+$f_n$ sind alle stetig.
+Die Grenzfunktion (siehe auch Abbildung~\ref{logisticfunction})
+\[
+\lim_{n\to \infty}f_n(x)=\begin{cases}
+1&\qquad x > 0\\
+0&\qquad x = 0\\
+-1&\qquad x < 0
+\end{cases}
+\]
+ist aber sicher nicht stetig, sie hat eine Sprungstelle bei $x=0$.
+
+F"ugt man der Menge $V$ alle Grenzfunktionen von Cauchy-Folgen hinzu,
+entsteht der Raum $L^2(I)=L^2([a,b])$ der quadratintegrierbaren Funktionen.
+Leider zeigt sich dabei, dass das Riemannsche Integral nicht leistungsf"ahig
+genug ist.
+Streng genommen muss der Integrationsbegriff daher erweitert
+werden, bevor dies mathematisch korrekt durchf"uhrbar ist.
+Wir begn"ugen uns in diesem Skript mit der Bemerkung, dass dies m"oglich ist, 
+denn auf die praktische Berechnung von quantenmechanisch interessanten
+Gr"ossen hat es keinen weiteren Einfluss.
+
+Der Raum $L^2$ ist bereits bekannt aus der Fouriertheorie.
+Quadratintegrierbare Funktionen auf dem Interval $[-\pi,\pi]$ haben
+eine Fourierreihe, also eine Entwicklung in eine Reihe von
+Exponentialfunktionen $e_k(x)=e^{ikx}$.
+Die Fourierkoeffizienten der Fourierreihe
+\[
+f(x)=\sum_{k=-\infty}^\infty c_ke^{ikx}
+\]
+k"onnen berechnet werden mit
+\[
+c_k=c_k(f)=\frac{1}{\sqrt{2\pi}}\int_{-\pi}^{\pi} e^{-ikx} \,dx=(e_k,f),
+\]
+also dem Skalarprodukt. Die Fourierkoeffizienten bilden wieder eine
+quadratintegrierbare Folge, also $(c_k)\in l^2(\mathbb Z)$. Man kann
+nachweisen, dass die Fouriertransformation eine Isometrie von $L^2([-\pi,\pi])$
+nach $l^2(\mathbb Z)$ ist.
+
+Aus der allgemeinen Theorie der Hilbertr"aume
+folgen praktisch n"utzliche, und direkt nicht ganz einfach
+nachzuweisende Eigenschaften wie die Cauchy-Scharz-Ungleichung
+\[
+|(f,g)|^2
+=
+\left|
+\int_{-\pi}^\pi \bar f(x)g(x)\,dx
+\right|^2
+\le 
+\int_{\pi}^\pi |f(x)|^2\,dx
+\int_{\pi}^\pi |g(x)|^2\,dx
+=
+(f,f)(g,g)=\|f\|^2\|g\|^2,
+\]
+oder die Parseval-Identit"at:
+\[
+(f,g)
+=
+\int_{-\pi}^{\pi}\bar f(x)g(x)\,dx
+=
+\sum_{k=-\infty}^\infty \bar c_k(f)c_k(g)
+=
+((c_k(f)),(c_k(g))).
+\]
 
 \section{Bra-Ket-Notation}
 Richard Feynman hat eine Notation eingef"uhrt, welche die vielen verschiedenen

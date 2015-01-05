@@ -3,13 +3,18 @@
 #
 # (c) 2014 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
-all:	pert analysator
+all:	pert analysator arctan
 
 pert_FILES = pert-1.pdf
 pert:	$(pert_FILES)
 
-analysator_FILES = analysator-1.pdf analysator-2.pdf
+analysator_FILES = analysator-1.pdf analysator-2.pdf analysator-3.pdf \
+	analysator-4.pdf analysator-5.pdf analysator-6.pdf analysator-7.pdf \
+	analysator-8.pdf analysator-9.pdf analysator-10.pdf analysator-11.pdf
 analysator:	$(analysator_FILES)
+
+arctan_FILES = arctan-1.pdf
+arctan:	$(arctan_FILES)
 
 $(pert_FILES):	pert.mp
 	TEX=latex mpost pert.mp
@@ -24,3 +29,11 @@ $(analysator_FILES):	analysator.mp
 	do \
 		mptopdf analysator.$${i}; \
 	done
+
+$(arctan_FILES):	arctan.mp
+	TEX=latex mpost arctan.mp
+	for i in 1; \
+	do \
+		mptopdf arctan.$${i}; \
+	done
+
