@@ -198,12 +198,14 @@ die Ungleichung (\ref{cauchy-schwarz-uncertainty}) miteinander verkn"upft.
 Wenn die Unsch"arfe verkleinert wird, mit der $A$ bekannt ist, dann 
 vergr"ossert sich die Unsch"arfe, mit der $B$ bekannt ist.
 
+%
+% Unschaerferelation
+%
 \section{Unsch"arferelation}
 Die Ungleichung (\ref{cauchy-schwarz-uncertainty}) liefert eine
 Unsch"arferelation, falls die linke Seite $>0$ ist. Es ist
 also zu untersuchen, wie gross die linke Seite von 
 (\ref{cauchy-schwarz-uncertainty}) tats"achlich ist.
-
 Setzen wir $z=\langle a|b\rangle$, dann ist $|z|^2$ die linke Seite
 von (\ref{cauchy-schwarz-uncertainty}). Den Betrag kann man mit Hilfe
 von Real- und Imagin"arteil ausrechnen:
@@ -214,19 +216,21 @@ von Real- und Imagin"arteil ausrechnen:
 =
 \biggl(\frac{z+\bar z}2\biggr)^2 + \biggl(\frac{z-\bar z}{2i}\biggr)^2
 \]
+(Vergleiche hierzu auch die Formeln (\ref{realteil-formel}) und 
+(\ref{imaginaerteil-formel})).
 Jetzt setzen wir $z=\langle a|b\rangle$ ein:
 \begin{equation}
 |\langle a|b\rangle|^2
 =
-\biggl(\frac{\langle a|b\rangle + \langle a|b\rangle}2\biggr)^2
+\biggl(\frac{\langle a|b\rangle + \langle b|a\rangle}2\biggr)^2
 +
-\biggl(\frac{\langle a|b\rangle - \langle a|b\rangle}{2i}\biggr)^2
+\biggl(\frac{\langle a|b\rangle - \langle b|a\rangle}{2i}\biggr)^2
 \label{unschaerfe2}
 \end{equation}
-Wir m"ussen also die Terme $\langle a|b\rangle + \langle a|b\rangle$
-und $\langle a|b\rangle - \langle a|b\rangle$ ausrechnen:
+Wir m"ussen also die Terme $\langle a|b\rangle + \langle b|a\rangle$
+und $\langle a|b\rangle - \langle b|a\rangle$ ausrechnen:
 \begin{align*}
-\frac{\langle a|b\rangle + \langle a|b\rangle}2
+\frac{\langle a|b\rangle + \langle b|a\rangle}2
 &=
 \frac{
 \langle\psi|AB+BA|\psi\rangle 
@@ -235,7 +239,7 @@ und $\langle a|b\rangle - \langle a|b\rangle$ ausrechnen:
 =
 \frac12 \langle\,\{A,B\}\,\rangle - \langle A\rangle\langle B\rangle,
 \\
-\frac{\langle a|b\rangle - \langle a|b\rangle}{2i}
+\frac{\langle a|b\rangle - \langle b|a\rangle}{2i}
 &=
 \frac{\langle\psi|AB-BA|\psi\rangle}{2i}
 =

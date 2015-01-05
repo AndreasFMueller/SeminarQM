@@ -87,6 +87,20 @@ Realteil und Imagin"arteil werden entlang orthogonaler Achsen abgetragen.
 Die Punkte $(x,y)$ der $x$-$y$-Ebene entsprechen also der komplexen Zahl
 $x+yi$ der komplexen Zahlenebene.
 
+Mit Hilfe der komplexen Konjugation kann man den Real- and Imagin"arteil
+einer komplexen Zahl $z=a+bi$ direkt ausdr"ucken:
+\begin{align}
+\operatorname{Re}z 
+&=
+a=\frac{(a+bi)+(a-bi)}2=\frac{z+\bar z}2
+\label{realteil-formel}
+\\
+\operatorname{Im}z
+&=
+b=\frac{(a+bi)-(a-bi)}{2i}=\frac{z-\bar z}{2i}.
+\label{imaginaerteil-formel}
+\end{align}
+
 \subsection{Polardarstellung}
 Die Darstellung der komplexen Zahlen als Punkte einer Ebene suggeriert
 auch eine alternative Schreibweise.
@@ -155,12 +169,33 @@ e^{it}=\cos t+i\sin t.
 \label{euler-formula}
 \end{align}
 \end{satz}
-Mit dieser Formel sind wir jetzt auch in der Lage, den Zusammenhang
+
+Die komplexe Konjugation kehrt das Vorzeichen des Imagin"arteils, also 
+von $\sin t$. Da $\sin t$ eine ungerade Funktion ist, ist dies gleichbedeuten
+damit, das Vorzeichen von $t$ zu kehren: $\overline{e^{it}}=e^{-it}$.
+
+Mit der Eulerschen Formel sind wir jetzt auch in der Lage, den Zusammenhang
 zwischen einer komplexen Zahl und ihrem Betrag und Argument sehr pr"agnant
 auszudr"ucken:
 \[
 z=|r|\cdot e^{i\operatorname{arg}z}.
 \]
+Die Real- und Imagin"arteile von $e^{it}$ sind $\cos t$ und $\sin t$,
+wir k"onnen Sie auch mit den Formeln (\ref{realteil-formel}) und
+(\ref{imaginaerteil-formel}) ausdr"ucken:
+\begin{align*}
+\cos t
+&=
+\operatorname{Re}e^{it}
+=
+\frac{e^{it}+\overline{e^{it}}}2
+=
+\frac{e^{it}+e^{-it}}2
+\\
+\sin t
+&=
+\operatorname{Im}e^{it}=\frac{e^{it}-e^{-it}}{2i}.
+\end{align*}
 
 \subsection{Matrixdarstellung der komplexen Zahlen}
 Die Algebra der komplexen Zahlen kann man auch als eine Algebra von Matrizen

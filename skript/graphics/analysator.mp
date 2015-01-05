@@ -235,7 +235,7 @@ draw (-100,50)--(-100,-50);
 
 pickup pencircle scaled 0.1pt;
 def verticalline(expr x) =
-	draw (x,-40)--(x,40);
+	draw (x,-50)--(x,50);
 enddef;
 def circleline(expr x, offset) =
 	draw (((x, 0) rotated -20)..(x,0)..((x,0) rotated 20))

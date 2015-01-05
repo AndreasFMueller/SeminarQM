@@ -179,7 +179,58 @@ Jetzt setzen wir $t=\frac{(v,u)}{(v,v)}$:
  &=(u,u) -\frac{|(u,v)|^2}{(v,v)}\\
 |(u,v)|^2&\le (u,u)\cdot (v,v) = \|u\|^2\cdot \|v\|^2.
 \end{align*}
+Damit ist die Cauchy-Schwarz-Ungleichung bewiesen.
 \end{proof}
+
+Mit dem Konzept der Norm k"onnen jetzt beliebige Grenzwerte 
+definiert werden.
+Eine Folge $(v_n)_{n\in\mathbb N}$ von Vektoren in $\cal H$ ist eine
+{\em Cauchy-Folge}, wenn es f"ur jedes $\varepsilon>0$ eine Zahl
+$N$ gibt, so dass
+\[
+\|v_k-v_l\| <\varepsilon\quad\forall k,l>N.
+\]
+Dies bedeutet, dass die Vektoren ``gegen Ende der Folge'' beliebig
+nahe zusammenliegen. 
+Im besten Fall gibt es dann einen Grenzwert der Folge, der bereits in
+$\cal H$ ist, also einen Vektor $v\in\cal H$ mit der Eigenschaft,
+dass f"ur jedes $\varepsilon > 0$ eine Zahl $N$ existiert, so dass
+\[
+\|v_k-v\| < \varepsilon\quad\forall k>N.
+\]
+
+\begin{definition}
+Ein Pr"ahilbertraum heisst vollst"andig, wenn jede Cauchy-Folge einen
+Grenzwert hat.
+Ein vollst"andiger Pr"ahilbertraum heisst auch ein Hilbertraum.
+\end{definition}
+
+Das folgende Beispiel zeigt, dass die Existenz der Grenzwerte von
+Cauchy-Folgen nicht garantiert ist, und wie ein Raum vervollst"andigt
+werden kann.
+
+\begin{beispiel}
+Die rationalen Zahlen $\mathbb Q$ bilden einen Pr"ahilbertraum. 
+Darin konstruieren wir die Folge der Fibonacci-Zahlen mit der 
+Rekursionsformel
+\[
+f_{n+1}=f_n+f_{n-1},\qquad f_1=1, \qquad f_0=0.
+\]
+Daraus bilden wir dann die rationalen Zahlen
+\[
+v_n=\frac{f_{n+1}}{f_n}\in\mathbb Q.
+\]
+In der Linearen Algebra wurde gezeigt, dass diese Folge gegen
+die Zahl $(\sqrt{5}+1)/2$ konvergiert, die aber selbst nicht in
+$\mathbb Q$ liegt. Indem man zur Menge $\mathbb Q$ alle Grenzwerte
+von Cauchy-Folgen hinzuf"ugt, erhalt man die Menge $\mathbb R$, in der
+alle Cauchy-Folgen auch einen Grenzwert haben.
+\end{beispiel}
+
+Wie im Beispiel der rationalen und reellen Zahlen,
+kann man auch einen Pr"ahilbertraum durch hinzuf"ugen aller Grenzwerte
+von Cauchy-Folgen zu einem Hilbertraum machen.
+
 
 \section{Hilbertbasis}
 Die endlichdimensionalen Hilbertr"aume $\mathbb C^n$ haben die
