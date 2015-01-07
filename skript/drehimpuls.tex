@@ -1,4 +1,157 @@
 \chapter{Drehimpuls\label{chapter:drehimpuls}}
 \lhead{Drehimpuls}
 \rhead{}
+Der Drehimpuls ist eine wichtige Erhaltungsgr"osse in der klassischen
+Mechanik. Wir sollten in der Lage sein, einen entsprechenden Operator
+f"ur den quantenmechanischen Drehimpuls zu konstruieren.
+
+\section{Drehimpulsoperatoren}
+In der klassischen Mechanik ist der Drehimpulsvektor definiert
+als $\vec L=\vec r\times \vec p$. Die einzelnen Komponenten k"onnen
+ausgerechnet werden:
+\begin{align*}
+L_1&=X_2P_3-X_3P_2,\\
+L_2&=X_3P_1-X_1P_3,\\
+L_3&=X_1P_2-X_2P_1.
+\end{align*}
+Auf die Reihenfolge der $x$- und $p$-Komponenten kommt es nicht an,
+weil nur Produkte von Orts- und Impuls-Operatoren f"ur verschiedene
+Richtungen verwendet werden.
+
+Ausser dem Vektor $\vec L$ ist auch seine L"ange erhalten, also
+die Gr"osse
+\[
+\vec L^2=L_1^2+L_2^2+L_3^2.
+\]
+Wir erwarten, dass auch in der Quantenmechanik der Drehimpuls
+erhalten ist, dass also sowohl die einzelnen Komponenten $L_i$ 
+als auch der Betrag $\vec L^2$ mit dem Hamilton-Operator vertauschen.
+
+Wir werden daher zun"achst die algebraischen Eigenschaften, insbesondere
+die Vertauschungsrelationen bestimmen. Damit k"onnen wir dann "ahnlich
+wie beim harmonischen Oszillator die Drehimpulszust"ande ermitteln.
+Die Drehimpulsoperatoren in Ortsdarstellung werden wir als Teile
+des Laplace-Operators wiedererkennen, den wir bei der Berechnung
+des Wasserstoffatoms bereits analysiert haben. Dies wird uns erlauben,
+die Quantenzahlen $l$ und $m$ der Wasserstoffzust"ande als
+Drehimpuls-Quantenzahlen zu verstehen.
+
+\section{Algebraische Eigenschaften}
+Zun"achst erinnern wir an die grundlegenden Vertauschungsrelationen zwischen
+Ort und Impuls:
+\[
+[P,X]=i\hbar \operatorname{id}.
+\]
+Daraus sollen jetzt schrittweise die Vertauschungsrelationen f"ur die
+Drehimpulskomponenten und f"ur $\vec L^2$ abgeleitet werden.
+
+Zun"achst berechnen wir die Vertauschungsrelationen der
+Drehimpulskomponenten mit $X$ und $P$:
+\begin{align*}
+[X_1,L_1]&=0\\
+[X_2,L_1]
+&=
+X_2X_2P_3-X_2X_3P_2-X_2P_3X_2+X_3P_2X_2
+=X_3[P_2,X_2]
+=i\hbar X_3
+\\
+[X_3,L_1]
+&=
+X_3X_2P_3-X_3X_3P_2-X_2P_3X_3+X_3P_2X_3
+%= X_3X_2P_3 - X_2P_3X_3
+=
+-X_2[P_3,X_3]
+=
+-i\hbar X_2
+\\
+[P_1,L_1]&=0\\
+[P_2,L_1]
+&=
+P_2X_2P_3 - P_2X_3P_2 - X_2P_3P_2 + X_3P_2P_2
+=
+P_3[P_2,X_2]
+=
+i\hbar P_3
+\\
+[P_3,L_1]
+&=
+P_3X_2P_3 - P_3X_3P_2 - X_2P_3P_3 + X_3P_2P_3
+=
+-P_2[P_3,X_3]=-i\hbar P_2
+\\
+[L_1,L_2]
+&=
+[X_2P_3-X_3P_2,L_2]
+=
+X_2[P_3,L_2]-P_2[X_3,L_2]
+=
+X_2i\hbar P_1-P_2i\hbar X_1
+=
+i\hbar L_3.
+\\
+\{L_1,L_2\}
+&=
+L_1L_2+L_2L_1=i\hbar L_3+2L_2L_1
+\end{align*}
+Dazu kommen weitere Relationen durch zyklische Vertauschung.
+F"ur die Vertauschungen der Komponenten des Drehimpulses mit $\vec L^2$
+finden wir:
+\begin{align*}
+[L_1^2,L_1]&=0
+\\
+[L_2^2,L_1]
+&=
+L_2L_2L_1-L_1L_2L_2
+=
+L_2(-i\hbar L_3 +L_1L_2)
+-
+(i\hbar L_3+L_1L_2)L_2
+=
+-i\hbar\{L_2,L_3\}
+\\
+[L_3^2,L_1]
+&=
+L_3L_3L_1-L_1L_3L_3
+=
+L_3(i\hbar L_2 + L_1L_3)
+-
+(-i\hbar L_2 + L_3L_1)L_3
+=
+i\hbar\{L_2,L_3\}
+\\
+[\vec L^2, L_1]
+&=
+[L_1^2,L_1]
++
+[L_2^2,L_1]
++
+[L_3^2,L_1]
+=
+0
+-i\hbar\{L_2,L_3\}
++
+i\hbar\{L_2,L_3\}
+=
+0
+\\
+[\vec L^2,L_2]&=0
+\\
+[\vec L^2,L_3]&=0
+\end{align*}
+Die Komponenten des Drehimpulses vertauschen untereinander zwar nicht,
+aber sie vertauschen mit dem Gesamtdrehimpuls. Es ist also m"oglich,
+den Gesamtdrehimpuls gleichzeitig mit einer der Komponenten zu messen,
+aber es ist nicht m"oglich, mehr als eine Komponente des Drehimpulses
+zu messen.
+
+\section{Drehimpulszust"ande}
+
+
+\section{Drehimpuls in Ortsdarstellung}
+
+
+
+
+
+
 
