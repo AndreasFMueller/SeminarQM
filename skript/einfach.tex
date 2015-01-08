@@ -23,7 +23,7 @@ an einer grossen Zahl von gleichartigen Objekten.
 Sinnvolle Vorhersagen "uber den Ausgang eines solchen Experiments
 sind allerdings nur m"oglich, wenn alle
 Teilchen in allen f"ur das Experiment wesentlichen Aspekten
-nicht unterscheidbar sind. Man kann dann sagne, dass sich die
+nicht unterscheidbar sind. Man kann dann sagen, dass sich die
 Teilchen alle im gleichen {\em Zustand} befinden, wenn sie in
 das Experiment eintreten.
 
@@ -41,7 +41,7 @@ die sich alle im Grundzustand befinden, oder alle auf die gleiche Art
 angeregt worden sind.
 
 Ein Zustand ist also festgelegt durch eine Menge von Eigenschaften,
-die sowohl stetige ode diskrete Zustandsvariablen sein k"onnen.
+die sowohl stetige oder diskrete Zustandsvariablen sein k"onnen.
 Es ist keine wesentliche Einschr"ankung anzunehmen, dass Zust"ande
 Vektoren in einem geeigneten Vektorraum sind.
 Jede mathematische Struktur kann n"amlich in einem Vektorraum eingebettet
@@ -49,7 +49,7 @@ werden. Dies ist ganz offensichtlich f"ur die Geometrie, wo die Verwendung
 eines Koordinatensystems jedes geometrische Problem in ein Problem "uber
 Vektoren in einem dreidimensionalen Vektorraum. Die Details "uber den
 Vektorraum, aus dem die Zust"ande kommen sollen, werden sp"ater festgelegt
-werden. Wir schreiben daher eine Zustand als ein Vektor
+werden. Wir schreiben daher einen Zustand als Vektor
 \[
 |\text{Beschreibung des Zustandes}\rangle
 \]
@@ -71,7 +71,7 @@ der durch die Position bestimmt ist.
 Wir k"onnten den Zustand eines Teilchens mit Position $x$ als $|x\rangle$
 schreiben.
 
-Die Quantenmechaink ist also eine Mechanik von Zust"anden: sie beschreibt,
+Die Quantenmechanik ist also eine Mechanik von Zust"anden: sie beschreibt,
 unter welchen Umst"anden ein Teilchen von einem Zustand in einen anderen
 Zustand "ubergef"uhrt werden k"onnen. 
 
@@ -145,8 +145,8 @@ k"onnen, es sollte also keinen Zustand $|\psi\rangle$ geben, so dass
 P(a_i|\psi)=0\quad\forall i.
 \]
 
-In der Quantenmechanik sind also genau jene gr"ossen messbar, f"ur die
-es einen Analysator gibt, man nennt solche Gr"ossen Observable.
+In der Quantenmechanik sind also genau jene Gr"ossen messbar, f"ur die
+es einen Analysator gibt, man nennt solche Gr"ossen {\em Observable}.
 Die Polarisierung von Photonen, die Position oder der Impuls
 eines Teilchens, das elektrische Dipolmoment eines Atoms sind alle
 Observable.
@@ -288,8 +288,9 @@ $a_i$ stellen wir durch das ``Messsymbol''
 \[
 |a_i\rangle\langle a_i|
 \]
-dar. Das Symbol ist so zu lesen: wenn der Analysator auf ein Teilchen
-im Zustand $a_i$ trifft, dann gibt er ein solches Teilchen weiter.
+dar. Das Symbol ist von rechts zu lesen: wenn ein Teilchen
+im Zustand $a_i$ auf den Analysator trifft, dann gibt er ein solches
+Teilchen weiter.
 
 Ein Analysatorkreis, der am Input nichts "andert, entspricht dem Symbol
 \[
@@ -362,7 +363,7 @@ man so interpretieren, dass $\langle B|C\rangle$ eine Zahl war
 (in den Beispielen jeweils $0$ oder $1$).
 Eine naheliegende Verallgemeinerung ist daher, immer anzunehmen,
 dass $\langle B|C\rangle$ eine Zahl ist, und dass man mit den
-Messsymbolen rechnen wie f"ur Matrizen "ublich rechnen kann.
+Messsymbolen wie f"ur Matrizen "ublich rechnen kann.
 Es kommt also auf die Reihenfolge der Faktoren an, aber skalare
 Faktoren, wie eben auch $\langle B|C\rangle$ k"onnen beliebig
 verschoben werden.
@@ -643,6 +644,9 @@ Zustand $|\psi\rangle$ ist $\langle\psi|V|\psi\rangle$ der Erwartungswert
 der Observablen $V$ im Zustand $|\psi\rangle$.
 \end{enumerate}
 
+%
+% Zeitentwicklung
+%
 \section{Zeitentwicklung}
 Die besondere Erkenntnis Newtons war, dass die Gleichung $F=ma$ eine
 Differentialgleichung ist, die zusammen mit einer Anfangsbedingung die
@@ -803,8 +807,44 @@ Insbesondere ist in diesem Spezialfall eines zeitunabh"angigen $H$-Operators
 die Zeitentwicklung vollst"andig bekannt, wenn man die Eigenwerte und
 Eigenvektoren von $H$ bestimmt hat.
 
-
-
+%
+% Zeitentwicklung von Observablen
+%
+\subsection{Zeitentwicklung von Observablen}
+Sei $|\psi(t)\rangle$ ein Zustand, der die zeitunabh"angige
+Schr"odingergleichung mit Hamilton-Operator $H$ erf"ullt. Wir m"ochten
+gerne wissen, wie sich die Observable $A$ mit der Zeit entwickelt,
+wie gross also
+\begin{equation}
+\langle A\rangle
+=
+\langle \psi(t)|A|\psi(t)\rangle
+\label{observable-zeitabhaengigkeit}
+\end{equation}
+sein wird. Dazu leiten wir (\ref{observable-zeitabhaengigkeit}) nach der
+Zeit ab und setzen die Schr"odingergleichung ein:
+\begin{align*}
+\frac{d}{dt}\langle A\rangle
+&=
+\biggl(\frac{d}{dt}\langle\psi(t)|\biggr)A|\psi(t)\rangle
++
+\langle\psi(t)|A\biggl(\frac{d}{dt}|\psi(t)\rangle\biggr)
+\\
+&=
+\biggl(\frac{1}{i\hbar}H\langle\psi(t)|\biggr)A|\psi(t)\rangle
++
+\langle\psi(t)|A\frac{1}{i\hbar}H|\psi(t)\rangle
+\\
+&=
+\frac{i}{\hbar}
+\langle\psi(t)| HA-AH |\psi(t)\rangle
+\\
+&=\langle\psi(t)| \frac{i}{\hbar}[H,A] |\psi(t)\rangle
+\end{align*}
+Die Zeitabh"angigkeit einer Observablen $A$ wird also im Wesentlichen
+durch den Kommutator $[H,A]$ der Observablen mit dem Hamiltonoperator $H$
+gegeben. Erhaltungsgr"ossen sind also solche Observable, die mit dem
+Hamiltonoperator vertauschen.
 
 
 
