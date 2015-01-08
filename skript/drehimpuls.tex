@@ -144,8 +144,93 @@ den Gesamtdrehimpuls gleichzeitig mit einer der Komponenten zu messen,
 aber es ist nicht m"oglich, mehr als eine Komponente des Drehimpulses
 zu messen.
 
-\section{Drehimpulszust"ande}
+Aus den Operatoren $L_1$ und $L_2$ k"onnen wir
+"ahnlich wie beim harmonischen Oszillator
+zwei neue Operatoren
+\begin{align*}
+L_+&=L_1+iL_2
+&
+L_-&=L_1-iL_2
+\end{align*}
+konstruieren. Diese Operatoren haben die folgenden Vertauschungsrelationen:
+\begin{align*}
+[L_\pm, L_1]
+&=
+[L_1,L_1]\pm i[L_2,L_1]
+=
+\mp i\hbar L_3
+\\
+[L_\pm, L_2]
+&=
+[L_1,L_2]\pm i[L_2,L_2]
+=
+i\hbar L_3
+\\
+[L_\pm,L_3]
+&=
+[L_1,L_3]\pm i[L_2,L_3]
+=
+-i\hbar L_2
+\mp
+\hbar L_1
+=
+\mp \hbar L_\pm
+\\
+[L_\pm,A^2]
+&=
+L_\pm AA-AAL_\pm
+=
+([L_\pm, A] +AL_\pm)A - A([A,L_\pm]+L_\pm A)
+=
+\{ [L_\pm, A], A \}
+\\
+[L_\pm,L_1^2]
+&=
+\{ [L_\pm, L_1], L_1 \}
+=
+\{ \mp i\hbar L_3, L_1 \}
+=
+\mp i\hbar \{ L_1, L_3 \}
+\\
+[L_\pm,L_2^2]
+&=
+\{ [L_\pm, L_2], L_2 \}
+=
+\{ i\hbar L_3, L_2 \}
+=
+i\hbar \{ L_2, L_3 \}
+\\
+[L_\pm,L_1^2 + L_2^2]
+&=
+\mp i\hbar \{ L_1, L_3 \}
++
+i\hbar \{ L_2, L_3 \}
+=
+\mp i\hbar \{ L_1 \pm iL_2, L_3 \}
+\\
+[L_\pm,L_3^2]
+&=
+\{ [L_\pm, L_3], L_3 \}
+=
+\mp \{ i\hbar L_\pm, L_3 \}
+=
+\mp i\hbar \{ L_\pm, L_3 \}
+\end{align*}
 
+
+\section{Drehimpulszust"ande}
+Die Operatoren $L_+$ und $L_-$ haben folgende Produkte
+\begin{align*}
+L_+L_-
+&=
+L_1^2+L_2^2 +iL_2L_1-iL_1L_2=L_1^2+L_2^2 -i[L_1,L_2]=L_1^2+L_2^2+\hbar L_3
+\\
+L_-L_+
+&=
+L_1^2  + L_2^2 +i[L_1,L_2]=L_1^2+L_2^2-\hbar L_3
+\end{align*}
+Sei jetzt $|l,m\rangle$ ein Zustand, in dem sowohl $L_3$ und $\vec L^2$
+genau bekannt sind.
 
 \section{Drehimpuls in Ortsdarstellung}
 
