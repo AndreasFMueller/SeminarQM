@@ -3,7 +3,7 @@
 #
 # (c) 2014 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
-all:	pert analysator arctan
+all:	pert analysator arctan drehimpuls
 
 pert_FILES = pert-1.pdf
 pert:	$(pert_FILES)
@@ -15,6 +15,9 @@ analysator:	$(analysator_FILES)
 
 arctan_FILES = arctan-1.pdf
 arctan:	$(arctan_FILES)
+
+drehimpuls_FILES = drehimpuls-1.pdf drehimpuls-2.pdf
+drehimpuls: $(drehimpuls_FILES)
 
 $(pert_FILES):	pert.mp
 	TEX=latex mpost pert.mp
@@ -37,3 +40,10 @@ $(arctan_FILES):	arctan.mp
 		mptopdf arctan.$${i}; \
 	done
 
+$(drehimpuls_FILES):	drehimpuls.mp
+	TEX=latex mpost drehimpuls.mp
+	for i in 1 2; \
+	do \
+		mptopdf drehimpuls.$${i}; \
+	done
+	

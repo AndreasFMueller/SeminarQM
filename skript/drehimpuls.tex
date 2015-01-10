@@ -44,7 +44,7 @@ Ort und Impuls:
 \]
 oder die "aquivalente Formulierung
 \[
-PX=XP+i\hbar \operatorname{id}
+PX=XP+i\hbar \operatorname{id}.
 \]
 Daraus sollen jetzt schrittweise die Vertauschungsrelationen f"ur die
 Drehimpulskomponenten und f"ur $\vec L^2$ abgeleitet werden.
@@ -139,7 +139,7 @@ gleichzeitig exakt zu wissen.
 Es gibt keine Zust"ande, die Eigenzust"ande f"ur mehr als einen
 der Operatoren f"ur die Drehimpulskomponenten ist.
 
-Die Gleiche Frage k"onnen wir auch stellen f"ur den Gesamtdrehimpuls
+Die gleiche Frage k"onnen wir auch stellen f"ur den Gesamtdrehimpuls
 $\vec L^2=L_1^2+L_2^2+L_3^2$. Dazu m"ussen wir Vertauschungsrelationen
 verschiedener Operatoren mit den einzelnen Summanden in $\vec L^2$, also
 mit $L_i^2$ berechnen.
@@ -252,6 +252,7 @@ Impulskomponenten oder den Ortskomponenten bestimmt werden.
 =
 \{L_3, i\hbar X_2\}
 \\
+\Rightarrow\qquad
 [\vec L^2,X_1]
 &=
 i\hbar(-L_2X_3-X_3L_2+L_3X_2+X_2L_3)
@@ -281,6 +282,12 @@ i\hbar(-L_2X_3-L_2X_3+i\hbar X_1 +L_3X_2+L_3X_2-i\hbar X_1)
 Eine "ahnliche Rechnung f"ur die Impulskomponenten zeigt, dass der
 Drehimpulsbetrag nicht gleichzeitig mit Ort- oder Impulszustand
 gemessen werden kann.
+Dies ist auch physikalisch einleuchtend.
+Kennt man den Ort und den Drehimpuls exakt, erh"alt man auch exakte
+Information "uber den Impuls.
+Da man aber Ort und Impuls nicht gleichzeitig wissen kann, muss es auch
+eine Vertauschungsrelation geben, die verhindert, dass wir zu viel
+gleichzeitiges Wissen "uber Ort und Drehimpuls erhalten k"onnen.
 
 \section{Drehimpulszust"ande}
 Beim harmonischen Oszillator haben wir eine Technik kennengelernt, nicht
@@ -310,6 +317,7 @@ konstruieren.
 Auch hier gilt die Einschr"ankung, dass dies keine selbstadjungierten
 Operatoren sind, $L_\pm$ entspricht also nicht einer beobachtbaren
 physikalischen Gr"osse. 
+Immerhin ist $L_+^*=L_-$.
 Diese Operatoren haben die folgenden Vertauschungsrelationen mit
 den Drehimpulskomponenten:
 \begin{equation}
@@ -344,25 +352,25 @@ i\hbar L_3
 Nehmen wir jetzt an, dass $|\psi\rangle$ ein Eigenzustand von $L_3$ mit
 Eigenwert $l_3$ ist, dann gilt
 \[
-L_3L_+|\psi\rangle
+L_3L_+\,|\psi\rangle
 =
-L_+L_3|\psi\rangle+\hbar L_+|\psi\rangle
+L_+L_3\,|\psi\rangle+\hbar L_+|\psi\rangle
 =
-l_3L_+|\psi\rangle+\hbar L_+|\psi\rangle
+l_3L_+\,|\psi\rangle+\hbar L_+|\psi\rangle
 =
-(l_3+\hbar)L_+|\psi\rangle,
+(l_3+\hbar)L_+\,|\psi\rangle,
 \]
-der Zustand $L_+|\rangle$ ist also wieder ein Eigenzustand von $L_3$,
+der Zustand $L_+\,|\rangle$ ist also wieder ein Eigenzustand von $L_3$,
 allerdings ist der Eigenwert um $\hbar$ erh"oht worden.
 Analog kann man aus
 \[
-L_3L_-|\psi\rangle
+L_3L_-\,|\psi\rangle
 =
-L_-L_3|\psi\rangle-\hbar L_-|\psi\rangle
+L_-L_3\,|\psi\rangle-\hbar L_-\,|\psi\rangle
 =
-(l_3-\hbar)L_-|\psi\rangle
+(l_3-\hbar)L_-\,|\psi\rangle
 \]
-ablesen,  dass $L_-|\psi\rangle$ ein Eigenzustand von $L_3$ ist, dessen
+ablesen,  dass $L_-\,|\psi\rangle$ ein Eigenzustand von $L_3$ ist, dessen
 Eigenwert gegen"uber dem von $|\psi\rangle$ um $\hbar$ verringert
 worden ist.
 Die Operatoren $L_+$ und $L_-$ haben also genau die Eigenschaften,
@@ -416,13 +424,13 @@ Die Operatoren $L_\pm$ vertauschen also mit $\vec L^2$.
 Ist $|\psi\rangle$ ein Eigenzustand von $\vec L^2$ mit Eigenwert $\lambda$,
 dann gilt auch 
 \begin{align*}
-\vec L^2|\psi\rangle&=\lambda|\psi\rangle
+\vec L^2\,|\psi\rangle&=\lambda\,|\psi\rangle
 \\
-L_\pm\vec L^2|\psi\rangle&=
-\vec L^2L_\pm|\psi\rangle=
-\lambda L_\pm|\psi\rangle
+L_\pm\vec L^2\,|\psi\rangle&=
+\vec L^2L_\pm\,|\psi\rangle=
+\lambda L_\pm\,|\psi\rangle
 \end{align*}
-also ist  auch $L_\pm|\psi\rangle$ ein Eigenzustand von $\vec L^2$ mit
+also ist  auch $L_\pm\,|\psi\rangle$ ein Eigenzustand von $\vec L^2$ mit
 dem gleichen Eigenwert.
 
 %Gemeinsame Eigenzust"ande $|\lambda,m\rangle$ von $\vec L^2$ und $L_3$
@@ -434,48 +442,699 @@ dem gleichen Eigenwert.
 %L_-|\lambda,m\rangle&=|\lambda,m-1\rangle
 %\end{align*}
 %
-\subsection{Der $N$-Operator}
+\subsection{Beziehungen zwischen den Eigenwerten}
+Die Drehimpulskomponenten $L_3$ ist in der klassischen Mechanik kleiner
+als der Drehimpulsbetrag, und wir m"ochten nachpr"ufen, dass dies auch
+in der Quantenmechanik gilt.
+Dazu berechnen wir zun"achst das Produkt der Operatoren $L_+$ und $L_-$
+\begin{align*}
+L_+L_-
+&=
+L_1^2+L_2^2 +iL_2L_1-iL_1L_2=L_1^2+L_2^2 -i[L_1,L_2]=L_1^2+L_2^2+\hbar L_3
+\\
+L_-L_+
+&=
+L_1^2  + L_2^2 +i[L_1,L_2]=L_1^2+L_2^2-\hbar L_3
+\\
+[L_+,L_-]
+&=
+2\hbar L_3
+\\
+{\textstyle \frac12}(L_+L_-+L_-L_+)&=L_1^2+L_2^2,
+\\
+\vec L^2
+&=
+{\textstyle\frac12}(L_+L_-+L_-L_+)+L_3^2.
+\end{align*}
+Sei $|\lambda,l_3\rangle$ ein gemeinsamer Eigenzustand von $\vec L^2$
+und $L_3$, dann muss gelten
+\begin{align*}
+\langle \lambda,l_3|\,\vec L^2\,|\langle, l_3\rangle
+&=
+\langle \lambda,l_3|
+\,
+{\textstyle\frac12}(L_+L_-+L_-L_+)
+\,
+|\lambda,l_3\rangle
++
+\langle \lambda,l_3|
+\,
+L_3^2
+\,
+|\lambda,l_3\rangle
+\\
+\lambda
+&=
+\langle \lambda,l_3|
+\,
+{\textstyle\frac12}(L_+L_-+L_-L_+)
+\,
+|\lambda,l_3\rangle
++
+l_3^2
+\end{align*}
+Der erste Term auf der rechten Seite ist aber auf jeden Fall positiv,
+wie man sich durch folgende Rechnung "uberzeugen kann:
+\[
+\langle \lambda,l_3|
+\,
+{\textstyle\frac12}(L_+L_-+L_-L_+)
+\,
+|\lambda,l_3\rangle
+=
+\langle \lambda,l_3|
+\,
+{\textstyle\frac12}(L_-^*L_-+L_+^*L_+)
+\,
+|\lambda,l_3\rangle
+=
+\frac12\|\,L_-\,|\lambda,l_3\rangle\|^2
++
+\frac12\|\,L_+\,|\lambda,l_3\rangle\|^2
+\le 1.
+\]
+Die Normquadrate auf der rechten Seite sind entweder $1$,
+wenn $L_\pm\,|\lambda,l_3\rangle$, oder 0, wenn $L_\pm\,|\lambda,l_3\rangle$
+der Nullvektor ist.
+\begin{figure}
+\centering
+\includegraphics{graphics/drehimpuls-1.pdf}
+\caption{M"ogliche Kombinationen von $\lambda$ und $l_3$. Rot eingezeichnet
+die Wirkung der Auf- und Absteigeoperatoren $L_\pm$ f"ur die Komponente $L_3$.
+\label{drehimpulsspektrum}}
+\end{figure}
+Weiter k"onnen wir daraus ableiten, dass 
+\[
+\lambda\ge l_3^2\ge 0,
+\]
+der Eigenwert $l_3$ kann also nicht beliebig gross werden, es muss immer
+gelten
+\[
+-\sqrt{\lambda}\le l_3\le \sqrt{\lambda}.
+\]
+Je gr"osser $\lambda$ ist, desto mehr m"ogliche Eigenzust"ande von $L_3$
+gibt es.
+Dies wird auch die Abbildung~\ref{drehimpulsspektrum} veranschaulicht,
+Punkte entsprechen zul"assigen Kombinationen von $\lambda$ und $l_3$.
+F"ur $\lambda=0$ kann es nur einen einzigen Eigenzustand von $L_3$ geben
+mit Eigenwert $0$.
+
+\subsection{Eigenzust"ande von $\vec L^2$}
+Der Drehimpulsbetrag $\vec L^2$ und die Drehimpulskomponenten $L_3$ 
+k"onnen also gleichzeitig bekannt sein, es gibt gemeinsame Eigenzust"ande,
+und wir sind bereits in der Lage, innerhalb der Eigenzust"ande mit einem
+bestimmten Wert f"ur $\vec L^2$ k"onnen wir zwischen verschiedene
+Eigenwerten von $L_3$ hin- und hernavigieren.
+
+\begin{figure}
+\centering
+\includegraphics{graphics/drehimpuls-2.pdf}
+\caption{M"ogliche Drehimpulswerte in $a_1$ und $a_2$ Koordinaten.
+\label{drehimpulsspektruma}}
+\end{figure}
 Beim harmonischen Oszillator konnten wir aus dem Produkt $a^+a$
 den Hamilton-Operator rekonstruieren und daraus ableiten, dass es einen
 Zustand minimaler Energie gibt.
 Wir versuchen dasselbe f"ur den Drehimpulsoperator.
+Das Bild~\ref{drehimpulsspektrum} suggeriert aber, dass es nicht
+unbedingt einen zweiten Operator geben kann, der die
+Auf- und Absteigeschritte in $\lambda$-Richtung implementiert.
+Es scheint eher, dass wir das falsche Koordinatensystem gew"ahlt
+haben, in Abbildung~\ref{drehimpulsspektruma}
 
-Dazu berechnen wir zun"achst die Produkte der Operatoren
-$L_+$ und $L_-$
+\subsubsection{Auf- und Absteigeoperatoren}
+So etwas kann nat"urlich nur funktionieren, wenn das Spektrum der
+m"oglichen Eigenzust"ande tats"achlich ungef"ahr so aussieht wie in
+Abbildung~\ref{drehimpulsspektrum}, wir haben da einige Erkenntniss
+vorweggenommen.
+Wir nehmen also an, dass es zwei Paare von Auf- und Absteigeoperatoren
+$a_1^+$ und $a_1$ und $a_2^+$ und $a_2$ gibt, die den Vertauschungsrelationen
 \begin{align*}
-L_+L_-
+[a_1,a_1^+]&=1&[a_1,a_2^+]&=0&[a_1,a_2]&=0\\
+[a_2,a_2^+]&=1&[a_2,a_1^+]&=0&[a_1^+,a_2^+]&=0
+\end{align*}
+gen"ugen.
+Die beiden S"atze von Operatoren vertauschen also untereinander
+vollst"andig, nur die Operatorn $a_i$ und $a_i^+$ vertauschen nicht.
+Wie beim harmonischen Oszillator bilden wir die Operatoren
+\[
+N_i=a_i^+a_i
+\]
+mit den Vertauschungsrelationen
+\begin{align*}
+[N_i,a_i^+]
 &=
-L_1^2+L_2^2 +iL_2L_1-iL_1L_2=L_1^2+L_2^2 -i[L_1,L_2]=L_1^2+L_2^2+\hbar L_3
+a_i^+a_ia_i^+-a_i^+a_i^+a_i
+=
+a_i^+[a_i,a_i^+]
+=
+a_i^+,
 \\
-L_-L_+
+[N_i,a_i]
 &=
-L_1^2  + L_2^2 +i[L_1,L_2]=L_1^2+L_2^2-\hbar L_3
+a_i^+a_ia_i- a_ia_i^+a_i
+=
+[a_i^+,a_i]a_i
+=
+-a_i.
+\end{align*}
+Da auch die Operatoren $N_i$ vertauschen, gibt es eine gemeinsame
+Eigenvektorbasis. Ist $|n_1,n_2\rangle$ so ein Eigenvektor, dann muss
+gelten
+\begin{align*}
+N_i\,|n_1,n_2\rangle
+&=
+n_i\,|n_1,n_2\rangle.
 \\
-{\textstyle \frac12}(L_+L_-+L_-L_+)&=L_1^2+L_2^2.
+N_ia_i^+\,|n_1,n_2\rangle
+&=
+a_i^+N_i\,|n_1,n_2\rangle+a_i^+|n_1,n_2\rangle
+=
+(n_i+1)a_i^+\,|n_1,n_2\rangle
+\\
+N_ia_i\,|n_1,n_2\rangle
+&=
+a_iN_i\,|n_1,n_2\rangle-a_i\,|n_1,n_2\rangle
+=
+(n_i-1)a_i\,|n_1,n_2\rangle
+\end{align*}
+Insbesondere sind $a_i^+\,|n_1,n_2\rangle$ und $a_i\,|n_1,n_2\rangle$
+wieder Eigenvektoren von $N_i$, allerdings mit Eigenwert $n_i+1$.
+
+\subsubsection{Eigenzust"ande}
+Da die Operatoren $N_i$ positiv sind, kann man mit dem Absteigeoperator
+nicht beliebig weit hinunter absteigen, irgendwann muss der Nullvektor
+entstehen.
+Das heisst aber auch, dass $0$ ein Eigenwert sein muss, und dass alle
+Eigenwerte ganzzahlig sind.
+Der Zustand minimalen Eigenwertes hat als $n_1=n_2=0$, wir bezeichnen
+ihn als $|0,0\rangle$.
+Aus diesem Zustand k"onnen wir die "ubrigen Eigenzust"ande durch anwenden
+der Aufsteigeoperatoren konstruieren:
+\[
+(a_1^+)^{n_1} (a_2^+)^{n_2} \,|0,0\rangle
+\]
+Es ist allerdings nicht klar, dass diese Zustandsvektoren normiert sind.
+Dazu rechnen wir die Norm nach:
+\begin{align*}
+\|
+a_i^+\,|n_1,n_2\rangle
+\|^2
+=
+\langle n_1,n_2|\,a_i a_i^+\,|n_1,n_2\rangle
+&=
+\langle n_1,n_2|\,a_i^+a_i\,|n_1,n_2\rangle
++
+\langle n_1,n_2|\,[a_i,a_i^+]\,|n_1,n_2\rangle
+\\
+&=
+\langle n_1,n_2|\,N_i\,|n_1,n_2\rangle
++
+\langle n_1,n_2|n_1,n_2\rangle
+=(n_i+1)
+\end{align*}
+Damit 
+$(a_1^+)^{n_1} (a_2^+)^{n_2}\, |0,0\rangle$
+normiert ist, dann muss der Faktor $n_i+1$ komponsiert werden,
+der bei jeder Anwendung von $a_i^+$ hinzukommt.
+Der normierte Zustandsvektor ist dann
+\[
+|n_1,n_2\rangle
+=
+\frac1{\sqrt{n_1!n_2!}} (a_1^+) (a_2^+)  \, |0,0\rangle.
+\]
+
+\subsubsection{Rekonstruktion der Drehimpulsoperatoren}
+Wir m"ussen jetzt die Drehimpulsoperatoren aus den $a_i$ und $a_i^+$
+rekonstruieren.
+Dazu k"onnen wir die Abbildung~\ref{drehimpulsspektruma} heranziehen.
+Der Operator $L_+$ f"ugt eine Einheit in $a_1$-Richtung hinzu und
+entfernt eine in Richtung $a_2$, also muss er proportional zu
+$a_1^+a_2$ sein.
+Analog muss $L_-$ proportional zu $a_1a_2^+$ sein. Wir setzen also:
+\begin{align*}
+L_+
+&=
+\hbar a_1^+a_2
+&
+L_1
+&=
+\frac12(L_++L_-)
+=
+\frac{\hbar}2(a_1^+a_2+a_1a_2^+)
+\\
+L_-
+&=
+\hbar a_2^+a_1
+&
+L_2
+&=
+\frac1{2i}(L_+-L_-)
+=
+\frac{\hbar}{2i}(a_1^+a_2-a_1a_2^+)
+\\
+&&
+L_3
+&=
+\frac{\hbar}2(a_1^+a_1+a_2^+a_2)
+=
+\frac{\hbar}2(N_1-N_2)
+\end{align*}
+Wir wissen bereits, wie der Drehimpulsbetrag in den Operatoren 
+$L_\pm$ und $L_3$ ausgedr"uckt werden kann:
+\begin{align*}
+\vec L^2
+&=
+\frac12(L_+L_-+L_-L_+)+L_3^2
+=
+\frac{\hbar^2}2(a_1^+a_2a_2^+a_1+a_2^+a_1a_1^+a_2)+\frac{\hbar^2}{4}(N_1-N_2)^2
+\\
+&=
+\frac{\hbar^2}4(
+2N_1(N_2+1)+2(N_1+1)N_2
++N_1^2-2N_1N_2+N_2^2
+)
+\\
+&=
+\frac{\hbar^2}{4}(
+2N_1+2N_2
++
+N_1^2+N_2^2
++2N_1N_2
++
+)
+\\
+&=
+\hbar^2\frac{N_1+N_2}2\biggl(\frac{N_1+N_2}2+1\biggr)
+=
+\hbar^2\frac{N}2\biggl(\frac{N}2+1\biggr).
+\end{align*}
+Darin setzen wir $N=N_1+N_2$. Da die Eigenwerte der Operatoren $N_i$
+nur nat"urliche Zahlen als Eigenwerte haben, k"onnen wir jetzt schliessen,
+dass die Eigenwerte von $\vec L^2$ von der Form $\hbar j(j+1)$ sind,
+wobei $j$ halbzahlige Werte annehmen muss.
+Und die Eigenwerte von $L_3$ sind von der Form $\hbar m$, wobei auch
+$m$ halbzahlig ist.
+Mit den Eigenwerten $n_i$ der Operatoren $N_i$ kann man die sogenannten
+Quantenzahlen $j$ und $m$ ausdr"ucken als
+\begin{align*}
+j
+&=
+\frac12(n_1+n_2)
+&
+m
+&=
+\frac12(n_1-n_2).
+\end{align*}
+Umgekehrt kann man die Eigenzust"ande jetzt mit den Quantenzahlen $j$ und $m$
+schreiben als
+\begin{align*}
+|j,m\rangle
+=
+\frac1{\sqrt{(j+m)!(j-m)!}}
+(a_1^+)^{\frac12(n_1+n_2)}
+(a_2^+)^{\frac12(n_1-n_2)}
+\,|0,0\rangle
+\end{align*}
+mit den Eigenwertgleichungen
+\begin{align*}
+\vec L^2\,|j,m\rangle&=\hbar j(j+1)\,|j,m\rangle,
+&
+\vec L_3\,|j,m\rangle&=\hbar m\,|j,m\rangle.
 \end{align*}
 
-\subsection{Eigenzust"ande von $\vec L^2$}
-Wir fragen uns, ob es solche Auf- und Absteigeoperatoren auch
-f"ur den Operator $\vec L^2$ gibt, oder wenigstens einen Operator
-wie $N$ .
-
-
-Die Operatoren $L_+$ und $L_-$ haben folgende Produkte
+\subsubsection{Rechnungen}
+Bis jetzt ist das einfach nur ein algebraischer Versuch, die
+Drehimpulsoperatoren in den Griff zu bekommen und insbesondere
+das Bild~\ref{drehimpulsspektrum} zu rekonstruieren.
+Erfolgreich sind wir erst, wenn diese neuen Operatoren die gleichen
+Vertauschungsrelationen der Drehimpulsoperatoren haben.
+Wir berechnen also die Vertauschungsrelationen, und beginnen dazu mit
+den Vertauschungsrelationen zwischen $L_\pm$ und $N_i$.
 \begin{align*}
-L_+L_-
+[L_+,N_1]
 &=
-L_1^2+L_2^2 +iL_2L_1-iL_1L_2=L_1^2+L_2^2 -i[L_1,L_2]=L_1^2+L_2^2+\hbar L_3
+\hbar[a_1^+a_2,a_1^+a_1]
+=
+\hbar( a_1^+a_2 a_1^+a_1 - a_1^+a_1 a_1^+a_2)
 \\
-L_-L_+
 &=
-L_1^2  + L_2^2 +i[L_1,L_2]=L_1^2+L_2^2-\hbar L_3
+\hbar a_1^+( a_1^+a_1 - a_1 a_1^+)a_2
+=
+\hbar a_1^+[ a_1^+,a_1]a_2
+=
+\hbar a_1^+a_2
+=L_+
+\\
+[L_+,N_2]
+&=
+\hbar[a_1^+a_2,a_2^+a_2]
+=
+\hbar( a_1^+a_2 a_2^+a_2 - a_2^+a_2 a_1^+a_2)
+\\
+&=
+\hbar a_1^+( a_2 a_2^+ - a_2^+a_2)a_2
+=
+\hbar a_1^+[a_2,a_2^+]a_2
+=
+-\hbar a_1^+a_2
+=
+-L_+
+\\
+[L_-,N_1]
+&=
+\hbar[a_2^+a_1,a_1^+a_1]
+=
+\hbar( a_2^+a_1 a_1^+a_1 - a_1^+a_1 a_2^+a_1)
+\\
+&=
+\hbar a_2^+(a_1 a_1^+ - a_1^+a_1)a_1
+=
+\hbar a_2^+[a_1,a_1^+]a_1
+=
+-\hbar a_2^+a_1
+=
+-L_-
+\\
+[L_-,N_2]
+&=
+\hbar[a_2^+a_1,a_2^+a_2]
+=
+\hbar( a_2^+a_1 a_2^+a_2 - a_2^+a_2 a_2^+a_1)
+\\
+&=
+\hbar a_2^+(a_2^+a_2 - a_2 a_2^+) a_1
+=
+\hbar a_2^+[a_2^+,a_2] a_1
+=
+\hbar a_2^+a_1
+=L_-
 \end{align*}
-Sei jetzt $|l,m\rangle$ ein Zustand, in dem sowohl $L_3$ und $\vec L^2$
-genau bekannt sind.
+Jetzt k"onnen wir bereits den Kommutator von $L_\pm$ mit $L_3$
+berechnen:
+\begin{align*}
+[L_+,L_3]
+&=
+\frac{\hbar}2[L_+,N_1]
+-
+\frac{\hbar}2[L_+,N_2]
+=
+\frac{\hbar}2(L_+-(-L_+))=\hbar L_+
+\\
+[L_-,L_3]
+&=
+\frac{\hbar}2[L_-,N_1]
+-
+\frac{\hbar}2[L_-,N_2]
+=
+\frac{\hbar}2((-L_-)-L_-)
+=-\hbar L_-
+\end{align*}
+Daraus ergibt sich auch der Kommutator von $L_1$ und $L_2$ mit $L_3$:
+\begin{align*}
+[L_1,L_3]
+&=
+\frac12[L_++L_-,L_3]
+=
+\frac{\hbar}2(L_+-L_-)
+=
+\hbar L_2
+\\
+[L_2,L_3]
+&=
+\frac1{2i}[L_+-L_-,L_3]
+=
+\frac{\hbar}{2i}(L_++L_-)
+=-i\hbar L_1
+\end{align*}
+Der Kommutator der Operatoren $L_\pm$ ist
+\begin{align*}
+[L_+,L_-]
+&=
+\hbar^2(a_1^+a_2a_2^+a_1-a_2^+a_1a_1^+a_2)
+=
+\hbar^2(
+a_1^+
+a_1
+a_2
+a_2^+
+-
+a_1
+a_1^+
+a_2^+
+a_2
+)
+\\
+&=
+\hbar^2
+(
+(N_1+1)N_2
+-
+N_1(N_2+1)
+)
+\\
+&=
+\hbar^2
+(
+N_2
+-
+N_1
+)
+=2\hbar L_3
+\end{align*}
+Jetzt k"onnen wir den Kommentator von $L_\pm$ mit den
+Drehimpulskomponenten berechnen:
+\begin{align*}
+% [L_+,L_1]
+[L_+,L_1]
+&=
+\frac12[L_+,L_++L_-]
+=
+\frac12[L_+,L_-]
+=
+\hbar L_3
+\\
+% [L_-,L_2]
+[L_-,L_2]
+&=
+\frac1{2i}[L_-,L_+-L_-]
+=
+-\frac1{2i}[L_+,L_-]
+=
+i\hbar L_3
+\\
+% [L_-,L_1]
+[L_-,L_1]
+&=
+\frac1{2}
+[L_-,L_++L_-]
+=
+\frac12[L_-,L_+]
+=
+-\hbar L_3
+\\
+% [L_-,L_2]
+[L_-,L_2]
+&=
+\frac1{2i}[L_+,L_+-L_-]
+=
+\frac1{2i}[L_+,L_-]
+=
+-i\hbar L_3
+\end{align*}
+Die Kommutatoren der Drehimpulskomponenten untereinander sind damit
+\begin{align*}
+[L_1,L_2]
+&=
+\left[
+\frac{\hbar}2(a_1^+a_2+a_1a_2^+),
+\frac{\hbar}{2i}(a_1^+a_2-a_1a_2^+)
+\right]
+\\
+&=
+\frac{\hbar^2}{4i}
+\bigl(
+(a_1^+a_2+a_1a_2^+)
+(a_1^+a_2-a_1a_2^+)
+-
+(a_1^+a_2-a_1a_2^+)
+(a_1^+a_2+a_1a_2^+)
+\bigr)
+\\
+&=
+\frac{\hbar^2}{4i}
+\bigl(
+(
+a_1^+a_2
+a_1^+a_2
+-
+a_1^+a_2
+a_1a_2^+
++
+a_1a_2^+
+a_1^+a_2
+-
+a_1a_2^+
+a_1a_2^+
+)
+\\
+&\qquad
+-
+(
+a_1^+a_2
+a_1^+a_2
++
+a_1^+a_2
+a_1a_2^+
+-
+a_1a_2^+
+a_1^+a_2
+-
+a_1a_2^+
+a_1a_2^+
+)
+\bigr)
+\\
+&=
+\frac{\hbar^2}{4i}
+\bigl(
+(
+-
+a_1^+a_2
+a_1a_2^+
++
+a_1a_2^+
+a_1^+a_2
+)
+-
+(
+a_1^+a_2
+a_1a_2^+
+-
+a_1a_2^+
+a_1^+a_2
+)
+\bigr)
+\\
+&=
+\frac{\hbar^2}{2i}
+\bigl(
+a_1
+a_1^+
+a_2^+
+a_2
+-
+a_1^+
+a_1
+a_2
+a_2^+
+\bigr)
+\\
+[L_2,L_3]
+&=
+\\
+[L_3,L_1]
+&=
+\end{align*}
 
 \section{Drehimpuls in Ortsdarstellung}
+Bisher haben wir in diesem Kapitel die Drehimpulsoperatoren ganz abstrakt
+gerechnet. 
+Das Wasserstoffatom haben wir allerdings in der Ortsdarstellung 
+gel"ost, und dort ebenfalls Quantenzahlen $j$ und $m$ gefunden.
+Erst wenn wir die Drehimpulsoperatoren ebenfalls in die Ortsdarstellung
+umrechnen, k"onnen wir sie als Teile des Hamilton-Operators des
+Wasserstoffatoms identifizieren.
+Das wird uns auch erlauben nachzurechnen, dass der Drehimpuls eine
+Erhaltungsgr"osse ist.
 
+\subsection{Drehimpulsoperatoren in kartesischen Koordinaten}
+In der Ortsdarstellung m"ussen wir die Impulsoperatoren durch
+Ableitungsoperatoren ersetzen:
+\begin{align*}
+L_1
+&=
+\frac{\hbar}{i}\biggl(
+x_2\frac{\partial}{\partial x_3}
+-
+x_3\frac{\partial}{\partial x_2}
+\biggr)
+&
+L_+
+&=
+\hbar
+\biggl(
+-
+ix_2\frac{\partial}{\partial x_3}
++
+ix_3\frac{\partial}{\partial x_2}
++
+x_3\frac{\partial}{\partial x_1}
+-
+x_1\frac{\partial}{\partial x_3}
+\biggr)
+\\
+L_2
+&=
+\frac{\hbar}{i}
+\biggl(
+x_3\frac{\partial}{\partial x_1}
+-
+x_1\frac{\partial}{\partial x_3}
+\biggr)
+&
+L_-
+&=
+\hbar
+\biggl(
+-ix_2\frac{\partial}{\partial x_3}
++
+ix_3\frac{\partial}{\partial x_2}
+-
+x_3\frac{\partial}{\partial x_1}
++
+x_1\frac{\partial}{\partial x_3}
+\biggr)
+\\
+L_3
+&=
+\frac{\hbar}{i}
+\biggl(
+x_1\frac{\partial}{\partial x_2}
+-
+x_2\frac{\partial}{\partial x_1}
+\biggr).
+\end{align*}
+Der Drehimpulsbetrag setzt sich einerseits aus $L_+L_-+L_-L_+$ und
+andererseits aus $L_3^2$ zusammen. Wir berechnen den ersten Teil:
+\begin{align*}
+L_+L_-+L_-L_+
+&=
+\hbar^2
+\biggl(
+x_3\frac{\partial}{\partial x_1}
++
+ix_3\frac{\partial}{\partial x_2}
+-
+(x_1+ix_2)\frac{\partial}{\partial x_3}
+\biggr)
+\biggl(
+-
+x_3\frac{\partial}{\partial x_1}
++
+ix_3\frac{\partial}{\partial x_2}
++
+(x_1-ix_2)\frac{\partial}{\partial x_3}
+\biggr)
+\\
+&=
+-\hbar^2x_3^2\frac{\partial^2}{\partial x_1^2}
+-\hbar^2x_3^2\frac{\partial^2}{\partial x_2^2}
+-\hbar^2(x_1^2+x_2^2)\frac{\partial^2}{\partial x_3^3}
++\dots
+\end{align*}
 
+\subsection{Kugelkoordinaten}
 
 
 
