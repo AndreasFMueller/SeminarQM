@@ -1,0 +1,939 @@
+\chapter{Anhang: Kugelkoordinaten}
+\lhead{Kugelkoordinaten}
+\rhead{}
+In den Quantisierungsregeln wird festgelegt, wie Impulskomponenten
+in kartesischen Koordinaten durch Differentialgoperatoren zu
+ersetzen seien.
+Allerdings tr"agt diese Wahl des Koordinatensystems der Kugelsymmetrie
+des Problems nicht Rechnung. 
+Wenn man aber die angemessenen Kugelkoordinaten verwenden will,
+dann muss man in der Lage sein, jeden beliebigen Differentialoperator
+durch Ableitungen nach Kugelkoordinaten auszudr"ucken.
+
+\section{Differentialoperatoren in Kugelkoordinaten}
+Wir erinnern an die Formeln f"ur Kugelkoordinaten:
+\begin{align*}
+x&=
+r\sin\vartheta\cos\varphi
+\\
+y&=
+r\sin\vartheta\sin\varphi
+\\
+z&=
+r\cos\vartheta
+\end{align*}
+Ein Differentialoperator ist eine Linearkombination der Operatoren
+\[
+\frac{\partial}{\partial x},
+\quad
+\frac{\partial}{\partial y},
+\quad\text{und}\quad
+\frac{\partial}{\partial z},
+\]
+oder auch h"oherer Ableitungen.  Unser Ziel ist, einen solchen Operator
+durch die Ableitungen nach den Kugelkoordinaten auszudr"ucken, also
+als Linearkombination von
+\[
+\frac{\partial}{\partial r},
+\quad
+\frac{\partial}{\partial \vartheta},
+\quad\text{und}\quad
+\frac{\partial}{\partial \varphi}.
+\]
+Offenbar reicht es dazu, jeden einzelnen Ableitungsoperator nach kartesischen
+Koordiaten in den Ableitungsoperatoren nach Kugelkoordinaten auszudr"ucken.
+Denn es gilt
+\begin{align*}
+\frac{\partial}{\partial x}
+&=
+\frac{\partial r}{\partial x} \frac{\partial}{\partial r}
++
+\frac{\partial \vartheta}{\partial x} \frac{\partial}{\partial \vartheta}
++
+\frac{\partial \varphi}{\partial x} \frac{\partial}{\partial \varphi}
+\\
+\frac{\partial}{\partial y}
+&=
+\frac{\partial r}{\partial y} \frac{\partial}{\partial r}
++
+\frac{\partial \vartheta}{\partial y} \frac{\partial}{\partial \vartheta}
++
+\frac{\partial \varphi}{\partial y} \frac{\partial}{\partial \varphi}
+\\
+\frac{\partial}{\partial z}
+&=
+\frac{\partial r}{\partial z} \frac{\partial}{\partial r}
++
+\frac{\partial \vartheta}{\partial z} \frac{\partial}{\partial \vartheta}
++
+\frac{\partial \varphi}{\partial z} \frac{\partial}{\partial \varphi}
+\end{align*}
+Um also einen Differentialoperator in Kugelkoordinaten ausdr"ucken zu
+k"onnen, m"ussen wir als erstes alle Kugelkoordinaten nach kartesischen
+Koordinaten ableiten k"onnen.
+
+\section{Ableitung von Kugelkoordinaten nach kartesischen Koordinaten}
+Wir beginnen mit den Ableitungen von $r$. Dazu rechnen wir zun"achst die
+Ableitungen von $r^2$ aus:
+\[
+\frac{\partial r^2}{\partial x}
+=
+2r\frac{\partial r}{\partial x}
+\qquad
+\Rightarrow
+\qquad
+\frac{\partial r}{\partial x}
+=
+\frac1{2r}\frac{\partial r^2}{\partial x}.
+\]
+Der Ausdruck  $r^2$ ist quadratisch in den Koordinaten, und ist damit
+viel einfacher auszurechnen:
+\[
+\frac{\partial r^2}{\partial x}=\frac{\partial}{\partial x}(x^2+y^2+z^2)=2x
+\]
+Damit k"onnen wir jetzt die Ableitungen von $r$ nach den kartesischen
+Koordinaten zusammenstellen
+\begin{equation}
+\begin{aligned}
+\frac{\partial r}{\partial x}
+&=
+\frac1{2r}2x=\frac{x}{r}=\sin\vartheta\cos\varphi
+\\
+\frac{\partial r}{\partial y}
+&=
+\frac1{2r}2y=\frac{y}{r}=\sin\vartheta\sin\varphi
+\\
+\frac{\partial r}{\partial z}
+&=
+\frac1{2r}2z=\cos\vartheta
+\end{aligned}
+\label{ableitungenvonr}
+\end{equation}
+F"ur die Ableitungen von $\vartheta$ dr"ucken wir $z$ durch Kugelkoordinaten
+aus, und leiten nach den kartesischen Koordinaten ab und l"osen nach dne
+Ableitungen von $\varphi$ auf:
+\begin{align*}
+z&=r\cos\vartheta
+&&\Rightarrow&
+\frac{\partial z}{\partial z}
+&=
+\frac{\partial r}{\partial z}\cos\vartheta
+-
+r \sin\vartheta\frac{\partial \vartheta}{\partial z}
+=1
+&&\Rightarrow&
+\frac{\partial\vartheta}{\partial z}
+&=
+-\frac1{r\sin\vartheta}
+\biggl(1-\cos\vartheta\frac{\partial r}{\partial z}\biggr)
+\\
+&&&&
+\frac{\partial z}{\partial x}
+&=
+\frac{\partial r}{\partial x}\cos\vartheta
+	- r\sin\vartheta\frac{\partial\vartheta}{\partial x}
+=0
+&&\Rightarrow&
+\frac{\partial\vartheta}{\partial x}
+&=
+\frac{\cos\vartheta}{r\sin\vartheta}\frac{\partial r}{\partial x}
+\\
+&&&&
+\frac{\partial z}{\partial y}
+&=
+\frac{\partial r}{\partial y}\cos\vartheta
+	- r\sin\vartheta\frac{\partial\vartheta}{\partial y}
+=0
+&&\Rightarrow&
+\frac{\partial\vartheta}{\partial y}
+&=
+\frac{\cos\vartheta}{r\sin\vartheta}\frac{\partial r}{\partial y}
+\end{align*}
+Die Ableitungn von $r$ wurden in (\ref{ableitungenvonr}) bereits berechnet,
+und k"onnen hier eingesetzt werden:
+\begin{equation}
+\begin{aligned}
+\frac{\partial\vartheta}{\partial z}
+&=
+-\frac{1}{r\sin\vartheta}(1-\cos^2\vartheta)
+=
+-\frac{1}{r\sin\vartheta}\sin^2\vartheta
+=
+-\frac{\sin\vartheta}{r}
+\\
+\frac{\partial \vartheta}{\partial x}
+&=
+\frac{\cos\vartheta}{r\sin\vartheta}\sin\vartheta\cos\varphi
+=
+\frac{\cos\vartheta\cos\varphi}{r}
+\\
+\frac{\partial \vartheta}{\partial y}
+&=
+\frac{\cos\vartheta}{r\sin\vartheta}\sin\vartheta\sin\varphi
+=
+\frac{\cos\vartheta\sin\varphi}{r}
+\end{aligned}
+\label{ableitungenvonvartheta}
+\end{equation}
+Wir brauchen noch die Ableitungen von $\varphi$, zun"achst nach $x$:
+\begin{align*}
+1=
+\frac{\partial x}{\partial x}
+&=
+\frac{\partial r}{\partial x}\sin\vartheta\cos\varphi
++
+r\cos\vartheta \frac{\partial\vartheta}{\partial x}\cos\varphi
+-
+r\sin\vartheta\sin\varphi\frac{\partial\varphi}{\partial x}
+\\
+&=
+\sin\vartheta \cos\varphi
+\sin\vartheta\cos\varphi
++
+r\cos\vartheta
+\frac{\cos\vartheta \cos\varphi}{r}
+\cos\varphi
+-
+r\sin\vartheta\sin\varphi
+\frac{\partial\varphi}{\partial x}
+\\
+&=\cos^2\varphi-r\sin\vartheta\sin\varphi\frac{\partial\varphi}{\partial x}
+\\
+1-\cos^2\varphi
+&=
+\sin^2\varphi=
+-r\sin\vartheta\sin\varphi\frac{\partial\varphi}{\partial x}
+&\Rightarrow\quad
+\frac{\partial\varphi}{\partial x}
+&=-\frac{\sin\varphi}{r\sin\vartheta}
+\\
+0=
+\frac{\partial y}{\partial x}
+&=
+\frac{\partial r}{\partial x} \sin\vartheta\sin\varphi
++
+r\cos\vartheta \frac{\partial\vartheta}{\partial x}\sin\varphi
++
+r\sin\vartheta\cos\varphi\frac{\partial\varphi}{\partial x}
+\\
+&=
+\sin\vartheta\cos\varphi
+\sin\vartheta\sin\varphi
++
+r\cos\vartheta
+\frac{\cos\vartheta\cos\varphi}{r}
+\sin\varphi
++
+r\sin\vartheta\cos\varphi\frac{\partial\varphi}{\partial x}
+\\
+&=
+\cos\varphi\sin\varphi
++
+r\sin\vartheta\cos\varphi
+\frac{\partial\varphi}{\partial x}
+&\Rightarrow\quad
+\frac{\partial\varphi}{\partial x}
+&=
+-\frac{\sin\varphi}{r\sin\vartheta}
+\end{align*}
+Die Ableitung von $\varphi$ nach $y$:
+\begin{align*}
+0=\frac{\partial x}{\partial y}
+&=
+\frac{\partial r}{\partial y}
+\sin\vartheta\cos\varphi
++
+r\cos\vartheta
+\frac{\partial\vartheta}{\partial y}
+\cos\varphi
+-
+r\sin\vartheta\sin\varphi
+\frac{\partial\varphi}{\partial y}
+\\
+&=
+\sin\vartheta\sin\varphi
+\sin\vartheta\cos\varphi
++
+r\cos\vartheta
+\frac{\cos\vartheta\sin\varphi}{r}
+\cos\varphi
+-
+r\sin\vartheta\sin\varphi
+\frac{\partial\varphi}{\partial y}
+\\
+&=
+\sin^2\vartheta \sin\varphi \cos\varphi
++
+\cos^2\vartheta \sin\varphi \cos\varphi
+-
+r\sin\vartheta\sin\varphi
+\frac{\partial\varphi}{\partial y}
+\\
+&=
+\sin\varphi \cos\varphi
+-
+r\sin\vartheta\sin\varphi
+\frac{\partial\varphi}{\partial y}
+&\Rightarrow\quad
+\frac{\partial\varphi}{\partial y}
+&=
+\frac{\cos\varphi}{r\sin\vartheta}
+\\
+1=\frac{\partial y}{\partial y}
+&=
+\frac{\partial r}{\partial y}
+\sin\vartheta \sin\varphi
++
+r\cos\vartheta
+\frac{\partial\vartheta}{\partial y}
+\sin\varphi
++
+r\sin\vartheta\cos\varphi
+\frac{\partial\varphi}{\partial y}
+\\
+&=
+\sin\vartheta \sin\varphi
+\sin\vartheta \sin\varphi
++
+r\cos\vartheta
+\frac{\cos\vartheta\sin\varphi}{r}
+\sin\varphi
++
+r\sin\vartheta\cos\varphi
+\frac{\partial\varphi}{\partial y}
+\\
+&=
+\sin^2\vartheta \sin^2\varphi
++
+\cos^2\vartheta
+\sin^2\varphi
++
+r\sin\vartheta\cos\varphi
+\frac{\partial\varphi}{\partial y}
+\\
+1-
+\sin^2\varphi
+&=
+r\sin\vartheta\cos\varphi
+\frac{\partial\varphi}{\partial y}
+&
+\Rightarrow\quad
+\frac{\partial\varphi}{\partial y}
+&=
+\frac{\cos\varphi}{r\sin\vartheta}
+\end{align*}
+Ableitungen von $\varphi$ nach $z$:
+\begin{align*}
+0=\frac{\partial x}{\partial z}
+&=
+\frac{\partial r}{\partial z}
+\sin\vartheta\cos\varphi
++
+r\cos\vartheta
+\frac{\partial\vartheta}{\partial z}
+\cos\varphi
+-
+r\sin\vartheta\sin\varphi
+\frac{\partial\varphi}{\partial z}
+\\
+&=
+\cos\vartheta
+\sin\vartheta\cos\varphi
+-
+r\cos\vartheta
+\frac{\sin\vartheta}{r}
+\cos\varphi
+-
+r\sin\vartheta\sin\varphi
+\frac{\partial\varphi}{\partial z}
+\\
+&=
+-
+r\sin\vartheta\sin\varphi
+\frac{\partial\varphi}{\partial z}
+&\Rightarrow\quad
+\frac{\partial\varphi}{\partial z}
+&=0
+\\
+0=\frac{\partial y}{\partial z}
+&=
+\frac{\partial r}{\partial z}
+\sin\vartheta\cos\varphi
++
+r\cos\vartheta
+\frac{\partial\vartheta}{\partial z}
+\cos\varphi
++
+r\sin\vartheta\cos\varphi
+\frac{\partial\varphi}{\partial z}
+\\
+&=
+\cos\vartheta
+\sin\vartheta\cos\varphi
+-
+r\cos\vartheta
+\frac{\sin\vartheta}{r}
+\cos\varphi
++
+r\sin\vartheta\cos\varphi
+\frac{\partial\varphi}{\partial z}
+\\
+&=
+r\sin\vartheta\cos\varphi
+\frac{\partial\varphi}{\partial z}
+&\Rightarrow\quad
+\frac{\partial\varphi}{\partial z}
+&=0
+\end{align*}
+Wir haben alle Ableitungen der Kugelkoordinaten nach kartesischen
+Koordinaten berechnet, und stellen die Resultate in der folgenden
+Tabelle zusammen
+\begin{center}
+\begin{tabular}{|>{$}c<{$}|>{$}c<{$} >{$}c<{$} >{$}c<{$}|}
+\hline
+&r&\vartheta&\varphi\\
+\hline
+\displaystyle\frac{\partial^{\mathstrut}}{\partial x_{\mathstrut}}
+	&\sin\vartheta\cos\varphi
+		&\displaystyle\frac{\cos\vartheta\cos\varphi}{r}
+			&\displaystyle-\frac{\sin\varphi}{r\sin\vartheta}
+\\
+\displaystyle\frac{\partial^{\mathstrut}}{\partial y_{\mathstrut}}
+	&\sin\vartheta\sin\varphi
+		&\displaystyle\frac{\cos\vartheta\sin\varphi}{r}
+			&\displaystyle\frac{\cos\varphi}{r\sin\vartheta}
+\\
+\displaystyle\frac{\partial^{\mathstrut}}{\partial z_{\mathstrut}}
+	&\cos\varphi
+		&\displaystyle-\frac{\sin\vartheta}{r}
+			&0
+\\
+\hline
+\end{tabular}
+\end{center}
+
+Damit k"onnen wir jetzt die Ableitungen nach den kartesischen Koordinaten
+vollst"andig durch die Ableitungen nach Kugelkoordinaten ausdr"ucken:
+\begin{equation}
+\begin{linsys}{4}
+\displaystyle
+\frac{\partial^{\mathstrut}}{\partial x_{\mathstrut}}
+&=&
+\displaystyle
+\frac{\partial r}{\partial x}\frac{\partial}{\partial r}
++
+\frac{\partial \vartheta}{\partial x}\frac{\partial}{\partial \vartheta}
++
+\frac{\partial \varphi}{\partial x}\frac{\partial}{\partial \varphi}
+&=&
+\displaystyle
+\sin\vartheta\cos\varphi
+\frac{\partial}{\partial r}
+&+&
+\displaystyle
+\frac{\cos\vartheta\cos\varphi}{r}
+\frac{\partial}{\partial\vartheta}
+&-&
+\displaystyle
+\frac{\sin\varphi}{r\sin\vartheta}
+\frac{\partial}{\partial\varphi}
+\\
+\displaystyle
+\frac{\partial^{\mathstrut}}{\partial y_{\mathstrut}}
+&=&
+\displaystyle
+\frac{\partial r}{\partial y}\frac{\partial}{\partial r}
++
+\frac{\partial \vartheta}{\partial y}\frac{\partial}{\partial \vartheta}
++
+\frac{\partial \varphi}{\partial y}\frac{\partial}{\partial \varphi}
+&=&
+\displaystyle
+\sin\vartheta\sin\varphi
+\frac{\partial}{\partial r}
+&+&
+\displaystyle
+\frac{\cos\vartheta\sin\varphi}{r}
+\frac{\partial}{\partial\vartheta}
+&+&
+\displaystyle
+\frac{\cos\varphi}{r\sin\vartheta}
+\frac{\partial}{\partial\varphi}
+\\
+\displaystyle
+\frac{\partial^{\mathstrut}}{\partial z_{\mathstrut}}
+&=&
+\displaystyle
+\frac{\partial r}{\partial z}\frac{\partial}{\partial r}
++
+\frac{\partial \vartheta}{\partial z}\frac{\partial}{\partial \vartheta}
++
+\frac{\partial \varphi}{\partial z}\frac{\partial}{\partial \varphi}
+&=&
+\displaystyle
+\cos\vartheta
+\frac{\partial}{\partial r}
+&-&
+\displaystyle
+\frac{\sin\vartheta}{r}
+\frac{\partial}{\partial\vartheta}
+& &
+\end{linsys}
+\label{diffopkugel}
+\end{equation}
+Damit haben wir alle kartesischen Ableitungsoperatoren durch
+Ableitungsoperatoren in Kugelkoordinaten ausgedr"uckt. 
+
+\section{Laplaceoperator}
+Der Laplace-Operator in kartesischen Koordinaten ist
+\[
+\Delta
+=
+\frac{\partial^2}{\partial x^2}
++
+\frac{\partial^2}{\partial y^2}
++
+\frac{\partial^2}{\partial z^2}.
+\]
+In Kugelkoordinaten m"ussen wir alle Differentialoperatoren durch
+ihre Versionen in Kugelkoordinaten gem"ass (\ref{diffopkugel}) 
+ersetzen.
+Um diese Rechnung etwas "ubersichtlicher zu gestalten, werden wir erst
+die Quadrate der Ableitungen nach den Koordinaten ausrechnen, und diese
+am Schluss zusammenbringen.
+Wir beginnen mit den zweiten Ableitungen nach $x$:
+\begin{align*}
+\frac{\partial^2}{\partial x^2}
+&=
+\biggl(
+\sin\vartheta\cos\varphi
+\frac{\partial}{\partial r}
++
+\frac{\cos\vartheta\cos\varphi}{r}
+\frac{\partial}{\partial\vartheta}
+-
+\frac{\sin\varphi}{r\sin\vartheta}
+\frac{\partial}{\partial\varphi}
+\biggr)
+\biggl(
+\sin\vartheta\cos\varphi
+\frac{\partial}{\partial r}
++
+\frac{\cos\vartheta\cos\varphi}{r}
+\frac{\partial}{\partial\vartheta}
+-
+\frac{\sin\varphi}{r\sin\vartheta}
+\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+&=
+\sin^2\vartheta\cos^2\varphi\frac{\partial^2}{\partial r^2}
+\\
+&\qquad
++
+\sin\vartheta \cos\vartheta \cos^2\varphi
+\biggl(
+-\frac1{r^2}
+\frac{\partial}{\partial\vartheta}
++\frac1{r}
+\frac{\partial^2}{\partial r\,\partial\vartheta}
+\biggr)
+\\
+&\qquad
++
+\cos\varphi\sin\varphi\biggl(
+\frac1{r^2}\frac{\partial}{\partial\varphi}
+-\frac1{r}\frac{\partial^2}{\partial r\,\partial\varphi}
+\biggr)
+\\
+&\qquad
++\frac1{r}
+\cos\vartheta\cos^2\varphi
+\biggl(
+\cos\vartheta\frac{\partial}{\partial r}
++
+\sin\vartheta \frac{\partial^2}{\partial r\,\partial\vartheta}
+\biggr)
+\\
+&\qquad
++\frac1{r^2}
+\cos\vartheta\cos^2\varphi\biggl(
+-\sin\vartheta
+\frac{\partial}{\partial\vartheta}
++
+\cos\vartheta
+\frac{\partial^2}{\partial\vartheta^2}
+\biggr)
+\\
+&\qquad
+-\frac1{r^2}
+\cos\vartheta\cos\varphi\sin\varphi
+\biggl(
+-\frac{\cos\vartheta}{\sin^2\vartheta}
+\frac{\partial}{\partial\varphi}
++\frac1{\sin\vartheta}
+\frac{\partial^2}{\partial\vartheta\,\partial\varphi}
+\biggr)
+\\
+&\qquad
+-\frac1r\sin\varphi\biggl(
+-\sin\varphi \frac{\partial}{\partial r}
++\cos\varphi \frac{\partial^2}{\partial r\,\partial\varphi}
+\biggr)
+\\
+&\qquad
+-\frac1{r^2}
+\frac{ \cos\vartheta \sin\varphi }{\sin\vartheta}\biggl(
+-\sin\varphi\frac{\partial}{\partial\vartheta}
++\cos\varphi\frac{\partial^2}{\partial\vartheta\,\partial\varphi}
+\biggr)
+\\
+&\qquad
++\frac1{r^2}\frac{\sin\varphi}{\sin^2\vartheta}\biggl(
+\cos\varphi\frac{\partial}{\partial\varphi}
++\sin\varphi\frac{\partial^2}{\partial\varphi^2}
+\biggr)
+\\
+&=
+\sin^2\vartheta\cos^2\varphi \frac{\partial^2}{\partial r^2}
++
+\frac1r( \cos^2\vartheta\cos^2\varphi + \sin^2\varphi)
+\frac{\partial}{\partial r}
+\\
+&\qquad
++
+\frac{2}r\sin\vartheta\cos\vartheta\cos^2\varphi
+\frac{\partial^2}{\partial r\,\partial\vartheta}
+-
+\frac2r\cos\varphi\sin\varphi
+\frac{\partial^2}{\partial r\,\partial\varphi}
+\\
+&\qquad
++
+\frac1r\cos^2\vartheta\cos^2\varphi \frac{\partial^2}{\partial \vartheta^2}
+-
+\frac1{r^2}\biggl(
+2\cos\vartheta\sin\vartheta\cos^2\varphi
+-\frac{\sin^2\varphi\cos\vartheta}{\sin\vartheta}
+\biggr)
+\frac{\partial}{\partial\vartheta}
+\\
+&\qquad
+-
+\frac2{r^2}\frac{ \cos\vartheta \sin\varphi \cos\varphi }{\sin\vartheta}
+\frac{\partial^2}{\partial \vartheta\,\partial\varphi}
+\\
+&\qquad
++
+\frac1{r^2}\frac{\sin^2\varphi}{\sin^2\vartheta}
+\frac{\partial^2}{\partial \varphi^2}
++
+\frac1{r^2}\cos\varphi\sin\varphi\biggl(
+1+\frac{\cos^2\vartheta}{\sin^2\vartheta}
++
+\frac1{\sin^2\vartheta}
+\biggr)
+\frac{\partial}{\partial\varphi}
+\end{align*}
+Des weiteren die zweiten Ableitungen nach $y$:
+\begin{align*}
+\frac{\partial^2}{\partial y^2}
+&=
+\biggl(
+\sin\vartheta\sin\varphi
+\frac{\partial}{\partial r}
++
+\frac{\cos\vartheta\sin\varphi}{r}
+\frac{\partial}{\partial\vartheta}
++
+\frac{\cos\varphi}{r\sin\vartheta}
+\frac{\partial}{\partial\varphi}
+\biggr)
+\biggl(
+\sin\vartheta\sin\varphi
+\frac{\partial}{\partial r}
++
+\frac{\cos\vartheta\sin\varphi}{r}
+\frac{\partial}{\partial\vartheta}
++
+\frac{\cos\varphi}{r\sin\vartheta}
+\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+&=
+\sin^2\vartheta \sin^2\varphi \frac{\partial^2}{\partial r^2}
+\\
+&\qquad
++\sin\vartheta\cos\vartheta\sin^2\varphi\biggl(
+-\frac1{r^2}\frac{\partial}{\partial\vartheta}+\frac1r\frac{\partial^2}{\partial r\,\partial\vartheta}
+\biggr)
+\\
+&\qquad
++\sin\varphi\cos\varphi\biggl(
+-\frac1{r^2}\frac{\partial}{\partial\varphi}+\frac1r\frac{\partial^2}{\partial r\,\partial\varphi}
+\biggr)
+\\
+&\qquad
++\frac1r\cos\vartheta\sin^2\varphi\biggl(
+\cos\vartheta\frac{\partial}{\partial r}
++\sin\vartheta\frac{\partial^2}{\partial r\,\partial\vartheta}
+\biggr)
+\\
+&\qquad
++\frac1{r^2} \cos\vartheta \sin^2\varphi \biggl(
+-\sin\vartheta\frac{\partial}{\partial\vartheta}
++\cos\vartheta\frac{\partial^2}{\partial\vartheta^2}
+\biggr)
+\\
+&\qquad
++\frac1{r^2}\cos\vartheta\sin\varphi\cos\varphi\biggl(
+-\frac{\cos\vartheta}{\sin^2\vartheta}\frac{\partial}{\partial\varphi}
++\frac1{\sin\vartheta}\frac{\partial^2}{\partial\vartheta\,\partial\varphi}
+\biggr)
+\\
+&\qquad
++\frac1r\cos\varphi\biggl(
+\cos\varphi\frac{\partial}{\partial r}
++\sin\varphi\frac{\partial^2}{\partial\varphi\,\partial r}
+\biggr)
+\\
+&\qquad
++\frac1{r^2}\frac{\cos\vartheta}{\sin\vartheta}\cos\varphi\biggl(
+\cos\varphi\frac{\partial}{\partial\vartheta}
++\sin\varphi\frac{\partial^2}{\partial\varphi\,\partial\vartheta}
+\biggr)
+\\
+&\qquad
++\frac1{r^2}\frac{\cos\varphi}{\sin^2\vartheta}\biggl(
+-\sin\varphi\frac{\partial}{\partial\varphi}
++\cos\varphi\frac{\partial^2}{\partial\varphi^2}
+\biggr)
+\\
+&=
+\sin^2\vartheta\sin^2\varphi \frac{\partial^2}{\partial r^2}
++
+\frac1r(\cos^2\vartheta\sin^2\varphi + \cos^2\varphi)\frac{\partial}{\partial r}
+\\
+&\qquad
++
+\frac2r\sin\vartheta\cos\vartheta\sin^2\varphi
+\frac{\partial^2}{\partial r\,\partial\vartheta}
++
+\frac2r
+\sin\varphi\cos\varphi
+\frac{\partial^2}{\partial r\,\partial\varphi}
+\\
+&\qquad
++
+\frac1{r^2}\cos^2\vartheta\sin^2\varphi
+\frac{\partial^2}{\partial\vartheta^2}
++
+\frac1{r^2}
+\biggl(
+-2\cos\vartheta\sin\vartheta\sin^2\varphi
++\frac{\cos\vartheta}{\sin\vartheta}\cos^2\varphi
+\biggr)
+\frac{\partial}{\partial\vartheta}
+\\
+&\qquad
++
+\frac2{r^2}\sin\varphi\cos\varphi\frac{\cos\vartheta}{\sin\vartheta}
+\frac{\partial^2}{\partial\vartheta\,\partial\varphi}
+\\
+&\qquad
++
+\frac1{r^2}\frac{\cos^2\varphi}{\sin^2\vartheta}
+\frac{\partial^2}{\partial\varphi^2}
++
+\frac1{r^2}
+\sin\varphi\cos\varphi
+\biggl(
+-1
+-
+\frac{\cos^2\vartheta}{\sin^2\vartheta}
+-\frac1{\sin^2\vartheta}
+\biggr)
+\frac{\partial}{\partial\varphi}
+\end{align*}
+
+Und abschliessen die zweiten Ableitungen nach $z$:
+\begin{align*}
+\frac{\partial^2}{\partial z^2}
+&=
+\biggl(
+\cos\vartheta
+\frac{\partial}{\partial r}
+-
+\frac{\sin\vartheta}{r}
+\frac{\partial}{\partial\vartheta}
+\biggr)
+\biggl(
+\cos\vartheta
+\frac{\partial}{\partial r}
+-
+\frac{\sin\vartheta}{r}
+\frac{\partial}{\partial\vartheta}
+\biggr)
+\\
+&=
+\cos^2\vartheta\frac{\partial^2}{\partial r^2}
+-
+\cos\vartheta \sin\vartheta\biggl(
+-\frac1{r^2}\frac{\partial}{\partial\vartheta}
++\frac{\partial^2}{\partial r\,\partial\vartheta}
+\biggr)
+-
+\frac1r\sin\vartheta\biggl(
+-\sin\vartheta\frac{\partial}{\partial r}
++\cos\vartheta\frac{\partial^2}{\partial\vartheta\,\partial r}
+\biggr)
+\\
+&\qquad
++
+\frac1{r^2}\sin\vartheta\biggl(
+\cos\vartheta\frac{\partial}{\partial\vartheta}
++\sin\vartheta\frac{\partial^2}{\partial\vartheta^2}
+\biggr)
+\\
+&=\cos^2\vartheta\frac{\partial^2}{\partial r^2}
++
+\frac1r\sin^2\vartheta\frac{\partial}{\partial r}
+-
+\frac2{r}\sin\vartheta\cos\vartheta
+\frac{\partial^2}{\partial r\,\partial\vartheta}
++
+\frac1{r^2}\sin^2\vartheta \frac{\partial^2}{\partial\vartheta^2}
++
+\frac2{r^2}\sin\vartheta\cos\vartheta \frac{\partial}{\partial\vartheta}
+\end{align*}
+
+Da wir jetzt alle zweiten Ableitungen ausgerechnet haben, k"onnen wir auch
+den Laplace-Operator zusammensetzen:
+\begin{align}
+\Delta
+&=
+\frac{\partial^2}{\partial x^2}+
+\frac{\partial^2}{\partial y^2}+
+\frac{\partial^2}{\partial z^2}
+\notag
+\\
+&=
+\biggl(
+\sin^2\vartheta\cos^2\varphi
++
+\sin^2\vartheta\sin^2\varphi
++
+\cos^2\vartheta
+\biggr)
+\frac{\partial^2}{\partial r^2}
+\notag
+\\
+&\qquad
++
+\frac1r\biggl(
+\cos^2\vartheta\cos^2\varphi+\sin^2\varphi
++
+\cos^2\vartheta\sin^2\varphi +\cos^2\varphi
++
+\sin^2\vartheta
+\biggr)
+\frac{\partial}{\partial r}
+\notag
+\\
+&\qquad
++
+\frac2r\biggl(
+\sin\vartheta\cos\vartheta\cos^2\varphi
++
+\sin\vartheta\cos\vartheta\sin^2\varphi
+-\sin\vartheta\cos\vartheta
+\biggr)
+\frac{\partial^2}{\partial r\,\partial\vartheta}
+\notag
+\\
+&\qquad
++
+\frac{2}{r}
+\biggl(
+-\sin\varphi\cos\varphi
++ \sin\varphi\cos\varphi
+\biggr)
+\frac{\partial^2}{\partial r\,\partial\varphi}
+\notag
+\\
+&\qquad
++
+\frac1{r^2}
+\biggl(
+\cos^2\vartheta\cos^2\varphi
++\cos^2\vartheta\sin^2\varphi
++\sin^2\vartheta
+\biggr)
+\frac{\partial^2}{\partial\vartheta^2}
+\notag
+\\
+&\qquad
++
+\frac1{r^2}
+\sin\vartheta\cos\vartheta
+\biggl(
+-2 \cos^2\varphi
+	+\frac{\sin^2\varphi}{\sin^2\vartheta}
+-2\sin^2\varphi
++\frac{\cos^2\varphi}{\sin^2\vartheta}
++
+2
+\biggr)
+\frac{\partial}{\partial\vartheta}
+\notag
+\\
+&\qquad
++
+\frac1{r^2}\sin\varphi\cos\varphi\frac{\cos\vartheta}{\sin\vartheta}
+\biggl(
+-2+2
+\biggr)
+\frac{\partial^2}{\partial\vartheta\,\partial\varphi}
+\notag
+\\
+&\qquad
++
+\frac1{r^2}\frac{\sin^2\varphi+\cos^2\varphi}{\sin^2\vartheta}
+\frac{\partial^2}{\partial\varphi^2}
+\notag
+\\
+&\qquad
++
+\frac1{r^2}\cos\varphi\sin\varphi
+\biggl(
+1+\frac{\cos^2\vartheta}{\sin^2\vartheta}+\frac1{\sin^2\vartheta}
+-1-\frac{\cos^2\vartheta}{\sin^2\vartheta}-\frac1{\sin^2\vartheta}
+\biggr)
+\frac{\partial}{\partial\varphi}
+\notag
+\\
+&=
+\frac{\partial^2}{\partial r^2}
++\frac{2}{r}\frac{\partial}{\partial r}
++\frac1{r^2}
+\frac{\partial^2}{\partial\vartheta^2}
++
+\frac1{r^2}
+\frac{\cos\vartheta}{\sin\vartheta}
+\frac{\partial}{\partial\vartheta}
++
+\frac1{r^2}\frac1{\sin^2\vartheta}\frac{\partial^2}{\partial\varphi^2}
+\notag
+\\
+&=
+\frac1{r^2}\frac{\partial}{\partial r}\biggl(
+r^2\frac{\partial}{\partial r}
+\biggr)
++\frac1{r^2\sin\vartheta}\frac{\partial}{\partial\vartheta}\biggl(
+\sin\vartheta\frac{\partial}{\partial\vartheta}
+\biggr)
++\frac1{r^2}\frac{\partial^2}{\partial\varphi^2}
+\label{laplacekugel}
+\end{align}
+Dies ist die Form des Laplace-Operators in Kugelkoordinaten, die
+wir zur Diskussion des Wasserstoffatoms verwenden.
