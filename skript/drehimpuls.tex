@@ -1021,34 +1021,68 @@ x\frac{\partial}{\partial y}
 y\frac{\partial}{\partial x}
 \biggr).
 \end{align*}
-Der Drehimpulsbetrag setzt sich einerseits aus $L_+L_-+L_-L_+$ und
-andererseits aus $L_3^2$ zusammen. Wir berechnen den ersten Teil:
+Als Beispiel rechnen wir die Vertauschungsrelationen nach:
 \begin{align*}
-L_+L_-+L_-L_+
+[L_1,L_2]
 &=
-\hbar^2
-\biggl(
-x_3\frac{\partial}{\partial x_1}
-+
-ix_3\frac{\partial}{\partial x_2}
+-\hbar^2\biggl[
+y\frac{\partial}{\partial z}
 -
-(x_1+ix_2)\frac{\partial}{\partial x_3}
+z\frac{\partial}{\partial y},
+z\frac{\partial}{\partial x}
+-
+x\frac{\partial}{\partial z}
+\biggr]
+\\
+&=
+-\hbar^2\biggl(
+\biggl(
+y\frac{\partial}{\partial z}
+-
+z\frac{\partial}{\partial y}
 \biggr)
 \biggl(
+z\frac{\partial}{\partial x}
 -
-x_3\frac{\partial}{\partial x_1}
-+
-ix_3\frac{\partial}{\partial x_2}
-+
-(x_1-ix_2)\frac{\partial}{\partial x_3}
+x\frac{\partial}{\partial z}
+\biggr)
+-
+\biggl(
+z\frac{\partial}{\partial x}
+-
+x\frac{\partial}{\partial z}
+\biggr)
+\biggl(
+y\frac{\partial}{\partial z}
+-
+z\frac{\partial}{\partial y}
+\biggr)
 \biggr)
 \\
 &=
--\hbar^2x_3^2\frac{\partial^2}{\partial x_1^2}
--\hbar^2x_3^2\frac{\partial^2}{\partial x_2^2}
--\hbar^2(x_1^2+x_2^2)\frac{\partial^2}{\partial x_3^3}
-+\dots
+-i\hbar\frac{\hbar}{i}\biggl(
+y\frac{\partial}{\partial x}+yz\frac{\partial^2}{\partial x\,\partial z}
+-xy\frac{\partial^2}{\partial z^2}
+-z^2\frac{\partial^2}{\partial y\,\partial x}
++zx\frac{\partial^2}{\partial y\,\partial z}
+\\
+&\qquad\qquad
+-
+zy\frac{\partial^2}{\partial x\,\partial z}
++z^2\frac{\partial^2}{\partial x\,\partial y}
++xy\frac{\partial^2}{\partial z^2}
+-x\frac{\partial}{\partial y}-xz\frac{\partial^2}{\partial z\,\partial y}
+\biggr)
+\\
+&=
+i\hbar\frac{\hbar}{i}\biggl(
+x\frac{\partial}{\partial y}-y\frac{\partial}{\partial x}
+\biggr)
+=i\hbar L_3
 \end{align*}
+Die Drehimpulsoperatoren in Ortsdarstellung erf"ullen also wie erwartet
+die Vertauschungsrelationen, die wir f"ur die abstrakten Drehimpulsoperatoren
+kennengelernt haben.
 
 \subsection{Kugelkoordinaten}
 Die Schr"odingergleichung des Wasserstoffatoms wurde in Kugelkoordinaten 
@@ -1068,6 +1102,7 @@ r\sin\vartheta\sin\varphi
 z&=
 r\cos\vartheta
 \end{align*}
+\subsubsection{Ableitung von Kugelkoordinaten nach kartesischen Koordinaten}
 Wir brauchen aber auch Formeln, die uns erlauben, Ableitungen nach
 kartesischen Koordinaten durch Ableitungen nach $r$, $\vartheta$ und
 $\varphi$ zu ersetzen.
@@ -1093,7 +1128,8 @@ viel einfacher auszurechnen:
 \]
 Damit k"onnen wir jetzt die Ableitungen von $r$ nach den kartesischen
 Koordinaten zusammenstellen
-\begin{align*}
+\begin{equation}
+\begin{aligned}
 \frac{\partial r}{\partial x}
 &=
 \frac1{2r}2x=\frac{x}{r}=\sin\vartheta\cos\varphi
@@ -1105,7 +1141,9 @@ Koordinaten zusammenstellen
 \frac{\partial r}{\partial z}
 &=
 \frac1{2r}2z=\cos\vartheta
-\end{align*}
+\end{aligned}
+\label{ableitungenvonr}
+\end{equation}
 F"ur die Ableitungen von $\vartheta$ dr"ucken wir $z$ durch Kugelkoordinaten
 aus, und leiten nach den kartesischen Koordinaten ab und l"osen nach dne
 Ableitungen von $\varphi$ auf:
@@ -1146,9 +1184,10 @@ r \sin\vartheta\frac{\partial \vartheta}{\partial z}
 &=
 \frac{\cos\vartheta}{r\sin\vartheta}\frac{\partial r}{\partial y}
 \end{align*}
-Die Ableitungn von $r$ wurden bereits bereichnet, und k"onnen hier
-eingesetzt werden:
-\begin{align*}
+Die Ableitungn von $r$ wurden in (\ref{ableitungenvonr}) bereits berechnet,
+und k"onnen hier eingesetzt werden:
+\begin{equation}
+\begin{aligned}
 \frac{\partial\vartheta}{\partial z}
 &=
 -\frac{1}{r\sin\vartheta}(1-\cos^2\vartheta)
@@ -1168,7 +1207,9 @@ eingesetzt werden:
 \frac{\cos\vartheta}{r\sin\vartheta}\sin\vartheta\sin\varphi
 =
 \frac{\cos\vartheta\sin\varphi}{r}
-\end{align*}
+\end{aligned}
+\label{ableitungenvonvartheta}
+\end{equation}
 Wir brauchen noch die Ableitungen von $\varphi$, zun"achst nach $x$:
 \begin{align*}
 1=
@@ -1387,17 +1428,17 @@ Tabelle zusammen
 \hline
 &r&\vartheta&\varphi\\
 \hline
-\displaystyle\frac{\partial}{\partial x}
+\displaystyle\frac{\partial^{\mathstrut}}{\partial x_{\mathstrut}}
 	&\sin\vartheta\cos\varphi
 		&\displaystyle\frac{\cos\vartheta\cos\varphi}{r}
 			&\displaystyle-\frac{\sin\varphi}{r\sin\vartheta}
 \\
-\displaystyle\frac{\partial}{\partial y}
+\displaystyle\frac{\partial^{\mathstrut}}{\partial y_{\mathstrut}}
 	&\sin\vartheta\sin\varphi
 		&\displaystyle\frac{\cos\vartheta\sin\varphi}{r}
 			&\displaystyle\frac{\cos\varphi}{r\sin\vartheta}
 \\
-\displaystyle\frac{\partial}{\partial z}
+\displaystyle\frac{\partial^{\mathstrut}}{\partial z_{\mathstrut}}
 	&\cos\varphi
 		&\displaystyle-\frac{\sin\vartheta}{r}
 			&0
@@ -1408,55 +1449,72 @@ Tabelle zusammen
 
 Damit k"onnen wir jetzt die Ableitungen nach den kartesischen Koordinaten
 vollst"andig durch die Ableitungen nach Kugelkoordinaten ausdr"ucken:
-\begin{align*}
-\frac{\partial}{\partial x}
-&=
+\begin{equation}
+\begin{linsys}{4}
+\displaystyle
+\frac{\partial^{\mathstrut}}{\partial x_{\mathstrut}}
+&=&
+\displaystyle
 \frac{\partial r}{\partial x}\frac{\partial}{\partial r}
 +
 \frac{\partial \vartheta}{\partial x}\frac{\partial}{\partial \vartheta}
 +
 \frac{\partial \varphi}{\partial x}\frac{\partial}{\partial \varphi}
-=
+&=&
+\displaystyle
 \sin\vartheta\cos\varphi
 \frac{\partial}{\partial r}
-+
+&+&
+\displaystyle
 \frac{\cos\vartheta\cos\varphi}{r}
 \frac{\partial}{\partial\vartheta}
--
+&-&
+\displaystyle
 \frac{\sin\varphi}{r\sin\vartheta}
 \frac{\partial}{\partial\varphi}
 \\
-\frac{\partial}{\partial y}
-&=
+\displaystyle
+\frac{\partial^{\mathstrut}}{\partial y_{\mathstrut}}
+&=&
+\displaystyle
 \frac{\partial r}{\partial y}\frac{\partial}{\partial r}
 +
 \frac{\partial \vartheta}{\partial y}\frac{\partial}{\partial \vartheta}
 +
 \frac{\partial \varphi}{\partial y}\frac{\partial}{\partial \varphi}
-=
+&=&
+\displaystyle
 \sin\vartheta\sin\varphi
 \frac{\partial}{\partial r}
-+
+&+&
+\displaystyle
 \frac{\cos\vartheta\sin\varphi}{r}
 \frac{\partial}{\partial\vartheta}
-+
+&+&
+\displaystyle
 \frac{\cos\varphi}{r\sin\vartheta}
 \frac{\partial}{\partial\varphi}
 \\
-\frac{\partial}{\partial z}
-&=
+\displaystyle
+\frac{\partial^{\mathstrut}}{\partial z_{\mathstrut}}
+&=&
+\displaystyle
 \frac{\partial r}{\partial z}\frac{\partial}{\partial r}
 +
 \frac{\partial \vartheta}{\partial z}\frac{\partial}{\partial \vartheta}
 +
 \frac{\partial \varphi}{\partial z}\frac{\partial}{\partial \varphi}
-=
+&=&
+\displaystyle
 \cos\vartheta
 \frac{\partial}{\partial r}
--
+&-&
+\displaystyle
 \frac{\sin\vartheta}{r}
 \frac{\partial}{\partial\vartheta}
-\end{align*}
+& &
+\end{linsys}
+\end{equation}
 Damit haben wir alle kartesischen Ableitungsoperatoren durch
 Ableitungsoperatoren in Kugelkoordinaten ausgedr"uckt. 
 
@@ -1464,7 +1522,7 @@ Ableitungsoperatoren in Kugelkoordinaten ausgedr"uckt.
 Wir verwenden die Formeln f"ur die kartesischen Ableitungsoperatoren
 in Kugelkoordinaten jetzt, um die Drehimpulsoperatoren auszudr"ucken.
 Wir beginnen mit $L_3$
-\begin{align*}
+\begin{align}
 \frac{i}{\hbar}
 L_3
 =
@@ -1483,6 +1541,7 @@ r\sin\vartheta\cos\varphi
 \frac{\cos\varphi}{r\sin\vartheta}
 \frac{\partial}{\partial\varphi}
 \biggr)
+\notag
 \\
 &\qquad
 -
@@ -1499,11 +1558,284 @@ r\sin\vartheta\sin\varphi
 \biggr)
 =
 \frac{\partial}{\partial\varphi}
+\label{l3spherical}
+\end{align}
+Die anderen Komponenten sind weniger wichtig, wir rechnen sie trotzdem
+aus:
+\begin{align*}
+\frac{i}{\hbar}L_1
+=
+y\frac{\partial}{\partial z}-z\frac{\partial}{\partial y}
+&=
+r\sin\vartheta\sin\varphi
+\biggl(
+\cos\vartheta
+\frac{\partial}{\partial r}
+-
+\frac{\sin\vartheta}{r}
+\frac{\partial}{\partial\vartheta}
+\biggr)
+\\
+&\qquad
+-
+r\cos\vartheta
+\biggl(
+\sin\vartheta\sin\varphi
+\frac{\partial}{\partial r}
++
+\frac{\cos\vartheta\sin\varphi}{r}
+\frac{\partial}{\partial\vartheta}
++
+\frac{\cos\varphi}{r\sin\vartheta}
+\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+&=
+-\sin\varphi\frac{\partial}{\partial\vartheta}
+-\cos\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\\
+\frac{i}{\hbar}L_2
+=
+z\frac{\partial}{\partial x}-x\frac{\partial}{\partial z}
+&=
+r\cos\vartheta
+\biggl(
+\sin\vartheta\cos\varphi
+\frac{\partial}{\partial r}
++
+\frac{\cos\vartheta\cos\varphi}{r}
+\frac{\partial}{\partial\vartheta}
+-
+\frac{\sin\varphi}{r\sin\vartheta}
+\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+&\qquad
+-
+r\sin\vartheta\cos\varphi
+\biggl(
+\cos\vartheta
+\frac{\partial}{\partial r}
+-
+\frac{\sin\vartheta}{r}
+\frac{\partial}{\partial\vartheta}
+\biggr)
+\\
+&=
+\cos\varphi\frac{\partial}{\partial\vartheta}
+-\sin\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\end{align*}
+Als Beispiel rechnen wir nach, dass die Vertauschungsrelationen der
+Drehimpulsoperatoren erf"ullt sind
+\begin{align*}
+[L_2,L_3]
+&=-\hbar^2\biggl[
+\cos\varphi\frac{\partial}{\partial\vartheta}
+-\sin\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+,\frac{\partial}{\partial\varphi}
+\biggr]
+\\
+&=
+-i\hbar\frac{\hbar}{i}\biggl(
+\biggl(
+\cos\varphi\frac{\partial}{\partial\vartheta}
+-\sin\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\frac{\partial}{\partial\varphi}
+-
+\frac{\partial}{\partial\varphi}
+\biggl(
+\cos\varphi\frac{\partial}{\partial\vartheta}
+-\sin\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\biggr)
+\\
+&=
+-i\hbar\frac{\hbar}{i}\biggl(
+\cos\varphi\frac{\partial^2}{\partial\vartheta\,\partial\varphi}
+-\sin\varphi\cot\vartheta\frac{\partial^2}{\partial\varphi^2}
+-
+\biggl(
+-\sin\varphi\frac{\partial}{\partial\vartheta}
+-\cos\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+&\qquad\qquad
+-
+\cos\varphi\frac{\partial^2}{\partial\vartheta\,\partial\varphi}
++\sin\varphi\cot\vartheta\frac{\partial^2}{\partial\varphi^2}
+\biggr)
+\\
+&=
+i\hbar\frac{\hbar}{i}\biggl(
+-
+\sin\varphi\frac{\partial}{\partial\vartheta}
+-
+\cos\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+=i\hbar L_1
 \end{align*}
 
 \subsubsection{Auf- und Absteigeoperatoren}
+
 \subsubsection{Drehimpulsbetrag}
+F"ur die Berechnung des Drehimpulsbetrages m"ussen wir uns zun"achst
+auf $L_1^2+L_2^2$ konzentrieren, da die letzte Komponenten gem"ass
+(\ref{l3spherical}) sehr einfach ist.
+\begin{align*}
+L_1^2
+&=-\hbar^2
+\biggl(
+-\sin\varphi\frac{\partial}{\partial\vartheta}
+-\cos\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\biggl(
+-\sin\varphi\frac{\partial}{\partial\vartheta}
+-\cos\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+&=
+-\hbar^2\biggl(
+\sin^2\varphi\frac{\partial^2}{\partial \vartheta^2}
++
+\sin\varphi\cos\varphi \frac{1}{\sin^2\vartheta}
+\frac{\partial}{\partial\varphi}
+-
+\sin\varphi\cos\varphi\cot\vartheta\frac{\partial^2}{\partial\vartheta\,\partial\varphi}
+\\
+&\qquad\qquad
++\cos^2\varphi\cot\vartheta\frac{\partial}{\partial\vartheta}
++\cos\varphi\sin\varphi\cot\vartheta\frac{\partial^2}{\partial\vartheta\,\partial\varphi}
+-\cos\varphi\sin\varphi\cot^2\vartheta\frac{\partial}{\partial\varphi}
++\cos^2\varphi\cot^2\vartheta\frac{\partial^2}{\partial\varphi^2}
+\biggr)
+\\
+&=
+-\hbar^2\biggl(
+\sin^2\varphi\frac{\partial^2}{\partial\vartheta^2}
++
+\cos^2\varphi\cot\vartheta\frac{\partial}{\partial\vartheta}
++
+\cos^2\varphi\cot^2\vartheta\frac{\partial^2}{\partial\varphi^2}
+\biggr)
+\\
+L_2^2
+&=
+-\hbar^2
+\biggl(
+\cos\varphi\frac{\partial}{\partial\vartheta}
+-\sin\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\biggl(
+\cos\varphi\frac{\partial}{\partial\vartheta}
+-\sin\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+&=-\hbar^2
+\biggl(
+\cos^2\varphi\frac{\partial^2}{\partial\vartheta^2}
+-\cos\varphi\sin\varphi\frac{1}{\sin^2\vartheta}\frac{\partial}{\partial\varphi}
++\cos\varphi\sin\varphi\cot\vartheta\frac{\partial^2}{\partial\vartheta\,\partial\varphi}
+\\
+&\qquad\qquad
++\sin^2\varphi\cot\vartheta\frac{\partial}{\partial\vartheta}
+-\sin\varphi\cos\varphi\cot\vartheta\frac{\partial^2}{\partial\varphi\,\partial\vartheta}
++\sin\varphi\cos\varphi\cot^2\vartheta\frac{\partial}{\partial\varphi}
++\sin^2\varphi\cot^2\vartheta\frac{\partial^2}{\partial\varphi^2}
+\biggr)
+\\
+&=
+-\hbar^2\biggl(
+\cos^2\varphi\frac{\partial^2}{\partial\vartheta^2}
++
+\sin^2\varphi\cot\vartheta\frac{\partial}{\partial\vartheta}
++
+\sin^2\varphi\cot^2\vartheta\frac{\partial^2}{\partial\varphi^2}
+\biggr)
+\end{align*}
+In beiden F"allen haben wir die Identit"at
+\[
+\frac1{\sin^2\vartheta}
+-
+\cot^2\vartheta
+=\frac{1-\cos^2\vartheta}{\sin^2\vartheta}=1
+\]
+verwendet.
+Die Summe der beiden Quadrate ist damit
+\begin{align*}
+L_1^2+L_2^2
+&=
+-\hbar^2\biggl(
+\frac{\partial^2}{\partial\vartheta^2}
++
+\cot\vartheta\frac{\partial}{\partial\vartheta}
++
+\cot^2\vartheta\frac{\partial^2}{\partial\varphi^2}
+\biggr)
+\end{align*}
+Der Drehimpulsbetrag ist daher
+\[
+L_1^2+L_2^2+L_3^2
+=
+-\hbar^2\biggl(
+\frac{\partial^2}{\partial\vartheta^2}
++
+\cot\vartheta\frac{\partial}{\partial\vartheta}
++
+\cot^2\vartheta\frac{\partial^2}{\partial\varphi^2}
++
+\frac{\partial^2}{\partial\varphi^2}
+\biggr)
+=
+-\hbar^2\biggl(
+\frac{\partial^2}{\partial\vartheta^2}
++
+\cot\vartheta\frac{\partial}{\partial\vartheta}
++
+\frac1{\sin^2\vartheta}\frac{\partial^2}{\partial\varphi^2}
+\biggr)
+\]
+Darin haben wir die Identit"at
+\[
+1+\cot^2\vartheta
+=
+1\frac{\cos^2\vartheta}{\sin^2\vartheta}
+=
+\frac{\sin^2\vartheta+\cos^2\vartheta}{\sin^2\vartheta}
+=
+\frac{1}{\sin^2\vartheta}
+\]
+verwendet.
+
 \subsubsection{Laplaceoperator}
-
-
+Der Winkelanteil des Laplaceoperators lautete
+\begin{align*}
+\frac1{\sin\vartheta}\frac{\partial}{\partial\vartheta}\biggl(
+\sin\vartheta\frac{\partial}{\partial\vartheta}
+\biggr)
++\frac1{\sin^2\vartheta}\frac{\partial^2}{\partial\varphi^2}
+&=
+\frac{\cos\vartheta}{\sin\vartheta}\frac{\partial}{\partial\vartheta}
++
+\frac{\partial^2}{\partial\vartheta^2}
++
+\frac{1}{\sin^2\vartheta}\frac{\partial^2}{\partial\varphi^2}
+\\
+&=
+\cot\vartheta\frac{\partial}{\partial\vartheta}
++
+\frac{\partial^2}{\partial\vartheta^2}
++
+\frac{1}{\sin^2\vartheta}\frac{\partial^2}{\partial\varphi^2}
+\end{align*}
+Dies stimmt mit $\vec L^2$ ausgedr"uckt in der Ortsdarstellung "uberein.
+Der Hamiltonoperator zerf"allt damit in zwei Teile
+\begin{align*}
+H
+&=-\frac{\hbar^2}{2m}
+\frac1{r^2}\frac{\partial}{\partial r}\biggl(r^2\frac{\partial}{\partial r}\biggr)
+-\frac{1}{2mr^2}\vec L^2
+\end{align*}
+Den ersten Term kann man interpretieren als die kinetische Energie
+der Radialbewegung, w"ahrend der zweite Term ist die Rotationsenergie.
 
