@@ -11,6 +11,9 @@ verbatimtex
 \begin{document}
 etex;
 
+numeric linewidth;
+linewidth := 0.5pt;
+
 %
 % Analysator
 %
@@ -21,7 +24,7 @@ label.lft(btex $a_2$ etex, (0, 40));
 label.lft(btex $a_3$ etex, (0, 30));
 label.lft(btex $a_n$ etex, (0,  0));
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 
 drawarrow (40,25)--(30,25){dir 180}..{dir 180}(10,50)--(0,50);
 drawarrow (40,25)--(30,25){dir 180}..{dir 180}(10,40)--(0,40);
@@ -39,7 +42,7 @@ endfig;
 %
 beginfig(2)
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 
 drawarrow (40,25)--(30,25){dir 180}..{dir 180}(10,50)--(0,50)
 	--(-10,50){dir 180}..{dir 180}(-30,25)--(-40,25);
@@ -61,7 +64,7 @@ endfig;
 %
 beginfig(3)
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 
 drawarrow (40,25)--(30,25){dir 180}..{dir 180}(10,50)--(0,50)
 	--(-10,50){dir 180}..{dir 180}(-30,25)--(-40,25);
@@ -83,7 +86,7 @@ endfig;
 %
 beginfig(4)
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 
 drawarrow ((40,25)--(30,25){dir 180}..{dir 180}(10,50)--(0,50)
 	--(-10,50){dir 180}..{dir 180}(-30,25)--(-40,25)) shifted (-80,0);
@@ -142,7 +145,7 @@ endfig;
 %
 beginfig(5)
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 
 drawarrow (0,0)--(100,0); label.top(btex $a_1$ etex, (100,0));
 drawarrow (0,0)--(0,100); label.top(btex $a_2$ etex, (0,100));
@@ -180,7 +183,7 @@ endfig;
 %
 beginfig(6)
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 
 draw ((40,0)--(30,0){dir 180}..{dir 180}(10,10)
 	--(0,10)) shifted (-80,0);
@@ -221,7 +224,7 @@ endfig;
 %
 beginfig(7)
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 
 fill (-2, 16)--( 2, 16)--( 2, 50)--(-2, 50)--cycle withcolor(0.5,0.5,0.5);
 fill (-2,-10)--( 2,-10)--( 2, 10)--(-2, 10)--cycle withcolor(0.5,0.5,0.5);
@@ -271,7 +274,7 @@ pickup pencircle scaled 3pt;
 draw (-98.5,0) withcolor(1,0,0);
 draw (-98.5,11.25) withcolor(0,0,1);
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 draw (0, 13)--(-98.5,0) withcolor(1,0,0);
 draw (0,-13)--(-98.5,0) withcolor(1,0,0);
 draw (0, 13)--(-98.5,11.25) withcolor(0,0,1);
@@ -298,7 +301,7 @@ endfig;
 %
 beginfig(8)
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 
 draw (100,0)--(90,0){dir 180}..{dir 180}(60,40)--(50,40);
 draw (50,38)--(50,42);
@@ -347,7 +350,7 @@ endfig;
 %
 beginfig(9)
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 
 draw (-20,-15)--(20,-15)--(20,15)--(-20,15)--cycle;
 draw (20,0)--(40,0);
@@ -361,7 +364,7 @@ endfig;
 %
 beginfig(10)
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 
 draw (-20,-15)--(20,-15)--(20,15)--(-20,15)--cycle;
 draw (20,0)--(40,0);
@@ -387,7 +390,7 @@ endfig;
 %
 beginfig(11)
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled linewidth;
 
 label.lft(btex $|\psi(t)\rangle$ etex, (-50,0));
 drawarrow (-30,0)--(-50,0);

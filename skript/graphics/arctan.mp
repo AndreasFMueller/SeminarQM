@@ -34,6 +34,8 @@ for b = 0 step 1 until 8:
 endfor;
 clip currentpicture to (-200,-a)--(200,-a)--(200,a)--(-200,a)--cycle;
 
+pickup pencircle scaled 0.5pt;
+
 drawarrow (-210,0)--(210,0);
 draw (-200,-2)--(-200,2);
 draw (200,-2)--(200,2);
@@ -49,7 +51,7 @@ pickup pencircle scaled 1.5pt;
 draw (-200,-a)--(0,-a) withcolor (1,0,0);
 draw ( 200, a)--(0, a) withcolor (1,0,0);
 
-pickup pencircle scaled 3pt;
+pickup pencircle scaled 4pt;
 draw (0,-a) withcolor (1,0,0);
 draw (0, a) withcolor (1,0,0);
 draw (0, 0) withcolor (1,0,0);

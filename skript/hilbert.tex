@@ -284,10 +284,10 @@ Raumes $\mathbb C^n$.
 Als Vektorraum besteht $l^2$ aus Folgen von komplexen Zahlen,
 so dass die Summe der Betragsquadrate beschr"ankt ist:
 \[
-l^2=\left\{
-(c_i)_{i\in\mathbb N}\,\left|\,c_i\in\mathbb C,
+l^2=\biggl\{
+(c_i)_{i\in\mathbb N}\,\biggl|\,c_i\in\mathbb C,
 \sum_{i\in\mathbb N} |c_i|^2 <\infty
-\right.\right\}
+\biggr.\biggr\}
 \]
 Addition von Folgen und Multiplikation mit komplexen Zahlen erfolgt 
 komponentenweise.
@@ -322,11 +322,11 @@ $\mathbb N$ bilden, solange sie abz"ahlbar sind. Zum Beispiel kann man
 die Menge der beidseitig unendlichen, quadratisch summierbaren Folgen
 \[
 l^2(\mathbb Z)=
-\left\{
-(c_k)_{k\in\mathbb Z}\,\left|\,
+\biggl\{
+(c_k)_{k\in\mathbb Z}\,\biggl|\,
 \sum_{k\in\mathbb Z}|c_k|^2<\infty
-\right.
-\right\}
+\biggr.
+\biggr\}
 \]
 bilden, der mit
 \[
@@ -446,10 +446,10 @@ nachzuweisende Eigenschaften wie die Cauchy-Scharz-Ungleichung
 \int_{-\pi}^\pi \bar f(x)g(x)\,dx
 \right|^2
 \le 
-\int_{\pi}^\pi |f(x)|^2\,dx
-\int_{\pi}^\pi |g(x)|^2\,dx
+\int_{-\pi}^\pi |f(x)|^2\,dx
+\int_{-\pi}^\pi |g(x)|^2\,dx
 =
-(f,f)(g,g)=\|f\|^2\|g\|^2,
+(f,f)(g,g)=\|f\|^2\cdot\|g\|^2,
 \]
 oder die Parseval-Identit"at:
 \[
@@ -509,14 +509,14 @@ Operatoren sind lineare Abbildungen des Hilbertraumes. Der Operator $A$
 erzeugt aus einem Zustandsvektor $|u\rangle$ einen neuen Vektor
 $A|u\rangle$. Die Linearit"at von $A$ bedeutet
 \[
-A(\lambda |u\rangle + \mu |v\rangle)=\lambda A|u\rangle + \mu A|v\rangle.
+A(\lambda |u\rangle + \mu |v\rangle)=\lambda A \,|u\rangle + \mu A\,|v\rangle.
 \]
 
 Ein Operator $A$ heisst selbstadjungiert, wenn $A^*=A$ gilt.
 F"ur das Skalarprodukt bedeutet diese Eigenschaft, dass $(u, Av)=(Au,v)$ 
 In der Bra-Ket-Notation schreiben wir 
 \begin{equation}
-(u,Av)=(Au,v)=\langle u|A|v\rangle.
+(u,Av)=(Au,v)=\langle u|\,A\,|v\rangle.
 \label{skalar-operator}
 \end{equation}
 F"ur selbstadjungierte Operatioren spielt es gar keine Rolle, auf welchen
@@ -532,24 +532,24 @@ ausgedr"ucken:
 \[
 |u\rangle = \sum_{i=0}^\infty u_i\, |i\rangle.
 \]
-Dann kann man $A|u\rangle$ mit Hilfe der Linearit"at berechnen:
+Dann kann man $A\,|u\rangle$ mit Hilfe der Linearit"at berechnen:
 \[
-A|u\rangle = \sum_{i=0}^\infty u_iA|i\rangle.
+A\,|u\rangle = \sum_{i=0}^\infty u_iA\,|i\rangle.
 \]
 Wenn man das Resultat wieder in der Hilbertbasis ausdr"ucken will, 
 muss man den Resultatvektor mit den Basisvektoren multiplizieren.
 Der Koeffizient der Komponente $|j\rangle$ ist
 \begin{equation}
-\langle j|A|u\rangle
+\langle j|\,A\,|u\rangle
 =
-\sum_{i=0}^\infty u_i \langle j|A|i\rangle
+\sum_{i=0}^\infty u_i \langle j|\,A\,|i\rangle
 =
-\sum_{i=0}^\infty \langle j|A|i\rangle u_i
+\sum_{i=0}^\infty \langle j|\,A\,|i\rangle u_i
 \label{matrixmultiplikation}
 \end{equation}
 Man nennt die Zahlen
 \[
-a_{ji}=\langle j|A|i\rangle
+a_{ji}=\langle j|\,A\,|i\rangle
 \]
 die Matrixelemente des Operators $A$. Die Formel (\ref{matrixmultiplikation})
 entspricht der bekannten Formel f"ur die Multiplikation einer Matrix
@@ -559,7 +559,7 @@ Wenn zwei Operatoren die gleichen Matrixelemente haben, dann stimmen
 die Operatoren "uberein. Haben n"amlich zwei Operatoren $A$ und $A'$
 die gleichen Matrixelemente, dann hat $A-A'$ die Matrixelemente $0$:
 \[
-\langle i|A-A'|j\rangle =0\qquad\forall i,j
+\langle i|\,A-A'\,|j\rangle =0\qquad\forall i,j
 \]
 
 F"ur eine grosse Klasse von selbstadjungierten Operatoren $A$ gilt ein
@@ -574,7 +574,7 @@ mit der Eigenschaft, dass
 \]
 und 
 \[
-A|i\rangle=\alpha_i|i\rangle\qquad\forall i,
+A\,|i\rangle=\alpha_i\,|i\rangle\qquad\forall i,
 \]
 d.~h.~$\alpha_i$ sind die Eigenwerte von $A$.
 F"ur endlichdimensionale komplexe Vektorr"aume ist dies der bekannte
@@ -585,8 +585,8 @@ Projektionen sind Operatoren $P$ mit der Eigenschaft $P^2=P$.
 Ist $|u\rangle$ ein Zustandsvektor, dann kann man eine Projektion $P_u$
 auf diesen Zustandsvektor konstruieren:
 \begin{align*}
-P_u|u\rangle&=|u\rangle,\\
-P_u|v\rangle&=0\qquad \text{f"ur $|v\rangle$ mit $\langle v|u\rangle=0$}
+P_u\,|u\rangle&=|u\rangle,\\
+P_u\,|v\rangle&=0\qquad \text{f"ur $|v\rangle$ mit $\langle v|u\rangle=0$}
 \end{align*}
 Wir schreiben 
 \[
@@ -598,7 +598,7 @@ Diese Notation ist konsistent, denn
 \begin{align*}
 |u\rangle\langle u|u\rangle&=|u\rangle\cdot 1\\
 |u\rangle\langle u|v\rangle&=|u\rangle\cdot 0=0,\qquad
-\text{f"ur $langle u|v\rangle = 0$}
+\text{f"ur $\langle u|v\rangle = 0$}
 \end{align*}
 Sind $|i\rangle$ mit $i=1,\dots, n$ orthonormale Zustandsvektoren, also
 \[
@@ -615,7 +615,7 @@ P^2=
 |i\rangle \langle i|j\rangle \langle j|
 =
 \sum_{i=1, j = 1}^n
-\delta_{ij} |i\rangle\langle j|=\sum_{i=1}^n|i\rangle\langle i|=P.
+\delta_{ij} \,|i\rangle\langle j|=\sum_{i=1}^n\,|i\rangle\langle i|=P.
 \]
 
 Wenn es f"ur den Operator $A$ auf dem Hilbertraum $\cal H$ eine
@@ -623,19 +623,19 @@ Hilbertbasis aus Eigenvektoren $|i\rangle$ mit Eigenwerten $\alpha_i$ gibt,
 dann kann der Operator selbst
 als eine Linearkombination von Projektoren geschrieben werden. Wir setzen
 \[
-A'=\sum_{i=0}^\infty |i\rangle \alpha_i \langle i|.
+A'=\sum_{i=0}^\infty |i\rangle \,\alpha_i\, \langle i|.
 \]
 Wir vergleichen die Matrixelemente von $A'$ und $A$:
 \begin{align*}
-\langle k| A' |l\rangle
+\langle k|\, A' \,|l\rangle
 &=
-\sum_{i=0}^\infty \langle k|i\rangle \alpha_i \langle i|l\rangle
+\sum_{i=0}^\infty \langle k\,|i\rangle\, \alpha_i \,\langle i|l\rangle
 =\sum_{i=0}^\infty \delta_{ki}\alpha_i\delta_{il}
 =\alpha_l\delta_{kl}
 \\
-\langle k|A|l\rangle
+\langle k|\,A\,|l\rangle
 &=
-\langle k|\alpha_l|l\rangle=\alpha_l\delta_{kl}
+\langle k|\,\alpha_l\,|l\rangle=\alpha_l\delta_{kl}
 \end{align*}
 Die Matrixelemente stimmen "uberein, also ist $A=A'$.
 

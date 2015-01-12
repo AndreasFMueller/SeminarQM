@@ -16,7 +16,7 @@ analysator:	$(analysator_FILES)
 arctan_FILES = arctan-1.pdf
 arctan:	$(arctan_FILES)
 
-drehimpuls_FILES = drehimpuls-1.pdf drehimpuls-2.pdf
+drehimpuls_FILES = drehimpuls-1.pdf drehimpuls-2.pdf drehimpuls-3.pdf
 drehimpuls: $(drehimpuls_FILES)
 
 $(pert_FILES):	pert.mp
@@ -42,7 +42,7 @@ $(arctan_FILES):	arctan.mp
 
 $(drehimpuls_FILES):	drehimpuls.mp
 	TEX=latex mpost drehimpuls.mp
-	for i in 1 2; \
+	for i in 1 2 3; \
 	do \
 		mptopdf drehimpuls.$${i}; \
 	done
