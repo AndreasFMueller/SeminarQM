@@ -345,7 +345,8 @@ messbaren Gr"osse.
 
 Unser Ziel ist die Berechnung der Eigenwerte und Eigenvektoren
 des harmonischen Oszillators mit algebraischen Mitteln. Dazu brauchen
-wir die algebraischen Eigenschaften der Operatoren $a$ und $a^+$.
+wir die algebraischen Eigenschaften der Operatoren $a$ und $a^+$,
+insbesondere deren Produkte und Vertauschungsrelationen.
 \begin{align*}
 aa^+
 &=
@@ -389,22 +390,44 @@ mit Energie $\varepsilon_n$, also
 Wenden wir die Operatoren $a$ und $a^+$ auf $|n\rangle$ anwenden, erhalten
 wir einen neuen Eigenvektor:
 \begin{align*}
-\hat{\cal H}a^+|n\rangle
+\hat{\cal H}a^+\,|n\rangle
 &=
-([\hat{\cal H}, a^+] + a^+\hat{\cal H})|n\rangle
+([\hat{\cal H}, a^+] + a^+\hat{\cal H})\,|n\rangle
 =
-(1 + \varepsilon_n)a^+|n\rangle
+(1 + \varepsilon_n)a^+\,|n\rangle
 \\
-\hat{\cal H}a|n\rangle
+\hat{\cal H}a\,|n\rangle
 &=
-([\hat{\cal H}, a] + a\hat{\cal H})|n\rangle
+([\hat{\cal H}, a] + a\hat{\cal H})\,|n\rangle
 =
-(\varepsilon_n - 1)a|n\rangle
+(\varepsilon_n - 1)a\,|n\rangle
 \end{align*}
-Insbesonder ist $a^+|n\rangle$ ein Eigenvektor mit Energie
+Insbesondere ist $a^+\,|n\rangle$ ein Eigenvektor mit Energie
 $E_n+1$, und $a|n\rangle$ ein Eigenvektor mit Energie $\varepsilon_n-1$.
 Man kann also mit dem Operator $a^+$ zu Zust"anden h"oherer Energie
 aufsteigen, und mit $a$ zu Zust"anden niedrigerer Energie absteigen.
+
+Beim Auf- und Absteigen bleibt die Normierung aber nicht notwendigerweise
+erhalten, wir k"onnen also nicht davon ausgehen, dass $a^+|n\rangle$
+wieder ein normierter Eigenvektor ist.
+Um die Norm zu korrigieren, berechen wir die Norm des neuen Vektors:
+\[
+(a^+\langle n|) a^+\,|n\rangle
+=
+\langle n|\,aa^+\,|n\rangle
+=
+\langle n|\,\hat{\cal H}+{\textstyle\frac12}\,|n\rangle
+=
+(\varepsilon_n+{\textstyle\frac12})\langle n|n\rangle
+=
+\varepsilon_n+\textstyle\frac12
+\]
+Wenn man also durch Aufsteigen wieder einen normierten Zustandsvektor
+erhalten will, muss man den erhaltenen Vektor renormieren:
+\begin{equation}
+|n+1\rangle = \frac1{\sqrt{\varepsilon_n+\textstyle\frac12}}|n\rangle.
+\label{aufsteigrenormierung}
+\end{equation}
 
 \subsection{Eigenwerte und Zustandsvektoren}
 Die Energie eines harmonischen Operators ist immer positiv,
@@ -413,11 +436,11 @@ Zustand $|0\rangle$ kleinster Energie geben. M"ochte man weiter
 absteigen, darf kein Zustandsvektor mehr entstehen, es muss also
 $a|0\rangle=0$ sein. Durch Multiplikation mit $a^+$ folgt
 \[
-0=a^+a|0\rangle=(\hat{\cal H}-\textstyle\frac12)|0\rangle
+0=a^+a|0\rangle=(\hat{\cal H}-\textstyle\frac12)\,|0\rangle
 \quad
 \Rightarrow
 \quad
-\hat{\cal H}|0\rangle=\frac12|0\rangle
+\hat{\cal H}\,|0\rangle=\frac12\,|0\rangle
 \quad
 \Rightarrow
 \quad
@@ -427,11 +450,41 @@ Der Grundzustand hat also immer den Eigenwert $\frac12$, oder die
 Energie $\frac12\hbar\omega$. Diesen Wert haben wir auch schon in
 Abschnitt~\ref{hogrundzustand} erhalten.
 
+Beim Aufsteigen ver"andert sich jeweils die Normierung.
+Will man die Energieeigenzust"ande so konstruieren, muss man nach jedem
+Aufsteigeschritt die Normierung mit Hilfe von (\ref{aufsteigrenormierung})
+korrigieren. Dabei kann man verwenden, dass $\varepsilon_n = n+\frac12$
+ist. Nach $n$-maligem Aufsteigen aus dem Grundzustand hat man die
+Norm um den Faktor
+\begin{align}
+N_n
+&=
+\frac12\cdot\biggl(1+\frac12\biggr)\cdot\biggl(2+\frac12\biggr)\cdot\ldots\cdot
+\biggl(n+\frac12\biggr)
+=
+\frac12\cdot\frac32\cdot\frac52\cdot\ldots\cdot\frac{2n+1}2
+\notag
+\\
+&=
+\frac1{2^n}
+\frac{1\cdot 2\cdot 3\cdot 4\cdot 5\cdot \ldots \cdot (2n+1)\cdot 2n}%
+{2\cdot 4\cdot 6\cdot \ldots \cdot 2n}
+=\frac1{2^{2n}}\frac{2n!}{n!}
+\label{aufsteigrenormierungn}
+\end{align}
+ver"andert.
+
 Der Aufsteigeoperator $a^+$ erm"oglicht jetzt auch, aus dem Grundzustand
 alle h"oheren Zust"ande konstruieren:
-\[
-|n\rangle = (a^+)^n|0\rangle.
-\]
+\begin{equation}
+|n\rangle
+=
+\frac{1}{\sqrt{N_n}}(a^+)^n\,|0\rangle
+=
+2^n \sqrt{\frac{n!}{2n!}} (a^+)^n\,|0\rangle,
+\end{equation}
+wobei $N_n$ der Normierungsfaktor aus (\ref{aufsteigrenormierungn}) ist.
+
 Da wir den Grundzustand bereits aus Abschnitt~\ref{hogrundzustand} kennen,
 k"onnen wir die Wellenfunktionen f"ur die h"oheren Zust"ande berechnen,
 indem wir den Operator $a^+$ wieder in den urspr"unglichen Koordinaten

@@ -490,7 +490,7 @@ reduzieren, indem wir $A$ mit Analysatorkreisen zusammensetzen:
 \end{center}
 Diesem Diagramm entspricht der Ausdruck
 \[
-|a_j\rangle \langle a_j| A |a_i\rangle \langle a_i|,
+|a_j\rangle \langle a_j|\, A \,|a_i\rangle \langle a_i|,
 \]
 insbesondere ist die Wirkung von $A$ vollst"andig festgelegt durch die
 Zahlen
@@ -498,7 +498,7 @@ $\langle a_j|A|a_i\rangle$, sie heissen die {\em Matrixelemente} von $A$.
 Die Wirkung von $A$ auf dem Zustand $|\psi\rangle$ ist also
 \begin{equation}
 A|\psi\rangle = \sum_{i,j} |a_j\rangle
-	\langle a_j|A|a_i\rangle
+	\langle a_j|\,A\,|a_i\rangle
 	\langle a_i|\psi\rangle,
 \label{A-wirkung}
 \end{equation}
@@ -506,15 +506,15 @@ mit Hilfe einer Basis kann man also die Wirkung eines Operators auf
 die Multiplikation von Matrizen und Vektoren
 \[
 \begin{pmatrix}
-\langle a_1|A|\psi\rangle\\
+\langle a_1|\,A\,|\psi\rangle\\
 \vdots\\
-\langle a_n|A|\psi\rangle
+\langle a_n|\,A\,|\psi\rangle
 \end{pmatrix}
 =
 \begin{pmatrix}
-\langle a_1|A|a_1\rangle&\dots &\langle a_1|A|a_n\rangle\\
+\langle a_1|\,A\,|a_1\rangle&\dots &\langle a_1|\,A\,|a_n\rangle\\
 \vdots                  &\ddots&\vdots                  \\
-\langle a_n|A|a_1\rangle&\dots &\langle a_n|A|a_n\rangle
+\langle a_n|\,A\,|a_1\rangle&\dots &\langle a_n|\,A\,|a_n\rangle
 \end{pmatrix}
 \begin{pmatrix}
 \langle a_1|\psi\rangle\\
@@ -534,11 +534,11 @@ A\langle \psi|=\langle\psi|A^*.
 Mit Hilfe der hermiteschen Symmetrierelation (\ref{hermiteschesymmetrie})
 kann man aber auch die Wirkung auf einen $\langle\psi|$-Vektor ausrechnen:
 \begin{equation}
-(A\langle a_i|)|a_j\rangle
+(A\langle a_i|)\,|a_j\rangle
 =
-\overline{\langle a_j|(A|a_i\rangle)}
+\overline{\langle a_j|\,(A\,|a_i\rangle)}
 =
-\overline{\langle a_j|A|a_i\rangle}.
+\overline{\langle a_j|\,A\,|a_i\rangle}.
 \end{equation}
 Die Matrix von $A^*$
 ist also die transponierte und komplex konjugierte Matrix von $A$,
@@ -562,7 +562,7 @@ V = \sum_{i} a_i\, |i\rangle\langle i|
 \]
 bauen. In der Basis $|i\rangle$ sind die Matrixelement von $V$
 \[
-\langle j|V|i\rangle = v_i\delta_{ij},
+\langle j|\,V\,|i\rangle = v_i\delta_{ij},
 \]
 $V$ hat also Diagonalform. In einer anderen Basis muss dies nicht
 mehr erf"ullt sein. Es ist aber eine entscheidende Eigenschaft 
@@ -572,9 +572,9 @@ Ist $|\psi\rangle$ ein beliebiger Zustand, dann ist
 \[
 \langle\psi|V|\psi\rangle
 =
-\sum_{i,j}\langle \psi|j\rangle\langle j|V|i\rangle\langle i|\psi\rangle
+\sum_{i,j}\langle \psi|j\rangle\langle j|\,V\,|i\rangle\langle i|\psi\rangle
 =
-\sum_i\langle \psi|i\rangle\langle i|V|i\rangle\langle i|\psi\rangle
+\sum_i\langle \psi|i\rangle\langle i|\,V\,|i\rangle\langle i|\psi\rangle
 =
 \sum_i v_i P(i|\psi)=E(V|\psi),
 \]
@@ -692,13 +692,13 @@ gezeichnet werden:
 Wir erwarten daher, dass die Zeitentwicklung wieder ein Operator ist,
 den wir $U(t)$ nennen:
 \[
-|\psi(t)\rangle = U(t)|\psi(0)\rangle.
+|\psi(t)\rangle = U(t)\,|\psi(0)\rangle.
 \]
 Das bedeutet aber, dass die Differentialgleichung (\ref{zeitentwicklung})
 linear sein muss, es muss also einen m"oglicherweise zeitabh"angigen
 Operator $K(t)$ geben, so dass 
 \begin{equation}
-\frac{d}{dt}|\psi(t)\rangle = K(t)|\psi(t)\rangle.
+\frac{d}{dt}\,|\psi(t)\rangle = K(t)\,|\psi(t)\rangle.
 \label{zeitentwicklung-linear}
 \end{equation}
 Die L"osung dieser Differentialgleichung liefert den Operator $U(t)$,
@@ -711,13 +711,13 @@ Zu jedem beliebigen Anfangszustand $|\psi(0)\rangle$ muss gelten
 \[
 \langle \psi(t)|\psi(t)\rangle
 =
-\langle \psi(t)|U|\psi(0)\rangle
+\langle \psi(t)|\,U\,|\psi(0)\rangle
 =
-\overline{\langle\psi(0)|U^*|\psi(t)\rangle}
+\overline{\langle\psi(0)|\,U^*\,|\psi(t)\rangle}
 =
-\overline{\langle\psi(0)|U^*U|\psi(0)\rangle}
+\overline{\langle\psi(0)|\,U^*U\,|\psi(0)\rangle}
 =
-\langle\psi(0)|U^*U|\psi(0)\rangle.
+\langle\psi(0)|\,U^*U\,|\psi(0)\rangle.
 \]
 Dies ist nur m"oglich, wenn
 \begin{equation}
@@ -780,7 +780,7 @@ welche wir noch gar keine Begr"undung haben.
 Die Differentialgleichung f"ur die Zeitentwicklung des Quantensystems wird
 mit $H$ ausgedr"uckt zu
 \begin{equation}
-i\hbar\frac{d}{dt}|\psi(t)\rangle = H(t)|\psi(t)\rangle,
+i\hbar\frac{d}{dt}|\psi(t)\rangle = H(t)\,|\psi(t)\rangle,
 \label{schroedingergleichungt}
 \end{equation}
 die {\rm zeitabh"angige Schr"odingergleichung}.
@@ -788,12 +788,12 @@ die {\rm zeitabh"angige Schr"odingergleichung}.
 Falls $H$ nicht von der Zeit abh"angt, wird die zeitabh"angige zur
 zeitunabh"angigen Schr"odingergleichung
 \begin{equation}
-i\hbar \frac{d}{dt}|\psi(t)\rangle = H|\psi(t)\rangle,
+i\hbar \frac{d}{dt}\,|\psi(t)\rangle = H\,|\psi(t)\rangle,
 \label{schroedingergleichung}
 \end{equation}
 die mit Hilfe der Exponentialfunktion sofort gel"ost werden kann:
 \[
-|\psi(t)\rangle = e^{i\hbar H}|\psi(0)\rangle
+|\psi(t)\rangle = e^{i\hbar H}\,|\psi(0)\rangle
 \]
 Da $H$ eine Observable ist, k"onnen wir eine Basis von Eigenvektoren
 von $H$ konstruieren, ist $|k\rangle$ ein Eigenvektor von $H$ mit
@@ -801,7 +801,7 @@ Eigenwert $E_k$, dann ist die Zeitentwicklung f"ur $|\psi(0)\rangle = |k\rangle$
 \[
 |\psi(t)\rangle
 =
-e^{i\hbar E_k}|k\rangle.
+e^{i\hbar E_k}\,|k\rangle.
 \]
 Insbesondere ist in diesem Spezialfall eines zeitunabh"angigen $H$-Operators
 die Zeitentwicklung vollst"andig bekannt, wenn man die Eigenwerte und
@@ -826,20 +826,20 @@ Zeit ab und setzen die Schr"odingergleichung ein:
 \begin{align*}
 \frac{d}{dt}\langle A\rangle
 &=
-\biggl(\frac{d}{dt}\langle\psi(t)|\biggr)A|\psi(t)\rangle
+\biggl(\frac{d}{dt}\langle\psi(t)|\biggr)A\,|\psi(t)\rangle
 +
-\langle\psi(t)|A\biggl(\frac{d}{dt}|\psi(t)\rangle\biggr)
+\langle\psi(t)|\,A\biggl(\frac{d}{dt}\,|\psi(t)\rangle\biggr)
 \\
 &=
-\biggl(\frac{1}{i\hbar}H\langle\psi(t)|\biggr)A|\psi(t)\rangle
+\biggl(\frac{1}{i\hbar}H\langle\psi(t)|\biggr)A\,|\psi(t)\rangle
 +
-\langle\psi(t)|A\frac{1}{i\hbar}H|\psi(t)\rangle
+\langle\psi(t)|\,A\frac{1}{i\hbar}H\,|\psi(t)\rangle
 \\
 &=
 \frac{i}{\hbar}
-\langle\psi(t)| HA-AH |\psi(t)\rangle
+\langle\psi(t)|\, HA-AH \,|\psi(t)\rangle
 \\
-&=\langle\psi(t)| \frac{i}{\hbar}[H,A] |\psi(t)\rangle
+&=\langle\psi(t)|\, \frac{i}{\hbar}[H,A] \,|\psi(t)\rangle
 \end{align*}
 Die Zeitabh"angigkeit einer Observablen $A$ wird also im Wesentlichen
 durch den Kommutator $[H,A]$ der Observablen mit dem Hamiltonoperator $H$

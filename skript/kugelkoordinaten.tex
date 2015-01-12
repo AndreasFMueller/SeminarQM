@@ -110,8 +110,8 @@ Koordinaten zusammenstellen
 \label{ableitungenvonr}
 \end{equation}
 F"ur die Ableitungen von $\vartheta$ dr"ucken wir $z$ durch Kugelkoordinaten
-aus, und leiten nach den kartesischen Koordinaten ab und l"osen nach dne
-Ableitungen von $\varphi$ auf:
+aus, leiten nach den kartesischen Koordinaten ab und l"osen nach den
+Ableitungen von $\varphi$ nach den kartesischen Koordinaten auf:
 \begin{align*}
 z&=r\cos\vartheta
 &&\Rightarrow&
@@ -483,6 +483,22 @@ vollst"andig durch die Ableitungen nach Kugelkoordinaten ausdr"ucken:
 \end{equation}
 Damit haben wir alle kartesischen Ableitungsoperatoren durch
 Ableitungsoperatoren in Kugelkoordinaten ausgedr"uckt. 
+Ausgehend von den Formeln (\ref{diffopkugel}) kann man jetzt jeden
+in kartesischen Koordinaten gegebenen Differentialgoperator
+in Kugelkoordinaten ausdr"ucken, indem man jedes Vorkommen eines
+Ableitungsoperators $\frac{\partial}{\partial x_i}$ durch den
+entsprechenden Ausdruck aus (\ref{diffopkugel}) ersetzt.
+
+Im Kapitel~\ref{chapter:drehimpuls} wird diese Technik im
+Abschnitt~\ref{section:drehimpulsortsdarstellung} verwendet.
+Dort wird gezeigt, wie man die Drehimpulsoperatoren in Kugelkoordinaten
+darstellen.
+Dies erlaubt, den einzelnen Komponenten des Laplaceoperators, der in
+Kapitel~\ref{chapter:wasserstoff} bereits untersucht wurde, eine physikalische
+Bedeutung zu geben.
+Man kann diese Technik aber auch verwenden, um den Laplaceoperator selbst
+in Kugelkoordinaten auszudr"ucken, was im n"achsten Abschnitt als
+Beispiel f"ur dieses Programm durchgef"uhrt werden soll.
 
 \section{Laplaceoperator}
 Der Laplace-Operator in kartesischen Koordinaten ist
@@ -932,8 +948,8 @@ r^2\frac{\partial}{\partial r}
 +\frac1{r^2\sin\vartheta}\frac{\partial}{\partial\vartheta}\biggl(
 \sin\vartheta\frac{\partial}{\partial\vartheta}
 \biggr)
-+\frac1{r^2}\frac{\partial^2}{\partial\varphi^2}
++\frac1{r^2}\frac1{\sin^2\vartheta}\frac{\partial^2}{\partial\varphi^2}
 \label{laplacekugel}
 \end{align}
 Dies ist die Form des Laplace-Operators in Kugelkoordinaten, die
-wir zur Diskussion des Wasserstoffatoms verwenden.
+wir in der Diskussion des Wasserstoffatoms verwenden.
