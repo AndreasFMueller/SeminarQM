@@ -1,5 +1,273 @@
 \chapter{Quantencomputer\label{chapter:quantencomputer}}
 \lhead{Quantencomputer}
 \rhead{}
+Die Technologie des zwanzigsten Jahrhunderts hat automatische
+Rechenmaschinen hervorgebracht, beliebige Rechnung durchf"uhren,
+sofern sie die Speichergr"osse der Maschine nicht sprengen.
+Sie beruhen auf einer physischen Codierung der Zahlen, mit denen
+gerechnet werden soll, und einer Maschine, welche Codierungen 
+in neue Codierungen umwandelt.
+Die Idee einer solchen Maschine geht auf Charles Babbage zur"uck,
+der in den Jahren ab 1812 auch eine Realisierung als mechanische
+Maschine angestrebt hat.
 
+Moderne Computer sind alle konkrete Realsierungen des abstrakten
+Konzeptes der Turing-Maschine, welches Alan Turing formuliert hat,
+um zu analysieren, welche Arten von Berechnungen in welcher Zeit
+"uberhaupt durchgef"uhrt werden k"onnen.
+Es wurde erkannt, dass gewisse Probleme auf Turing-Maschinen
+derart lange ben"otigen w"urden, dass man sie getrost als undurchf"uhrbar
+betrachten kann.
+Allgemein besteht die "Uberzeugung, dass das Problem der Faktorisierung
+des Produktes von grossen Primzahlen in diese Kategorie geh"ort,
+auch wenn dies bisher nicht bewiesen worden konnte.
+Dies impliziert, dass eine solche Faktorisierung, auf der die Sicherheit
+verschiedener kryptographischer Systeme basiert, ohne zus"atzliches
+Wissen nicht durchf"uhrbar ist.
+
+Eine wesentliche Eigenschaft solcher schwieriger Problem ist, dass
+sie die parallel Evaluation sehr vieler M"oglichkeiten erfordern,
+was in einem klassischen Computer nur sequenziell m"oglich ist.
+Der Grund daf"ur ist, dass ein Bit immer nur in genau einem
+Zustand sein kann, wenn man die verschiedenen M"oglichkeiten des
+Bits evaluieren will, dann muss man das hintereinander tun.
+
+In der Quantenmechanik gibt es aber Systeme, die in zwei Zust"anden
+gleichzeitig sein k"onnen, wie wir im Abschnitt~\ref{section:cat}
+illustrieren werden.
+Wenn man also auch das Rechenwerk einer Turingmaschine durch eine
+``Quantenschaltung'' ersetzen kann, dann kann ein relativ kleiner
+Quantecomputer alle M"oglichkeiten aller Bits gleichzeitig evaluieren,
+und damit das Problem in sehr kurzer Zeit l"osen.
+
+
+\section{Klassische Computer}
+Ein klassischer Computer kann bin"ar als Spannungen in einer
+elektronischen Schaltung codierte Zahlen in ander Muster von
+Spannungen umwandeln, welche das Resultat einer Rechenoperation
+mit den Zahlen als Input darstellt.
+\begin{figure}
+\centering
+\begin{tabular}{cccc}
+&UND&ODER&XOR\\
+\\
+&
+\includegraphics{graphics/gatter-1.pdf}&%
+\includegraphics{graphics/gatter-2.pdf}&%
+\includegraphics{graphics/gatter-5.pdf}
+\\
+\\
+&
+\includegraphics{graphics/gatter-3.pdf}&%
+\includegraphics{graphics/gatter-4.pdf}&%
+\includegraphics{graphics/gatter-6.pdf}
+\end{tabular}
+\caption{Logische Gatter von links nach rechts UND, ODER, XOR,
+in der unteren Reihe invertiert.
+\label{gates}}
+\end{figure}
+Die grundlegenden logischen Operationen werden dann durch sogenannte
+Gatter implementiert, deren Schaltbilder in Abbildung~\ref{gates} dargestellt
+sind.
+\begin{figure}
+\centering
+\includegraphics{graphics/gatter-8.pdf}
+\caption{Halbaddierer, der Ausgang $\Sigma$ ist die Summe der beiden
+Eing"ange $A$ und $B$, der Ausgang $C_\text{out}$ wird aktiv, wenn
+ein "Ubertrag auftritt.
+\label{halfadder}}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics{graphics/gatter-7.pdf}
+\caption{Volladdierer, berechnet die Summe der beiden Inputs $A$ und $B$
+und den "Ubertrag $C_\text{in}$, und gibt die Summe $\Sigma$ und den
+"Ubertrag $C_\text{out}$ aus.
+\label{fulladder}}
+\end{figure}
+Aus den Grundoperationn lassen sich komplexere Schaltungen 
+aufbauen, zum Beispiel das Halbaddierwerk in Abbildung~\ref{halfadder}
+oder der Volladdierer in Abbildung~\ref{fulladder}.
+Die Digitaltechnik lehrt, wie man durch Kombination solcher Schaltung
+beliebig komplexe Berechnungen anstellen kann.
+
+Die Verbindungen in all diesen Schaltungen k"onnen nur in jeweils einem
+Zustand sein, ein oder aus, $1$ oder $0$.
+Dies ist eine Einschr"ankung der Technologie.
+Selbst die Verwendung verschiedener Spannungsniveaus auf den Verbindungen
+w"urde daran nichts "andern: zu jeder Zeit kann jede Verbindung nur
+ein einem der m"oglichen Zust"ande sein.
+
+Eines der schwierig zu l"osenden Probleme ist SAT, die Frage, ob eine
+logische Formel durch geeignete Wahrheitsbelegung der Inputs wahr
+werden kann. Implementiert man die logische Formal als Schaltung,
+wird die Frage gleichbedeutend damit, ob der Ausgang der Schaltung
+durch geeignete Beschaltung der Inputs in den Zustand $1$  gehen kann.
+Bedingt durch die Technologie k"onnen wir die Frage nur dadurch beantworten,
+dass wir alle m"oglichen Inputs durchprobieren. Bei $n$ Inputs sind
+dies $2^n$ Belegungen, entsprechend lange dauert es, eine L"osung
+zu finden.
+
+\section{Schr"odingers Katze\label{section:cat}}
+Dass in der Quantenmechanik ein System nicht mir in einem reinen Zustand
+zu sein braucht, hat Erwin Schr"odinger mit seinem ber"uhmten 
+Gedankenexperiment mit der Katze illustriert.
+In einer Kiste befindet sich eine Katze und ein Mechanismus,
+der beim radioaktiven Zerfall des darin befindlichen radioaktiven
+Atomkernes eine Phiole mit Gift zerbricht, so dass es ausweichen und
+die Katze t"oten kann.
+Die Katze kann offensichtlich in zwei m"oglichen Zust"anden sein,
+lebendig $|L\rangle$ oder tot $|T\rangle$. 
+Zu beginn des Experiments befindet es sich im Zustand $|L\rangle$.
+Dieser Zustand der Katze wiederspiegelt nat"urlich nur den Zustand
+des Atomkerns, der ebenfalls in zwei Zust"anden sein kann.
+
+Mit fortschreitender Zeit steigt die Wahrscheinlichkeit, dass der
+Atomkern zerfallen ist, und die Katze tot ist.
+Genauer sind die Wahrscheinlichtkeiten, die Katze in den beiden
+Zust"anden zu finden
+\begin{align*}
+|\langle L|\psi(t)\rangle|^2
+&=
+2^{-t/t_{\frac12}}
+&&\text{und}
+&
+|\langle T|\psi(t)\rangle|^2
+&=
+1-2^{-t/t_{\frac12}}
+\end{align*}
+Die Katze ist also in einem Zustand
+\[
+|\psi(t)\rangle = 
+\sqrt{2^{-t/t_{\frac12}}}e^{i\varphi_1}\,|L\rangle
++
+\sqrt{1-2^{-t/t_{\frac12}}}e^{i\varphi_2}\,|T\rangle,
+\]
+die beiden Phasenfaktoren tragen der Tatsache Rechnung, dass komplexe
+Linearkombinationen m"oglich sind.
+
+Ist die Katze lebendig oder tot? Die Erfahrung mit makroskopischen
+Katzen sagt uns, dass ein Katze entweder das eine oder andere ist.
+Die Quantenmechanik sagt uns dagegen, dass wir es nicht wissen k"onnen.
+Wir k"onnen nur wissen, dass die Katze in einem "Uberlagerungszustand
+ist.
+Das einzige, was wir daraus ableiten k"onnen, ist mit welcher
+Wahrscheinlichkeit sie bereits tot ist.
+Gewissheit dar"uber, in welchem Zustand sich die Katze befindet,
+erhalten wer genau in dem Moment, wo wir das Experiment durchf"uhren
+und den Zustand der Katze neu ermitteln.
+
+Durch den Prozess der Beobachtung der Katze "andert sich deren Zustand.
+Lebt sie noch, wissen wir, dass sie sich im Zustand $|L\rangle$ befindet.
+Ist sie tot, befindet sie sich im Zustand $|T\rangle$.
+Die Beobachtung hat also den Zustand ver"andert.
+
+Wir erweitern jetzt das urspr"ungliche Gedankenexperiment von Schr"odinger.
+Wir stellen uns vor, wir m"ochten gerne eine exotische Eigenschaft von
+Katzen messen, insbesondere m"ochten wir wissen eine lebende Katze oder
+eine tote Katze diese Eigenschaft hat. Das klassische Experiment
+daf"ur w"are, je eine lebendige und eine tote Katze zu pr"aparieren,
+und dann den Test f"ur die Eigenschaft auf beide anzuwenden.
+
+F"ur das quantenmechanische Experiment brauchen wir offenbar einen
+Operator, zwei m"ogliche Ausgangszust"ande hat: die Katze mit der
+Eigenschaft $|Y\rangle$ und die Katze ohne die Eigenschaft $|N\rangle$.
+Das zugeh"orige Experiment k"onnte man mit der Notation aus
+Kapitel~\ref{chapter:einfache-quantensysteme} als
+\begin{center}
+\includegraphics{graphics/gatter-9.pdf}
+\end{center}
+darstellen. 
+
+F"ur Schr"odingers Katze k"onnen wir die Frage, ob die Eigenschaft $Q$
+in f"ur lebende oder tote Katzen vorhanden ist, jin einem einzigen
+Durchgang beantworten.
+Dazu stellen wir zuerst eine Katze in einem "Uberlagerungszustand
+$|\psi\rangle$ von $|L\rangle$ und $|T\rangle$ her.
+Auf diesen Zustand wenden wir den Operator $Q$ an, und testen dann,
+ob es Katzen gibt, die sich im Zustand $|Y\rangle$ befindet, indem
+wir $\langle Y|\,Q\,|\psi\rangle$ messen.
+Falls wir herausfinden, dass $\langle Y|\,Q\,|\psi\rangle\ne 0$,
+dann kann eine Katze die Eigenschaft haben, auch wenn wir noch nicht
+wissen, ob es eine Eigenschaft von toten oder lebenden Katzen ist.
+
+Schr"odingers Katze in ihrem "Uberlagerungszustand kann also dazu
+verwendet werden, einen Quantencomputer zu bauen, der Probleme "uber
+Katzeneigenschaften l"osen kann.
+
+\section{Quantencomputer}
+Nach dem einf"uhrenden Beispiel "uber den Schr"odingerschen
+Katzen-Quanten-Computer k"onnen wir uns jetzt dar"uber Gedanken
+machen, wie ein Quanten-Computer aussehen m"usste, der allgemeine
+mathematische Probleme l"osen k"onnte.
+
+\subsection{Q-bits}
+Ein quantenmechanisches System mit zwei m"oglichen Zust"ande $|0\rangle$
+und $|1\rangle$ muss sich nicht
+notwendigerweise in genau einem der Zust"ande befinden.
+Jede Linearkombination der beiden Zust"ande ist ebenfalls ein g"ultiger
+Zustand, sofern sie als Vektor L"ange $1$ hat.
+Der Zustand
+\[
+|\psi\rangle
+=
+\lambda \,|0\rangle + \mu\,|1\rangle
+\]
+hat L"ange $1$ wenn gilt
+\[
+\langle\psi|\psi\rangle
+=
+(
+\bar\lambda
+\langle 0|
++
+\bar\mu
+\langle 1|
+)
+(
+\lambda \,|0\rangle + \mu\,|1\rangle
+)
+=
+|\lambda|^2\langle 0|0\rangle + |\mu|^2\langle 1|1\rangle
+=
+|\lambda|^2+|\mu|^2
+=
+1
+,
+\]
+da die gemischten Terme wegen $\langle 0|1\rangle=0$ wegfallen.
+Es gen"ugt also, dass die Quadratsumme der Betr"age von $\lambda$ und $\mu$
+den Wert $1$ ergibt.
+Insbesondere gibt es selbst f"ur dieses einfache System bereits viel
+mehr m"ogliche Zust"ande als bei einem klassischen Bit.
+Ein solches quantenmechanisches System nennt man in Q-bit.
+
+Ein klassisches System mit zwei Bits kann in 4 m"oglichen Zust"anden sein.
+Das zugeh"orige quantenmechanische System kann in einer beliebigen
+"Uberlagerung der vier m"oglichen reinen Zust"ande sein:
+\[
+|\psi\rangle
+=
+\alpha_{00}|00\rangle
++
+\alpha_{01}|01\rangle
++
+\alpha_{10}|10\rangle
++
+\alpha_{11}|11\rangle
+,\qquad
+|\alpha_{00}|^2
++
+|\alpha_{01}|^2
++
+|\alpha_{10}|^2
++
+|\alpha_{11}|^2
+=1.
+\]
+
+
+\subsection{Gatter}
+
+\subsection{Quanten-Turing-Maschinen}
 

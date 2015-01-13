@@ -1,9 +1,12 @@
 #
-# Makefile --
+# Makefile -- build graphics for the book on quantum mechanics
 #
 # (c) 2014 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
-all:	pert analysator arctan drehimpuls
+all:	pert analysator arctan drehimpuls gatter dependencies
+
+dependencies_FILES = dependencies-1.pdf
+dependencies: $(dependencies_FILES)
 
 pert_FILES = pert-1.pdf
 pert:	$(pert_FILES)
@@ -18,6 +21,10 @@ arctan:	$(arctan_FILES)
 
 drehimpuls_FILES = drehimpuls-1.pdf drehimpuls-2.pdf drehimpuls-3.pdf
 drehimpuls: $(drehimpuls_FILES)
+
+gatter_FILES = gatter-1.pdf gatter-2.pdf gatter-3.pdf gatter-4.pdf \
+	gatter-5.pdf gatter-6.pdf gatter-7.pdf gatter-8.pdf gatter-9.pdf
+gatter: $(gatter_FILES)
 
 $(pert_FILES):	pert.mp
 	TEX=latex mpost pert.mp
@@ -45,5 +52,19 @@ $(drehimpuls_FILES):	drehimpuls.mp
 	for i in 1 2 3; \
 	do \
 		mptopdf drehimpuls.$${i}; \
+	done
+
+$(gatter_FILES):	gatter.mp
+	TEX=latex mpost gatter.mp
+	for i in 1 2 3 4 5 6 7 8 9; \
+	do \
+		mptopdf gatter.$${i}; \
+	done
+
+$(dependencies_FILES):	dependencies.mp
+	TEX=latex mpost dependencies.mp
+	for i in 1; \
+	do \
+		mptopdf dependencies.$${i}; \
 	done
 	
