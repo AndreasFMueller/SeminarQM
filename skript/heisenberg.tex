@@ -31,15 +31,15 @@ Falls $A$ and $B$ Observable sind, die nicht vertauschen, dann k"onnen
 gemeinsame Eigenvektoren nicht beliebig sein.
 Nehmen wir n"amlich an, $|\psi\rangle$ sei ein gemeinsamer Eigenvektor
 von $A$ mit Eigenwert $\alpha$ und $B$ mit Eigenwert $\beta$.
-Dann wirkt der Kommutator darauf wie folgt
+Dann wirkt der Kommutator auf $|\psi\rangle$ wie folgt
 \[
-[A,B]|\psi\rangle
+[A,B]\,|\psi\rangle
 =
-(AB-BA)|\psi\rangle 
+(AB-BA)\,|\psi\rangle 
 =
-A\beta|\psi\rangle -B\alpha|\psi\rangle
+A\beta\,|\psi\rangle -B\alpha\,|\psi\rangle
 =
-\alpha\beta|\psi\rangle-\beta\alpha|\psi\rangle
+\alpha\beta\,|\psi\rangle-\beta\alpha\,|\psi\rangle
 =
 0.
 \]
@@ -47,13 +47,13 @@ Ein gemeinsamer Eigenvektor $|\psi\rangle$ wird also vom $[A,B]$
 zu $0$ gemacht.
 
 F"ur die Observablen $X$ f"ur Ort und $P$ f"ur den Impuls eines Teilchens,
-k"onnen wir den Kommutator explizt ausrechnen:
+k"onnen wir den Kommutator in der Ortsdarstellung explizt ausrechnen:
 \begin{align*}
 [X,P]\psi(x)
 &=
-\left[
+\biggl[
 x,\frac{\hbar}{i}\frac{\partial}{\partial x}
-\right]\psi(x)
+\biggr]\psi(x)
 =
 \psi(x)\frac{\hbar}{i}\frac{\partial\psi(x)}{\partial x}
 -
@@ -107,9 +107,9 @@ Unsch"arfe sein muss, eine Unsch"arferelation.
 
 \section{Varianz, Kovarianz und Unsch"arfe}
 Sie $A$ eine Observable und $|\psi\rangle$ ein Zustand. Dann ist
-$\langle \psi|A|\psi\rangle$ der Erwartungswert der Observablen $A$ 
+$\langle \psi|\,A\,|\psi\rangle$ der Erwartungswert der Observablen $A$ 
 im Zustand $|\psi\rangle$.
-Zur Abk"urzung schreiben wir $\langle A\rangle=\langle\psi|A|\psi\rangle$.
+Zur Abk"urzung schreiben wir $\langle A\rangle=\langle\psi|\,A\,|\psi\rangle$.
 Mit $A$ ist auch $A-\langle A\rangle$ eine Observable, und ihr Erwartungswert
 ist nat"urlich $0$.
 
@@ -127,8 +127,8 @@ werden:
 =
 \langle\psi|\, A^2-2\langle A\rangle A+\langle A\rangle^2\,|\psi\rangle
 =
-\langle\psi|A^2|\psi\rangle 
--2\langle A\rangle \langle\psi|A|\psi\rangle
+\langle\psi|\,A^2\,|\psi\rangle 
+-2\langle A\rangle \langle\psi|\,A\,|\psi\rangle
 +\langle A\rangle^2\langle\psi|\psi\rangle
 \\
 &=\langle A^2\rangle -\langle A\rangle^2.
@@ -158,7 +158,9 @@ Analog k"onnen wir jetzt auch eine Kovarianz f"ur Observable als
 \langle A,B\rangle
 =
 \langle\psi|
+\,
 (A-\langle A\rangle)(B-\langle B\rangle)
+\,
 |\psi\rangle
 \]
 definieren.
@@ -171,8 +173,8 @@ zweier Zust"ande ansehen:
 \begin{equation}
 \left.
 \begin{aligned}
-|a\rangle &= (A-\langle A\rangle)|\psi\rangle\\
-|b\rangle &= (B-\langle B\rangle)|\psi\rangle
+|a\rangle &= (A-\langle A\rangle)\,|\psi\rangle\\
+|b\rangle &= (B-\langle B\rangle)\,|\psi\rangle
 \end{aligned}
 \right\}
 \quad
@@ -292,7 +294,7 @@ muss also gelten
 \ge
 \biggl(
 \frac{[X,P]}{2i}
-\biggr)^2.
+\biggr)^2
 \ge \frac{\hbar^2}4
 \end{equation}
 oder

@@ -995,7 +995,7 @@ x_3\frac{\partial}{\partial x_2}
 y\frac{\partial}{\partial z}
 -
 z\frac{\partial}{\partial y}
-\biggr)
+\biggr),
 \\
 L_2
 &=
@@ -1011,7 +1011,7 @@ x_1\frac{\partial}{\partial x_3}
 z\frac{\partial}{\partial x}
 -
 x\frac{\partial}{\partial z}
-\biggr)
+\biggr),
 \\
 L_3
 &=
@@ -1020,7 +1020,7 @@ L_3
 x_1\frac{\partial}{\partial x_2}
 -
 x_2\frac{\partial}{\partial x_1}
-\biggr).
+\biggr)
 =
 \frac{\hbar}{i}
 \biggl(
@@ -1257,6 +1257,110 @@ i\hbar\frac{\hbar}{i}\biggl(
 \end{align*}
 
 \subsubsection{Auf- und Absteigeoperatoren}
+Die Operatoren $L_+$ und $L_-$ k"onnen nat"urlich auch in Kugelkoordinaten
+dargestellt werden.
+\begin{align*}
+L_+
+&=
+L_1+iL_2
+\\
+&=
+\frac{\hbar}{i}\biggl(
+-\sin\varphi\frac{\partial}{\partial\vartheta}
+-\cos\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
++\hbar\biggl(
+\cos\varphi\frac{\partial}{\partial\vartheta}
+-\sin\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+&=
+\hbar\biggl(
+i\sin\varphi\frac{\partial}{\partial\vartheta}
++i\cos\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
++
+\cos\varphi\frac{\partial}{\partial\vartheta}
+-\sin\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+&=\hbar e^{i\varphi}\biggl(
+\frac{\partial}{\partial\vartheta}
++
+i\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+L_-
+&=
+L_1-iL_2
+\\
+&=
+\frac{\hbar}{i}\biggl(
+-\sin\varphi\frac{\partial}{\partial\vartheta}
+-\cos\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+-\hbar\biggl(
+\cos\varphi\frac{\partial}{\partial\vartheta}
+-\sin\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+&=
+\hbar\biggl(
+i\sin\varphi\frac{\partial}{\partial\vartheta}
++
+i\cos\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+-
+\cos\varphi\frac{\partial}{\partial\vartheta}
++\sin\varphi\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\\
+&=
+\hbar e^{-i\varphi}
+\biggl(
+-
+\frac{\partial}{\partial\vartheta}
++i
+\cot\vartheta\frac{\partial}{\partial\varphi}
+\biggr)
+\end{align*}
+Diese Operatoren erlauben uns, aus einem Eigenzustand von $L_3$
+einen neuen Eigenzustand zu berechnen, dessen $m$-Quantenzahl 
+um $1$ h"oher oder tiefer sind.
+Der Operator $L_3$ in der Ortsdarstellung ist
+\[
+L_3=\frac{\hbar}{i}\frac{\partial}{\partial\varphi},
+\]
+Bei der Analyse des Wasserstoffatoms hatten wir die Eigenfunktionen
+als Produkt $\Theta(\vartheta) e^{im\varphi}$ angesetzt,  und es ist
+klar, dass eine Funktion mit dieser $\varphi$-Abh"angigkeit ein
+Eigenvektor von $L_3$ mit Eigenwert $\hbar m$ ist. Durch die Anwendung
+von $L_+$ sollte daraus eine Funktion werden, deren $\varphi$-Abh"angigkeit
+zu einer Eigenfunktion von $L_3$ mit Eigenwert $\hbar(m+1)$ bzw.~$\hbar(m-1)$
+passt:
+\begin{equation*}
+\langle x|n,j,m\rangle
+=
+R(r)\Theta(\vartheta)e^{im\varphi}
+\quad\Rightarrow\quad
+\left\{
+\begin{aligned}
+L_+
+\langle x|n,j,m\rangle
+&=
+f_+(r,\vartheta)
+e^{i(m+1)\varphi}
+\\
+L_-
+\langle x|n,j,m\rangle
+&=
+f_-(r,\vartheta)
+e^{i(m-1)\varphi}
+\end{aligned}
+\right.
+\end{equation*}
+Die Auf- und Absteigeoperatoren in Kugelkoordinaten k"onnen zum
+Beispiel dazu verwendet werden, aus einer L"osung der Schr"odingergleichung
+f"ur das Wasserstoff-Atom f"ur $m=0$ die anderen f"ur alle zul"assigen
+Werte von $m$ zu berechnen.
 
 \subsubsection{Drehimpulsbetrag}
 F"ur die Berechnung des Drehimpulsbetrages m"ussen wir uns zun"achst

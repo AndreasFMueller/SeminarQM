@@ -197,7 +197,7 @@ wir k"onnen Sie auch mit den Formeln (\ref{realteil-formel}) und
 \operatorname{Im}e^{it}=\frac{e^{it}-e^{-it}}{2i}.
 \end{align*}
 
-\subsection{Matrixdarstellung der komplexen Zahlen}
+\subsection{Matrixdarstellung der komplexen Zahlen\label{subsection:matrixdarstellung}}
 Die Algebra der komplexen Zahlen kann man auch als eine Algebra von Matrizen
 schreiben. Dazu betrachten wir die Abbildung
 \[
@@ -224,6 +224,27 @@ ac-bd&ad-bc\\
 -ad+bc&ac-bd
 \end{pmatrix}
 \end{align*}
+In dieser Darstellung kann man auch $e^{Jt}$ ausrechnen, indem man $Jt$ in
+die Taylorreihe von $e^x$ einsetzt
+\begin{align}
+e^{Jt}
+&=
+E + tJ + \frac{t^2}{2!} J^2 + \frac{t^3}{3!} J^3 + \frac{t^4}{4!} J^4
+ + \frac{t^5}{5!} J^5 + \frac{t^6}{6!} J^6 + \frac{t^7}{7!} J^7 + \dots
+\notag
+\\
+&=
+E + tJ - \frac{t^2}{2!} E - \frac{t^3}{3!} J + \frac{t^4}{4!} E
+ - \frac{t^5}{5!} J - \frac{t^6}{6!} E + \frac{t^7}{7!} J + \dots
+\notag
+\\
+&=\biggl(1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \frac{t^6}{6!} + \dots\biggr) E
++ \biggl(t - \frac{t^3}{3!} + \frac{t^5}{5!} - \frac{t^7}{7!} + \dots\biggr) J
+= E \cos t + J \sin t.
+\label{eulermatrixdarstellung}
+\end{align}
+Die Eulerformel (\ref{euler-formula}) l"asst sich also auch in der
+Matrixdarstellung der komplexen Zahlen wiedergewinnen.
 
 \section{Komplexe Matrizen}
 Die Lineare Algebra im Bachelor wird typischerweise nur in den
@@ -386,14 +407,15 @@ von $U(1)$ festgelegt werden.
 Man spricht oft von ``bedeutungslosen'' Phasenfaktoren.
 \end{beispiel}
 
-\begin{beispiel}
+\subsubsection{Die spezielle unit"are Gruppe $\operatorname{SU}(2)$}
 Wir betrachten Matrizen der Form
-\[
+\begin{equation}
 U=
 \begin{pmatrix}
 a&b\\-\bar b&\bar a
 \end{pmatrix}
-\]
+\label{su2form}
+\end{equation}
 mit der zus"atzlichen Bedingung $|a|^2 + |b|^2=1$. Sie erf"ullen
 \begin{align*}
 U^*U
@@ -420,10 +442,31 @@ a&b\\-\bar b&\bar a
 =
 a\bar a+\bar bb = |a|^2 + |b|^2=1.
 \end{align*}
-Solche Matrizen sind also nicht nur unit"ar, sondern haben auch Determinante 1,
-man nennt diese Matrizen die speziellen unit"aren Matrizen:
+Solche Matrizen sind also nicht nur unit"ar, sondern haben auch Determinante 1.
+Multipliziert man zwei Matrizen der Form (\ref{su2form}),
+wird das Produkt auch wieder Determinante 1 haben, aber es ist nicht klar,
+dass es sich in der Form (\ref{su2form}) schreiben l"asst.
+Daher rechnen wir das Produkt aus, wir erhalten
+\begin{align*}
+\begin{pmatrix}  a                        & b                      \\
+                 -\bar b                  & \bar a                 \end{pmatrix}
+\begin{pmatrix}  c                        & d                      \\
+                 -\bar d                  & \bar c                 \end{pmatrix}
+&=
+\begin{pmatrix}  ac-b\bar d               & ab+b\bar c             \\
+                 -\bar bc-\bar a\bar d    & -\bar bd +\bar a\bar c \end{pmatrix}
+=
+\begin{pmatrix}  ac-b\bar d               & ab+b\bar c             \\
+                 -(\overline{ab+b\bar c}) & \overline{ac-b\bar d}  \end{pmatrix}
+.
+\end{align*}
+Das Produkt zweier Matrizen der Form (\ref{su2form}) ist also wieder eine
+Matrix der Form (\ref{su2form}).
+Die Menge dieser Matrizen ist demzufolge abgeschlossen unter
+Matrixmultiplikation und Bildung der Inversen.
+Man nennt diese Matrizen die Gruppe der speziellen unit"aren Matrizen:
 \[
-\textsl{SU}(2)=\left\{
+\operatorname{SU}(2)=\left\{
 \left.
 \begin{pmatrix}
 a&b\\-\bar b&\bar a
@@ -435,9 +478,61 @@ a,b\in\mathbb C\wedge
 |a|^2+|b|^2=1
 \right\}.
 \]
-Die Gruppe $\textsl{SU}(2)$ spielt bei der Analyse des Elektronenspins eine 
+Die Gruppe $\operatorname{SU}(2)$ spielt bei der Analyse des Elektronenspins eine 
 wichtige Rolle.
-\end{beispiel}
+
+Die Gruppe $\operatorname{SU}(2)$ ist eine Teilmenge der Menge der komplexen
+$2\times 2$-Matrizen:
+\[
+\operatorname{SU}(2)
+\subset
+V=
+\left\{
+\left.
+\begin{pmatrix}a&b\\-\bar b&\bar a\end{pmatrix}\,
+\right|
+a,b\in\mathbb C^2
+\right\}
+\subset
+M_2(\mathbb C)
+=\left\{
+\left.
+\begin{pmatrix}
+a&b\\c&d
+\end{pmatrix}
+\,
+\right|
+\, a,b,c,d\in\mathbb C
+\right\}
+\]
+Wir untersuchen die Menge $V$ etwas genauer.
+Zun"achst k"onnen wir $V$ als zweidimensionalen komplexen Vektorraum
+betrachten wie $\mathbb C^2$.
+Als reeller Vektorraum betrachtet ist $V$ ein vierdimensionaler
+reeller Vektorraum. Die Abbildung
+\[
+\mathbb R^4\to\mathbb C^2\to V
+:
+\begin{pmatrix}x_1\\x_2\\x_3\\x_4\end{pmatrix}\mapsto
+\begin{pmatrix}x_1+ix_2\\x_3+ix_4\end{pmatrix}\mapsto
+\begin{pmatrix} x_1+ix_2 & x_3+ix_4 \\
+               -x_3+ix_4 & x_1-ix_2 \end{pmatrix}
+\]
+ist eine Bijektion zwischen $\mathbb R^4$, $\mathbb C^2$ und $V$.
+Auch geometrisch ist $\mathbb C^2=\mathbb C\times \mathbb C$ das Produkt
+von zwei Ebenen, hat also eine vierdimensionale Geometrie.
+Darin ist $\operatorname{SU}(2)$ die Teilmenge der vierdimensionalen Vektoren,
+und zwar derjenigen f"ur die gilt
+\[
+1
+=
+|a|^2+|b|^2
+= 
+x_1^2 + x_2^2 + x_3^2 + x_4^2,
+\]
+das sind die Vektoren von $\mathbb R^4$ mit L"ange $1$.
+Geometrisch ist $\operatorname{SU}(2)$ also eine dreidimensionale Kugel
+eingebettet in in einen vierdimensionalen Raum.
 
 \subsection{Eigenwertproblem f"ur komplexe Matrizen}
 Ein Vektor $v\ne 0$ heisst Eigenvektor zum Eigenwert $\lambda$ einer
@@ -506,5 +601,377 @@ Eigenwerten $\lambda_1,\lambda_2$. Die beiden Eigenwerte sind nach
 Die letzte Gleichung kann wegen $\lambda_1\ne\lambda_2$ nur wahr sein,
 wenn $(v_1,v_2)=0$, die Vektoren $v_1$ und $v_2$ m"ussen also orthogonal sein.
 \end{proof}
+
+\section{Lie-Algebren}
+Die invertierbaren Matrizen $\operatorname{GL}(n)$ k"onnen weiter
+unterteilt werden in invertierbare Matrizen mit zus"atzlichen
+Eigenschaften wie Orthogonalit"at oder spezielle Werte der Determinaten.
+Allerdings bildet die Menge der invertierbaren Matrizen keinen
+Vektorraum: man kann sie nicht addieren oder mit beliebigen Zahlen
+multiplizeren, weil die Invertierbarkeit oder eine der zus"atzlichen
+Eigenschaften dabei verloren geht. Diese Matrizen sind also nicht
+geeignet daher nicht geeignet als Observable in der Quantenmechanik.
+
+Ist eine Matrix $A$ invertierbar, dann wird auch eine Matrix, deren
+Matrixelemente nur wenig von $A$ abweichen, invertierbar sein.
+Insbesondere werden die Matrizen der Form $E+tA$ invertierbar sein,
+wenn nur $t$ klein genug ist. Dies ist ein "Ubergang zu einer 
+infinitesimalen Transformation $A$.
+
+Wie m"ussen die Rechenoperationen beim "Ubergang zu infinitesimalen
+Transformationen "ubersetzt werden?
+Wegen
+\[
+(E+tA)(E+tB)=E+(A+B)t + t^2AB\simeq E+(A+B)t
+\]
+wird beim "Ubergang zur infinitesimalen Transformation aus dem Produkt
+der Matrizen die Summe von Matrizen, und aus der Inversen wird die Negation.
+
+Betrachten wir die Bedingung Orthogonalit\"at
+\[
+E=
+(E+\varepsilon A)^t(E+\varepsilon A)
+=
+E+\varepsilon (A^t+A) + \dots
+\qquad
+\Rightarrow
+\qquad
+A^t=-A.
+\]
+Die infinitesimale Versionen von orthogonalen Matrizen sind also
+antisymmetrische Matrizen.
+Analog sind die infinitesimalen Versionen von unit"aren Matrizen
+antihermitesch.
+
+Die Matrizenmultiplikation ist kommutativ.
+Diese Mengen tragen eine zus"atzliche algebraische Struktur. 
+Der Kommutator $[A,B]=AB-BA$ zweier Matrizen $A$ und $B$ erh"alt
+die oben genannten Eigenschaften. Ist $A$ antisymmetrisch, dann
+ist auch $[A,B]$ auch antisymmetrisch:
+\[
+[A,B]^t
+=
+(AB-BA)^t
+=
+B^tA^t-A^tB^t
+=
+(-B)(-A)-(-A)(-B)
+=
+-(AB-BA)
+=
+-[A,B].
+\]
+Die Kommutatorklammer hat aber auch noch eine zus"atzliche Eigenschaft,
+f"ur drei Matrixen $A$, $B$ und $C$ gilt n"amlich die sogenannte
+Bianchi-Identit"at:
+\begin{equation}
+[A,[B, C]]
++
+[B,[C, A]]
++
+[C,[A, B]]
+=
+0
+\label{bianchi}
+\end{equation}
+Um dies einzusehen Rechnen wir die Kommutatoren aus:
+\begin{align*}
+&
+[A,[B, C]]
++
+[B,[C, A]]
++
+[C,[A, B]]
+\\
+&=
+A(BC-CB)-(BC-CB)A
++
+B(CA-AC)-(CA-AC)B
++
+C(AB-BA)-(AB-BA)C
+\\
+&=
+ABC-ACB-BCA+CBA
++
+BCA-BAC-CAB+ACB
++
+CAB-CBA-ABC+BAC
+\\
+&=0
+\end{align*}
+Ein Vektorraum mit einer antisymmetrischen, bilinearen Abbildung
+$[\;\cdot\;,\;\cdot\;]$,
+welche die Bianchi-Identit"at (\ref{bianchi}) erf"ullt, heisst eine
+Lie-Algebra.
+So wie der Hamilton-Operator als Erzeuger der Zeitentwicklung das
+leichter zu manipulierende Objekt ist, ist die Liealgebra zu einer
+Transformationsgruppe wie $\operatorname{SU}(2)$ besser geeignet
+zur Beschreibung von Transformationen, und wird daher von Physikern
+vorgezogen.
+
+\begin{beispiel}
+Zur Gruppe $\operatorname{SO}(3)$ der Drehmatrizen geh"ort die Lie-Algebra
+$\operatorname{so}(3)$ der antisymmetrischen $3\times 3$-Matrizen.
+Solche Matrizen haben die Form
+\[
+\Omega
+=
+\begin{pmatrix}
+    0    & \omega_3&-\omega_2\\
+-\omega_3&   0     & \omega_1\\
+ \omega_2&-\omega_1&    0
+\end{pmatrix}
+\]
+Der Vektorraum $\operatorname{so}(3)$ ist also dreidimensional.
+
+Die Wirkung von $E+t\Omega$ auf einem Vektor $x$ ist
+\[
+(E+t\Omega)
+\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}
+=
+\begin{pmatrix}
+    1     & t\omega_3&-t\omega_2\\
+-t\omega_3&   1      & t\omega_1\\
+ t\omega_2&-t\omega_1&    1
+\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}
+=
+\begin{pmatrix}
+x_1-t(-\omega_3x_2+\omega_2x_3)\\
+x_2-t( \omega_3x_1-\omega_1x_3)\\
+x_3-t(-\omega_2x_1+\omega_1x_2)
+\end{pmatrix}
+=
+x- t\begin{pmatrix}\omega_1\\\omega_2\\\omega_3\end{pmatrix}\times x
+=
+x+ tx\times \omega.
+\]
+Die Matrix $\Omega$ ist als die infinitesimale Version einer Drehung
+um die Achse $\omega$.
+
+Wir k"onnen die Analogie zwischen Matrizen in $\operatorname{so}(3)$ und
+Vektoren in $\mathbb R^3$ noch etwas weiter treiben. Zu jedem Vektor
+in $\mathbb R^3$ konstruieren wir eine Matrix in $\operatorname{so}(3)$
+mit Hilfe der Abbildung
+\[
+\mathbb R^3\to\operatorname{so}(3)
+:
+\begin{pmatrix}v_1\\v_2\\v_3\end{pmatrix}
+\mapsto
+\begin{pmatrix}
+  0 & v_3&-v_1\\
+-v_3&  0 & v_2\\
+ v_1&-v_2&  0
+\end{pmatrix}.
+\]
+Der Kommutator von zwei so aus Vektoren $\vec u$ und $\vec v$
+konstruierten Matrizen $U$ und $V$ ist:
+\begin{align*}
+[U,V]
+&=
+UV-VU
+\\
+&=
+\begin{pmatrix}
+  0 & u_3&-u_1\\
+-u_3&  0 & u_2\\
+ u_1&-u_2&  0
+\end{pmatrix}
+\begin{pmatrix}
+  0 & v_3&-v_1\\
+-v_3&  0 & v_2\\
+ v_1&-v_2&  0
+\end{pmatrix}
+-
+\begin{pmatrix}
+  0 & v_3&-v_1\\
+-v_3&  0 & v_2\\
+ v_1&-v_2&  0
+\end{pmatrix}
+\begin{pmatrix}
+  0 & u_3&-u_1\\
+-u_3&  0 & u_2\\
+ u_1&-u_2&  0
+\end{pmatrix}
+\\
+&=
+\begin{pmatrix}
+u_3v_3+u_1v_1 - u_3v_3 - u_1v_1
+	& u_1v_2 - u_2v_1
+		& u_3v_2 - u_2v_3 
+\\
+u_2v_1 - u_1v_2
+	& -u_3v_3-u_2v_2 + u_3v_3+u_2v_2
+		& u_3v_1 - u_1v_3
+\\
+u_2v_3 - u_3v_2         
+	& u_1v_3 - u_3v_1
+		&-u_1v_1-u_2v_2 u_1v_1+u_2v_2
+\end{pmatrix}
+\\
+&=
+\begin{pmatrix}
+0
+	& u_1v_2 - u_2v_1
+		&-(u_2v_3-u_3v_2)
+\\
+-( u_1v_2 - u_2v_1)
+	& 0
+		& u_3v_1 - u_1v_3
+\\
+u_2v_3 - u_3v_2         
+	&-( u_3v_1 - u_1v_3)
+		& 0
+\end{pmatrix}
+\end{align*}
+Die Matrix $[U,V]$ geh"ort zum Vektor $\vec u\times\vec v$.
+Damit k"onnen wir aus der Bianchi-Identit"at jetzt folgern, dass
+\[
+\vec u\times(\vec v\times w)
++
+\vec v\times(\vec w\times u)
++
+\vec w\times(\vec u\times v)
+=0
+\]
+f"ur drei beliebige Vektoren $\vec u$, $\vec v$ und $\vec w$ ist.
+Dies bedeutet, dass der dreidimensionale Vektorraum $\mathbb R^3$
+mit dem Vektorprodukt zu einer Lie-Algebra wird.
+In der Tat verwenden einige B"ucher statt der vertrauten Notation
+$\vec u\times \vec v$ f"ur das Vektorprodukt die aus der Theorie der
+Lie-Algebren entlehnte Notation $[\vec u,\vec v]$, zum Beispiel
+das Lehrbuch der Theoretischen Physik \cite{skript:landaulifschitz1}
+von Landau und Lifschitz.
+
+Die Lie-Algebren sind vollst"andig klassifiziert worden, es gibt
+keine nicht trivialen zweidimensionalen Lie-Algebren.
+Unser dreidimensionaler ist also auch in dieser Hinsicht speziell:
+es ist der kleinste Vektorraum, in dem eine nichttriviale Lie-Algebra-Struktur
+m"oglich ist.
+\end{beispiel}
+
+\begin{beispiel}
+Die Gruppe $\operatorname{SU}(2)$ hat als infinitesimale Erzeugende 
+die antihermiteschen Matrizen, also Matrizen mit der Eigenschaft
+\[
+A^*=-A.
+\qquad
+\Rightarrow
+\qquad
+\begin{pmatrix}
+   ia&b+ic\\
+-b+ic&  id
+\end{pmatrix}
+\]
+Darin wurde aber die Bedingung noch nicht abgebildet, dass Matrizen
+in $\operatorname{SU}(2)$ die Determinante $1$ haben m"ussen, wir
+haben bis jetzt nur Unitarit"at verwendet. Wir m"ussen also noch
+verlangen, dass in erster N"aherung $\det(E+tA)=0$ ist.
+Berechnet man die Determinante, erhalten wir
+\begin{align*}
+\det(E+tA)
+&=
+1+t \operatorname{tr}A + \dots.
+\end{align*}
+als zus"atzliche Bedingung m"ussen wir also verlangen, dass die Spur
+$\operatorname{tr}A$ verschwindet, oder dass $a=-d$:
+\begin{equation}
+\operatorname{su}(2)
+=
+\left\{ A\in M_2(\mathbb C)\,|\,
+A^*=-A\wedge \operatorname{tr}A=0
+\right\}
+\end{equation}
+Matrizen in $\operatorname{su}(2)$ haben also die Form
+\begin{equation}
+\begin{pmatrix}
+   ia&b+ic\\
+-b+ic& -ia
+\end{pmatrix},\qquad a,b,c\in\mathbb R
+\end{equation}
+Die Menge $\operatorname{su}(2)$ ist also eine dreidimensionale 
+Lie-Algebra.
+Als Basis von $\operatorname{su}(2)$ k"onnen die Matrizen
+\begin{align*}
+I
+&=
+\begin{pmatrix} 0&1 \\ -1& 0 \end{pmatrix},
+&
+J
+&=
+\begin{pmatrix} 0&i \\  i& 0 \end{pmatrix},
+&
+K
+&=
+\begin{pmatrix} i&0 \\  0&-i \end{pmatrix}
+\end{align*}
+verwendet werden.
+Die Matrix $I$ kennen wir schon von der Matrixdarstellung der komplexen
+Zahlen in Abschnitt~\ref{subsection:matrixdarstellung}.
+Die Matrizen $I$, $J$ und $K$ haben die folgenden algebraischen
+Eigenschaften:
+\begin{align*}
+I^2
+&=
+-E
+&
+IJ
+&=
+\begin{pmatrix} 0&1 \\ -1& 0 \end{pmatrix}
+\begin{pmatrix} 0&i \\  i& 0 \end{pmatrix}
+=
+\begin{pmatrix} i&0 \\  0&-i \end{pmatrix}
+=
+K
+&
+JI
+&=
+-K
+\\
+J^2
+&=
+-E
+&
+JK
+&=
+\begin{pmatrix} 0&i \\  i& 0 \end{pmatrix}
+\begin{pmatrix} i&0 \\  0&-i \end{pmatrix}
+=
+\begin{pmatrix} 0&1 \\ -1& 0 \end{pmatrix}
+=
+I
+&
+KJ
+&=
+-I
+\\
+K^2
+&
+-E
+&
+KI
+&=
+\begin{pmatrix} i&0 \\  0&-i \end{pmatrix}
+\begin{pmatrix} 0&1 \\ -1& 0 \end{pmatrix}
+=
+\begin{pmatrix} 0&i \\  i& 0 \end{pmatrix}
+=
+J
+&
+IK
+&=
+-J
+\end{align*}
+Dies ist die Algebra der Quaternionen.
+\end{beispiel}
+
+Eigentlich h"atten wir die Bedingung, dass die Spur verschwinden muss,
+schon bei den orthogonalen Matrizen fordern m"ussen.
+Doch antisymmetrische Matrizen haben $0$ auf der Diagonalen, also haben
+antisymmetrische Matrizen immer Spur $0$, die Bedingung ist also
+automatisch erf"ullt.
+Antihermitesche Matrizen haben jedoch nicht nur $0$ auf der Diagonalen,
+sondern rein imagin"are Zahlen.
+
 
 
