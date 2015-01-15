@@ -204,6 +204,7 @@ vergr"ossert sich die Unsch"arfe, mit der $B$ bekannt ist.
 % Unschaerferelation
 %
 \section{Unsch"arferelation}
+\subsection{Robertson-Schr"odinger-Unsch"arferelation}
 Die Ungleichung (\ref{cauchy-schwarz-uncertainty}) liefert eine
 Unsch"arferelation, falls die linke Seite $>0$ ist. Es ist
 also zu untersuchen, wie gross die linke Seite von 
@@ -264,6 +265,7 @@ Eingesetzt in die urspr"ungliche Unsch"arferelation
 von Robertson und Schr"odinger:
 
 \begin{satz}
+\label{robertson-schroedinger-unschaerfe}
 Sind $A$ und $B$ selbstadjungierte Operatoren und $|\psi\rangle$ ein
 Zustand, dann gilt die Unsch"arferelation
 \begin{equation}
@@ -301,4 +303,42 @@ oder
 \begin{equation}
 \Delta X\cdot\Delta P\ge \frac{\hbar}2.
 \end{equation}
-Dies ist die Heisenbergsche Unsch"arferelation.
+Dies ist die Heisenbergsche Unsch"arferelation. 
+
+\subsection{Andere Unsch"arferelationen}
+Heisenberg-Unsch"arfe war auch schon Thema bei XKCD, siehe
+Abbildung~\ref{heisenberg:xkcd}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\hsize]{images/xkcd-location-sharing.png}
+\caption{XKCD Comic zur Heisenberg Unsch"arfe vom 15.~Januar 2015
+\label{heisenberg:xkcd}}
+\end{figure}
+Im Kapitel~\ref{chapter:drehimpuls} werden wir ein weiteres Paar
+von Operatoren wie Ort und Impuls kennen lernen.
+Dort untersuchen wir die Komponente $L_3$ des Drehimpulses in $z$-Richtung.
+Die dazugeh"orige Ortskoordinaten ist in Kugelkoordinaten die geographische 
+L"ange $\varphi$ des Teilchens, welche durch eine Observable mit Operator
+$\Phi$ festgestellt werden kann.
+In Kugelkoordinaten hat $L_3$ die Form
+\[
+L_3=\frac{\hbar}{i}\frac{\partial}{\partial\varphi}.
+\]
+Die Vertauschungsrelationen f"ur $\Phi$ und $L_3$ sind
+\[
+[\Phi,L_3]=\frac{\hbar}{i}\operatorname{id},
+\]
+das entspricht den Vertauschungsrelationen von $X$ und $P$.
+Zu $\Phi$ und $L_3$ geh"ort nach Satz~\ref{robertson-schroedinger-unschaerfe}
+die Unsch"arferelation
+\[
+\Delta\varphi\cdot\Delta l_3 \ge \frac{\hbar}2,
+\]
+man kann also den Drehimpuls und die Richtung $\varphi$ nicht gleichzeitig
+beliebig genau kennen.
+Dies erkl"art den Mouse-Over-Text des Comics in
+Abbildung~\ref{heisenberg:xkcd}:
+\begin{quote}
+Our phones must have great angular momentum sensors because
+the compasses really suck.
+\end{quote}
