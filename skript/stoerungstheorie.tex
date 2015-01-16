@@ -205,10 +205,12 @@ Polynome in $\varepsilon$ sind, f"ur die sich Schritt~4 durchf"uhren l"asst.
 \section{St"orungstheorie in der Quantenmechanik}
 \rhead{St"orungstheorie in der Quantenmechanik}
 Es sei $H_0$ der Hamilton-Operator eines quantenmechanischen Systems
-mit den Eigenvektoren $\psi_0,\psi_1,\dots$ und Energien $E_0,E_1,\dots$.
+mit den Eigenvektoren $|\psi_0^{(0)}\rangle,|\psi_1^{(0)}\rangle,\dots$
+und Energien
+$E_0^{(0)},E_1^{(0)},\dots$.
 Es gilt also 
 \[
-H_0\psi_i = E_i\psi_i.
+H_0\,|\psi_i^{(0)}\rangle = E_i^{(0)}\,|\psi_i^{(0)}\rangle.
 \]
 Der Hamilton-Operator $H_0$ wird nun durch einen zus"atzlichen Term
 $H_1$ ver"andert. Wir gehen davon aus, dass $H_1$ im Vergleich zu
@@ -221,21 +223,200 @@ soll, dass $H_1$ den Operator nur ganz wenig "andert, insbesondere
 sind die Zust"ande und Eigenwerte von $E(\varepsilon)$ nahe bei 
 den $E_i$ und $\psi_i$.
 
-Die Aufgabe der St"orungstheorie ist, die Zust"ande $\psi_i(\varepsilon)$
+Die Aufgabe der St"orungstheorie ist, die Zust"ande
+$|\psi_i(\varepsilon)\rangle$
 und Energien $E_i(\varepsilon)$ mit
 \[
-H(\varepsilon)\psi_i(\varepsilon)=E_i(\varepsilon)\psi_i(\varepsilon)
+H(\varepsilon)\,|\psi_i(\varepsilon)\rangle
+=
+E_i(\varepsilon)\,|\psi_i(\varepsilon)\rangle
 \]
 mindestens n"aherungsweise zu bestimmen.
+Wir versuchen $E_i(\varepsilon)$ und $|\psi_i(\varepsilon)\rangle$ als
+Reihenentwicklung auszudr"ucken:
+\begin{align*}
+E_k(\varepsilon)
+&=
+E_k^{(0)}+\varepsilon E_k^{(1)} + \varepsilon^2 E_k^{(2)}+\dots
+\\
+|\psi_k(\varepsilon)\rangle
+&=
+|\psi_k^{(0)}\rangle+|\varepsilon\psi_k^{(1)}\rangle
++|\varepsilon^2\psi_k^{(2)}\rangle+\dots
+\end{align*}
+Das gestellte Problem ist in erster N"aherung gel"ost, wenn wir $E_k^{(1)}$
+und $\psi_k^{(1)}$ bestimmt haben.
 
-Die Eigenvektoren bilden eine Basis des Hilbertraumes $L^2(\mathbb R)$, 
-also m"ussen sich auch die modifizierten Eigenvektoren in dieser Basis
-ausdr"ucken lassen:
+%Die Eigenvektoren $\psi_k^{(0)}$ bilden eine Basis des Hilbertraumes,
+%also m"ussen sich auch die modifizierten Eigenvektoren in dieser Basis
+%ausdr"ucken lassen:
+%\[
+%|\psi_k(\varepsilon)\rangle=|\psi_k\rangle +\sum_{l=0}^\infty a_{kl}(\varepsilon)|\psi_l\rangle,
+%\]
+%wobei die Koeffizienten $a_{kl}(\varepsilon)$ klein sind.
+%Das Problem ist gel"ost, wenn die $a_{kl}(\varepsilon)$ bestimmt sind.
+
+\section{Erste N"aherung\label{section:erstenaeherung}}
+\rhead{Erste N"aherung}
+Wir wenden jetzt den Operator $H_0+\varepsilon H_1$ auf
+$|\psi_k(\varepsilon)\rangle$ an, und behalten die Terme erster Ordnung
+\begin{align*}
+(H_0+\varepsilon H_1)\,|\psi_k(\varepsilon)\rangle
+&=
+E_k(\varepsilon)\,|\psi_k(\varepsilon)\rangle
+\\
+H_0\,|\psi_k^{(0)}\rangle +\varepsilon H_1\,|\psi_k^{(0)}\rangle
++\varepsilon H_0\,|\psi_k^{(1)}\rangle
++\dots
+&=
+E_k^{(0)}\,|\psi_k^{0}\rangle + \varepsilon E_k^{(1)} \,|\psi_k^{(0)}\rangle
++ \varepsilon E_k^{(0)} \,|\psi_k^{(1)}\rangle + \dots
+\end{align*}
+Die jeweils ersten Terme sind gleich, da ja $|\psi_k^{(0)}\rangle$
+Eigenvektoren von $H_0$ sind mit Eigenwert $E_k^{(0)}$. Wir subtrahieren sie,
+und k"onnen dann durch $\varepsilon$ teilen:
+\begin{align*}
+H_1\,|\psi_k^{(0)}\rangle
++H_0\,|\psi_k^{(1)}\rangle
++ \dots
+&=
+E_k^{(1)}\,|\psi_k^{(0)}\rangle + E_k^{(0)} \,|\psi_k^{(1)}\rangle+\dots
+\end{align*}
+Aus diesen Gleichungen m"ussen wir $E_k^{(1)}$ und $|\psi_k^{(1)}\rangle$
+bestimmen. Dazu multiplizieren wir $\langle \psi_l^{(0)}$:
+\begin{align*}
+\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
++
+\langle \psi_l^{(0)}|\, H_0 \,|\psi_k^{(1)}\rangle
+&=
+E_k^{(1)}\langle\psi_l^{(0)}|\psi_k^{(0)}\rangle
++
+E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+=
+\delta_{kl} E_k^{(1)}
++
+E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle.
+\end{align*}
+Da $H_0$ selbstadjungiert ist, kann man auch den zweiten Term links
+aufl"osen:
+\begin{align*}
+\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
++
+E_l^{(0)}\langle \psi_l^{(0)}|\psi_k^{(1)}\rangle
+&=
+\delta_{kl} E_k^{(1)}
++
+E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle.
+\end{align*}
+Bringen wir den zweiten Term links auf die rechte Seite, erhalten wir
+die Gleichung
+\begin{align*}
+\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+&=
+\delta_{kl} E_k^{(1)}
++
+(E_k^{(0)}-E_l^{(0)})\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle.
+\end{align*}
+
+\section{Nicht entartete Zust"ande\label{section:nichtentartetezustaende}}
+\rhead{Nicht entartete Zust"ande}
+Falls die Zust"ande nicht entartet sind, sind alle Energiewerte
+verschieden, und $E_k^{(0)}-E_l^{(0)}\ne 0$ f"ur $k\ne l$. 
+Dann kann man die L"osung ablesen:
+\begin{equation}
+\begin{aligned}
+k&=l
+&&\Rightarrow&
+E_k^{(1)}
+&=
+\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+\\
+k&\ne l
+&&\Rightarrow&
+\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+&=
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\end{aligned}
+\label{stoerungsloesung1ordnung}
+\end{equation}
+Durch diese Gleichungen ist der Koeffizient
+$\langle\psi_k^{(0)}|\psi_k^{(1)}\rangle$
+nicht bestimmt.
+
+Mit den Koeffizienten $\langle\psi_l^{(0)}|\psi_k^{(0)}\rangle$ kann
+man jetzt den neuen Zustand in erster N"aherung ausdr"ucken:
+\begin{equation}
+|\psi_k(\varepsilon)\rangle
+=
+|\psi_k^{(0)}\rangle
+\langle\psi_k^{(0)}|\psi_k^{(1)}\rangle
++\varepsilon
+\sum_{k\ne l}
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\,
+|\psi_l^{(0)}\rangle
+\end{equation}
+Darin ist nur der Koeffizient von $|\psi_k^{(0)}\rangle$ im ersten
+Term auf der rechtn Seite noch nicht bestimmt.
+
+Der fehlende Koeffizient muss so gew"ahlt werden, dass der neue
+Vektor L"ange $1$ erh"alt.
+Um $|\psi_k(\varepsilon)\rangle$ zu normieren, berechnen wir seine L"ange:
+\begin{align}
+1
+&=
+\langle\psi_k(\varepsilon)|\psi_k(\varepsilon)\rangle
+\notag
+\\
+1
+&=
+\langle \psi_k^{(0)}|\psi_k^{(0)}\rangle
++
+\varepsilon(
+\langle \psi_k^{(1)}|\psi_k^{(0)}\rangle
++
+\langle \psi_k^{(0)}|\psi_k^{(1)}\rangle
+)
++
+\varepsilon^2(
+\langle \psi_k^{(2)}|\psi_k^{(0)}\rangle
++
+\langle \psi_k^{(1)}|\psi_k^{(1)}\rangle
++
+\langle \psi_k^{(0)}|\psi_k^{(2)}\rangle
+)
++\dots
+\label{stoerungstheorie:norm}
+\end{align}
+Koeffizientenvergleich in~(\ref{stoerungstheorie:norm}) liefert
+\begin{align*}
+0
+&=
+\langle \psi_k^{(1)}|\psi_k^{(0)}\rangle
++
+\langle \psi_k^{(0)}|\psi_k^{(1)}\rangle
+=
+2\operatorname{Re}\langle \psi_k^{(1)}|\psi_k^{(0)}\rangle
+\end{align*}
+Daraus lesen wir ab, dass $\langle\psi_k^{(0)}|\psi_k^{(1)}\rangle$
+rein imagin"ar sein, muss wir schreiben
 \[
-\psi_i(\varepsilon)=\psi_i +\sum_{j=0}^\infty a_{ij}(\varepsilon)\psi_j,
+\langle\psi_k^{(0)}|\psi_k^{(1)}\rangle = i\gamma.
 \]
-wobei die Koeffizienten $a_{ij}(\varepsilon)$ klein sind.
-Das Problem ist gel"ost, wenn die $a_{ij}(\varepsilon)$ bestimmt sind.
+Die Zahl $\gamma$ ist so zu w"ahlen, dass der Zustandsvektor
+\begin{equation}
+|\psi_k(\varepsilon)\rangle
+=
+(1+i\varepsilon \gamma)
+\,|\psi_k^{(0)}\rangle
++
+\varepsilon
+\sum_{k\ne l}
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\,
+|\psi_l^{(0)}\rangle
+\end{equation}
+der neue Zustandsvektor in erster N"aherung.
 
 \begin{beispiel}
 Als Beispiel verwenden wir ein Teilchen in einem Potentialtopf, welches
@@ -259,24 +440,195 @@ sich in erster N"aherung Eigenfunktion und Eigenwerte genau gleich
 "andern.
 \end{beispiel}
 
-
-
-\section{Erste N"aherung}
-\rhead{Erste N"aherung}
-
-
-\section{Nicht entartete Zust"ande}
-\rhead{Nicht entartete Zust"ande}
-
 \section{Entartung}
 \rhead{Entartung}
 
-\section{St"orungsreihe}
-\rhead{St"orungsreihe}
+\section{N"aherung 2.~Ordnung}
+\rhead{N"aherung 2.~Ordnung}
+In den Abschnitten~\ref{section:erstenaeherung} und
+\ref{section:nichtentartetezustaende} haben wir die Approximationsreihen
+f"ur $E_k(\varepsilon)$ und $|\psi_k(\varepsilon)\rangle$
+bis zu den linearen Termen entwickelt.
+Mit etwas Aufwand k"onnen wir auch eine Approximation zweiter Ordnung
+finden.
+Dazu wenden wir nochmals den Operator $H_0+\varepsilon H_1$
+auf die Entwicklung $|\psi_k(\varepsilon)\rangle$, rechnen die Reihe aber bis
+zu den Termen zweiter Ordnung aus
+\begin{align*}
+H_0\,|\psi_k^{(0)}\rangle
+&+
+\varepsilon
+(
+H_1\,|\psi_k^{(0)}\rangle
++
+H_0\,|\psi_k^{(1)}\rangle
+)
++
+\varepsilon^2
+(
+H_0\,|\psi_k^{(2)}\rangle
++
+H_1\,|\psi_k^{(1)}\rangle
+)
++
+\dots
+\\
+&=
+E_k^{(0)}
++
+\varepsilon
+(
+E_k^{(1)}\,|\psi_k^{(0)}\rangle
++
+E_k^{(0)}\,|\psi_k^{(1)}\rangle
+)
++
+\varepsilon^2
+(
+E_k^{(2)}\,|\psi_k^{(0)}\rangle
++
+E_k^{(1)}\,|\psi_k^{(1)}\rangle
++
+E_k^{(0)}\,|\psi_k^{(2)}\rangle
+)
++
+\dots
+\end{align*}
+F"ur die Terme erster Ordnung haben wir den Koeffizientenvergleich
+fr"uher schon durchgef"uhrt, hier vergleichen wir nur noch die
+Koeffizienten der quadratischen Terme.
+\begin{align*}
+H_0\,|\psi_k^{(2)}\rangle
++
+H_1\,|\psi_k^{(1)}\rangle
+&=
+E_k^{(2)}\,|\psi_k^{(0)}\rangle
++
+E_k^{(1)}\,|\psi_k^{(1)}\rangle
++
+E_k^{(0)}\,|\psi_k^{(2)}\rangle
+\end{align*}
+Auch hier brauchen wir wieder eine Entwicklung nach der Basis
+$|\psi_l^{(0)}\rangle$, und multiplizieren deshalb mit
+$\langle\psi_l^{(0)}|$:
+\begin{align}
+\langle\psi_l^{(0)}|\,H_0\,|\psi_k^{(2)}\rangle
++
+\langle\psi_l^{(0)}|\,H_1\,|\psi_k^{(1)}\rangle
+&=
+E_k^{(2)}\langle\psi_l^{(0)}|\psi_k^{(0)}\rangle
++
+E_k^{(1)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
++
+E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(2)}\rangle
+\notag
+\\
+E_l^{(0)}\langle\psi_l^{(0)}|\psi_k^{(2)}\rangle
++
+\langle\psi_l^{(0)}|\,H_1\,|\psi_k^{(1)}\rangle
+&=
+E_k^{(2)}\delta_{kl}
++
+E_k^{(1)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
++
+E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(2)}\rangle
+\notag
+\\
+(E_l^{(0)}-E_k^{(0)})\langle\psi_l^{(0)}|\psi_k^{(2)}\rangle
++
+\langle\psi_l^{(0)}|\,H_1\,|\psi_k^{(1)}\rangle
+&=
+E_k^{(2)}\delta_{kl}
++
+E_k^{(1)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+\label{zweitenaeherung}
+\end{align}
+F"ur $k=l$ ist $E_l^{(0)}-E_k^{(0)}=0$ und die Gleichung kann nach 
+$E_k^{(2)}$ aufgel"ost werden:
+\begin{align*}
+E_k^{(2)}
+&=
+\langle\psi_k^{(0)}|\, H_1\, |\psi_k^{(1)}\rangle
+-E_k^{(1)}\langle\psi_k^{(0)}|\psi_k^{(1)}\rangle
+\\
+&=
+\langle\psi_k^{(0)}|\, H_1\, |\psi_k^{(1)}\rangle
+-i\gamma
+\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+\end{align*}
+Den Vektor $|\psi_k^{(1)}\rangle$ kann durch die im
+Abschnitt~\label{section:nichtentartetezustaende} gefundene
+Entwicklung ersetzen, und erhalten
+\begin{align*}
+E_k^{(2)}
+&=
+\langle\psi_k^{(0)}|\, H_1\,
+\biggl(
+i\gamma)
+\,|\psi_k^{(0)}\rangle
++
+\sum_{k\ne l}
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\,
+|\psi_l^{(0)}\rangle
+\biggr)
+-i\gamma
+\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+\\
+&=
+i\gamma\langle\psi_k^{(0)}|\, H_1\, |\psi_k^{(0)}\rangle
++
+\sum_{k\ne l}
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\langle\psi_k^{(0)}|\, H_1 \,|\psi_l^{(0)}\rangle
+-i\gamma
+\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+\\
+&=
+\sum_{k\ne l}
+\frac{|\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle|^2}{E_k^{(0)}-E_l^{(0)}}.
+\end{align*}
+F"ur $k\ne l$ kann man $\langle\psi_l^{(0)}|\psi_k^{(2)}\rangle$ 
+berechnen:
+\begin{align*}
+\langle\psi_l^{(0)}|\psi_k^{(2)}\rangle
+&=
+E_k^{(2)}
+-
+E_k^{(1)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+-
+\langle\psi_l^{(0)}|\,H_1\,|\psi_k^{(1)}\rangle
+\\
+&=
+\frac{E_k^{(2)}}{
+(E_l^{(0)}-E_k^{(0)})
+}
++
+\frac{
+\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+}{
+(E_k^{(0)}-E_l^{(0)})^2
+}
++
+\sum_{m\ne k}
+\frac{\langle \psi_m^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+\langle\psi_l^{(0)}|\, H_1 \,|\psi_m^{(0)}\rangle
+}{
+(E_k^{(0)}-E_m^{(0)})
+(E_k^{(0)}-E_l^{(0)})
+}
+\end{align*}
+Damit kann man jetzt auch die N"aherung zweiter Ordnung
+f"ur die Zustandsvektoren $|\psi(\varepsilon)\rangle$
+berechnen.
+Wir verzichten darauf, die Formeln explizit darzustellen.
 
 \section{"Ubungsaufgaben}
 \rhead{"Ubungsaufgaben}
 \begin{uebungsaufgaben}
 \item
 \input uebungsaufgaben/10001.tex
+\item
+\input uebungsaufgaben/10002.tex
 \end{uebungsaufgaben}
