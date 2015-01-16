@@ -7,17 +7,20 @@ sofern sie die Speichergr"osse der Maschine nicht sprengen.
 Sie beruhen auf einer physischen Codierung der Zahlen, mit denen
 gerechnet werden soll, und einer Maschine, welche Codierungen 
 in neue Codierungen umwandelt.
+\index{Babbage, Charles}
 Die Idee einer solchen Maschine geht auf Charles Babbage zur"uck,
 der in den Jahren ab 1812 auch eine Realisierung als mechanische
 Maschine angestrebt hat.
 
 Moderne Computer sind alle konkrete Realsierungen des abstrakten
+\index{Turing, Alan}
 Konzeptes der Turing-Maschine, welches Alan Turing formuliert hat,
 um zu analysieren, welche Arten von Berechnungen in welcher Zeit
 "uberhaupt durchgef"uhrt werden k"onnen.
 Es wurde erkannt, dass gewisse Probleme auf Turing-Maschinen
 derart lange ben"otigen w"urden, dass man sie getrost als undurchf"uhrbar
 betrachten kann.
+\index{Faktorisierung}
 Allgemein besteht die "Uberzeugung, dass das Problem der Faktorisierung
 des Produktes von grossen Primzahlen in diese Kategorie geh"ort,
 auch wenn dies bisher nicht bewiesen worden konnte.
@@ -40,8 +43,9 @@ Wenn man also auch das Rechenwerk einer Turingmaschine durch eine
 Quantecomputer alle M"oglichkeiten aller Bits gleichzeitig evaluieren,
 und damit das Problem in sehr kurzer Zeit l"osen.
 
-
 \section{Klassische Computer}
+\index{Computer!klassischer}
+\index{Gatter!logisches}
 Ein klassischer Computer kann bin"ar als Spannungen in einer
 elektronischen Schaltung codierte Zahlen in ander Muster von
 Spannungen umwandeln, welche das Resultat einer Rechenoperation
@@ -66,6 +70,8 @@ mit den Zahlen als Input darstellt.
 in der unteren Reihe invertiert.
 \label{gates}}
 \end{figure}
+\index{Halbaddierer}
+\index{Volladdierer}
 Die grundlegenden logischen Operationen werden dann durch sogenannte
 Gatter implementiert, deren Schaltbilder in Abbildung~\ref{gates} dargestellt
 sind.
@@ -98,6 +104,7 @@ Selbst die Verwendung verschiedener Spannungsniveaus auf den Verbindungen
 w"urde daran nichts "andern: zu jeder Zeit kann jede Verbindung nur
 ein einem der m"oglichen Zust"ande sein.
 
+\index{SAT}
 Eines der schwierig zu l"osenden Probleme ist SAT, die Frage, ob eine
 logische Formel durch geeignete Wahrheitsbelegung der Inputs wahr
 werden kann. Implementiert man die logische Formal als Schaltung,
@@ -109,6 +116,7 @@ dies $2^n$ Belegungen, entsprechend lange dauert es, eine L"osung
 zu finden.
 
 \section{Schr"odingers Katze\label{section:cat}}
+\index{Katze!Schr\"odinger}
 Dass in der Quantenmechanik ein System nicht mir in einem reinen Zustand
 zu sein braucht, hat Erwin Schr"odinger mit seinem ber"uhmten 
 Gedankenexperiment mit der Katze illustriert.
@@ -198,10 +206,68 @@ Im Gegensatz zu einem klassischen Computer k"onnen wir aber nicht
 erwarten, dass wir in einer einzigen Messung das Resultat der
 Berechnung bekommen k"onnen.
 Das Quantensystem kann nur eine Wahrscheinlichkeitsaussage liefern,
-und Messungen der Wahrscheinlichkeit verlangen immer eine grosse zahl
+und Messungen der Wahrscheinlichkeit verlangen immer eine grosse Zahl
 von Experimenten.
 
+\section{Probabilistische Algorithmen}
+\index{Algorithmus!probablistischer}
+Bis jetzt ist klar, dass wir von einem Quantencomputer keine definitiven
+Antworten erhalten k"onnen, sondern nur Aussagen "uber Wahrscheinlichkeiten.
+Dies ist aber nicht wirklich etwas Neues, denn schon lange werden
+zum Beispiel in der Kryptographie Algorithmen verwendet, die ebenfalls
+nur probabilistische Aussagen machen.
+Wenn man eine RSA Schl"usselpaar f"ur ein X.509-Zertifikat erzeugen will,
+muss testen, ob eine mehrere Tausend Bit lange Zahl $n$ eine Primzahl ist.
+Es w"urde viel zu lange dauern, die Primzahleigenschaft durch Testdivision 
+zu ermitteln.
+Daher verwendet man einen probabilistischen Test, der nur mit einer
+gewissen Wahrscheinlichkeit erkennt, wenn eine Zahl nicht Primzahl ist
+\cite{skript:miller-rabin}.
+
+\begin{satz}[Miller-Rabin Primzahlkriterium]
+\label{quantencomputer:miller-rabin-kriterium}
+\index{Primzahlkriterium!Miller-Rabin}
+Gegeben ist eine Zahl $n$. W"ahle eine zuf"allige Zahl $a<n$. Sei $d$
+eine ungerade Zahl so, dass $2^sd=n-1$. Wenn 
+\[
+a^d\not\equiv 1\mod n
+\qquad\text{und}\qquad
+a^{2^rd}\not\equiv -1\mod n\quad\forall 0\le r\le s-1
+\]
+dann ist $n$ keine Primzahl.
+\end{satz}
+
+Der Satz l"asst offen, ob man mit jeder Zahl $a$ erkennen kann, ob
+eine Zahl $n$ nicht Primzahl ist.
+Tats"achlich gilt f"ur einen Viertel der in Frage kommenden Zahlen
+$a$, dass man mit ihnen nicht erkennen kann, ob eine Zahl $n$ prim ist.
+Wenn also eine Zahl den Test besteht, dann ist die Wahrscheinlichkeit,
+dass sie trotzdem keine Primzahl ist, immer noch $\frac14$. Wiederholt
+man das Experiment mit mehreren Zufallszahlen $a$, kann man die
+Wahrscheinlichkeit, eine Zahl $n$ nicht als zusammengesetzte Zahl zu
+erkennen weiter reduzieren:
+
+\begin{satz}[Miller-Rabin Primzahltest]
+\label{quantencomputer:miller-rabin-test}
+\index{Primzahltest!Miller-Rabin}
+Wenn eine Zahl $n$ f"ur $k$ zuf"allige Zahlen $a<n$ vom
+Primzahlkriterium~\ref{quantencomputer:miller-rabin-kriterium}
+nicht als zusammengesetzt ist, dann ist die Wahrscheinlichkeit,
+dass sie zusammengesetzt ist, kleiner als $4^{-k}$.
+\end{satz}
+
+Der Satz~\ref{quantencomputer:miller-rabin-test} liefert einen Algorithmus
+mit polynomieller Laufzeit, der die Primzahleigenschaft testen kann,
+aber nur mit einer gewissen beschr"ankten Wahrscheinlichkeit.
+Die Probleme, die sich mit einem probabilistischen Algorithmus mit
+beschr"ankter Wahrscheinlichkeit in polynomieller Zeit gel"ost
+werden k"onnen, bilden die Klasse BPP.
+\index{BPP}
+Die Klasse P der in polynomieller Zeit l"osbaren Probleme ist darin
+enthalten: $\text{P}\subset\text{BPP}$.
+
 \section{Quantencomputer}
+\index{Quantencomputer}
 Nach dem einf"uhrenden Beispiel "uber den Schr"odingerschen
 Katzen-Quanten-Computer k"onnen wir uns jetzt dar"uber Gedanken
 machen, wie ein Quanten-Computer aussehen m"usste, der allgemeine
@@ -214,6 +280,17 @@ entsprechen dem Operator $Q$ im Schr"odinger-Katzen-Computer.
 Schliesslich muss man das Experiment mehrmals durchf"uhren, bis man
 Wahrscheinlichkeiten mit gen"ugend grosser Genauigkeit bestimmt hat,
 dass man ein Resultat der Berechnung daraus ableiten kann.
+
+Ein solcher Computer bestimmt also mit beschr"ankter Wahrscheinlichkeit
+in polynomieller Zeit eine L"osung f"ur ein Problem. Die
+Klasse der Probleme, die sich mit beschr"ankter Wahrscheinlichkeit in
+polynomieller Zeit auf einem Quantencomputer l"osen lassen, nennen wir
+BQP.
+Es ist klar, dass $\text{BPP}\subset\text{BQP}$.
+\index{BQP}
+Es besteht also die Hoffnung, dass sich in der Klasse BQP Probleme finden,
+die ein klassischer Computer auch mit einem probabilistischen Algorithmus
+nicht in polynomieller Zeit l"osen kann.
 
 \subsection{Q-bits}
 Ein quantenmechanisches System mit zwei m"oglichen Zust"ande $|0\rangle$

@@ -26,16 +26,19 @@ Teilchen in allen f"ur das Experiment wesentlichen Aspekten
 nicht unterscheidbar sind. Man kann dann sagen, dass sich die
 Teilchen alle im gleichen {\em Zustand} befinden, wenn sie in
 das Experiment eintreten.
+\index{Zustand}
 
 Dieser abstrakte Zustandsbegriff ist eine Verallgemeinerung konkreter
 Arten von Zust"anden, wovon wir ein paar Beispiele nennen wollen.
 
 Atome setzen sich aus einem Kern aus Protonen und Neutronen und einer
-H"ulle aus Elektronen zusammen. Durch Absorbtion von Photonen k"onnen
-Eletronen in der H"ulle Energie aufnehmen, ein solches angeregtes
-Atom befindet sich in einem anderen Zustand als eines, dessen Elektronen
-so viel Energie wie m"oglich abgegeben haben. Letzteres nennt man
-den Grundzustand eines Atoms. Ein Experiment k"onnte also damit beginnen,
+H"ulle aus Elektronen zusammen.
+Durch Absorbtion von Photonen k"onnen Eletronen in der H"ulle Energie
+aufnehmen, ein solches angeregtes Atom befindet sich in einem anderen
+Zustand als eines, dessen Elektronen so viel Energie wie m"oglich
+abgegeben haben.
+Letzteres nennt man den Grundzustand eines Atoms.
+Ein Experiment k"onnte also damit beginnen,
 dass man einen Strahl von Atomen eines bestimmten Elementes herstellt,
 die sich alle im Grundzustand befinden, oder alle auf die gleiche Art
 angeregt worden sind.
@@ -55,6 +58,8 @@ werden. Wir schreiben daher einen Zustand als Vektor
 \]
 in einem zun"achst nicht spezifizierten Vektorraum.
 
+\index{CERN}
+\index{LHC}
 Am CERN werden im LHC Protonen auf eine sehr hohe Geschwindigkeit 
 beschleunigt und dann zur Kollision gebracht. Es treffen also
 Protonen mit einem bestimmten Impuls $p$ auf Protonen mit entgegengesetztem
@@ -64,6 +69,7 @@ Teilchen in welchen Zust"anden erzeugt worden sind.
 Die Quantenmechanik hat
 die Aufgabe, die m"oglichen Zielzust"ande vorherzusagen.
 
+\index{Flasche!magnetische}
 Eine magntische Flasche ist ein speziell konstruiertes magnetisches Feld,
 in welchem geladene Elementarteilchen eingeschlossen werden k"onnen.
 Den Teilchen in einer magnetischen Flasche kann einen Zustands zuschreiben,
@@ -76,6 +82,7 @@ unter welchen Umst"anden ein Teilchen von einem Zustand in einen anderen
 Zustand "ubergef"uhrt werden k"onnen. 
 
 \subsection{Observable}
+\index{Observable}
 Es ist charakteristisch f"ur die Quantenmechanik, dass sie mit diskreten
 Mengen von Parameter zu tun hat. Zum Beispiel kann sich das Elektron eines
 Wasserstoffatoms auf einer grossen Zahl von verschiedenen Energieniveaus
@@ -84,6 +91,7 @@ gibt, die wir $|a_i\rangle, 1\le i\le n,$ schreiben wollen,
 Ein $a$-Analysator zerlegt Teilchen im Zustand $|\psi\rangle$ in 
 Teilchen in den Zust"anden $a_1,a_2,\dots,a_n$. Wir geben dies
 schematisch durch das Diagramm
+\index{Analysator}
 \begin{center}
 \includegraphics{graphics/analysator-1.pdf}
 \end{center}
@@ -96,11 +104,15 @@ von Photonen dienen. Er zerlegt einen Strahl von Photonen in zwei
 Strahlen mit orthogonaler Polarisierung.
 \label{calcit}}
 \end{figure}
+\index{Kalkspat}
+\index{Calcit}
+\index{Doppelbrechung}
 Kalkspat (Calcit) (Abbildung~\ref{calcit}) teilt einen Strahl
 von Photonen auf in zwei Strahlen mit orthogonaler Polarisierung,
 funktioniert also als Analysator f"ur zwei Polarisationsrichtungen
 von Photonen.
 
+\index{Analysatorkreis}
 Man kann sich auch vorstellen, die vom Analysator getrennten Strahlen
 wieder zusammenzuf"uhren, schematisch:
 \begin{center}
@@ -115,11 +127,13 @@ blockieren, z.~B.~$a_2$:
 \begin{center}
 \includegraphics{graphics/analysator-3.pdf}
 \end{center}
+\index{Projektor}
 Wir nennen diese Schaltung auch einen {\em Projektor}, er reduziert den
 urspr"unglichen Strahl auf einen Zustand, dem die Komponenten $a_2$
 fehlt. Nat"urlich k"onnen Projektoren f"ur eine beliebige Teilmenge
 $A=\{a_{i_1},\dots, a_{i_k}\}$ definiert werden: der Projektor $P_A$
 blokiert genau die Komponenten aus der Menge $A$.
+\index{idempotent}
 Damit die oben gezeigten Schemata f"ur Analysatoren ihre G"ultigkeit
 haben, sollten Projektoren {\em idempotent}, d.~h.~zwei identische 
 Projektoren wirken genau gleich wie ein einzelner, also $P^2=P$ oder
@@ -145,6 +159,7 @@ k"onnen, es sollte also keinen Zustand $|\psi\rangle$ geben, so dass
 P(a_i|\psi)=0\quad\forall i.
 \]
 
+\index{Observable}
 In der Quantenmechanik sind also genau jene Gr"ossen messbar, f"ur die
 es einen Analysator gibt, man nennt solche Gr"ossen {\em Observable}.
 Die Polarisierung von Photonen, die Position oder der Impuls
@@ -195,6 +210,7 @@ P(a_2|b_2)&=\cos^2\alpha.
 \end{aligned}
 \label{polarisation-projektion-inverse}
 \end{equation}
+\index{Ubergangswahrscheinlichkeit@\"Ubergangswahrscheinlichkeit}
 Man beachte, dass die "Ubergangswahrscheinlichkeiten
 symmetrisch sind: $P(a_i|b_j)=P(b_j|a_i)$.
 Ausserdem ergeben die Elemente $P(a_i|b_j), 1\le i\le n$ f"ur festes $j$,
@@ -225,6 +241,7 @@ ist
 \end{equation}
 
 \subsection{Doppelspaltexperiment}
+\index{Doppelspaltexperiment}
 \begin{figure}
 \centering
 \includegraphics{graphics/analysator-7.pdf}
@@ -283,6 +300,7 @@ Wir brauchen nur noch eine algebraische Struktur, mit der wir die
 verschiedenen Objekte abbilden k"onnen.
 
 \subsection{Analysatoren}
+\index{Analysator}
 Eine ununterbrochene Kurve in einem Analysatorkreis durch den Zustand
 $a_i$ stellen wir durch das ``Messsymbol'' 
 \[
@@ -297,8 +315,10 @@ Ein Analysatorkreis, der am Input nichts "andert, entspricht dem Symbol
 \sum_{i=1}^n |a_i\rangle \langle a_i|=\operatorname{id},
 \]
 dieses Objekt wirkt wie die identische Abbildung.
+\index{Abbildung!identische}
 
 \subsection{Projektoren}
+\index{Projektor}
 Ein einzelner Projektor auf einen Basiszustand $a_i$ entspricht dem Symbol
 $P= |a_i\rangle\langle a_i|$, also muss gelten
 \[
@@ -349,6 +369,7 @@ Diese Beobachtungen sind konsistent mit der Annahme, dass
 \]
 
 \subsection{Transformationsfunktion}
+\index{Transformationsfunktion}
 Bisher wurden nur Messsymbole miteinander verkn"upft, deren 
 Verkn"upfung bereits bekannt war, es stellt sich daher die
 Frage gar nicht, was das naheliegende Symbol $\langle B|C\rangle$
@@ -385,9 +406,11 @@ gem"ass Abbildung~\ref{doppelspalt-analyse} an, erhalten wir das Symbol
 \cdot
 |y_i\rangle \langle S_2|,
 \]
+\index{Uberlagerung@\"Uberlagerung}
 Insbesondere entsteht die Intensit"at in der Zonen $y_i$ durch eine
 "Uberlagerung von zwei Termen mit verschiedenen
 Koeffizienten $\langle y_i|S_j\rangle, j=1,2$.
+\index{Interferenz}
 Das Resultat der Durchf"uhrung des Experiments zeigt ein Interferenz-Muster,
 was alleine mit reellen Werten f"ur die Transformationsfunktion nicht
 zu bewerkstelligen w"are.
@@ -403,10 +426,12 @@ $|a_i\rangle, i=1,\dots, n,$ und einem Zustand $|\psi\rangle$ einen Vektor
 \end{pmatrix}
 \in\mathbb C^n
 \]
-zuordnen. Eine Basis transportiert eine Problem "uber Zust"ande in ein
+zuordnen.
+Eine Basis transportiert eine Problem "uber Zust"ande in ein
 Problem "uber Vektoren in $\mathbb C^n$.
 
 \subsection{Wahrscheinlichkeiten}
+\index{Wahrscheinlichkeit}
 Zu dem Experiment in Abbildung~\ref{linear-zirkulaer} geh"ort das Symbol
 \[
 |a_2\rangle\langle a_2|\cdot
@@ -475,6 +500,7 @@ $\langle B|A\rangle$ konjugiert komplex sind:
 Wir nennen dies die {\em hermitesche} Symmetrie der Transformationsfunktion.
 
 \subsection{Observable und Operatoren}
+\index{Observable}
 Bisher haben wir nur Analysatoren und Projektoren untersucht.
 Es ist aber durchaus denkbar, dass noch wesentlich komplexere
 Versuchsaufbauten existieren, deren Details wir gar nicht unbedingt
@@ -495,6 +521,7 @@ Diesem Diagramm entspricht der Ausdruck
 insbesondere ist die Wirkung von $A$ vollst"andig festgelegt durch die
 Zahlen
 $\langle a_j|A|a_i\rangle$, sie heissen die {\em Matrixelemente} von $A$.
+\index{Matrixelement}
 Die Wirkung von $A$ auf dem Zustand $|\psi\rangle$ ist also
 \begin{equation}
 A|\psi\rangle = \sum_{i,j} |a_j\rangle
@@ -543,6 +570,7 @@ kann man aber auch die Wirkung auf einen $\langle\psi|$-Vektor ausrechnen:
 Die Matrix von $A^*$
 ist also die transponierte und komplex konjugierte Matrix von $A$,
 sie heisst auch die {\em adjungierte} Matrix.
+\index{adjungierte Matrix}
 
 Operatoren sind beliebige Linearkombinationen von Messsymbolen,
 F"ur Projektoren waren es ausschliesslich Messsymbole der Form
@@ -582,6 +610,7 @@ also ist $\langle \psi|V|\psi\rangle$ der Erwartungswert der Observablen
 $V$ im Zustand $\psi$.
 
 % XXX Definition von selbstadjungiert...
+\index{selbstadjungiert}
 Allgemein betrachten wir selbstadjungierte Operatoren also 
 die Repr"asentanten von Observablen, denn aus der abstrakten
 Theorie der komplexen Vektorr"aume ist bekannt, dass selbstadjungierte
@@ -648,6 +677,7 @@ der Observablen $V$ im Zustand $|\psi\rangle$.
 % Zeitentwicklung
 %
 \section{Zeitentwicklung}
+\index{Zeitentwicklung}
 Die besondere Erkenntnis Newtons war, dass die Gleichung $F=ma$ eine
 Differentialgleichung ist, die zusammen mit einer Anfangsbedingung die
 gesammte zuk"unftige Bewegung festlegt.
@@ -725,6 +755,7 @@ U^*U=\operatorname{id}
 \label{unitaritaetsbedingung}
 \end{equation}
 die identische Abbildung ist. Der Operator $U(t)$ muss also unit"ar sein.
+\index{unitar@unit\"ar}
 
 Die Unitarit"at von $t$ schr"ankt $K(t)$ stark ein. Leiten wir die
 Unitarit"atsbedinung (\ref{unitaritaetsbedingung}) nach der Zeit ab,
@@ -767,6 +798,7 @@ H^*
 \]
 Insbesondere ist $H$ ein selbstadjungierter Operator, oder
 eine Observable.
+\index{Hamilton-Operator}
 Der Faktor $\hbar$ wird konventionell verwendet, es wird sich
 herausstellen, dass sich damit $H$ einfacher mit einer bekannten
 physikalischen Gr"osse identifizieren l"asst.
@@ -784,9 +816,11 @@ i\hbar\frac{d}{dt}|\psi(t)\rangle = H(t)\,|\psi(t)\rangle,
 \label{schroedingergleichungt}
 \end{equation}
 die {\rm zeitabh"angige Schr"odingergleichung}.
+\index{schrodingergleichung@Schr\"odingergleichung!zeitabh\"angige}
 
 Falls $H$ nicht von der Zeit abh"angt, wird die zeitabh"angige zur
 zeitunabh"angigen Schr"odingergleichung
+\index{schrodingergleichung@Schr\"odingergleichung!zeitunabh\"angige}
 \begin{equation}
 i\hbar \frac{d}{dt}\,|\psi(t)\rangle = H\,|\psi(t)\rangle,
 \label{schroedingergleichung}
@@ -811,6 +845,7 @@ Eigenvektoren von $H$ bestimmt hat.
 % Zeitentwicklung von Observablen
 %
 \subsection{Zeitentwicklung von Observablen}
+\index{Zeitentwicklung!von Observablen}
 Sei $|\psi(t)\rangle$ ein Zustand, der die zeitunabh"angige
 Schr"odingergleichung mit Hamilton-Operator $H$ erf"ullt. Wir m"ochten
 gerne wissen, wie sich die Observable $A$ mit der Zeit entwickelt,

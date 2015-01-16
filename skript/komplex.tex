@@ -296,12 +296,14 @@ Dieses Produkt ist aber nicht linear im Faktor $u$:
 (\lambda u,v)=\overline{(\lambda u)}v=\bar\lambda (\bar uv)=\bar\lambda (u,v).
 \]
 Wir m"ussen also von einem komplexen Skalarprodukt verlangen, dass es
+\index{konjugiert linear}
 im ersten Faktor {\em konjugiert linear} ist:
 \[
 (\lambda u,v)=\bar\lambda(u,v)
 \]
 Eine Funktion von zwei Vektoren, welche linear im zweiten Vektor ist
 und konjugiert linear im ersten heisst {\em sesquilinear}.
+\index{sesquilinear}
 
 Sei jetzt also $(\,\cdot\,|\,\cdot\,)$ eine Sesquilinearform.
 Wir setzen $\lambda = 1/(u,v)$, dann gilt
@@ -318,8 +320,10 @@ $(u,\lambda v)$ reell ist. Dann gilt
 Vertauschung der Faktoren ist also gleichbedeutend mit komplexer Konjugation
 des Wertes des Skalarproduktes. Man nennt eine Funktion von zwei komplexen
 Vektoren {\em hermitesch}, wenn $(u,v)=\overline{(v,u)}$ gilt.
+\index{hermitesch}
 
 Eine hermitesche Sesquilinearform heisst {\em positiv definit}, wenn
+\index{positiv definit}
 f"ur jeden Vektor $u\ne 0$ gilt $(u,u)>0$. Diese Eigenschaft stellt
 sicher, dass $(u,u)$ sinnvoll als die ``L"ange'' eines Vektors interpretiert
 werden kann.
@@ -328,6 +332,7 @@ werden kann.
 Ein komplexes Skalarprodukt ist eine positiv definite,
 hermitesche Sesquilinearform.
 \end{definition}
+\index{Skalarprodukt, komplexes}
 
 Das einfachste Beispiel eines komplexen Skalarproduktes ist
 \[
@@ -337,6 +342,7 @@ Die Standardbasisvektoren sind auch in diesem Skalarprodukt
 orthonormiert.
 
 \subsubsection{Adjungierte Matrix}
+\index{adjungierte Matrix}
 In den reellen Vektorr"aumen konnte man zu einer linearen $A$ immer
 eine lineare Abbildung $A^t$ finden mit der Eigenschaft
 $(u,Av)=(A^tu,v)$. Mit Hilfe der Standardbasisvektoren konnte
@@ -371,6 +377,7 @@ adjungiert Matrix. Eine Matrix, die sich beim adjungieren nicht
 "andert heisst selbstadjungiert.
 
 \subsubsection{Unit"are Matrizen}
+\index{unit\"ar}
 Matrizen, die in reellen Vektorr"aumen das Skalarprodukt nicht "andern,
 heissen orthogonal. Sie sind charakterisiert durch die Eigenschaft
 $(Ox,Oy)=(x,y)$, woraus sich mit Hilfe der Transposition ergibt:
@@ -408,6 +415,8 @@ Man spricht oft von ``bedeutungslosen'' Phasenfaktoren.
 \end{beispiel}
 
 \subsubsection{Die spezielle unit"are Gruppe $\operatorname{SU}(2)$}
+\index{spezielle unit\"are Gruppe}
+\index{SU(2)}
 Wir betrachten Matrizen der Form
 \begin{equation}
 U=
@@ -478,8 +487,8 @@ a,b\in\mathbb C\wedge
 |a|^2+|b|^2=1
 \right\}.
 \]
-Die Gruppe $\operatorname{SU}(2)$ spielt bei der Analyse des Elektronenspins eine 
-wichtige Rolle.
+Die Gruppe $\operatorname{SU}(2)$ spielt bei der Analyse des Elektronenspins
+eine wichtige Rolle.
 
 Die Gruppe $\operatorname{SU}(2)$ ist eine Teilmenge der Menge der komplexen
 $2\times 2$-Matrizen:
@@ -603,9 +612,10 @@ wenn $(v_1,v_2)=0$, die Vektoren $v_1$ und $v_2$ m"ussen also orthogonal sein.
 \end{proof}
 
 \section{Lie-Algebren}
+\index{Lie-Algebra}
 Die invertierbaren Matrizen $\operatorname{GL}(n)$ k"onnen weiter
 unterteilt werden in invertierbare Matrizen mit zus"atzlichen
-Eigenschaften wie Orthogonalit"at oder spezielle Werte der Determinaten.
+Eigenschaften wie Orthogonalit"at oder spezielle Werte der Determinanten.
 Allerdings bildet die Menge der invertierbaren Matrizen keinen
 Vektorraum: man kann sie nicht addieren oder mit beliebigen Zahlen
 multiplizeren, weil die Invertierbarkeit oder eine der zus"atzlichen
@@ -640,11 +650,13 @@ A^t=-A.
 \]
 Die infinitesimale Versionen von orthogonalen Matrizen sind also
 antisymmetrische Matrizen.
+\index{antihermitsche Matrix}
 Analog sind die infinitesimalen Versionen von unit"aren Matrizen
 antihermitesch.
 
 Die Matrizenmultiplikation ist kommutativ.
 Diese Mengen tragen eine zus"atzliche algebraische Struktur. 
+\index{Kommutator}
 Der Kommutator $[A,B]=AB-BA$ zweier Matrizen $A$ und $B$ erh"alt
 die oben genannten Eigenschaften. Ist $A$ antisymmetrisch, dann
 ist auch $[A,B]$ auch antisymmetrisch:
@@ -661,9 +673,10 @@ B^tA^t-A^tB^t
 =
 -[A,B].
 \]
+\index{Jacobi-Identit\"at}
 Die Kommutatorklammer hat aber auch noch eine zus"atzliche Eigenschaft,
 f"ur drei Matrixen $A$, $B$ und $C$ gilt n"amlich die sogenannte
-Bianchi-Identit"at:
+Jacobi-Identit"at:
 \begin{equation}
 [A,[B, C]]
 +
@@ -672,7 +685,7 @@ Bianchi-Identit"at:
 [C,[A, B]]
 =
 0
-\label{bianchi}
+\label{jacobi}
 \end{equation}
 Um dies einzusehen Rechnen wir die Kommutatoren aus:
 \begin{align*}
@@ -701,7 +714,7 @@ CAB-CBA-ABC+BAC
 \end{align*}
 Ein Vektorraum mit einer antisymmetrischen, bilinearen Abbildung
 $[\;\cdot\;,\;\cdot\;]$,
-welche die Bianchi-Identit"at (\ref{bianchi}) erf"ullt, heisst eine
+welche die Jacobi-Identit"at (\ref{jacobi}) erf"ullt, heisst eine
 Lie-Algebra.
 So wie der Hamilton-Operator als Erzeuger der Zeitentwicklung das
 leichter zu manipulierende Objekt ist, ist die Liealgebra zu einer
@@ -710,6 +723,7 @@ zur Beschreibung von Transformationen, und wird daher von Physikern
 vorgezogen.
 
 \begin{beispiel}
+\index{SO(3)}
 Zur Gruppe $\operatorname{SO}(3)$ der Drehmatrizen geh"ort die Lie-Algebra
 $\operatorname{so}(3)$ der antisymmetrischen $3\times 3$-Matrizen.
 Solche Matrizen haben die Form
@@ -825,7 +839,7 @@ u_2v_3 - u_3v_2
 \end{pmatrix}
 \end{align*}
 Die Matrix $[U,V]$ geh"ort zum Vektor $\vec u\times\vec v$.
-Damit k"onnen wir aus der Bianchi-Identit"at jetzt folgern, dass
+Damit k"onnen wir aus der Jacobi-Identit"at jetzt folgern, dass
 \[
 \vec u\times(\vec v\times w)
 +
@@ -963,6 +977,7 @@ IK
 &=
 -J
 \end{align*}
+\index{Quaternionen}
 Dies ist die Algebra der Quaternionen.
 \end{beispiel}
 
