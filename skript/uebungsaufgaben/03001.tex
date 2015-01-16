@@ -1,0 +1,70 @@
+Betrachten Sie den Raum der Funktionen
+\[
+L^2(\mathbb R)=\left\{
+f:\mathbb R\to\mathbb C\,\left|
+\text{$f$ stetig und }
+\int_{-\infty}^\infty |f(x)|^2\,dx<\infty
+\right.
+\right\}.
+\]
+Wir staten diesen Raum mit dem Skalarprodukt
+\[
+(f,g)=\int_{-\infty}^\infty \overline{f(x)}g(x)\,dx.
+\]
+Zeigen Sie, dass $L^2(\mathbb R)$ ein Pr"ahilbertraum ist.
+
+\begin{loesung}
+Wir m"ussen zeigen dass das Skalarprodukt sesquilinear ist und positiv
+definit ist.
+Dazu rechnen wir nach:
+\begin{align*}
+(\lambda f,g)
+&=
+\int_{-\infty}^\infty
+\overline{\lambda f(x)}g(x)
+\,dx
+=
+\int_{-\infty}^\infty
+\bar \lambda \bar f(x)
+g(x)
+\,dx
+=
+\bar \lambda
+\int_{-\infty}^\infty
+\bar f(x) g(x)
+\,dx
+=\bar\lambda(f,g).
+\\
+(f,\lambda g)
+&=
+\int_{-\infty}^\infty
+\overline{f(x)}\lambda g(x)
+\,dx
+=
+\lambda
+\int_{-\infty}^\infty
+\overline{f(x)}g(x)
+\,dx
+=
+\lambda(f,g).
+\end{align*}
+Das Skalarprodukt ist also tats"achlich sesquilinear.
+Sei jetzt $f$ eine beliebige stetige Funktion, die nicht die Nullfunktion
+ist. Zu einem gen"ugend kleinen $\varepsilon>0$ gibt es daher ein kleines
+Interval $I\subset\mathbb R$ mit $|f(x)|>\varepsilon$ f"ur alle $x\in I$.
+Dann folgt
+\[
+(f,f)
+=
+\int_{-\infty}^\infty
+|f(x)|^2
+\,dx
+\ge
+\int_I|f(x)|^2\,dx
+=
+\int_I\varepsilon\,dx
+=|I|\varepsilon >0.
+\]
+Damit ist bewiesen, dass das Skalarprodukt positiv definit ist.
+\end{loesung}
+

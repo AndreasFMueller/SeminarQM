@@ -1,0 +1,33 @@
+Zeigen Sie, dass die Funktionen $e_k$ mit
+$e_k(x)=e^{ikx}$ eine Hilbertbasis von $L^2([-\pi,\pi])$
+sind.
+
+\begin{loesung}
+Wir m"ussen zeigen, dass die $e_k$ orthonormiert sind
+\begin{align*}
+(e_k,e_k)
+&=
+\frac1{2\pi}\int_{-\pi}^{\pi}\bar e_k(x)e_k(x)\,dx
+=
+\frac1{2\pi}\int_{-\pi}^{\pi}
+e^{-ikx}e^{ikx}
+\,dx
+=
+\frac1{2\pi}\int_{-\pi}^{\pi}\,dx=1,
+\\
+(e_k,e_l)
+&=
+\frac1{2\pi}\int_{-\pi}^{\pi} e^{-ikx}e^{ilx}\,dx
+=
+\frac1{2\pi}\int_{-\pi}^{\pi} e^{i(l-k)x}\,dx
+=
+\frac1{2\pi}\left[
+\frac1{i(l-k)}e^{i(l-k)x}
+\right]_{-\pi}^{\pi}
+=0\qquad \text{f"ur $k\ne l$}
+\end{align*}
+Die Fouriertheorie sagt, dass jede $L^2$-Funktion auf dem Interval
+$[-\pi,\pi]$ mit Ihrer Fourierreihe approximiert werden kann, also
+sind bilden die Funktionen $e_k$ eine Hilbertbasis.
+\end{loesung}
+

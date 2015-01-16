@@ -3,7 +3,7 @@
 #
 # (c) 2014 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
-all:	pert analysator arctan drehimpuls gatter dependencies
+all:	pert analysator arctan drehimpuls gatter dependencies periodensystem
 
 dependencies_FILES = dependencies-1.pdf
 dependencies: $(dependencies_FILES)
@@ -25,6 +25,9 @@ drehimpuls: $(drehimpuls_FILES)
 gatter_FILES = gatter-1.pdf gatter-2.pdf gatter-3.pdf gatter-4.pdf \
 	gatter-5.pdf gatter-6.pdf gatter-7.pdf gatter-8.pdf gatter-9.pdf
 gatter: $(gatter_FILES)
+
+periodensystem_FILES = periodensystem-1.pdf
+periodensystem: $(periodensystem_FILES)
 
 $(pert_FILES):	pert.mp
 	TEX=latex mpost pert.mp
@@ -67,4 +70,10 @@ $(dependencies_FILES):	dependencies.mp
 	do \
 		mptopdf dependencies.$${i}; \
 	done
-	
+
+$(periodensystem_FILES):	periodensystem.mp
+	TEX=latex mpost periodensystem.mp
+	for i in 1 2 3 4; \
+	do \
+		mptopdf periodensystem.$${i}; \
+	done
