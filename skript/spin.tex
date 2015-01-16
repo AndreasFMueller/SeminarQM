@@ -1,7 +1,273 @@
 \chapter{Spin}
 \lhead{Spin}
 \rhead{}
-Ein Elektron verh"alt sich nicht ausschliesslich wie ein punktf"ormiges
-Teilchen.
-Experimente zeigen, dass es auch mit einem Magnetfeld wechselwirken
-kann, wie wenn es ein magnetisches Moment h"atte.
+Ein Elektron verh"alt sich nicht wie ein punktf"ormiges Teilchen.
+Die L"osung der Schr"odingergleichung, und vor allem die "Ubereinstimmung
+der L"osung mit Messungen zeigt, dass das Elektron sich beliebig nahe 
+am Atomkern aufhalten kann, es gibt also keinen messbaren Radius.
+Insbesondere ist es also auch nicht m"oglich, dass das Elektron
+rotieren k"onnte, denn dazu br"auchte es eine positive Ausdehnung.
+
+In dem in Kapitel~\ref{chapter:quantisierung} entwickelte Formalismus
+enth"alt keinen Platz f"ur eine Wechselwirkung der Elektronen
+mit einem Magnetfeld.
+Experimente zeigen jedoch, dass ein Elektron auch mit einem Magnetfeld
+wechselwirken kann, als ob es ein magnetisches Moment h"atte. 
+
+\section{Spin}
+Die Experimente zeigen, dass Elektronen sich verhalten, wie wenn sie
+trotz allem rotieren k"onnten.
+Es ist zwar nicht m"oglich, mit Hilfe der Drehimpulsoperatoren
+aus Kapitel~\ref{chapter:drehimpuls} dem Elektron einen Eigendrehimpuls
+zuzuteilen.
+Trotzdem kann man feststellen, dass im Elektron zus"atzlicher
+Drehimpuls stecken muss, denn gew"ohnlicher Drehimpuls kann verschwinden,
+da der Drehimpuls erhalten ist, muss er in das Elektron "ubergegangen
+sein.
+
+Wir schliessen daraus, dass es einen Operator $\vec S$ gibt, der sich
+genau so verh"alt wie ein Drehimpulsoperator, allerdings wirkt er nicht
+auf die Ortskoordinaten.
+Der Operator $\vec S$ heisst der Spin eines Elektrons.
+Experimentell weiss man auch, dass Elektronen nur zwei verschiedene
+Spinzust"ande haben k"onnen, was bedeutet, dass sich $\vec S$ wie ein
+Drehimpulsoperator auf Zustandsvektoren mit $j=\frac12$ verh"alt.
+Der Spin-Operator muss auf einen zweidimensionalen Hilbertraum
+wirken, die Komponenten des Spin-Operators m"ussen also hermitesche
+$2\times 2$-Matrizen sein, die die Vertauschungsrelationen eines
+Drehimpulsoperators erf"ullen.
+
+Die Matrizen $I$, $J$ und $K$ in (\ref{komplex:definitionIJK}) haben
+algebraische Eigenschaften, die nahe an dem sind, was wir suchen,
+allerdings sind sie nicht hermitesch.
+Multiplizieren wir sie mit $i$, erhalten wir die hermiteschen Matrizen
+\begin{align}
+\sigma_1
+&=
+\begin{pmatrix}
+0&1\\1&0
+\end{pmatrix}
+&
+\sigma_2
+&=
+\begin{pmatrix}
+0&-i\\i&0
+\end{pmatrix}
+&
+\sigma_3
+&=
+\begin{pmatrix}
+1&0\\0&-1
+\end{pmatrix}
+\label{spin:paulimatrizen}
+\end{align}
+die auch {\em Pauli-Matrizen} genannt werden.
+Diese Matrizen haben die folgenden Multiplikationseigenschaften:
+\begin{align*}
+%\sigma_1^2
+%=
+%\sigma_2^2
+%=
+%\sigma_3^2
+%&=E,
+%&
+\sigma_1\sigma_2
+&=
+\begin{pmatrix} i&0\\0&-i \end{pmatrix} = i\sigma_3,
+&
+\sigma_2\sigma_3
+&=
+\begin{pmatrix} 0&i\\i&0 \end{pmatrix} = i\sigma_1,
+&
+\sigma_3\sigma_1
+&=
+\begin{pmatrix} 0&1\\-1&0 \end{pmatrix} = i\sigma_2,
+\\
+%&&
+\sigma_2\sigma_1
+&=
+\begin{pmatrix} -i&0\\0&i \end{pmatrix} = -i\sigma_3,
+&
+\sigma_3\sigma_2
+&=
+\begin{pmatrix} 0&-i\\-i&0 \end{pmatrix} = -i\sigma_1,
+&
+\sigma_1\sigma_3
+&=
+\begin{pmatrix} 0&-1\\1&0 \end{pmatrix} = -i\sigma_2.
+\end{align*}
+Die Vertauschungsrelationen sind
+\begin{align*}
+[\sigma_1,\sigma_2]
+&=
+2i\sigma_3,
+&
+[\sigma_2,\sigma_3]
+&=
+2i\sigma_1,
+&
+[\sigma_3,\sigma_1]
+&=
+2i\sigma_2.
+\end{align*}
+Dies sind bis auf einen Faktor $\hbar/2$ die Vertauschungsrelationen,
+die wir von einem Drehimpulsoperator erwarten,
+daher k"onnen wir den Vektoroperator
+\begin{equation}
+\vec S=\frac{\hbar}2\vec\sigma
+=
+\frac{\hbar}2\begin{pmatrix}\sigma_1\\\sigma_2\\\sigma_3\end{pmatrix}
+\label{spin:vektoroperator}
+\end{equation}
+als Spin-Operator verwenden.
+Der Betrag des Spin-Operators ist
+\begin{align*}
+\vec S^2
+=
+\frac{\hbar}{4}(\sigma_1^2+\sigma_2^2+\sigma_3^2)=\hbar^2\frac12\frac32E.
+\end{align*}
+Die Standardbasisvektoren sind Eigenvektoren sowohl von $\vec S^3$ wie
+auch von $S_3$.
+Wir bezeichnen sie daher auch $|\uparrow\rangle=e_1$ und
+$|\downarrow\rangle=e_2$, es gilt:
+\begin{align*}
+\vec S^2|\uparrow\rangle&=\frac{3\hbar}4|\uparrow\rangle
+&
+\vec S^2|\downarrow\rangle&=\frac{3\hbar}4|\downarrow\rangle
+\\
+S_3|\uparrow\rangle&=\frac{\hbar}{2}|\uparrow\rangle
+&
+S_3|\downarrow\rangle&=-\frac{\hbar}{2}|\downarrow\rangle
+\end{align*}
+
+Die Auf- und Absteigeoperatoren f"ur den Spin sind
+\begin{align}
+S_+
+&=
+S_1+iS_2
+=
+\frac{\hbar}2
+(\sigma_1+i\sigma_2)
+=
+\frac{\hbar}2
+\begin{pmatrix} 0&1+1\\1-1&0 \end{pmatrix}
+=\hbar\begin{pmatrix}0&1\\0&0\end{pmatrix},
+\\
+S_-
+&=
+S_1-iS_2
+=
+\hbar\begin{pmatrix} 0&0\\1&0\end{pmatrix},
+\\
+S_+S_-+S_-S_+
+&=
+\hbar^2E,
+\end{align}
+genau wie f"ur den Operator $\vec L$.
+Auf den Standardbasisvektoren wirken diese Operatoren wie
+\begin{align*}
+S_+|\uparrow\rangle&=0,
+&
+S_-|\uparrow\rangle&=|\downarrow\rangle,
+\\
+S_+|\downarrow\rangle&=|\uparrow\rangle,
+&
+S_-|\downarrow\rangle&=0.
+\end{align*}
+$S_+$ erh"oht also den Spin in $z$-Richtung, $S_-$ erniedrigt ihn.
+
+\section{Spin im Magnetfeld}
+
+\section{Spin und Statistik}
+Die Theorie sagt aus, dass ein Teilchen nur einen totalen Spin haben kann,
+der ein Vielfaches von $\frac12$ ist. Tats"achlich gibt es Teilchen
+ganz ohne Spin, die $\pi$-Mesonen geh"oren dazu, aber auch das Higgs-Boson.
+Elektronen, Protonen und Neutronen haben Spin $\frac12$. 
+Atomkerne setzen sich aus vielen Protonen und Neutronen zusammen, ihr
+Spin kann daher viel h"oher sein. Im Grundzustand haben jedoch auch
+sie einen kleinen Spin.
+
+\subsection{Austauschoperator}
+Ein einzelnes Teilchen hat in der Ortsdarstellung als Zustand
+eine Wellenfunktion, die von den Ortskoordinaten und der Zeit abh"angt,
+sie hat zwei Komponenten, eine f"ur jeden m"oglichen Spinzustand.
+Wir k"onnten schreiben
+\begin{equation}
+|\psi\rangle
+=
+\begin{pmatrix}
+\psi_\uparrow(x,y,z,t)\\
+\psi_\downarrow(x,y,z,t)
+\end{pmatrix}
+\label{spin:vector}
+\end{equation}
+Statt die beiden m"oglichen Spinzust"ande durch einen Index zu unterscheiden,
+k"onnten wir sie auch als Argumente der Wellenfunktion schreiben, also
+als $\psi(x,y,z,t,s)$, wobei $s$ die Spinvariable ist. Der Zusammenhang
+mit den Komponenten in (\ref{spin:vector}) ist
+\[
+\psi_\uparrow(x,y,z,t)
+=
+\psi(x,y,z,t,\uparrow)
+\qquad\text{und}\qquad
+\psi_\downarrow(x,y,z,t)
+=
+\psi(x,y,z,t,\downarrow).
+\]
+Wie sieht die Wellenfunktion eines Systems mit zwei Teilchen aus?
+In die Wellenfunktion dieses Systems m"ussen die Koordinaten
+$(x_1,y_1,z_1)$ und $(x_2,y_2,z_2)$ beider Teilchen eingehen, 
+sowie die beiden Spins. Wir k"onnen die beiden Spins wieder als
+Koordinaten einer Wellenfunktion
+\[
+|\psi_2\rangle
+=
+\psi_2(x_1,y_1,z_1,s_1,x_2,y_2,z_2,s_2,t)
+\]
+betrachten.
+Elementarteilchen sind nicht unterscheidbar. Das bedeutet, dass sich
+physikalisch nichts "andern darf, wenn wir die Koordinaten der beiden
+Teilchen in $\psi_2$ vertauschen. Alle daraus berechneten physikalischen
+Gr"ossen m"ussen gleich bleiben.
+
+Wir k"onnen die Operation, die die Koordinaten vertauscht, also
+Operator $A$ betrachten:
+\[
+|\psi_2\rangle
+=
+\psi_2(x_1,y_1,z_1,s_1,x_2,y_2,z_2,s_2,t)
+\mapsto
+A|\psi_2\rangle
+=
+\psi_2(x_2,y_2,z_2,s_2,x_1,y_1,z_1,s_1,t)
+\]
+$A$ ist ein selbstadjungierter Operator.
+Die Energie darf sich nicht "andern, wenn die beiden Teilchen vertauscht
+werden, also muss der Hamilton-Operator $H$ mit $A$ vertauschen:
+$[H,A]=0$. Wir k"onnen die Eigenzust"ande von $H$ also immer so
+w"ahlen, dass sie auch Eigenzust"ande von $A$ sind.
+Wenn $|\psi\rangle$ ein Eigenzustand von $H$ ist, dann k"onnen wir
+daraus immer neue Zustandsvektoren
+\begin{align*}
+|\psi\rangle + A|\psi\rangle
+\end{align*}
+
+Wendet man den Operator zweimal an, bleibt der Zustand unver"andert.
+Der Operator $A$ erf"ullt also die Gleichung $A^2=\operatorname{id}$,
+insbesondere kann $A$ nur Eigenwerte $\pm 1$ haben.
+Ein Eigenzustand von $A$ erf"ullt also immer eine der beiden 
+Gleichungen
+\begin{align*}
+A|\psi_2\rangle &= |\psi_2\rangle
+\tag{symmetrisch}
+\\
+A|\psi_2\rangle &=-|\psi_2\rangle
+\tag{antisymmetrisch}
+\end{align*}
+
+\subsection{Pauli-Prinzip}
+
+\subsection{Periodensystem}
+
+
+
