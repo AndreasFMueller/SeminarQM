@@ -1,0 +1,134 @@
+Gegeben ist die Matrix
+\[
+H(\varepsilon)
+=
+\begin{pmatrix}0&1+\varepsilon\\1-\varepsilon&0\end{pmatrix}
+=
+\begin{pmatrix}0&1\\1&0\end{pmatrix}
++
+\varepsilon
+\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+.
+\]
+Finden Sie eine St"orungsl"osung erster Ordnung f"ur Eigenwerte und
+Eigenvektoren von $H(\varepsilon)$ in Abh"angigkeit vom St"orungsparameter
+$\varepsilon$.
+
+\begin{loesung}
+Zun"achst brauchen wir die exakte L"osung f"ur den ungest"orten Fall,
+also f"ur $\varepsilon=0$. Das Charakteristische Polynome ist
+\[
+\left|
+\begin{matrix}-\lambda&1\\1&-\lambda\end{matrix}
+\right|
+=\lambda^2-1=(\lambda+1)(\lambda-1)=0,
+\]
+die Eigenwerte sind also $\lambda_\pm=\pm 1$. Die zugeh"origen
+Eigenvektoren k"onnen mit dem Gaussalgorithmus berechnet werden:
+\[
+\begin{aligned}
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+-1&1\\
+1&-1\\
+\hline
+\end{tabular}
+&\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+1&-1\\
+0&0\\
+\hline
+\end{tabular}
+&&\Rightarrow&
+v_+&=\frac1{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}
+\\
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+1&1\\
+1&1\\
+\hline
+\end{tabular}
+&\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+1&1\\
+0&0\\
+\hline
+\end{tabular}
+&&\Rightarrow&
+v_+&=\frac1{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}
+\end{aligned}
+\]
+Auf diese ungest"orte L"osung k"onnen wir jetzt die St"orungstheorie
+anwenden.
+
+Nach der allgemeinen Theorie k"onnen wir die Korrekturterme f"ur die
+Eigenwerte und Eigenvektoren mit den Formeln (\ref{stoerungsloesung1ordnung})
+berechnen.
+\begin{align*}
+E_+^{(1)}&=v_+^tH_1v_+
+	=\frac12\begin{pmatrix}1&1\end{pmatrix}
+		\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+		\begin{pmatrix}1\\1\end{pmatrix}
+	=\frac12\begin{pmatrix}1&1\end{pmatrix}
+		\begin{pmatrix}1\\-1\end{pmatrix}
+	=0
+\\
+E_-^{(1)}&=v_-^tH_1v_-=0
+	=\frac12\begin{pmatrix}1&-1\end{pmatrix}
+		\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+		\begin{pmatrix}1\\-1\end{pmatrix}
+	=\frac12\begin{pmatrix}1&-1\end{pmatrix}
+		\begin{pmatrix}-1\\-1\end{pmatrix}
+	=0
+\end{align*}
+\end{loesung}
+In erster Ordnung werden die Eigenwerte also nicht ver"andert.
+Die gemischten Koeffizienten sind
+\begin{align*}
+\frac{v_+^tH_1v_-}{E_+-E_-}
+&=
+\frac{1}{2}
+\frac12
+	\begin{pmatrix}1&-1\end{pmatrix}
+	\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+	\begin{pmatrix}1&1\end{pmatrix}
+=
+-\frac14
+	\begin{pmatrix}1&-1\end{pmatrix}
+	\begin{pmatrix}1&-1\end{pmatrix}
+=
+-\frac12
+\\
+\frac{v_-^tH_1v_+}{E_--E_+}
+&=
+\frac{1}{-2}
+\frac12
+	\begin{pmatrix}1&1\end{pmatrix}
+	\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+	\begin{pmatrix}1&-1\end{pmatrix}
+=
+\frac14
+	\begin{pmatrix}1&1\end{pmatrix}
+	\begin{pmatrix}-1&-1\end{pmatrix}
+=
+-\frac12
+\end{align*}
+Damit sind die neuen Eigenvektoren:
+\begin{align*}
+v_+(\varepsilon)
+&=
+(1+i\varepsilon\gamma)
+\frac1{\sqrt{2}}
+\begin{pmatrix}1\\-1\end{pmatrix}
+-\varepsilon\frac12\begin{pmatrix}1\\1\end{pmatrix}
+\\
+v_-(\varepsilon)
+&=
+(1+i\varepsilon\gamma)
+\frac1{\sqrt{2}}
+\begin{pmatrix}1\\1\end{pmatrix}
+-\varepsilon\frac12\begin{pmatrix}1\\-1\end{pmatrix}
+\end{align*}
+Darin ist $\gamma$ so zu w"ahlen, dass die Vektoren L"ange $1$ erhalten.
