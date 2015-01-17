@@ -11,3 +11,480 @@ Es braucht daher eine grundlegend andere Beschreibung des Magnetfeldes
 und der Hamilton-Funktion, um Magentfelder in den Formalismus
 integrieren zu k"onnen.
 
+\section{Vektorpotential}
+F"ur die quantenmechanische Beschreibung eines Teilchens in einem
+elektrischen Feld konnten wir das Potential verwenden, welches
+direkt die Energie eines Teilchens aus der Position zu bestimmen
+erlaubt. 
+Das elektrische Feld $\vec E$ kann aus dem Potential mittels
+\[
+\vec E=\operatorname{grad}\varphi
+=
+\begin{pmatrix}
+\frac{\partial\varphi}{\partial x}\\
+\frac{\partial\varphi}{\partial y}\\
+\frac{\partial\varphi}{\partial z}
+\end{pmatrix}
+\]
+rekonstruiert werden.
+Das Magnetfeld hat kein Potential, aus dem es als Gradient wiedergewonnen
+werden k"onnte, und die Kr"afte, die das Magnetfeld
+auf ein Teilchen aus"ubt sind nicht vom Ort, sondern von der Geschwindigkeit
+abh"angig.
+
+Zum Magnetfeld gibt es trotzdem eine "ahnliche Konstruktion.
+Das Magnetfeld $\vec B$ hat keine Quellen, es gibt keine magnetischen
+Monopole.
+Mathematisch kann man dies dadurch ausdr"ucken, dass 
+\[
+\operatorname{div}\vec B
+=
+\frac{\partial B_x}{\partial x}
++
+\frac{\partial B_y}{\partial y}
++
+\frac{\partial B_z}{\partial z}
+=0
+\]
+ist.
+Man kann zeigen, dass es zu so einem Vektorfeld ein Vektorfeld $\vec A$
+gibt, aus dem sich das Magnetfeld mit der Formel
+\[
+\vec B=\operatorname{rot}\vec A
+=\begin{pmatrix}
+\frac{\partial A_3}{\partial y}-\frac{\partial A_2}{\partial z}\\
+\frac{\partial A_1}{\partial z}-\frac{\partial A_3}{\partial x}\\
+\frac{\partial A_2}{\partial x}-\frac{\partial A_1}{\partial y}
+\end{pmatrix}
+\]
+rekonstruieren l"asst.
+
+\begin{beispiel}
+Sei $\vec B_0$ ein fester Vektor, und betrachten das Feld
+\[
+\vec A=\frac12\vec B_0\times \vec r=\begin{pmatrix}
+B_2z-B_3y\\
+B_3x-B_1z\\
+B_1y-B_2x
+\end{pmatrix}
+\]
+Das zugeh"orige Magnetfeld ist
+\begin{equation}
+\vec B
+=
+\operatorname{rot}\vec A
+=
+\frac12
+\begin{pmatrix}
+\frac{\partial}{\partial y}(B_1y-B_2x)-\frac{\partial}{\partial z}(B_3x-B_1z)\\
+\frac{\partial}{\partial z}(B_2z-B_3y)-\frac{\partial}{\partial x}(B_1y-B_2x)\\
+\frac{\partial}{\partial x}(B_3x-B_1z)-\frac{\partial}{\partial y}(B_2z-B_3y)
+\end{pmatrix}
+=
+\begin{pmatrix}
+B_1\\B_2\\B_3
+\end{pmatrix}
+\end{equation}
+Dieses Vektorfeld $\vec A$ geh"ort zum homogenen Magnetfeld $\vec B_0$.
+\end{beispiel}
+
+\section{Hamilton-Funktion f"ur ein Teilchen im Magnetfeld}
+Wie sieht die Hamilton-Funktion eines Teilchens aus, welches  sich in
+einem Magnetfeld $\vec B$ bewegt?
+Das Feld $\vec B$ kann in der Hamilton-Funktion nicht direkt
+verwendet werden, denn da die Lorentz-Kraft immer senkrecht
+auf dem Feld $\vec B$ steht, leistet $\vec B$ keine Arbeit, und kann
+daher auch keinen Beitrag zu Energie leisten.
+
+Mit dem Laplace-Formalismus kann man die korrekte Form der
+Hamilton-Funktion finden.
+Dabei zeigt sich, dass man eine andere Impulskoordinate $\vec P$
+an Stelle der bekannten Impulse $\vec p$ verwenden muss. 
+Die neue Impulskoordinate ist 
+\[
+\vec P = \vec p + e\vec A,
+\]
+sie beinhaltet das Vektorpotential.
+Dadurch werden die Impulse und das Vektorpotential miteinander 
+verkn"upft, wir m"ussen nur kontrollieren, ab die Verkn"upfung
+tats"achlich so ist, dass die Bewegungsgleichungen uns auf die
+Lorentz-Kraft f"uhren.
+
+Die kinetische Energie muss n"aturlich mit den Impulsen $\vec p$ ausgedr"ucket
+werden, die mittels $\vec p=\vec P-e\vec A$ durch $\vec P$
+ausgedr"uckt werden k"onnen.
+Die Hamilton-Funktion f"ur ein Teilchen in einem Potential $\varphi$
+und Vektorpotential $\vec A$ wird damit zu
+\begin{equation}
+H(\vec P, \vec x)=\frac1{2m}(\vec P-e\vec A)^2+e\varphi.
+\label{hamiltonmitmagnetfeld}
+\end{equation}
+
+Wir verifizieren, dass die Bewegungsgleichungen, die sich aus dieser
+Hamilton-Funktion ergeben, tats"achlich die Lorentzkraft auf ein
+Teilchen im Magnetfeld richtig wiedergeben.
+Zun"achst rechnen wir die Bewegungsgleichungen aus
+\begin{align*}
+\frac{dx_i}{dt}
+&=
+\frac{\partial H}{\partial P_i}
+=
+\frac1m(P_i-eA_i)
+\\
+\frac{dP_i}{dt}
+&=
+-\frac{\partial H}{\partial x_i}
+=
+\frac{e}{m}\sum_{j=1}^3( P_j-eA_j)\frac{\partial A_j}{\partial x_i}
+-e\frac{\partial\varphi}{\partial x_i}
+=
+e\sum_{j=1}^3\frac{p_j}{m}\frac{\partial A_j}{\partial x_i}
+-e\frac{\partial\varphi}{\partial x_i}
+=
+e\sum_{j=1}^3v_j\frac{\partial A_j}{\partial x_i}
+-e\frac{\partial\varphi}{\partial x_i}
+\end{align*}
+Wir m"ussen die Bewegungsgleichungen in der Newtonschen Form 
+finden, denn nur so k"onnen wir die Kr"afte identifizieren.
+Wir leiten daher die erste Gleichung nochmals nach der Zeit ab,
+und erhalten
+\[
+\frac{d^2 x_i}{dt^2}
+=
+\frac1m\frac{dP_i}{dt}-\frac{e}{m}\biggl(
+\frac{\partial A_i}{\partial t}
++\sum_{j=1}^3\frac{\partial A_i}{\partial x_j}\frac{dx_j}{dt}
+\biggr)
+=
+\frac1m\frac{dP_i}{dt}-\frac{e}{m}\biggl(
+\frac{\partial A_i}{\partial t}
++
+\sum_{j=1}^3\frac{\partial A_i}{\partial x_j}v_j
+\biggr)
+\]
+Darin k"onnen wir die Ableitung von $P_i$ nach der Zeit aus der
+zweiten Hamiltonschen Bewegungsgleichung einsetzen:
+\begin{align*}
+m\frac{d^2 x_i}{dt^2}
+&=
+e\sum_{j=1}^3v_j\frac{\partial A_j}{\partial x_i}
+-e\frac{\partial\varphi}{\partial x_i}
+-
+e\biggl(
+\frac{\partial A_i}{\partial t}
++\sum_{j=1}^3\frac{\partial A_i}{\partial x_j}v_j
+\biggr)
+\end{align*}
+Dies wird "ubersichtlicher, wenn wir die rechte Seite f"ur $i=1$
+ausrechnen:
+\begin{align*}
+m\frac{d^2 x_i}{dt^2}
+&=
+e\biggl(
+v_1\frac{\partial A_1}{\partial x_1}
++
+v_2\frac{\partial A_2}{\partial x_1}
++
+v_3\frac{\partial A_3}{\partial x_1}
+-
+v_1\frac{\partial A_1}{\partial x_1}
+-
+v_2\frac{\partial A_1}{\partial x_2}
+-
+v_3\frac{\partial A_1}{\partial x_3}
+\biggr)
+-e\frac{\partial\varphi}{\partial x_i}
+-e\frac{\partial A_i}{\partial t}
+\\
+&=
+e\biggl(
+v_2\frac{\partial A_2}{\partial x_1}
++
+v_3\frac{\partial A_3}{\partial x_1}
+-
+v_2\frac{\partial A_1}{\partial x_2}
+-
+v_3\frac{\partial A_1}{\partial x_3}
+\biggr)
+-e\frac{\partial\varphi}{\partial x_i}
+-e\frac{\partial A_i}{\partial t}
+\\
+&=
+e\biggl(
+v_2
+\biggl(
+\frac{\partial A_2}{\partial x_1}
+-
+\frac{\partial A_1}{\partial x_2}
+\biggr)
+-
+v_3\biggr(
+\frac{\partial A_1}{\partial x_3}
+-
+\frac{\partial A_3}{\partial x_1}
+\biggr)
+\biggr)
+-e\frac{\partial\varphi}{\partial x_i}
+-e\frac{\partial A_i}{\partial t}
+\\
+&=
+e\biggl(
+v_2B_3
+-
+v_3B_2
+\biggr)
+-e\frac{\partial\varphi}{\partial x_i}
+-e\frac{\partial A_i}{\partial t}
+\end{align*}
+In dieser Form stehen die Kr"afte auf der rechten Seite. 
+In vektorieller Form
+\[
+m\frac{d^2\vec x}{dt^2}
+=
+e\vec v\times\vec B
+-e\operatorname{grad}\varphi
+-e\frac{\partial\vec A}{\partial t}
+\]
+erkennt man die Kr"afte: der erste Term ist die Lorentz-Kraft,
+der zweite ist das elektrische Feld mit Potential $\varphi$.
+
+\section{Hamilton-Operator im Magnetfeld}
+Die Bewegung eines quantenmechanischen Teilchens erhalten wir jetzt
+aus dem Hamilton-Operator mit den "ublichen Quantisierungsregeln.
+Die Impulse $P_i$ m"ussen durch Ableitungsoperatoren ersetzt werden.
+Der Hamiltonoperator in Ortsdarstellung ist also
+\[
+H=\frac1{2m}\sum_{k=1}^3\biggl(
+\frac{\hbar}{i}
+\frac{\partial}{\partial x_k}
+-eA_k
+\biggr)^2
++e\varphi.
+\]
+Man kann ihn zum Beispiel verwenden, um den Einfluss eines Magnetfeldes
+auf die Elektronen in einem Atom zu messen.
+Zum Beispiel kann man ein homogenes Magnetfeld in $z$-Richtung
+aus dem Vektorpotential
+\[
+\vec A=\begin{pmatrix}
+-yB\\0\\0
+\end{pmatrix}
+\qquad
+\Rightarrow
+\qquad
+\vec B=\operatorname{rot}\vec A
+=\begin{pmatrix}
+\frac{\partial A_3}{\partial y}-\frac{\partial A_2}{\partial z}\\
+\frac{\partial A_1}{\partial z}-\frac{\partial A_3}{\partial x}\\
+\frac{\partial A_2}{\partial x}-\frac{\partial A_1}{\partial y}
+\end{pmatrix}
+=
+\begin{pmatrix}
+0\\0\\B
+\end{pmatrix}
+\]
+bekommen.
+Ein Teilchen in einem homogenen Magnetfeld hat daher den Hamilton-Operator
+\[
+H
+=
+\frac1{2m}\biggl(\frac{\hbar}{i}\frac{\partial}{\partial x}+eBy\biggr)^2
+-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial y^2}
+-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial z^2}
+\]
+Man beachte, dass jetzt der Impulsoperator in $y$-Richtung nicht mehr
+mit dem Impulsoperator in $x$-Richtung vertauscht, man kann also
+nicht gleichzeitig die $x$- und $y$-Impuls wissen.
+Allerdings vertauscht den die Impulsoperatoren in $x$- und $z$-Richtung
+immer noch mit $H$, diese Impulskomponenten sind also Erh"altungsgr"ossen.
+
+Man kann versuchen, eine L"osung der Schr"odingergleichung f"ur $H$ mit
+einem Ansatz
+\[
+\psi(x,y,z)
+=
+e^{\frac{i}{\hbar}(xp_x+zp_z)}Y(y)
+\]
+zu finden.
+Setzt man diesen Ansatz in die Schr"odingergleichung ein, bekommt man
+\begin{align}
+e^{\frac{i}{\hbar}(xp_x+zp_z)}
+\biggl(
+\frac1{2m}
+(p_x+eyB)^2
+Y(y)
+-
+\frac1{2m}
+\hbar^2 Y''(y)
++
+\frac1{2m}p_z^2
+Y(y)
+\biggr)
+&=
+E
+e^{\frac{i}{\hbar}(xp_x+zp_z)}
+Y(y)
+\notag
+\\
+-\frac{\hbar^2}{2m} Y''(y)
++
+\biggl(
+-E
++
+\frac{ p_z^2}{2m}
++
+\frac1{2m}
+(p_x+eyB)^2
+\biggr)
+Y(y)
+&=
+0
+\label{Ygl}
+\end{align}
+Indem wir schreiben
+\[
+y_0=-\frac{p_x}{eB}
+\qquad
+\text{und}
+\qquad
+\omega_B
+=\frac{eB}{m}
+\]
+erhalten wir aus (\ref{Ygl}) die Differentialgleichung
+\begin{equation}
+-\frac{\hbar}{2m}Y''
++\frac{m}2\omega_B^2(y-y_0)^2Y
+=
+\biggl(E-\frac{p_z^2}{2m}\biggr) Y
+\label{landauniveaus}
+\end{equation}
+Dies ist die Eigenwertgleichung eines harmonischen Oszillators mit
+Kreisfrequenz $\omega_B$.
+Dessen Energieniveaus haben wir im Kapitel~\ref{chapter:harmonischeroszillator}
+bereits berechnet, sie sind Vielfachen von $\hbar\omega_B$, insbesondere
+gilt:
+\[
+\biggl(E-\frac{p_z^2}{2m}\biggr) = \hbar\omega_B\biggl(n+\frac12\biggr)
+\qquad\Rightarrow\qquad
+E=
+\hbar\omega_B\biggl(n+\frac12\biggr)
+-
+\frac{p_z^2}{2m}
+\]
+Bei gegebenem Impuls in $x$- und $z$-Richtung ist die Bewegung in
+$y$-Richtung als quantisiert.
+Die zul"assigen Energieniveaus unterscheiden sich 
+
+Man kann sich dieses Ph"anomen auch klassisch vorstellen.
+Die Lorentzkraft zwingt Elektronen in Spiralbahnen um die Feldlinien des
+Magnetfeldes.
+Betrachtet man die Teilchen als Wellen, muss eine Umlauf um die
+Feldlinie zu konstruktiver Interferenz f"uhren, daher sind nur
+ganz bestimmte Phasenfrequenzen erlaubt.
+
+\section{Eichtransformationen}
+Das Vektorpotential ist die physikalisch entscheidende Gr"osse.
+Im Bohm-Aharonov-Experiment
+werden Elektronen durch ein Gebiet geleitet, in dem sich $\vec A$,
+aber nicht $\vec B$ "andert, trotzdem stellt das Experiment eine
+Beeinflussung fest.
+
+Das Vektorpotential ist nicht eindeutig: wenn man zu $\vec A$
+den Gradienten einer Funktion $\chi$ hinzuaddiert, "andert sich
+$\vec B$ nicht, weil
+\[
+\operatorname{rot}(\vec A+\operatorname{grad}\chi)
+=
+\underbrace{\operatorname{rot}\vec A}_{\vec B}
++
+\underbrace{\operatorname{rot}\operatorname{grad}\chi}_{=0}
+=
+\vec B.
+\]
+
+Wenn das Vektorpotential die physikalisch ``reale'' Gr"osse ist,
+sie aber nicht eindeutig ist, dann d"urfen sich keine messbaren
+Gr"ossen "andern, wenn man $\vec A$ auf zul"assige Art "andert.
+In der Quantenmechanik bedeutet das, dass sich die Wahrscheinlichkeiten
+nicht "andern d"urfen, d.~h.~die Wellenfunktion darf sich h"ochstens
+um einen Phasenfaktor "andern.
+
+Wir gehen daher davon aus, dass $\psi$ eine Wellenfunktion ist,
+die die Schr"odingergleichung des Hamilton-Operators mit Vektorpotential
+$\vec A$ l"ost,
+dass also
+\[
+\frac{\hbar}{i}\frac{\partial}{\partial t}\psi
+=
+H\psi
+\]
+Wenn wir die Ersetzung
+$\vec A\mapsto \vec A+\operatorname{grad}\chi$
+im Hamilton-Operator durchf"uhren, m"ussen wir die Wellenfunktion
+mit einem Phasenfaktor $e^{if(x)}$ korrigieren.
+Die Wirkung des modifizierten Impulsoperators ist
+\begin{align*}
+\biggl(
+\frac{\hbar}{i}\frac{\partial}{\partial x_k}+eA_k
++\frac{\partial\chi}{\partial x_k}
+\biggr)e^{if(x)}\psi(x)
+&=
+e^{if(x)}
+\biggl(
+\frac{\hbar}{i}\frac{\partial}{\partial x_k}+eA_k
++\frac{\partial\chi}{\partial x_k}
+\biggr)
+\psi(x)
++
+e^{if(x)}
+\frac{\hbar}{i}i\frac{\partial f}{\partial x_k}\psi(x)
+\end{align*}
+Die Addition von $\operatorname{grad}\chi$ zum Vektorpotential
+kann nur dann ohne Folgen f"ur die Physik sein, wenn der
+zus"atzlich auf der rechten Seite auftauchende Term den
+Term mit $\chi$ kompensiert, wenn also gilt
+\[
+\frac{\partial\chi}{\partial x_k}=\hbar\frac{\partial f}{\partial x_k},
+\]
+oder $\operatorname{grad}\chi=\frac1{\hbar}\operatorname{grad}\chi$.
+Wenn man also das Vektorpotential um $\operatorname{grad}\chi$ "andert,
+muss man die Wellenfunktion um $e^{\frac{i}{\hbar}\chi}$. 
+Setzt man dies jedoch auf der linken Seite der zeitabh"angigen
+Schr"odingergleichung ein, erh"alt man
+\[
+\frac{\hbar}{i}\frac{\partial}{\partial t}
+\bigl(
+e^{\frac{i}{\hbar}\chi}
+\psi
+\bigr)
+=
+e^{\frac{i}{\hbar}\chi}
+\frac{\partial\chi}{\partial t}
+\psi
++
+e^{\frac{i}{\hbar}\chi}
+\frac{\partial}{\partial t}
+\psi
+\]
+Wenn sich also die Schr"odingergleichung nicht "andern soll, dann
+muss der Summand $\partial\chi/\partial t$ zum Potential im
+Hamilton-Operator geschlagen werden.
+Wenn man also alle "Anderungen
+\begin{align}
+\vec A&\mapsto \vec A + \operatorname{grad}\chi
+&
+\varphi&\mapsto \varphi-\frac{\partial\chi}{\partial t}
+&
+\psi
+&\mapsto
+e^{\frac{i}{\hbar}\chi}\psi
+\label{eichtransformation}
+\end{align}
+gleichzeitig durchf"uhrt, dann "andert sich physikalisch nichts,
+auch wenn sich sowohl das Vektorpotential als auch das
+elektrische Potential "andert.
+
+Die Transformation (\ref{eichtransformation}) heisst Eichtransformation.
+Die Schr"odingergleichungen sind invariant bez"uglich Eichtransformationen.
+
+

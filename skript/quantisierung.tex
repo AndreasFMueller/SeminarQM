@@ -10,4 +10,172 @@
 \index{schrodingergleichung@Schr\"odingergleichung!in Ortsdarstellung}
 \section{Wahrscheinlichkeitsstrom}
 % Kontinuitätsgleichung für die Wahrscheinlichkeitsdichte <psi(x)|psi(x)>
+Die Wahrscheinlichkeit ein Teilchen in einer Umgebung des
+Punktes $x$ zu finden, ist $\varrho(x)=\langle \psi(x)|\psi(x)\rangle$.
+Die Zeitentwicklung f"uhrt dazu, dass $\varrho$ auch von der
+Zeit abh"angt.
+Dies gesamte Wahrscheinlichkeit muss nat"urlichh erhalten bleiben,
+das Teilchen kann ja nicht einfach verschwinden.
+
+Wenn sich mit der Zeitentwicklung das Teilchen woanders hin bewegt,
+dann ist damit ein Stromdichtevektor verbunden, der angibt, 
+wieviel Wahrscheinlichkeit durch eine Fl"ache fliesst.
+Das Ziel dieses Abschnittes ist, eine solche Stromdichte zu
+definieren.
+
+\subsection{Kontinuit"atsgleichung}
+Wir stellen uns ein Medium mit Dichte $\varrho(x,t)$ vor.
+Das Medium hat im Punkt $x$ die Str"omungsgeschwindigkeit $v(x)$.
+In einem Zeitinterval $\Delta t$ nimmt die Masse des Mediums
+in einem Interval der L"ange $\Delta x$ um den Betrag
+\[
+\Delta x\frac{\partial\varrho}{\partial t}\Delta t
+\]
+zu.
+Dies Zunahme muss dadurch erfolgen, dass durch die Endpunkte
+des $\Delta x$-Intervals mehr Material zu- als abfliesst.
+Der Zufluss am linken Ende des Intervals ist
+$
+\varrho(x) v(x),
+$
+der Abfluss am rechten Ende ist $\varrho(x+\Delta x)v(x+\Delta x)$.
+Die Bilanz ist
+\[
+\Delta x\frac{\partial\varrho}{\partial t}\Delta t
+=
+\Delta t(
+\varrho(x) v(x)
+-
+\varrho(x+\Delta x) v(x+\Delta x)
+)
+\]
+Wir teilen durch $\Delta x\,\Delta y$ und lassen $\Delta x$ gegen 0 gehen:
+\begin{equation}
+\frac{\partial\varrho}{\partial t}
++\frac{\partial}{\partial x}(\varrho(x)v(x))
+=0.
+\label{kontinuitaetsgleichung1d}
+\end{equation}
+Die Gr"osse $j(x)=\varrho(x)v(x)$ beschreibt den Materialstrom.
+Die Gleichung (\ref{kontinuitaetsgleichung1d}) heisst die
+Kontinuit"atsgleichung.
+Sie dr"uckt aus, dass im Verlauf der Str"omung kein Material verlorgen
+gehen kann.
+
+In drei Dimensionen kann man ebenfalls ein Kontinuit"atsgleichung
+f"ur die Dichte $\varrho(x)$ und den Strom $\vec\j(x)=\varrho(x) \vec v(x)$
+definieren, die die dreidimensionale 
+Kontinuit"atsgleichung
+\[
+\frac{\partial\varrho}{\partial x}
++
+\frac{\partial j_1}{\partial x_1}
++
+\frac{\partial j_2}{\partial x_2}
++
+\frac{\partial j_3}{\partial x_3}
+=
+\frac{\partial\varrho}{\partial t}+\operatorname{div}\vec\j
+=0
+\]
+erf"ullt.
+
+\subsection{Wahrscheinlichkeitsstrom}
+Wir suche jetzt einen Wahrscheinlichkeitsstrom, der zusammen mit
+der Wahrscheinlichkeitsdichte $|\psi(x)|^2$ eine Kontinuit"atsgleichung
+erf"ullt.
+\begin{align*}
+\frac{\partial\varrho(x,t)}{\partial t}
+&=
+\frac{\partial}{\partial t} \varrho(x)
+=
+\frac{\partial\varrho(x)}{\partial t}
+=
+\frac{\partial\overline{\psi(x,t)}}{\partial t}\psi(x,t)
++
+\overline{\psi}(x,t)\frac{\partial\psi(x,t)}{\partial t}
+\end{align*}
+Im letzten Term k"onnen wir die Zeitableitungen durch die
+Schr"odingergleichung ersetzen:
+\begin{align*}
+\frac{\partial\varrho(x,t)}{\partial t}
+&=
+\frac{\partial\overline{\psi(x,t)}}{\partial t}\psi(x,t)
++
+\overline{\psi}(x,t)\frac{\partial\psi(x,t)}{\partial t}
+\\
+&=
+\overline{ \frac{i}{\hbar}H \psi(x,t) }\psi(x,t)
++
+\overline{\psi}(x,t)\frac{i}{\hbar} H \psi(x,t)
+\\
+&=
+-
+\frac{\hbar^2}{2m}\overline{\frac{\partial^2\psi(x,t)}{\partial x^2}}\psi(x,t)
++
+\frac{\hbar^2}{2m}\frac{\partial^2\psi(x,t)}{\partial x^2}\overline{\psi(x,t)}
++
+\varphi(x,t)|\psi(x,t)|^2
+\end{align*}
+Die ersten zwei Terme k"onnen wir auch als Ableitung
+der Funktion
+\[
+j(x,t)=
+\frac{\hbar^2}{2m}
+\biggl(
+-\frac{\partial\overline{\psi}(x,t)}{\partial x}\psi(x,t)
++\overline{\psi}(x,t)\frac{\partial\psi(x,t)}{\partial x}
+\biggr)
+\]
+erhalten, denn
+\begin{align*}
+\frac{\partial j(x,t)}{\partial x}
+&=
+\frac{\hbar^2}{2m}
+\frac{\partial}{\partial x}
+\biggl(
+-\frac{\partial\overline{\psi}(x,t)}{\partial x}\psi(x,t)
++\overline{\psi}(x,t)\frac{\partial\psi(x,t)}{\partial x}
+\biggr)
+\\
+&=
+\frac{\hbar^2}{2m}
+\frac{\partial}{\partial x}
+\biggl(
+-
+\frac{\partial^2\overline{\psi}(x,t)}{\partial x^2}
+\psi(x,t)
+-
+\frac{\partial\overline{\psi}(x,t)}{\partial x}
+\frac{\partial\psi(x,t)}{\partial t}
++
+\frac{\partial\overline{\psi}(x,t)}{\partial x}
+\frac{\partial\psi(x,t)}{\partial x}
++
+\overline{\psi}(x,t)
+\frac{\partial^2\psi(x,t)}{\partial x^2}
+\biggr)
+\\
+&=
+\frac{\hbar^2}{2m}
+\frac{\partial}{\partial x}
+\biggl(
+-
+\frac{\partial^2\overline{\psi}(x,t)}{\partial x^2}
+\psi(x,t)
++
+\overline{\psi}(x,t)
+\frac{\partial^2\psi(x,t)}{\partial x^2}
+\biggr)
+\end{align*}
+Somit erf"ullt die oben definierte Funktion $j(x,t)$ die
+Kontinuit"atsgleichung
+\[
+\frac{\partial\varrho(x,t)}=\frac{\partial j(x,t)}{\partial x}
++\varphi(x,t)\varrho(x,t).
+\]
+
+
+
+
 
