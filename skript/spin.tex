@@ -184,6 +184,66 @@ $S_+$ erh"oht also den Spin in $z$-Richtung, $S_-$ erniedrigt ihn.
 
 \section{Spin im Magnetfeld}
 \rhead{Spin im Magnetfeld}
+Der Spin manifestiert sich durch seine Wechselwirkung mit einem
+externen Magnetfeld.
+Diese Wechselwirkung kann durch einen zus"atzlichen Term im
+Hamilton-Operator modelliert werden.
+Die Wechselwirkung eines magnetischen Dipolmoments mit einem
+Magnetfeld $\vec B$ wird durch das Skalarprodukt gegeben,
+der Hamilton-Operator mit dieser Wechselwirkung ist
+\[
+H=H_0 + \frac{e}{m_ec}\vec S\cdot\vec B.
+\]
+Darin ist $H_0$ der Hamilton-Operator ohne die Wechselwirkung 
+des Spins.
+
+Wir k"onnen die St"orungstheorie verwenden, um den Einfluss eines
+Magnetfeldes auf den Spin abzusch"atzen.
+Da der ungest"orte Operator $H_0$ den Spin nicht enth"alt, gibt
+es entartete Eigenzust"ande
+$|\uparrow\rangle$ und $|\downarrow\rangle$
+zu verschiedenen Spins, die aber sonst in allen Quantenzahlen
+"ubereinstimmen.
+Sie sind aber Eigenzust"ande des Spin-Magnetfeld-Operators
+$\vec S\cdot \vec B$, so dass wir die St"orungstheorie anwenden
+k"onnen.
+
+In erster N"aherung sagt die St"orungstheorie, dass die Spin-Zust"ande
+durch die St"orungstheorie nicht gemischt werden.
+Nur die Energien werden sich "andern, und die "Anderung in 
+Abh"angigkeit vom Magnetfeld k"onnen wir berechnen.
+
+Wir nehmen an, dass das Magnetfeld nur eine $z$-Komponente $B_z$ hat,
+dieses ist der St"orungsparameter.
+Der Operator $H_1$ ist in dieser Basis durch die Matrix
+\[
+H_1=
+\frac{\hbar e}{2m_ec}
+\begin{pmatrix}
+1&0\\
+0&-1
+\end{pmatrix}
+\]
+gegeben.
+Die St"orungstheorie liefert f"ur den linearen Koeffizienten von $B_z$
+der Energie
+\begin{align*}
+E_\downarrow^{(1)}
+&=
+\langle \downarrow|\, H_1 \,|\downarrow\rangle
+=\frac{\hbar e}{2m_e c}
+&
+E_\uparrow^{(1)}
+&=
+\langle \uparrow|\, H_1 \,|\uparrow\rangle
+=-\frac{\hbar e}{2m_e c}
+\end{align*}
+Durch die St"orung werden die beiden Spin-Niveaus aufgespalten
+in zwei Niveaus, deren Energie sich um
+\[
+\frac{\hbar e}{m_e c}B_z
+\]
+unterscheidet.
 
 \section{Spin und Statistik}
 \rhead{Spin und Statistik}
@@ -251,16 +311,6 @@ A|\psi_2\rangle
 \psi_2(x_2,y_2,z_2,s_2,x_1,y_1,z_1,s_1,t)
 \]
 $A$ ist ein selbstadjungierter Operator.
-Die Energie darf sich nicht "andern, wenn die beiden Teilchen vertauscht
-werden, also muss der Hamilton-Operator $H$ mit $A$ vertauschen:
-$[H,A]=0$. Wir k"onnen die Eigenzust"ande von $H$ also immer so
-w"ahlen, dass sie auch Eigenzust"ande von $A$ sind.
-Wenn $|\psi\rangle$ ein Eigenzustand von $H$ ist, dann k"onnen wir
-daraus immer neue Zustandsvektoren
-\begin{align*}
-|\psi\rangle + A|\psi\rangle
-\end{align*}
-
 Wendet man den Operator zweimal an, bleibt der Zustand unver"andert.
 Der Operator $A$ erf"ullt also die Gleichung $A^2=\operatorname{id}$,
 insbesondere kann $A$ nur Eigenwerte $\pm 1$ haben.
@@ -273,8 +323,68 @@ A|\psi_2\rangle &= |\psi_2\rangle
 A|\psi_2\rangle &=-|\psi_2\rangle
 \tag{antisymmetrisch}
 \end{align*}
+Wir k"onnen auch aus einem beliebigen Zustandsvektor $|\psi\rangle$
+Eigenvektoren zu jedem $A$ bauen, indem wir
+\begin{align*}
+|\psi_\text{symmetrisch}\rangle
+&=
+\frac1{\sqrt{2}}(|\psi\rangle + A\,|\psi\rangle)
+&
+|\psi_\text{antisymmetrisch}\rangle
+&=
+\frac1{\sqrt{2}}(|\psi\rangle - A\,|\psi\rangle)
+\end{align*}
+bilden.
+
+Wenn die beiden Teilchen nicht unterscheidbar sind, dann darf sich
+die Energie nicht "andern, wenn die beiden Teilchen vertauscht
+werden. Der Hamilton-Operator $H$ muss also mit $A$ vertauschen:
+$[H,A]=0$. Wir k"onnen die Eigenzust"ande von $H$ also immer so
+w"ahlen, dass sie auch Eigenzust"ande von $A$ sind.
+
+Wenn $|\psi\rangle$ ein Eigenzustand von $H$ ist, dann muss auch
+$|\psi_{\text{symmetrisch}}\rangle$ und
+$|\psi_{\text{antisymmetrisch}}\rangle$ ein Eigenvektor sein.
 
 \subsection{Pauli-Prinzip}
+Die Operator $H$ und $A$ erlaubten uns nicht zu entscheiden,
+der beiden Zust"ande $|\psi_{\text{symmetrisch}}\rangle$ und
+$|\psi_{\text{antisymmetrisch}}\rangle$ in der Natur tats"achlich
+vorkommt.
+Experimentell hat man festgestellt, dass Teilchen mit halbzahligem
+Spin, sogenannte Fermionen, nur mit einer antisymmetrischen
+Wellenfunktion vorkommen k"onnen, w"ahrend Teilchen mit
+ganzzahligem Spin, sogenannte Bosonen, nur mit einer symmetrischen
+Wellenfunktion auftreten.
+
+Wenn zwei Fermionen keine Wechselwirkung haben, dann k"onnen wir
+aus zwei Wellenfunktionen
+$\psi(x_1,y_1,z_1,s_1,t)$
+und
+$\psi(x_2,y_2,z_2,s_2,t)$
+f"ur Fermionen eine antisymmetrische Wellenfunktion f"ur das
+Gesamtsystem bauen
+\[
+\psi_2(x_1,y_1,z_1,x_2,y_2,z_2,s_1,s_2,t)
+=
+\psi(x_1,y_1,z_1,s_1,t)
+\psi(x_2,y_2,z_2,s_2,t).
+\]
+bauen.
+Wenn die beiden Fermionen den gleichen Spin haben, ist die
+Funktion $\psi_2$ symmetrisch, kann also nicht die Wellenfunktion
+eines Paares von Fermionen sein. 
+Daraus leiten wir das Pauli-Prinzip ab:
+
+\begin{satz}[Pauli-Prinzip]
+Zwei Fermionen k"onnen nicht in einem Zustand sein, in dem alle
+Quantenzahlen "ubereinstimmen.
+\end{satz}
+Zwei Fermionen m"ussen sich also in mindestens einer Quantenzahl
+unterscheiden.
+Zwei Elektronen k"onnen in einem Atom nur dann die gleichen
+Energie- und Drehimpuls-Quantenzahlen haben, wenn sie sich im
+Spin unterscheiden.
 
 \subsection{Periodensystem}
 Die Elektronen in einem Atom sind nicht voneinander unabh"angig,
