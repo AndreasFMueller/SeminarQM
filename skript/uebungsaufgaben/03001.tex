@@ -14,7 +14,7 @@ Wir staten diesen Raum mit dem Skalarprodukt
 Zeigen Sie, dass $L^2(\mathbb R)$ ein Pr"ahilbertraum ist.
 
 \begin{loesung}
-Wir m"ussen zeigen dass das Skalarprodukt sesquilinear ist und positiv
+Wir m"ussen zeigen dass das Skalarprodukt sesquilinear, hermitesch und positiv
 definit ist.
 Dazu rechnen wir nach:
 \begin{align*}
@@ -49,6 +49,28 @@ g(x)
 \lambda(f,g).
 \end{align*}
 Das Skalarprodukt ist also tats"achlich sesquilinear.
+
+F"ur die Hermitezit"at berechnen wir
+\begin{align*}
+(f,g)
+&=
+\int_{-\infty}^{\infty} \overline{f(x)} g(x)\,dx
+=
+\overline{
+\int_{-\infty}^{\infty} f(x) \overline{g(x)}\,dx
+}
+=
+\overline{
+\int_{-\infty}^{\infty}
+\overline{g(x)}
+f(x)
+\,dx
+}
+=
+\overline{(g,f)},
+\end{align*}
+also ist das skalarprodukt hermitesch.
+
 Sei jetzt $f$ eine beliebige stetige Funktion, die nicht die Nullfunktion
 ist. Zu einem gen"ugend kleinen $\varepsilon>0$ gibt es daher ein kleines
 Interval $I\subset\mathbb R$ mit $|f(x)|>\varepsilon$ f"ur alle $x\in I$.
