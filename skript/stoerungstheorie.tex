@@ -1,14 +1,13 @@
 \chapter{St"orungstheorie}
 \lhead{St"orungstheorie}
 \rhead{}
-Die St"orungstheorie geht davon aus, dass die Zust"ande eines
+Die St"orungstheorie geht davon aus, dass eine Basis von Zust"anden eines
 quantenmechanischen Systems bereits bekannt sind. Eine kleine
 "Anderung des Systems sollte sich dann in nur kleinen "Anderungen
 der Zust"ande und Ihrer Energieniveaus "aussern.
-Diese Methode sollte anwendbar sein um die Ver"anderung der Energieniveaus
+Diese Methode kann verwendet werden, um die Ver"anderung der Energieniveaus
 eines Atoms zu berechnen, wenn dieses in ein "ausseres elektrisches Feld
 oder ein "ausseres Magnetfeld gebracht wird.
-
 
 \section{Grundprinzip der St"orungstheorie}
 \rhead{Grundprinzip}
@@ -205,9 +204,9 @@ Polynome in $\varepsilon$ sind, f"ur die sich Schritt~4 durchf"uhren l"asst.
 \section{St"orungstheorie in der Quantenmechanik}
 \rhead{St"orungstheorie in der Quantenmechanik}
 Es sei $H_0$ der Hamilton-Operator eines quantenmechanischen Systems
-mit den Eigenvektoren $|\psi_0^{(0)}\rangle,|\psi_1^{(0)}\rangle,\dots$
+mit den Eigenvektoren $|\psi_0^{(0)}\rangle$, $|\psi_1^{(0)}\rangle,\dots$
 und Energien
-$E_0^{(0)},E_1^{(0)},\dots$.
+$E_0^{(0)}$, $E_1^{(0)},\dots$.
 Es gilt also 
 \[
 H_0\,|\psi_i^{(0)}\rangle = E_i^{(0)}\,|\psi_i^{(0)}\rangle.
@@ -221,7 +220,7 @@ H(\varepsilon)=H_0+\varepsilon H_1.
 Darin ist $\varepsilon\ll 1$ ein kleiner Parameter, der ausdr"ucken
 soll, dass $H_1$ den Operator nur ganz wenig "andert, insbesondere
 sind die Zust"ande und Eigenwerte von $E(\varepsilon)$ nahe bei 
-den $E_i$ und $\psi_i$.
+den $E_i^{(0)}$ und $\psi_i^{(0)}$.
 
 Die Aufgabe der St"orungstheorie ist, die Zust"ande
 $|\psi_i(\varepsilon)\rangle$
@@ -283,7 +282,7 @@ H_1\,|\psi_k^{(0)}\rangle
 E_k^{(1)}\,|\psi_k^{(0)}\rangle + E_k^{(0)} \,|\psi_k^{(1)}\rangle+\dots
 \end{align*}
 Aus diesen Gleichungen m"ussen wir $E_k^{(1)}$ und $|\psi_k^{(1)}\rangle$
-bestimmen. Dazu multiplizieren wir $\langle \psi_l^{(0)}$:
+bestimmen. Dazu multiplizieren wir $\langle \psi_l^{(0)}|$:
 \begin{align*}
 \langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
 +
@@ -339,9 +338,9 @@ k&\ne l
 \end{aligned}
 \label{stoerungsloesung1ordnung}
 \end{equation}
-Durch diese Gleichungen ist der Koeffizient
+Durch diese Gleichungen ist nur der Koeffizient
 $\langle\psi_k^{(0)}|\psi_k^{(1)}\rangle$
-nicht bestimmt.
+noch nicht bestimmt.
 
 Mit den Koeffizienten $\langle\psi_l^{(0)}|\psi_k^{(0)}\rangle$ kann
 man jetzt den neuen Zustand in erster N"aherung ausdr"ucken:
@@ -357,7 +356,7 @@ man jetzt den neuen Zustand in erster N"aherung ausdr"ucken:
 |\psi_l^{(0)}\rangle
 \end{equation}
 Darin ist nur der Koeffizient von $|\psi_k^{(0)}\rangle$ im ersten
-Term auf der rechtn Seite noch nicht bestimmt.
+Term auf der rechten Seite noch zu bestimmen.
 
 Der fehlende Koeffizient muss so gew"ahlt werden, dass der neue
 Vektor L"ange $1$ erh"alt.
@@ -403,7 +402,8 @@ rein imagin"ar sein, muss wir schreiben
 \[
 \langle\psi_k^{(0)}|\psi_k^{(1)}\rangle = i\gamma.
 \]
-Die Zahl $\gamma$ ist so zu w"ahlen, dass der Zustandsvektor
+Die Zahl $\gamma$ ist so zu w"ahlen, dass der neue Zustandsvektor
+in erster N"aherung
 \begin{equation}
 |\psi_k(\varepsilon)\rangle
 =
@@ -416,35 +416,10 @@ Die Zahl $\gamma$ ist so zu w"ahlen, dass der Zustandsvektor
 \,
 |\psi_l^{(0)}\rangle
 \end{equation}
-der neue Zustandsvektor in erster N"aherung.
+normiert ist.
 
-\begin{beispiel}
-Als Beispiel verwenden wir ein Teilchen in einem Potentialtopf, welches
-wir fr"uher bereits untersucht haben. Der Hamilton-Operator wird jetzt
-gest"ort um einen zus"atzlichen Potentialterm $H_1=V_1$ im Inneren
-des Potentialtopfes.
-W"are der zus"atzliche Term eine Konstante w"urde sich an den Eigenfunktionen
-gar nichts "andern, und f"ur Eigenwerte w"urde man finden
-\[
-H(\varepsilon)\psi_i=(E_i + \varepsilon V_1)\psi_i,
-\]
-es w"are also
-\begin{align*}
-\psi_i(\varepsilon)&=\psi_i\\
-E_i(\varepsilon)&=E_i+\varepsilon V_i
-\end{align*}
-Nun ist aber $V_i$ ortsabh"angig, nur im Inneren des Potentialtopfes 
-unterscheidet sich $H(\varepsilon)$ von $H_0$. Da sich das Teilchen
-aber praktisch nie ausserhalb des Potentialtopfes befindet, sollte
-sich in erster N"aherung Eigenfunktion und Eigenwerte genau gleich
-"andern.
-\end{beispiel}
-
-\section{Entartung}
-\rhead{Entartung}
-
-\section{N"aherung 2.~Ordnung}
-\rhead{N"aherung 2.~Ordnung}
+\section{Zweite N"aherung}
+\rhead{Zweite N"aherung}
 In den Abschnitten~\ref{section:erstenaeherung} und
 \ref{section:nichtentartetezustaende} haben wir die Approximationsreihen
 f"ur $E_k(\varepsilon)$ und $|\psi_k(\varepsilon)\rangle$
@@ -556,15 +531,15 @@ E_k^{(2)}
 -i\gamma
 \langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
 \end{align*}
-Den Vektor $|\psi_k^{(1)}\rangle$ kann durch die im
-Abschnitt~\label{section:nichtentartetezustaende} gefundene
+Den Vektor $|\psi_k^{(1)}\rangle$ kann man durch die im
+Abschnitt~\ref{section:nichtentartetezustaende} gefundene
 Entwicklung ersetzen, und erhalten
 \begin{align*}
 E_k^{(2)}
 &=
 \langle\psi_k^{(0)}|\, H_1\,
 \biggl(
-i\gamma)
+i\gamma
 \,|\psi_k^{(0)}\rangle
 +
 \sum_{k\ne l}
@@ -593,17 +568,13 @@ berechnen:
 \begin{align*}
 \langle\psi_l^{(0)}|\psi_k^{(2)}\rangle
 &=
-E_k^{(2)}
--
+\frac1{E_l^{(0)}-E_k^{(0)}}\biggl(
 E_k^{(1)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
 -
 \langle\psi_l^{(0)}|\,H_1\,|\psi_k^{(1)}\rangle
+\biggr)
 \\
 &=
-\frac{E_k^{(2)}}{
-(E_l^{(0)}-E_k^{(0)})
-}
-+
 \frac{
 \langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
 \langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
@@ -623,6 +594,220 @@ Damit kann man jetzt auch die N"aherung zweiter Ordnung
 f"ur die Zustandsvektoren $|\psi(\varepsilon)\rangle$
 berechnen.
 Wir verzichten darauf, die Formeln explizit darzustellen.
+
+\section{Entartung}
+\rhead{Entartung}
+Da bei Entartung einge der Nenner in (\ref{stoerungsloesung1ordnung})
+verschwinden, kann die St"orungstheorie auf entartete Zust"ande
+in dieser Form nicht angwendet werden.
+Die Nenner w"aren kein Problem, wenn in (\ref{stoerungsloesung1ordnung})
+immer dann, wenn ein Nenner verschwindet, auch der zugeh"orige Z"ahler
+verschwindet.
+Wenn $|\psi_k^{(0)}\rangle$ und $|\psi_l^{(0)}\rangle$ den gleichen
+Eigenwert im ungest"orten System haben, dann hat auch jede beliebige
+Linearkombination den gleichen Eigenwert.
+Das Problem ist also vor allem, dass wir im Eigenraum zu diesem
+Eigenwert bisher eine unzweckm"assige Basis gew"ahlt haben.
+
+Wir illustrieren diese an einem Beispiel in zwei Dimensionen:
+\begin{beispiel}
+Der Operator
+\[
+H_0=\begin{pmatrix}1&0\\0&1\end{pmatrix}
+\]
+hat in den Standardbasisvektoren zwei entartete Zust"ande, beide mit
+Eigenwert $1$.
+Wir st"oren diesen Operator mit 
+\[
+H_1=\begin{pmatrix} 0&1\\ 1&0 \end{pmatrix}.
+\]
+Dieses Problem k"onnen wir exakt l"osen, die charakteristische Gleichung
+ist
+\[
+0=
+\left|\begin{matrix}
+1-\lambda&\varepsilon\\
+\varepsilon&1-\lambda
+\end{matrix}\right|
+=(1-\lambda)^2-\varepsilon^2=(1-\lambda+\varepsilon)(1-\lambda-\varepsilon),
+\]
+woraus wir die Eigenwerte $\lambda_\pm = 1\pm\varepsilon$ ablesen k"onnen.
+
+Die Eigenvektoren k"onnen mit dem Gauss-Algorithmus gefunden werden:
+\[
+\begin{aligned}
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+-\varepsilon& \varepsilon\\
+ \varepsilon&-\varepsilon\\
+\hline
+\end{tabular}
+&\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+1&-1\\0&0\\
+\hline
+\end{tabular}
+&&\Rightarrow&
+v_+&=\frac1{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}
+\\
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+ \varepsilon& \varepsilon\\
+ \varepsilon& \varepsilon\\
+\hline
+\end{tabular}
+&\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+1& 1\\0&0\\
+\hline
+\end{tabular}
+&&\Rightarrow&
+v_-&=\frac1{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}
+\end{aligned}
+\]
+Damit ist das gest"orte Problem exakt gel"ost.
+
+Wir untersuchen jetzt, wie sich die St"orungsl"osung verh"alt.
+Zun"achst untersuchen wir die "Anderung der Eigenwerte durch die
+St"orung nach (\ref{stoerungsloesung1ordnung}):
+\begin{align*}
+\lambda_{\pm}^{(1)}
+&=
+\langle \psi_{\pm}^{(0)}|\, H_1 \,|\psi_{\pm}^{(0)}\rangle
+\end{align*}
+In der Standardbasis sind dies genau die Diagonalelemente des Operators $H_1$,
+also $0$.
+Die Vektoren der Basis $v_\pm$ sind Eigenvektoren zu den Eigenwerten
+$\pm1$ von $H_1$, in dieser Basis sind die Matrixelemente also
+\begin{align*}
+\lambda_+^{(1)}
+&=
+v_+^tH_1v_+=v_+^tv_+=1\\
+\lambda_-^{(1)}
+&=
+v_-^tH_1v_-=-v_-^tv_-=-1
+\end{align*}
+Mit der Standardbasis kann man die $\varepsilon$-Abh"angigkeit der
+Eigenwerte nicht finden, aber in der Basis $\{v_\pm\}$ gilt
+$E_\pm(\varepsilon)=1\pm\varepsilon$, was mit der exakten L"osung
+"ubereinstimmt.
+
+Die Korrektur der Eigenvektoren nach (\ref{stoerungsloesung1ordnung})
+nach der Formel
+\[
+\langle\psi_-^{(0)}|\psi_+^{(1)}\rangle
+=
+\frac{
+\langle\psi_-^{(0)}|\,H_1\,|\psi_+^{(0)}\rangle
+}{
+\lambda_+-\lambda_-
+}
+\]
+k"onnen in der Standardbasis nicht berechnet werden, weil der Nenner
+verschwindet, nicht aber der Z"ahler:
+\[
+\langle\psi_-^{(0)}|\,H_1\,|\psi_+^{(0)}\rangle
+=
+e_2^tH_1e_1=e_2^te_2=1.
+\]
+F"uhren wir dagegen die gleiche Rechnung in der Eigenbasis $\{v_\pm\}$
+von $H_1$ durch, dann finden wir
+\[
+\langle\psi_-^{(0)}|\,H_1\,|\psi_+^{(0)}\rangle
+=
+v_-^tH_1v_+=v_-^tv_+=0,
+\]
+und wir k"onnen den Term einfach weglassen.
+\end{beispiel}
+
+Um das entartete Problem zu l"osen, m"ussen wir also f"ur entartete
+Zust"ande erst eine Basis so w"ahlen, dass alle nicht
+diagonalen Matrixelemente in (\ref{stoerungsloesung1ordnung}) verschwinden.
+Sei $P$ ein Projektor auf den Eigenraum zum entarteten Eigenwert $E$.
+Da $H_1$ ein selbstadjungierter Operator ist, ist $PH_1P$ ebenfalls
+selbstadjungiert, er ist eine Selbstabbildung des des
+Eigenraumes zum Eigenwert $E$.
+Also gibt es eine Basis von Eigenvektoren von $H_1$ in diesem Raum,
+und wir k"onnen auch annehmen, dass diese orthonormiert ist.
+Sind $|u\rangle$ und $|v\rangle$ Eigenvektoren in diesem Eigenraum von
+$H_0$, und ausserdem orthogonale Eigenvektoren von $H_1$ mit Eigenwerten
+$\mu_u$ und $\mu_v$, dann sind die
+die Matrixelemente in (\ref{stoerungsloesung1ordnung}) 
+\[
+\langle u|\,H_1\,|v\rangle = \mu_v\langle u|v\rangle=0,
+\]
+insbesondere k"onnen wir die entsprechenden Korrekturterme in der
+St"orungsentwicklung einfach weglassen.
+
+Wir fassen die Resultate dieses Kapitels als einen Satz zusammen:
+
+\begin{satz}[St"orungstheorie erster Ordnung]
+Sei $H(\varepsilon)=H_0+\varepsilon H_1$ ein selbstadjungierter Operator,
+und sei $|\psi_k^{(0)}\rangle$ eine Basis aus Eigenvektoren von $H_0$
+mit Eigenwerten $E_k^{(0)}$.
+F"ur jeden entarteten Eigenwert sei $P$ der zugeh"orige Projektor auf
+den Eigenraum.
+Die Eigenvektoren zu diesem Eigenwert seien so gew"ahlt, dass sie
+orthonormierte Eigenvektoren des auf den Eigenraum eingeschr"ankten
+Operators  $PH_1P$ sind.
+Dann sind die Eigenwerte von $H(\varepsilon)$ in erster N"aherung
+\[
+E_k(\varepsilon)
+=
+E_k^{(0)}+\varepsilon E_k^{(1)}
+=
+E_k^{(0)}+\varepsilon\langle \psi_k^{(0)}|\,H_1\,|\psi_k^{(0)}\rangle.
+\]
+F"ur entartete Eigenvektoren ist $E_k^{(1)}$ ein Eigenwert von $H_1$.
+Die Eigenvektoren von $H(\varepsilon)$ sind in erster N"aherung
+\[
+|\psi_k(\varepsilon)\rangle
+=
+(1+i\varepsilon\gamma)|\psi_k^{(0)}\rangle
++
+\sum_{{l\ne k}\atop{\text{$E_l^{(0)}$ nicht entartet}}}
+\frac{
+\langle \psi_l^{(0)}|\,H_1\,|\psi_k^{(0)}\rangle
+}{
+E_k^{(0)}-E_l^{(0)}
+}
+\,|\psi_l^{(0)}\rangle.
+\]
+\end{satz}
+
+\begin{figure}
+\centering
+\includegraphics{graphics/pert-2.pdf}
+\caption{Aufspaltung der Energieniveaus durch eine St"orung
+\label{aufspaltung}}
+\end{figure}
+Durch die St"orung werden die Energieniveaus des urspr"unglichen
+Hamilton-Operators im Allgemeinen aufgespalten (Abbildung~\ref{aufspaltung}).
+Der Koeffizient der $\varepsilon$-Abh"angigkeit ist Eigenwert von $PH_1P$. 
+Wenn die ungest"orten Eigenvektoren also auch Eigenvektoren von $H_1$ sind,
+dann wird die St"orung die Niveaus nicht aufspalten.
+
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{images/WasserstoffAufspaltung.pdf}
+\caption{Aufspaltung der Energieniveaus des Wasserstoffatoms (links)
+durch die verschiedenen Effekte.
+\label{wasserstoffaufspaltung}}
+\end{figure}
+Die St"orungstheorie kann so die tats"achlich beobachteten Spektren
+mindestens qualitativ erkl"aren.
+In Abbildung~\ref{wasserstoffaufspaltung} sind links die Energieniveaus
+des Wasserstoffatoms dargestellt, wie wir sie im Kapitel~\ref{chapter:wasserstoff}
+berechnet haben.
+Alle Niveaus sind hochgradig entartet, da alle zust"ande mit
+gleichem Drehimpuls die gleiche Energie haben.
+Durch zus"atzliche Effekte, die man im Hamilton-Operator als
+St"orungen betrachten kann, werden die Niveaus aufgespalten.
+Der Grundzustand hat keinen Drehimpuls, es gibt daher auch keine Koppelung
+zwischen Spin und Bahndrehimpuls, so dass dieses Niveau nur durch die 
+Spin-Spin-Kopplung aufgespalten wird.
 
 \section{"Ubungsaufgaben}
 \rhead{"Ubungsaufgaben}

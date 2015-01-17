@@ -1,3 +1,8 @@
+%
+% pert.mp -- bilder zur Stoerungstheorie
+%
+% (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
 verbatimtex
 \documentclass{book}
 \usepackage{times}
@@ -79,6 +84,41 @@ draw (-105,0)--(0,0);
 draw (0,-95)--(0,0);
 label.urt(btex $x_0$ etex, (0,0));
 
+endfig;
+
+beginfig(2)
+
+pickup pencircle scaled 0.7pt;
+
+numeric u;
+u = 15;
+
+drawarrow (-2.5 * u, 0)--(14.5 * u,  0);
+drawarrow ( 0,-0.5 * u)--(  0,10.5 * u);
+
+label.top(btex $\varepsilon$ etex, (14.5 * u, 0));
+label.lft(btex $E$ etex, (0,10.5 * u));
+
+pickup pencircle scaled 1.5pt;
+
+draw (-2*u,2*u)--(0,2*u); draw (12*u,2.5*u)--(14*u,2.5*u);
+draw (-2*u,6*u)--(0,6*u); draw (12*u,4.5*u)--(14*u,4.5*u);
+                          draw (12*u,5.8*u)--(14*u,5.8*u);
+draw (-2*u,8*u)--(0,8*u); draw (12*u,9.2*u)--(14*u,9.2*u);
+                          draw (12*u,8.4*u)--(14*u,8.4*u);
+                          draw (12*u,7.6*u)--(14*u,7.6*u);
+
+pickup pencircle scaled 0.1pt;
+draw (0,2*u)--(12*u,2.5*u);
+draw (0,6*u)--(12*u,4.5*u);
+draw (0,6*u)--(12*u,5.8*u);
+draw (0,8*u)--(12*u,7.6*u);
+draw (0,8*u)--(12*u,8.4*u);
+draw (0,8*u)--(12*u,9.2*u);
+
+label.top(btex   keine Entartung etex, (6*u, 2.25*u));
+label.top(btex 2-fache Entartung etex, (6*u, 5.9*u));
+label.top(btex 3-fache Entartung etex, (6*u, 8.6*u));
 
 endfig;
 

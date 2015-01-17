@@ -31,7 +31,7 @@ periodensystem: $(periodensystem_FILES)
 
 $(pert_FILES):	pert.mp
 	TEX=latex mpost pert.mp
-	for i in 1; \
+	for i in 1 2; \
 	do \
 		mptopdf pert.$${i}; \
 	done

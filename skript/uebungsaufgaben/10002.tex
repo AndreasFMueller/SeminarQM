@@ -2,12 +2,12 @@ Gegeben ist die Matrix
 \[
 H(\varepsilon)
 =
-\begin{pmatrix}0&1+\varepsilon\\1-\varepsilon&0\end{pmatrix}
+\begin{pmatrix}\varepsilon&1\\1&-\varepsilon\end{pmatrix}
 =
 \begin{pmatrix}0&1\\1&0\end{pmatrix}
 +
 \varepsilon
-\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+\begin{pmatrix}1&0\\0&-1\end{pmatrix}
 .
 \]
 Finden Sie eine St"orungsl"osung erster Ordnung f"ur Eigenwerte und
@@ -16,7 +16,7 @@ $\varepsilon$.
 
 \begin{loesung}
 Zun"achst brauchen wir die exakte L"osung f"ur den ungest"orten Fall,
-also f"ur $\varepsilon=0$. Das Charakteristische Polynome ist
+also f"ur $\varepsilon=0$. Das charakteristische Polynom ist
 \[
 \left|
 \begin{matrix}-\lambda&1\\1&-\lambda\end{matrix}
@@ -69,7 +69,7 @@ berechnen.
 \begin{align*}
 E_+^{(1)}&=v_+^tH_1v_+
 	=\frac12\begin{pmatrix}1&1\end{pmatrix}
-		\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+		\begin{pmatrix}1&0\\0&-1\end{pmatrix}
 		\begin{pmatrix}1\\1\end{pmatrix}
 	=\frac12\begin{pmatrix}1&1\end{pmatrix}
 		\begin{pmatrix}1\\-1\end{pmatrix}
@@ -77,13 +77,12 @@ E_+^{(1)}&=v_+^tH_1v_+
 \\
 E_-^{(1)}&=v_-^tH_1v_-=0
 	=\frac12\begin{pmatrix}1&-1\end{pmatrix}
-		\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+		\begin{pmatrix}1&0\\0&-1\end{pmatrix}
 		\begin{pmatrix}1\\-1\end{pmatrix}
 	=\frac12\begin{pmatrix}1&-1\end{pmatrix}
-		\begin{pmatrix}-1\\-1\end{pmatrix}
+		\begin{pmatrix}1\\1\end{pmatrix}
 	=0
 \end{align*}
-\end{loesung}
 In erster Ordnung werden die Eigenwerte also nicht ver"andert.
 Die gemischten Koeffizienten sind
 \begin{align*}
@@ -92,12 +91,12 @@ Die gemischten Koeffizienten sind
 \frac{1}{2}
 \frac12
 	\begin{pmatrix}1&-1\end{pmatrix}
-	\begin{pmatrix}0&1\\-1&0\end{pmatrix}
-	\begin{pmatrix}1&1\end{pmatrix}
+	\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+	\begin{pmatrix}1\\1\end{pmatrix}
 =
 -\frac14
 	\begin{pmatrix}1&-1\end{pmatrix}
-	\begin{pmatrix}1&-1\end{pmatrix}
+	\begin{pmatrix}1\\-1\end{pmatrix}
 =
 -\frac12
 \\
@@ -106,12 +105,12 @@ Die gemischten Koeffizienten sind
 \frac{1}{-2}
 \frac12
 	\begin{pmatrix}1&1\end{pmatrix}
-	\begin{pmatrix}0&1\\-1&0\end{pmatrix}
-	\begin{pmatrix}1&-1\end{pmatrix}
+	\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+	\begin{pmatrix}1\\-1\end{pmatrix}
 =
 \frac14
 	\begin{pmatrix}1&1\end{pmatrix}
-	\begin{pmatrix}-1&-1\end{pmatrix}
+	\begin{pmatrix}-1\\-1\end{pmatrix}
 =
 -\frac12
 \end{align*}
@@ -122,13 +121,15 @@ v_+(\varepsilon)
 (1+i\varepsilon\gamma)
 \frac1{\sqrt{2}}
 \begin{pmatrix}1\\-1\end{pmatrix}
--\varepsilon\frac12\begin{pmatrix}1\\1\end{pmatrix}
+-\varepsilon\frac1{2\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}
 \\
 v_-(\varepsilon)
 &=
 (1+i\varepsilon\gamma)
 \frac1{\sqrt{2}}
 \begin{pmatrix}1\\1\end{pmatrix}
--\varepsilon\frac12\begin{pmatrix}1\\-1\end{pmatrix}
+-\varepsilon\frac1{2\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}
 \end{align*}
 Darin ist $\gamma$ so zu w"ahlen, dass die Vektoren L"ange $1$ erhalten.
+\end{loesung}
+
