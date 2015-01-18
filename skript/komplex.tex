@@ -146,9 +146,9 @@ e^z=e^{a+bi}=e^a\cdot e^{bi}.
 Die Exponentialfunktion reeller Zahlen ist bereits wohlbekannt, es muss
 also nur noch untersucht werden, welche Bedeutung $e^{bi}$ hat.
 
-Betrachten wir die Funktion $f(t)= e^{ti}$. Die Ableitungen von $f$ sind
+Betrachten wir die Funktion $f(t)= e^{it}$. Die Ableitungen von $f$ sind
 \begin{align}
-f'(t)&=ie^{ti}=if(t)\notag\\
+f'(t)&=ie^{it}=if(t)\notag\\
 f''(t)&=-f(t).\label{exp-dgl}
 \end{align}
 Die Funktion $f$ muss also eine L"osung der Differentialgleichung
@@ -158,12 +158,12 @@ Doch die Differentialgleichung (\ref{exp-dgl}) hat die L"osungen
 \[
 f(t)=a\cos t+b\sin t.
 \]
-Setzt man die Anfangsbedingungen ein findet man
+Setzt man die Anfangsbedingungen ein, findet man
 \begin{align*}
 f(0)&=1&\Rightarrow&&a&=1\\
 f'(0)&=1&\Rightarrow&&b&=i,
 \end{align*}
-so dass wir jetzt $e^{ti}$ ausrechnen k"onnen:
+so dass wir jetzt $e^{it}$ ausrechnen k"onnen:
 \begin{satz}[Euler]
 \begin{align}
 e^{it}=\cos t+i\sin t.
@@ -343,6 +343,9 @@ Das einfachste Beispiel eines komplexen Skalarproduktes ist
 Die Standardbasisvektoren sind auch in diesem Skalarprodukt
 orthonormiert.
 
+%
+% Adjungierte Matrix
+%
 \subsubsection{Adjungierte Matrix}
 \index{adjungierte Matrix}
 In den reellen Vektorr"aumen konnte man zu einer linearen $A$ immer
@@ -377,6 +380,17 @@ konjugiert. Hat $A$ die Matrixelement $a_{ij}$ dann nennt man
 die Matrix $A^*$ mit den Matrixelementen $\bar a_{ji}$ die
 adjungiert Matrix. Eine Matrix, die sich beim adjungieren nicht
 "andert heisst selbstadjungiert.
+
+Die Rechenregeln f"ur die adjungierte Matrix sind ganz "ahnlich wie
+f"ur die Transposition:
+\begin{align*}
+(\lambda A)^*=\bar\lambda A^*
+&
+(A+B)^*&=A^*+B^*
+&
+(AB)^*=B^*A^*.
+\end{align*}
+Man beachte, dass $A\mapsto A^*$ nicht linear ist.
 
 \subsubsection{Unit"are Matrizen}
 \index{unit\"ar}
@@ -545,7 +559,53 @@ das sind die Vektoren von $\mathbb R^4$ mit L"ange $1$.
 Geometrisch ist $\operatorname{SU}(2)$ also eine dreidimensionale Kugel
 eingebettet in in einen vierdimensionalen Raum.
 
+\subsubsection{Spur und Determinante}
+Spur und Determinaten k"onnen samt all ihren Rechenregeln sofort auf
+komplexe Matrizen "ubertragen werden.
+F"ur den Adjunktionsoperator finden wir die Rechenregeln
+\begin{align*}
+\det A^*&= \overline{\det A^t}=\overline{\det A},
+&&\text{und}&
+\operatorname{tr} A^*&=\overline{\operatorname{tr}A}.
+\end{align*}
+F"ur selbstadjungierte Matrizen kann man schliessen, dass sowohl
+die Determinante wie auch die Spur von $A$ reell sein m"ussen.
+
+In den komplexen Zahlen hat jedes Polynom $n$-ten Grades $n$ Nullstellen.
+Daher k"onnen wir das charakteristische Polynom immer ausschreiben als
+\begin{align*}
+\det(A-\lambda E)
+&=
+(-1)^n (\lambda-\lambda_1)\dots(\lambda-\lambda_n)
+\\
+&=
+(-1)^n(\lambda^n -(\lambda_1+\dots+\lambda_n)\lambda^{n-1}+\dots
++(-1)^n\lambda_1\dots\lambda_n
+\\
+&=
+(-1)^n(\lambda^n - \operatorname{tr}A\lambda^{n-1}+\dots + (-1)^n\det A)
+\end{align*}
+Daraus k"onnen wir auch eine Formel f"ur $\det(E+tA)$ ableiten:
+\begin{align}
+\det(E+tA)
+&=
+(-t)^n\det\biggl(A-\frac1tE\biggr)
+=
+t^n\biggl(
+\frac1{t^n}+\frac1{t^{n-1}}\operatorname{tr}A+\dots+\det A
+\biggr)
+\notag
+\\
+&=
+1+t\operatorname{tr}A+\dots+t^n\operatorname{det}A
+\label{detandtrace}
+\end{align}
+
+%
+% Eigenwertproblem fuer komplexe Matrizen
+%
 \subsection{Eigenwertproblem f"ur komplexe Matrizen}
+\subsubsection{Definition}
 Ein Vektor $v\ne 0$ heisst Eigenvektor zum Eigenwert $\lambda$ einer
 Matrix $A$, wenn $Av=\lambda v$ gilt. Diese Definition ist auch f"ur
 komplexe Matrizen g"ultig, ebenso funktioniert der Standardalgorithmus
@@ -563,6 +623,7 @@ als $n$ reelle Nullstellen existieren, und daher nicht gen"ugend
 Eigenvektoren f"ur eine Eigenvektorbasis gefunden werden k"onnen,
 tritt also bei komplexen Matrizen seltener auf.
 
+\subsubsection{Selbstadjungierte Matrizen}
 Der quantenmechanische Formalismus beschreibt physikalische Gr"ossen
 als selbstadjungierte Matrizen. Die m"oglichen Werte einer solchen Gr"osse
 sind die Eigenwerte der Matrix, und es muss sichergestellt werden,
@@ -613,6 +674,9 @@ Die letzte Gleichung kann wegen $\lambda_1\ne\lambda_2$ nur wahr sein,
 wenn $(v_1,v_2)=0$, die Vektoren $v_1$ und $v_2$ m"ussen also orthogonal sein.
 \end{proof}
 
+%
+% Lie Algebrean
+%
 \section{Lie-Algebren}
 \rhead{Lie-Algebren}
 \index{Lie-Algebra}
@@ -884,13 +948,7 @@ Darin wurde aber die Bedingung noch nicht abgebildet, dass Matrizen
 in $\operatorname{SU}(2)$ die Determinante $1$ haben m"ussen, wir
 haben bis jetzt nur Unitarit"at verwendet. Wir m"ussen also noch
 verlangen, dass in erster N"aherung $\det(E+tA)=0$ ist.
-Berechnet man die Determinante, erhalten wir
-\begin{align*}
-\det(E+tA)
-&=
-1+t \operatorname{tr}A + \dots.
-\end{align*}
-als zus"atzliche Bedingung m"ussen wir also verlangen, dass die Spur
+Aus Formel (\ref{detandtrace}) schliessen wir, dass die Spur
 $\operatorname{tr}A$ verschwindet, oder dass $a=-d$:
 \begin{equation}
 \operatorname{su}(2)
@@ -992,5 +1050,17 @@ automatisch erf"ullt.
 Antihermitesche Matrizen haben jedoch nicht nur $0$ auf der Diagonalen,
 sondern rein imagin"are Zahlen.
 
-
+\section{"Ubungsaufgaben}
+\begin{uebungsaufgaben}
+\item
+\input uebungsaufgaben/15001.tex
+\item
+\input uebungsaufgaben/15002.tex
+\item
+\input uebungsaufgaben/15003.tex
+\item
+\input uebungsaufgaben/15004.tex
+\item
+\input uebungsaufgaben/15005.tex
+\end{uebungsaufgaben}
 

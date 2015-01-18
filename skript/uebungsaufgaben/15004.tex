@@ -1,0 +1,38 @@
+F"ur jede ganze Zahl $k\in\mathbb Z$ sei
+\[
+e_k(x)=e^{ikx}.
+\]
+Berechnen Sie  $(e_k,e_l)$ f"ur das Skalarprodukt von Vektoren definiert
+durch
+\[
+(f,g)=\frac1{2\pi}\int_{-\pi}^{\pi}\bar f(x)g(x)\,dx.
+\]
+
+\begin{loesung}
+\begin{align*}
+(e_k,e_l)
+&=
+\frac1{2\pi}\int_{-\pi}^{\pi} \bar e_k(x)e_l(x)\,dx
+=
+\frac1{2\pi}\int_{-\pi}^{\pi} e^{-ikx}e^{ilx} \,dx
+=
+\frac1{2\pi}\int_{-\pi}^{\pi} e^{i(l-k)x} \,dx
+\end{align*}
+F"ur $k=l$ wird der Integrand konstant:
+\begin{align*}
+(e_k,e_l)
+&=
+\frac1{2\pi}\int_{-\pi}^{\pi} \,dx=\frac1{2\pi}2\pi=1.
+\end{align*}
+F"ur $k\ne l$ kann man eine Stammfunktion angeben
+\begin{align*}
+(e_k,e_l)
+&=
+\frac1{2\pi}\biggl[
+\frac1{i(l-k)}e^{i(l-k)x}
+\biggr]_{-\pi}^\pi
+=\frac1{2\pi i(l-k)}(e^{i(l-k)\pi}-e^{-i(l-k)\pi})=0.
+\end{align*}
+Die Funktionen $e_k$ sind also orthonormiert im Hilbertraum $L^2([-\pi,\pi])$.
+\end{loesung}
+

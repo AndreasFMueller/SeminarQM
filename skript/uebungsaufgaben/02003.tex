@@ -1,0 +1,49 @@
+Ist der Operator 
+\[
+A=
+\begin{pmatrix}
+a^2&ab\\
+ ab&b^2
+\end{pmatrix}
+\qquad\text{mit $a^2+b^2=1$}
+\]
+ein Projektor?
+Wenn ja: auf welchen Vektor wird projiziert?
+
+\begin{loesung}
+$A$ ist ein Vektor genau dann, wenn $A^2=A$. Wir rechnen daher nach
+\begin{align*}
+A^2
+&=
+\begin{pmatrix}
+a^2&ab\\
+ ab&b^2
+\end{pmatrix}
+\begin{pmatrix}
+a^2&ab\\
+ ab&b^2
+\end{pmatrix}
+=
+\begin{pmatrix}
+ a^4+a^2b^2&  a^3b+ab^3\\
+a^3b+ab^3  &a^2b^2+b^4
+\end{pmatrix}
+=
+\begin{pmatrix}
+a^2(a^2+b^2)& ab(a^2+b^2)\\
+ ab(a^2+b^2)&b^2(a^2+b^2)
+\end{pmatrix}
+=A.
+\end{align*}
+Projiziert wird auf die Bildvektoren von $A$, das sind die Spalten von
+$A$, also
+\[
+\begin{pmatrix}a^2\\ab\end{pmatrix}
+\sim
+\begin{pmatrix}a\\b\end{pmatrix}
+\sim
+\begin{pmatrix}ab\\b^2\end{pmatrix}.
+\]
+\end{loesung}
+
+

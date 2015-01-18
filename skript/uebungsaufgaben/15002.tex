@@ -1,0 +1,202 @@
+Finden Sie Eigenwerte und Eigenvektoren der Matrizen
+\[
+A=\begin{pmatrix}
+0&i\\
+-i&0
+\end{pmatrix}
+\qquad\text{und}\qquad
+B=\begin{pmatrix}
+0&0&1\\
+1&0&0\\
+0&1&0
+\end{pmatrix}.
+\]
+
+\begin{loesung}
+Wir m"ussen das charakteristische Polynom und seine Nullstellen berechnen
+\begin{align*}
+0
+&=
+\left|\begin{matrix}
+-\lambda&i\\
+-i&-\lambda
+\end{matrix}\right|
+=\lambda^2-1
+=(\lambda + 1)(\lambda - 1)
+&
+\lambda_\pm&=\pm 1
+\\
+0
+&=
+\left|\begin{matrix}
+-\lambda&    0   &   1    \\
+    1   &-\lambda&   0    \\
+    0   &    1   &-\lambda
+\end{matrix}\right|
+=
+-\lambda^3+1
+=-(\lambda - 1)(\lambda^2+\lambda+1)
+&
+\lambda_1&=1\\
+&&\lambda_{2,3}&=-\frac12\pm\sqrt{\frac14-1}=\frac{-1\pm i\sqrt{3}}2.
+\end{align*}
+Da $A$ eine hermitesche Matrix ist, sind die Eigenwerte reell, und
+wir k"onnen die Eigenvektoren sofort bestimmen:
+\begin{align*}
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+-1&i\\
+-i&-1\\
+\hline
+\end{tabular}
+&\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+ 1&-i\\
+ 0& 0\\
+\hline
+\end{tabular}
+&v_+&=\frac{1}{\sqrt{2}}\begin{pmatrix}i\\1\end{pmatrix}
+\\
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+ 1&i\\
+-i& 1\\
+\hline
+\end{tabular}
+&\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}|}
+\hline
+ 1& i\\
+ 0& 0\\
+\hline
+\end{tabular}
+&v_-&=\frac{1}{\sqrt{2}}\begin{pmatrix}-i\\1\end{pmatrix}
+\end{align*}
+F"ur die Eigenvektoren von $B$ ist es n"utzlich,
+sich der Regeln von Vieta zu erinnern, insbesondere
+der Tatsache, dass $\lambda_2\lambda_3=1$, oder $1/\lambda_2=\lambda_3$.
+Ausserdem gilt $\lambda_3=1$, oder $\lambda_3^2=1/\lambda_3=\lambda_2$.
+Wegen $\lambda^3=1$ folgt auch $|\lambda_2|=|\lambda_3|=1$.
+Damit k"onnen wir ausrechnen
+\begin{align*}
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}>{$}c<{$}|}
+\hline
+-1& 0& 1\\
+ 1&-1& 0\\
+ 0& 1&-1\\
+\hline
+\end{tabular}
+&
+\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}>{$}c<{$}|}
+\hline
+ 1& 0&-1\\
+ 0&-1& 1\\
+ 0& 1&-1\\
+\hline
+\end{tabular}
+\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}>{$}c<{$}|}
+\hline
+ 1& 0&-1\\
+ 0& 1&-1\\
+ 0& 0& 0\\
+\hline
+\end{tabular}
+&
+v_1&=\frac1{\sqrt{3}}\begin{pmatrix}1\\1\\1\end{pmatrix}
+\\
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}>{$}c<{$}|}
+\hline
+-\lambda_2&         0&         1\\
+         1&-\lambda_2&         0\\
+         0&         1&-\lambda_2\\
+\hline
+\end{tabular}
+&
+\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}>{$}c<{$}|}
+\hline
+        1&         0&-\lambda_3\\
+        0&-\lambda_2& \lambda_3\\
+        0&         1&-\lambda_2\\
+\hline
+\end{tabular}
+\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}>{$}c<{$}|}
+\hline
+        1&        0&-\lambda_3  \\
+        0&        1&-\lambda_3^2\\
+        0&        1&-\lambda_2  \\
+\hline
+\end{tabular}
+\\
+&\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}>{$}c<{$}|}
+\hline
+        1&        0&-\lambda_3\\
+        0&        1&-\lambda_2\\
+        0&        0&         0\\
+\hline
+\end{tabular}
+&
+v_2&=\frac1{\sqrt{3}}\begin{pmatrix}\lambda_3\\\lambda_2\\1\end{pmatrix}
+\\
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}>{$}c<{$}|}
+\hline
+-\lambda_3&         0&         1\\
+         1&-\lambda_3&         0\\
+         0&         1&-\lambda_3\\
+\hline
+\end{tabular}
+&
+\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}>{$}c<{$}|}
+\hline
+        1&         0&-\lambda_2\\
+        0&-\lambda_3& \lambda_2\\
+        0&         1&-\lambda_3\\
+\hline
+\end{tabular}
+\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}>{$}c<{$}|}
+\hline
+        1&        0&-\lambda_2  \\
+        0&        1&-\lambda_2^2\\
+        0&        1&-\lambda_3  \\
+\hline
+\end{tabular}
+\\
+&\rightarrow
+\begin{tabular}{|>{$}c<{$}>{$}c<{$}>{$}c<{$}|}
+\hline
+        1&        0&-\lambda_2\\
+        0&        1&-\lambda_3\\
+        0&        0&         0\\
+\hline
+\end{tabular}
+&
+v_3&=\frac1{\sqrt{3}}\begin{pmatrix}\lambda_2\\\lambda_3\\1\end{pmatrix}
+\\
+\end{align*}
+Ausgeschrieben sind die Eigenvektoren von $B$
+\begin{align*}
+v_1&=\frac{1}{\sqrt{3}}\begin{pmatrix}1\\1\\1\end{pmatrix}
+&
+v_2&=
+\frac1{\sqrt{3}}\begin{pmatrix}
+\frac{-1-i\sqrt{3}}2\\
+\frac{-1+i\sqrt{3}}2\\
+1
+\end{pmatrix}
+&
+v_3&=
+\frac1{\sqrt{3}}\begin{pmatrix}
+\frac{-1+i\sqrt{3}}2\\
+\frac{-1-i\sqrt{3}}2\\
+1
+\end{pmatrix}.
+\end{align*}
+\end{loesung}
+

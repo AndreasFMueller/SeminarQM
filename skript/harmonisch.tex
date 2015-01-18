@@ -67,12 +67,11 @@ Frequenz
 \[
 \omega = \sqrt{\frac{K}{m}},
 \]
-statt der Konstanten $K$ k"onnten wir als auch $K=m\omega^2$ verwenden,
+statt der Konstanten $K$ k"onnten wir auch $K=m\omega^2$ verwenden,
 die Hamilton-Funktion ist dann
-\[
-H=\frac1{2m}p^2+\frac12m\omega^2x^2
-\]
-
+\begin{equation}
+H=\frac1{2m}p^2+\frac12m\omega^2x^2.
+\end{equation}
 
 \section{Quantisierung}
 \rhead{Quantisierung}
@@ -130,7 +129,7 @@ u''(q) -\frac{m\omega}{\hbar}x^2u(q)=-\frac{2E}{\hbar\omega}u(q),
 \end{align*}
 oder mit den Abk"urzungen
 \[
-q=\sqrt{\frac{m\omega}{\hbar}}
+q=\sqrt{\frac{m\omega}{\hbar}}x
 \quad\text{und}\quad
 \varepsilon=\frac{E}{\hbar \omega}
 \]
@@ -249,10 +248,11 @@ h_n''(x)-2 qh_n'(q)
 Die Gleichung (\ref{hermiteequation}) heisst auch die 
 Hermitesche Differentialgleichung.
 Die Funktionen $h_n(q)$ heissen die Hermiteschen Polynome.
-
+Man kann zeigen, dass $\varepsilon=n+\frac12$ sein muss.
 Wir werden die Polynome hier nicht ausrechnen, da die Technik der
 Auf- und Absteigeoperatoren eine einfachere Methode hierf"ur liefern
 wird.
+Aus dieser Technik werden sich die Energieniveaus ebenfalls ergeben.
 
 \section{Algebraische Eigenschaften}
 \rhead{Algebra}
@@ -454,6 +454,13 @@ $a|0\rangle=0$ sein. Durch Multiplikation mit $a^+$ folgt
 Der Grundzustand hat also immer den Eigenwert $\frac12$, oder die
 Energie $\frac12\hbar\omega$. Diesen Wert haben wir auch schon in
 Abschnitt~\ref{hogrundzustand} erhalten.
+Die angeregten Zust"ande haben Energie
+\[
+E_n
+=
+\hbar\omega\biggl(n+\frac12\biggr),
+\]
+wobei $n\ge 0$ eine nat"urliche Zahl sein muss.
 
 Beim Aufsteigen ver"andert sich jeweils die Normierung.
 Will man die Energieeigenzust"ande so konstruieren, muss man nach jedem
@@ -514,6 +521,29 @@ a^+=\frac1{\sqrt{2}}(Q+iP)
 Die Wellenfunktionen des Zustands $|n\rangle$ erh"alt man also, indem
 man den Operator $a^+$ in der Form \ref{aufsteigeho} auf die Wellenfunktion
 $\psi_0$ wie in (\ref{grundzustandwellenfunktion}) anwendet.
+
+Wir fassen die Resultate "uber den harmonischen Oszillator in einem Satz
+zusammen:
+\begin{satz}
+Ein harmonischer Oszillator mit Hamilton-Operator
+\[
+\frac{1}{2m}p^2+\frac{m}{2}\omega^2x^2
+=
+-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}
++\frac{m}2\omega^2x^2
+\]
+hat Eigenzust"ande mit Energie
+\begin{equation}
+E_n
+=
+\hbar\omega\biggl(n+\frac12\biggr),
+\label{hoenergieniveaus}
+\end{equation}
+die Eigenzust"ande k"onnen durch Anwendung des Aufsteigeoperators $a^+$
+aus (\ref{aufsteigeho}) auf die Wellenfunktion des Grundzustandes
+$\psi(x)=e^{-\frac{m\omega}{2\hbar}x^2}$
+mit geeigneter Normierung.
+\end{satz}
 
 \section{"Ubungsaufgaben}
 \begin{uebungsaufgaben}

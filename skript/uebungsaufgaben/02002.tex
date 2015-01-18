@@ -1,0 +1,72 @@
+Beschreiben Sie die folgende Variante des Doppelspaltexperiments mit Hilfe 
+von Analysatorkreisen.
+Wie beim Originalexperiment werden zwei Teilchen auf die zwei Spalten
+geschossen, die mit gleicher Wahrscheinlichkeit durch die Spalten fliegen.
+Hinter den Spalten betrachten wir einen Sensor in der Mitte des Schirmes,
+der konstruktive Interferenz feststellt.
+Nun wird der eine Spalt ersetzt durch eine Kavit"at, in der sich die Phase
+der Wellenfunktion eines Teilchens schneller "andert, als wenn es durch
+den anderen Spalt fliegt\footnote{Elektronen, die eine eine Zone tieferen
+Potentials durchqueren, erfahren genau so eine Phasenverschiebung in
+ihrere Wellenfunktion.}
+Die totale Phasenverschiebung ist einstellbar, sie ist $e^{i\delta}$.
+Was beobachtet man im Sensor, wenn man $\delta$ ver"andert.
+
+\begin{loesung}
+Aus der Quelle kommen Teilchen im Zustand
+\[
+\frac1{\sqrt{2}}(\,|1\rangle+\,|2\rangle)
+=
+\frac1{\sqrt{2}}
+\begin{pmatrix}
+1\\1
+\end{pmatrix}
+\]
+die am Spalt modifiziert werden mit der Matrix
+\[
+\begin{pmatrix}
+1&0\\
+0&e^{i\delta}
+\end{pmatrix},
+\]
+bevor sie im Sensor $\langle S|$ "uberlagert werden.
+Zusammengesetzt:
+\[
+\langle S|\,
+\begin{pmatrix}
+1&0\\
+0&e^{i\delta}
+\end{pmatrix}
+\frac1{\sqrt{2}}
+\begin{pmatrix}
+1\\1
+\end{pmatrix}
+=
+\frac1{\sqrt{2}}(
+\langle S|1\rangle + e^{i\delta}\langle S|2\rangle
+)
+\]
+Die Zahlen
+$\langle S|l\rangle$
+beschreiben die Wahrscheinlichkeit, dass ein Teilchen, welches durch
+Spalt $l$ fliegt, im Detektor festgestellt wird.
+Auf Grund der Annahmen der Aufgabe k"onnen wir davon ausgehen, dass
+sie gleich, wir nennen sie $a$. So erhalten wir
+\[
+\frac{a}{\sqrt{2}}(1+e^{i\delta})
+\]
+Der Betrag des Klammerausdruckes ist
+\begin{align*}
+|1+e^{i\delta}|^2
+&=2(1-\cos(\pi-\delta))
+=4\sin^2\frac{\pi-\delta}2
+\\
+|1+e^{i\delta}|
+&=
+2\sin\frac{\pi-\delta}2
+\end{align*}
+Insbesondere wird bei einer Phasenverschiebung von $\delta=\pi$ 
+destruktive Interferenz eintreten, und man wird im Sensor nichts
+mehr detektieren.
+\end{loesung}
+

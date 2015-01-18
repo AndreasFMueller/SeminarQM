@@ -1,0 +1,22 @@
+Seien $A$ und $B$ Observable.
+Zeigen Sie, dass die Matrixelemente der Observable $AB$ 
+das Matrizenprodukt der Matrixelemente von $A$ und $B$ sind.
+
+\begin{loesung}
+Die Matrixelemente von $AB$ sind in der Basis $|k\rangle$
+sind $\langle k|\,AB\,|l\rangle$.
+Da die Zust"ande eine Basis bilden, k"onnen wir diese zwischen
+$A$ und $B$ einschieben:
+\begin{align*}
+\langle k|\,AB\,|l\rangle
+&=
+\sum_{r}
+\langle k|\,A\,|r\rangle\langle r|\,B\,|l\rangle
+\end{align*}
+Dies ist aber genau das $kl$-Matrixelement das Matrizenprodukts
+der Matrizen mit Matrixelementen
+$\langle k|\,A\,|r\rangle$
+und
+$\langle r|\,B\,|l\rangle$.
+\end{loesung}
+
