@@ -4,5 +4,90 @@
 Festk"orper sind aus vielen Atomen zusammengesetzt. 
 \section{Fermikugel}
 
-\section{Periodisches Potential}
+\section{Kristalle}
+\subsection{Symmetrien}
+Kristalle sind Festk"orper, deren Atomkerne in einem regelm"assigen
+Gitter angeordnet sind.
+Im einfachsten Fall gibt es eine Menge 
+$ \Gamma  \subset \mathbb R^3 $
+so, dass eine Verschiebung aller Atomkerne um einen Vektor aus $\Gamma$
+den Festk"orper nicht "andert.
+Wir k"onnen die Verschiebung um einen Vektor $\vec v\in\Gamma$ als
+Operator $T_{\vec v}$ auf dem Hilbertraum der Zustandsvektoren
+betrachten:
+\[
+(T_{\vec v}\psi)(x)=\psi(x-\vec v).
+\]
+Der Hamilton-Operator "andert sich nicht, wenn man die Atomkerne um
+einen Vektor $\vec v\in\Gamma$ verschiebt.
+Also muss der Hamilton-Operator mit allen Translationen $T_{\vec v}$ 
+vertauschen.
+Es gibt also eine Basis von Eigenvektoren von $H$, welche auch
+Eigenvektoren aller Operatoren $T_{\vec v}$ sind, f"ur jeden Vektor
+$\vec v\in\Gamma$.
+
+Die Menge $\Gamma$ hat noch etwas mehr Struktur als wir bisher
+verwendet haben.
+Wenn zwei Vektoren $\vec v_1,\vec v_2\in\Gamma$ sind, dann muss
+auch deren Summe $\vec v_1+\vec v_3\in\Gamma$ sein.
+Man nennt $\Gamma$ eine Gruppe.
+
+Ausserdem ist es nicht n"otig, sich auf die Translationen $\Gamma$
+zu beschr"anken.
+Der Festk"orper kann durchaus noch weitere Symmetrien haben, zum
+Beispiel Drehungen oder Spiegelungen.
+Auch diese Symmetrien k"onnen als Operatoren beschrieben
+werden, die auf den Zustandsvektoren wirken.
+Die Menge aller Symmetrietransformationen nennen wir $G$.
+Die Menge $G$ bildet ebenfalls eine Gruppe: jeder Verkn"upfung von
+Symmetrieoperationen ist wieder eine Symmetrieoperation, und die
+Inverse einer Symmetrieoperation ist ebenfalls eine Symmetrieoperation.
+Die m"oglichen Symmetriegruppen von Kristallen sind vollst"andig
+klassifiziert worden.
+
+Eine Transformation darf die Norm der Zustandsvektoren nicht "andern,
+die Transformationen in $G$ sind also unit"are Operatoren,
+$U^*U=UU^*=\operatorname{id}$ f"ur alle $U\in G$.
+Die Eigenwerte von Transformationen in $G$ sind daher alle in $U(1)$.
+Die Transformationen einer Eigenfunktion von $H$ und allen Operatoren in $G$
+"andert eine Wellenfunktion als h"ochstens um einen Phasenfaktor.
+Zu jedem Operator $U\in G$ gibt es also einen Eigenwert $\chi(U)\in U(1)$,
+und die Zusammensetzung von Operatoren muss mit der Abbildung $\chi$
+vertauschen, d.~h.
+\[
+\begin{aligned}
+\chi(UV)&=\chi(U)\chi(V)&&U,V\in G\\
+\chi(U^*)&=\bar\chi(U)&&U\in G
+\end{aligned}
+\]
+Man nennt eine solche Abbildung einen Darstellung der Gruppe $G$.
+Auch die Darstellungen der Gruppen $G$ sind vollst"andig klassifiziert
+worden.
+
+\subsection{Periodisches Potential}
+Als Beispiel betrachten wir einen eindimensionalen Kristall, dessen
+Atomkerne an den Stellen $an$, $n\in\mathbb Z$ platziert sind.
+$a$ ist der Abstand zwischen den Atomkernen.
+Statt Coulomb-Potentials verwenden wir ein schmalen Potentialtopf.
+Dieser Kristall hat einerseits die Translationssymmetrie $T_{an}$ um
+ganzzahlige Vielfache von $a$, und andererseits eine Spiegelung $S$.
+Die Translationen und die Verschiebungen vertauschen nicht, es gilt
+\[
+T_{na}S=ST_{-na}.
+\]
+Da die Spiegelung $S^2=\operatorname{id}$ erf"ullt, kann sie nur
+Eigenwerte $1$ oder $-1$ haben.
+Wenden wir darauf $\chi$ an, finden wir
+\[
+\chi(a)^n\chi(S)=\chi(S)\bar\chi(a)^n
+\qquad \Rightarrow \qquad
+\chi(a)^2=1
+\]
+
+Wir suchen also Zustandsvektoren, welche Eigenwerte der
+Symmetrieoperatoren sind.
+
 \section{Valenz- und Leitungsband}
+
+
+
