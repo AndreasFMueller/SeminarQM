@@ -1,0 +1,144 @@
+Betrachten Sie die Hamilton-Funktion f"ur ein zweidimensionales Potential
+der Form
+\[
+H(p, q)=\frac1{2m}(p_x^2+p_y^2)+ax^2+2bxy+cy^2.
+\]
+Berechnen Sie die Energieniveaus des quantisierten Systems.
+
+\begin{loesung}
+W"are der Term $2bxy$ nicht, k"onnte man das System einfach als zwei
+unabh"angige harmonische Oszillatoren betrachten, deren Energieniveaus
+wir bereits berechnet haben.
+Das Ziel muss also sein, mit Hilfe einer Rotation diesen 
+Wechselwirkungsterm zu entfernen.
+
+Das Potential kann mit Hilfe einer Matrix geschrieben werden:
+\[
+ax^2+2bxy+cy^2
+=
+\begin{pmatrix}x&y\end{pmatrix}
+\begin{pmatrix}a&b\\b&c\end{pmatrix}
+\begin{pmatrix}x\\y\end{pmatrix}
+\]
+Durch eine Drehung kann die Matrix in Diagonalform gebracht werden,
+auf der Diagonalen stehen dann die Eigenwerte der Matrix.
+Da wir uns nur f"ur die Energieniveaus interessieren, und nicht
+auch f"ur die Wellenfunktionen, reicht es, die Eigenwerte zu
+berechnen.
+Diese kann man mit dem 
+\begin{align*}
+0
+&=
+\left|\begin{matrix}
+a-\lambda&b\\
+b&c-\lambda
+\end{matrix}\right|
+=
+(a-\lambda)(c-\lambda)-b^2
+=
+\lambda^2-(a+c)\lambda+ac-b^2
+\\
+\lambda_{\pm}
+&=
+\frac{a+c}2\pm\sqrt{\frac{(a+c)^2}4-ac+b^2}
+=
+\frac{a+c}2\pm\sqrt{\frac{(a-c)^2}4+b^2}
+\end{align*}
+Man kann daraus ablesen, dass die Eigenwerte immer reell sind.
+F"ur $b=0$ sind die Eigenwerte $a$ und $c$, und es ist nichts
+zu unternehmen.
+
+Wir nennen die gedrehten Koordinaten $\xi$ und $\eta$.
+In diesen Koordinaten wird die gedrehte Hamilton-Funktion sein
+\[
+H(p_\xi,p_\eta,\xi,\eta)
+=
+\frac1{2m}(p_\xi^2+p_\eta^2)+\lambda_+\xi^2+\lambda_-\eta^2
+\]
+Das quantisierte System hat den Hamilton-Operator
+\[
+H
+=
+-\frac{\hbar^2}{2m}\Delta + \lambda_+\xi^2+\lambda_-\eta^2
+\]
+In diesem Hamilton-Operator gibt es keine Produkte von $\xi$ und $\eta$ mehr.
+Wir k"onnen daher versuchen, eine Wellenfunktion als Produkt 
+\[
+\psi(\xi,\eta)=X(\xi)Y(\eta)
+\]
+zu finden. Wir setzen diesen Ansatz in die Schr"odingergleichung ein
+\begin{align*}
+\frac{\hbar^2}{2m}(X''(\xi)Y(\eta)+X(\xi)Y''(\eta))
++\lambda_+\xi^2X(\xi)Y(\eta)+\lambda_-\eta^2X(\xi)Y(\eta)=EX(\xi)Y(\eta)
+\end{align*}
+und separieren die Variablen:
+\begin{align*}
+\frac{\hbar^2}{2m}\frac{X''(\xi)}{X(\xi)}
++
+\frac{\hbar^2}{2m}\frac{Y''(\eta)}{Y(\eta)}
++
+\lambda_+\xi^2+\lambda_-\eta^2&=E
+\\
+\Rightarrow\qquad
+\frac{\hbar^2}{2m}\frac{X''(\xi)}{X(\xi)}
++\lambda_+\xi^2
+&=
+-\frac{\hbar^2}{2m}\frac{Y''(\eta)}{Y(\eta)}
+-\lambda_-\eta^2
++E
+\end{align*}
+Die linke Seite h"angt nur von $\xi$ ab, die rechte nur von $\eta$,
+sie mussen daher beide konstant sein.
+Wir nennen die gemeinsame Konstante $\mu$, und erhalten zwei
+separierte Systeme
+\begin{align*}
+\biggl(
+\frac{\hbar^2}{2m}\frac{\partial^2}{\partial\xi^2}+\lambda_+\xi^2
+\biggr)X&=\mu X
+\\
+\biggl(
+\frac{\hbar^2}{2m}\frac{\partial^2}{\partial\eta^2}+\lambda_-\eta^2
+\biggr)Y
+&=E-\mu
+\end{align*}
+Setzt man darin
+\[
+\omega_\pm=\sqrt{\frac{2\lambda_\pm}{m}}
+\]
+erh"alt man 
+\begin{align*}
+\biggl(
+\frac{\hbar^2}{2m}\frac{\partial^2}{\partial\xi^2}+\frac{m}2\omega_+^2\xi^2
+\biggr)X&=\mu X
+\\
+\biggl(
+\frac{\hbar^2}{2m}\frac{\partial^2}{\partial\eta^2}+\frac{m}2\omega_-^2\eta^2
+\biggr)Y
+&=E-\mu
+\end{align*}
+Dies sind die Schr"odingergleichungen f"ur zwei harmonische Operatoren
+mit den Kreisfrequenzen $\omega_\pm$.
+Die Energieniveaus dieser Oszillatoren sind
+\begin{align*}
+\mu
+&=
+\hbar\omega_+\biggl(n_++\frac12\biggr),
+&
+E-\mu&=
+\hbar\omega_-\biggl(n_-+\frac12\biggr).
+\end{align*}
+Daraus k"onnen wir jetzt die Energieniveaus f"ur das Gesamtsystem ableiten:
+\[
+E=
+\hbar\omega_+\biggl(n_++\frac12\biggr)
++
+\hbar\omega_-\biggl(n_-+\frac12\biggr),
+\]
+wobei $n_\pm$ beliebige nat"urliche Zahlen sind.
+Die Energie des Grundzustandes ist
+\[
+\frac{\hbar}2(\omega_++\omega_-).
+\]
+\end{loesung}
+
+

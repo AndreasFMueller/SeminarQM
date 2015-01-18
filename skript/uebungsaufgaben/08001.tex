@@ -1,0 +1,56 @@
+Berechnen Sie die Energieniveaus eines Teilchens der Masse $m$ in einem
+eindimensionalen Potential
+\[
+V(x)=c+bx+ax^2.
+\]
+
+\begin{loesung}
+Der zugeh"orige Hamilton-Operator ist
+\[
+H=\frac1{2m}p^2 + c+bx+ax^2.
+\]
+Dieser Operator sieht dem Operator eines harmonischen Oszillators sehr
+"ahnlich, es st"ort jedoch der Term $bx$.
+Diesen k"onnen wir aber durch quadratisches Erg"anzen entfernen:
+\[
+ax^2+bx+c
+=
+a\biggl(x+\frac{b}{2a}\biggr)^2-\frac{b^2-4ac}{4a}
+\]
+Schreiben wir jetzt
+\[
+x_0=-b/2a,\qquad
+\varepsilon_0=-\frac{b^2-4ac}{4a}
+\qquad\text{und}\qquad
+\omega=\sqrt{\frac{2a}{m}},
+\]
+dann wird der Hamilton-Operator zu
+\[
+H=\frac1{2m}p^2 +
+\frac{m}{2}\omega^2(x-x_0)^2
++\varepsilon_0
+\]
+Die Schr"odingergleichung f"ur diesen Operator ist
+\begin{align*}
+\biggl(
+\frac1{2m}p^2 +
+\frac{m}{2}\omega^2(x-x_0)^2
++\varepsilon_0
+\biggr)\psi&=E\psi
+\\
+\biggl(
+\frac1{2m}p^2 +
+\frac{m}{2}\omega^2(x-x_0)^2
+\biggr)\psi&=(E-\varepsilon_0)\psi
+\end{align*}
+Die linke Seite ist ein harmonischer Oszillator, dessen Energieniveaus
+sind
+\[
+E-\varepsilon=\hbar\omega\biggl(n+\frac12\biggr)
+\qquad\Rightarrow\qquad
+E=\varepsilon_0+\hbar\omega\biggl(n+\frac12\biggr)
+=\frac{b^2-4ac}{4a}+\hbar\sqrt{\frac{2a}{m}}\biggl(n+\frac12\biggr)
+\]
+f"ur beliebige nat"urliche Zahlen $n$.
+\end{loesung}
+
