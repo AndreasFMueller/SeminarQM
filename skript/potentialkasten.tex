@@ -1,0 +1,248 @@
+\subsection{Potentialkasten}
+Wir wenden die Theorie an, um die Energieniveaus eines eindimensionalen
+Teilchens zu berechnen, welches in einem Interval $[-l,l]$ eingesperrt ist.
+Realisiert werden kann diese Situation n"aherungsweise dadurch, dass 
+ein Teilchen durch eine sehr hohe (unendlich hohe) Potentialbarriere
+am verlassen des Bereiches gehindert wird.
+Die Wellenfunktion eines solchen Teilchens muss ausserhalb des Intervals
+verschwinden, denn die Wahrscheinlichkeit, das Teilchen dort zu
+finden, soll ja $0$ sein.
+
+\subsubsection{Hamilton-Operator und Schr"odingergleichung}
+Der Hamilton-Operator des Problems ist
+\[
+\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2},
+\]
+und die zugen"orige zeitunabh"angige Schr"odingergleichung
+\begin{equation}
+-\frac{\hbar}{2m}\psi''(x)=E\psi(x)
+\label{schroedingerkasten}
+\end{equation}
+Wir suchen eine L"osung der Schr"odingergleichung,
+die ausserdem den Randbedingungen
+\[
+\psi(\pm l)=0
+\]
+gen"ugen soll.
+Das charakteristische Polynome der Gleichung (\ref{schroedingerkasten}) ist
+\[
+-\frac{\hbar^2}{2m}\lambda^2-E=0,
+\]
+es hat die Nullstellen
+\[
+\lambda_\pm = \pm\sqrt{\frac{2m}{\hbar^2}(-E)}.
+\]
+
+\subsubsection{Symmetrie}
+Der Hamilton-Operator dieses Problems ist symmetrisch bez"uglich
+der Spiegelung.
+Der Spiegelungsoperator $S$, der aus der Wellenfunktion
+$\psi(x)$ die Wellenfunktion $\psi(-x)$ macht, vertauscht mit
+dem Hamilton-Operator, also kann man die Eigenzust"ande von $H$ so w"ahlen,
+dass sie auch Eigenzust"ande von $S$ sind.
+Da $S^2=\operatorname{id}$, sind $\pm1$ die einzig m"oglichen Eigenwerte
+von $S$, also ist $\psi(x)=\psi(-x)$ oder $\psi(x)=-\psi(-x)$.
+Wenn man eine L"osung der Schr"odingergleichung sucht, kann man also
+zus"atzlich verlangen, dass die L"osungen gerade oder ungerade Funktionen
+sind.
+
+\subsubsection{Negative Energie}
+Falls $E<$ ist, sind die Nullstellen des chrakteristischen
+Polynoms reell, $\lambda_+>0$ und $\lambda_-=-\lambda_+ < 0$,
+und die allgemeine 
+L"osung der Gleichung (\ref{schroedingerkasten}) hat die Form
+\[
+\psi(x)=A_+e^{\lambda_+x}+A_e^{\lambda_-x}.
+\]
+Ausserdem m"ussen die Randbedingungen erf"ullt sein, die man erh"alt,
+indem man $x=\pm l$ setze:
+\[
+\begin{linsys}{2}
+e^{ \lambda_+l} A_+&+&e^{ \lambda_-l}A_-&=&0\\
+e^{-\lambda_+l}A_+&+&e^{-\lambda_-l}A_-&=&0
+\end{linsys}
+\]
+Dieses Gleichungssystem f"ur die Koeffizienten $A_+$ und $A_-$ hat
+Determinante
+\[
+\left|\begin{matrix}
+e^{ \lambda_+l}&e^{ \lambda_-l}\\
+e^{-\lambda_+l}&e^{-\lambda_-l}
+\end{matrix}\right|
+=
+e^{\lambda_+l-\lambda_-l}-e^{\lambda_-l-\lambda_+l}
+=
+e^{2l\lambda_+}-e^{-2l\lambda_+}
+=
+2\sinh 2l\lambda_+
+\]
+Dieses Ausdruck verschwindet nur, wenn $\lambda_+=0$, im Widerspruch
+zu $\lambda_+>0$.
+Es gibt also keine L"osung f"ur Teilchen mit negativer Energie.
+
+\subsubsection{Positive Energie}
+In diesem Falls sind die Nullstellen imagin"ar, $\lambda_\pm=\pm ik$
+mit $k=\sqrt{2mE/\hbar^2}$,
+und die allgemeine L"osung wird durch Linearkombinationen der Funktionen
+$\cos kx$ und $\sin kx$ gegeben.
+Wir m"ussen also herausfinden, f"ur welche Werte von $E$ und damit $k$
+die Randbedingungen erf"ullt werden k"onnen.
+Wir wissen bereits, dass wir zus"atzlich verlangen k"onnen, dass die
+L"osungen gerade oder ungerade sind.
+Eine gerade L"osung muss von der Form $A\cos kx$ sein, eine ungerade
+L"osung von der Form $B\sin kx$.
+In beiden F"allen ist die Randbedingung am linken Rand automatisch
+erf"ullt, wenn die Bedingun am rechten Rand erf"ullt ist.
+Wir setzen die Randbedingungen ein:
+\begin{align*}
+A\cos kl&=0
+	&&&
+		B\sin kl&=0\\
+kl&=\frac{\pi}2+n\pi,\quad n\in\mathbb Z
+	&&&
+		kl&=n\pi,\quad n\in\mathbb Z\\
+k&=\frac{\pi}{l}\biggl(n+\frac12\biggr),\quad n\in\mathbb Z
+	&&&
+		k&=\frac{\pi}{l}n,\quad n\in\mathbb Z.
+\end{align*}
+Aus den m"oglichen $k$-Werten k"onnen wir jetzt die m"oglichen 
+Energiewerte ableiten
+\begin{align*}
+E&=\frac{\hbar^2\pi^2}{2ml^2}\biggl(n+\frac12\biggr)^2
+&&&
+E&=\frac{\hbar^2\pi^2}{2ml^2}n^2
+\end{align*}
+Ein einer Formel zusammengefasst kann man schreiben
+\[
+E_n
+=
+\frac{\hbar^2\pi^2}{2ml^2}\biggl(\frac{n}{2}\biggr)^2
+=
+\frac{h^2n^2}{32ml^2}.
+\]
+wobei f"ur gerades $n$ eine ungerade L"osungsfunktion auftritt,
+f"ur ungerades $n$ aber eine gerade L"osungsfunktion.
+\begin{figure}
+\centering
+\includegraphics{graphics/potential-1.pdf}
+\caption{Teilchen in einem Potentialkasten
+\label{potentialkasten}}
+\end{figure}
+
+\subsubsection{Normierung}
+Wir m"ussen noch sicherstellen, dass die L"osungsfunktionen korrekt
+normiert sind.
+Dazu m"ussen wir die Integrale von $\cos^2$ und $\sin^2$ berechnen.
+Die Graphen von $\cos^2$ und $\sin^2$ halbieren aber genau das
+Rechteck zwischen $-l$ und $l$ mit H"ohe $1$, also ist der Wert
+des Integrals in jedem Fall $l$, die L"osungsfunktionen mit
+der richtigen Normierung sind also:
+\begin{align*}
+\psi_n(x)
+&=
+\begin{cases}
+\displaystyle
+\frac{1}{\sqrt{l}}\cos\frac{n \pi x}{2l}&\qquad \text{$n$ ungerade}\\
+\\
+\displaystyle
+\frac{1}{\sqrt{l}}\sin\frac{n \pi x}{2l}&\qquad \text{$n$ gerade}.
+\end{cases}
+\end{align*}
+Der Grundzustand ist $n=1$, mit Grundzustandsenergie $E_1=h^2/32ml^2$.
+
+\subsubsection{Klassische Quantisierungsbedingung}
+Klassisch kann man sich das Teilchen als eine Welle vorstellen, die
+zwischen den beiden W"anden des Potentialkastens hin und her l"auft.
+Der Impuls des Teilchens ist $\hbar k$, die Wirkung f"ur einen Weg
+hin und zur"uck ist daher:
+\[
+\oint p\,dq
+=
+2\cdot \hbar k \cdot 2l = 2\cdot \hbar \frac{\pi}{l}\frac{n}{2}\cdot 2l=hn,
+\]
+dies entspricht genau der Bohrschen Quantisierungsbedingung.
+
+\subsubsection{Physikalische Interpretation}
+Offenbar ist es nicht m"oglich, auf beliebig kleinem Raum einzusperren.
+Je kleiner der zur Verf"ugung stehende Raum, desto h"oher ist die
+Energie, die ein Teilchen mindestens haben wird.
+Im Kapitel~\ref{chapter:heisenberg} werden wir mit der Unsch"arferelationen
+einen weiteren Ausdruck dieses Ph"anomens kennenlernen.
+
+In einem Atomkern sind die Protonen und Neutronen auf sehr kleinem
+Raum eingesperrt, und wir k"onnen versuchen, die minimale Energie 
+eines Neutrons abzusch"atzen.
+Der Atomkern hat einen Durchmesser von $10\text{fm}=10\cdot 10^{-15}\text{m}$,
+das Neutron hat eine Masse von $m_n=1.67\cdot 10^{-27}\text{kg}$,
+die Grundzustandsenergie ist daher $E_1=3.28\cdot10^{-13}$.
+Mit der Formel $E=mc^2$ entspr"ache dieser Energie die Masse
+$3.656\cdot 10^{-30}\text{kg}$, oder etwa $0.2\%$ der Masse eines
+Neutrons, und mehr als der Masse eines Elektrons.
+
+\subsubsection{H"ohere Dimensionen}
+Man kann das Problem eines Teilchens in einem Potentialkasten auch
+in drei Dimensionen l"osen.
+Der Hamiltonoperator ist 
+\[
+H=-\frac{\hbar^2}{2m}\biggl(
+\frac{\partial^2}{\partial x^2}
++
+\frac{\partial^2}{\partial y^2}
++
+\frac{\partial^2}{\partial z^2}
+\biggr)
+=-\frac{\hbar^2}{2m}\Delta
+\]
+Man verwendet dazu einen sogenannten Seprationsansatz, man schreibt
+\[
+\psi(x,y,z)=X(x)\cdot Y(y)\cdot Z(z),
+\]
+und erh"alt die Differentialgleichung
+\[
+\frac{\hbar^2}{2m}\biggl(
+X''(x)Y(y)Z(z)
++
+X(x)Y''(y)Z(z)
++
+X(x)Y(y)Z''(z)
+\biggr)
+=
+EX(x)Y(y)Z(z)
+\]
+Dividiert man durch $\psi$, erhalt man die Gleichung
+\begin{equation}
+-\frac{\hbar^2}{2m}\frac{X''(x)}{X(x)}
+-
+\frac{\hbar^2}{2m}\frac{Y''(y)}{Y(y)}
+-
+\frac{\hbar^2}{2m}\frac{Z''(z)}{Z(z)}
+=
+E.
+\label{potentialkasten-separiert}
+\end{equation}
+Man kann nach jedem Term aufl"osen, und erh"alt dann eine Gleichung,
+deren linke Seite nur von einer Variablen, die rechte nur von den anderen
+abh"angt.
+Es folgt dann, dass beide Seiten konstant sein m"ussen, 
+die Gleichung (\ref{potentialkasten-separiert}) beinhaltet also eigentlich
+drei Gleichungen
+\begin{equation}
+\begin{aligned}
+-\frac{\hbar^2}{2m}\frac{X''(x)}{X(x)}&=E_x&&\Rightarrow&-\frac{\hbar^2}{2m}X''&=E_xX\\
+-\frac{\hbar^2}{2m}\frac{Y''(y)}{Y(y)}&=E_y&&\Rightarrow&-\frac{\hbar^2}{2m}Y''&=E_yY\\
+-\frac{\hbar^2}{2m}\frac{Z''(z)}{Z(z)}&=E_z&&\Rightarrow&-\frac{\hbar^2}{2m}Z''&=E_zZ
+\end{aligned}
+\label{potentialkasten-einzelgleichungen}
+\end{equation}
+mit der zus"atzlichen Bedingung $E=E_x+E_y+E_z$.
+Die Gleichungen (\ref{potentialkasten-einzelgleichungen}) sind drei
+unabh"angige Problem wie der eindimensionale Potentialkasten
+(\ref{schroedingerkasten}), deren Energieniveaus wir bereits berechnet
+haben.
+Daraus k"onnen wir unmittelbar die Energieniveaus im dredimensionalen
+Fall ableiten:
+\[
+E=\frac{h^2}{32ml^2}(n_x^2+n_y^2+n_z^2)
+\]
+mit $n_x,n_y,n_z>1$.
+

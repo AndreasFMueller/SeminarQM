@@ -15,6 +15,7 @@ TEXFILES = vorwort.tex einleitung.tex hamilton.tex stoerungstheorie.tex \
 	drehimpuls.tex komplex.tex quantisierung.tex hilbert.tex \
 	spin.tex magnetfeld.tex h.tex harmonisch.tex einfach.tex \
 	quantencomputer.tex heisenberg.tex kugelkoordinaten.tex \
+	potentialkasten.tex potentialtopf.tex \
 	references.bib
 
 BLXFILES = skript1-blx.bbl

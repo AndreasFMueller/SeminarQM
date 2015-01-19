@@ -1,0 +1,229 @@
+\subsection{Potentialtopf}
+Aus der L"osung des Problems eines Teilchens in einem Potentialkasten
+k"onnte der Eindruck entstehen, dass die Quantisierung der Energieniveaus
+mit der Randbedingung am Rande des Kastens zu tun hat.
+Sobald diese Bedingung wegf"allt, k"onnten die Bedingungen nicht mehr
+ausreichend streng sein, um diskrete Energieniveaus zu erzwingen.
+Dass dem nicht so ist zeigt das hier zu behandelnde Beispiel eines
+Teilchens in einem Potentialtopf, wie auch der sp"ater im
+Kapitel~\ref{chapter:harmonisch} behandelte harmonische Oszillator.
+
+\subsubsection{Problemstellung}
+\begin{figure}
+\centering
+\includegraphics{graphics/potential-2.pdf}
+\caption{Potentialtopf der Breite $2l$ und Tiefe $-V_0$.
+\label{potentialtopf}}
+\end{figure}
+
+Wir m"ochten die Schr"odingergleichung l"osen f"ur ein Teilchen, welches
+dem in Abbildung~\ref{potentialtopf} festgehalten wird.
+Das Potential ist
+\[
+V(x)
+=
+\begin{cases}
+-V_0&\qquad|x|<l\\
+0&\qquad\text{sonst}
+\end{cases}
+\]
+Die Schr"odingergleichung lautet
+\[
+-\frac{\hbar^2}{2m}\psi''(x)+V(x)\psi(x)=E\psi(x).
+\]
+Die L"osungsfunktion $\psi(x)$ muss also je nach Teilinterval
+verschiedene Differentialgleichungen l"osen:
+\begin{equation}
+\begin{aligned}
+-\frac{\hbar^2}{2m}\psi''(x)&=(V_0+E)\psi(x)&\text{f"ur $|x|\le l$}
+\\
+-\frac{\hbar^2}{2m}\psi''(x)&=E\psi(x)      &\text{f"ur $|x|>l$}
+\end{aligned}
+\label{potentialtopf-gleichungen}
+\end{equation}
+Wir werden die Differentialgleichung in jedem dieser Teilintervalle
+separat l"osen, und dann zu einer Funktion $\psi$ zusammensetzen.
+Die Funktion $\psi(x)$ muss nat"urlich stetig sein, die einzelnen
+Teile m"ussen also an den Stellen $x=\pm l$ ohne Sprung ineinander
+"ubergehen.
+Dasselbe muss f"ur die Ableitungen gelten, denn wenn $\psi'$  nicht
+stetig w"are, w"urde die zweite Ableitung unendlich gross, was nicht
+mit der Schr"odingergleichung vereinbar ist.
+
+\subsubsection{L"osungen von (\ref{potentialtopf-gleichungen})}
+Die Gleichungen sind von der Form
+\begin{equation}
+\psi''(x)=C\psi(x),\qquad
+C=-\frac{2m}{\hbar^2}(V_0+E)
+\;
+\text{oder}
+\;
+C=-\frac{2m}{\hbar^2}E,
+\label{potentialtopf-proto}
+\end{equation}
+die wir mit dem Standardverfahren f"ur lineare Differentialgleichungen
+l"osen k"onnen.
+Die charakteristische  Gleichung ist $\lambda^2=C$, mit Nullstellen
+$\lambda=\sqrt{C}$. Je nach Vorzeichen von $C$ ist der Charakter der
+L"osungen verschieden.
+F"ur $C>0$ sind die $e^{x\sqrt{C}}$ und $e^{-x\sqrt{C}}$.
+
+F"ur $C<0$ sind die L"osungen der charakterisischen Gleichung imagin"ar.
+Man kann die L"osungen der Differentialgleichung mit Exponentialfunktionen
+$e^{ix\sqrt{-C}}$ und $e^{-ix\sqrt{-C}}$ schreiben.
+Es wird aber viel einfacher, wenn man wieder die Symmetrieeigenschaften
+verwendet, und nach geraden und ungeraden L"osungsfunktionen sucht,
+die sich mit $\cos x\sqrt{-C}$ bzw.~$\sin x\sqrt{-C}$ schreiben
+lassen m"ussen.
+
+\subsubsection{F"alle $E>0$ und $E<-V_0$}
+F"ur $E>0$ sind die L"osungen "uberall Schwingungsl"osungen, deren
+Amplitude auf der ganzen reellen Achse ausserhalb des Topfes
+konstant ist. Eine solche Funktion ist nicht normierbar, insbesondere
+kann es f"ur $E>0$ also keine L"osungen geben.
+
+F"ur $E<-V_0$ ist das $C>0$ in (\ref{potentialtopf-proto}), es kommen
+also nur die Exponentialfunktionen f"ur eine L"osung in Frage.
+Damit l"asst sich aber keine normierbare L"osung bauen: rechts von $l$
+d"urfte man nur $e^{-x\sqrt{C}}$ verwenden, links von $-l$ nur
+$e^{-x\sqrt{C}}$, und dazwischen m"usste man ein Funktion konstruieren,
+die an den R"andern stetig differenzierbar in die beiden abfallenden
+Exponentialfunktionen "ubergeht.
+Dies scheitert am gleichen Gleichungssystem wie beim Potentialkasten
+im Falle $E<0$.
+
+\subsubsection{Der Fall $-V_0 < E < 0$}
+In diesem Fall suchen wir jetzt eine gerade oder ungerade L"osung, die
+im Interval $[-l,l]$ eine Schwingungsl"osung $a \cos kx$ oder $a \sin kx$
+ist mit 
+\[
+k=\sqrt{\frac{2m}{\hbar^2}(V_0+E)},
+\]
+und f"ur $x>l$ eine exponentiell abfallende L"osung $be^{k'(x-l)}$
+mit
+\[
+k'=\sqrt{-\frac{2m}{\hbar^2}E}.
+\]
+Wegen der Symmetrie reicht es jetzt, die Bedingungen nur noch beim
+Punkt $l$ aufzustellen.
+Die Stetigkeitsbedingungen lauten 
+\begin{align*}
+&&\psi(-x)&=\psi(x)	&	\psi(-x)&=-\psi(x)\\
+&\text{Stetigkeit von $\psi$ bei $x=l$:}&
+	a\cos kl&= b	&	a\sin kl&=b \\
+&\text{Stetigkeit von $\psi'$ bei $x=l$:}&
+	-ak\sin kl&=-bk'&     ak\cos kl&=-bk'
+\end{align*}
+Dividiert man die beiden Gleichungen, erhalten wir zwei
+Gleichungen, die nur noch $k$ und $k'$ enthalten:
+\begin{align}
+\tan kl&=\frac{k'}{k},
+&-\cot kl&=\frac{k'}{k},
+\label{potentialtopf-k-gleichungen}
+\end{align}
+Die Gr"ossen $k$ und $k'$ h"angen aber beide von $E$ ab, dies sind
+als in Wirklichkeit Gleichungen f"ur $E$.
+
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{graphics/potential-4.pdf}
+\caption{L"osungen der Gleichungen (\ref{potentialtopf-xigleichungen}).
+Rote Kurve: $\sqrt{A^2-\xi^2}/\xi$, blaue Kurven: $\tan\xi$, gr"une
+Kurven $-\cot\xi$.
+\label{loesungen-xigleichungen}}
+\end{figure}%
+\begin{figure}
+\centering
+\includegraphics{graphics/potential-5.pdf}
+\caption{Wellenfunktionen f"ur Teilchen in einem Potentialtopf der
+Tiefe $-V_0$ under der Breite $2l$. Nur die sechs Wellenfunktionen 
+geringster Energie sind dargestellt, und die Energie "uber dem
+Grund des Potentialtopfes ist 15fach "uberh"oht.
+\label{potentialtopf-loesungen-klein}}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics{graphics/potential-3.pdf}
+\caption{Wellenfunktionen f"ur Teilchen in einem Potentialtopf der
+Tiefe $-V_0$ under der Breite $2l$. Die Wellenfunktionen zu den sechs
+untersten Energieniveaus sind nicht dargestellt, siehe dazu die
+Abbildung~\ref{potentialtopf-loesungen-klein}.
+\label{potentialtopf-loesungen}}
+\end{figure}
+Wir versuchen, alle Gr"ossen durch die dimensionslose Gr"osse $\xi=kl$
+auszudr"ucken.
+Zun"achst ist
+\begin{align}
+\xi=kl&=l\sqrt{\frac{2m}{\hbar^2}(V_0+E)}
+\notag
+\\
+\xi^2
+&=
+\frac{2ml^2}{\hbar^2}(V_0+E)
+=
+\frac{2ml^2V_0}{\hbar^2} +\frac{2ml^2}{\hbar^2}E
+=
+\frac{2ml^2V_0}{\hbar^2}-l^2k'^2
+\notag
+\\
+k'l
+&=
+\sqrt{\frac{2ml^2V_0}{\hbar^2} - \xi^2}
+\notag
+\\
+E
+&=
+-\frac{\hbar^2}{2m}k'^2
+=
+-\frac{\hbar^2}{2m}
+\biggl(
+\frac{2mV_0}{\hbar^2} - \frac{\xi^2}{l^2}
+\biggr)
+=
+-V_0+\frac{\hbar^2\xi^2}{2ml^2}
+\label{potentialtopf-energie}
+\end{align}
+Schreiben wir
+\[
+A=\sqrt{\frac{2ml^2V_0}{\hbar^2}}
+\]
+und setzen wir ein in die Gleichungen (\ref{potentialtopf-k-gleichungen}),
+erhalten wir die neuen Gleichungen f"ur $\xi$
+\begin{align}
+\tan \xi&=\frac{\sqrt{A^2-\xi^2}}{\xi}
+&
+-\cot \xi&=\frac{\sqrt{A^2-\xi^2}}{\xi}
+\label{potentialtopf-xigleichungen}
+\end{align}
+In Abbildung~\ref{loesungen-xigleichungen} sind die rechten und linken
+Seiten der Gleichungen (\ref{potentialtopf-xigleichungen}) aufgezeichnet,
+die Schnittpunkte geh"oren zu $\xi$-Werten, f"ur die es L"osungen
+der Schr"odingergleichung gibt.
+Die zugeh"origen Energien k"onnen mit (\ref{potentialtopf-energie})
+berechnet werden.
+
+
+Die Gleichungen (\ref{potentialtopf-xigleichungen}) k"onnen nicht 
+in geschlossener Form gel"ost werden, die Energieniveaus k"onnen also
+nur numerisch bestimmt werden.
+Man kann immerhin ein paar qualitative Aussagen machen.
+Aus Abbildung~\ref{loesungen-xigleichungen} kann man ablesen, dass die
+$\xi$-Werte f"ur die Niveaus mit niedrigester Energie nahe an $n\pi/2$
+sind, die Energien sind also nahe bei
+\[
+-V_0+\frac{\hbar^2\xi^2}{2ml^2}
+\simeq
+-V_0+\frac{h^2n^2\pi^2}{32ml^2\pi^2}
+=
+-V_0+\frac{h^2n^2}{32ml^2},
+\]
+die Energie dieser Niveaus liegt also "ahnlich hoch "uber dem Grund
+des Potentialtopfes, wie wir f"ur einen Potentialkasten gefunden haben.
+
+Die L"osungsfunktionen sind in den
+Abbildungen~\ref{potentialtopf-loesungen-klein}
+und \ref{potentialtopf-loesungen}
+dargestellt.
+Man erkennt, dass man die Teilchen mit positiver Wahrscheinlichkeit in
+der Wand antreffen wird, die Eindringtiefe ist zudem umso gr"osser,
+je gr"osser die Energie eines Teilchens ist.

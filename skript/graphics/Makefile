@@ -3,7 +3,11 @@
 #
 # (c) 2014 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
-all:	pert analysator arctan drehimpuls gatter dependencies periodensystem
+all:	pert analysator arctan drehimpuls gatter dependencies periodensystem \
+	potential
+
+potential_FILES = potential-1.pdf potential-2.pdf potential-3.pdf
+potential:	$(potential_FILES)
 
 dependencies_FILES = dependencies-1.pdf
 dependencies: $(dependencies_FILES)
@@ -77,3 +81,11 @@ $(periodensystem_FILES):	periodensystem.mp
 	do \
 		mptopdf periodensystem.$${i}; \
 	done
+
+$(potential_FILES):	potential.mp
+	TEX=latex mpost potential.mp
+	for i in 1 2 3 4 5; \
+	do \
+		mptopdf potential.$${i}; \
+	done
+
