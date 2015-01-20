@@ -4,7 +4,10 @@
 # (c) 2014 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
 all:	pert analysator arctan drehimpuls gatter dependencies periodensystem \
-	potential
+	potential harmonisch
+
+harmonisch_FILES = harmonisch-1.pdf
+harmonisch:	$(harmonisch_FILES)
 
 potential_FILES = potential-1.pdf potential-2.pdf potential-3.pdf
 potential:	$(potential_FILES)
@@ -89,3 +92,9 @@ $(potential_FILES):	potential.mp
 		mptopdf potential.$${i}; \
 	done
 
+$(harmonisch_FILES):	harmonisch.mp
+	TEX=latex mpost harmonisch.mp
+	for i in 1; \
+	do \
+		mptopdf harmonisch.$${i}; \
+	done
