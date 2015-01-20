@@ -290,9 +290,9 @@ element(btex \tiny 111 etex, btex Rg etex, (24,0));
 element(btex \tiny 112 etex, btex Cn etex, (25,0));
 element(btex \tiny 113 etex, btex Uut etex, (26,0));
 element(btex \tiny 114 etex, btex Fl etex, (27,0));
-element(btex \tiny 115 etex, btex UUp etex, (28,0));
+element(btex \tiny 115 etex, btex Uup etex, (28,0));
 element(btex \tiny 116 etex, btex Lv etex, (29,0));
-element(btex \tiny 117 etex, btex UUs etex, (30,0));
+element(btex \tiny 117 etex, btex Uus etex, (30,0));
 element(btex \tiny 118 etex, btex Uuo etex, (31,0));
 
 endfig;
