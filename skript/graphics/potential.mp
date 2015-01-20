@@ -19,23 +19,6 @@ etex;
 %
 beginfig(1)
 
-pickup pencircle scaled 0.71pt;
-
-drawarrow (-145, 0)--( 110,  0);
-drawarrow (   0,-5)--(   0,165);
-drawarrow (-120,-5)--(-120,165);
-label.ulft(btex $\psi$ etex, (0,165));
-label.ulft(btex $E$ etex, (-120,165));
-label.urt(btex $x$ etex, (110,0));
-
-draw (-100,-2)--(-100,2);
-draw ( 100,-2)--( 100,2);
-label.bot(btex $-l$ etex, (-100,-2));
-label.bot(btex $ l$ etex, ( 100,-2));
-
-pickup pencircle scaled 1.5pt;
-draw (-100,160)--(-100,0)--(100,0)--(100,160);
-
 pickup pencircle scaled 0.1pt;
 
 numeric u;
@@ -54,6 +37,9 @@ draw (-140,  9 * u)--(-100,  9 * u) withcolor (1,0,0);
 draw (-140, 16 * u)--(-100, 16 * u) withcolor (1,0,0);
 draw (-140, 25 * u)--(-100, 25 * u) withcolor (1,0,0);
 
+pickup pencircle scaled 1.5pt;
+draw (-100,160)--(-100,0)--(100,0)--(100,160);
+
 def height(expr n) =
 	(n * n * u)
 enddef;
@@ -68,7 +54,11 @@ def cosine(expr n) =
 	for x = -95 step 5 until 100:
 		p := p..(x,height(n) + 10 * cosd(phi(n, x)));
 	endfor;
+	pickup pencircle scaled 1pt;
 	draw p withcolor (1,0,0);
+	fill p--cycle withcolor (1,0.9,0.9);
+	pickup pencircle scaled 0.1pt;
+	draw (-100,height(n))--(100,height(n));
 enddef;
 
 def sine(expr n) =
@@ -77,7 +67,11 @@ def sine(expr n) =
 	for x = -95 step 5 until 100:
 		p := p..(x,height(n) + 10 * sind(phi(n, x)));
 	endfor;
+	pickup pencircle scaled 1pt;
 	draw p withcolor (1,0,0);
+	fill p--cycle withcolor (1,0.9,0.9);
+	pickup pencircle scaled 0.1pt;
+	draw (-100,height(n))--(100,height(n));
 enddef;
 
 cosine(1);
@@ -85,6 +79,20 @@ sine(2);
 cosine(3);
 sine(4);
 cosine(5);
+
+pickup pencircle scaled 0.71pt;
+
+drawarrow (-145, 0)--( 110,  0);
+drawarrow (   0,-5)--(   0,165);
+drawarrow (-120,-5)--(-120,165);
+label.ulft(btex $\psi$ etex, (0,165));
+label.ulft(btex $E$ etex, (-120,165));
+label.urt(btex $x$ etex, (110,0));
+
+draw (-100,-2)--(-100,2);
+draw ( 100,-2)--( 100,2);
+label.bot(btex $-l$ etex, (-100,-2));
+label.bot(btex $ l$ etex, ( 100,-2));
 
 endfig;
 
@@ -117,22 +125,6 @@ endfig;
 % Potentialtopf
 %
 beginfig(3)
-
-pickup pencircle scaled 1pt;
-
-drawarrow (-198,   0)--(198, 0);
-drawarrow (   0,-460)--(  0,20);
-label.llft(btex $-l$ etex, (-100,0));
-label.lrt(btex $ l$ etex, ( 100,0));
-label.ulft(btex $x$ etex, (180,0));
-label.lft(btex $\psi$ etex, (0,20));
-
-pickup pencircle scaled 2pt;
-pickup pencircle scaled 0.1pt;
-
-draw (-190,0)--(-100,0)--(-100,-450)--(100,-450)--(100,0)--(190,0);
-
-label.llft(btex $-V_0$ etex, (0,-450));
 
 %symmetrisch:
 %   1.53152,   0.48750,  -0.99846, 153151657300160.062500
@@ -181,59 +173,72 @@ omega := 180 / 3.14159;
 def symsolution(expr k, E) =
 	numeric h;
 	h := 450 * EE(E);
-	% zero line
-	pickup pencircle scaled 0.1pt;
-	draw (-100, h)--(100, h) withcolor (0,0,1);
-	% oscillating part of solution
-	pickup pencircle scaled 1pt
-	draw (-100,h + amplitude * cosd(-omega * k))
-	for x = -99 step 1 until 100:
-		--(x, h + amplitude * cosd(omega * k * (x/100)))
-	endfor
-		withcolor(0,0,1);
-	% exponential decay in boundary
+
 	numeric a;
 	a := amplitude * cosd(omega * k);
 	numeric kp;
 	kp := kprime(k);
-	draw (100, h + a)
+
+	path p;
+
+	% left exponential part
+	p := (-155, h + a * mexp(-(kp * 55 * 2.56)));
+	for x = 154 step -1 until 101:
+		p := p--(-x, h + a * mexp(-(kp * (x - 100) * 2.56)));
+	endfor
+
+	% oscillating part of solution
+	for x = -100 step 1 until 100:
+		p := p--(x, h + amplitude * cosd(omega * k * (x/100)));
+	endfor;
+
+	% exponential decay in boundary
 	for x = 101 step 1 until 190:
-		--(x, h + a * mexp(-(kp * (x - 100) * 2.56)))
-	endfor
-		withcolor(0,0,1);
-	draw (-100, h + a)
-	for x = 101 step 1 until 155:
-		--(-x, h + a * mexp(-(kp * (x - 100) * 2.56)))
-	endfor
-		withcolor(0,0,1);
+		p := p--(x, h + a * mexp(-(kp * (x - 100) * 2.56)));
+	endfor;
+
+	pickup pencircle scaled 1pt
+	fill p--(190,h)--(-150,h)--cycle withcolor (0.9,0.9,1);
+	draw p withcolor(0,0,1);
+	% zero line
+	pickup pencircle scaled 0.1pt;
+	draw (-150, h)--(190, h) withcolor (0,0,1);
 enddef;
 
 def antisymsolution(expr k, E) =
 	numeric h;
 	h := 450 * EE(E);
-	pickup pencircle scaled 0.1pt;
-	draw (-100, h)--(100, h) withcolor (0,1,0);
-	pickup pencircle scaled 1pt
-	draw (-100, h + amplitude * sind(-omega * k))
-	for x = -99 step 1 until 100:
-		--(x, h + amplitude * sind(omega * k * (x/100)))
-	endfor
-		withcolor(0,1,0);
-	% exponential decay in boundary
+
 	numeric a;
 	a := amplitude * sind(omega * k);
 	numeric kp;
 	kp := kprime(k);
-	draw (100, h + a)
-	for x = 101 step 1 until 190:
-		--(x, h + a * mexp(-(kp * (x - 100) * 2.56)))
-	endfor
-		withcolor(0,1,0);
-	draw (-100, h - a)
-	for x = 101 step 1 until 155:
-		--(-x, h - a * mexp(-(kp * (x - 100) * 2.56)))
-	endfor
-		withcolor(0,1,0);
+
+	path p;
+
+	% exponential decay in boundary
+	p := (-155, h - a * mexp(-(kp * 55 * 2.56)));
+
+	for x = 154 step -1 until 101:
+		p := p--(-x, h - a * mexp(-(kp * (x - 100) * 2.56)));
+	endfor;
+
+	for x = -100 step 1 until 100:
+		p := p--(x, h + amplitude * sind(omega * k * (x/100)));
+	endfor;
+
+	for x = 100 step 1 until 190:
+		p := p--(x, h + a * mexp(-(kp * (x - 100) * 2.56)));
+	endfor;
+
+	pickup pencircle scaled 1pt
+	fill p--(190,h)--(-150,h)--cycle withcolor (0.9,1,0.9);
+	draw p withcolor(0,1,0);
+	
+	% zero line
+	pickup pencircle scaled 0.1pt;
+	draw (-155, h)--(190, h) withcolor (0,1,0);
+
 enddef;
 
 def symlabel(expr E, l) =
@@ -265,8 +270,8 @@ symsolution(      37.93351, -0.05394);
 %symlabel(-0.99846, btex $n=1$ etex);
 %symlabel(-0.98612, btex $n=3$ etex);
 %symlabel(-0.96146, btex $n=5$ etex);
-symlabel(-0.92449, btex $n=7$ etex);
-symlabel(-0.87523, btex $n=9$ etex);
+symlabel(-0.92449, btex $n=\phantom{0}7$ etex);
+symlabel(-0.87523, btex $n=\phantom{0}9$ etex);
 symlabel(-0.81372, btex $n=11$ etex);
 symlabel(-0.74002, btex $n=13$ etex);
 symlabel(-0.65422, btex $n=15$ etex);
@@ -292,7 +297,7 @@ antisymsolution(  36.48911, -0.12462);
 %antisymlabel(-0.99383, btex $n=2$ etex);
 %antisymlabel(-0.97533, btex $n=4$ etex);
 %antisymlabel(-0.94451, btex $n=6$ etex);
-antisymlabel(-0.90139, btex $n=8$ etex);
+antisymlabel(-0.90139, btex $n=\phantom{0}8$ etex);
 antisymlabel(-0.84600, btex $n=10$ etex);
 antisymlabel(-0.77839, btex $n=12$ etex);
 antisymlabel(-0.69863, btex $n=14$ etex);
@@ -302,7 +307,21 @@ antisymlabel(-0.38770, btex $n=20$ etex);
 antisymlabel(-0.26115, btex $n=22$ etex);
 antisymlabel(-0.12462, btex $n=24$ etex);
 
+pickup pencircle scaled 1pt;
 
+drawarrow (-198,   0)--(198, 0);
+drawarrow (   0,-460)--(  0,20);
+label.llft(btex $-l$ etex, (-100,0));
+label.lrt(btex $ l$ etex, ( 100,0));
+label.ulft(btex $x$ etex, (198,3));
+label.lft(btex $\psi$ etex, (0,20));
+
+pickup pencircle scaled 2pt;
+pickup pencircle scaled 1pt;
+
+draw (-190,0)--(-100,0)--(-100,-450)--(100,-450)--(100,0)--(190,0);
+
+label.llft(btex $-V_0$ etex, (0,-450));
 
 endfig;
 
@@ -412,22 +431,6 @@ endfig;
 
 beginfig(5)
 
-pickup pencircle scaled 1pt;
-
-drawarrow (-198,   0)--(198, 0);
-drawarrow (   0,-460)--(  0,20);
-label.llft(btex $-l$ etex, (-100,0));
-label.lrt(btex $ l$ etex, ( 100,0));
-label.ulft(btex $x$ etex, (180,0));
-label.lft(btex $\psi$ etex, (0,20));
-
-pickup pencircle scaled 2pt;
-pickup pencircle scaled 0.1pt;
-
-draw (-190,0)--(-100,0)--(-100,-450)--(100,-450)--(100,0)--(190,0);
-
-label.llft(btex $-V_0$ etex, (0,-450));
-
 %symmetrisch:
 %   1.53152,   0.48750,  -0.99846, 153151657300160.062500
 %   4.59431,   1.46241,  -0.98612, 459431213404546.437500
@@ -470,64 +473,6 @@ enddef;
 
 numeric omega;
 omega := 180 / 3.14159;
-
-def symsolution(expr k, E) =
-	numeric h;
-	h := 450 * EE(E);
-	% zero line
-	pickup pencircle scaled 0.1pt;
-	draw (-100, h)--(100, h) withcolor (0,0,1);
-	% oscillating part of solution
-	pickup pencircle scaled 1pt
-	draw (-100,h + amplitude * cosd(-omega * k))
-	for x = -99 step 1 until 100:
-		--(x, h + amplitude * cosd(omega * k * (x/100)))
-	endfor
-		withcolor(0,0,1);
-	% exponential decay in boundary
-	numeric a;
-	a := amplitude * cosd(omega * k);
-	numeric kp;
-	kp := kprime(k);
-	draw (100, h + a)
-	for x = 101 step 1 until 190:
-		--(x, h + a * mexp(-(kp * (x - 100) * 2.56)))
-	endfor
-		withcolor(0,0,1);
-	draw (-100, h + a)
-	for x = 101 step 1 until 155:
-		--(-x, h + a * mexp(-(kp * (x - 100) * 2.56)))
-	endfor
-		withcolor(0,0,1);
-enddef;
-
-def antisymsolution(expr k, E) =
-	numeric h;
-	h := 450 * EE(E);
-	pickup pencircle scaled 0.1pt;
-	draw (-100, h)--(100, h) withcolor (0,1,0);
-	pickup pencircle scaled 1pt
-	draw (-100, h + amplitude * sind(-omega * k))
-	for x = -99 step 1 until 100:
-		--(x, h + amplitude * sind(omega * k * (x/100)))
-	endfor
-		withcolor(0,1,0);
-	% exponential decay in boundary
-	numeric a;
-	a := amplitude * sind(omega * k);
-	numeric kp;
-	kp := kprime(k);
-	draw (100, h + a)
-	for x = 101 step 1 until 190:
-		--(x, h + a * mexp(-(kp * (x - 100) * 2.56)))
-	endfor
-		withcolor(0,1,0);
-	draw (-100, h - a)
-	for x = 101 step 1 until 155:
-		--(-x, h - a * mexp(-(kp * (x - 100) * 2.56)))
-	endfor
-		withcolor(0,1,0);
-enddef;
 
 def symlabel(expr E, l) =
 	numeric h;
@@ -594,6 +539,21 @@ antisymlabel(-0.94451, btex $n=6$ etex);
 %antisymlabel(-0.38770, btex $n=20$ etex);
 %antisymlabel(-0.26115, btex $n=22$ etex);
 %antisymlabel(-0.12462, btex $n=24$ etex);
+
+pickup pencircle scaled 1pt;
+
+drawarrow (-198,   0)--(198, 0);
+drawarrow (   0,-460)--(  0,20);
+label.llft(btex $-l$ etex, (-100,0));
+label.lrt(btex $ l$ etex, ( 100,0));
+label.ulft(btex $x$ etex, (198,3));
+label.lft(btex $\psi$ etex, (0,20));
+
+pickup pencircle scaled 1pt;
+
+draw (-190,0)--(-100,0)--(-100,-450)--(100,-450)--(100,0)--(190,0);
+
+label.llft(btex $-V_0$ etex, (0,-450));
 
 endfig;
 
