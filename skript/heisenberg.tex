@@ -206,6 +206,37 @@ die Ungleichung (\ref{cauchy-schwarz-uncertainty}) miteinander verkn"upft.
 Wenn die Unsch"arfe verkleinert wird, mit der $A$ bekannt ist, dann 
 vergr"ossert sich die Unsch"arfe, mit der $B$ bekannt ist.
 
+Um das Unsch"arfeprodukt nach unten absch"atzen zu k"onnen, m"ussen
+wir $\langle a|b\rangle$ ausrechnen:
+\begin{align}
+\langle a|b\rangle
+&=
+\langle\psi|\,
+(A-\langle A\rangle)(B-\langle B\rangle)
+\,|\psi\rangle
+=
+\langle\psi|\,
+AB-\langle A\rangle B-A\langle B\rangle
++
+\langle A\rangle\langle B\rangle
+\,|\psi\rangle
+\notag
+\\
+&=
+\langle\psi|\,AB\,|\psi\rangle
+-\langle B\rangle\langle\psi|\,A\,|\psi\rangle
+-\langle A\rangle\langle\psi|\,B\,|\psi\rangle
++
+\langle A\rangle\langle B\rangle
+\notag
+\\
+&=
+\langle\psi|\,AB\,|\psi\rangle
+-
+\langle A\rangle\langle B\rangle.
+\label{abausrechnung}
+\end{align}
+
 %
 % Unschaerferelation
 %
@@ -218,7 +249,8 @@ also zu untersuchen, wie gross die linke Seite von
 (\ref{cauchy-schwarz-uncertainty}) tats"achlich ist.
 Setzen wir $z=\langle a|b\rangle$, dann ist $|z|^2$ die linke Seite
 von (\ref{cauchy-schwarz-uncertainty}). Den Betrag kann man mit Hilfe
-von Real- und Imagin"arteil ausrechnen:
+von Real- und Imagin"arteil unter Zuhilfenahme von (\ref{abausrechnung})
+ausrechnen:
 \[
 |z|^2
 =
