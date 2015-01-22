@@ -1,0 +1,50 @@
+Berechnen Sie die Entwicklung der Eigenzust"ande des Zweizustandssystems
+mit zeitabh"angigem Hamilton-Operator
+\[
+H(t)
+=
+\begin{pmatrix}
+E_1+\varepsilon\cos\omega t & 0                          \\
+0                           & E_2-\varepsilon\cos\omega t
+\end{pmatrix}
+\]
+f"ur $\varepsilon\ll E_i$.
+
+\begin{loesung}
+Die Schr"odingergleichung f"ur den zeitabh"angigen Zustandsvektor
+\[
+|\psi(t)\rangle
+=
+\begin{pmatrix}
+v_1(t) \\
+v_2(t)
+\end{pmatrix}
+\]
+ist das Differentialgleichungssystem
+\begin{align*}
+i\hbar\dot v_1&=(E_1+\varepsilon\cos\omega t)v_1,\\
+i\hbar\dot v_2&=(E_2-\varepsilon\cos\omega t)v_2.
+\end{align*}
+Durch Separieren
+\[
+\int\frac{dv_1}{v_1}
+=
+\frac{1}{i\hbar}\int E_1 + \varepsilon\cos\omega t\,dt
+=
+\frac1{i\hbar}\biggl(E_1t+\frac{\varepsilon}{\omega}\sin\omega t\biggr)
+\]
+kann man die L"osungen
+\begin{align*}
+v_1(t)
+&=
+v_1(0)e^{\frac1{i\hbar}(E_1t+\frac{\varepsilon}{\omega}\sin\omega t)}
+,\qquad\text{und}
+\\
+v_2(t)
+&=
+v_2(0)e^{\frac1{i\hbar}(E_2t-\frac{\varepsilon}{\omega}\sin\omega t)}
+\end{align*}
+erraten, was man auch durch Einsetzen in die Schr"odingergleichung
+nachpr"ufen kann.
+\end{loesung}
+

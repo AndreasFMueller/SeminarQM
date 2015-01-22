@@ -655,7 +655,15 @@ P(\phi|\psi)=|\langle \phi|\psi\rangle|^2=
 \]
 in einem Strahl von Teilchen im Zustand $|\psi\rangle$ ein Teilchen zu
 finden, welches sich im Zustand $|\phi\rangle$ befindet.
-\item Kann ein Zielzustand auf "uber verschiedene Zwischenzust"ande
+\item
+Eine Linearkombination $a\,|1\rangle + b\,|2\rangle$ bedeutet nicht,
+dass der Anteil $|a|^2$ der Teilchen im Zustand $|1\rangle$ sind
+w"ahrend $|b|^2$ der Teilchen im Zustand $|2\rangle$ sind.
+Vielmehr befinden sich alle Teilchen im gleichen Zustand,
+erst bei der Messung wird bestimmt, in welchem Zustand ein Teilchen
+vorgefunden wird.
+\item
+Kann ein Zielzustand auf "uber verschiedene Zwischenzust"ande
 erreicht werden, dann ist die Transformationsfunktion die Summe
 der Transformationsfunktionen f"ur die Zwischenzust"ande:
 \[
@@ -669,9 +677,9 @@ das Produkt der Transformationsfunktionen der einzelnen Schritte.
 \item 
 Observable sind selbstadjungierte Operatoren.
 Bilden die Zust"ande $|i\rangle$ eine Basis, in der die Observable $A$ 
-diagonal ist, dann ist das Matrix-Element $\langle i|A|i\rangle$ der
+diagonal ist, dann ist das Matrix-Element $\langle i|\,A\,|i\rangle$ der
 Wert der Observablen im Zustand $|i\rangle$. F"ur einen beliebigen
-Zustand $|\psi\rangle$ ist $\langle\psi|V|\psi\rangle$ der Erwartungswert
+Zustand $|\psi\rangle$ ist $\langle\psi|\,V\,|\psi\rangle$ der Erwartungswert
 der Observablen $V$ im Zustand $|\psi\rangle$.
 \end{enumerate}
 
@@ -686,6 +694,8 @@ Differentialgleichung ist, die zusammen mit einer Anfangsbedingung die
 gesammte zuk"unftige Bewegung festlegt.
 Wir m"ochten ein "ahnlich leistungsf"ahiges Prinzip auch in der
 Quantenmechanik haben.
+
+\subsection{Schr"odingergleichung}
 Getreu mit dem bisher entwickelten Formalismus k"onnen wir bestenfalls
 erwarten, eine Differentialgleichung f"ur die Entwicklung des Zustandes
 zu finden, also zum Beispiel
@@ -848,6 +858,101 @@ Eigenvektoren von $H$ bestimmt hat.
 % XXX Zeitentwicklung des Zweizustandssystems
 %
 \subsection{Zeitentwicklung eines Zweizustandssystems}
+Der Hamilton-Operator eines Zweizustandssystems ist eine hermitesche
+$2\times 2$-Matrix
+\[
+H=\begin{pmatrix}H_{11}&H_{12}\\H_{21}&H_{22}\end{pmatrix}.
+\]
+In den meisten praktischen F"allen k"onnen wir davon ausgehen, dass
+der Hamilton-Operator reell ist, also gilt sogar $H_{12}=H_{21}$.
+
+Die Schr"odinger-Gleichung beschreibt die Zeitentwicklung eines
+Zustands $|\psi(t)\rangle$ nach
+\[
+i\hbar\frac{d}{dt}\,|\psi(t)\rangle = H\, |\psi(t)\rangle.
+\]
+Wir bestimmen eine Basis aus Eigenvektoren von $H$.
+Die charakteristische Gleichung ist
+\begin{align*}
+0&=
+\left|\begin{matrix}
+H_{11}-E&H_{12}\\
+H_{21}&H_{22}-E
+\end{matrix}\right|
+=
+(H_{11}-E)(H_{22}-E)-H_{12}H_{21}
+\\
+&=
+E^2 - (H_{11}+H_{22})E + H_{11}H_{22}-H_{12}H_{21},
+\end{align*}
+woraus wir die Energieeigenwerte
+\begin{align*}
+E_{1,2}
+&=
+\frac{H_{11}+H_{22}}2\pm\sqrt{\frac{(H_{11}+H_{22})^2}4-H_{11}H_{22}+H_{12}H_{21}}
+\\
+&=
+\frac{H_{11}+H_{22}}2\pm\sqrt{\frac{(H_{11}-H_{22})^2}4+H_{12}^2}
+\\
+H_{11}-E_1
+&=
+\frac{H_{11}-H_{22}}2-\sqrt{\frac{(H_{11}-H_{22})^2}4+H_{12}^2}
+\\
+H_{22}-E_2
+&=
+-\frac{H_{11}-H_{22}}2+\sqrt{\frac{(H_{11}-H_{22})^2}4+H_{12}^2}
+\end{align*}
+finden.
+Die zugeh"origen Eigenvektoren k"onnen wenigstens bis auf die Normierung
+ebenfalls berechnet werden,
+\begin{align*}
+|E_1\rangle
+&\sim
+\begin{pmatrix}
+  -H_{12} \\
+H_{11}-E_1
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+H_{22}-E_1 \\
+   -H_{12}
+\end{pmatrix},
+&
+|E_2\rangle
+&\sim
+\begin{pmatrix}
+   -H_{12} \\
+H_{11}-E_2
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+H_{22}-E_2 \\
+   -H_{12}
+\end{pmatrix}.
+\end{align*} 
+Ein Zustand $|\psi\rangle$ kann als Linearkombination dieser zwei
+Basiszust"ande geschrieben werden, woraus sich die Zeitentwicklung
+\[
+|\psi\rangle
+=
+a_1\,|E_1\rangle
++
+a_2\,|E_2\rangle
+\qquad\Rightarrow\qquad
+|\psi(t)\rangle
+=
+a_1e^{i\hbar E_1t}\,|E_1\rangle
++
+a_2e^{i\hbar E_2t}\,|E_2\rangle
+\]
+ergibt.
+Die Koeffizienten $a_1$ und $a_2$ k"onnen mit Hilfe der Skalarprodukte
+\begin{align*}
+a_1&=\langle E_1|\psi(0)\rangle,
+&
+a_2&=\langle E_2|\psi(0)\rangle
+\end{align*}
+gefunden werden.
 
 %
 % Zeitentwicklung von Observablen
@@ -897,5 +1002,7 @@ Hamiltonoperator vertauschen.
 \input uebungsaufgaben/02002.tex
 \item
 \input uebungsaufgaben/02003.tex
+\item
+\input uebungsaufgaben/02004.tex
 \end{uebungsaufgaben}
 
