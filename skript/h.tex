@@ -12,7 +12,7 @@ ist
 \begin{equation}
 H=\frac1{2m_e}p^2 + V(r)
 =\frac1{2m_e}p^2 - \frac1{4\pi\varepsilon_0}\frac{e^2}{r}.
-\label{h2hamilton}
+\label{skript:h2hamilton}
 \end{equation}
 Darin ist $m_e$ die Masse des Elektrons, $e$ ist die Elementarladung.
 $r$ ist die Entfernung eines Punktes vom Nullpunkt.
@@ -30,10 +30,10 @@ p_y\rightarrow \frac{\hbar}{i}\frac{\partial}{\partial y},
 \text{und}
 \quad
 p_y\rightarrow \frac{\hbar}{i}\frac{\partial}{\partial z}.
-\label{h2quant}
+\label{skript:h2quant}
 \end{equation}
-ersetzt werden. Wendet man die Ersetzungen (\ref{h2quant}) auf die
-Hamilton-Funktion (\ref{h2hamilton}) an, erh"alt man den Hamilton-Operator
+ersetzt werden. Wendet man die Ersetzungen (\ref{skript:h2quant}) auf die
+Hamilton-Funktion (\ref{skript:h2hamilton}) an, erh"alt man den Hamilton-Operator
 f"ur das Wasserstoff-Atom:
 \[
 \hat H=-\frac{\hbar^2}{2m_e}\biggl(
@@ -48,16 +48,16 @@ Operators. Wir erwarten eine Menge von Zustandsvektoren $|\psi\rangle$
 mit zugeh"origen Eigenwerten $E$, so dass
 \begin{equation}
 \hat H\,|\psi\rangle = E\,|\psi\rangle.
-\label{h2schroedinger}
+\label{skript:h2schroedinger}
 \end{equation}
-(\ref{h2schroedinger}) ist eine partielle Differentialgleichung.
+(\ref{skript:h2schroedinger}) ist eine partielle Differentialgleichung.
 Wir beabsichtigen nicht, eine allgemeine Theorie der partiellen
 Differentialgleichungen zu entwickeln.
 F"ur unsere Zwecke reicht es, eine ad hoc L"osung zu finden.
 
 \section{Kugelkoordinaten}
 \rhead{Kugelkoordinaten}
-Das Eigenwertproblem (\ref{h2schroedinger}) kann in kartesischen Koordinaten
+Das Eigenwertproblem (\ref{skript:h2schroedinger}) kann in kartesischen Koordinaten
 nicht direkt gel"ost werden. Dies liegt daran, dass die kartesischen
 Koordinaten die vorhandene Kugelsymmetrie des Problems nicht ausreichend
 ber"ucksichtigen. Es ist viel besser, Kugelkoordinaten zu verwenden.
@@ -92,7 +92,7 @@ r^2\frac{\partial}{\partial r}
 
 \section{L"osung der Schr"odingergleichung}
 \rhead{L"osung der Schr"odingergleichung}
-Wir suchen jetzt also L"osungen des Eigenwertproblems (\ref{h2schroedinger})
+Wir suchen jetzt also L"osungen des Eigenwertproblems (\ref{skript:h2schroedinger})
 als $L^2$-Funktionen in Kugel-Koordinaten $(r,\varphi,\vartheta)$. Wir
 verwenden dazu die Methode der Separation der Variablen.
 
@@ -105,7 +105,7 @@ abh"angen. Wir setzen also an
 \psi(r,\vartheta,\varphi)=R(r)\cdot
 \Theta(\vartheta)\cdot
 \Phi(\varphi)
-\label{sepansatz}
+\label{skript:sepansatz}
 \end{equation}
 und setzen dies in das Eigenwertproblem ein. Dazu brauchen wir die Ableitung
 nach $r$, $\varphi$ und $\vartheta$ von $\psi(r,\varphi,\vartheta)$, doch
@@ -147,7 +147,7 @@ R(r)
 \frac{R(r)}{r^2\sin^2\vartheta}
 \cdot \Theta(\vartheta)
 \cdot \Phi''(\varphi)
-\label{separated}
+\label{skript:separated}
 \end{equation}
 Man beachte, dass in allen Termen immer nur einer der Faktoren des
 Separationsansatzes abgeleitet wurde.
@@ -161,11 +161,11 @@ zu
 \]
 
 \subsection{Separation von $\varphi$}
-Keine der drei Faktoren des Ansatzes (\ref{sepansatz}) f"ur
+Keine der drei Faktoren des Ansatzes (\ref{skript:sepansatz}) f"ur
 $\psi(r,\vartheta,\varphi)$ kann verschwinden, sonst erhielten wir die 
 Nullfunktion, also nicht einen Eigenvektor von $\hat H$.
 Nat"urlich k"onnen die Faktoren einzelne Nullstellen haben, aber ausserhalb
-dieser Nullstellen kann man die Gleichung (\ref{separated}) durch 
+dieser Nullstellen kann man die Gleichung (\ref{skript:separated}) durch 
 $\psi(r,\vartheta,\varphi)$ teilen. Wir erhalten
 \begin{equation*}
 -\frac{\hbar^2}{2m_e}\biggl(
@@ -207,7 +207,7 @@ etwas "ubersichtlicher:
 \frac{2m_eE}{\hbar^2}\biggr)r^2\sin^2\vartheta
 =
 -\frac{\Phi''(\varphi)}{\Phi(\varphi)}.
-\label{phisepariert}
+\label{skript:phisepariert}
 \end{equation}
 Die linke Seite dieser Gleichung h"angt nicht von $\varphi$ ab, also
 darf auch die rechte Seite nicht von $\varphi$ abh"angen, sie muss
@@ -225,7 +225,7 @@ wohl bekannt: $e^{im\varphi}$ und $e^{-im\varphi}$. Damit die Funktion
 periodisch wird, muss $m$ eine nat"urliche Zahl sein, $m=0,1,2,\dots$.
 
 \subsection{Separation von $r$ und $\vartheta$}
-In der Gleichung (\ref{phisepariert}) kommt auf der linken Seite nur
+In der Gleichung (\ref{skript:phisepariert}) kommt auf der linken Seite nur
 noch $r$ und $\vartheta$ vor.  Die rechte Seite haben wir inzwischen auf
 die m"oglichen Werte $m^2$ reduziert. Teilen wir die Gleichung durch
 $\sin^2\vartheta$, und bringen die von $\vartheta$ abh"angenden Terme
@@ -241,9 +241,9 @@ auf die rechte Seite, erhalten wir die Gleichung
 \frac{d}{d\vartheta}\bigl(\sin\vartheta \Theta'(\vartheta)\bigr)
 +
 \frac{m^2}{\sin^2\vartheta}
-\label{thetasepariert}
+\label{skript:thetasepariert}
 \end{equation}
-Die linke Seite von (\ref{thetasepariert}) h"angt nicht von $\vartheta$
+Die linke Seite von (\ref{skript:thetasepariert}) h"angt nicht von $\vartheta$
 ab, also kann auch die rechte Seite nicht von $\vartheta$ abh"angen.
 Ebenso h"angt die rechte Seite nicht von $r$, also kann auch die linke
 nicht von $r$ abh"angen. Beide Seiten m"ussen also konstant sein,
@@ -261,7 +261,7 @@ kann dann umgeschrieben werden in eine Ableitung nach $z$
 \frac{d}{dz}&=\frac1{\sin\vartheta}\frac{d}{d\vartheta}
 \end{align*}
 Nat"urlich gilt auch $1-z^2=\sin^2\vartheta$, so dass die rechte Seite
-von (\ref{thetasepariert}) zu
+von (\ref{skript:thetasepariert}) zu
 \begin{equation}
 -
 \frac1{\Theta(\vartheta)}
@@ -298,7 +298,7 @@ oder
 \frac{m^2}{1-z^2}
 \biggr)Z(z)
 =0
-\label{legendregleichung}
+\label{skript:legendregleichung}
 \end{equation}
 
 \subsubsection{Spezialfall $m=0$}
@@ -318,7 +318,7 @@ Wir versuchen eine L"osung in Form eines Polynoms vom
 Grade $l$, also 
 \begin{equation}
 P_l(z)=a_0+a_1z+\dots+a_lz^l.
-\label{legendreansatz}
+\label{skript:legendreansatz}
 \end{equation}
 Setzen wir dies in die Gleichung ein, und betrachten nur die
 Terme vom Grad $z^l$:
@@ -338,7 +338,7 @@ $Q_l$, diese ist jedoch nicht eschr"ankt und kommt daher als L"osungsfunktion
 f"ur unser Problem nicht in Frage.
 
 \subsubsection{Legendre-Polynome}
-Indem man den Ansatz (\ref{legendreansatz}) f"ur alle Koeffizienten
+Indem man den Ansatz (\ref{skript:legendreansatz}) f"ur alle Koeffizienten
 auswertet, nicht nur f"ur $a_l$, kann man die Polynome $P_l(z)$ 
 bestimmen, sie heissen Legendre-Polynome.
 "Uber die Jahre wurde eine umfangreiche Theorie der Legendre-Polynome
@@ -399,7 +399,7 @@ Die Funktion $R(r)$ erf"ullt die Differentialgleichung
 -\frac{\lambda}{r^2}
 \biggr)R(r)
 &=0
-\label{radialgleichung}
+\label{skript:radialgleichung}
 \end{align}
 Wir wissen bereits, dass $\lambda=l(l+1)$, also k"onnen wir die
 Gleichung umformen zu
@@ -427,7 +427,7 @@ R'(r)&=\frac{\chi'(r)r-\chi(r)}{r^2},\\
 =
 \chi''(r)r+\chi'(r)-\chi'(r)=r\chi''(r).
 \end{align*}
-Setzt man dies in die Differentialgleichung (\ref{radialgleichung}) ein,
+Setzt man dies in die Differentialgleichung (\ref{skript:radialgleichung}) ein,
 erh"alt
 \begin{align*}
 \frac{\chi''(r)}{r}
@@ -464,7 +464,7 @@ R(r)=\biggl(\frac{2r}{n}\biggr)^le^{-\frac{r}{n}}w\biggl(\frac{2r}{n}\biggr)
 %\[
 %R'(r)=\frac{\chi'(r)r-\chi(r)}{r^2},
 %\]
-%Der erste Term in (\ref{thetasepariert}) wird dadurch besonders einfach,
+%Der erste Term in (\ref{skript:thetasepariert}) wird dadurch besonders einfach,
 %n"amlich
 %\[
 %\frac1{r^2}\frac{d}{dr}\bigl(r^2R'(r)\bigr)

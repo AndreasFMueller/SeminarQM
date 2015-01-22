@@ -69,12 +69,12 @@ mit den Zahlen als Input darstellt.
 \end{tabular}
 \caption{Logische Gatter von links nach rechts UND, ODER, XOR,
 in der unteren Reihe invertiert.
-\label{gates}}
+\label{skript:gates}}
 \end{figure}
 \index{Halbaddierer}
 \index{Volladdierer}
 Die grundlegenden logischen Operationen werden dann durch sogenannte
-Gatter implementiert, deren Schaltbilder in Abbildung~\ref{gates} dargestellt
+Gatter implementiert, deren Schaltbilder in Abbildung~\ref{skript:gates} dargestellt
 sind.
 \begin{figure}
 \centering
@@ -82,7 +82,7 @@ sind.
 \caption{Halbaddierer, der Ausgang $\Sigma$ ist die Summe der beiden
 Eing"ange $A$ und $B$, der Ausgang $C_\text{out}$ wird aktiv, wenn
 ein "Ubertrag auftritt.
-\label{halfadder}}
+\label{skript:halfadder}}
 \end{figure}
 \begin{figure}
 \centering
@@ -90,11 +90,11 @@ ein "Ubertrag auftritt.
 \caption{Volladdierer, berechnet die Summe der beiden Inputs $A$ und $B$
 und den "Ubertrag $C_\text{in}$, und gibt die Summe $\Sigma$ und den
 "Ubertrag $C_\text{out}$ aus.
-\label{fulladder}}
+\label{skript:fulladder}}
 \end{figure}
 Aus den Grundoperationn lassen sich komplexere Schaltungen 
-aufbauen, zum Beispiel das Halbaddierwerk in Abbildung~\ref{halfadder}
-oder der Volladdierer in Abbildung~\ref{fulladder}.
+aufbauen, zum Beispiel das Halbaddierwerk in Abbildung~\ref{skript:halfadder}
+oder der Volladdierer in Abbildung~\ref{skript:fulladder}.
 Die Digitaltechnik lehrt, wie man durch Kombination solcher Schaltung
 beliebig komplexe Berechnungen anstellen kann.
 
@@ -228,7 +228,7 @@ gewissen Wahrscheinlichkeit erkennt, wenn eine Zahl nicht Primzahl ist
 \cite{skript:miller-rabin}.
 
 \begin{satz}[Miller-Rabin Primzahlkriterium]
-\label{quantencomputer:miller-rabin-kriterium}
+\label{skript:quantencomputer:miller-rabin-kriterium}
 \index{Primzahlkriterium!Miller-Rabin}
 Gegeben ist eine Zahl $n$. W"ahle eine zuf"allige Zahl $a<n$. Sei $d$
 eine ungerade Zahl so, dass $2^sd=n-1$. Wenn 
@@ -251,15 +251,15 @@ Wahrscheinlichkeit, eine Zahl $n$ nicht als zusammengesetzte Zahl zu
 erkennen weiter reduzieren:
 
 \begin{satz}[Miller-Rabin Primzahltest]
-\label{quantencomputer:miller-rabin-test}
+\label{skript:quantencomputer:miller-rabin-test}
 \index{Primzahltest!Miller-Rabin}
 Wenn eine Zahl $n$ f"ur $k$ zuf"allige Zahlen $a<n$ vom
-Primzahlkriterium~\ref{quantencomputer:miller-rabin-kriterium}
+Primzahlkriterium~\ref{skript:quantencomputer:miller-rabin-kriterium}
 nicht als zusammengesetzt ist, dann ist die Wahrscheinlichkeit,
 dass sie zusammengesetzt ist, kleiner als $4^{-k}$.
 \end{satz}
 
-Der Satz~\ref{quantencomputer:miller-rabin-test} liefert einen Algorithmus
+Der Satz~\ref{skript:quantencomputer:miller-rabin-test} liefert einen Algorithmus
 mit polynomieller Laufzeit, der die Primzahleigenschaft testen kann,
 aber nur mit einer gewissen beschr"ankten Wahrscheinlichkeit.
 Die Probleme, die sich mit einem probabilistischen Algorithmus mit

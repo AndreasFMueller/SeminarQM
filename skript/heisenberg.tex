@@ -202,7 +202,7 @@ Zust"ande $|a\rangle$ und $|b\rangle$, also
 Falls also die linke Seite nicht $0$ ist, dann k"onnen wir die beiden
 Gr"ossen $A$ und $B$ nicht beliebig genau kennen.
 Die Ungenauigkeit, mit der $A$ und $B$ bekannt sein k"onnen, sind "uber
-die Ungleichung (\ref{cauchy-schwarz-uncertainty}) miteinander verkn"upft.
+die Ungleichung (\ref{skript:cauchy-schwarz-uncertainty}) miteinander verkn"upft.
 Wenn die Unsch"arfe verkleinert wird, mit der $A$ bekannt ist, dann 
 vergr"ossert sich die Unsch"arfe, mit der $B$ bekannt ist.
 
@@ -234,7 +234,7 @@ AB-\langle A\rangle B-A\langle B\rangle
 \langle\psi|\,AB\,|\psi\rangle
 -
 \langle A\rangle\langle B\rangle.
-\label{abausrechnung}
+\label{skript:abausrechnung}
 \end{align}
 
 %
@@ -243,13 +243,13 @@ AB-\langle A\rangle B-A\langle B\rangle
 \section{Unsch"arferelation}
 \rhead{Unsch"arferelation}
 \subsection{Robertson-Schr"odinger-Unsch"arferelation}
-Die Ungleichung (\ref{cauchy-schwarz-uncertainty}) liefert eine
+Die Ungleichung (\ref{skript:cauchy-schwarz-uncertainty}) liefert eine
 Unsch"arferelation, falls die linke Seite $>0$ ist. Es ist
 also zu untersuchen, wie gross die linke Seite von 
-(\ref{cauchy-schwarz-uncertainty}) tats"achlich ist.
+(\ref{skript:cauchy-schwarz-uncertainty}) tats"achlich ist.
 Setzen wir $z=\langle a|b\rangle$, dann ist $|z|^2$ die linke Seite
-von (\ref{cauchy-schwarz-uncertainty}). Den Betrag kann man mit Hilfe
-von Real- und Imagin"arteil unter Zuhilfenahme von (\ref{abausrechnung})
+von (\ref{skript:cauchy-schwarz-uncertainty}). Den Betrag kann man mit Hilfe
+von Real- und Imagin"arteil unter Zuhilfenahme von (\ref{skript:abausrechnung})
 ausrechnen:
 \[
 |z|^2
@@ -258,8 +258,8 @@ ausrechnen:
 =
 \biggl(\frac{z+\bar z}2\biggr)^2 + \biggl(\frac{z-\bar z}{2i}\biggr)^2
 \]
-(Vergleiche hierzu auch die Formeln (\ref{realteil-formel}) und 
-(\ref{imaginaerteil-formel})).
+(Vergleiche hierzu auch die Formeln (\ref{skript:realteil-formel}) und 
+(\ref{skript:imaginaerteil-formel})).
 Jetzt setzen wir $z=\langle a|b\rangle$ ein:
 \begin{equation}
 |\langle a|b\rangle|^2
@@ -267,7 +267,7 @@ Jetzt setzen wir $z=\langle a|b\rangle$ ein:
 \biggl(\frac{\langle a|b\rangle + \langle b|a\rangle}2\biggr)^2
 +
 \biggl(\frac{\langle a|b\rangle - \langle b|a\rangle}{2i}\biggr)^2
-\label{unschaerfe2}
+\label{skript:unschaerfe2}
 \end{equation}
 Wir m"ussen also die Terme $\langle a|b\rangle + \langle b|a\rangle$
 und $\langle a|b\rangle - \langle b|a\rangle$ ausrechnen:
@@ -287,7 +287,7 @@ und $\langle a|b\rangle - \langle b|a\rangle$ ausrechnen:
 =
 \frac1{2i}\langle [A,B]\rangle
 \end{align*}
-Eingesetzt in (\ref{unschaerfe2}) finden wir
+Eingesetzt in (\ref{skript:unschaerfe2}) finden wir
 \[
 |\langle a|b\rangle|^2
 =
@@ -300,11 +300,11 @@ Eingesetzt in (\ref{unschaerfe2}) finden wir
 \biggr)^2.
 \]
 Eingesetzt in die urspr"ungliche Unsch"arferelation
-(\ref{cauchy-schwarz-uncertainty}) erhalten wir jetzt die Unsch"arferelation
+(\ref{skript:cauchy-schwarz-uncertainty}) erhalten wir jetzt die Unsch"arferelation
 von Robertson und Schr"odinger:
 
 \begin{satz}
-\label{robertson-schroedinger-unschaerfe}
+\label{skript:robertson-schroedinger-unschaerfe}
 Sind $A$ und $B$ selbstadjungierte Operatoren und $|\psi\rangle$ ein
 Zustand, dann gilt die Unsch"arferelation
 \begin{equation}
@@ -316,7 +316,7 @@ Zustand, dann gilt die Unsch"arferelation
 \biggl(
 \frac{\langle[A,B]\rangle}{2i}
 \biggr)^2.
-\label{uncertainty}
+\label{skript:uncertainty}
 \end{equation}
 \end{satz}
 
@@ -346,14 +346,14 @@ Dies ist die Heisenbergsche Unsch"arferelation.
 
 \subsection{Andere Unsch"arferelationen}
 Heisenberg-Unsch"arfe war auch schon Thema bei XKCD, siehe
-Abbildung~\ref{heisenberg:xkcd} und \cite{skript:xkcd}.
+Abbildung~\ref{skript:heisenberg:xkcd} und \cite{skript:xkcd}.
 \begin{figure}
 \centering
 \includegraphics[width=0.8\hsize]{images/xkcd-location-sharing.png}
 \caption{XKCD Comic zur Heisenberg Unsch"arfe. Die Benutzerin stellt sicher,
 dass die Heisenbergsche Unsch"arferelation nicht verletzt wird. Man kann nicht
 sowohl den Ort als auch den Impuls wissen.
-\label{heisenberg:xkcd}}
+\label{skript:heisenberg:xkcd}}
 \end{figure}
 Im Kapitel~\ref{chapter:drehimpuls} werden wir ein weiteres Paar
 von Operatoren wie Ort und Impuls kennen lernen.
@@ -370,7 +370,7 @@ Die Vertauschungsrelationen f"ur $\Phi$ und $L_3$ sind
 [\Phi,L_3]=\frac{\hbar}{i}\operatorname{id},
 \]
 das entspricht den Vertauschungsrelationen von $X$ und $P$.
-Zu $\Phi$ und $L_3$ geh"ort nach Satz~\ref{robertson-schroedinger-unschaerfe}
+Zu $\Phi$ und $L_3$ geh"ort nach Satz~\ref{skript:robertson-schroedinger-unschaerfe}
 die Unsch"arferelation
 \[
 \Delta\varphi\cdot\Delta l_3 \ge \frac{\hbar}2,
@@ -378,7 +378,7 @@ die Unsch"arferelation
 man kann also den Drehimpuls und die Richtung $\varphi$ nicht gleichzeitig
 beliebig genau kennen.
 Dies erkl"art den Mouse-Over-Text des Comics in
-Abbildung~\ref{heisenberg:xkcd}:
+Abbildung~\ref{skript:heisenberg:xkcd}:
 \begin{quote}
 Our phones must have great angular momentum sensors because
 the compasses really suck.

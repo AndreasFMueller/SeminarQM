@@ -94,12 +94,12 @@ einer komplexen Zahl $z=a+bi$ direkt ausdr"ucken:
 \operatorname{Re}z 
 &=
 a=\frac{(a+bi)+(a-bi)}2=\frac{z+\bar z}2
-\label{realteil-formel}
+\label{skript:realteil-formel}
 \\
 \operatorname{Im}z
 &=
 b=\frac{(a+bi)-(a-bi)}{2i}=\frac{z-\bar z}{2i}.
-\label{imaginaerteil-formel}
+\label{skript:imaginaerteil-formel}
 \end{align}
 
 \subsection{Polardarstellung}
@@ -149,12 +149,12 @@ also nur noch untersucht werden, welche Bedeutung $e^{bi}$ hat.
 Betrachten wir die Funktion $f(t)= e^{it}$. Die Ableitungen von $f$ sind
 \begin{align}
 f'(t)&=ie^{it}=if(t)\notag\\
-f''(t)&=-f(t).\label{exp-dgl}
+f''(t)&=-f(t).\label{skript:exp-dgl}
 \end{align}
 Die Funktion $f$ muss also eine L"osung der Differentialgleichung
-(\ref{exp-dgl}) sein, welche die Anfangsbedingungen $f(0)=1$ und
+(\ref{skript:exp-dgl}) sein, welche die Anfangsbedingungen $f(0)=1$ und
 $f'(0)=if(0)=i$ erf"ullen muss.
-Doch die Differentialgleichung (\ref{exp-dgl}) hat die L"osungen
+Doch die Differentialgleichung (\ref{skript:exp-dgl}) hat die L"osungen
 \[
 f(t)=a\cos t+b\sin t.
 \]
@@ -167,7 +167,7 @@ so dass wir jetzt $e^{it}$ ausrechnen k"onnen:
 \begin{satz}[Euler]
 \begin{align}
 e^{it}=\cos t+i\sin t.
-\label{euler-formula}
+\label{skript:euler-formula}
 \end{align}
 \end{satz}
 
@@ -182,8 +182,8 @@ auszudr"ucken:
 z=|r|\cdot e^{i\operatorname{arg}z}.
 \]
 Die Real- und Imagin"arteile von $e^{it}$ sind $\cos t$ und $\sin t$,
-wir k"onnen Sie auch mit den Formeln (\ref{realteil-formel}) und
-(\ref{imaginaerteil-formel}) ausdr"ucken:
+wir k"onnen Sie auch mit den Formeln (\ref{skript:realteil-formel}) und
+(\ref{skript:imaginaerteil-formel}) ausdr"ucken:
 \begin{align*}
 \cos t
 &=
@@ -242,9 +242,9 @@ E + tJ - \frac{t^2}{2!} E - \frac{t^3}{3!} J + \frac{t^4}{4!} E
 &=\biggl(1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \frac{t^6}{6!} + \dots\biggr) E
 + \biggl(t - \frac{t^3}{3!} + \frac{t^5}{5!} - \frac{t^7}{7!} + \dots\biggr) J
 = E \cos t + J \sin t.
-\label{eulermatrixdarstellung}
+\label{skript:eulermatrixdarstellung}
 \end{align}
-Die Eulerformel (\ref{euler-formula}) l"asst sich also auch in der
+Die Eulerformel (\ref{skript:euler-formula}) l"asst sich also auch in der
 Matrixdarstellung der komplexen Zahlen wiedergewinnen.
 
 \section{Komplexe Matrizen}
@@ -439,7 +439,7 @@ U=
 \begin{pmatrix}
 a&b\\-\bar b&\bar a
 \end{pmatrix}
-\label{su2form}
+\label{skript:su2form}
 \end{equation}
 mit der zus"atzlichen Bedingung $|a|^2 + |b|^2=1$. Sie erf"ullen
 \begin{align*}
@@ -468,9 +468,9 @@ a&b\\-\bar b&\bar a
 a\bar a+\bar bb = |a|^2 + |b|^2=1.
 \end{align*}
 Solche Matrizen sind also nicht nur unit"ar, sondern haben auch Determinante 1.
-Multipliziert man zwei Matrizen der Form (\ref{su2form}),
+Multipliziert man zwei Matrizen der Form (\ref{skript:su2form}),
 wird das Produkt auch wieder Determinante 1 haben, aber es ist nicht klar,
-dass es sich in der Form (\ref{su2form}) schreiben l"asst.
+dass es sich in der Form (\ref{skript:su2form}) schreiben l"asst.
 Daher rechnen wir das Produkt aus, wir erhalten
 \begin{align*}
 \begin{pmatrix}  a                        & b                      \\
@@ -485,8 +485,8 @@ Daher rechnen wir das Produkt aus, wir erhalten
                  -(\overline{ab+b\bar c}) & \overline{ac-b\bar d}  \end{pmatrix}
 .
 \end{align*}
-Das Produkt zweier Matrizen der Form (\ref{su2form}) ist also wieder eine
-Matrix der Form (\ref{su2form}).
+Das Produkt zweier Matrizen der Form (\ref{skript:su2form}) ist also wieder eine
+Matrix der Form (\ref{skript:su2form}).
 Die Menge dieser Matrizen ist demzufolge abgeschlossen unter
 Matrixmultiplikation und Bildung der Inversen.
 Man nennt diese Matrizen die Gruppe der speziellen unit"aren Matrizen:
@@ -598,7 +598,7 @@ t^n\biggl(
 \\
 &=
 1+t\operatorname{tr}A+\dots+t^n\operatorname{det}A
-\label{detandtrace}
+\label{skript:detandtrace}
 \end{align}
 
 %
@@ -630,7 +630,7 @@ sind die Eigenwerte der Matrix, und es muss sichergestellt werden,
 dass keine komplexen Eigenwerte auftreten k"onnen.
 
 \begin{satz}
-\label{ewreell}
+\label{skript:ewreell}
 Die Eigenwerte einer selbstadjungierten Matrix sind reell.
 \end{satz}
 \begin{proof}[Beweis]
@@ -661,7 +661,7 @@ verschiedenen Eigenwerten sind orthogonal.
 Wir beweisen nur die Orthogonalit"at von Eigenvektoren zu verschiedenen 
 Eigenwerten. Seien also $v_1,v_2$ Eigenvektoren zu zwei verschiedenen
 Eigenwerten $\lambda_1,\lambda_2$. Die beiden Eigenwerte sind nach
-\label{ewreell} reell. Dann gilt
+\label{skript:ewreell} reell. Dann gilt
 \begin{align*}
 (v_1,Av_2)&=\lambda_2(v_1,v_2)
 \\
@@ -752,7 +752,7 @@ Jacobi-Identit"at:
 [C,[A, B]]
 =
 0
-\label{jacobi}
+\label{skript:jacobi}
 \end{equation}
 Um dies einzusehen Rechnen wir die Kommutatoren aus:
 \begin{align*}
@@ -781,7 +781,7 @@ CAB-CBA-ABC+BAC
 \end{align*}
 Ein Vektorraum mit einer antisymmetrischen, bilinearen Abbildung
 $[\;\cdot\;,\;\cdot\;]$,
-welche die Jacobi-Identit"at (\ref{jacobi}) erf"ullt, heisst eine
+welche die Jacobi-Identit"at (\ref{skript:jacobi}) erf"ullt, heisst eine
 Lie-Algebra.
 So wie der Hamilton-Operator als Erzeuger der Zeitentwicklung das
 leichter zu manipulierende Objekt ist, ist die Liealgebra zu einer
@@ -948,7 +948,7 @@ Darin wurde aber die Bedingung noch nicht abgebildet, dass Matrizen
 in $\operatorname{SU}(2)$ die Determinante $1$ haben m"ussen, wir
 haben bis jetzt nur Unitarit"at verwendet. Wir m"ussen also noch
 verlangen, dass in erster N"aherung $\det(E+tA)=0$ ist.
-Aus Formel (\ref{detandtrace}) schliessen wir, dass die Spur
+Aus Formel (\ref{skript:detandtrace}) schliessen wir, dass die Spur
 $\operatorname{tr}A$ verschwindet, oder dass $a=-d$:
 \begin{equation}
 \operatorname{su}(2)
@@ -979,7 +979,7 @@ J
 K
 &=
 \begin{pmatrix} i&0 \\  0&-i \end{pmatrix}
-\label{komplex:definitionIJK}
+\label{skript:komplex:definitionIJK}
 \end{align}
 verwendet werden.
 Die Matrix $I$ kennen wir schon von der Matrixdarstellung der komplexen

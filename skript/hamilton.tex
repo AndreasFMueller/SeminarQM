@@ -75,7 +75,7 @@ Die Wirkung oder Aktion einer Zeitentwicklung zwischen den Zust"anden
 $q(t_0)$ und $q(t_1)$ ist die Gr"osse
 \begin{equation}
 W=\int_{t_0}^{t_1} L(t, q(t), \dot q(t))\,dt.
-\label{wirkung}
+\label{skript:wirkung}
 \end{equation}
 Die Wirkung hangt also von der konkreten Wahl des Pfades $q(t)$ ab,
 um diese Abh"angigkeit auszudr"ucken, wird manchmal auch $W[q(t)]$
@@ -87,7 +87,7 @@ $q(t_1)$ "uberf"uhren, immer denjenigen w"ahlt, f"ur die die
 Wirkung minimal wird.
 
 \subsection{Euler-Gleichungen}
-Die Minimierung der Wirkung (\ref{wirkung}) ist ein sogenanntes
+Die Minimierung der Wirkung (\ref{skript:wirkung}) ist ein sogenanntes
 Variationsproblem: gesucht ist ein Weg, welcher ein bestimmtes
 Integral minimiert. Es ist verwandt mit der Aufgabe, den k"urzesten
 Weg zu finden, der ein Gebiet mit einem bestimmten Fl"acheninhalt
@@ -109,12 +109,12 @@ die f"ur $t_0$ und $t_1$ verschwindet, $\eta(t_0)=\eta(t_1)=0$.
 Wenn $q(t)$ L"osung des Minimalproblems ist, muss
 \begin{equation}
 \varepsilon\mapsto W[q(t)+\varepsilon\eta(t)]
-\label{variation-ansatz}
+\label{skript:variation-ansatz}
 \end{equation}
 ein Minimum f"ur $\varepsilon=0$ haben, oder die Ableitung
 dieser Funktion nach $\varepsilon$ muss $0$ sein.
 
-Setzten wir den Ansatz (\ref{variation-ansatz}) in die Wirkung ein
+Setzten wir den Ansatz (\ref{skript:variation-ansatz}) in die Wirkung ein
 und leiten wir nach $\varepsilon$ ab, erhalten wir
 \begin{align*}
 \frac{d}{d\varepsilon}W[q(t)+\varepsilon\eta(t)]
@@ -137,7 +137,7 @@ F"ur $\varepsilon=0$ soll dieser Ausdruck verschwinden:
 \frac{\partial L}{\partial q}(t, q(t), \dot q(t))\eta(t)
 +
 \frac{\partial L}{\partial \dot q}(t, q(t), \dot q(t))\dot \eta(t)\,dt.
-\label{erstevariationsgleichung}
+\label{skript:erstevariationsgleichung}
 \end{equation}
 Zur Abk"urzung schreiben wir im Folgenden
 \begin{align*}
@@ -149,7 +149,7 @@ Zur Abk"urzung schreiben wir im Folgenden
 &=
 \frac{\partial L}{\partial \dot q}.
 \end{align*}
-Der zweite Term in (\ref{erstevariationsgleichung}) kann mit 
+Der zweite Term in (\ref{skript:erstevariationsgleichung}) kann mit 
 partieller Integration umgeformt werden:
 \begin{align*}
 0
@@ -242,7 +242,7 @@ Befindet sich das Teilchen dagegen in einem Potential $V(q)$, dann
 ist die zugeh"orige Hamilton-Funktion
 \begin{equation}
 H=T+V=\frac1{2m}p^2+V(q).
-\label{hamilton-potential}
+\label{skript:hamilton-potential}
 \end{equation}
 Ein Elektron im elektrischen Feld eines Protons, welches im Nullpunkt
 des $q$-Koordinatensystems sitzt, hat daher die Hamilton-Funktion
@@ -280,8 +280,8 @@ des Potentials:
 \]
 Damit sind die Bewegungsgleichungen jetzt:
 \begin{align}
-\frac{dq}{dt}&= \frac{\partial H}{\partial p},\label{hamilton-v}\\
-\frac{dp}{dt}&=-\frac{\partial H}{\partial q}.\label{hamilton-newton}
+\frac{dq}{dt}&= \frac{\partial H}{\partial p},\label{skript:hamilton-v}\\
+\frac{dp}{dt}&=-\frac{\partial H}{\partial q}.\label{skript:hamilton-newton}
 \end{align}
 
 \begin{beispiel} Harmonischer Oszillator. Ein harmonischer Oszillator
@@ -325,7 +325,7 @@ H=\frac1{2m}(p_x^2+p_y^2)+K(x^2 + y^2)
 \]
 sollte sich auch in Polarkoordinaten $(r,\varphi)$ ausdr"ucken lassen. 
 Doch welche Impulse sind dann zu verwenden, damit die Gleichungen
-(\ref{hamilton-v}) und (\ref{hamilton-newton}) auch in den neuen
+(\ref{skript:hamilton-v}) und (\ref{skript:hamilton-newton}) auch in den neuen
 Koordinaten G"ultigkeit haben?
 
 \section{Hamilton-Jacobi-Theorie}

@@ -21,11 +21,11 @@ ein quadratisches Polynom, nat"urlich k"onnen wir sofort die Nullstellen
 mit Hilfe der L"osungsformel
 \begin{equation}
 x_{\pm}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
-\label{mitternachtsformel}
+\label{skript:mitternachtsformel}
 \end{equation}
 finden.  Ver"andert man die Koeffizienten von $p(x)$, werden sich auch
 die beiden Nullstellen ver"andern, sie k"onnen mit der Formel
-(\ref{mitternachtsformel}) bestimmt werden.
+(\ref{skript:mitternachtsformel}) bestimmt werden.
 
 Nehmen wir also an, dass die Koeffizienten $a$, $b$ und $c$ von $p(x)$
 von einem Parameter $\varepsilon$ abh"angen. Statt der Konstanten verwenden
@@ -40,7 +40,7 @@ eine Familie von Polynomen
 \[
 p_\varepsilon(x)=a(\varepsilon)x^2 + b(\varepsilon)x+c(\varepsilon).
 \]
-Die L"osungsformel (\ref{mitternachtsformel}) liefert weiterhin die
+Die L"osungsformel (\ref{skript:mitternachtsformel}) liefert weiterhin die
 Nullstellen von $p_{\varepsilon}(x)=0$.
 Sei $x_0$ eine der Nullstellen von $p_0(x) = 0$.
 
@@ -50,12 +50,12 @@ zu finden. Diese L"osung wird von $\varepsilon$ abh"angen, wir setzen
 die Abh"angigkeit als Potenzreihe
 \begin{equation}
 x_\varepsilon = x_0 + x_1\varepsilon +x_2 \varepsilon^2+\dots
-\label{stoerungsansatz}
+\label{skript:stoerungsansatz}
 \end{equation}
 an.
-Wir nennen die Potenzreihe (\ref{stoerungsansatz}) f"ur die L"osung
+Wir nennen die Potenzreihe (\ref{skript:stoerungsansatz}) f"ur die L"osung
 von $p_\varepsilon(x)=0$ die St"orungsreihe f"ur $x_\varepsilon$.
-Setzen wir (\ref{stoerungsansatz}) in die Gleichung $p_{\varepsilon}(x)=0$
+Setzen wir (\ref{skript:stoerungsansatz}) in die Gleichung $p_{\varepsilon}(x)=0$
 ein, ergibt sich die Gleichung
 \begin{align*}
 0&=a(\varepsilon)x_\varepsilon^2+b(\varepsilon)x_\varepsilon+c(\varepsilon)
@@ -152,7 +152,7 @@ Die St"orungsapproximation scheint also zu funktionieren, solange
 der Nenner $2a_0x_0+b_0$ gross ist. Dann werden n"amlich die 
 Koeffizienten $x_1$ und $x_2$ klein sein. Problematisch wird
 die Approximation in dem Falle, wo $2a_0x_0+b_0$ verschwindet.
-Setzt man allerdings die L"osungsformel (\ref{mitternachtsformel}) f"ur
+Setzt man allerdings die L"osungsformel (\ref{skript:mitternachtsformel}) f"ur
 $x_0$ ein, erh"alt man
 \begin{align*}
 2a_0x_0+b_0&=2a_0\frac{-b_0\pm\sqrt{b_0^2-4a_0c_0}}{2a_0}+b_0      \\
@@ -163,7 +163,7 @@ Der Nenner verschwindet also genau dann, wenn die quadratische
 Gleichung eine doppelte Nullstelle hat. In diesem Fall spaltet sich
 die eine doppelte L"osung in zwei verschiedene L"osungen $x_{\pm}$ auf,
 es kann also keine Funktion der Form
-(\ref{stoerungsansatz}) 
+(\ref{skript:stoerungsansatz}) 
 geben, die diese Aufspaltung wiedergeben kann.
 
 \begin{figure}
@@ -175,7 +175,7 @@ in Abh"angigkeit von $\varepsilon$,
 mit $a(\varepsilon)=1+\varepsilon$, $b(\varepsilon)=\varepsilon$ und
 $c(\varepsilon)=-1+\varepsilon$. Exakte L"osung {\color{red} rot}, 
 St"orungsapproximation erster Ordnung {\color{blue} blau}.
-\label{stoerungsloesung}}
+\label{skript:stoerungsloesung}}
 \end{figure}
 
 Wir fassen zusammen, was wir hier als L"osungsmethode gefunden haben:
@@ -336,7 +336,7 @@ k&\ne l
 &=
 \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
 \end{aligned}
-\label{stoerungsloesung1ordnung}
+\label{skript:stoerungsloesung1ordnung}
 \end{equation}
 Durch diese Gleichungen ist nur der Koeffizient
 $\langle\psi_k^{(0)}|\psi_k^{(1)}\rangle$
@@ -385,9 +385,9 @@ Um $|\psi_k(\varepsilon)\rangle$ zu normieren, berechnen wir seine L"ange:
 \langle \psi_k^{(0)}|\psi_k^{(2)}\rangle
 )
 +\dots
-\label{stoerungstheorie:norm}
+\label{skript:stoerungstheorie:norm}
 \end{align}
-Koeffizientenvergleich in~(\ref{stoerungstheorie:norm}) liefert
+Koeffizientenvergleich in~(\ref{skript:stoerungstheorie:norm}) liefert
 \begin{align*}
 0
 &=
@@ -516,7 +516,7 @@ E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(2)}\rangle
 E_k^{(2)}\delta_{kl}
 +
 E_k^{(1)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
-\label{zweitenaeherung}
+\label{skript:zweitenaeherung}
 \end{align}
 F"ur $k=l$ ist $E_l^{(0)}-E_k^{(0)}=0$ und die Gleichung kann nach 
 $E_k^{(2)}$ aufgel"ost werden:
@@ -597,10 +597,10 @@ Wir verzichten darauf, die Formeln explizit darzustellen.
 
 \section{Entartung}
 \rhead{Entartung}
-Da bei Entartung einge der Nenner in (\ref{stoerungsloesung1ordnung})
+Da bei Entartung einge der Nenner in (\ref{skript:stoerungsloesung1ordnung})
 verschwinden, kann die St"orungstheorie auf entartete Zust"ande
 in dieser Form nicht angwendet werden.
-Die Nenner w"aren kein Problem, wenn in (\ref{stoerungsloesung1ordnung})
+Die Nenner w"aren kein Problem, wenn in (\ref{skript:stoerungsloesung1ordnung})
 immer dann, wenn ein Nenner verschwindet, auch der zugeh"orige Z"ahler
 verschwindet.
 Wenn $|\psi_k^{(0)}\rangle$ und $|\psi_l^{(0)}\rangle$ den gleichen
@@ -671,7 +671,7 @@ Damit ist das gest"orte Problem exakt gel"ost.
 
 Wir untersuchen jetzt, wie sich die St"orungsl"osung verh"alt.
 Zun"achst untersuchen wir die "Anderung der Eigenwerte durch die
-St"orung nach (\ref{stoerungsloesung1ordnung}):
+St"orung nach (\ref{skript:stoerungsloesung1ordnung}):
 \begin{align*}
 \lambda_{\pm}^{(1)}
 &=
@@ -694,7 +694,7 @@ Eigenwerte nicht finden, aber in der Basis $\{v_\pm\}$ gilt
 $E_\pm(\varepsilon)=1\pm\varepsilon$, was mit der exakten L"osung
 "ubereinstimmt.
 
-Die Korrektur der Eigenvektoren nach (\ref{stoerungsloesung1ordnung})
+Die Korrektur der Eigenvektoren nach (\ref{skript:stoerungsloesung1ordnung})
 nach der Formel
 \[
 \langle\psi_-^{(0)}|\psi_+^{(1)}\rangle
@@ -724,7 +724,7 @@ und wir k"onnen den Term einfach weglassen.
 
 Um das entartete Problem zu l"osen, m"ussen wir also f"ur entartete
 Zust"ande erst eine Basis so w"ahlen, dass alle nicht
-diagonalen Matrixelemente in (\ref{stoerungsloesung1ordnung}) verschwinden.
+diagonalen Matrixelemente in (\ref{skript:stoerungsloesung1ordnung}) verschwinden.
 Sei $P$ ein Projektor auf den Eigenraum zum entarteten Eigenwert $E$.
 Da $H_1$ ein selbstadjungierter Operator ist, ist $PH_1P$ ebenfalls
 selbstadjungiert, er ist eine Selbstabbildung des des
@@ -734,7 +734,7 @@ und wir k"onnen auch annehmen, dass diese orthonormiert ist.
 Sind $|u\rangle$ und $|v\rangle$ Eigenvektoren in diesem Eigenraum von
 $H_0$, und ausserdem orthogonale Eigenvektoren von $H_1$ mit Eigenwerten
 $\mu_u$ und $\mu_v$, dann sind die
-die Matrixelemente in (\ref{stoerungsloesung1ordnung}) 
+die Matrixelemente in (\ref{skript:stoerungsloesung1ordnung}) 
 \[
 \langle u|\,H_1\,|v\rangle = \mu_v\langle u|v\rangle=0,
 \]
@@ -781,10 +781,10 @@ E_k^{(0)}-E_l^{(0)}
 \centering
 \includegraphics{graphics/pert-2.pdf}
 \caption{Aufspaltung der Energieniveaus durch eine St"orung
-\label{aufspaltung}}
+\label{skript:aufspaltung}}
 \end{figure}
 Durch die St"orung werden die Energieniveaus des urspr"unglichen
-Hamilton-Operators im Allgemeinen aufgespalten (Abbildung~\ref{aufspaltung}).
+Hamilton-Operators im Allgemeinen aufgespalten (Abbildung~\ref{skript:aufspaltung}).
 Der Koeffizient der $\varepsilon$-Abh"angigkeit ist Eigenwert von $PH_1P$. 
 Wenn die ungest"orten Eigenvektoren also auch Eigenvektoren von $H_1$ sind,
 dann wird die St"orung die Niveaus nicht aufspalten.
@@ -794,11 +794,11 @@ dann wird die St"orung die Niveaus nicht aufspalten.
 \includegraphics[width=\hsize]{images/WasserstoffAufspaltung.pdf}
 \caption{Aufspaltung der Energieniveaus des Wasserstoffatoms (links)
 durch die verschiedenen Effekte.
-\label{wasserstoffaufspaltung}}
+\label{skript:wasserstoffaufspaltung}}
 \end{figure}
 Die St"orungstheorie kann so die tats"achlich beobachteten Spektren
 mindestens qualitativ erkl"aren.
-In Abbildung~\ref{wasserstoffaufspaltung} sind links die Energieniveaus
+In Abbildung~\ref{skript:wasserstoffaufspaltung} sind links die Energieniveaus
 des Wasserstoffatoms dargestellt, wie wir sie im Kapitel~\ref{chapter:wasserstoff}
 berechnet haben.
 Alle Niveaus sind hochgradig entartet, da alle zust"ande mit
