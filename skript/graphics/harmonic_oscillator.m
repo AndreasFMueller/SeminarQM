@@ -1,5 +1,6 @@
 #
-# harmonisch.m -- 
+# harmonic_oscillator.m -- Berechne Darstellung der Wellenfunktionen des
+#                          harmonischen Oszillators mit Octave
 #
 # (c) 2014 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #

@@ -1,0 +1,35 @@
+Kann man Energie und Position eines Teilchens beliebig genau wissen?
+Wenn nicht, formulieren Sie eine entsprechende Unsch"arferelation.
+
+\begin{loesung}
+Die Energie eines Teilchens wird durch die Observable $H$, den
+Hamilton-Operator gegeben.
+Die Position wird hingegen durch den Operator $X$ der Position
+gegeben.
+Man kann beide beleibig genau wissen, d.~h.~es gibt gemeinsame
+Eigenzust"ande von $H$ und $X$, wenn die beiden Operatoren vertauschen.
+Wir berechnen daher den Kommutator von $X$ und $H$:
+\begin{align*}
+[X,H]
+&=
+\biggl[X,\frac1{2m}P^2\biggr]
+=
+\frac1{2m}[X,P^2]
+=
+\frac1{2m}(XPP-PPX)
+=
+\frac1{2m}(XPP-PXP+PXP-PPX)
+\\
+&=
+\frac1{2m}([X,P]P+P[X,P])
+=
+\frac{\hbar}{im} P
+\end{align*}
+Die zugeh"orige Unsch"arferelation ist
+\[
+\Delta E\cdot \Delta p\ge \frac{\hbar}{2}\langle P\rangle.
+\]
+Die Unsch"arfe h"angt also vom Impuls eines Teilchens ab, je gr"osser
+der Impuls, desto gr"osser auch die Unsch"arfe.
+\end{loesung}
+

@@ -1,0 +1,68 @@
+Kann man Impuls und Energie eines Teilchens beliebig genau wissen?
+Wenn ja, formulieren Sie eine Unsch"arferelation.
+
+\begin{loesung}
+Man kann Impuls und Energie eines Teilchens genau dann bleibig genau
+wissen, wenn die zugeh"origen Operatoren $P$ und $H$ vertauschen.
+Also berechnen wir den Kommutator:
+\begin{align*}
+[P,H]
+&=
+\biggl[P,\frac1{2m}P^2+V\biggr]
+=
+[P,V].
+\end{align*}
+Wir k"onnen daraus schon mal ablesen, dass f"ur ein freies Teilchen,
+also f"ur $V=0$, die beiden Operatoren tats"achlich vertauschbar sind,
+wir k"onnen also tats"achlich Impuls und Energie gleichzeitig 
+beliebig genau kennen.
+
+Wenn $V\ne 0$ ist, m"ussen wir den Kommutator von $P$ mit $V$
+bestimmen:
+\begin{align*}
+[P,V]
+&=
+\biggl[\frac{\hbar}{i}\frac{\partial}{\partial x}, V\biggr]
+=
+\frac{\hbar}{i}
+\biggl(
+\frac{\partial}{\partial x}
+V
+-
+V
+\frac{\partial}{\partial x}
+\biggr)
+=
+\frac{\hbar}{i}
+\biggl(
+\frac{\partial V}{\partial x}
++
+V
+\frac{\partial}{\partial x}
+-
+V
+\frac{\partial}{\partial x}
+\biggr)
+=
+\frac{\hbar}{i}
+\frac{\partial V}{\partial x}.
+\end{align*}
+Die zugeh"orige Unsch"arferelation ist
+\[
+\Delta p\cdot \Delta E
+=
+\frac{\hbar}{2m}\biggl\langle \frac{\partial V}{\partial x}\biggr\rangle.
+\]
+F"ur schwere Teilchen, also zum Beispiel f"ur makroskopische K"orper ist
+die Unsch"arfe nicht wahrnehmbar.
+Die Unsch"arfe ist also umso gr"osser, je gr"osser die Ableitung des
+Potentials ist.
+Physikalisch kann man dies damit erkl"aren, dass es bei bekanntem Impuls
+keine scharfe Position eines Teilchens gibt, die Energie wird also an
+verschiedenen Orten gemessen, wo verschiedene potentielle Energien 
+gemessen werden.
+Die Ableitung des Potentials ist aber die Kraft, die auf ein Teilchen wirkt.
+Die Unsch"arfe ist also umso gr"osser, je gr"osser die Kr"afte sind, die
+auf das Teilchen wirken.
+\end{loesung}
+

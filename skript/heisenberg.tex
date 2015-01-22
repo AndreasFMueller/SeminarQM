@@ -197,7 +197,7 @@ Zust"ande $|a\rangle$ und $|b\rangle$, also
 =
 \operatorname{var}(A)\operatorname{var}(B)
 =\Delta A^2 \cdot \Delta B^2
-\label{cauchy-schwarz-uncertainty}
+\label{skript:cauchy-schwarz-uncertainty}
 \end{equation}
 Falls also die linke Seite nicht $0$ ist, dann k"onnen wir die beiden
 Gr"ossen $A$ und $B$ nicht beliebig genau kennen.
@@ -242,7 +242,35 @@ AB-\langle A\rangle B-A\langle B\rangle
 %
 \section{Unsch"arferelation}
 \rhead{Unsch"arferelation}
+\begin{figure}
+\centering
+\includegraphics{graphics/heisenberg-1.pdf}
+\caption{Einstein-Podolsky-Rosen Experiment
+\label{skript:epr-experiment}}
+\end{figure}
+Werner Heisenberg hat 1926 eine Unsch"arferelation zwischen Ort und Impuls
+mit Hilfe eines klassischen Gedankenexperimentes hergeleitet.
+Seine Erkl"arung beruht auf dem Beobachter-Effekt: jede Messung
+ver"andert das beobachtete System.
+\index{Einstein-Podolsky-Rosen Experiment}
+Der Beobachter-Effekt reicht jedoch f"ur die Begr"undung nicht
+aus, wie man aus dem folgenden Gedanken-Experiment von Einstein,
+Podolsky und Rosen sehen kann, siehe
+auch Abbildung~\ref{skript:epr-experiment}, \cite{skript:epr}.
+In diesem Experiment werden im Nullpunkt aus einem ruhenden System
+zwei Teilchen ausgesandt.
+Da der Impuls erhalten ist, m"ussen die Teilchen exakt entgegengesetzen
+Impuls haben.
+Wenn man nach einer bestimmten Zeit die Position des linken Teilchens misst,
+weiss man auch die Position des rechten Teilchens.
+Und wenn man den Impuls des rechten Teilchens misst, dann weiss
+man auch den Impuls des linken Teilchens.
+Es scheint, dass man mit dieser Aparatur Heisenbergs Unsch"arferelation
+umgehen kann.
+Offenbar braucht es eine bessere Begr"undung f"ur die Unsch"arferelation.
+
 \subsection{Robertson-Schr"odinger-Unsch"arferelation}
+\index{Robertson-Schr\"odinger-Unsch\"arferelation}
 Die Ungleichung (\ref{skript:cauchy-schwarz-uncertainty}) liefert eine
 Unsch"arferelation, falls die linke Seite $>0$ ist. Es ist
 also zu untersuchen, wie gross die linke Seite von 
@@ -344,7 +372,7 @@ oder
 \end{equation}
 Dies ist die Heisenbergsche Unsch"arferelation. 
 
-\subsection{Andere Unsch"arferelationen}
+\subsection{Drehimpuls und Positionswinkel}
 Heisenberg-Unsch"arfe war auch schon Thema bei XKCD, siehe
 Abbildung~\ref{skript:heisenberg:xkcd} und \cite{skript:xkcd}.
 \begin{figure}
@@ -384,5 +412,46 @@ Our phones must have great angular momentum sensors because
 the compasses really suck.
 \end{quote}
 
+% XXX Delta E Delta t
+\subsection{Unsch"arfe von Energie und Zeit}
+In unserem Formalismus hat die Zeit-Koordinate eine ausgezeichnete
+Bedeutung, die Schr"odingergleichung beschreibt die Entwicklung
+der Zust"ande in der Ortsdarstellung.
+Dies hat zur Folge, das wir eine Unsch"arferelation zwischen Energie
+und Zeit nicht aus der Robertson-Schr"odinger-Unsch"arferelation
+(\ref{skrip:uncertainty}) herleiten k"onnen.
 
+Dazu br"auchten wir eine Theorie, welche Orts- und Zeitkoordinaten
+gleichwertig behandelt.
+Eine solche Theorie ist die spezielle Relativit"atstheorie, welche
+zeigt, wie Raum und Zeit untrennbar in einer vierdimensionalen
+Raumzeit miteinander verbunden sind.
 
+F"ur einen Spezialfall kann man eine Unsch"arferelation zwischen
+Energie und Zeit finden.
+Betrachten wir dazu ein Photon mit Energie $E=h\nu$.
+Schon die klassische Elektrodynamik erkl"art das Ph"anomen des
+Strahlungsdrucks, welches auch schon von Raumfahrzeugen ausgenutzt
+werden ist.
+Strahlungsdruck bedeutet, dass Photonen Impuls $p=E/c$ transportieren.
+Da alle Photonen gleich schnell sind, n"amlich $c$, ist die
+Positionsunsch"arfe $\Delta x$ eines Photons im Wesentlichen die
+Zeitunsch"arfe der Messung $\Delta t$.
+Die Heisenbergsche Unsch"arferelation wird daher
+\[
+\frac{\hbar}2\le \Delta x\cdot\Delta p=c\Delta t\cdot \frac{\Delta E}{c}=
+\Delta t\cdot \Delta E.
+\]
+Die Unsch"arfe zwischen Zeit und Energie bedeutet, dass die
+Energieerhaltung um den Betrag $\Delta E$ verletzt werden darf,
+wenn auch nur f"ur kurze Zeit $\Delta t$.
+
+\section*{"Ubungsaufgaben}
+\begin{uebungsaufgaben}
+\item
+\input uebungsaufgaben/07001.tex
+\item
+\input uebungsaufgaben/07002.tex
+\item
+\input uebungsaufgaben/07003.tex
+\end{uebungsaufgaben}

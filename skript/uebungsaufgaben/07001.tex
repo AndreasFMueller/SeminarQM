@@ -1,0 +1,35 @@
+Betrachten Sie die beiden Teilchen im Einstein-Podolsky-Rosen Experiment
+mit Ortsoperatoren $X_i$ und Impulsoperatorn $P_i$ mit $i=1,2$.
+F"ur diese Operatoren gelten die Vertauschungsrelationen
+$[X_i,P_i]=-i\hbar\operatorname{id}$, und wir k"onnen nicht
+den Ort und den Impuls eines der Teilchens gleichzeig wissen.
+Mit der experimentellen Vorschrift von Einstein, Podolsky und Rosen
+bestimmt man nicht $X_1$ und $X_2$, sondern
+die Differenz $X=X_1-X_2$, denn man kann nicht die Position des
+Ausgangssystems messen, ohne es zu ver"andern. Ebenso kann man nicht
+den Impuls eines Teilchens, sondern nur den Gesamtimpuls $P=P_1-P_2$ 
+bestimmen. Zeigen Sie, dass man diese beiden Gr"ossen tats"achlich
+beide beliebig genau wissen kann, dass das klassische Einsten-Podolsky-Rosen
+Experiment also keinen Widerspruch zur Unsch"arferelation darstellt.
+
+\begin{loesung}
+Man muss den Kommutator $[X,P]$ bestimmen:
+\begin{align*}
+[X,P]
+&=
+[X_1-X_2,P_1-P_2]
+=
+\underbrace{[X_1,P_1]}_{-i\hbar\operatorname{id}}
+-\underbrace{[X_2,P_1]}_{=0}
+-\underbrace{[X_1,P_2]}_{=0}
+-\underbrace{[X_2,P_2]}_{-i\hbar\operatorname{id}}
+=
+-i\hbar\operatorname{id}
++i\hbar\operatorname{id}
+=0
+\end{align*}
+Die beiden Operatoren vertauschen, also k"onnen sie tats"achlich gleichzeit
+beliebig genau bestimmt sein.
+\end{loesung}
+
+
