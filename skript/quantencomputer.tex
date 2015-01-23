@@ -193,7 +193,13 @@ F"ur Schr"odingers Katze k"onnen wir die Frage, ob die Eigenschaft $Q$
 in f"ur lebende oder tote Katzen vorhanden ist, jin einem einzigen
 Durchgang beantworten.
 Dazu stellen wir zuerst eine Katze in einem "Uberlagerungszustand
-$|\psi\rangle$ von $|\smiley\rangle$ und $|\frownie\rangle$ her.
+$|\psi\rangle$ von $|\smiley\rangle$ und $|\frownie\rangle$ her\footnote{
+Man beachte, dass dies nicht bedeutet, dass die H"alfte der so pr"aparierten
+Katzen leben und die anderen tot sind.
+Vielmehr befindet sich die Katze in beiden Zust"anden, erst bei der
+Messung wird festgelegt, was der in dieser Durchf"uhrung des Experimentes
+gemessene Zustand ist.
+}.
 Auf diesen Zustand wenden wir den Operator $Q$ an, und testen dann,
 ob es Katzen gibt, die sich im Zustand $|Y\rangle$ befindet, indem
 wir $\langle Y|\,Q\,|\psi\rangle$ messen.
@@ -210,6 +216,11 @@ Berechnung bekommen k"onnen.
 Das Quantensystem kann nur eine Wahrscheinlichkeitsaussage liefern,
 und Messungen der Wahrscheinlichkeit verlangen immer eine grosse Zahl
 von Experimenten.
+
+Ein praktisch n"utzlicher Quantencomputer muss noch weit gr"ossere
+Q-bits realisieren.
+Ein Quantencomputer mit $n$ Q-bits ist in der Lage, einen Zustand
+herzustellen, in dem $2^n$ Zust"ande "uberlagert sind. 
 
 \section{Probabilistische Algorithmen}
 \rhead{Probabilistische Algorithmen}
@@ -361,10 +372,188 @@ Das zugeh"orige quantenmechanische System kann in einer beliebigen
 |\alpha_{11}|^2
 =1.
 \]
+Wir nennen dies ein ``2-Q-bit Register''.
+
+Praktisch n"utzliche Quantencomputer m"ussen noch wesentlich gr"ossere
+Q-bits verarbeiten k"onnen.
+Ein Register mit $n$ Q-bits ist in einem Zustand, in dem $2^n$ Zust"ande
+"uberlagert sind.
+
+Es ist auch denkbar, dass wir beim Initialisieren eines Q-bits
+einzelne auf einen bestimmten Wert setzen.
+Zum Beispiel k"onnen wir in einem Register mit $2$ Q-bits das erste
+Q-bit auf $0$ setzen, wir erhalten dann einen Zustand der
+Form
+\[
+|\psi\rangle
+=
+\alpha_{00}|00\rangle
++
+\alpha_{01}|01\rangle
+\]
+Wir nennen das erste Bit ein Scratch-Bit.
 
 
 \subsection{Gatter}
+Klassische Computer f"uhren ihre Berechnung mit logischen Gattern durch,
+die auf einem Vektor von Bits wirken.
+Quantencomputer brauchen Quanten-Gatter, welche auf einem
+$n$ Q-bit Zustand wirken.
+Solche Gatter d"urfen selbst keine Messungen machen, den die
+Auswertung der Berechnung darf ja erst ganz am Ende der
+Transformationen erfolgen.
+Die Gatter sind also Zustands"anderungen, die umkehrbar sein m"ussen.
+Eine physikalische Ralisierung eines Gatters ist nichts anderes
+als eine Zeitentwicklung des urspr"unglichen Zustands durch einen
+speziellen Hamilton-Operator.
+
+\begin{definition}
+\index{Gatter!Quanten-}
+Ein Quanten-Gatter ist ein unit"arer Operator, der auf einem 
+$n$-Q-bit Zustand operiert.
+\end{definition}
+
+\begin{beispiel}
+\index{Flip}
+\index{Gatter!Flip}
+Die {\em Flip Operation} implementiert die Negation eines einzelne Q-bit:
+\begin{align*}
+|0\rangle&\mapsto |1\rangle & |1\rangle&\mapsto |0\rangle.
+\end{align*}
+Die zugeh"orige Matrix ist
+\[
+F=\begin{pmatrix}
+0&1\\
+1&0
+\end{pmatrix}.
+\]
+$F$ ist eine unit"are Matrix, als ein Quanten-Gatter.
+\end{beispiel}
+
+\begin{beispiel}
+\index{Bit-Umordnung}
+\index{Gatter!Bit-Umordnung}
+Die {\em Bit-Umordnung} vertauscht zwei Q-bits, d.~h.~sie implementiert
+die ABbildung:
+\begin{align*}
+|00\rangle&\mapsto |00\rangle\\
+|01\rangle&\mapsto |10\rangle\\
+|10\rangle&\mapsto |01\rangle\\
+|11\rangle&\mapsto |11\rangle
+\end{align*}
+Die zugeh"orige Matrix ist
+\[
+X=
+\begin{pmatrix}
+1&0&0&0\\
+0&0&1&0\\
+0&1&0&0\\
+0&0&0&1
+\end{pmatrix}.
+\]
+Die Matrix $X$ ist unit"ar, weil orthogonal.
+\end{beispiel}
+
+\begin{beispiel}
+\index{Phasenshift}
+\index{Gatter!Phasenshift}
+{\em Phasenshift} ist eine Operation, die den Zust"and $|1\rangle$ 
+mit einem Phasenfaktor versieht:
+\begin{align*}
+|0\rangle &\mapsto |0\rangle\\
+|1\rangle &\mapsto i\,|1\rangle
+\end{align*}
+Die zugeh"orige Matrix ist
+\[
+\begin{pmatrix}
+1&0\\
+0&i
+\end{pmatrix},
+\]
+die Matrix ist nicht orthogonal, aber unit"ar.
+\end{beispiel}
+
+\begin{beispiel}
+\index{Hadamard}
+\index{Gatter!Hadamard}
+Die {\em Hadamard-Operation} implementiert eine lineare Abbildung
+\begin{align*}
+|0\rangle &\mapsto |0\rangle + |1\rangle\\
+|1\rangle &\mapsto |0\rangle - |1\rangle,
+\end{align*}
+wobei die Vektoren auf der rechten Seite noch normiert werden m"ussen.
+Die zugeh"orige Matrix ist
+\[
+H=
+\frac1{\sqrt{2}}
+\begin{pmatrix}
+1&\phantom{1}1\\
+1&-1
+\end{pmatrix}.
+\]
+Die Matrix $H$ ist orthogonal, also insbesondere auch unit"ar.
+\end{beispiel}
+
+\begin{beispiel}
+\index{Tofoli-Gatter}
+\index{Gatter!Tofoli}
+Das {\em Tofoli-Gatter} operatiert auf zwei Q-bits $a$ und $b$ und einem
+Scratch-Bit $c$ und implementiert die Abbildung
+\[
+|abc\rangle
+\mapsto
+|a\rangle|b\rangle|c\oplus(a\wedge b)\rangle.
+\]
+Darin ist $\oplus$ die XOR-Operation. 
+Im Detail beschreibt dies folgende Abbildung
+\begin{align*}
+|000\rangle&\mapsto|000\rangle\\
+|001\rangle&\mapsto|001\rangle\\
+|010\rangle&\mapsto|011\rangle\\
+|011\rangle&\mapsto|010\rangle\\
+|100\rangle&\mapsto|101\rangle\\
+|101\rangle&\mapsto|100\rangle\\
+|110\rangle&\mapsto|111\rangle\\
+|111\rangle&\mapsto|110\rangle
+\end{align*}
+In dieser Reihenfolge der Basisvektoren geh"ort dazu die Matrix
+\[
+T=
+\begin{pmatrix}
+1&0&0&0&0&0&0&0\\
+0&1&0&0&0&0&0&0\\
+0&0&0&1&0&0&0&0\\
+0&0&1&0&0&0&0&0\\
+0&0&0&0&0&1&0&0\\
+0&0&0&0&1&0&0&0\\
+0&0&0&0&0&0&0&1\\
+0&0&0&0&0&0&1&0\\
+\end{pmatrix}.
+\]
+Die Matrix $T$ ist orthogonal, und damit auch unit"ar.
+\end{beispiel}
 
 \subsection{Quanten-Turing-Maschinen}
+Eine Quanten-Berechnung stellt also zuerst einen Zustand in einem
+Q-bit-Register her.
+Dann operiert darauf eine Quantenoperation, also ein unit"arer Operator $U$.
+Zum Schluss finden Messungen an den einzelnen Q-bits statt.
+Das Resultat der Messung verr"at etwas "uber das Resultat der Berechnung.
 
-\subsection{Probabilistische Algorithmen und Quantencomputer}
+Um einen Quantencomputer zu realisieren muss man also eine Methode
+entwickeln, einen beliebigen Operator $U$ herzustellen.
+In einem klassischen Computer geschieht das durch Verschaltung der
+Gatter: jede beliebige logische Formal kann aus den elementaren
+Gattern hergestellt werden.
+F"ur Quantencomputer geht das nicht mehr exakt, das ist aber auch nicht
+n"otig, wir sind ohnehin nur auf eine Approximation aus.
+
+\begin{satz}
+Jede unit"are $n\times n$-Matrix $U$ mit $n\ge 3$ kann beliebig genau
+approximiert werden durch ein Produkt $U_l\dots U_1$ von unit"aren
+Matrizen, die jeweils Hadamard-Gatter, Tofoli-Gatter oder Phasen-Shifts
+sind.
+\cite[Theorem 10.12]{skript:arorabarak}
+\end{satz}
+
+\subsection{Quanten-Algorithmen}

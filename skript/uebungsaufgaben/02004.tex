@@ -1,4 +1,4 @@
-Berechnen Sie die Entwicklung der Eigenzust"ande des Zweizustandssystems
+Berechnen Sie die Entwicklung der Basiszust"ande des Zweizustandssystems
 mit zeitabh"angigem Hamilton-Operator
 \[
 H(t)
@@ -6,9 +6,9 @@ H(t)
 \begin{pmatrix}
 E_1+\varepsilon\cos\omega t & 0                          \\
 0                           & E_2-\varepsilon\cos\omega t
-\end{pmatrix}
+\end{pmatrix}.
 \]
-f"ur $\varepsilon\ll E_i$.
+Berechnen Sie ausserdem den Erwartungswert der Energie zur Zeit $t$.
 
 \begin{loesung}
 Die Schr"odingergleichung f"ur den zeitabh"angigen Zustandsvektor
@@ -46,5 +46,19 @@ v_2(0)e^{\frac1{i\hbar}(E_2t-\frac{\varepsilon}{\omega}\sin\omega t)}
 \end{align*}
 erraten, was man auch durch Einsetzen in die Schr"odingergleichung
 nachpr"ufen kann.
+
+Zur Zeit $t$ ist der Erwartungswert der Energie eines Zustands:
+\begin{align*}
+\langle H\rangle
+&=
+\langle\psi(t)|\,H\,|\psi(t)\rangle
+=
+v_1(0)^2(E_1+\varepsilon\cos\omega t)
++
+v_2(0)^2(E_2-\varepsilon\cos\omega t)
+\end{align*}
+Die Energie eines Systems, das in einem reinen  Zustand beginnt,
+bleibt also nicht erhalten, was auch nicht zu erwarten war,
+weil der Hamilton-Operator zeitabh"angig ist.
 \end{loesung}
 

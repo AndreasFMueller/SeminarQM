@@ -3,7 +3,7 @@
 \rhead{}
 \section{Motivation}
 \rhead{Motivation}
-W"ahrend Galileo Galileis Beschreibung von Bewegungen im wesentlichen
+W"ahrend Galileo Galileis Beschreibung von Bewegungen im Wesentlichen
 eine kinematische war, haben Isaac
 Newtons Gesetze erstmals einen Zusammenhang zwischen
 der Bewegung und den Kr"aften hergestellt, also von Ursache und
@@ -55,7 +55,7 @@ Die Bewegung eines Teilchens wird im wesentlichen durch seine
 kinetische und potentielle Energie bestimmt. Die kinetische Energie
 ist ein quadratischer Ausdruck in den Geschwindigkeiten:
 \[
-T=\frac12m_i\dot q_i.
+T=\frac12m_i\dot q_i^2.
 \]
 die potentielle Energie ist eine Funktion, die nur von der
 Position des Teilchens abh"angt:
@@ -221,9 +221,85 @@ Man beachte, dass diese Herleitung auch dann noch gilt, wenn die Masse von der
 Zeit abh"angt (zum Beispiel bei einer Rakete).
 
 \subsection{Fermat-Prinzip}
+Das Fermat-Prinzip besagt, dass das Licht immer den Weg mit k"urzester
+Laufzeit zwischen zwei Punkten w"ahlt.
+Wir beschreiben den Weg, den das Licht von $x_0$ zu $x_1$ nimmt,
+als eine Kurve $x(s)$, wobei $s\in[s_0,s_1]$ der Parameter entlang
+der Kurve ist.
+Die Lichtgeschwindigkeit h"angt vom Brechungsindex des Mediums ab.
+Sei $n(x)$ der Brechungsindex an der Stelle $x$, dann ist 
+$c/n(x)$ die Lichtgeschwindigkeit an der Stelle $x$.
+Zwei Punkte auf dem Strahl, deren Parameter sich um $\Delta s$
+unterscheiden, haben die  Entfernung $|x'(s)|\Delta s$.
+Das Licht braucht daher f"ur die ganze Kurve die Zeit
+\[
+T=\int_{s_0}^{s_1} |x'(s)| n(x(s))\frac1c\,ds.
+\]
+Der Faktor $1/c$ hat keinen Einfluss auf das Minimum, wir k"onnen ihn
+weglassen.
+Wir k"onnen jetzt Euler-Gleichungen f"ur die Lagrange-Funktion
+$L(x', x)= |x'|\,n(x)$ 
+ableiten:
+\begin{align*}
+\frac{\partial L}{\partial x_i}
+&=
+|x'|\frac{\partial n}{\partial x_i}
+\\
+\frac{\partial L}{\partial x'_i}
+&=
+n(x)\frac{\partial |x'|}{\partial x_i'}
+=
+n(x)\frac{\partial}{\partial x'_i}\sqrt{\sum_{k=1}^3x_k'^2}
+=
+n(x)\frac{x_i'}{|x'|}
+\end{align*}
+Die Wahl der Parametrisierung der Kurve darf keinen Einfluss auf den
+gew"ahlten Weg haben, also k"onnen wir eine Parametrisierung w"ahlen,
+f"ur die $|x'(s)|=n(x)$ ist.
+Dadurch vereinfachen sich die Ausdr"ucke f"ur die partiellen
+Ableitungen zu
+\begin{align*}
+\frac{\partial L}{\partial x_i}
+&=
+n(x)\frac{\partial n}{\partial x_i}
+\\
+\frac{\partial L}{\partial x_i'}
+&=x_i'
+\end{align*}
+Damit wird die Bewegungsgleichung
+\begin{align*}
+\frac{d}{ds}\frac{\partial L}{x_i'}-\frac{\partial L}{\partial x_i}
+&=
+x_i''-n\frac{\partial n}{\partial x_i}=0
+\\
+x_i''
+&=
+n\frac{\partial n}{\partial x_i}=\frac12 \frac{\partial n(x)^2}{\partial x_i}.
+\end{align*}
+Die Kurven sehen aus wie die Bewegung eines Teilchens in einem
+``Potential'' $n(x)^2$.
 
-\section{Hamilton-Funktion}
-\rhead{Hamilton-Funktion}
+Das Fermat-Prinzip beschreibt die geometrische Optik, also die Ausbreitung
+von Licht mit so kurzer Wellenl"ange, dass sie gegen"uber den
+Abmessungen des Problems vernachl"assigbar ist.
+Dies ist genau die gleiche Art von Grenz"ubergang, die wir f"ur
+die Wellen der Quantenmechanik machen m"ochten.
+Das Fermat-Prinzip als Grenzwert einer Wellenausbreitung f"ur
+unendlich kurze Wellenl"ange f"uhrt auf eine Bewegungsgleichung,
+die aussieht wie die Bewegung eines Teilchens in einem Potential.
+
+\section{Hamiltonsche Mechanik}
+\rhead{Hamiltonsche Mechanik}
+Im Fermat-Prinzip haben wir einen Zusammenhang zwischen dem Formalismus
+der Mechanik und der geometrischen Optik kennengelernt, der mindestens
+andeutet, dass die Mechanik nur der Grenzfall f"ur sehr kurze Wellenl"ange
+einer ``Wellenmechanik'' sein k"onnte.
+Die Lagrange-Mechanik ist aber nicht allgemeine genug, um diesen
+Schritt zu vervollst"andigen.
+Die noch etwas allgemeinere Formulierung der Mechanik durch Hamilton
+schafft dies.
+
+\subsection{Hamilton-Funktion}
 Die Hamilton-Funktion $H(p,q)$ ist die Energie eines physikalischen
 Systems. Darin sind $q$ die allgemeinen Koordinaten, also
 zum Beispiel die Raumkoordinaten $x$, $y$ und $z$, oder Winkel, mit
@@ -258,8 +334,41 @@ die Lorentzkraft eines Magnetfelds, welche die Bahn eines Elektrons
 kr"ummt, aber immer senkrecht auf der Bahn steht und daher keine Arbeit
 leistet.
 
-\section{Bewegungsgleichungen}
-\rhead{Bewegungsgleichung}
+\subsection{Von der Lagrange-Funktion zur Hamilton-Funktion}
+Die Frage, welche Impulse zu verwenden sind, wurde noch nicht beantwortet
+worden.
+Die Euler-Gleichung sagen, dass die Gr"osse, f"ur die wir die Zeitableitung
+berechnen k"onnen, die Ableitung $\partial L/\partial\dot q$ ist.
+Die Euler-Gleichung liefert also eine Bewegungsgleichung im Stile des
+Newtonschen Gesetzes, wenn man setzt
+\[
+p=\frac{\partial L}{\partial \dot q}.
+\]
+Die kinetische Energie k"onnten wir auch als
+\[
+T=\sum_i \frac12m\dot q_i^2=\sum_i \frac12 p_i\dot q_i
+\]
+schreiben, also muss die gesamte Energie sein
+\[
+H(p,q)=T+V = 2T - (T - V)
+=
+\sum_k p_k\dot q_k - L(\dot q, q).
+\]
+Dieser Ausdruck h"angt nicht mehr von $\dot q_i$ ab, denn wir
+k"onnen ausrechnen
+\[
+\frac{\partial H}{\partial\dot q_i}
+=
+\frac{\partial}{\partial \dot q_i}\sum_k p_k\dot q_k
+-
+\frac{\partial L}{\partial \dot q_i}
+=
+p_i-p_i=0.
+\]
+Es ist also sicher m"oglich, die Hamilton-Funktion als Funktion von $p$
+und $q$ zu schreiben.
+
+\subsection{Bewegungsgleichungen}
 Die Newtonschen Bewegungsgleichungen lassen sich aus der Hamilton-Funktion
 gewinnen. Um dies zu verstehen, berechnen wir die partiellen Ableitungen
 von $H$ nach Koordinaten $q$ und Impulsen $p$:
@@ -313,7 +422,7 @@ die Energie ist erhalten. Diese Situation tritt in abgeschlossenen
 Systemen immer auf, insbesondere waren alle bisherigen Beispiel
 von dieser Art.
 
-\section{Kanonische Transformation}
+\subsection{Kanonische Transformation}
 \rhead{Kanonische Transformation}
 Kartesische Koordinaten sind nicht unbedingt die optimale Wahl.
 Eine zweckm"assige Wahl der Koordinaten nimmt R"ucksicht auf die
@@ -328,8 +437,7 @@ Doch welche Impulse sind dann zu verwenden, damit die Gleichungen
 (\ref{skript:hamilton-v}) und (\ref{skript:hamilton-newton}) auch in den neuen
 Koordinaten G"ultigkeit haben?
 
-\section{Hamilton-Jacobi-Theorie}
-\rhead{Hamilton-Jacobi-Theorie}
+\subsection{Hamilton-Jacobi-Theorie}
 Die Technik der kanonischen Transformationen erlaubt sogar, ein mechanisches
 Problem mit Hilfe einer geeigneten Transformation vollst"andig zu l"osen.
 Wie dies funktionieren k"onnte zeigt ein Vergleich mit einem freien
@@ -349,6 +457,65 @@ Die Ortskoordinaten h"angen linear von der Zeit ab.
 
 \section{Wellen und Teilchen}
 \rhead{Welle und Teilchen}
+Wir zeigen jetzt, dass die Hamilton-Jacobi-Gleichung tats"achlich der
+Grenzfall unendlich kleiner Wellenl"ange f"ur eine ``Wellenmechanik'' ist.
+Von de Broglie wissen wir den Zusammenhang zwischen dem Impuls $p$
+eines Teilchens und der zugeh"origen Wellenl"ange  $\lambda=h/p$.
+Nach de Broglie entspricht einem Teilchen mit Impuls $p$ also eine Welle
+der Form
+\begin{equation}
+\psi(x)
+=
+e^{2\pi i\frac{x}{\lambda}}
+=
+e^{\frac{i}{\hbar}xp}.
+\label{skript:debrogliewelle}
+\end{equation}
+Nat"urlich bewegt sich diese Welle auch noch, wir schreiben die
+Zeitabh"angigkeit als
+\[
+\psi(x,t)
+=
+e^{\frac{i}{\hbar}(xp-\omega t)}.
+\]
 
-\section{Bedeutung des Hamilton Operators}
-\rhead{Bedeutung des Hamilton-Operators}
+
+Etwas allgemeiner suchen wir jetzt eine Welle, die zu einem Teilchen
+passt, welches sich gem"ass einer Hamilton-Funktion $H(p,q)$ bewegt.
+Wir setzen die Welle in der Form
+\[
+\psi(q,t) = e^{\frac{i}{\hbar}S(q,t))}
+\]
+Die Funktion ist die Phase der Welle, die Fl"achen gleichen Wertes von
+$S$ beschreiben die Wellenfronten.
+Die Konstante $\hbar$ in diesem Ansatz steuert die Wellenl"ange, wenn
+wir $\hbar$ gegen Null gehen lassen, wird die Wellenl"ange unendlich kurz.
+
+Die Welle soll sich f"ur unendlich kleine Wellenl"ange wie ein Teilchen
+bewegen, welches von der Hamilton-Funktion gesteuert wird.
+Den Impuls des Teilchens k"onnen wir aus der
+de Broglie-Welle~(\label{skript:debrogliewelle}) durch ableiten finden,
+\[
+\frac{\partial}{\partial x}
+e^{\frac{i}{\hbar}xp}
+=
+\frac{i}{\hbar}p
+e^{\frac{i}{\hbar}xp}
+\qquad
+\Rightarrow
+\qquad
+p
+e^{\frac{i}{\hbar}S}
+=
+\frac{\hbar}{i}
+\frac{\partial S}{\partial q}
+e^{\frac{i}{\hbar}S}
+\]
+
+
+\section*{"Ubungsaufgaben}
+\begin{uebungsaufgaben}
+\item
+\input uebungsaufgaben/05001.tex
+\end{uebungsaufgaben}
+
