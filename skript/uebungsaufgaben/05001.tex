@@ -1,0 +1,114 @@
+Betrachten Sie die Lagrange-Funktion eines eindimensionalen Teilchens
+\[
+\frac12m\dot q^2 + A(t,q)\dot q.
+\]
+\begin{teilaufgaben}
+\item
+Leiten Sie die zugeh"origen Bewegungsgleichungen ab.
+\item
+Stellen Sie die Hamilton-Funktion auf.
+\item
+Leiten Sie die Hamiltonschen Bewegungsgleichungen ab.
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Die Bewegungsgleichungen k"onnen aus den Euler-Gleichungen abgeleitet
+werden:
+\begin{align}
+\frac{\partial L}{\partial q}&=\dot q \frac{\partial A}{\partial q}
+\notag
+\\
+\frac{\partial L}{\partial \dot q}&=m\dot q+ A(t,q)
+\label{05001:impuls}
+\\
+\frac{d}{dt}\frac{\partial L}{\partial\dot q}
+&=
+m\ddot q+\frac{\partial A}{\partial t}+\frac{\partial A}{\partial q}\dot q
+\label{05001:derivative}
+\\
+\frac{d}{dt}\frac{\partial L}{\partial\dot q}-\frac{\partial L}{\partial q}
+&=
+m\ddot q+\frac{\partial A}{\partial t}
+=0
+\notag
+\end{align}
+Aus der letzten Gleichung lesen wir die Bewegungsgleichung in Newtonscher
+Form ab:
+\begin{align*}
+m\ddot q&=-\frac{\partial A}{\partial t}.
+\end{align*}
+\item
+Aus (\ref{05001:impuls}) lesen wir ab, dass wir als verallgemeinerte
+Impuls-Koordinate f"ur die Hamilton-Gleichungen die Gr"osse
+$P=m\dot q+A=p+A$ w"ahlen m"ussen.
+Die Hamilton-Funktion muss jetzt die Energie in $q$ und dieser neuen
+Koordinaten $P$ ausdr"ucken, man muss also jedes vorkommen von $p$
+im Ausdruck f"ur die Energie durch $P-A$ ersetzen.
+Die Hamilton-Funktion wird damit zu
+\[
+H(P,q)=\frac1{2m}(P-A(t,q))^2.
+\]
+\item
+Die Hamiltonschen Bewegungsgleichungen sind
+\begin{align*}
+\frac{dq}{dt}
+&=
+\frac{\partial H}{\partial P}
+=
+\frac1m(P-A(t,q))
+\\
+\frac{dP}{dt}
+&=
+-\frac{\partial H}{\partial q}
+=
++\frac1m(P-A(t,q))\frac{\partial A}{\partial q}
+=
+\dot q\frac{\partial A}{\partial q}
+\end{align*}
+In der zweiten Gleichung verschwindet das Vorzeichen wegen des zus"atzlichen
+Vorzeichens von der inneren Ableitung.
+Setzen wir in der zweiten Gleichung wieder $P=m\dot q+A$ ein, erhalten wir
+f"ur die linke Seite
+\begin{align*}
+\frac{dP}{dt}
+&=
+\frac{d}{dt}(m\dot q+A(t,q))
+=
+m\ddot q+\frac{\partial A}{\partial t} + \frac{\partial A}{\partial q}\dot q
+\end{align*}
+F"ur die rechte Seite erhalten wir
+\[
+-\frac1m(P-A(t,q))\frac{\partial A}{\partial q}
+=
+-\dot q\frac{\partial A}{\partial q}.
+\]
+Zusammen erhalten wir die Bewegungsgleichungen
+\begin{align*}
+m\ddot q + \frac{\partial A}{\partial t}+\frac{\partial A}{\partial q}\dot q
+&=
+\frac{\partial A}{\partial q}\dot q
+\\
+m\ddot q
+&=
+-\frac{\partial A}{\partial t}.
+\end{align*}
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+Wenn $A$ nicht von der Zeit abh"angt, ist die Energie erhalten.
+Also leistet der Term $A$ keine Arbeit.
+Die Wirkung von $A$ hat also "ahnliche Auswirkungen wie ein Magnetfeld
+auf eine geladenes Teilchen,
+denn die Lorentz steht immer senkrecht auf der Bewegungsrichtung und
+leistet daher ebenfalls keine Arbeit.
+Tats"achlich w"urden in einer dreidimensionalen Version dieses Problems
+im Ausdruck (\ref{05001:derivative}) zus"atzliche Terme auftreten,
+die in der Bewegungsgleichung die Lorentzkraft ergeben w"urden.
+Dies wird im Abschnit~\ref{section:hamilton-funktion-im-magnetfeld}
+voref"uhrt.
+\end{diskussion}
+ 
