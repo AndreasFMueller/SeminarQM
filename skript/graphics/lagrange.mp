@@ -1,3 +1,8 @@
+%
+% lagrange.mp -- illustrations for the lagrange mechanics part
+%
+% (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
 verbatimtex
 \documentclass{book}
 \usepackage{times}
@@ -49,19 +54,10 @@ pickup pencircle scaled 3pt;
 z2 = point 0.4 of p;
 z3 = curvepoint(1.5, 0.4);
 
-draw z2 withcolor (1,0,0);
 label.lrt(btex $q(t)$ etex, z2);
-
-draw z3 withcolor (1,0,0);
 label.ulft(btex $q(t)+\varepsilon\eta(t)$ etex, z3);
-
-pickup pencircle scaled 1pt;
-drawarrow z2--z3 withcolor(1,0,0);
-
-pickup pencircle scaled 4pt;
-
-draw z0; label.llft(btex $q_0=q(t_0)$ etex, z0);
-draw z1; label.urt(btex $q_1=q(t_1)$ etex, z1);
+label.llft(btex $q_0=q(t_0)$ etex, z0);
+label.urt(btex $q_1=q(t_1)$ etex, z1);
 
 def redarrow(expr t) =
 	pickup pencircle scaled 3pt;

@@ -31,6 +31,7 @@ allgemein anwendbaren Quantisierungs-Verfahrens.
 
 \section{Lagrange-Mechanik}
 \rhead{Lagrange-Mechanik}
+\index{Lagrange-Mechanik}
 Das Fermatsche Prinzip besagt, dass Licht immer den Weg k"urzester Zeit
 nimmt. Mit diesem Prinzip konnte Fermat sowohl das Reflexionsgesetz als
 auch das Brechungsgesetz erkl"aren.
@@ -70,6 +71,10 @@ Selbstverst"andlich ist es auch m"oglich, dass die kinetische oder
 die potentielle Energie
 zus"atzlich von der Zeit abh"angt, zum Beispiel "uber eine
 zeitlich ver"anderliche Masse.
+Sie kann auch noch weit komplizierter sein, um zum Beispiel Kr"afte
+zu beschreiben, die von der Geschwindigkeit abh"angen wie der
+Str"omungswiderstand oder die Bremskraft, die durch Wirbelstr"ome in
+einem Magnetfeld verursacht wird.
 
 Die Wirkung oder Aktion einer Zeitentwicklung zwischen den Zust"anden
 $q(t_0)$ und $q(t_1)$ ist die Gr"osse
@@ -87,6 +92,8 @@ $q(t_1)$ "uberf"uhren, immer denjenigen w"ahlt, f"ur die die
 Wirkung minimal wird.
 
 \subsection{Euler-Gleichungen}
+\index{Euler-Gleichungen}
+\index{Wirkung}
 Die Minimierung der Wirkung (\ref{skript:wirkung}) ist ein sogenanntes
 Variationsproblem: gesucht ist ein Weg, welcher ein bestimmtes
 Integral minimiert. Es ist verwandt mit der Aufgabe, den k"urzesten
@@ -157,8 +164,10 @@ Zur Abk"urzung schreiben wir im Folgenden
 &=
 \frac{\partial L}{\partial \dot q}.
 \end{align*}
-Der zweite Term in (\ref{skript:erstevariationsgleichung}) kann mit 
-partieller Integration umgeformt werden:
+Der Faktor $\dot eta(t)$ im zweiten Term hindert uns daran zu verstehen,
+wie dieses Integral verschwinden kann. 
+Wir k"onnen ihn aber zum verschwinden bringen, indem wir ihn mit
+partieller Integration umformen:
 \begin{align*}
 0
 &=\int_{t_0}^{t_1}
@@ -214,7 +223,8 @@ Die Ableitungen nach $q$ und $\dot q$ sind:
 \frac{\partial L}{\partial q}&=-\frac{\partial V}{\partial q}=-\operatorname{grad}V(q).
 \end{align*}
 Der Ausdruck $m\dot q$ ist aus der Newtonschen Mechanik bekannt als
-der Impuls eines Teilchens. Die Eulersche Gleichung wird daher zu
+der Impuls eines Teilchens.
+Die Eulersche Gleichung (\ref{skript:euler-dgl}) wird daher zu
 der Bedingung:
 \[
 \frac{d}{dt}\frac{\partial L}{\partial \dot q}=\frac{\partial L}{\partial q}
@@ -235,6 +245,7 @@ Man beachte, dass diese Herleitung auch dann noch gilt, wenn die Masse von der
 Zeit abh"angt (zum Beispiel bei einer Rakete).
 
 \subsection{Fermat-Prinzip}
+\index{Fermat-Prinzip}
 Das Fermat-Prinzip besagt, dass das Licht immer den Weg mit k"urzester
 Laufzeit zwischen zwei Punkten w"ahlt.
 Wir beschreiben den Weg, den das Licht von $x_0$ zu $x_1$ nimmt,
@@ -247,7 +258,7 @@ Zwei Punkte auf dem Strahl, deren Parameter sich um $\Delta s$
 unterscheiden, haben die  Entfernung $|x'(s)|\Delta s$.
 Das Licht braucht daher f"ur die ganze Kurve die Zeit
 \[
-T=\int_{s_0}^{s_1} |x'(s)| n(x(s))\frac1c\,ds.
+T=\int_{s_0}^{s_1} |x'(s)|\, n(x(s))\frac1c\,ds.
 \]
 Der Faktor $1/c$ hat keinen Einfluss auf das Minimum, wir k"onnen ihn
 weglassen.
@@ -304,6 +315,7 @@ die aussieht wie die Bewegung eines Teilchens in einem Potential.
 
 \section{Hamiltonsche Mechanik}
 \rhead{Hamiltonsche Mechanik}
+\index{Hamiltonsche Mechanik}
 Im Fermat-Prinzip haben wir einen Zusammenhang zwischen dem Formalismus
 der Mechanik und der geometrischen Optik kennengelernt, der mindestens
 andeutet, dass die Mechanik nur der Grenzfall f"ur sehr kurze Wellenl"ange
@@ -328,6 +340,7 @@ Variablen $p_i$ erfolgen, die eine ``spannende'' physikalische
 Bedeutung haben.
 
 \subsection{Hamilton-Funktion}
+\index{Hamilton-Funktion}
 Die Hamilton-Funktion $H(p,q)$ ist die Energie eines physikalischen
 Systems. Darin sind $q$ die allgemeinen Koordinaten, also
 zum Beispiel die Raumkoordinaten $x$, $y$ und $z$, oder Winkel, mit
@@ -490,6 +503,7 @@ F"ur drei Funktionen $F$, $G$ und $H$ gilt
 \end{gather*}
 Die dritte Gleichung heisst auch die Jacobi-Identit"at.
 \end{satz}
+\index{Jacobi-Identit\"at!f\"ur Poission-Klammern}
 
 \begin{proof}[Beweis]
 Die erste Identit"at folgt sofort aus der Definition.
