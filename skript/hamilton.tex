@@ -422,38 +422,183 @@ die Energie ist erhalten. Diese Situation tritt in abgeschlossenen
 Systemen immer auf, insbesondere waren alle bisherigen Beispiel
 von dieser Art.
 
-\subsection{Kanonische Transformation}
-\rhead{Kanonische Transformation}
-Kartesische Koordinaten sind nicht unbedingt die optimale Wahl.
-Eine zweckm"assige Wahl der Koordinaten nimmt R"ucksicht auf die
-Symmetrieeigenschaften des Systems.
-Ein zweidimensional rotationssymmetrischer harmonischer Oszillator mit 
-der Hamilton-Funktion
-\[
-H=\frac1{2m}(p_x^2+p_y^2)+K(x^2 + y^2)
-\]
-sollte sich auch in Polarkoordinaten $(r,\varphi)$ ausdr"ucken lassen. 
-Doch welche Impulse sind dann zu verwenden, damit die Gleichungen
-(\ref{skript:hamilton-v}) und (\ref{skript:hamilton-newton}) auch in den neuen
-Koordinaten G"ultigkeit haben?
+\subsection{Poisson-Klammern}
+\index{Poisson-Klammer}
+Die Hamiltonsche Mechanik kann mit Hilfe der Poisson-Klammer besonders
+elegant formuliert werden.
 
-\subsection{Hamilton-Jacobi-Theorie}
-Die Technik der kanonischen Transformationen erlaubt sogar, ein mechanisches
-Problem mit Hilfe einer geeigneten Transformation vollst"andig zu l"osen.
-Wie dies funktionieren k"onnte zeigt ein Vergleich mit einem freien
-Teilchen, also der Hamilton-Funktion
+\begin{definition}
+Seien $F(q,p)$ und $G(q,p)$ Funktionen in den Koordinaten und Impulsen. 
+Dann ist die {\em Poisson-Klammer} die Funktion
 \[
-H=\frac1{2m}(p_x^2+p_y^2+p_z^2).
+(F,G)
+=
+\sum_{k=1}^n
+\biggl(
+\frac{\partial F}{\partial q_k}\frac{\partial G}{\partial p_k}
+-
+\frac{\partial G}{\partial q_k}\frac{\partial F}{\partial p_k}
+\biggr).
 \]
-Da die Koordinaten $x$, $y$ und $z$ gar nicht vorkommen, verschwinden
-die Ableitungen von $H$ nach den Koordinaten und die Bewegungsgleichungen
-sind
+\end{definition}
+
+F"ur das Rechnen mit Poisson-Klammern sind die folgenden Rechenregeln
+n"utzlich.
+\begin{satz}
+F"ur drei Funktionen $F$, $G$ und $H$ gilt
+\begin{gather*}
+(F,G)=-(G,F),
+\\
+(F,GH)
+=
+(F,G)H+G(F,H),
+\\
+(F,(G,H))
++
+(G,(H,F))
++
+(H,(F,G))
+=0.
+\end{gather*}
+Die dritte Gleichung heisst auch die Jacobi-Identit"at.
+\end{satz}
+
+\begin{proof}[Beweis]
+Die erste Identit"at folgt sofort aus der Definition.
+Die zweite Gleichung kann man durch Nachrechnen wie folgt erhalten:
 \begin{align*}
-\frac{dp}{dt}&=0\\
-\frac{dq}{dt}&=\frac{p}{m}
-&&\Rightarrow&q=q_0+t\frac{p}{m}
+(F,GH)
+&=
+\sum_{k=1}^3 \biggl(
+\frac{\partial F}{\partial q_k}\frac{\partial GH}{\partial p_k}
+-
+\frac{\partial GH}{\partial q_k}\frac{\partial F}{\partial p_k}
+\biggr)
+\\
+&=
+\sum_{k=1}^3 \biggl(
+\frac{\partial F}{\partial q_k}\frac{\partial G}{\partial p_k}H
++
+G\frac{\partial F}{\partial q_k}\frac{\partial H}{\partial p_k}
+-
+\frac{\partial G}{\partial q_k}\frac{\partial F}{\partial p_k}H
+-
+G\frac{\partial H}{\partial q_k}\frac{\partial F}{\partial p_k}
+\biggr)
+=(F,G)H + G(F,H).
 \end{align*}
-Die Ortskoordinaten h"angen linear von der Zeit ab.
+Auch von der dritten Gleichung kann man sich durch Nachrechnen
+"uberzeugen.
+\end{proof}
+
+Als Beispiel berechnen wir die Poisson-Klammern einer Funktion $F$
+mit den Koordinaten und Impulsen
+\begin{align*}
+(q_j,G)
+&=
+\sum_{k=1}^n\biggl(
+\frac{\partial q_j}{\partial q_k}\frac{\partial G}{\partial p_k}
+-
+\frac{\partial G}{\partial q_k}\frac{\partial q_j}{\partial p_k}
+\biggr)
+=
+\sum_{k=1}^n\delta_{jk}\frac{\partial G}{\partial p_k}
+=
+\frac{\partial G}{\partial p_j}
+\\
+(p_j,G)
+&=
+\sum_{k=1}^n\biggl(
+\frac{\partial p_j}{\partial q_k}\frac{\partial G}{\partial p_k}
+-
+\frac{\partial G}{\partial q_k}\frac{\partial p_j}{\partial p_k}
+\biggr)
+=
+-\sum_{k=1}^n
+\frac{\partial G}{\partial q_k}\delta_{jk}
+=
+-\frac{\partial G}{\partial q_j}.
+\end{align*}
+Damit k"onnen wir auch die Poisson-Klammer der Koordinaten und Impulse
+ausrechnen:
+\begin{align*}
+(q_j,q_l)
+&=
+\frac{\partial q_l}{\partial p_j}
+=
+0
+\\
+(p_j,p_l)
+&=
+\frac{\partial p_l}{\partial q_j}
+=
+0
+\\
+(q_j,p_l)
+&=
+\frac{\partial p_l}{\partial p_j}
+=\delta_{jl}.
+\end{align*}
+Die Poisson-Klammern der Koordinaten und Impulse mit der Hamilton-Funktion
+erlauben, die Bewegungsgleichungen
+\begin{align*}
+(q_j,H)
+&=
+\frac{\partial H}{\partial p_j} = \frac{dq_j}{dt}
+\\
+(p_j,H)
+&=
+-\frac{\partial H}{\partial q_j} = \frac{dp_j}{dt}
+\end{align*}
+mit Poisson-Klammern auszudr"ucken.
+
+\subsection{Poisson-Klammern f"ur den Drehimpuls}
+Der Drehimpuls der Vektor mit den Komponenten
+\[
+\vec L=\vec r\times \vec p
+\qquad\Rightarrow\qquad
+\left\{\quad
+\begin{aligned}
+L_1&=x_2p_3-x_3p_2\\
+L_2&=x_3p_1-x_1p_3\\
+L_3&=x_1p_2-x_2p_1
+\end{aligned}
+\right.
+\]
+Die Poisson-Klammern sind
+\begin{align*}
+(x_1,L_1)
+&=
+0
+&
+(p_1,L_1)
+&=
+0
+\\
+(x_2,L_1)
+&=
+\frac{\partial L_1}{\partial p_2}
+=
+-x_3
+&
+(p_2,L_1)
+&=
+-\frac{\partial L_1}{\partial x_2}
+=
+-p_3
+\\
+(x_3,L_1)
+&=
+\frac{\partial L_1}{\partial p_3}
+=
+x_2
+&
+(p_3,L_1)
+&=
+-\frac{\partial L_1}{\partial x_3}
+=
+p_2
+\end{align*}
 
 \section{Wellen und Teilchen}
 \rhead{Welle und Teilchen}
