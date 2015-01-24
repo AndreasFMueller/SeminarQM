@@ -71,6 +71,10 @@ for t = 0.1 step 0.1 until 0.95:
 	redarrow(t);
 endfor;
 
+pickup pencircle scaled 4pt;
+draw z0;
+draw z1;
+
 endfig;
 
 end
