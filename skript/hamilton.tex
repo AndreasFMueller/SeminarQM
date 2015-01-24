@@ -99,12 +99,20 @@ Euler auseinandergesetzt, der auch einen allgemeinen L"osungsweg angegeben hat.
 
 Gesucht wird also eine Kurve $q(t)$, welche $W[q(t)]$ minimal macht.
 Jede andere Kurve, die sich nur wenig von $q(t)$ unterscheidet, sollte
-daher eine gr"ossere Wirkung haben. Eine solche Nachbarkurve k"onnen
-wir als
+daher eine gr"ossere Wirkung haben.
+\begin{figure}
+\centering
+\includegraphics{graphics/lagrange-1.pdf}
+\caption{Kurve und Nachbarkurven f"ur die Herleitung der Eulerschen
+Differentialgleichung
+\label{skript:nachbarkurven}}
+\end{figure}
+Eine solche Nachbarkurve k"onnen wir als
 \[
 q(t) + \varepsilon \eta(t)
 \]
-ansetzen, wobei $\eta(t)$ eine beliebig w"ahlbare Funktion ist,
+ansetzen (Abbildung~\ref{skript:nachbarkurven}),
+wobei $\eta(t)$ eine beliebig w"ahlbare Funktion ist,
 die f"ur $t_0$ und $t_1$ verschwindet, $\eta(t_0)=\eta(t_1)=0$.
 Wenn $q(t)$ L"osung des Minimalproblems ist, muss
 \begin{equation}
@@ -170,23 +178,29 @@ partieller Integration umgeformt werden:
 \end{align*}
 Diese letzte Gleichung ist nur dann f"ur jede beliebige Funktion $\eta(t)$
 erf"ullbar, wenn der Klammerausdruck verschwindet. So erhalten wir die
-Eulerschen Gleichungen f"ur das Variationsproblem.
+{\em Eulerschen Gleichungen} f"ur das Variationsproblem.
 
 \begin{satz}
 Die Wirkung
 \[
 W[q(t)] =\int_{t_0}^{t_1} L(t, q(t), \dot q(t))\,dt
 \]
-wird minimiert von einer Funktion $q(t)$, welche den Differentialgleichungen
-\[
+wird minimiert von einer Funktion $q(t)$, welche den 
+{\em Eulerschen Differentialgleichungen}
+\begin{equation}
 \frac{d}{dt}\frac{\partial L}{\partial \dot q}-\frac{\partial L}{\partial q}=0
 \qquad\Leftrightarrow\qquad
 \frac{d}{dt}\frac{\partial L}{\partial \dot q_i}-\frac{\partial L}{\partial q_i}=0\quad\forall i
-\]
+\label{skript:euler-dgl}
+\end{equation}
 gen"ugt.
+Die Eulerschen Differentialgleichungen sind gew"ohnliche
+Differentialgleichungen zweiter Ordnung f"ur die Funktionen $q_i(t)$.
 \end{satz}
 
 \subsection{Bewegungsgleichungen}
+\index{Maupertuis}
+\index{Wirkung!Prinzip der kleinsten}
 Nach Maupertuis soll das Prinzip der kleinsten Wirkung eine Bewegung
 entsprechen den Newtonschen Gesetzen ergeben.
 Wir wenden daher die Eulergleichungen auf das Problem eines Teilchens der
@@ -295,9 +309,23 @@ der Mechanik und der geometrischen Optik kennengelernt, der mindestens
 andeutet, dass die Mechanik nur der Grenzfall f"ur sehr kurze Wellenl"ange
 einer ``Wellenmechanik'' sein k"onnte.
 Die Lagrange-Mechanik ist aber nicht allgemeine genug, um diesen
-Schritt zu vervollst"andigen.
+Schritt zu erm"oglichen.
 Die noch etwas allgemeinere Formulierung der Mechanik durch Hamilton
 schafft dies.
+
+Die Lagrange-Formulierung der Mechanik f"uhrt auf die Eulergleichungen,
+die Differentialgleichungen zweiter Ordnung f"ur die Funktionen $q_i(t)$ 
+sind.
+Zwar l"asst sich jede Differentialgleichung zweiter Ordnung einfach
+dadurch als Differentialgleichung erster Ordnung schreiben, indem
+zu den Variablen $q_i$ die zus"atzlichen Variablen $v_i=\dot q_i$ und die
+Gleichungen $\dot q_i=v_i$ hinzugef"ugt werden, doch ist diese Technik
+nicht ganz befriedigend, weil die $v_i$ physikalisch nicht so ``gute''
+Variablen sind.
+Die erweiterte Formulierung der Mechanik soll also durch
+Differentialgleichungen erster Ordnung mit zus"atzlichen
+Variablen $p_i$ erfolgen, die eine ``spannende'' physikalische
+Bedeutung haben.
 
 \subsection{Hamilton-Funktion}
 Die Hamilton-Funktion $H(p,q)$ ist die Energie eines physikalischen
