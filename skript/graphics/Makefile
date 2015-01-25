@@ -36,7 +36,8 @@ drehimpuls_FILES = drehimpuls-1.pdf drehimpuls-2.pdf drehimpuls-3.pdf
 drehimpuls: $(drehimpuls_FILES)
 
 gatter_FILES = gatter-1.pdf gatter-2.pdf gatter-3.pdf gatter-4.pdf \
-	gatter-5.pdf gatter-6.pdf gatter-7.pdf gatter-8.pdf gatter-9.pdf
+	gatter-5.pdf gatter-6.pdf gatter-7.pdf gatter-8.pdf gatter-9.pdf \
+	gatter-10.pdf gatter-11.pdf gatter-12.pdf
 gatter: $(gatter_FILES)
 
 periodensystem_FILES = periodensystem-1.pdf
@@ -72,7 +73,7 @@ $(drehimpuls_FILES):	drehimpuls.mp
 
 $(gatter_FILES):	gatter.mp
 	TEX=latex mpost gatter.mp
-	for i in 1 2 3 4 5 6 7 8 9; \
+	for i in 1 2 3 4 5 6 7 8 9 10 11 12; \
 	do \
 		mptopdf gatter.$${i}; \
 	done

@@ -489,12 +489,14 @@ F"ur das Rechnen mit Poisson-Klammern sind die folgenden Rechenregeln
 n"utzlich.
 \begin{satz}
 F"ur drei Funktionen $F$, $G$ und $H$ gilt
-\begin{gather*}
+\begin{gather}
 (F,G)=-(G,F),
+\label{skript:poisson-antisymmetrie}
 \\
 (F,GH)
 =
 (F,G)H+G(F,H),
+\label{skript:poisson-derivation}
 \\
 (F,(G,H))
 +
@@ -502,7 +504,8 @@ F"ur drei Funktionen $F$, $G$ und $H$ gilt
 +
 (H,(F,G))
 =0.
-\end{gather*}
+\label{skript:poisson-jacobi}
+\end{gather}
 Die dritte Gleichung heisst auch die Jacobi-Identit"at.
 \end{satz}
 \index{Jacobi-Identit\"at!f\"ur Poission-Klammern}
@@ -596,115 +599,148 @@ erlauben, die Bewegungsgleichungen
 \end{align*}
 mit Poisson-Klammern auszudr"ucken.
 
+\begin{satz}
+\label{skript:zeitentwicklung-observable-klassisch}
+Ist $A$ eine Funktion der Koordinaten und Impulse eines mechanischen Systems
+mit Hamilton-Funktion $H$, dann ist die Zeitentwicklung von $A$ gegeben
+durch die Poission-Klammer:
+\begin{equation}
+\frac{d}{dt}A
+=
+(A,H).
+\label{skript:zeitentwicklung-poisson}
+\end{equation}
+\end{satz}
+
+\begin{proof}[Beweis]
+Wir berechnen die Zeitableitung von $A$
+\begin{align*}
+\frac{dA}{dt}
+&=
+\frac{\partial A}{\partial q_k}\frac{dq_k}{dt}
++
+\frac{\partial A}{\partial p_k}\frac{dp_k}{dt}
+=
+\frac{\partial A}{\partial q_k}\frac{\partial H}{\partial p_k}
+-
+\frac{\partial A}{\partial p_k}\frac{\partial H}{\partial q_k}
+=
+(A,H).
+\end{align*}
+\end{proof}
+
 \subsection{Poisson-Klammern f"ur den Drehimpuls}
-Der Drehimpuls der Vektor mit den Komponenten
+Der Drehimpuls ist der Vektor mit den Komponenten
 \[
 \vec L=\vec r\times \vec p
 \qquad\Rightarrow\qquad
 \left\{\quad
 \begin{aligned}
-L_1&=x_2p_3-x_3p_2\\
-L_2&=x_3p_1-x_1p_3\\
-L_3&=x_1p_2-x_2p_1
+L_1&=x_2p_3-x_3p_2,\\
+L_2&=x_3p_1-x_1p_3,\quad\text{und}\\
+L_3&=x_1p_2-x_2p_1.
 \end{aligned}
 \right.
 \]
-Die Poisson-Klammern sind
+Die Poisson-Klammern von $L_1$  mit den Koordinaten und Impulsen sind
 \begin{align*}
 (x_1,L_1)
 &=
-0
+0,
 &
 (p_1,L_1)
 &=
-0
+0,
 \\
 (x_2,L_1)
 &=
 \frac{\partial L_1}{\partial p_2}
 =
--x_3
+-x_3,
 &
 (p_2,L_1)
 &=
 -\frac{\partial L_1}{\partial x_2}
 =
--p_3
+-p_3,
 \\
 (x_3,L_1)
 &=
 \frac{\partial L_1}{\partial p_3}
 =
-x_2
+x_2,
 &
 (p_3,L_1)
 &=
 -\frac{\partial L_1}{\partial x_3}
 =
-p_2
+p_2.
 \end{align*}
-
-\section{Wellen und Teilchen}
-\rhead{Welle und Teilchen}
-Wir zeigen jetzt, dass die Hamilton-Jacobi-Gleichung tats"achlich der
-Grenzfall unendlich kleiner Wellenl"ange f"ur eine ``Wellenmechanik'' ist.
-Von de Broglie wissen wir den Zusammenhang zwischen dem Impuls $p$
-eines Teilchens und der zugeh"origen Wellenl"ange  $\lambda=h/p$.
-Nach de Broglie entspricht einem Teilchen mit Impuls $p$ also eine Welle
-der Form
-\begin{equation}
-\psi(x)
+Mit der Regel (\ref{skript:poisson-derivation}) k"onnen wir jetzt auch die
+Poisson-Klammern der Drehimpulskomponenten untereinander berechnen:
+\begin{align*}
+(L_1,L_1)&=0
+\\
+(L_2,L_1)
+&=
+(x_3p_1-x_1p_3,L_1)
 =
-e^{2\pi i\frac{x}{\lambda}}
+(x_3p_1,L_1)-(x_1p_3,L_1)
+\\
+&=
+x_3\underbrace{(p_1,L_1)}_{=0}+\underbrace{(x_3,L_1)}_{=x_2}p_1
+-x_1\underbrace{(p_3,L_1)}_{=p_2} -\underbrace{(x_1,L_1)}_{=0}p_3
 =
-e^{\frac{i}{\hbar}xp}.
-\label{skript:debrogliewelle}
-\end{equation}
-Nat"urlich bewegt sich diese Welle auch noch, wir schreiben die
-Zeitabh"angigkeit als
-\[
-\psi(x,t)
+x_2p_1 -x_1p_2=-L_3
+\\
+(L_3,L_1)
+&=
+(x_1p_2-x_2p_1,L_1)
 =
-e^{\frac{i}{\hbar}(xp-\omega t)}.
-\]
-
-
-Etwas allgemeiner suchen wir jetzt eine Welle, die zu einem Teilchen
-passt, welches sich gem"ass einer Hamilton-Funktion $H(p,q)$ bewegt.
-Wir setzen die Welle in der Form
-\[
-\psi(q,t) = e^{\frac{i}{\hbar}S(q,t))}
-\]
-Die Funktion ist die Phase der Welle, die Fl"achen gleichen Wertes von
-$S$ beschreiben die Wellenfronten.
-Die Konstante $\hbar$ in diesem Ansatz steuert die Wellenl"ange, wenn
-wir $\hbar$ gegen Null gehen lassen, wird die Wellenl"ange unendlich kurz.
-
-Die Welle soll sich f"ur unendlich kleine Wellenl"ange wie ein Teilchen
-bewegen, welches von der Hamilton-Funktion gesteuert wird.
-Den Impuls des Teilchens k"onnen wir aus der
-de Broglie-Welle~(\label{skript:debrogliewelle}) durch ableiten finden,
-\[
-\frac{\partial}{\partial x}
-e^{\frac{i}{\hbar}xp}
+(x_1p_2,L_1)-(x_2p_1,L_1)
+\\
+&=
+x_1\underbrace{(p_2,L_1)}_{=-p_3} + \underbrace{(x_1,L_1)}_{=0}p_2
+- x_2\underbrace{(p_1,L_1)}_{=0} - \underbrace{(x_2,L_1)}_{=-x_3}p_1
 =
-\frac{i}{\hbar}p
-e^{\frac{i}{\hbar}xp}
-\qquad
-\Rightarrow
-\qquad
-p
-e^{\frac{i}{\hbar}S}
+-x_1p_3+x_3p_1
+=L_2
+\\
+(L_3,L_2)&=-L_1\qquad\text{(durch zyklische Vertauschung)}
+\end{align*}
+Damit k"onnen wir auch die Poisson-Klammern von $L_3$ mit dem Drehimpulsbetrag
+$\vec L^2$ berechnen:
+\begin{align*}
+(L_1^2,L_3)
+&=
+L_1(L_1,L_3)+(L_1,L_3)L_1
 =
-\frac{\hbar}{i}
-\frac{\partial S}{\partial q}
-e^{\frac{i}{\hbar}S}
-\]
+-2L_2L_1
+\\
+(L_2^2,L_3)
+&=
+L_2(L_2,L_3)+(L_2,L_3)L_2
+=
+2L_2L_1
+\\
+(L_3^2,L_3)&=L_3(L_3,L_3)+(L_3,L_3)L_3=0
+\\
+\Rightarrow\qquad
+(\vec L^2,L_3)
+&=0
+\end{align*}
+Wir werden in Kapitel~\ref{chapter:drehimpuls} sehen,
+dass die Drehimpulskomponenten in der
+Quantenmechanik einer ganz "ahnlichen Algebra gen"ugen.
+Die Algebra wird bereits ausreichen, die verschiedenen Zust"ande
+des Drehimuplses zu berechnen.
 
 
 \section*{"Ubungsaufgaben}
 \begin{uebungsaufgaben}
 \item
 \input uebungsaufgaben/05001.tex
+\item
+\input uebungsaufgaben/05002.tex
 \end{uebungsaufgaben}
 

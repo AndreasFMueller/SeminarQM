@@ -1,0 +1,36 @@
+Ist die Operation
+\[
+|abc\rangle\mapsto |(a\vee b)\oplus c\rangle
+\]
+durch ein Quantengatter implementierbar?
+
+\begin{loesung}
+Diese Operation beschreibt die Abbildung
+\begin{align*}
+|000\rangle&\mapsto|000\rangle\\
+|001\rangle&\mapsto|001\rangle\\
+|010\rangle&\mapsto|011\rangle\\
+|011\rangle&\mapsto|010\rangle\\
+|100\rangle&\mapsto|101\rangle\\
+|101\rangle&\mapsto|100\rangle\\
+|110\rangle&\mapsto|111\rangle\\
+|111\rangle&\mapsto|110\rangle.
+\end{align*}
+Dazu geh"ort die Matrix
+\[
+U
+=
+\begin{pmatrix}
+1&0&0&0&0&0&0&0\\
+0&1&0&0&0&0&0&0\\
+0&0&0&1&0&0&0&0\\
+0&0&1&0&0&0&0&0\\
+0&0&0&0&0&1&0&0\\
+0&0&0&0&1&0&0&0\\
+0&0&0&0&0&0&0&1\\
+0&0&0&0&0&0&1&0\\
+\end{pmatrix}
+\]
+Dies ist eine orthogonale Matrix, also ist $U$ ein Quantengatter.
+\end{loesung}
+
