@@ -520,17 +520,17 @@ Scratch-Bit $c$ und implementiert die Abbildung
 \[
 |abc\rangle
 \mapsto
-|a\rangle|b\rangle|c\oplus(a\wedge b)\rangle.
+|a\rangle|b\rangle|(a\wedge b)\oplus c\rangle.
 \]
 Darin ist $\oplus$ die XOR-Operation. 
 Im Detail beschreibt dies folgende Abbildung
 \begin{align*}
 |000\rangle&\mapsto|000\rangle\\
 |001\rangle&\mapsto|001\rangle\\
-|010\rangle&\mapsto|011\rangle\\
-|011\rangle&\mapsto|010\rangle\\
-|100\rangle&\mapsto|101\rangle\\
-|101\rangle&\mapsto|100\rangle\\
+|010\rangle&\mapsto|010\rangle\\
+|011\rangle&\mapsto|011\rangle\\
+|100\rangle&\mapsto|100\rangle\\
+|101\rangle&\mapsto|101\rangle\\
 |110\rangle&\mapsto|111\rangle\\
 |111\rangle&\mapsto|110\rangle
 \end{align*}
@@ -540,10 +540,10 @@ T=
 \begin{pmatrix}
 1&0&0&0&0&0&0&0\\
 0&1&0&0&0&0&0&0\\
-0&0&0&1&0&0&0&0\\
 0&0&1&0&0&0&0&0\\
-0&0&0&0&0&1&0&0\\
+0&0&0&1&0&0&0&0\\
 0&0&0&0&1&0&0&0\\
+0&0&0&0&0&1&0&0\\
 0&0&0&0&0&0&0&1\\
 0&0&0&0&0&0&1&0\\
 \end{pmatrix}.
@@ -575,3 +575,9 @@ sind.
 \end{satz}
 
 \subsection{Quanten-Algorithmen}
+
+\section*{"Ubungsaufgaben}
+\begin{uebungsaufgaben}
+\item
+\input uebungsaufgaben/04001.tex
+\end{uebungsaufgaben}
