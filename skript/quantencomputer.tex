@@ -410,7 +410,89 @@ Form
 \alpha_{01}|01\rangle
 \]
 Wir nennen das erste Bit ein Scratch-Bit.
+\index{Scratch-bit}
 
+\index{Tensor-Produkt}
+Die Operation, aus einzelnen Q-bits ein Register von Q-bits zu
+machen, ist so grundlegend, dass wir daf"ur eine eigene Notation
+verwenden wollen.
+Sind $H_1$ und $H_2$ die Hilbertr"aume, in denen die Zust"ande f"ur
+die einzelnen Bits zu finden sind, dann schreiben wir $H_1\otimes H_2$
+f"ur den Raum, der die kombinierten Zust"ande enth"alt.
+Sind $|a\rangle\in H_1$ und $|b\rangle\in H_2$ Zust"ande einzelner
+Q-bits, dann schreiben wir f"ur den kombinierten Zustand auch
+$|ab\rangle=|a\rangle\,|b\rangle=|a\rangle\otimes|b\rangle=|a\otimes b\rangle$.
+Das Skalarprodukt in $H_1\otimes H_2$ ist gegeben durch
+\[
+\langle a\otimes b|c\otimes d\rangle
+=
+\langle a|c\rangle\,\langle b|d\rangle.
+\]
+Die Zust"ande $|0\otimes 0\rangle$,
+$|0\otimes 1\rangle$,
+$|1\otimes 0\rangle$ und
+$|1\otimes 1\rangle$ sind dann immer noch orthogonal.
+
+\begin{beispiel}
+Man berechne das Skalarprodukt der beiden Zust"ande
+\[
+|\psi\rangle
+=
+\frac1{\sqrt{2}} |0\rangle\otimes|1\rangle
++
+\frac1{\sqrt{2}} |1\rangle\otimes|0\rangle
+\qquad
+\text{und}
+\qquad
+|\varphi\rangle
+=
+\alpha |0\rangle\otimes|1\rangle
++
+\beta |1\rangle\otimes|0\rangle.
+\]
+Wir k"onnen verwenden, dass die Basisvektoren $|a\otimes b\rangle$ orthogonal
+sind, und schliessen, dass das Skalarprodukt
+$\frac1{\sqrt{2}}\alpha + \frac1{\sqrt{2}}\beta$ sein muss.
+Wir wollen uns aber "uberzeugen, dass die Definitionen ``funktionieren''
+und rechnen daher das Skalarprodukt auch explizit aus.
+Nach Definition des Skalarproduktes in $H_1\otimes H_2$ gilt
+\begin{align*}
+\langle\psi|\varphi\rangle
+&=
+\biggl(
+\frac1{\sqrt{2}} \langle 0 \otimes 1|
++
+\frac1{\sqrt{2}} \langle 1\otimes0|
+\biggr)
+\biggl(
+\alpha |0\otimes 1\rangle
++
+\beta |1\otimes 0\rangle.
+\biggr)
+\\
+&=
+\frac1{\sqrt{2}} \alpha\langle 0\otimes 1|0\otimes 1\rangle
++
+\frac1{\sqrt{2}} \beta \langle 0\otimes 1|1\otimes 0\rangle
++
+\frac1{\sqrt{2}} \alpha\langle 1\otimes 0|0\otimes 1\rangle
++
+\frac1{\sqrt{2}} \beta \langle 1\otimes 0|1\otimes 0\rangle
+\\
+&=
+\frac1{\sqrt{2}} \alpha\underbrace{\langle 0|0\rangle}_{=1} \underbrace{\langle 1|1\rangle}_{=1}
++
+\frac1{\sqrt{2}} \beta \underbrace{\langle 0|1\rangle}_{=0} \underbrace{\langle 1|0\rangle}_{=0}
++
+\frac1{\sqrt{2}} \alpha\underbrace{\langle 1|0\rangle}_{=0} \underbrace{\langle 0|1\rangle}_{=0}
++
+\frac1{\sqrt{2}} \beta \underbrace{\langle 1|1\rangle}_{=1} \underbrace{\langle 0|0\rangle}_{=1}
+\\
+&=
+\frac1{\sqrt{2}}\alpha + \frac1{\sqrt{2}}\beta,
+\end{align*}
+wir erhalten also genau das erwartete Resultat.
+\end{beispiel}
 
 \subsection{Gatter}
 Klassische Computer f"uhren ihre Berechnung mit logischen Gattern durch,
@@ -550,6 +632,68 @@ T=
 \]
 Die Matrix $T$ ist orthogonal, und damit auch unit"ar.
 \end{beispiel}
+
+\subsection{No-Cloning Theorem}
+Ein klassischer Computer kann ein Ausgangssignal als Input f"ur viele
+nachfolgende Gatter verwenden, das Bit wird einfach auf mehrere Leitungen
+kopiert. 
+Ein Quanten-Computer kann das nicht:
+\begin{satz}
+\label{skript:no-cloning-theorem}
+Es gibt keine unit"are Matrix, die einen beliebigen Zustand kopieren
+kann, d.~h.~die Abbildung
+\[
+|\psi\rangle\,|k\rangle\mapsto |\psi\rangle\,|\psi\rangle
+\]
+kann nicht unit"ar sein.
+\end{satz}
+
+\begin{proof}[Beweis]
+Nehmen wir an, es g"abe eine unit"are Abbildung $U$, die ein q-Bit clonen
+kann:
+\[
+U(|\psi\rangle\,|k\rangle)=|\psi\rangle\,|\psi\rangle.
+\]
+Wenden wir $U$ auf einen analog konstruierten Zustand
+$|\varphi\rangle,|k\rangle$ an, dann muss, weil $U$ unit"ar ist,
+das Skalarprodukt der beiden beiden Zust"ande vor und nach der Anwendung
+von $U$ gleich sein.
+\begin{equation}
+\left.
+\begin{aligned}
+\langle\varphi\otimes k|\psi\otimes k\rangle
+&=
+\langle\varphi|\psi\rangle \langle k|k\rangle
+\\
+\langle\varphi\otimes\varphi|\psi\otimes\psi\rangle
+&=
+\langle\varphi|\psi\rangle \langle \varphi|\psi\rangle
+\end{aligned}
+\quad
+\right\}=
+\end{equation}
+Da $\langle k|k\rangle=1$ ist, folgt
+\[
+\langle \varphi|\psi\rangle^2=
+\langle \varphi|\psi\rangle
+\qquad\Leftrightarrow\qquad
+\langle \varphi|\psi\rangle ( \langle \varphi|\psi\rangle -1) = 0
+\qquad\Leftrightarrow\qquad
+\langle \varphi|\psi\rangle =\begin{cases}0\\1\end{cases}
+\]
+Die beiden Zust"ande $|\psi\rangle$ und $|\varphi\rangle$ waren aber
+beliebig, k"onnen also auch beliebige komplexe Zahlen als Skalarprodukt
+haben.
+Dieser Widerspruch zeigt, dass es eine solche Matrix $U$ gar nicht
+geben kann.
+\end{proof}
+
+Q-bits lassen sich also grunds"atzlich nicht kopieren.
+Dies wird in der Quanten-Kryptographie verwendet zur Absicherung des
+Schl"usselaustausches verwendet. 
+Da der Quantenzustand, den ein Teilnehmer empf"angt, nicht kopiert
+werden kann, ist es unm"oglich, den Schl"usselaustausch abzuh"oren,
+ohne dass dies bemerkt wird.
 
 \subsection{Quanten-Turing-Maschinen}
 Eine Quanten-Berechnung stellt also zuerst einen Zustand in einem

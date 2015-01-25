@@ -1,0 +1,106 @@
+Rechnen Sie die Jacobi-Identit"at f"ur die Poisson-Klammern nach:
+\begin{equation}
+(F,(G,H))+ (G,(H,F))+ (H,(F,G))=0.
+\label{skript:jacobi}
+\end{equation}
+
+\begin{loesung}
+Wir setzen die Definition f"ur die erste Poisson-Klammer in
+(\ref{skript:jacobi}) ein:
+\begin{align*}
+(F,(G,H))
+&=
+\sum_{k=1}^n\biggl(
+\frac{\partial F}{\partial q_k} \frac{\partial (G,H)}{\partial p_k}
+-
+\frac{\partial (G,H)}{\partial q_k} \frac{\partial F}{\partial p_k}
+\biggr)
+\\
+&=
+\sum_{k,l=1}^n\biggl(
+\frac{\partial F}{\partial q_k}
+\frac{\partial}{\partial p_k}\biggl(
+\frac{\partial G}{\partial q_l}\frac{\partial H}{\partial p_l}
+-
+\frac{\partial H}{\partial q_l}\frac{\partial G}{\partial p_l}
+\biggr)
+-
+\frac{\partial}{\partial q_k}\biggl(
+\frac{\partial G}{\partial q_l}\frac{\partial H}{\partial p_l}
+-
+\frac{\partial H}{\partial q_l}\frac{\partial G}{\partial p_l}
+\biggr)
+\frac{\partial F}{\partial p_k}
+\biggr)
+\\
+&=
+\sum_{k,l=1}^n\biggl(
+\frac{\partial F}{\partial q_k}
+\biggl(
+\frac{\partial^2 G}{\partial q_l\partial p_k}\frac{\partial H}{\partial p_l}
++
+\frac{\partial G}{\partial q_l}\frac{\partial^2 H}{\partial p_l\partial p_k}
+-
+\frac{\partial^2 H}{\partial q_l\partial p_k}\frac{\partial G}{\partial p_l}
+-
+\frac{\partial H}{\partial q_l}\frac{\partial^2 G}{\partial p_l\partial p_k}
+\biggr)
+\\
+&\qquad\qquad
+-
+\biggl(
+\frac{\partial^2 G}{\partial q_l\partial q_k}\frac{\partial H}{\partial p_l}
++
+\frac{\partial G}{\partial q_l}\frac{\partial^2 H}{\partial p_l\partial q_k}
+-
+\frac{\partial^2 H}{\partial q_l\partial q_k}\frac{\partial G}{\partial p_l}
+-
+\frac{\partial H}{\partial q_l}\frac{\partial^2 G}{\partial p_l\partial q_k}
+\biggr)
+\frac{\partial F}{\partial p_k}
+\biggr)
+\end{align*}
+Die volle Jacobi-Identit"at kann aus diesem Ausdruck durch zyklische
+Vertauschung von $F$, $G$ und $H$ und Addition gewonnen werden.
+Dabei entsteht eine grosse Zahl von Termen.
+Um die "Ubersicht zu behalten, sammeln wir nur die zweiten Ableitungen
+von $G$,
+und unterscheiden ausserdem nach den verschiedenen Variablen:
+\begin{align*}
+\frac{\partial^2 G}{\partial q_k\partial q_l}:&
+&&
+\sum_{k,l=1}^n
+\biggl(
+-\frac{\partial F}{\partial p_k} \frac{\partial H}{\partial p_l}
++\frac{\partial F}{\partial p_l} \frac{\partial H}{\partial p_k}
+\biggr)
+\frac{\partial^2 G}{\partial q_k\partial q_l}
+\\
+\frac{\partial^2 G}{\partial p_k\partial q_l}:&
+&&
+\sum_{k,l=1}^n
+\biggl(
+\frac{\partial F}{\partial q_k}\frac{\partial H}{\partial p_l}
++
+\frac{\partial F}{\partial p_l}\frac{\partial H}{\partial q_k}
+-
+\frac{\partial F}{\partial q_k}\frac{\partial H}{\partial p_l}
+-
+\frac{\partial F}{\partial p_l}\frac{\partial H}{\partial q_k}
+\biggr)
+\frac{\partial ^2G}{\partial p_k\partial q_l}
+\\
+\frac{\partial^2 G}{\partial p_k\partial p_l}:&
+&&
+\sum_{k,l=1}^n
+\biggl(
+-\frac{\partial F}{\partial q_k}\frac{\partial H}{\partial q_l}
++
+\frac{\partial F}{\partial q_l}\frac{\partial H}{\partial q_k}
+\biggr)
+\frac{\partial^2 G}{\partial p_k\partial p_l}
+\end{align*}
+Jeder dieser Terme verschwindet, also verschwindet auch der gesamte
+Ausdruck, was die Jacobi-Identit"at beweist.
+\end{loesung}
+
