@@ -119,10 +119,10 @@ diese Ableitungen wirken jeweils nur auf einen der Faktoren:
 +
 R(r)
 \cdot \Theta(\vartheta)
-\cdot \underbrace{\frac{\partial\Phi(\varphi)}{\partial\varphi}}_{=0}
+\cdot \underbrace{\frac{\partial\Phi(\varphi)}{\partial r}}_{=0}
 +
 R(r)
-\cdot \underbrace{\frac{\partial \Theta(\vartheta)}{\partial\vartheta}}_{=0}
+\cdot \underbrace{\frac{\partial \Theta(\vartheta)}{\partial r}}_{=0}
 \cdot \Phi(\varphi)
 =
 R'(r)
@@ -256,9 +256,11 @@ $Z(z)=Z(\cos\vartheta)=\Theta(\vartheta)$. Die Ableitung nach $\vartheta$
 kann dann umgeschrieben werden in eine Ableitung nach $z$
 \begin{align*}
 \Theta'(\vartheta)&=
-\frac{d}{d\vartheta}Z(z)=Z'(z)\frac{dz}{d\vartheta}=\sin\vartheta Z'(z)
+\frac{d}{d\vartheta}Z(z)=Z'(z)\frac{dz}{d\vartheta}=-\sin\vartheta Z'(z)
 \\
-\frac{d}{dz}&=\frac1{\sin\vartheta}\frac{d}{d\vartheta}
+\frac{d}{dz}
+&=
+-\frac1{\sin\vartheta}\frac{d}{d\vartheta}
 \end{align*}
 Nat"urlich gilt auch $1-z^2=\sin^2\vartheta$, so dass die rechte Seite
 von (\ref{skript:thetasepariert}) zu
