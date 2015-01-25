@@ -173,4 +173,97 @@ label.lft(btex $N$ etex, (-80,-10));
 label(btex $Q$ etex, (0,0));
 endfig;
 
+%
+% CNOT gate
+%
+beginfig(10)
+pickup pencircle scaled linewidth;
+
+draw (-50,40)--(50, 40);
+draw (-50, 0)--(50,  0);
+
+draw (4,0)..(0,4)..(-4,0)..(0,-4)..cycle;
+draw (0,-4)--(0,40);
+
+pickup pencircle scaled 4pt;
+draw (0,40);
+
+label.lft(btex $c$ etex, (-50,40));
+label.lft(btex $t$ etex, (-50, 0));
+
+label.rt(btex $c$ etex, (50,40));
+label.rt(btex $c\oplus t$ etex, (50,0));
+
+endfig;
+
+% Tofoli
+beginfig(11)
+
+pickup pencircle scaled linewidth;
+
+draw (-50, 20)--(-20, 20); draw (20, 20)--(50, 20);
+draw (-50,  0)--(-20,  0); draw (20,  0)--(50,  0);
+draw (-50,-20)--(-20,-20); draw (20,-20)--(50,-20);
+
+label.lft(btex $a$ etex, (-50, 20));
+label.lft(btex $b$ etex, (-50,  0));
+label.lft(btex $c$ etex, (-50,-20));
+
+label.rt(btex $a$ etex, (50, 20));
+label.rt(btex $b$ etex, (50,  0));
+label.rt(btex $(a\wedge b)\oplus c$ etex, (50,-20));
+
+draw (-20,-25)--(20,-25)--(20,25)--(-20,25)--cycle;
+
+label(btex AND etex, (0,0));
+
+endfig;
+
+%
+% CNOT and Tofoli
+%
+beginfig(12)
+
+pickup pencircle scaled linewidth;
+
+% Tofoli part
+draw (-150, 20)--(-120, 20); draw (-80, 20)--(-50, 20);
+draw (-150,  0)--(-120,  0); draw (-80,  0)--(-50,  0);
+draw (-150,-20)--(-120,-20); draw (-80,-20)--(-50,-20);
+
+label.lft(btex $|0\rangle$ etex, (-150, 20));
+label.lft(btex $b$ etex, (-150,  0));
+label.lft(btex $c$ etex, (-150,-20));
+
+label.rt(btex $|0\rangle$ etex, (-50, 20));
+label.rt(btex $b$ etex, (-50,  0));
+label.rt(btex $b\oplus c$ etex, (-50,-20));
+
+draw (-120,-25)--(-80,-25)--(-80,25)--(-120,25)--cycle;
+
+label(btex AND etex, (-100,0));
+
+label(btex $=$ etex, (0,0));
+
+% CNOT part
+draw ( 50, 20)--(150, 20);
+draw ( 50,  0)--(150,  0);
+draw ( 50,-20)--(150,-20);
+
+draw ((4,0)..(0,4)..(-4,0)..(0,-4)..cycle) shifted (100,-20);
+draw (100,-24)--(100,0);
+
+pickup pencircle scaled 4pt;
+draw (100,0);
+
+label.lft(btex $|0\rangle$ etex, (50,20));
+label.lft(btex $b$ etex, ( 50,  0));
+label.lft(btex $c$ etex, ( 50,-20));
+
+label.rt(btex $|0\rangle$ etex, (150,20));
+label.rt(btex $b$ etex, (150,0));
+label.rt(btex $c\oplus b$ etex, (150,-20));
+
+endfig;
+
 end

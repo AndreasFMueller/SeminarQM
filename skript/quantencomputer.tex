@@ -595,6 +595,69 @@ Die Matrix $H$ ist orthogonal, also insbesondere auch unit"ar.
 \end{beispiel}
 
 \begin{beispiel}
+Es gibt weder ein UND- noch ein ODER-Gatter f"ur Quantencomputer.
+Ein UND-Gatter m"usste die Abbildung
+\begin{align*}
+|00\rangle&\mapsto|00\rangle,\\
+|01\rangle&\mapsto|00\rangle,\\
+|10\rangle&\mapsto|00\rangle,\\
+|11\rangle&\mapsto|01\rangle
+\end{align*}
+implementieren, welche nicht invertierbar ist, und daher auch nicht
+unit"ar sein kann.
+Selbst wenn man die Operationen UND und ODER in eine einzige Abbildung
+kombiniert, erh"alt man
+\begin{align*}
+|00\rangle&\mapsto|00\rangle,\\
+|01\rangle&\mapsto|10\rangle,\\
+|10\rangle&\mapsto|10\rangle,\\
+|11\rangle&\mapsto|11\rangle
+\end{align*}
+was immer noch nicht invertierbar ist, denn man kann aus den Resultatbits
+nicht mehr schliessen, welches der beiden Bits gesetzt war.
+Als letzte Hoffnung k"onnten wir versuchen, eines der Bits zu behalten,
+aber das funktioniert auch nicht:
+\begin{align*}
+|00\rangle&\mapsto|00\rangle,\\
+|01\rangle&\mapsto|00\rangle,\\
+|10\rangle&\mapsto|10\rangle,\\
+|11\rangle&\mapsto|11\rangle,
+\end{align*}
+immer noch nicht invertierbar.
+\end{beispiel}
+
+\begin{beispiel}
+\index{CNOT-Gatter}
+Das \textsc{CNOT}-Gatter invertiert das zweite Bit, wenn das erste Bit
+gesetzt ist.
+Es implementiert also die Abbildung
+\begin{align*}
+|00\rangle&\mapsto|00\rangle,\\
+|01\rangle&\mapsto|01\rangle,\\
+|10\rangle&\mapsto|11\rangle,\\
+|11\rangle&\mapsto|10\rangle
+\end{align*}
+Die zugeh"orige Matrix ist
+\[
+U_{\textsc{CNOT}}=\begin{pmatrix}
+1&0&0&0\\
+0&1&0&0\\
+0&0&0&1\\
+0&0&1&0
+\end{pmatrix}.
+\]
+Diese Matrix ist offensichtlich unit"ar.
+Manchmal wird das \textsc{CNOT}-Gatter mit dem Diagramm
+\begin{center}
+\includegraphics{graphics/gatter-10.pdf}
+\end{center}
+dargestellt werden.
+Man beachtet, dass dieses Diagramm im Gegensatz zu den Analysator-Diagrammen
+von Kapitel~\ref{chapter:einfache-quantensysteme} von links nach rechts
+gelesen werden m"ssen.
+\end{beispiel}
+
+\begin{beispiel}
 \index{Tofoli-Gatter}
 \index{Gatter!Tofoli}
 Das {\em Tofoli-Gatter} operatiert auf zwei Q-bits $a$ und $b$ und einem
@@ -631,6 +694,24 @@ T=
 \end{pmatrix}.
 \]
 Die Matrix $T$ ist orthogonal, und damit auch unit"ar.
+Das Tofoli-Gatter wird manchmal auch als Diagramm
+\begin{center}
+\includegraphics{graphics/gatter-11.pdf}
+\end{center}
+dargestellt. Das Zeichen \textsc{AND} erinnert daran, dass das Tofoli-Gatter
+eigenlicht die UND-Verkn"upfung der beiden Inputs $a$ und $b$ berechnet.
+\end{beispiel}
+
+\begin{beispiel}
+\begin{figure}
+\centering
+\includegraphics{graphics/gatter-12.pdf}
+\caption{Implementation eines \textsc{CNOT}-Gatters aus einem Tofoli-Gatter
+mit Hilfe eines Scratch-Bit \label{skript:cnot=tofoli}}
+\end{figure}
+Man kann aus einem Tofoli-Gatter mit Hilfe eines Scratch-Bit ein
+\textsc{CNOT}-Gatter machen, wie in Abbildung~\ref{skript:cnot=tofoli}
+dargestellt.
 \end{beispiel}
 
 \subsection{No-Cloning Theorem}
