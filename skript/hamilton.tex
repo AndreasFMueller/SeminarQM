@@ -597,6 +597,36 @@ erlauben, die Bewegungsgleichungen
 \end{align*}
 mit Poisson-Klammern auszudr"ucken.
 
+\begin{satz}
+\label{skript:zeitentwicklung-observable-klassisch}
+Ist $A$ eine Funktion der Koordinaten und Impulse eines mechanischen Systems
+mit Hamilton-Funktion $H$, dann ist die Zeitentwicklung von $A$ gegeben
+durch die Poission-Klammer:
+\begin{equation}
+\frac{d}{dt}A
+=
+(A,H).
+\label{skript:zeitentwicklung-poisson}
+\end{equation}
+\end{satz}
+
+\begin{proof}[Beweis]
+Wir berechnen die Zeitableitung von $A$
+\begin{align*}
+\frac{dA}{dt}
+&=
+\frac{\partial A}{\partial q_k}\frac{dq_k}{dt}
++
+\frac{\partial A}{\partial p_k}\frac{dp_k}{dt}
+=
+\frac{\partial A}{\partial q_k}\frac{\partial H}{\partial p_k}
+-
+\frac{\partial A}{\partial p_k}\frac{\partial H}{\partial q_k}
+=
+(A,H).
+\end{align*}
+\end{proof}
+
 \subsection{Poisson-Klammern f"ur den Drehimpuls}
 Der Drehimpuls ist der Vektor mit den Komponenten
 \[
@@ -702,63 +732,6 @@ dass die Drehimpulskomponenten in der
 Quantenmechanik einer ganz "ahnlichen Algebra gen"ugen.
 Die Algebra wird bereits ausreichen, die verschiedenen Zust"ande
 des Drehimuplses zu berechnen.
-
-%\section{Wellen und Teilchen}
-%\rhead{Welle und Teilchen}
-%Wir zeigen jetzt, dass die Hamilton-Jacobi-Gleichung tats"achlich der
-%Grenzfall unendlich kleiner Wellenl"ange f"ur eine ``Wellenmechanik'' ist.
-%Von de Broglie wissen wir den Zusammenhang zwischen dem Impuls $p$
-%eines Teilchens und der zugeh"origen Wellenl"ange  $\lambda=h/p$.
-%Nach de Broglie entspricht einem Teilchen mit Impuls $p$ also eine Welle
-%der Form
-%\begin{equation}
-%\psi(x)
-%=
-%e^{2\pi i\frac{x}{\lambda}}
-%=
-%e^{\frac{i}{\hbar}xp}.
-%\label{skript:debrogliewelle}
-%\end{equation}
-%Nat"urlich bewegt sich diese Welle auch noch, wir schreiben die
-%Zeitabh"angigkeit als
-%\[
-%\psi(x,t)
-%=
-%e^{\frac{i}{\hbar}(xp-\omega t)}.
-%\]
-
-
-%Etwas allgemeiner suchen wir jetzt eine Welle, die zu einem Teilchen
-%passt, welches sich gem"ass einer Hamilton-Funktion $H(p,q)$ bewegt.
-%Wir setzen die Welle in der Form
-%\[
-%\psi(q,t) = e^{\frac{i}{\hbar}S(q,t))}
-%\]
-%Die Funktion ist die Phase der Welle, die Fl"achen gleichen Wertes von
-%$S$ beschreiben die Wellenfronten.
-%Die Konstante $\hbar$ in diesem Ansatz steuert die Wellenl"ange, wenn
-%wir $\hbar$ gegen Null gehen lassen, wird die Wellenl"ange unendlich kurz.
-%
-%Die Welle soll sich f"ur unendlich kleine Wellenl"ange wie ein Teilchen
-%bewegen, welches von der Hamilton-Funktion gesteuert wird.
-%Den Impuls des Teilchens k"onnen wir aus der
-%de Broglie-Welle~(\label{skript:debrogliewelle}) durch ableiten finden,
-%\[
-%\frac{\partial}{\partial x}
-%e^{\frac{i}{\hbar}xp}
-%=
-%\frac{i}{\hbar}p
-%e^{\frac{i}{\hbar}xp}
-%\qquad
-%\Rightarrow
-%\qquad
-%p
-%e^{\frac{i}{\hbar}S}
-%=
-%\frac{\hbar}{i}
-%\frac{\partial S}{\partial q}
-%e^{\frac{i}{\hbar}S}
-%\]
 
 
 \section*{"Ubungsaufgaben}
