@@ -2,7 +2,7 @@
 \lhead{Einfache Quantensysteme}
 \rhead{}
 In diesem Kapitel beschreiben wir einige einfache Quantensysteme und
-entwickeln einen daf"ur geeigneten mathematischen Aparat. Dieser
+entwickeln einen daf"ur geeigneten mathematischen Apparat. Dieser
 Apparat ist bereits ausreichend, um zu erkl"aren, wie ein Quantencomputer
 funktionieren k"onnte.
 
@@ -25,7 +25,7 @@ Sinnvolle Vorhersagen "uber den Ausgang eines solchen Experiments
 sind allerdings nur m"oglich, wenn alle
 Teilchen in allen f"ur das Experiment wesentlichen Aspekten
 nicht unterscheidbar sind. Man kann dann sagen, dass sich die
-Teilchen alle im gleichen {\em Zustand} befinden, wenn sie in
+Teilchen alle im gleichen {\em Zustand}\/ befinden, wenn sie in
 das Experiment eintreten.
 \index{Zustand}
 
@@ -51,7 +51,7 @@ Vektoren in einem geeigneten Vektorraum sind.
 Jede mathematische Struktur kann n"amlich in einem Vektorraum eingebettet
 werden. Dies ist ganz offensichtlich f"ur die Geometrie, wo die Verwendung
 eines Koordinatensystems jedes geometrische Problem in ein Problem "uber
-Vektoren in einem dreidimensionalen Vektorraum. Die Details "uber den
+Vektoren in einem dreidimensionalen Vektorraum "ubersetzt. Die Details "uber den
 Vektorraum, aus dem die Zust"ande kommen sollen, werden sp"ater festgelegt
 werden. Wir schreiben daher einen Zustand als Vektor
 \[
@@ -65,7 +65,7 @@ Am CERN werden im LHC Protonen auf eine sehr hohe Geschwindigkeit
 beschleunigt und dann zur Kollision gebracht. Es treffen also
 Protonen mit einem bestimmten Impuls $p$ auf Protonen mit entgegengesetztem
 Impuls $-p$. Es kollidieren also Protonen im Zustand $|p\rangle$ und
-$|-p\rangle$. Das Experiment besteht dann darin zu messen, welche Arten von
+$|\text{$-p$}\rangle$. Das Experiment besteht dann darin zu messen, welche Arten von
 Teilchen in welchen Zust"anden erzeugt worden sind.
 Die Quantenmechanik hat
 die Aufgabe, die m"oglichen Zielzust"ande vorherzusagen.
@@ -102,14 +102,14 @@ wieder.
 \includegraphics{images/calcit.jpg}
 \caption{Kalkspat (Calcit) kann also Analysator f"ur die Polarisation
 von Photonen dienen. Er zerlegt einen Strahl von Photonen in zwei
-Strahlen mit orthogonaler Polarisierung.
+Strahlen mit orthogonaler Polarisation.
 \label{skript:calcit}}
 \end{figure}
 \index{Kalkspat}
 \index{Calcit}
 \index{Doppelbrechung}
 Kalkspat (Calcit) (Abbildung~\ref{skript:calcit}) teilt einen Strahl
-von Photonen auf in zwei Strahlen mit orthogonaler Polarisierung,
+von Photonen auf in zwei Strahlen mit orthogonaler Polarisation,
 funktioniert also als Analysator f"ur zwei Polarisationsrichtungen
 von Photonen.
 
@@ -133,7 +133,7 @@ Wir nennen diese Schaltung auch einen {\em Projektor}, er reduziert den
 urspr"unglichen Strahl auf einen Zustand, dem die Komponenten $a_2$
 fehlt. Nat"urlich k"onnen Projektoren f"ur eine beliebige Teilmenge
 $A=\{a_{i_1},\dots, a_{i_k}\}$ definiert werden: der Projektor $P_A$
-blokiert genau die Komponenten aus der Menge $A$.
+blockiert genau die Komponenten aus der Menge $A$.
 \index{idempotent}
 Damit die oben gezeigten Schemata f"ur Analysatoren ihre G"ultigkeit
 haben, sollten Projektoren {\em idempotent}, d.~h.~zwei identische 
@@ -163,18 +163,26 @@ P(a_i|\psi)=0\quad\forall i.
 \index{Observable}
 In der Quantenmechanik sind also genau jene Gr"ossen messbar, f"ur die
 es einen Analysator gibt, man nennt solche Gr"ossen {\em Observable}.
-Die Polarisierung von Photonen, die Position oder der Impuls
+Die Polarisation von Photonen, die Position oder der Impuls
 eines Teilchens, das elektrische Dipolmoment eines Atoms sind alle
 Observable.
 
-\subsection{Photonenpolarisierung}
+\subsection{Photonenpolarisation}
+\begin{figure}
+\centering
+\includegraphics{graphics/analysator-5.pdf}
+\caption{Projektion des Zustandes $|a_2\rangle$ auf die beiden
+um $\alpha$ verdrehten Basiszust"ande $|b_1\rangle$ und $|b_2\rangle$.
+\label{skript:polarisation-rotation}}
+\end{figure}
 Betrachten wir als Beispiel Photonen und ihre Polarisation. 
 Statt einer Basis aus den Zust"anden, die horizontal ($a_1$) und vertikal
 ($a_2$) polarisierte Photonen beschreiben, k"onnen wir auch zwei 
 beliebige andere Polarisationsrichtungen $b_1$ und $b_2$ verwenden,
 oder sogar rechts ($c_R$) und links ($c_L$) zirkul"ar polarisierte Photonen.
 Seien also $b_1$ und $b_2$ gegen"uber $a_1$ und $a_2$ um den Winkel
-$\alpha$ verdreht, dann wird die Intensit"at eines Strahls aus $a_2$
+$\alpha$ verdreht (Abbildung~\ref{skript:polarisation-rotation}),
+dann wird die Intensit"at eines Strahls aus $a_2$
 bei der Analyse mit $b_1$ und $b_2$ folgende Werte ergeben:
 \begin{equation}
 \begin{aligned}
@@ -190,14 +198,7 @@ P(b_2|a_1)&=\sin^2\alpha.
 \end{equation}
 Die Wahrscheinlichkeiten sind proportional zu den Intensit"aten,
 die proportional zum Quadrat der Amplituden sind (daher die Quadrate
-in (\ref{skript:polarisation-projektion}).
-\begin{figure}
-\centering
-\includegraphics{graphics/analysator-5.pdf}
-\caption{Projektion des Zustandes $|a_2\rangle$ auf die beiden
-um $\alpha$ verdrehten Basiszust"ande $|b_1\rangle$ und $|b_2\rangle$.
-\label{skript:polarisation-rotation}}
-\end{figure}
+in (\ref{skript:polarisation-projektion})).
 Man beachte, dass sich aus der Abbildung auch ableiten l"asst, dass
 \begin{equation}
 \begin{aligned}
@@ -224,13 +225,13 @@ F"ur zirkul"ar polarisierte Photonen gilt immer
 P(z_L|a_i)=P(z_R|a_i)=\frac12.
 \]
 Das Experiment in Abbildung~\ref{skript:linear-zirkulaer} verbindet
-Projektoren f"ur lineare Polarisierung mit Projektoren f"ur zirkul"are
-Polarisierung.
+Projektoren f"ur lineare Polarisation mit Projektoren f"ur zirkul"are
+Polarisation.
 \begin{figure}
 \centering
 \includegraphics{graphics/analysator-6.pdf}
 \caption{Experiment zur Messung des Zusammenhanges zwischen zirkul"arer
-und linearer Polarisierung. Der rot hervorgehobene Block wird sp"ater
+und linearer Polarisation. Der rot hervorgehobene Block wird sp"ater
 zur Berechnung von $P(c_L|a_2)$ verwendet.
 \label{skript:linear-zirkulaer}}
 \end{figure}
@@ -284,7 +285,7 @@ k"onnen wir ebenfalls auf diskrete Zust"ande abbilden.
 Dazu unterteilen wir den Schirm links in
 disjunkte Zonen, die das Eintreffen eines Teilchens registrieren k"onnen.
 Ein Teilchen kann offenbar nur in jeweils einer Zone registriert werden.
-Bezeichnen wir die den Zustand eines Teilchens, welches in der Zone mit
+Bezeichnen wir den Zustand eines Teilchens, welches in der Zone mit
 der Nummer $i$ registriert wird, mit $y_i$, dann funkioniert der Schirm als
 eine Kombination von Projektoren auf die Zust"ande $|y_i\rangle$.
 \begin{figure}
@@ -298,7 +299,7 @@ Abbildung~\ref{skript:doppelspalt-analyse}
 
 \section{Algebraischer Formalismus der Quantenmechanik}
 \rhead{Algebraischer Formalismus}
-Im letzten Abschnitte haben wir einige Prinzipien zusammengestellt,
+Im letzten Abschnitt haben wir einige Prinzipien zusammengestellt,
 die ein quantenmechanischer Kalk"ul wiederzugeben in der Lage sein muss.
 Wir brauchen nur noch eine algebraische Struktur, mit der wir die 
 verschiedenen Objekte abbilden k"onnen.
@@ -390,7 +391,7 @@ Eine naheliegende Verallgemeinerung ist daher, immer anzunehmen,
 dass $\langle B|C\rangle$ eine Zahl ist, und dass man mit den
 Messsymbolen wie f"ur Matrizen "ublich rechnen kann.
 Es kommt also auf die Reihenfolge der Faktoren an, aber skalare
-Faktoren, wie eben auch $\langle B|C\rangle$ k"onnen beliebig
+Faktoren, wie eben auch $\langle B|C\rangle$, k"onnen beliebig
 verschoben werden.
 $\langle \,\cdot\, |\,\cdot\, \rangle$ heisst die Transformationsfunktion.
 
@@ -486,7 +487,7 @@ ebenfalls erf"ullt.
 
 Da $P(A|A) =1$ ist, folgt
 \begin{align*}
-P(A|A)&=\langle A|A\rangle \langle A|A\rangle = \langle A|A\rangle = 1
+P(A|A)&=\langle A|A\rangle \langle A|A\rangle = \langle A|A\rangle^2 = 1
 \\
 \langle A|A\rangle&=\pm 1
 \end{align*}
@@ -528,7 +529,7 @@ $\langle a_j|A|a_i\rangle$, sie heissen die {\em Matrixelemente} von $A$.
 \index{Matrixelement}
 Die Wirkung von $A$ auf dem Zustand $|\psi\rangle$ ist also
 \begin{equation}
-A|\psi\rangle = \sum_{i,j} |a_j\rangle
+A\,|\psi\rangle = \sum_{i,j} |a_j\rangle
 	\langle a_j|\,A\,|a_i\rangle
 	\langle a_i|\psi\rangle,
 \label{skript:A-wirkung}
@@ -602,7 +603,7 @@ von $V$, dass es eine Basis gibt, in der $V$ diagonal wird.
 
 Ist $|\psi\rangle$ ein beliebiger Zustand, dann ist
 \[
-\langle\psi|V|\psi\rangle
+\langle\psi|\,V\,|\psi\rangle
 =
 \sum_{i,j}\langle \psi|j\rangle\langle j|\,V\,|i\rangle\langle i|\psi\rangle
 =
@@ -693,12 +694,12 @@ der Observablen $V$ im Zustand $|\psi\rangle$.
 \index{Zeitentwicklung}
 Die besondere Erkenntnis Newtons war, dass die Gleichung $F=ma$ eine
 Differentialgleichung ist, die zusammen mit einer Anfangsbedingung die
-gesammte zuk"unftige Bewegung festlegt.
+gesamte zuk"unftige Bewegung festlegt.
 Wir m"ochten ein "ahnlich leistungsf"ahiges Prinzip auch in der
 Quantenmechanik haben.
 
 \subsection{Schr"odingergleichung}
-Getreu mit dem bisher entwickelten Formalismus k"onnen wir bestenfalls
+Getreu dem bisher entwickelten Formalismus k"onnen wir bestenfalls
 erwarten, eine Differentialgleichung f"ur die Entwicklung des Zustandes
 zu finden, also zum Beispiel
 \begin{equation}
@@ -722,7 +723,8 @@ mit Hilfe von Observablen errechnen lassen,
 Dies sind aber ausschliesslich Erwartungswerte der Observablen oder
 Wahrscheinlichkeiten f"ur einzelne Werte.
 Die Quantenmechanik kann nicht vorhersagen, welchen Wert f"ur eine
-bestimmte Observable wir in einem Experiment messen werden.
+bestimmte Observable wir in einem Experiment messen werden,
+nur der Erwartungswert ist vorhersagbar.
 Quantenmechanische Vorhersagen sind also immer von statistischer Art.
 
 
@@ -998,7 +1000,7 @@ Zeit ab und setzen die Schr"odingergleichung ein:
 \end{align*}
 Die Zeitabh"angigkeit einer Observablen $A$ wird also im Wesentlichen
 durch den Kommutator $[H,A]$ der Observablen mit dem Hamiltonoperator $H$
-gegeben. Erhaltungsgr"ossen sind also solche Observable, die mit dem
+gegeben. Erhaltungsgr"ossen sind also Observable, die mit dem
 Hamiltonoperator vertauschen.
 
 \section*{"Ubungsaufgaben}

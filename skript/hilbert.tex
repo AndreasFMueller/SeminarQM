@@ -33,15 +33,17 @@ Ein Vektorraum "uber $\mathbb C$ ist einem Menge $V$ von Vektoren, mit
 einer Addition von Vektoren und einer Multiplikation von Vektoren mit
 komplexen Zahlen, mit folgenden Eigenschaften
 \begin{compactenum}
-\item Es gibt ein Element $0\in V$ mit der Eigenschaft $0+v=v,\forall v\in V$
-und $0v=0$.
-\item Zu jedem $v\in V$ gibt es ein Elemente $-v=(-1)v$ mit der Eigenschaft
+\item Existenz des Nullvektors: Es gibt ein Element $0\in V$ mit der
+Eigenschaft $0+v=v,\forall v\in V$ und $0v=0$.
+\item Existenz des entgegengesetzten Elementes:
+Zu jedem $v\in V$ gibt es ein Elemente $-v=(-1)v$ mit der Eigenschaft
 $v+(-v)=0$
-\item $u+v=v+u$
-\item $(u+v)+w=u+(v+w)$
-\item $(\lambda\mu)v=\lambda (\mu v)$
-\item $\lambda(u+v)=\lambda u+ \lambda v$, $\lambda\in\mathbb C$, $u,v\in V$
-\item $(\lambda+\mu)u=\lambda u+\mu u$
+\item Kommutativit"at der Addition: $u+v=v+u$
+\item Assoziativit"at der Addition: $(u+v)+w=u+(v+w)$
+\item Assoziativit"at der Multiplikation mit Skalaren:
+$(\lambda\mu)v=\lambda (\mu v)$
+\item Distributivit"at der Multiplikation mit Skalaren "uber Summen von Vektoren: $\lambda(u+v)=\lambda u+ \lambda v$, $\lambda\in\mathbb C$, $u,v\in V$
+\item Distributivit"at der Multiplikation mit Skalaren "uber Summen von Skalaren: $(\lambda+\mu)u=\lambda u+\mu u$
 \end{compactenum}
 Wie im Falle reeller Vektorr"aume kann man den Vektorraum
 \[
@@ -105,7 +107,7 @@ i(u,v)=(u,iv)=(iv,u)=-i(v,u)=-i(u,v),
 was nur richtig sein kann, wenn $(u,v)=0$. Man verlangt daher mehr:
 
 \begin{definition}
-Ein Sesquilinearform heist hermitesch, wenn gilt
+Eine Sesquilinearform heist hermitesch, wenn gilt
 \[
 (u,v)=\overline{(v,u)}.
 \]
@@ -118,7 +120,8 @@ Faktoren vertauscht:
 (u,u)=\overline{(u,u)}\quad\Rightarrow\quad (u,u)\in\mathbb R.
 \]
 Es ist aber immer noch nicht sichergestellt, dass man $(u,u)$ als
-L"ange des Vektors interpretieren kann. 
+L"ange des Vektors interpretieren kann, $(u,u)$ k"onnte immer noch
+negativ sein. 
 
 \begin{definition}
 Ein hermitesche Sesquilinearform heist {\em positiv definit}, wenn
@@ -141,7 +144,7 @@ Dies ist f"ur das Skalarprodukt nicht mehr m"oglich, denn $u^tv$
 ist linear in beiden Vektoren.
 Damit das Produkt konjugiert linear ist im ersten Faktor, m"ussen
 wir $u$ nicht nur transponieren, sondern die Komponenten komplex konjugieren.
-Wir efinieren daher:
+Wir definieren daher:
 \[
 u=\begin{pmatrix}u_1\\\vdots\\u_n\end{pmatrix}
 \quad\Rightarrow\quad
@@ -220,11 +223,11 @@ Rekursionsformel
 \[
 f_{n+1}=f_n+f_{n-1},\qquad f_1=1, \qquad f_0=0.
 \]
-Daraus bilden wir dann die rationalen Zahlen
+Daraus bilden wir die rationalen Zahlen
 \[
 v_n=\frac{f_{n+1}}{f_n}\in\mathbb Q.
 \]
-In der Linearen Algebra wurde gezeigt, dass diese Folge gegen
+In der Linearen Algebra wurde gezeigt, dass die Folge $v_n$ gegen
 die Zahl $(\sqrt{5}+1)/2$ konvergiert, die aber selbst nicht in
 $\mathbb Q$ liegt. Indem man zur Menge $\mathbb Q$ alle Grenzwerte
 von Cauchy-Folgen hinzuf"ugt, erh"alt man die Menge $\mathbb R$, in der
@@ -413,6 +416,7 @@ Die Grenzfunktion (siehe auch Abbildung~\ref{skript:logisticfunction})
 \end{cases}
 \]
 ist aber sicher nicht stetig, sie hat eine Sprungstelle bei $x=0$.
+Die Grenzfunktion ist aber sicher in $L_2$.
 
 F"ugt man der Menge $V$ alle Grenzfunktionen von Cauchy-Folgen hinzu,
 entsteht der Raum $L^2(I)=L^2([a,b])$ der quadratintegrierbaren Funktionen.
