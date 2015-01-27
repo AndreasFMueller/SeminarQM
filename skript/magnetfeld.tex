@@ -28,8 +28,8 @@ Das elektrische Feld $\vec E$ kann aus dem Potential mittels
 \]
 rekonstruiert werden.
 Das Magnetfeld hat kein Potential, aus dem es als Gradient wiedergewonnen
-werden k"onnte, und die Kr"afte, die das Magnetfeld
-auf ein Teilchen aus"ubt sind nicht vom Ort, sondern von der Geschwindigkeit
+werden k"onnte, und die Lorentzkraft, die das Magnetfeld
+auf ein Teilchen aus"ubt, sind nicht vom Ort, sondern von der Geschwindigkeit
 abh"angig.
 
 Zum Magnetfeld gibt es trotzdem eine "ahnliche Konstruktion.
@@ -60,13 +60,13 @@ gibt, aus dem sich das Magnetfeld mit der Formel
 rekonstruieren l"asst.
 
 \begin{beispiel}
-Sei $\vec B_0$ ein fester Vektor, und betrachten das Feld
+Sei $\vec B_0$ ein fester Vektor, wir betrachten das Feld
 \[
 \vec A=\frac12\vec B_0\times \vec r=\begin{pmatrix}
 B_2z-B_3y\\
 B_3x-B_1z\\
 B_1y-B_2x
-\end{pmatrix}
+\end{pmatrix}.
 \]
 Das zugeh"orige Magnetfeld ist
 \begin{equation}
@@ -83,7 +83,7 @@ Das zugeh"orige Magnetfeld ist
 =
 \begin{pmatrix}
 B_1\\B_2\\B_3
-\end{pmatrix}
+\end{pmatrix}.
 \end{equation}
 Dieses Vektorfeld $\vec A$ geh"ort zum homogenen Magnetfeld $\vec B_0$.
 \end{beispiel}
@@ -222,7 +222,7 @@ e\biggl(
 Dies wird "ubersichtlicher, wenn wir die rechte Seite f"ur $i=1$
 ausrechnen:
 \begin{align*}
-m\frac{d^2 x_i}{dt^2}
+m\frac{d^2 x_1}{dt^2}
 &=
 e\biggl(
 v_1\frac{\partial A_1}{\partial x_1}
@@ -237,8 +237,8 @@ v_2\frac{\partial A_1}{\partial x_2}
 -
 v_3\frac{\partial A_1}{\partial x_3}
 \biggr)
--e\frac{\partial\varphi}{\partial x_i}
--e\frac{\partial A_i}{\partial t}
+-e\frac{\partial\varphi}{\partial x_1}
+-e\frac{\partial A_1}{\partial t}
 \\
 &=
 e\biggl(
@@ -250,7 +250,7 @@ v_2\frac{\partial A_1}{\partial x_2}
 -
 v_3\frac{\partial A_1}{\partial x_3}
 \biggr)
--e\frac{\partial\varphi}{\partial x_i}
+-e\frac{\partial\varphi}{\partial x_1}
 -e\frac{\partial A_i}{\partial t}
 \\
 &=
@@ -269,7 +269,7 @@ v_3\biggr(
 \biggr)
 \biggr)
 +e\biggl(
--\frac{\partial\varphi}{\partial x_i}
+-\frac{\partial\varphi}{\partial x_1}
 -\frac{\partial A_i}{\partial t}
 \biggr)
 \\
@@ -279,7 +279,7 @@ v_2B_3
 -
 v_3B_2
 \biggr)
-+eE_i
++eE_1
 \end{align*}
 In dieser Form stehen die Kr"afte auf der rechten Seite. 
 In vektorieller Form
@@ -339,8 +339,8 @@ H
 Man beachte, dass jetzt der Impulsoperator in $y$-Richtung nicht mehr
 mit dem Impulsoperator in $x$-Richtung vertauscht, man kann also
 nicht gleichzeitig die $x$- und $y$-Impuls wissen.
-Allerdings vertauscht den die Impulsoperatoren in $x$- und $z$-Richtung
-immer noch mit $H$, diese Impulskomponenten sind also Erh"altungsgr"ossen.
+Allerdings vertauschen den die Impulsoperatoren in $x$- und $z$-Richtung
+immer noch mit $H$, diese Impulskomponenten sind also Erhaltungsgr"ossen.
 
 Man kann versuchen, eine L"osung der Schr"odingergleichung f"ur $H$ mit
 einem Ansatz
@@ -496,7 +496,7 @@ Wir berechnen aus den eichtransformierten Feldern das elektrische
 =
 \underbrace{
 \operatorname{grad}\varphi-\frac{\partial\vec A}{\partial t}
-}_{=\vec B}
+}_{=\vec E}
 +
 \underbrace{
 \operatorname{grad}\frac{\partial\chi}{\partial t}
@@ -507,7 +507,7 @@ Wir berechnen aus den eichtransformierten Feldern das elektrische
 \end{align*}
 Die aus den eichtransformierten Potentialen abgeleiteten Felder $\vec E'$
 und $\vec B'$ stimmen also mit den urspr"unglichen Feldern $\vec E$
-und $\vec B$ aus.
+und $\vec B$ "uberein.
 \end{proof}
 
 \subsection{Eichtransformation der Schr"odingergleichung}
@@ -541,6 +541,7 @@ Vektorpotential auf die mit Phasenfaktor modifizierte Wellenfunktion:
 \begin{align*}
 \biggl(
 \frac{\hbar}{i}\frac{\partial}{\partial x_k}+eA_k
+% XXX is there a factor e missing?
 +\frac{\partial\chi}{\partial x_k}
 \biggr)e^{if(x)}\psi(x)
 &=

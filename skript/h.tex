@@ -75,7 +75,8 @@ y&=r
 \\
 z&=r\cos \vartheta
 \end{align*}
-Eine etwas m"uhsame Rechnung erlaubt, den Laplace-Operator in Kugelkoordinaten
+Eine etwas m"uhsame, im Anhang (Kapitel~\ref{chapter:kugelkoordinaten})
+durchgef"uhrte Rechnung erlaubt, den Laplace-Operator in Kugelkoordinaten
 auszudr"ucken:
 \[
 \Delta
@@ -311,18 +312,19 @@ d.~h.~wir m"ussen die Differentialgleichung
 (1-z^2)\frac{d}{dz}Z(z)
 \biggr)
 +\lambda Z(z)=0
+\label{skript:Zequation}
 \end{equation}
 l"osen.
 Dies ist die sogenannte Legendresche Differentialgleichung,
 deren L"osung in einer guten Formelsammlung gefunden werden k"onnen.
 
 Wir versuchen eine L"osung in Form eines Polynoms vom
-Grade $l$, also 
+Grade $l$ zu finden, also 
 \begin{equation}
 P_l(z)=a_0+a_1z+\dots+a_lz^l.
 \label{skript:legendreansatz}
 \end{equation}
-Setzen wir dies in die Gleichung ein, und betrachten nur die
+Setzen wir dies in die Gleichung~(\ref{skript:Zequation}) ein, und betrachten nur die
 Terme vom Grad $z^l$:
 \begin{align*}
 \frac{d}{dz}(-z^2la_lz^{l-1})
@@ -386,12 +388,15 @@ Gleichung
 gefunden werden. Man kann zeigen, dass die Funktionen
 \[
 P_l^m(z)=
-(1-z^2)^{\frac{m}2}\frac{d^m}{d^z}P_l(z)
+(1-z^2)^{\frac{m}2}\frac{d^m}{dz^m}P_l(z)
 \]
 eine L"osung f"ur $\lambda=l(l+1)$ ist.
 Auch diese allgemeineren Funktionen $P_l^m(z)$ sind orthogonal.
 
 \subsection{Abh"angigkeit von $r$}
+%
+% XXX Illustration Pseudopotential modifiziert durch Zentrifugalkraft
+%
 Die Funktion $R(r)$ erf"ullt die Differentialgleichung
 \begin{align}
 \frac{1}{r^2}\frac{d}{dr}\bigl(r^2R'(r)\bigr)

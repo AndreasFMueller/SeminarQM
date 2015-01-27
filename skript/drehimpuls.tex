@@ -19,17 +19,17 @@ L_1&=X_2P_3-X_3P_2,\\
 L_2&=X_3P_1-X_1P_3,\\
 L_3&=X_1P_2-X_2P_1.
 \end{align*}
-\index{Drehimpuls!Komponenten}
+\index{Drehimpuls!Komponenten}%
 Auf die Reihenfolge der $x$- und $p$-Komponenten kommt es nicht an,
 weil nur Produkte von Orts- und Impuls-Operatoren f"ur verschiedene
-Richtungen verwendet werden.
+Richtungen verwendet werden, die zugeh"origen Operatoren vertauschen.
 
 Ausser dem Vektor $\vec L$ ist auch seine L"ange erhalten, also
 die Gr"osse
 \[
 \vec L^2=L_1^2+L_2^2+L_3^2.
 \]
-\index{Drehimpuls!Betrag}
+\index{Drehimpuls!Betrag}%
 Wir erwarten, dass auch in der Quantenmechanik der Drehimpuls
 erhalten ist, dass also sowohl die einzelnen Komponenten $L_i$ 
 als auch der Betrag $\vec L^2$ mit dem Hamilton-Operator vertauschen.
@@ -58,7 +58,7 @@ Daraus sollen jetzt schrittweise die Vertauschungsrelationen f"ur die
 Drehimpulskomponenten und f"ur $\vec L^2$ abgeleitet werden.
 Die zweite Form der Relation erlaubt, $P$-Faktoren immer nach rechts zu
 bringen, und so f"ur jeden Ausdruck in $X_i$ und $P_i$ eine
-``Standardform'' zu finden, so dass solche ausdr"ucken sogar algorithmisch
+``Standardform'' zu finden, so dass solche Ausdr"ucke sogar algorithmisch
 miteinander verglichen werden k"onnen.
 
 Zun"achst berechnen wir die Vertauschungsrelationen der
@@ -239,7 +239,7 @@ den Gesamtdrehimpuls gleichzeitig mit einer der Komponenten zu messen,
 aber es ist nicht m"oglich, mehr als eine Komponente des Drehimpulses
 zu messen.
 
-Damit stellt sich aber die Frage, ob der Gesamtdrehimpuls etwas ist,
+Damit stellt sich die Frage, ob der Gesamtdrehimpuls etwas ist,
 was man unabh"angig vom Bewegungszustand messen kann.
 Dazu m"ussen die Vertauschungsrelationen von $\vec L^2$ mit den
 Impulskomponenten oder den Ortskomponenten bestimmt werden.
@@ -316,13 +316,14 @@ eine weitere wichtige Aussage der Quantenmechanik ergeben: der Drehimpuls
 kommt nur in Vielfachen von $\hbar$ vor.
 
 \subsection{Eigenzust"ande von $L_3$}
-\index{Drehimpuls!Eigenzust\"ande von $L_3$}
-\index{Drehimpuls!Auf- und Absteigeoperatoren}
+\index{Drehimpuls!Eigenzust\"ande von $L_3$}%
+\index{Drehimpuls!Auf- und Absteigeoperatoren}%
 Aus den Operatoren $L_1$ und $L_2$ k"onnen wir "ahnlich wie beim
 harmonischen Oszillator zwei neue Operatoren
 \begin{align*}
 L_+&=L_1+iL_2
 &
+&\text{und}&
 L_-&=L_1-iL_2
 \end{align*}
 konstruieren.
@@ -459,7 +460,7 @@ dem gleichen Eigenwert.
 Die Drehimpulskomponenten $L_3$ ist in der klassischen Mechanik kleiner
 als der Drehimpulsbetrag, und wir m"ochten nachpr"ufen, dass dies auch
 in der Quantenmechanik gilt.
-Dazu berechnen wir zun"achst das Produkt der Operatoren $L_+$ und $L_-$
+Dazu berechnen wir zun"achst die Produkte der Operatoren $L_+$ und $L_-$
 \begin{align*}
 L_+L_-
 &=
@@ -532,11 +533,12 @@ wie man sich durch folgende Rechnung "uberzeugen kann:
 \caption{M"ogliche Werte von $L_3$ sind die Quantenzahlen $m$, wenn
 der Drehimpulsbetrag $h\hbar^2 \frac{j}2(\frac{j}2+1)$ mit $j=4$ ist.
 \label{skript:drehimpulsrange}}
-\end{figure}
+\end{figure}%
 Die Normquadrate auf der rechten Seite sind entweder $1$,
 wenn $L_\pm\,|\lambda,l_3\rangle$, oder 0, wenn $L_\pm\,|\lambda,l_3\rangle$
 der Nullvektor ist.
 \begin{figure}
+% XXX a Operatoren sollten halbe L"ange haben
 \centering
 \includegraphics{graphics/drehimpuls-1.pdf}
 \caption{M"ogliche Kombinationen von $\lambda$ und $l_3$. Rot eingezeichnet
@@ -580,8 +582,8 @@ Wir versuchen dasselbe f"ur den Drehimpulsoperator.
 Das Bild~\ref{skript:drehimpulsspektrum} suggeriert aber, dass es nicht
 unbedingt einen zweiten Operator geben kann, der die
 Auf- und Absteigeschritte in $\lambda$-Richtung implementiert.
-Es scheint eher, dass wir das falsche Koordinatensystem gew"ahlt
-haben, in Abbildung~\ref{skript:drehimpulsspektruma}
+Es scheint eher, dass wir in Abbildung~\ref{skript:drehimpulsspektruma}
+das falsche Koordinatensystem gew"ahlt haben.
 
 \subsubsection{Auf- und Absteigeoperatoren}
 So etwas kann nat"urlich nur funktionieren, wenn das Spektrum der
@@ -984,9 +986,9 @@ darstellen lassen.
 \section{Drehimpuls in Ortsdarstellung\label{section:drehimpulsortsdarstellung}}
 \rhead{Ortsdarstellung}
 Bisher haben wir in diesem Kapitel die Drehimpulsoperatoren ganz abstrakt
-gerechnet. 
+behandelt. 
 Das Wasserstoffatom haben wir allerdings in der Ortsdarstellung 
-gel"ost, und dort ebenfalls Quantenzahlen $j$ und $m$ gefunden.
+gerechnet, und dort ebenfalls Quantenzahlen $j$ und $m$ gefunden.
 Erst wenn wir die Drehimpulsoperatoren ebenfalls in die Ortsdarstellung
 umrechnen, k"onnen wir sie als Teile des Hamilton-Operators des
 Wasserstoffatoms identifizieren.
@@ -1538,5 +1540,5 @@ H
 -\frac{1}{2mr^2}\vec L^2
 \end{align*}
 Den ersten Term kann man interpretieren als die kinetische Energie
-der Radialbewegung, w"ahrend der zweite Term ist die Rotationsenergie.
+der Radialbewegung, w"ahrend der zweite Term die Rotationsenergie ist.
 

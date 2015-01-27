@@ -14,9 +14,9 @@ werden, zum Beispiel die Schwingungen von einfachen Molek"ulen.
 
 Der quantenmechanische harmonische Oszillator hat aber eine Eigenschaft,
 die der klassische Oszillator nicht hat: seine Energie ist nicht
-kontinuierlich, nur eine diskrete Menge von Energieniveaus sind
+kontinuierlich, nur eine diskrete Menge von Energieniveaus ist
 m"oglich. Dies ist zwar nicht "uberraschend nach den bisher studierten
-Beispielen, doch werden wir hier die mathemtische Technik  der
+Beispielen, doch werden wir hier die mathematische Technik  der
 Auf- und Absteige-Opertoren kennen lernen, mit der die Energieniveaus
 und auch die Zustandsvektoren leicht berechnet werden k"onnen.
 
@@ -34,11 +34,10 @@ von h"oherenergetischen Molek"ulschwingungen entsprechen.
 
 \section{Der klassische Oszillator}
 \rhead{Klasischer Oszillator}
-Ein Federpendel ist eine Masse $m$, welches sich unter dem Einfluss
+Ein Federpendel ist eine Masse $m$, welche sich unter dem Einfluss
 einer Feder mit Federkonstante $K$ bewegt. Ist $x$ die Auslenkung
 der Masse aus der Ruhelage, dann "ubt die Feder eine Kraft $-Kx$ 
-auf die Masse aus. Die potentielle Energie bei der Auslenkun
-$x$ ist daher:
+auf die Masse aus. Die potentielle Energie bei Auslenkung $x$ ist
 \[
 V(x)=\int_0^xK\xi\,d\xi=\frac12Kx^2.
 \]
@@ -181,15 +180,17 @@ verschwindet, wenn also gilt
 (4\alpha^2-1)q^2
 &=0
 \end{align*}
-Diese Gleichung muss f"ur alle $x$ gelten, die Klammerausdr"ucke
+Diese Gleichung muss f"ur alle $q$ gelten, die Klammerausdr"ucke
 m"ussen also beide verschwinden:
 \begin{align*}
 (4\alpha^2-1)q^2&=0
 &
+&\Rightarrow&
 \alpha&=\frac12
 \\
 \varepsilon-\alpha&=0
 &
+&\Rightarrow&
 \varepsilon&=\frac12.
 \end{align*}
 Es gibt also tats"achlich eine L"osung, sie muss von der Form
@@ -198,13 +199,15 @@ u_0(q)=e^{-\frac{q^2}2}
 \]
 sein. Der zugeh"orige Eigenwert ist $\varepsilon_0=\frac12$.
 
-In den urspr"unglichen Koordinaten ist der Grundzustand also
+Substituieren wir wieder die
+urspr"unglichen Koordinaten, erhalten wir
 \begin{equation}
 \psi_0(x)=u_0\biggl(\sqrt{\frac{m\omega}{\hbar}}\biggr)
 =
 e^{-\frac{m\omega}{2\hbar}}.
 \label{skript:grundzustandwellenfunktion}
 \end{equation}
+als Wellenfunktion f"ur den Grundzustand.
 
 % XXX Normierung dieser L"osung
 \subsection{Angeregte Zust"ande}
@@ -248,9 +251,11 @@ h_n''(x)-2 qh_n'(q)
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{graphics/harmonisch-1.pdf}
-\caption{Wellenfunktionen des harmonischen Oszillators
+\caption{Wellenfunktionen des harmonischen Oszillators, dargestellt auf
+den zugeh"origen Energieniveaus $\hbar \omega (n+\frac12)$ f"ur
+$n=0,\dots 7$.
 \label{skript:harmonisch-wellenfunktionen}}
-\end{figure}
+\end{figure}%
 Die Gleichung (\ref{skript:hermiteequation}) heisst auch die 
 Hermitesche Differentialgleichung.
 Die Funktionen $h_n(q)$ heissen die Hermiteschen Polynome.
@@ -261,8 +266,8 @@ wird.
 Aus dieser Technik werden sich die Energieniveaus ebenfalls ergeben.
 In Abbildung~\ref{skript:harmonisch-wellenfunktionen} sind die Wellenfunktionen
 des harmonischen Oszillators f"ur die Energieniveaus bis $n=7$ dargestellt.
-Man beachte, dass wir beim Potentialtopf in
-Abschnitt~\ref{subsection:potentialtopf} das sich Teilchen mit positiver
+Man beachte, dass wie beim Potentialtopf in
+Abschnitt~\ref{subsection:potentialtopf} das Teilchen sich mit positiver
 Wahrscheinlichkeit in einem Bereich aufhalten kann, der mit der Energie
 des Teilchens klassisch verboten ist.
 In diesem Bereich f"allt die Aufenthaltswarhscheinlichkeit jedoch
@@ -271,7 +276,7 @@ In diesem Bereich f"allt die Aufenthaltswarhscheinlichkeit jedoch
 \section{Algebraische Eigenschaften}
 \rhead{Algebra}
 Um die Berechnung der Energieniveaus des harmonischen Oszillators
-vorzubereiten wechseln wir zun"achst von den kanoninschen Koordinaten
+vorzubereiten, wechseln wir zun"achst von den kanoninschen Koordinaten
 $x$ und $p$ zu dimensionslosen Gr"ossen $Q$ und $P$, und berechnen
 deren algebraischen Eigenschaften.
 \subsection{Dimensionslose Operatoren}
@@ -288,6 +293,10 @@ P=\frac{1}{\sqrt{\hbar m\omega}}p
 \qquad
 Q=\sqrt{\frac{m\omega}{\hbar}}x
 \]
+Da $\hbar\omega$ die Dimension einer Energie hat, hat $\hbar m\omega$ die
+Dimension des Quadrates eines Impulses. Weil $m\omega^2x^2$ die Dimension
+einer Energie hat, ist $m\omega x^2/\hbar$ dimensionslos, also auch
+$Q$.
 Man kann nachrechnen, dass 
 \[
 \frac12(P^2+Q^2)
@@ -300,7 +309,7 @@ Man kann nachrechnen, dass
 +
 \frac{m\omega}{2\hbar}x^2
 =\frac{\hat H}{\hbar\omega}
-=:\hat{\cal H}
+=:\hat{\cal H}.
 \]
 Wir haben den Hamiltonoperator also umgeschrieben mit neuen Operatoren 
 $P$ und $Q$.
@@ -314,7 +323,7 @@ daher die Vertauschungsrelationen:
 &=
 \frac{1}{\sqrt{\hbar m\omega}} \sqrt{\frac{m\omega}{\hbar}}[p, x]
 =
-\frac1{\hbar}[p,x]
+\frac1{\hbar}[p,x].
 \end{align*}
 Wir erinnern an die Vertauschungsrelationen f"ur die Operatoren $p$ und $x$:
 \begin{align*}
@@ -340,7 +349,7 @@ bekannt:
 \rhead{Auf- und Absteigeoperatoren}
 Die Methode der Auf- und Absteige-Operatoren erlaubt, die Eigenwerte
 und Eigenvektoren direkt aus dem Grundzustand zu ermitteln.
-Wir sehen Sie hier in einem einfachen Spezialfall am Werk.
+Wir sehen sie hier in einem einfachen Spezialfall am Werk.
 Sie l"asst sich aber verallgemeinern, man kann damit zum Beispiel
 auch den Drehimpuls verstehen (Kapitel~\ref{chapter:drehimpuls}).
 Ja die Methode hat sogar g"anzlich von der Quantenmechanik unabh"angige
@@ -348,7 +357,7 @@ Anwendungen bei der Konstruktion von L"osungen allgemeinerer Randwertprobleme
 f"ur gew"ohnliche Differentialgleichung.
 
 \subsection{Definition}
-Wir definieren jetzt die Operatoren
+Wir definieren die Operatoren
 \[
 a=\frac1{\sqrt{2}}(Q+iP)
 \qquad\text{und}\qquad
@@ -406,7 +415,7 @@ mit Energie $\varepsilon_n$, also
 \[
 \hat{\cal H}|n\rangle = \varepsilon_n|n\rangle.
 \]
-Wenden wir die Operatoren $a$ und $a^+$ auf $|n\rangle$ anwenden, erhalten
+Wenden wir die Operatoren $a$ und $a^+$ auf $|n\rangle$ an, erhalten
 wir einen neuen Eigenvektor:
 \begin{align*}
 \hat{\cal H}a^+\,|n\rangle
@@ -501,7 +510,7 @@ N_n
 ver"andert.
 
 Der Aufsteigeoperator $a^+$ erm"oglicht jetzt auch, aus dem Grundzustand
-alle h"oheren Zust"ande konstruieren:
+alle h"oheren Zust"ande zu konstruieren:
 \begin{equation}
 |n\rangle
 =
@@ -553,7 +562,8 @@ E_n
 \hbar\omega\biggl(n+\frac12\biggr),
 \label{skript:hoenergieniveaus}
 \end{equation}
-die Eigenzust"ande k"onnen durch Anwendung des Aufsteigeoperators $a^+$
+die Eigenzust"ande k"onnen gefunden werden durch Anwendung des
+Aufsteigeoperators $a^+$
 aus (\ref{skript:aufsteigeho}) auf die Wellenfunktion des Grundzustandes
 $\psi(x)=e^{-\frac{m\omega}{2\hbar}x^2}$
 mit geeigneter Normierung.

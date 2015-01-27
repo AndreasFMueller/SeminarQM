@@ -2,9 +2,9 @@
 \lhead{St"orungstheorie}
 \rhead{}
 Die St"orungstheorie geht davon aus, dass eine Basis von Zust"anden eines
-quantenmechanischen Systems bereits bekannt sind. Eine kleine
+quantenmechanischen Systems bereits bekannt ist. Eine kleine
 "Anderung des Systems sollte sich dann in nur kleinen "Anderungen
-der Zust"ande und Ihrer Energieniveaus "aussern.
+der Zust"ande und ihrer Energieniveaus "aussern.
 Diese Methode kann verwendet werden, um die Ver"anderung der Energieniveaus
 eines Atoms zu berechnen, wenn dieses in ein "ausseres elektrisches Feld
 oder ein "ausseres Magnetfeld gebracht wird.
@@ -108,13 +108,15 @@ Der konstante Term in der letzten Form dieser Gleichung ist $p_0(x_0)$,
 da $x_0$ eine Nullstelle ist, muss er verschwinden. Wenn die Gleichung
 f"ur alle $\varepsilon$ erf"ullt sein soll, dann muss auch der
 Koeffizient von $\varepsilon$ verschwinden, es muss also gelten
-\begin{align*}
+\begin{align}
 2a_0x_0x_1+a_1x_0^2+b_0x_1+b_1x_0+c_1&= 0
+\label{skript:stoerung-1ordnung}
 \\
 (2a_0x_0+b_0)x_1&=-(a_1x_0^2+b_1x_0+c_1)\\
 x_1&=-
 \frac{a_1x_0^2+b_1x_0+c_1}{2a_0x_0+b_0}.
-\end{align*}
+\notag
+\end{align}
 Damit ist eine erste Approximation von $x_\varepsilon$ gefunden:
 \[
 x_\varepsilon\simeq x_0 -
@@ -158,13 +160,17 @@ $x_0$ ein, erh"alt man
 2a_0x_0+b_0&=2a_0\frac{-b_0\pm\sqrt{b_0^2-4a_0c_0}}{2a_0}+b_0      \\
            &=\pm\sqrt{b_0^2-4a_0c_0}.
 \end{align*}
-Der Radikand ist die Diskriminante.
+Der Radikand ist die Diskriminante der unspr"unglichen quadratischen
+Gleichung.
 Der Nenner verschwindet also genau dann, wenn die quadratische
 Gleichung eine doppelte Nullstelle hat. In diesem Fall spaltet sich
 die eine doppelte L"osung in zwei verschiedene L"osungen $x_{\pm}$ auf,
-es kann also keine Funktion der Form
+es ist klar, dass es keine Funktion der Form
 (\ref{skript:stoerungsansatz}) 
 geben, die diese Aufspaltung wiedergeben kann.
+%
+% XXX Graphik Bifurkation der Nullstellen
+%
 
 \begin{figure}
 \centering
@@ -221,6 +227,13 @@ Darin ist $\varepsilon\ll 1$ ein kleiner Parameter, der ausdr"ucken
 soll, dass $H_1$ den Operator nur ganz wenig "andert, insbesondere
 sind die Zust"ande und Eigenwerte von $E(\varepsilon)$ nahe bei 
 den $E_i^{(0)}$ und $\psi_i^{(0)}$.
+
+Bringt man ein Atom in elektrisches oder magnetisches Feld, "andern
+sich die Energieniveaus.
+Die technische realisierbaren Felder sind typischerweise bedeutend
+schw"acher als das Coulombpotential des Atomkernes.
+Man kann solche Felder also als St"orungen des Hamiltonoperators
+des Atoms betrachten.
 
 Die Aufgabe der St"orungstheorie ist, die Zust"ande
 $|\psi_i(\varepsilon)\rangle$
@@ -281,6 +294,8 @@ H_1\,|\psi_k^{(0)}\rangle
 &=
 E_k^{(1)}\,|\psi_k^{(0)}\rangle + E_k^{(0)} \,|\psi_k^{(1)}\rangle+\dots
 \end{align*}
+Die Punkte stehen f"ur Terme, die minstens einen Faktor $\varepsilon$
+enthalten.
 Aus diesen Gleichungen m"ussen wir $E_k^{(1)}$ und $|\psi_k^{(1)}\rangle$
 bestimmen. Dazu multiplizieren wir $\langle \psi_l^{(0)}|$:
 \begin{align*}
@@ -296,6 +311,8 @@ E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
 +
 E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle.
 \end{align*}
+Die ungest"orten Eigenfunktionen sind orthogonal, der erste
+Term auf der rechten Seite wird daher zu $\delta_{kl}E_k^{(0)}$.
 Da $H_0$ selbstadjungiert ist, kann man auch den zweiten Term links
 aufl"osen:
 \begin{align*}
@@ -316,6 +333,9 @@ die Gleichung
 +
 (E_k^{(0)}-E_l^{(0)})\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle.
 \end{align*}
+Sie entspricht der Gleichung~(\ref{skript:stoerung-1ordnung})
+des Einf"uhrungsbeispiels und erlaubt uns, die Koeffizienten
+erster Ordnung der St"orungsreihe zu berechnen.
 
 \section{Nicht entartete Zust"ande\label{section:nichtentartetezustaende}}
 \rhead{Nicht entartete Zust"ande}
@@ -426,7 +446,7 @@ f"ur $E_k(\varepsilon)$ und $|\psi_k(\varepsilon)\rangle$
 bis zu den linearen Termen entwickelt.
 Mit etwas Aufwand k"onnen wir auch eine Approximation zweiter Ordnung
 finden.
-Dazu wenden wir nochmals den Operator $H_0+\varepsilon H_1$
+Dazu wenden wir wieder den Operator $H_0+\varepsilon H_1$
 auf die Entwicklung $|\psi_k(\varepsilon)\rangle$, rechnen die Reihe aber bis
 zu den Termen zweiter Ordnung aus
 \begin{align*}
@@ -533,7 +553,7 @@ E_k^{(2)}
 \end{align*}
 Den Vektor $|\psi_k^{(1)}\rangle$ kann man durch die im
 Abschnitt~\ref{section:nichtentartetezustaende} gefundene
-Entwicklung ersetzen, und erhalten
+Entwicklung ersetzen, und erh"alt
 \begin{align*}
 E_k^{(2)}
 &=
@@ -801,13 +821,14 @@ mindestens qualitativ erkl"aren.
 In Abbildung~\ref{skript:wasserstoffaufspaltung} sind links die Energieniveaus
 des Wasserstoffatoms dargestellt, wie wir sie im Kapitel~\ref{chapter:wasserstoff}
 berechnet haben.
-Alle Niveaus sind hochgradig entartet, da alle zust"ande mit
-gleichem Drehimpuls die gleiche Energie haben.
-Durch zus"atzliche Effekte, die man im Hamilton-Operator als
-St"orungen betrachten kann, werden die Niveaus aufgespalten.
-Der Grundzustand hat keinen Drehimpuls, es gibt daher auch keine Koppelung
-zwischen Spin und Bahndrehimpuls, so dass dieses Niveau nur durch die 
-Spin-Spin-Kopplung aufgespalten wird.
+Alle Niveaus sind hochgradig entartet.
+Wir werden sp"ater sehen, dass sich die entarteten Zust"ande des
+Wasserstoffatoms mit Hilfe des Drehimpuls unterscheiden lassen.
+Der Drehimpuls "aussert sich in magnetischen Eigenschaften,
+"aussere Magnetfelder oder das vom Spin herr"uhrende magnetische Dipolmoment
+der Elektronen spaltet daher die Energieniveaus auf.
+Der Grundzustand hat keinen Drehimpuls, er wird daher nur wenig
+aufgespalten.
 
 %
 % XXX Zeitabhaengige Stoerungstheorie
