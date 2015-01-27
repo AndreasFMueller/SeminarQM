@@ -4,7 +4,10 @@
 # (c) 2014 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
 all:	pert analysator arctan drehimpuls gatter dependencies periodensystem \
-	potential harmonisch heisenberg lagrange
+	potential harmonisch heisenberg lagrange h
+
+h_FILES = h-1.pdf
+h:	$(h_FILES)
 
 lagrange_FILES = lagrange-1.pdf
 lagrange:	$(lagrange_FILES)
@@ -120,4 +123,10 @@ $(lagrange_FILES):	lagrange.mp
 		mptopdf lagrange.$${i}; \
 	done
 
+$(h_FILES):	h.mp
+	TEX=latex mpost h.mp
+	for i in 1; \
+	do \
+		mptopdf h.$${i}; \
+	done
 
