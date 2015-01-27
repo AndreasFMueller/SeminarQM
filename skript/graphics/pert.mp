@@ -122,4 +122,44 @@ label.top(btex 3-fache Entartung etex, (6*u, 8.6*u));
 
 endfig;
 
+beginfig(3)
+
+numeric u;
+u := 50;
+
+pickup pencircle scaled 1pt;
+
+drawarrow (-10,0)--(210,0);
+drawarrow (0,-60)--(0,160);
+
+draw (    u, -2)--(    u, 2); label.bot(btex $1$ etex, (    u, -2));
+draw (2 * u, -2)--(2 * u, 2); label.bot(btex $2$ etex, (2 * u, -2));
+draw (3 * u, -2)--(3 * u, 2); label.bot(btex $3$ etex, (3 * u, -2));
+draw (4 * u, -2)--(4 * u, 2); label.bot(btex $4$ etex, (4 * u, -2));
+
+draw (-2,-1 * u)--(2,-1 * u); label.lft(btex $-1$ etex, (-2, -1 * u));
+draw (-2, 1 * u)--(2, 1 * u); label.lft(btex $ 1$ etex, (-2,  1 * u));
+draw (-2, 2 * u)--(2, 2 * u); label.lft(btex $ 2$ etex, (-2,  2 * u));
+draw (-2, 3 * u)--(2, 3 * u); label.lft(btex $ 3$ etex, (-2,  3 * u));
+
+path p;
+path q;
+p = (0,u);
+q = (0,u);
+
+for x = 0.01 step 0.01 until 4.005:
+	p := p..(x * u, u * (1 + sqrt(x)));
+	q := q..(x * u, u * (1 - sqrt(x)));
+endfor;
+
+pickup pencircle scaled 1.5pt;
+
+draw p;
+draw q;
+
+label.top(btex $\varepsilon$ etex, (205,5));
+label.lft(btex $x$ etex, (-3,160));
+
+endfig;
+
 end
