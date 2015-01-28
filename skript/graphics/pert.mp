@@ -13,11 +13,11 @@ verbatimtex
 \begin{document}
 etex;
 
+%
+% Störungstheorie for die Nullstellen eines quadratischen Polynoms
+%
 beginfig(1)
 
-pickup pencircle scaled 3pt;
-
-draw (0,0) withcolor(1.0,0.0,0.0);
 
 pickup pencircle scaled 1.5pt;
 
@@ -79,12 +79,21 @@ draw (-107,  0)--(-103,  0); label.lft(btex $ 1.00$ etex, (-107,  0));
 draw (-107, 50)--(-103, 50); label.lft(btex $ 1.10$ etex, (-107, 50));
 draw (-107,-50)--(-103,-50); label.lft(btex $ 0.90$ etex, (-107,-50));
 
-pickup pencircle scaled 0.1pt;
+pickup pencircle scaled 0.4pt;
 draw (-105,0)--(0,0);
 draw (0,-95)--(0,0);
 label.urt(btex $x_0$ etex, (0,0));
 
+pickup pencircle scaled 4pt;
+draw (0,0) withcolor(1.0,0.0,0.0);
+pickup pencircle scaled 2.5pt;
+draw (0,0) withcolor(0.0,0.0,1.0);
+
 endfig;
+
+%
+% Aufspaltung der Energieneiveaus
+%
 
 beginfig(2)
 
@@ -122,6 +131,9 @@ label.top(btex 3-fache Entartung etex, (6*u, 8.6*u));
 
 endfig;
 
+%
+% Aufspaltung einer doppelten Nullstelle
+%
 beginfig(3)
 
 numeric u;
@@ -142,6 +154,8 @@ draw (-2, 1 * u)--(2, 1 * u); label.lft(btex $ 1$ etex, (-2,  1 * u));
 draw (-2, 2 * u)--(2, 2 * u); label.lft(btex $ 2$ etex, (-2,  2 * u));
 draw (-2, 3 * u)--(2, 3 * u); label.lft(btex $ 3$ etex, (-2,  3 * u));
 
+label.llft(btex $0$ etex, (-2, -2));
+
 path p;
 path q;
 p = (0,u);
@@ -159,6 +173,21 @@ draw q;
 
 label.top(btex $\varepsilon$ etex, (205,5));
 label.lft(btex $x$ etex, (-3,160));
+
+pickup pencircle scaled 4pt;
+draw (0, u);
+pickup pencircle scaled 2.5pt;
+draw (0, u) withcolor (1,1,1);
+
+label.rt(btex $\mathstrut x_0$ etex, (3, u));
+
+numeric v;
+v = 2.5;
+
+label.ulft(btex $x_+(\varepsilon) = 1+\sqrt{\varepsilon}$ etex,
+	(v * u, (1 + sqrt(v)) * u));
+label.llft(btex $x_-(\varepsilon) = 1-\sqrt{\varepsilon}$ etex,
+	(v * u, (1 - sqrt(v)) * u));
 
 endfig;
 
