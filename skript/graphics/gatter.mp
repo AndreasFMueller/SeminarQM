@@ -1,5 +1,6 @@
 %
-% gatter.mp
+% gatter.mp -- darstellung verschiedener logischer Gatter, klassisch und
+%              quanten-
 %
 % (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %

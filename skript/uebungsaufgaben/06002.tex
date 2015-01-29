@@ -1,0 +1,111 @@
+Man berechne die Energieniveaus eines Teilchens der Masse $m$ in einem
+Potential $V(x)=v|x|$.
+
+\begin{loesung}
+Die Quantisierungsregeln f"uhren auf die Schr"odingergleichung
+\[
+-\frac{\hbar^2}{2m}\psi''(x)+v|x|\psi(x)=E\psi(x).
+\]
+Wir k"onnen die L"osung $\psi(x)$ f"ur die ganze relle Achse gewinnen,
+indem wir eine L"osung f"ur positive $x$ gerade oder ungerade
+auf die negative reelle Achse fortsetzen. 
+Ersteres funktioniert nur, wenn $\psi'(0)=0$ ist, zweites nur
+wenn $\psi(0)=0$.
+
+Wenn wir aber nur L"osungen f"ur $x>0$ suchen, dann k"onnen wir
+auf das Betragszeichen verzichten.
+Wir suchen also L"osungen der Differentialgleichung
+\begin{equation}
+-\frac{\hbar^2}{2m}\psi''(x)+vx \psi(x)=E\psi(x),
+\label{06002:dgl}
+\end{equation}
+die f"ur $x\to\infty$ beschr"ankt bleiben und die oder deren Ableitung
+bei $x=0$ verschwindet.
+
+Die Differentialgleichung kann durch Verschiebung des Arguments $x$ 
+und durch Skalierung in die Form
+\[
+y''-xy=0
+\]
+gebracht, werden, die Airysche Differentialgleichungen. 
+Ihre L"osungen sind Linearkombinationen der Airy-Funktionen
+$\operatorname{Ai}(x)$ und $\operatorname{Bi}(x)$ (siehe zum Beispiel
+\cite{skript:airy})..
+Da $\operatorname{Bi}(x)$ f"ur $x\to\infty$ unbeschr"ankt
+w"achst, darf $\operatorname{Bi}(x)$ in der L"osung nicht
+vorkommen.
+Daraus folgt, dass die L"osung bis auf die Normierung von der
+Form
+\[
+\psi(x)=\operatorname{Ai}(ax-b)
+\]
+sein muss.
+Dies setzen wir jetzt in die Differentialgleichung~(\ref{06002:dgl}) ein,
+und erhalten die Gleichung
+\begin{align*}
+-\frac{\hbar^2}{2m}a^2\operatorname{Ai}''(ax-b)
++
+vx\operatorname{Ai}(ax-b)
+&=
+E\operatorname{Ai}(ax-b)
+\\
+-\frac{\hbar^2}{2m}a^2(ax-b)\operatorname{Ai}(ax-b)
++
+vx\operatorname{Ai}(ax-b)
+&=
+E\operatorname{Ai}(ax-b)
+\\
+-\frac{\hbar^2}{2m}a^2(ax-b)
++
+vx
+&=
+E
+\end{align*}
+Beide Seiten dieser Gleichung sind Polynome, durch Koeffizientenvergleich
+finden wir daher die Bedingungen f"ur $a$ und $b$
+\begin{align*}
+-\frac{\hbar^2}{2m}a^3+v&=0
+&
+-\frac{\hbar^2}{2m}a^2b&=E
+\\
+\Rightarrow\qquad
+a &= \biggl(\frac{\hbar^2}{2mv}\biggr)^{-\frac13}
+&
+\Rightarrow\qquad
+b &= -\frac{E}{v}\biggl(\frac{\hbar^2}{2mv}\biggr)^{1-\frac23}
+= -\frac{E}{v}\biggl(\frac{\hbar^2}{2mv}\biggr)^{-\frac13}
+\end{align*}
+Damit die L"osung f"ur $x>0$ sich zu einer L"osung f"ur alle $x$
+erweitern l"asst, muss $\psi(0)=0$ oder $\psi'(0)=0$ sein,
+es muss also $b$ eine Nullstelle von $\operatorname{Ai}(x)$ oder
+von $\operatorname{Ai}'(x)$ sein.
+Sind $x_n$ die Nullstellen von $\operatorname{Ai}(x)$ und
+$\operatorname{Ai}'(x)$ mit $x_{n+1}<x_n$, dann sind die zugeh"origen
+Energieniveaus:
+\[
+E_n=v\root 3\of{\frac{\hbar^2}{2mv}} x_n.
+\]
+Auch die Wellenfunktionen kann man angeben.
+F"ur ungerade $n$ ist $x_n$ eine Nullstelle von $\operatorname{Ai}'(x)$,
+die Wellenfunktion ist ungerade:
+\begin{equation}
+\psi(x)
+=
+\begin{cases}
+\displaystyle
+\operatorname{Ai}\biggl( \root3\of{\frac{2mv}{\hbar^2}} (x-x_n)\biggr)
+	&\qquad x\ge 0\\
+\displaystyle
+-\operatorname{Ai}\biggl( \root3\of{\frac{2mv}{\hbar^2}}(x-x_n)\biggr)
+	&\qquad x < 0
+\end{cases}
+\end{equation}
+F"ur gerade $n$ ist $x_n$ eine Nullstelle von $\operatorname{Ai}(x)$
+und die Wellenfunktion ist gerade
+\begin{equation}
+\psi(x)
+=
+\operatorname{Ai}\biggl( \root3\of{\frac{2mv}{\hbar^2}}(|x|-x_n) \biggr).
+\end{equation}
+\end{loesung}
+

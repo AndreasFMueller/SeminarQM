@@ -1,0 +1,99 @@
+In dieser Aufgabe finden Sie die Bewegungsgleichungen eines Pendels.
+Ein Pendel ist eine Masse $m$, die an einem Faden der L"ange $m$ 
+aufgeh"angt ist, 
+
+\begin{teilaufgaben}
+\item Finden Sie die Lagrange-Funktion $L(\varphi)$.
+\item Was muss als zu $\varphi$ geh"origer Impuls $p_\varphi$ verwendet werden?
+\item Finden Sie die Hamilton-Funktion $H(\varphi, p_\varphi)$.
+\item Stellen Sie die Bewegungsgleichungen auf.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item Die Lagrange-Funktion ist die Differenz von kinetischer und
+potentieller Energie:
+\[
+T
+=
+\frac12mv^2-mgh
+=
+\frac12m(l\dot\varphi)^2-mlg(1-\cos\varphi).
+\]
+\item
+Als konjugierter Impuls muss die Ableitung von $L$ nach $\dot\varphi$
+verwendet werden:
+\[
+p_\varphi
+=
+\frac{\partial L}{\partial\dot\varphi}
+=
+ml^2\dot\varphi.
+\]
+Man beachte, dass $ml^2$ das Tr"agheitsmoment der Masse $m$ um den
+Aufh"angepunkt des Pendels ist, $p_\varphi$ ist also der Drehimpuls.
+Wir dr"ucken $\dot\varphi$ noch durch den Drehimpuls aus:
+\[
+\dot\varphi
+=
+\frac{1}{ml^2}p_{\varphi}.
+\]
+\item
+Die Hamilton-Funktion kann mit Hilfe der
+Formel~(\ref{skript:von-lagrange-zu-hamilton})
+bestimmt werden:
+\begin{align*}
+H(\varphi,p_\varphi)
+&=
+p_\varphi\dot\varphi-L(\varphi,\dot\varphi)
+=
+p_\varphi\dot\varphi - \frac12 m(l\dot\varphi)^2+mlg(1-\cos\varphi)
+\\
+&=
+p_\varphi\frac{1}{ml^2}p_\varphi-\frac12m\frac{1}{m^2l^2}p_\varphi^2
++mlg(1-\cos\varphi)
+\\
+&=
+\frac1{2ml^2}p_\varphi^2 + mlg(1-\cos\varphi).
+\end{align*}
+\item
+Die Bewegungsgleichungen in Hamiltonscher Form sind
+\begin{align*}
+\frac{d\varphi}{dt}
+&=
+\frac{\partial H}{\partial p_\varphi}
+=
+\frac{1}{ml^2}p_\varphi,
+\\
+\frac{dp_\varphi}{dt}
+&=
+-\frac{\partial H}{\partial\varphi}
+=
+-mlg\sin\varphi.
+\end{align*}
+Die erste Gleichung ist nat"urlich identisch mit dem in b) gefundenen
+Zusammenhang zwischen $p_\varphi$ und $\dot\varphi$.
+Setzen wir diesen Zusammenhang in die zweite Gleichung ein, erhalten
+wir
+\begin{align*}
+\frac{d}{dt}p_\varphi
+&=
+\frac{d}{dt}(ml^2\dot\varphi)
+=
+ml^2\ddot\varphi
+=
+-mlg\sin\varphi
+\\
+\Leftrightarrow
+\qquad
+\ddot\varphi
+&=
+-\frac{g}{l}\sin\varphi.
+\end{align*}
+Dies ist die bekannte Bewegungsgleichung f"ur ein Pendel. 
+F"ur kleine Amplituden kann man die rechte Seite approximieren durch
+$\sin\varphi\simeq\varphi$, und erh"alt eine Schwingungsdifferentialgleichung
+mit Kreisfrequenz $\sqrt{g/l}$.
+\end{teilaufgaben}
+\end{loesung}
+

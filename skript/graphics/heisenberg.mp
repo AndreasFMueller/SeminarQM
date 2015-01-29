@@ -1,5 +1,5 @@
 %
-% heisenberg.mp -- illustrationen fuer das Kapitel ueber Heisenberg
+% heisenberg.mp -- Illustrationen fuer das Kapitel ueber Heisenberg
 %
 % (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %

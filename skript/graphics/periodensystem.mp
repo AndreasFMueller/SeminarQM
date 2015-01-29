@@ -1,5 +1,6 @@
 %
-% periodensystem.mp
+% periodensystem.mp -- Darstellungen des Periodensystems fuer die Diskussion
+%                      der Spinzustaende im Kapitel Spin
 %
 % (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %

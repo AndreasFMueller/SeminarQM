@@ -1,5 +1,5 @@
 %
-% pert.mp -- bilder zur Stoerungstheorie
+% pert.mp -- Bilder zur Stoerungstheorie
 %
 % (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %

@@ -1,5 +1,5 @@
 %
-% lagrange.mp -- illustrations for the lagrange mechanics part
+% lagrange.mp -- Illustrations for the Lagrange mechanics part
 %
 % (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %

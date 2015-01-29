@@ -121,6 +121,6 @@ fprintf(fid, "label.ulft(btex $x$ etex, (195, 4));\n")
 fprintf(fid, "label.llft(btex $E$ etex, (-3,495));\n")
 
 fprintf(fid, "endfig;\n")
-fprintf(fid, "end")
+fprintf(fid, "end\n")
 
 

@@ -1,5 +1,5 @@
 %
-% dependencies.mp
+% dependencies.mp -- Abhaengigkeiten der Kapitel untereinander
 %
 % (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %

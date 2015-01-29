@@ -1,0 +1,76 @@
+Quantisieren Sie das mechanische System mit der klassischen Hamilton-Funktion
+\[
+H(x,p)=\frac{1}{2m}p^2+ax^4.
+\]
+Berechnen Sie auch den Kommutator von $x$ mit dem Hamilton-Operator in
+der Ortsdarstellung.
+
+\begin{loesung}
+Nach den Quantisierungsregeln in
+Satz~\ref{skript:quantisierungsregeln-ortsdarstellung}
+muss die Variable $p$ durch den Differentialoperator
+\[
+\hat p=\frac{\hbar}{i}\frac{\partial}{\partial x}
+\]
+ersetzt werden.
+Man erh"alt
+\[
+\hat H
+=
+-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}+ax^4
+\]
+als Hamilton-Operator.
+Den Kommutator $[x,\hat H]$ in der Ortsdarstellung ermitteln wir durch 
+seine Wirkung auf eine Wellenfunktion $\psi(x)$:
+\begin{align*}
+[x,\hat H]\psi(x)
+&=
+x\biggl(
+-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}+ax^4
+\biggr)\psi(x)
+-
+\biggl(
+-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}+ax^4
+\biggr)x\psi(x)
+\\
+&=
+-\frac{\hbar^2}{2m}\biggl(
+x\psi''(x)
+-
+x\psi''(x)
+-
+2\psi'(x)
+\biggr)
+=
+\frac{\hbar^2}{m}\psi'(x)
+=
+-\frac{\hbar}{i}\frac1{m}\frac{\hbar}{i}\frac{\partial}{\partial x}\psi(x)
+=
+-\frac{\hbar}{i}\frac1{m}\hat p\psi(x).
+\end{align*}
+Zu Beginn der zweiten Zeile brauchen wir die Beziehung
+\[
+\frac{\partial^2}{\partial x^2}(x\psi(x))
+=
+\frac{\partial}{\partial x}\biggl(
+\psi(x)+x\psi'(x)
+\biggr)
+=
+\psi'(x)+\psi'(x)+x\psi''(x)
+=
+x\psi''(x)+2\psi'(x).
+\]
+Die Quantisierungsregeln aus Satz~\ref{skript:quantisierung-poisson}
+besagen, dass Kommutatoren mit Poisson-Klammern in Beziehung stehen:
+\begin{align*}
+-\frac{i}{\hbar}
+[x,\hat H]
+&=
+\frac1{m}\hat p.
+\end{align*}
+Der Operator auf der rechten Seite ist der Operator f"ur die
+Geschwindigkeit,
+und tats"achlich muss der Kommutator mit $\hat H$ ja die Zeitwentwicklung
+der Observablen $x$ ausdr"ucken.
+\end{loesung}
+

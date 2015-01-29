@@ -1,3 +1,8 @@
+%
+% arctan.mp -- Graph der logistischen Funktion
+%
+% (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
 verbatimtex
 \documentclass{book}
 \usepackage{times}

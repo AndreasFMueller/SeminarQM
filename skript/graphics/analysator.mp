@@ -1,5 +1,7 @@
 %
-% analysator.mp -- 
+% analysator.mp -- Analysator-Diagramme für Kapitel 2
+%
+% (c) 2014 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %
 verbatimtex
 \documentclass{book}

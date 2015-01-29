@@ -1,3 +1,8 @@
+%
+% drehimpuls.mp -- Illustrationen zum Drehimpulskapitel
+%
+% (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
 verbatimtex
 \documentclass{book}
 \usepackage{times}
@@ -8,6 +13,9 @@ verbatimtex
 \begin{document}
 etex;
 
+%
+% Drehimpuls in L_3, L^2
+%
 beginfig(1)
 
 pickup pencircle scaled 0.7pt;
@@ -36,6 +44,9 @@ endfor
 
 endfig;
 
+%
+% Drehimpuls in a_1-a_2-Koordinaten
+%
 beginfig(2)
 
 pickup pencircle scaled 0.7pt;
@@ -47,29 +58,48 @@ label.urt(btex $a_1$ etex, (120,0));
 
 pickup pencircle scaled 1pt;
 
-drawarrow (22.5 * sqrt(2), 37.5 * sqrt(2))--(22.5 * sqrt(2), 52.5 * sqrt(2))
-	withcolor (1,0,0);
-label.rt(btex $a_2^+$ etex, (22.5 * sqrt(2), 52.5 * sqrt(2))) withcolor(1,0,0);
+numeric u;
+u := 15;
+numeric v;
+v := sqrt(2) * u;
 
-drawarrow (45 * sqrt(2), 15 * sqrt(2))--(60 * sqrt(2), 15 * sqrt(2))
-	withcolor (1,0,0);
-label.top(btex $a_1^+$ etex, (60 * sqrt(2), 15 * sqrt(2))) withcolor(1,0,0);
+drawarrow (1.5 * v, 3 * v)--(1.5 * v, 3.5 * v) withcolor (0,0,1);
+label.rt(btex $a_2^+$ etex, (1.5 * v, 3.5 * v)) withcolor(0,0,1);
+
+drawarrow (3.5 * v, v)--(4 * v, v) withcolor (0,0,1);
+label.top(btex $a_1^+$ etex, (4 * v, v)) withcolor(0,0,1);
+
+drawarrow (2.5 * v, 0.5 * v)--(2.5 * v, 0) withcolor (0,0,1);
+drawarrow (2.5 * v, 0)--(3 * v, 0) withcolor (0,0,1);
+
+drawarrow (2.5 * v, 0.5 * v)--(3 * v,    0) withcolor (1,0,0);
+
+drawarrow (0.5 * v, 2.5 * v)--(    0, 2.5 * v) withcolor(0,0,1);
+drawarrow (      0, 2.5 * v)--(    0,   3 * v) withcolor(0,0,1);
+
+drawarrow (0.5 * v, 2.5 * v)--(    0,3 * v) withcolor (1,0,0);
+
+label.urt(btex $L_+$ etex, (2.75 * v, 0.25 * v)) withcolor (1,0,0);
+label.urt(btex $L_-$ etex, (0.25 * v, 2.75 * v)) withcolor (1,0,0);
 
 pickup pencircle scaled 3pt;
 
-for a = 0 step 15 until 75:
-	for b = 0 step 15 until 75 - a:
+for a = 0 step u until 5 * u:
+	for b = 0 step u until 5 * u - a:
 		draw(a * sqrt(2),b * sqrt(2));
 	endfor;
 endfor;
-for a = 0 step 15 until 75:
-	for b = 0 step 15 until 60 - a:
-		draw((a + 7.5) * sqrt(2), (b + 7.5) * sqrt(2));
+for a = 0 step u until 5 * u:
+	for b = 0 step u until 4 * u - a:
+		draw((a + u / 2) * sqrt(2), (b + u / 2) * sqrt(2));
 	endfor;
 endfor;
 
 endfig;
 
+%
+% mogliche Werte der Quantenzahlen l und m
+%
 beginfig(3)
 
 numeric radius;
@@ -80,7 +110,7 @@ radius = unit * sqrt(4 * 5);
 pickup pencircle scaled 1pt;
 
 draw (radius,0)..(0,radius)..(-radius,0)..(0,-radius)..cycle withcolor(0,0,1);
-label.urt(btex $j=4$ etex, (sqrt(radius * radius - 9 * unit * unit), 3 * unit))
+label.urt(btex $l=4$ etex, (sqrt(radius * radius - 9 * unit * unit), 3 * unit))
 	withcolor(0,0,1);
 
 pickup pencircle scaled 0.1pt;

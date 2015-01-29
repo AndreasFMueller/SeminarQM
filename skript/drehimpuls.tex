@@ -531,14 +531,13 @@ wie man sich durch folgende Rechnung "uberzeugen kann:
 \centering
 \includegraphics{graphics/drehimpuls-3.pdf}
 \caption{M"ogliche Werte von $L_3$ sind die Quantenzahlen $m$, wenn
-der Drehimpulsbetrag $h\hbar^2 \frac{j}2(\frac{j}2+1)$ mit $j=4$ ist.
+der Drehimpulsbetrag $h\hbar^2 \frac{l}2(\frac{l}2+1)$ mit $l=4$ ist.
 \label{skript:drehimpulsrange}}
 \end{figure}%
 Die Normquadrate auf der rechten Seite sind entweder $1$,
 wenn $L_\pm\,|\lambda,l_3\rangle$, oder 0, wenn $L_\pm\,|\lambda,l_3\rangle$
 der Nullvektor ist.
 \begin{figure}
-% XXX a Operatoren sollten halbe L"ange haben
 \centering
 \includegraphics{graphics/drehimpuls-1.pdf}
 \caption{M"ogliche Kombinationen von $\lambda$ und $l_3$. Rot eingezeichnet
@@ -572,7 +571,9 @@ Eigenwerten von $L_3$ hin- und hernavigieren.
 \begin{figure}
 \centering
 \includegraphics{graphics/drehimpuls-2.pdf}
-\caption{M"ogliche Drehimpulswerte in $a_1$ und $a_2$ Koordinaten.
+\caption{M"ogliche Drehimpulswerte in $a_1$ und $a_2$ Koordinaten und
+Zusammensetzung der Operatoren $L_+$ und $L_-$ aus den Operatoren
+$a_1$ und $a_2$.
 \label{skript:drehimpulsspektruma}}
 \end{figure}
 Beim harmonischen Oszillator konnten wir aus dem Produkt $a^+a$
@@ -759,9 +760,9 @@ wobei $j$ halbzahlige Werte annehmen muss.
 Und die Eigenwerte von $L_3$ sind von der Form $\hbar m$, wobei auch
 $m$ halbzahlig ist.
 Mit den Eigenwerten $n_i$ der Operatoren $N_i$ kann man die sogenannten
-Quantenzahlen $j$ und $m$ ausdr"ucken als
+Quantenzahlen $l$ und $m$ ausdr"ucken als
 \begin{align*}
-j
+l
 &=
 \frac12(n_1+n_2)
 &
@@ -769,21 +770,21 @@ m
 &=
 \frac12(n_1-n_2).
 \end{align*}
-Umgekehrt kann man die Eigenzust"ande jetzt mit den Quantenzahlen $j$ und $m$
+Umgekehrt kann man die Eigenzust"ande jetzt mit den Quantenzahlen $l$ und $m$
 schreiben als
 \begin{align*}
-|j,m\rangle
+|l,m\rangle
 =
-\frac1{\sqrt{(j+m)!(j-m)!}}
+\frac1{\sqrt{(l+m)!(l-m)!}}
 (a_1^+)^{\frac12(n_1+n_2)}
 (a_2^+)^{\frac12(n_1-n_2)}
 \,|0,0\rangle
 \end{align*}
 mit den Eigenwertgleichungen
 \begin{align*}
-\vec L^2\,|j,m\rangle&=\hbar j(j+1)\,|j,m\rangle,
+\vec L^2\,|l,m\rangle&=\hbar l(l+1)\,|l,m\rangle,
 &
-L_3\,|j,m\rangle&=\hbar m\,|j,m\rangle.
+L_3\,|l,m\rangle&=\hbar m\,|l,m\rangle.
 \end{align*}
 
 \subsubsection{Rechnungen}
@@ -988,7 +989,7 @@ darstellen lassen.
 Bisher haben wir in diesem Kapitel die Drehimpulsoperatoren ganz abstrakt
 behandelt. 
 Das Wasserstoffatom haben wir allerdings in der Ortsdarstellung 
-gerechnet, und dort ebenfalls Quantenzahlen $j$ und $m$ gefunden.
+gerechnet, und dort ebenfalls Quantenzahlen $l$ und $m$ gefunden.
 Erst wenn wir die Drehimpulsoperatoren ebenfalls in die Ortsdarstellung
 umrechnen, k"onnen wir sie als Teile des Hamilton-Operators des
 Wasserstoffatoms identifizieren.
@@ -1355,20 +1356,20 @@ von $L_+$ sollte daraus eine Funktion werden, deren $\varphi$-Abh"angigkeit
 zu einer Eigenfunktion von $L_3$ mit Eigenwert $\hbar(m+1)$ bzw.~$\hbar(m-1)$
 passt:
 \begin{equation*}
-\langle x|n,j,m\rangle
+\langle x|n,l,m\rangle
 =
 R(r)\Theta(\vartheta)e^{im\varphi}
 \quad\Rightarrow\quad
 \left\{
 \begin{aligned}
 L_+
-\langle x|n,j,m\rangle
+\langle x|n,l,m\rangle
 &=
 f_+(r,\vartheta)
 e^{i(m+1)\varphi}
 \\
 L_-
-\langle x|n,j,m\rangle
+\langle x|n,l,m\rangle
 &=
 f_-(r,\vartheta)
 e^{i(m-1)\varphi}
@@ -1383,7 +1384,7 @@ Werte von $m$ zu berechnen.
 \subsubsection{Drehimpulsbetrag}
 F"ur die Berechnung des Drehimpulsbetrages m"ussen wir uns zun"achst
 auf $L_1^2+L_2^2$ konzentrieren, da die letzte Komponenten gem"ass
-(\ref{l3spherical}) sehr einfach ist.
+(\ref{skript:l3spherical}) sehr einfach ist.
 \begin{align*}
 L_1^2
 &=-\hbar^2
