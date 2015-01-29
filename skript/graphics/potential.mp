@@ -24,6 +24,9 @@ pickup pencircle scaled 0.1pt;
 numeric u;
 u = 6pt;
 
+fill (-140, 175)--(-140,-15)--(120,-15)--(120,175)--(100,175)
+	--(100,0)--(-100,0)--(-100,175)--cycle withcolor (0.95,0.95,0.95);
+
 draw (-140,      u)--(100,      u); label.lft(btex $n=1$ etex, (-140,     u));
 draw (-140,  4 * u)--(100,  4 * u); label.lft(btex $n=2$ etex, (-140, 4 * u));
 draw (-140,  9 * u)--(100,  9 * u); label.lft(btex $n=3$ etex, (-140, 9 * u));
@@ -39,6 +42,8 @@ draw (-140, 25 * u)--(-100, 25 * u) withcolor (1,0,0);
 
 pickup pencircle scaled 1.5pt;
 draw (-100,160)--(-100,0)--(100,0)--(100,160);
+draw (-100,160)--(-100,175) dashed withdots;
+draw (100,160)--(100,175) dashed withdots;
 
 def height(expr n) =
 	(n * n * u)
@@ -102,6 +107,10 @@ endfig;
 beginfig(2)
 
 pickup pencircle scaled 1pt;
+
+fill (-140,0)--(-140,-165)--(140,-165)--(140,0)
+	--(100,0)--(100,-150)--(-100,-150)--(-100,0)--cycle
+		withcolor(0.95,0.95,0.95);
 
 drawarrow (-150,0)--(150,0);
 label.top(btex $x$ etex, (150,0));
@@ -170,9 +179,12 @@ enddef;
 numeric omega;
 omega := 180 / 3.14159;
 
+numeric depth;
+depth := 480;
+
 def symsolution(expr k, E) =
 	numeric h;
-	h := 450 * EE(E);
+	h := depth * EE(E);
 
 	numeric a;
 	a := amplitude * cosd(omega * k);
@@ -207,7 +219,7 @@ enddef;
 
 def antisymsolution(expr k, E) =
 	numeric h;
-	h := 450 * EE(E);
+	h := depth * EE(E);
 
 	numeric a;
 	a := amplitude * sind(omega * k);
@@ -243,15 +255,24 @@ enddef;
 
 def symlabel(expr E, l) =
 	numeric h;
-	h := 450 * EE(E);
+	h := 480 * EE(E);
 	label.lft(l, (-155, h)) withcolor (0,0,1);
 enddef;
 
 def antisymlabel(expr E, l) =
 	numeric h;
-	h := 450 * EE(E);
+	h := 480 * EE(E);
 	label.lft(l, (-155, h)) withcolor (0,1,0);
 enddef;
+
+fill (-155,0)--(-155,-495)--(190,-495)--(190,0)--(100,0)--(100,-480)
+	--(-100,-480)--(-100,0)--cycle withcolor(0.95,0.95,0.95);
+
+fill (-100,-480)--(100,-480)--(100,-448)--(-100,-448)--cycle
+	withcolor(1,1,0.90);
+pickup pencircle scaled 1pt;
+draw (-100,-448)--(100,-448)
+	withcolor(1,1,0);
 
 %symsolution(       1.53152, -0.99846);
 %symsolution(       4.59431, -0.98612);
@@ -307,21 +328,22 @@ antisymlabel(-0.38770, btex $n=20$ etex);
 antisymlabel(-0.26115, btex $n=22$ etex);
 antisymlabel(-0.12462, btex $n=24$ etex);
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled 0.7pt;
 
 drawarrow (-198,   0)--(198, 0);
-drawarrow (   0,-460)--(  0,20);
+drawarrow (   0,-490)--(  0,20);
 label.llft(btex $-l$ etex, (-100,0));
 label.lrt(btex $ l$ etex, ( 100,0));
-label.ulft(btex $x$ etex, (198,3));
-label.lft(btex $\psi$ etex, (0,20));
+label.top(btex $x$ etex, (198,3));
+label.lft(btex $V$ etex, (0,20));
 
-pickup pencircle scaled 2pt;
-pickup pencircle scaled 1pt;
+pickup pencircle scaled 1.5pt;
 
-draw (-190,0)--(-100,0)--(-100,-450)--(100,-450)--(100,0)--(190,0);
+draw (-155,0)--(-100,0)--(-100,-480)--(100,-480)--(100,0)--(190,0);
 
-label.llft(btex $-V_0$ etex, (0,-450));
+label.llft(btex $-V_0$ etex, (0,-480));
+label.top(btex $V=0$ etex, (-122.5,0));
+label.top(btex $V=0$ etex, (145,0));
 
 endfig;
 
@@ -462,6 +484,7 @@ numeric amplitude;
 amplitude := 15;
 numeric A;
 A := 39;
+depth := 450;
 
 def EE(expr E) =
 	((15 * (1+E)) -1)
@@ -477,14 +500,25 @@ omega := 180 / 3.14159;
 def symlabel(expr E, l) =
 	numeric h;
 	h := 450 * EE(E);
+	fill (-195,h-8)--(-155,h-8)--(-155,h+8)--(-195,h+8)--cycle
+		withcolor(1,1,1);
 	label.lft(l, (-155, h)) withcolor (0,0,1);
 enddef;
 
 def antisymlabel(expr E, l) =
 	numeric h;
 	h := 450 * EE(E);
+	fill (-195,h-8)--(-155,h-8)--(-155,h+8)--(-195,h+8)--cycle
+		withcolor(1,1,1);
 	label.lft(l, (-155, h)) withcolor (0,1,0);
 enddef;
+
+fill (-190,25)--(-190,-50)--(-190,-465)--(190,-465)
+	--(190,25)--(100,25)--(100,-450)
+	--(-100,-450)--(-100,25)--cycle withcolor(0.95,0.95,0.95);
+
+fill (-100,-450)--(100,-450)--(100,0)--(-100,0)--cycle
+	withcolor(1,1,0.95);
 
 symsolution(       1.53152, -0.99846);
 symsolution(       4.59431, -0.98612);
@@ -500,9 +534,9 @@ symsolution(       7.65638, -0.96146);
 %symsolution(      35.01361, -0.19398);
 %symsolution(      37.93351, -0.05394);
 
-symlabel(-0.99846, btex $n=1$ etex);
-symlabel(-0.98612, btex $n=3$ etex);
-symlabel(-0.96146, btex $n=5$ etex);
+symlabel(-0.99846, btex $n=\phantom{0}1$ etex);
+symlabel(-0.98612, btex $n=\phantom{0}3$ etex);
+symlabel(-0.96146, btex $n=\phantom{0}5$ etex);
 %symlabel(-0.92449, btex $n=7$ etex);
 %symlabel(-0.87523, btex $n=9$ etex);
 %symlabel(-0.81372, btex $n=11$ etex);
@@ -527,9 +561,9 @@ antisymsolution(   9.18698, -0.94451);
 %antisymsolution(  33.52310, -0.26115);
 %antisymsolution(  36.48911, -0.12462);
 
-antisymlabel(-0.99383, btex $n=2$ etex);
-antisymlabel(-0.97533, btex $n=4$ etex);
-antisymlabel(-0.94451, btex $n=6$ etex);
+antisymlabel(-0.99383, btex $n=\phantom{0}2$ etex);
+antisymlabel(-0.97533, btex $n=\phantom{0}4$ etex);
+antisymlabel(-0.94451, btex $n=\phantom{0}6$ etex);
 %antisymlabel(-0.90139, btex $n=8$ etex);
 %antisymlabel(-0.84600, btex $n=10$ etex);
 %antisymlabel(-0.77839, btex $n=12$ etex);
@@ -540,20 +574,26 @@ antisymlabel(-0.94451, btex $n=6$ etex);
 %antisymlabel(-0.26115, btex $n=22$ etex);
 %antisymlabel(-0.12462, btex $n=24$ etex);
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled 0.7pt;
 
 drawarrow (-198,   0)--(198, 0);
 drawarrow (   0,-460)--(  0,20);
 label.llft(btex $-l$ etex, (-100,0));
 label.lrt(btex $ l$ etex, ( 100,0));
-label.ulft(btex $x$ etex, (198,3));
-label.lft(btex $\psi$ etex, (0,20));
+label.top(btex $x$ etex, (198,3));
+label.lft(btex $V$ etex, (0,20));
 
-pickup pencircle scaled 1pt;
+pickup pencircle scaled 1.5pt;
 
-draw (-190,0)--(-100,0)--(-100,-450)--(100,-450)--(100,0)--(190,0);
+draw (-100,25)--(-100,   0) dashed withdots;
+draw ( 100,25)--( 100,   0) dashed withdots;
+draw (-100, 0)--(-100,-450)--(100,-450)--(100,0);
 
 label.llft(btex $-V_0$ etex, (0,-450));
+
+label.top(btex $V=-\frac{14}{15}V_0$ etex, (-145,0));
+label.top(btex $V=-\frac{14}{15}V_0$ etex, ( 145,0));
+
 
 endfig;
 
