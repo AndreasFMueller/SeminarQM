@@ -28,6 +28,15 @@ enddef;
 def E(expr k) =
     (k + 0.5)
 enddef;
+path r;
+r := (-4 * unit,potential(-4));
+for x = -4 step 0.1 until 4.01:
+    r := r--(x * unit, potential(x));
+endfor;
+fill r--(4 * unit + 5, potential(4))
+        --(4 * unit + 5, 0)--(-4 * unit - 5, 0)
+        --(-4 * unit - 5, potential(-4))--cycle
+        withcolor(0.95,0.95,0.95);
 pickup pencircle scaled 1pt;
 numeric amplitude;
 amplitude := 25;
@@ -129,11 +138,7 @@ draw (-4 * unit, h)--(4 * unit,h);
 pickup pencircle scaled 1pt;
 draw p withcolor(1,0,0);
 pickup pencircle scaled 1pt;
-draw (-4 * unit,potential(-4))
-for x = -4 step 0.1 until 4.01:
-    --(x * unit, potential(x))
-endfor;
-pickup pencircle scaled 1pt;
+draw r;
 pickup pencircle scaled 0.7pt;
 draw(-4 * unit,-2)--(-4 * unit,2);
 label.bot(btex $-4$ etex, (-4 * unit,-2));
@@ -156,6 +161,6 @@ label.bot(btex $4$ etex, (4 * unit,-2));
 drawarrow (-195, 0)--(195,0);
 drawarrow (   0,-2)--(  0,495);
 label.ulft(btex $x$ etex, (195, 4));
-label.llft(btex $\psi$ etex, (0,495));
+label.llft(btex $E$ etex, (-3,495));
 endfig;
 end
