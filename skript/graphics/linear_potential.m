@@ -88,8 +88,8 @@ fprintf(fid, "    (-En)\n")
 fprintf(fid, "enddef;\n")
 
 fprintf(fid, "path r;\n")
-fprintf(fid, "r := (-14 * unit,vrange * v)--(0,0)--(14 * unit, vrange * v);\n")
-fprintf(fid, "fill r--(14 * unit, 0)--(-14 * unit, 0)--cycle\n")
+fprintf(fid, "r := (-vrange * unit,vrange * v)--(0,0)--(vrange * unit, vrange * v);\n")
+fprintf(fid, "fill r--(14 * unit, vrange * v)--(14 * unit, 0)--(-14 * unit, 0)--(-14 * unit, vrange * v)--cycle\n")
 fprintf(fid, "        withcolor(0.95,0.95,0.95);\n")
 fprintf(fid, "pickup pencircle scaled 1pt;\n")
 fprintf(fid, "numeric amplitude;\n")
@@ -121,8 +121,6 @@ for n = (1:18)
 	fprintf(fid, "pickup pencircle scaled 1pt;\n")
 	fprintf(fid, "draw p withcolor(1,0,0);\n")
 endfor
-fprintf(fid, "pickup pencircle scaled 1pt;\n")
-fprintf(fid, "draw r;\n")
 fprintf(fid, "pickup pencircle scaled 0.7pt;\n")
 for x = (-7:7)
 	fprintf(fid, "draw(%d * unit,-2)--(%d * unit,2);\n", 2 * x, 2 * x)
@@ -134,7 +132,7 @@ fprintf(fid, "label.ulft(btex $x$ etex, (195, 4));\n")
 fprintf(fid, "label.llft(btex $E$ etex, (-3,495));\n")
 
 fprintf(fid, "numeric w;\n")
-fprintf(fid, "w := 31;\n")
+fprintf(fid, "w := 29;\n")
 for n = (1:18)
 	fprintf(fid, "h := v * E(%f);\n", xn(n,1))
 	fprintf(fid, "fill (14 * unit - w, h - 1)\n")
@@ -144,12 +142,14 @@ for n = (1:18)
 	fprintf(fid, "--cycle withcolor(1,1,1);\n")
 
 	if (n < 10)
-		fprintf(fid, "label.llft(btex $n = \\phantom{0}%d$ etex, (14 * unit, h));\n", n, n)
+		fprintf(fid, "label.llft(btex $n = \\phantom{0}%d$ etex, (14 * unit + 2, h));\n", n, n)
 	else
-		fprintf(fid, "label.llft(btex $n = %d$ etex, (14 * unit, h));\n", n, n)
+		fprintf(fid, "label.llft(btex $n = %d$ etex, (14 * unit + 2, h));\n", n, n)
 	endif
 endfor;
 
+fprintf(fid, "pickup pencircle scaled 1pt;\n")
+fprintf(fid, "draw r;\n")
 
 fprintf(fid, "endfig;\n")
 fprintf(fid, "end\n")

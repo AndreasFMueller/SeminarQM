@@ -27,8 +27,8 @@ def E(expr En) =
     (-En)
 enddef;
 path r;
-r := (-14 * unit,vrange * v)--(0,0)--(14 * unit, vrange * v);
-fill r--(14 * unit, 0)--(-14 * unit, 0)--cycle
+r := (-vrange * unit,vrange * v)--(0,0)--(vrange * unit, vrange * v);
+fill r--(14 * unit, vrange * v)--(14 * unit, 0)--(-14 * unit, 0)--(-14 * unit, vrange * v)--cycle
         withcolor(0.95,0.95,0.95);
 pickup pencircle scaled 1pt;
 numeric amplitude;
@@ -7432,8 +7432,6 @@ pickup pencircle scaled 0.1pt;
 draw (-14 * unit, h)--(14 * unit,h);
 pickup pencircle scaled 1pt;
 draw p withcolor(1,0,0);
-pickup pencircle scaled 1pt;
-draw r;
 pickup pencircle scaled 0.7pt;
 draw(-14 * unit,-2)--(-14 * unit,2);
 label.bot(btex $-14$ etex, (-14 * unit,-2));
@@ -7470,150 +7468,152 @@ drawarrow (   0,-2)--(  0,495);
 label.ulft(btex $x$ etex, (195, 4));
 label.llft(btex $E$ etex, (-3,495));
 numeric w;
-w := 31;
+w := 29;
 h := v * E(-1.018793);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = \phantom{0}1$ etex, (14 * unit, h));
-label.llft(btex $n = \phantom{0}1$ etex, (14 * unit, h));
+label.llft(btex $n = \phantom{0}1$ etex, (14 * unit + 2, h));
+label.llft(btex $n = \phantom{0}1$ etex, (14 * unit + 2, h));
 h := v * E(-2.338107);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = \phantom{0}2$ etex, (14 * unit, h));
-label.llft(btex $n = \phantom{0}2$ etex, (14 * unit, h));
+label.llft(btex $n = \phantom{0}2$ etex, (14 * unit + 2, h));
+label.llft(btex $n = \phantom{0}2$ etex, (14 * unit + 2, h));
 h := v * E(-3.248198);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = \phantom{0}3$ etex, (14 * unit, h));
-label.llft(btex $n = \phantom{0}3$ etex, (14 * unit, h));
+label.llft(btex $n = \phantom{0}3$ etex, (14 * unit + 2, h));
+label.llft(btex $n = \phantom{0}3$ etex, (14 * unit + 2, h));
 h := v * E(-4.087949);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = \phantom{0}4$ etex, (14 * unit, h));
-label.llft(btex $n = \phantom{0}4$ etex, (14 * unit, h));
+label.llft(btex $n = \phantom{0}4$ etex, (14 * unit + 2, h));
+label.llft(btex $n = \phantom{0}4$ etex, (14 * unit + 2, h));
 h := v * E(-4.820099);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = \phantom{0}5$ etex, (14 * unit, h));
-label.llft(btex $n = \phantom{0}5$ etex, (14 * unit, h));
+label.llft(btex $n = \phantom{0}5$ etex, (14 * unit + 2, h));
+label.llft(btex $n = \phantom{0}5$ etex, (14 * unit + 2, h));
 h := v * E(-5.520560);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = \phantom{0}6$ etex, (14 * unit, h));
-label.llft(btex $n = \phantom{0}6$ etex, (14 * unit, h));
+label.llft(btex $n = \phantom{0}6$ etex, (14 * unit + 2, h));
+label.llft(btex $n = \phantom{0}6$ etex, (14 * unit + 2, h));
 h := v * E(-6.163307);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = \phantom{0}7$ etex, (14 * unit, h));
-label.llft(btex $n = \phantom{0}7$ etex, (14 * unit, h));
+label.llft(btex $n = \phantom{0}7$ etex, (14 * unit + 2, h));
+label.llft(btex $n = \phantom{0}7$ etex, (14 * unit + 2, h));
 h := v * E(-6.786708);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = \phantom{0}8$ etex, (14 * unit, h));
-label.llft(btex $n = \phantom{0}8$ etex, (14 * unit, h));
+label.llft(btex $n = \phantom{0}8$ etex, (14 * unit + 2, h));
+label.llft(btex $n = \phantom{0}8$ etex, (14 * unit + 2, h));
 h := v * E(-7.372177);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = \phantom{0}9$ etex, (14 * unit, h));
-label.llft(btex $n = \phantom{0}9$ etex, (14 * unit, h));
+label.llft(btex $n = \phantom{0}9$ etex, (14 * unit + 2, h));
+label.llft(btex $n = \phantom{0}9$ etex, (14 * unit + 2, h));
 h := v * E(-7.944134);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = 10$ etex, (14 * unit, h));
-label.llft(btex $n = 10$ etex, (14 * unit, h));
+label.llft(btex $n = 10$ etex, (14 * unit + 2, h));
+label.llft(btex $n = 10$ etex, (14 * unit + 2, h));
 h := v * E(-8.488487);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = 11$ etex, (14 * unit, h));
-label.llft(btex $n = 11$ etex, (14 * unit, h));
+label.llft(btex $n = 11$ etex, (14 * unit + 2, h));
+label.llft(btex $n = 11$ etex, (14 * unit + 2, h));
 h := v * E(-9.022651);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = 12$ etex, (14 * unit, h));
-label.llft(btex $n = 12$ etex, (14 * unit, h));
+label.llft(btex $n = 12$ etex, (14 * unit + 2, h));
+label.llft(btex $n = 12$ etex, (14 * unit + 2, h));
 h := v * E(-9.535449);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = 13$ etex, (14 * unit, h));
-label.llft(btex $n = 13$ etex, (14 * unit, h));
+label.llft(btex $n = 13$ etex, (14 * unit + 2, h));
+label.llft(btex $n = 13$ etex, (14 * unit + 2, h));
 h := v * E(-10.040174);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = 14$ etex, (14 * unit, h));
-label.llft(btex $n = 14$ etex, (14 * unit, h));
+label.llft(btex $n = 14$ etex, (14 * unit + 2, h));
+label.llft(btex $n = 14$ etex, (14 * unit + 2, h));
 h := v * E(-10.527660);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = 15$ etex, (14 * unit, h));
-label.llft(btex $n = 15$ etex, (14 * unit, h));
+label.llft(btex $n = 15$ etex, (14 * unit + 2, h));
+label.llft(btex $n = 15$ etex, (14 * unit + 2, h));
 h := v * E(-11.008524);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = 16$ etex, (14 * unit, h));
-label.llft(btex $n = 16$ etex, (14 * unit, h));
+label.llft(btex $n = 16$ etex, (14 * unit + 2, h));
+label.llft(btex $n = 16$ etex, (14 * unit + 2, h));
 h := v * E(-11.475057);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = 17$ etex, (14 * unit, h));
-label.llft(btex $n = 17$ etex, (14 * unit, h));
+label.llft(btex $n = 17$ etex, (14 * unit + 2, h));
+label.llft(btex $n = 17$ etex, (14 * unit + 2, h));
 h := v * E(-11.936016);
 fill (14 * unit - w, h - 1)
 --(14 * unit - w, h - 11)
 --(14 * unit    , h - 11)
 --(14 * unit    , h -  1)
 --cycle withcolor(1,1,1);
-label.llft(btex $n = 18$ etex, (14 * unit, h));
-label.llft(btex $n = 18$ etex, (14 * unit, h));
+label.llft(btex $n = 18$ etex, (14 * unit + 2, h));
+label.llft(btex $n = 18$ etex, (14 * unit + 2, h));
+pickup pencircle scaled 1pt;
+draw r;
 endfig;
 end
