@@ -21,6 +21,38 @@ Wir suchen also L"osungen der Differentialgleichung
 \end{equation}
 die f"ur $x\to\infty$ beschr"ankt bleiben und die oder deren Ableitung
 bei $x=0$ verschwindet.
+\begin{table}
+\centering
+\begin{tabular}{|>{$}c<{$}|>{$}c<{$}|}
+\hline
+n&x_n\\
+\hline
+\phantom{0}1&-\phantom{0}1.018793\\
+\phantom{0}2&-\phantom{0}2.338107\\
+\phantom{0}3&-\phantom{0}3.248198\\
+\phantom{0}4&-\phantom{0}4.087949\\
+\phantom{0}5&-\phantom{0}4.820099\\
+\phantom{0}6&-\phantom{0}5.520560\\
+\phantom{0}7&-\phantom{0}6.163307\\
+\phantom{0}8&-\phantom{0}6.786708\\
+\phantom{0}9&-\phantom{0}7.372177\\
+10&-\phantom{0}7.944134\\
+11&-\phantom{0}8.488487\\
+12&-\phantom{0}9.022651\\
+13&-\phantom{0}9.535449\\
+14&-10.040174\\
+15&-10.527660\\
+16&-11.008524\\
+17&-11.475057\\
+18&-11.936016\\
+\hline
+\end{tabular}
+\caption{Nullstellen von $\operatorname{Ai}(x)$ und den
+Ableitungen $\operatorname{Ai}'(x)$.
+F"ur $n$ ungerade ist $x_n$ eine Nullstelle von $\operatorname{Ai}'(x)$,
+f"ur $n$ gerade eine von $\operatorname{Ai}(x)$.
+\label{skript:airy-nullstellen}}
+\end{table}
 
 Die Differentialgleichung kann durch Verschiebung des Arguments $x$ 
 und durch Skalierung in die Form
@@ -87,25 +119,39 @@ E_n=v\root 3\of{\frac{\hbar^2}{2mv}} x_n.
 \]
 Auch die Wellenfunktionen kann man angeben.
 F"ur ungerade $n$ ist $x_n$ eine Nullstelle von $\operatorname{Ai}'(x)$,
-die Wellenfunktion ist ungerade:
+die Wellenfunktion ist gerade:
+\begin{equation}
+\psi(x)
+=
+\operatorname{Ai}\biggl( \root3\of{\frac{2mv}{\hbar^2}}(|x|-x_n) \biggr).
+\end{equation}
+F"ur gerade $n$ ist $x_n$ eine Nullstelle von $\operatorname{Ai}(x)$
+und die Wellenfunktion ist ungerade
 \begin{equation}
 \psi(x)
 =
 \begin{cases}
 \displaystyle
-\operatorname{Ai}\biggl( \root3\of{\frac{2mv}{\hbar^2}} (x-x_n)\biggr)
+\phantom{-}\operatorname{Ai}\biggl( \root3\of{\frac{2mv}{\hbar^2}} (x-x_n)\biggr)
 	&\qquad x\ge 0\\
 \displaystyle
 -\operatorname{Ai}\biggl( \root3\of{\frac{2mv}{\hbar^2}}(x-x_n)\biggr)
 	&\qquad x < 0
 \end{cases}
 \end{equation}
-F"ur gerade $n$ ist $x_n$ eine Nullstelle von $\operatorname{Ai}(x)$
-und die Wellenfunktion ist gerade
-\begin{equation}
-\psi(x)
-=
-\operatorname{Ai}\biggl( \root3\of{\frac{2mv}{\hbar^2}}(|x|-x_n) \biggr).
-\end{equation}
+\begin{figure}
+\centering
+\includegraphics{graphics/linear-1.pdf}
+\caption{Wellenfunktionen eines Teilchens in einem linearen Potential.
+\label{skript:linear-wave-functions}}
+\end{figure}%
+In Abbildung~\ref{skript:linear-wave-functions} sind die Wellenfunktionen
+f"ur die ersten 18 Energieniveaus dargestellt.
+Die zugeh"origen Nullstellen sind in der Tabelle~\ref{skript:airy-nullstellen}
+zusammengestellt.
+Je h"oher die Energie eines Zustands ist, desto h"oher ist die Frequenz
+der Wellenfunktion in der N"ahe von $0$.
+Da die Differenz zwischen aufeinanderfolgenden Nullstellen immer kleiner
+wird, werden auch die Differenzen zwischen den Energieniveaus immer kleiner.
 \end{loesung}
 
