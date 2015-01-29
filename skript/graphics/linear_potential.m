@@ -128,8 +128,8 @@ for x = (-7:7)
 endfor;
 fprintf(fid, "drawarrow (-195, 0)--(195,0);\n")
 fprintf(fid, "drawarrow (   0,-2)--(  0,495);\n")
-fprintf(fid, "label.ulft(btex $x$ etex, (195, 4));\n")
-fprintf(fid, "label.llft(btex $E$ etex, (-3,495));\n")
+fprintf(fid, "label.top(btex $x$ etex, (195, 4));\n")
+fprintf(fid, "label.lft(btex $E$ etex, (-3,495));\n")
 
 fprintf(fid, "numeric w;\n")
 fprintf(fid, "w := 29;\n")
