@@ -35,6 +35,7 @@ HEISENBERGFILES = heisenberg/main.tex
 STARKFILES = stark/main.tex
 BELLFILES = bell/main.tex
 FELDQUANTISIERUNGFILES = feldquantisierung/main.tex
+QUANTUMDOTFILES = quantumdotfiles/main.tex
 
 TEXFILES = $(SKRIPTFILES) \
 	$(TUNNELFILES) $(ATOMUHRFILES) $(RTMFILES) $(EFELDFILES) \
@@ -46,7 +47,7 @@ BLXFILES = skript1-blx.bbl skript2-blx.bbl skript3-blx.bbl skript4-blx.bbl \
 	skript5-blx.bbl skript6-blx.bbl skript7-blx.bbl skript8-blx.bbl \
 	skript9-blx.bbl skript10-blx.bbl skript11-blx.bbl skript12-blx.bbl \
 	skript13-blx.bbl skript14-blx.bbl skript15-blx.bbl skript16-blx.bbl \
-	skript17-blx.bbl skript18-blx.bbl
+	skript17-blx.bbl skript18-blx.bbl skript19-blx.bbl
 
 skript.pdf:	skript.tex $(TEXFILES) skript.ind $(IMAGES) $(BLXFILES)
 	pdflatex skript.tex
@@ -115,3 +116,6 @@ skript17-blx.bbl:	skript17-blx.aux
 
 skript18-blx.bbl:	skript18-blx.aux
 	bibtex skript18-blx
+
+skript19-blx.bbl:	skript19-blx.aux
+	bibtex skript19-blx
