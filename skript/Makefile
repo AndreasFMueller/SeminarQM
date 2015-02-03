@@ -32,6 +32,7 @@ LASERFILES = laser/main.tex
 MASERFILES = maser/main.tex
 MRIFILES = mri/main.tex
 ORBITALEFILES = orbitale/main.tex
+QUANTUMDOTFILES = quantumdotfiles/main.tex
 RTMFILES = rtm/main.tex
 STARKFILES = stark/main.tex
 TELEPORTFILES = teleport/main.tex

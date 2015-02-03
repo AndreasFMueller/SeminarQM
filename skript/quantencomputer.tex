@@ -224,8 +224,8 @@ und Messungen der Wahrscheinlichkeit verlangen immer eine grosse Zahl
 von Experimenten.
 
 Ein praktisch n"utzlicher Quantencomputer muss noch weit gr"ossere
-Q-bits realisieren.
-Ein Quantencomputer mit $n$ Q-bits ist in der Lage, einen Zustand
+Qubits realisieren.
+Ein Quantencomputer mit $n$ Qubits ist in der Lage, einen Zustand
 herzustellen, in dem $2^n$ Zust"ande "uberlagert sind. 
 
 \section{Probabilistische Algorithmen}
@@ -310,7 +310,7 @@ arbeiten daran, die nachstehenden Ideen auf die eine
 oder andere Art umzusetzen.
 
 Ein Quantencomputer muss zun"achst einen geeignet komplexen
-"Uberlagerungszustand pr"aprieren, den Q-bits. Dann muss dieser Zustand
+"Uberlagerungszustand pr"aprieren, den Qubits. Dann muss dieser Zustand
 von einem oder mehreren Quanten-Gattern verarbeitet werden, sie
 entsprechen dem Operator $Q$ im Schr"odinger-Katzen-Computer.
 Schliesslich muss man das Experiment mehrmals durchf"uhren, bis man
@@ -329,7 +329,7 @@ Es besteht also die Hoffnung, dass sich in der Klasse BQP Probleme finden,
 die ein klassischer Computer auch mit einem probabilistischen Algorithmus
 nicht in polynomieller Zeit l"osen kann.
 
-\subsection{Q-bits}
+\subsection{Qubits}
 Ein quantenmechanisches System mit zwei m"oglichen Zust"ande $|0\rangle$
 und $|1\rangle$ muss sich nicht
 notwendigerweise in genau einem der Zust"ande befinden.
@@ -368,7 +368,7 @@ Es gen"ugt also, dass die Quadratsumme der Betr"age von $\lambda$ und $\mu$
 den Wert $1$ ergibt.
 Insbesondere gibt es selbst f"ur dieses einfache System bereits viel
 mehr m"ogliche Zust"ande als bei einem klassischen Bit.
-Ein solches quantenmechanisches System nennt man in Q-bit.
+Ein solches quantenmechanisches System nennt man in Qubit.
 
 Ein klassisches System mit zwei Bits kann in 4 m"oglichen Zust"anden sein.
 Das zugeh"orige quantenmechanische System kann in einer beliebigen
@@ -393,17 +393,17 @@ Das zugeh"orige quantenmechanische System kann in einer beliebigen
 |\alpha_{11}|^2
 =1.
 \]
-Wir nennen dies ein ``2-Q-bit Register''.
+Wir nennen dies ein ``2-Qubit Register''.
 
 Praktisch n"utzliche Quantencomputer m"ussen noch wesentlich gr"ossere
-Q-bits verarbeiten k"onnen.
-Ein Register mit $n$ Q-bits ist in einem Zustand, in dem $2^n$ Zust"ande
+Qubits verarbeiten k"onnen.
+Ein Register mit $n$ Qubits ist in einem Zustand, in dem $2^n$ Zust"ande
 "uberlagert sind.
 
-Es ist auch denkbar, dass wir beim Initialisieren eines Q-bits
+Es ist auch denkbar, dass wir beim Initialisieren eines Qubits
 einzelne auf einen bestimmten Wert setzen.
-Zum Beispiel k"onnen wir in einem Register mit $2$ Q-bits das erste
-Q-bit auf $0$ setzen, wir erhalten dann einen Zustand der
+Zum Beispiel k"onnen wir in einem Register mit $2$ Qubits das erste
+Qubit auf $0$ setzen, wir erhalten dann einen Zustand der
 Form
 \[
 |\psi\rangle
@@ -416,14 +416,14 @@ Wir nennen das erste Bit ein Scratch-Bit.
 \index{Scratch-bit}
 
 \index{Tensor-Produkt}
-Die Operation, aus einzelnen Q-bits ein Register von Q-bits zu
+Die Operation, aus einzelnen Qubits ein Register von Qubits zu
 machen, ist so grundlegend, dass wir daf"ur eine eigene Notation
 verwenden wollen.
 Sind $H_1$ und $H_2$ die Hilbertr"aume, in denen die Zust"ande f"ur
 die einzelnen Bits zu finden sind, dann schreiben wir $H_1\otimes H_2$
 f"ur den Raum, der die kombinierten Zust"ande enth"alt.
 Sind $|a\rangle\in H_1$ und $|b\rangle\in H_2$ Zust"ande einzelner
-Q-bits, dann schreiben wir f"ur den kombinierten Zustand auch
+Qubits, dann schreiben wir f"ur den kombinierten Zustand auch
 $|ab\rangle=|a\rangle\,|b\rangle=|a\rangle\otimes|b\rangle=|a\otimes b\rangle$.
 Das Skalarprodukt in $H_1\otimes H_2$ ist gegeben durch
 \[
@@ -501,7 +501,7 @@ wir erhalten also genau das erwartete Resultat.
 Klassische Computer f"uhren ihre Berechnung mit logischen Gattern durch,
 die auf einem Vektor von Bits wirken.
 Quantencomputer brauchen Quanten-Gatter, welche auf einem
-$n$ Q-bit Zustand wirken.
+$n$ Qubit Zustand wirken.
 Solche Gatter d"urfen selbst keine Messungen machen, den die
 Auswertung der Berechnung darf ja erst ganz am Ende der
 Transformationen erfolgen.
@@ -513,13 +513,13 @@ speziellen Hamilton-Operator.
 \begin{definition}
 \index{Gatter!Quanten-}
 Ein Quanten-Gatter ist ein unit"arer Operator, der auf einem 
-$n$-Q-bit Zustand operiert.
+$n$-Qubit Zustand operiert.
 \end{definition}
 
 \begin{beispiel}
 \index{Flip}
 \index{Gatter!Flip}
-Die {\em Flip Operation} implementiert die Negation eines einzelne Q-bit:
+Die {\em Flip Operation} implementiert die Negation eines einzelne Qubit:
 \begin{align*}
 |0\rangle&\mapsto |1\rangle & |1\rangle&\mapsto |0\rangle.
 \end{align*}
@@ -536,7 +536,7 @@ $F$ ist eine unit"are Matrix, als ein Quanten-Gatter.
 \begin{beispiel}
 \index{Bit-Umordnung}
 \index{Gatter!Bit-Umordnung}
-Die {\em Bit-Umordnung} vertauscht zwei Q-bits, d.~h.~sie implementiert
+Die {\em Bit-Umordnung} vertauscht zwei Qubits, d.~h.~sie implementiert
 die ABbildung:
 \begin{align*}
 |00\rangle&\mapsto |00\rangle\\
@@ -666,7 +666,7 @@ gelesen werden m"ssen.
 \begin{beispiel}
 \index{Tofoli-Gatter}
 \index{Gatter!Tofoli}
-Das {\em Tofoli-Gatter} operatiert auf zwei Q-bits $a$ und $b$ und einem
+Das {\em Tofoli-Gatter} operatiert auf zwei Qubits $a$ und $b$ und einem
 Scratch-Bit $c$ und implementiert die Abbildung
 \[
 |abc\rangle
@@ -736,7 +736,7 @@ kann nicht unit"ar sein.
 \end{satz}
 
 \begin{proof}[Beweis]
-Nehmen wir an, es g"abe eine unit"are Abbildung $U$, die ein q-Bit clonen
+Nehmen wir an, es g"abe eine unit"are Abbildung $U$, die ein Qubit clonen
 kann:
 \[
 U(|\psi\rangle\,|k\rangle)=|\psi\rangle\,|\psi\rangle.
@@ -775,7 +775,7 @@ Dieser Widerspruch zeigt, dass es eine solche Matrix $U$ gar nicht
 geben kann.
 \end{proof}
 
-Q-bits lassen sich also grunds"atzlich nicht kopieren.
+Qubits lassen sich also grunds"atzlich nicht kopieren.
 Dies wird in der Quanten-Kryptographie zur Absicherung des
 Schl"usselaustausches verwendet. 
 Da der Quantenzustand, den ein Teilnehmer empf"angt, nicht kopiert
@@ -784,9 +784,9 @@ ohne dass dies bemerkt wird.
 
 \subsection{Quanten-Turing-Maschinen}
 Eine Quanten-Berechnung stellt also zuerst einen Zustand in einem
-Q-bit-Register her.
+Qubit-Register her.
 Dann operiert darauf eine Quantenoperation, also ein unit"arer Operator $U$.
-Zum Schluss finden Messungen an den einzelnen Q-bits statt.
+Zum Schluss finden Messungen an den einzelnen Qubits statt.
 Das Resultat der Messung verr"at etwas "uber das Resultat der Berechnung.
 
 Um einen Quantencomputer zu realisieren muss man also eine Methode
