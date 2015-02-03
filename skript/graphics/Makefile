@@ -6,7 +6,7 @@
 all:	pert analysator arctan drehimpuls gatter dependencies periodensystem \
 	potential harmonisch heisenberg lagrange h linear fest
 
-fest_FILES = fest-1.pdf
+fest_FILES = fest-1.pdf fest-2.pdf fest-3.pdf
 fest: $(fest_FILES)
 
 linear_FILES = linear-1.pdf
@@ -145,7 +145,7 @@ $(linear_FILES):	linear.mp
 
 $(fest_FILES):	fest.mp
 	TEX=latex mpost fest.mp
-	for i in 1; \
+	for i in 1 2 3; \
 	do \
 		mptopdf fest.$${i}; \
 	done
