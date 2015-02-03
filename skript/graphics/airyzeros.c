@@ -5,6 +5,7 @@
  */
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include <gsl/gsl_sf_airy.h>
 #include <gsl/gsl_errno.h>
 #include <gsl/gsl_odeiv2.h>

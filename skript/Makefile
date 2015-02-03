@@ -18,35 +18,50 @@ SKRIPTFILES = vorwort.tex einleitung.tex hamilton.tex stoerungstheorie.tex \
 	potentialkasten.tex potentialtopf.tex uebersicht.tex \
 	references.bib
 
-TUNNELDIODEFILES = tunneldiode/main.tex
+ANHARMONISCHFILES = anharmonisch/main.tex
 ATOMUHRFILES = atomuhr/main.tex
-RTMFILES = rtm/main.tex
+BELLFILES = bell/main.tex
+CRYPTOFILES = crypto/main.tex
 EFELDFILES = efeld/main.tex
-KUGELFILES = kugel/main.tex
-ORBITALEFILES = orbitale/main.tex
+FELDQUANTISIERUNGFILES = feldquantisierung/main.tex
 FLASHFILES = flash/main.tex
 FRANCKHERTZFILES = franckhertz/main.tex
-ANHARMONISCHFILES = anharmonisch/main.tex
-LASERFILES = laser/main.tex
-MRIFILES = mri/main.tex
-CRYPTOFILES = crypto/main.tex
-TELEPORTFILES = teleport/main.tex
 HEISENBERGFILES = heisenberg/main.tex
+KUGELFILES = kugel/main.tex
+LASERFILES = laser/main.tex
+MASERFILES = maser/main.tex
+MRIFILES = mri/main.tex
+ORBITALEFILES = orbitale/main.tex
+RTMFILES = rtm/main.tex
 STARKFILES = stark/main.tex
-BELLFILES = bell/main.tex
-FELDQUANTISIERUNGFILES = feldquantisierung/main.tex
+TELEPORTFILES = teleport/main.tex
+TUNNELDIODEFILES = tunneldiode/main.tex
 
 TEXFILES = $(SKRIPTFILES) \
-	$(TUNNELFILES) $(ATOMUHRFILES) $(RTMFILES) $(EFELDFILES) \
-	$(KUGELFILES) $(ORBITALEFILES) $(FLASHFILES) $(FRANCKHERTZFILES) \
-	$(ANHARMONISCHFILES) $(LASERFILES) $(MRIFILES) $(CRYPTOFILES) \
-	$(TELEPORTFILES) $(HEISENBERGFILES) $(STARKFILES) $(BELLFILES)
+	$(ANHARMONISCHFILES) \
+	$(ATOMUHRFILES) \
+	$(BELLFILES) \
+	$(CRYPTOFILES) \
+	$(EFELDFILES) \
+	$(FELDQUANTISIERUNGFILES) \
+	$(FLASHFILES) \
+	$(FRANCKHERTZFILES) \
+	$(HEISENBERGFILES) \
+	$(KUGELFILES) \
+	$(LASERFILES) \
+	$(MASERFILES) \
+	$(MRIFILES) \
+	$(ORBITALEFILES) \
+	$(RTMFILES) \
+	$(STARKFILES) \
+	$(TELEPORTFILES) \
+	$(TUNNELFILES)
 
 BLXFILES = skript1-blx.bbl skript2-blx.bbl skript3-blx.bbl skript4-blx.bbl \
 	skript5-blx.bbl skript6-blx.bbl skript7-blx.bbl skript8-blx.bbl \
 	skript9-blx.bbl skript10-blx.bbl skript11-blx.bbl skript12-blx.bbl \
 	skript13-blx.bbl skript14-blx.bbl skript15-blx.bbl skript16-blx.bbl \
-	skript17-blx.bbl skript18-blx.bbl
+	skript17-blx.bbl skript18-blx.bbl skript19-blx.bbl
 
 skript.pdf:	skript.tex $(TEXFILES) skript.ind $(IMAGES) $(BLXFILES)
 	pdflatex skript.tex
@@ -115,3 +130,6 @@ skript17-blx.bbl:	skript17-blx.aux
 
 skript18-blx.bbl:	skript18-blx.aux
 	bibtex skript18-blx
+
+skript19-blx.bbl:	skript19-blx.aux
+	bibtex skript19-blx

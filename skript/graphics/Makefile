@@ -141,4 +141,4 @@ $(linear_FILES):	linear.mp
 	done
 
 airyzeros:	airyzeros.c
-	gcc -o airyzeros airyzeros.c -l gsl -lgslcblas -lm
+	gcc -o airyzeros airyzeros.c `gsl-config --libs`
