@@ -109,7 +109,7 @@ clip currentpicture to (-10,-205)--(310,-205)--(310,0)--(-10,0)--cycle;
 
 pickup pencircle scaled 0.2pt;
 draw (-10,0)--(310,0);
-draw (0,-210)--(0,10); label.ulft(btex $E$ etex, (0,10));
+draw (0,-210)--(0,10); label.ulft(btex $E$ etex, (0,0));
 
 endfig;
 
@@ -144,7 +144,7 @@ clip currentpicture to (-10,-205)--(310,-205)--(310,0)--(-10,0)--cycle;
 
 pickup pencircle scaled 0.2pt;
 draw (-10,0)--(310,0);
-draw (0,-210)--(0,10); label.ulft(btex $E$ etex, (0,10));
+draw (0,-210)--(0,10); label.ulft(btex $E$ etex, (0,0));
 
 endfig;
 
