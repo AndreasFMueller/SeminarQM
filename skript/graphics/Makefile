@@ -4,7 +4,10 @@
 # (c) 2014 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
 all:	pert analysator arctan drehimpuls gatter dependencies periodensystem \
-	potential harmonisch heisenberg lagrange h linear fest
+	potential harmonisch heisenberg lagrange h linear fest komplex
+
+komplex_FILES = komplex-1.pdf
+komplex: $(komplex_FILES)
 
 fest_FILES = fest-1.pdf fest-2.pdf fest-3.pdf
 fest: $(fest_FILES)
@@ -15,7 +18,7 @@ linear:	$(linear_FILES)
 h_FILES = h-1.pdf
 h:	$(h_FILES)
 
-lagrange_FILES = lagrange-1.pdf
+lagrange_FILES = lagrange-1.pdf lagrange-2.pdf
 lagrange:	$(lagrange_FILES)
 
 heisenberg_FILES = heisenberg-1.pdf
@@ -124,7 +127,7 @@ $(heisenberg_FILES):	heisenberg.mp
 
 $(lagrange_FILES):	lagrange.mp
 	TEX=latex mpost lagrange.mp
-	for i in 1; \
+	for i in 1 2; \
 	do \
 		mptopdf lagrange.$${i}; \
 	done
@@ -148,6 +151,13 @@ $(fest_FILES):	fest.mp
 	for i in 1 2 3; \
 	do \
 		mptopdf fest.$${i}; \
+	done
+
+$(komplex_FILES):	komplex.mp
+	TEX=latex mpost komplex.mp
+	for i in 1; \
+	do \
+		mptopdf komplex.$${i}; \
 	done
 
 airyzeros:	airyzeros.c

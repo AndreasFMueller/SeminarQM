@@ -743,7 +743,7 @@ kann:
 U(|\psi\rangle\,|k\rangle)=|\psi\rangle\,|\psi\rangle.
 \]
 Wenden wir $U$ auf einen analog konstruierten Zustand
-$|\varphi\rangle,|k\rangle$ an, dann muss, weil $U$ unit"ar ist,
+$|\varphi\rangle\,|k\rangle$ an, dann muss, weil $U$ unit"ar ist,
 das Skalarprodukt der beiden beiden Zust"ande vor und nach der Anwendung
 von $U$ gleich sein.
 \begin{equation}
@@ -807,6 +807,35 @@ sind.
 \end{satz}
 
 \subsection{Quanten-Algorithmen}
+Als Beispiel eines Quanten-Algorithmus untersuchen wir den Algorithmus
+von Grover:
+\begin{satz}[Grover]
+Es gibt einen Quantenalgorithmus, der zu einer in polynomieller Zeit
+berechenbaren Funktion $f\colon\{0,1\}^n\to\{0,1\}$ einen String von Bits
+$a\in\{0,1\}^n$ findet, so dass $f(a)=1$, wenn es einen solchen String gibt.
+Die Laufzeit des Algorithmus ist $p(n) 2^{\frac{n}2}$, wobei $p(n)$ ein
+Polynom ist.
+\end{satz}
+
+Das Problem, welches der Algorithmus von Grover l"ost, erinnert an das
+Problem SAT.
+Dort wird gefragt, ob in einer logischen Formel $\varphi$ die Variablen
+so mit Wahrheitswerten belegt werden k"onnen, dass die Formel wahr wird.
+Eine logische Formel ist eine Abbildung $\varphi\colon\{0,1\}^n\to\{0,1\}$,
+in SAT wird also gefragt, ob es einen Bit-String $a\in\{0,1\}^n$ gibt, 
+so dass $\varphi(a)=1$ ist.
+Der Algorithmus von Grover l"ost also SAT.
+
+Wenn man SAT durch Durchprobieren l"osen will, braucht man daf"ur $2^n$
+Versuche, die Laufzeit ist exponentiell.
+Der Algorithmus von Grover hat zwar auch immer noch exponentielle Laufzeit,
+aber der Exponent ist halb so gross.
+Daraus sch"opfen die Quantencomputer-Forscher die Hoffnung, dass 
+ein Quantencomputer einige Probleme wird l"osen k"onnen, die mit
+klassischen Computern nicht l"osbar sind.
+
+\begin{proof}[Beweis]
+\end{proof}
 
 \section*{"Ubungsaufgaben}
 \rhead{"Ubungsaufgaben}

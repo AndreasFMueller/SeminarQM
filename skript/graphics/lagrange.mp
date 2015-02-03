@@ -13,6 +13,9 @@ verbatimtex
 \begin{document}
 etex;
 
+%
+% Herleitung der Eulergleichungen
+%
 beginfig(1)
 
 z0 = (0,0);
@@ -74,6 +77,84 @@ endfor;
 pickup pencircle scaled 4pt;
 draw z0;
 draw z1;
+
+endfig;
+
+%
+% Hamiltonscher Fluss f"ur den harmonischen Oszillator
+%
+beginfig(2)
+
+numeric b;
+b := sqrt(2.1);
+
+def drawellipse(expr r, c) =
+	path	p;
+	p := (r, 0);
+	for a = 1 step 1 until 359:
+		p := p..(r * cosd(a), r * sind(a) / b);
+	endfor;
+	p := p..cycle;
+	draw p withcolor c;
+enddef;
+
+def drawpath(expr r, c) =
+	path	p;
+	p := r * (cosd(45), sind(45) / b);
+	for a = 46 step -1 until -70:
+		p := p--(r * cosd(a), r * sind(a) / b);
+	endfor;
+	drawarrow p withcolor c;
+enddef;
+
+label.urt(btex $x$ etex, (160,0));
+label.ulft(btex $p$ etex, (0,110));
+
+pickup pencircle scaled 1pt;
+
+z4 = 150 * (cosd(-120), sind(-120) / b);
+z5 = z4 shifted (-8, -8);
+label.llft(btex $H=\operatorname{const}$ etex, z5);
+pickup pencircle scaled 0.5pt;
+draw z4--z5;
+
+color grey;
+grey = (0.5,0.5,0.5);
+
+pickup pencircle scaled 0.7pt;
+for r = 25 step 25 until 150:
+	drawellipse(r, grey);
+endfor;
+
+numeric a;
+a := 45;
+numeric r;
+r := 100;
+z1 = (r * cosd(a), r * sind(a) / b);
+
+pickup pencircle scaled 1pt;
+drawpath(100, (0,1,0));
+z2 = 0.4 * (x1, b * b * y1);
+z3 = (y2, -x2);
+drawarrow z1--(z2 shifted z1) withcolor (1,0,0);
+label.urt(btex $\operatorname{grad}H$ etex, z2 shifted z1) withcolor (1,0,0);
+drawarrow z1--(z3 shifted z1) withcolor (0,0,1);
+fill ((z3 shifted (0,-15))--(z3 shifted (29,-15))--(z3 shifted(29,14))
+	--(z3 shifted(0,14))--cycle) shifted z1 withcolor (1,1,1);
+label.rt(btex $\begin{pmatrix} \frac{\partial H}{\partial p}\\-\frac{\partial H}{\partial x}\end{pmatrix}$ etex,
+	z3 shifted z1) withcolor (0,0,1);
+
+pickup pencircle scaled 3.4pt;
+draw z1 withcolor (0,0,1);
+pickup pencircle scaled 2pt;
+draw z1 withcolor (0,0,1);
+
+z6 = r * (cosd(-70), sind(-70) / b);
+label.bot(btex $(x(t),p(t))$ etex, z6) withcolor (0,1,0);
+
+pickup pencircle scaled 0.7pt;
+drawarrow (-160,0)--(160,0);
+drawarrow (0,-110)--(0,110);
 
 endfig;
 

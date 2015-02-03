@@ -437,7 +437,17 @@ Damit sind die Bewegungsgleichungen jetzt:
 \frac{dp}{dt}&=-\frac{\partial H}{\partial q}.\label{skript:hamilton-newton}
 \end{align}
 
-\begin{beispiel} Harmonischer Oszillator. Ein harmonischer Oszillator
+\begin{beispiel}
+\begin{figure}
+\centering
+\includegraphics{graphics/lagrange-2.pdf}
+\caption{Bewegung im Phasenraum f"ur den harmonischen Oszillator.
+Die Bewegung ({\color{green} gr"un}) verl"auft auf den Kurven konstanter
+Energie $H=\operatorname{const}$, sie ist der Fluss des blau eingezeichneten
+Hamiltonschen Vektorfeldes.
+\label{skript:hamilton-harmonisch}}
+\end{figure}
+Ein harmonischer Oszillator
 mit Masse $m$ und Federkonstante $K$ hat die potentielle Energie $\frac12Kx^2$,
 die Hamilton-Funktion ist daher
 \[
@@ -455,6 +465,11 @@ r"ucktreibende Kraft einer um die Koordinate $x$ ausgelenkten Feder
 mit Federkonstanten $K$ ist $-Kx$.
 Insbesondere reproduziert der Hamilton-Formalismus die bekannten
 Newtonschen Bewegungsgleichungen.
+
+Die Bewegung ist auch dargestellt in Abbildung~\ref{skript:hamilton-harmonisch}.
+Die Energie ist erhalten, der Punkt $(x,p)$ bewegt sich daher
+auf einer Niveaulinie der Hamilton-Funktion.
+Der Tangentialvektor der Bewegung ist das Hamiltonsche Vektorfeld.
 \end{beispiel}
 
 Ein besonderer Fall liegt vor, wenn die Hamilton-Funktion nicht von
