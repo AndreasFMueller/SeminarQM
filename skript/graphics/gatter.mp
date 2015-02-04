@@ -267,4 +267,139 @@ label.rt(btex $c\oplus b$ etex, (150,-20));
 
 endfig;
 
+%
+% Drehung als Zusammensetzung von Achsenspiegelungen
+%
+beginfig(13)
+
+pickup pencircle scaled 1pt;
+
+numeric r;
+r := 100;
+
+numeric theta;
+theta = 8;
+numeric phi;
+phi = 32;
+
+z0 = (0,0);
+
+z1 = r * (1,0);
+z2 = r * (cosd(theta), sind(theta));
+
+z3 = r * (cosd(phi), sind(phi));
+z4 = r * (cosd(-phi), sind(-phi));
+z5 = r * (cosd(phi + 2 * theta), sind(phi + 2 * theta));
+
+z6 = r * (cosd(phi/2), sind(phi/2));
+z7 = r * (cosd(-phi/2), sind(-phi/2));
+
+z8 = r * (cosd(phi/2 + theta/2), sind(phi/2 + theta/2));
+z9 = r * (cosd(-phi/2 + theta/2), sind(-phi/2 + theta/2));
+
+label.rt(btex $\vec w$ etex, 1.5 * z3);
+label.rt(btex $\vec w'$ etex, 1.5 * z4);
+%label.rt(btex $\vec w''$ etex, 1.5 * z5);
+
+fill z0--(0.7 * z1)..(0.7 * r * (cosd(theta/2), sind(theta/2)))..(0.7 * z2)
+	--cycle withcolor (0.9,0.9,0.9);
+%fill z0--(0.7 * z3)..(0.7 * r * (cosd(phi + theta), sind(phi + theta)))
+%	..(0.7 * z5)--cycle withcolor (0.9,0.9,0.9);
+
+drawarrow z0--z2 withcolor(0.9,0.9,0.9);
+label.rt(btex $\vec v_2$ etex, z2) withcolor (0.9,0.9,0.9);
+
+drawarrow z0--z1 withcolor(1,0,0);
+label.rt(btex $\vec v_1$ etex, z1) withcolor(1,0,0);
+
+label.rt(btex $\alpha$ etex, 0.7 * r * (cosd(theta/2), sind(theta/2)));
+%label.urt(btex $2\vartheta$ etex,
+%	0.7 * r * (cosd(phi + theta), sind(phi + theta)));
+
+drawarrow (0.85 * z1)..(0.85 * z6)..(0.85 * z3) withcolor (1,0,0);
+drawarrow (0.85 * z1)..(0.85 * z7)..(0.85 * z4) withcolor (1,0,0);
+pickup pencircle scaled 3pt; draw 0.85 * z1 withcolor(1,0,0);
+
+pickup pencircle scaled 1pt;
+drawarrow z0--(1.5 * z3);
+drawarrow z0--(1.5 * z4);
+%drawarrow z0--(1.5 * z5);
+
+%pickup pencircle scaled 1pt;
+%drawarrow (0.9 * z2)..(0.9 * z8)..(0.9 * z5) withcolor (0,0,1);
+%drawarrow (0.9 * z2)..(0.9 * z9)..(0.9 * z4) withcolor (0,0,1);
+%pickup pencircle scaled 3pt; draw 0.9 * z2 withcolor(0,0,1);
+
+pickup pencircle scaled 3pt;
+draw z0
+
+endfig;
+%
+% Drehung als Zusammensetzung von Achsenspiegelungen
+%
+beginfig(14)
+
+pickup pencircle scaled 1pt;
+
+numeric r;
+r := 100;
+
+numeric theta;
+theta = 8;
+numeric phi;
+phi = 32;
+
+z0 = (0,0);
+
+z1 = r * (1,0);
+z2 = r * (cosd(theta), sind(theta));
+
+z3 = r * (cosd(phi), sind(phi));
+z4 = r * (cosd(-phi), sind(-phi));
+z5 = r * (cosd(phi + 2 * theta), sind(phi + 2 * theta));
+
+z6 = r * (cosd(phi/2), sind(phi/2));
+z7 = r * (cosd(-phi/2), sind(-phi/2));
+
+z8 = r * (cosd(phi/2 + theta/2), sind(phi/2 + theta/2));
+z9 = r * (cosd(-phi/2 + theta/2), sind(-phi/2 + theta/2));
+
+label.rt(btex $\vec w$ etex, 1.5 * z3) withcolor(0.9,0.9,0.9);
+label.rt(btex $\vec w'$ etex, 1.5 * z4);
+label.rt(btex $\vec w''$ etex, 1.5 * z5);
+
+fill z0--(0.7 * z1)..(0.7 * r * (cosd(theta/2), sind(theta/2)))..(0.7 * z2)
+	--cycle withcolor (0.9,0.9,0.9);
+fill z0--(0.7 * z3)..(0.7 * r * (cosd(phi + theta), sind(phi + theta)))
+	..(0.7 * z5)--cycle withcolor (0.9,0.9,0.9);
+
+drawarrow z0--z1 withcolor(0.9,0.9,0.9);
+label.rt(btex $\vec v_1$ etex, z1) withcolor(0.9,0.9,0.9);
+
+label.rt(btex $\alpha$ etex, 0.7 * r * (cosd(theta/2), sind(theta/2)));
+label.urt(btex $2\alpha$ etex,
+	0.7 * r * (cosd(phi + theta), sind(phi + theta)));
+
+drawarrow z0--(1.5 * z3) withcolor(0.9,0.9,0.9);
+
+drawarrow z0--z2 withcolor (0,0,1);
+label.rt(btex $\vec v_2$ etex, z2) withcolor(0,0,1);
+
+drawarrow z0--(1.5 * z4);
+drawarrow z0--(1.5 * z5);
+
+%drawarrow (0.85 * z1)..(0.85 * z6)..(0.85 * z3) withcolor (1,0,0);
+%drawarrow (0.85 * z1)..(0.85 * z7)..(0.85 * z4) withcolor (1,0,0);
+%pickup pencircle scaled 3pt; draw 0.85 * z1 withcolor(1,0,0);
+
+pickup pencircle scaled 1pt;
+drawarrow (0.9 * z2)..(0.9 * z8)..(0.9 * z5) withcolor (0,0,1);
+drawarrow (0.9 * z2)..(0.9 * z9)..(0.9 * z4) withcolor (0,0,1);
+pickup pencircle scaled 3pt; draw 0.9 * z2 withcolor(0,0,1);
+
+pickup pencircle scaled 3pt;
+draw z0
+
+endfig;
+
 end

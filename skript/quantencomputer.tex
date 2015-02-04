@@ -815,6 +815,7 @@ berechenbaren Funktion $f\colon\{0,1\}^n\to\{0,1\}$ einen String von Bits
 $a\in\{0,1\}^n$ findet, so dass $f(a)=1$, wenn es einen solchen String gibt.
 Die Laufzeit des Algorithmus ist $p(n) 2^{\frac{n}2}$, wobei $p(n)$ ein
 Polynom ist.
+\label{skript:satz-von-grover}
 \end{satz}
 
 Das Problem, welches der Algorithmus von Grover l"ost, erinnert an das
@@ -834,8 +835,286 @@ Daraus sch"opfen die Quantencomputer-Forscher die Hoffnung, dass
 ein Quantencomputer einige Probleme wird l"osen k"onnen, die mit
 klassischen Computern nicht l"osbar sind.
 
-\begin{proof}[Beweis]
+\begin{proof}[Beweisidee]
+Es geht darum, einen Vektor $|a\rangle$ zu finden, f"ur den $f(a)=1$.
+Wir nehmen der Einfachheit halber an, dass es nur eine einzige L"osung $a$
+gibt.
+Man kann n"amlich schon mit klassischen Mitteln zeigen, dass sich das
+Problem immer auf diesen Spezialfall reduzieren l"asst.
+Im folgenden bezeichnen wir mit $|y\rangle$ immer einen Zustand mit
+$y\in\{0,1\}^n$ aber $y\ne a$.
+
+Zun"achst m"ussen wir aus $f$ eine unit"are Transformation machen.
+Wir nehmen das Tofoli-Gatter als Vorbild, und betrachten die Abbildung
+\[
+|x s\rangle \mapsto |x (s\oplus f(x))\rangle.
+\]
+Es gibt im Wesentlichen die folgenden vier F"alle
+\begin{align*}
+|a0\rangle&\mapsto |a1\rangle\\
+|a1\rangle&\mapsto |a0\rangle\\
+|y0\rangle&\mapsto |y0\rangle\\
+|y1\rangle&\mapsto |y1\rangle
+\end{align*}
+Wir k"onnen das auch symbolisch durch die Matrix
+\[
+U_f
+=
+\begin{pmatrix}
+0&1&0&0\\
+1&0&0&0\\
+0&0&1&0\\
+0&0&0&1
+\end{pmatrix}
+\]
+darstellen. Es ist offensichtlich, dass diese Operation unit"ar ist, 
+wir d"urfen also annehmen, dass wir sie mit einem Quantencomputer
+implementieren k"onnen.
+
+Um $a$ zu finden, m"ussen wir jetzt also eine Folge von Quantenoperationen
+finden, die aus einem bekannten Zustand den Zustand $|a\rangle$ herstellt.
+Die Quantenoperationen sind unit"are Operatoren, die wir uns als Drehungen
+in einem komplexen Vektorraum vorstellen k"onnen.
+Wir k"onnen daher unsere geometrische Intuition verwenden, um die Drehungen
+zu finden.
+
+Als Ausgangsvektor verwenden wir einen vollst"andig verschr"ankten Zustand
+\[
+u=\frac1{2^{\frac{n}2}}\sum_{x\in\{0,1\}^n}|x\rangle
+\]
+in einem $n$-Qubit-Register.
+Der Winkel zwischen $|a\rangle$ und $u$ ist
+\[
+\cos\vartheta
+=
+\langle u|a\rangle
+=
+\frac1{2^{\frac{n}2}}
+\sum_{x\in\{0,1\}^n}\langle x|a\rangle
+=
+\frac1{2^{\frac{n}2}}.
+\]
+F"ur grosses $n$ ist die rechte Seite nahe bei $0$, der Winkel ist
+also nahe bei einem rechten.
+Er unterscheidet sich von einem rechten Winkel um
+$\sin\vartheta=1/2^{\frac{n}2}$.
+F"ur grosses $n$ ist $\vartheta\simeq 1/2^{\frac{n}2}$.
+
+Wir suchen jetzt eine Folge von Drehungen, und damit
+eine Folge von Vektoren $w_1$, $w_2$, \dots, die den Vektor $u$ successive
+immer n"aher an $a$ herandreht.
+Wir m"ochten, dass der Winkel zwischen $w_i$ und $a$ in jedem Schritt 
+um $\vartheta$ kleiner wird.
+Um den Vektor $a$ zu erreichen brauchen wir also eine Anzahl Schritte
+in der Gr"ossenordnung von $O(1/\vartheta)=O(2^{\frac{n}2})$.
+
+Um dies durchzuf"uhren m"ussen wir jetzt also nur noch die Drehungen
+konstruieren, die den Winkel zu $a$ kleiner machen.
+Dies m"ussen wir schaffen ohne die Kenntnis von $a$, und es muss mit
+einer Quantenoperation implementiert werden k"onnen.
 \end{proof}
+
+\begin{hilfssatz}
+Der Vektor
+\[
+e=\sum_{y\ne a}|y\rangle
+\]
+steht senkrecht auf $a$.
+Der Winkel zwischen $u$ und $e$ ist $\vartheta$.
+\label{skript:hilfssatz-winkel}
+\end{hilfssatz}
+
+\begin{proof}[Beweis]
+Wir rechnen das Skalarprodukt aus
+\[
+\langle a|e\rangle
+=
+\sum_{y\ne a}\langle a|y\rangle =0.
+\]
+Der Winkel $\vartheta$ war definiert als der Komplementwinkel
+des Winkels zwischen $a$ und $u$.
+Da $a$ senkrecht steht auf $e$, ist das auch der Winkel zwischen
+$e$ und $a$.
+\end{proof}
+
+\begin{hilfssatz}
+Seien $\vec v_1$ und $\vec v_2$ zwei Vektoren in einer Ebene
+$\sigma\subset V$, und sei $\alpha$ der Winkel zwischen $\vec v_1$
+und $\vec v_2$.
+Die an der Achse $\vec v_1$ und gefolgt von der Spiegelung an der Achse
+$\vec v_2$ ist eine Drehung in der Ebene $\sigma$ um den Winkel $2\alpha$,
+die alle Vektoren senkrecht dazu unver"andert l"asst.
+\label{skript:hilfssatz-drehung}
+\end{hilfssatz}
+
+\begin{proof}[Beweis]
+\begin{figure}
+\centering
+\includegraphics{graphics/gatter-13.pdf}
+\caption{Spiegelung an der Achse $\vec v_1$ bildet $\vec w$ auf $\vec w'$ ab.
+\label{skript:drehung-spiegelung-1}}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics{graphics/gatter-14.pdf}
+\caption{Spiegelung an der Achse $\vec v_2$ bildet $\vec w'$ auf $\vec w''$ ab.
+\label{skript:drehung-spiegelung-2}}
+\end{figure}
+Die beiden Spiegelungen sind in den Abbildung
+\ref{skript:drehung-spiegelung-1}
+und
+\ref{skript:drehung-spiegelung-2}
+dargestellt.
+Die Zeichenebene ist $\sigma$ mit den Vektoren $\vec v_1$ und $\vec v_2$.
+Man kann unmittelbar aus der Zeichnung ablesen, dass
+die Abbildung $\vec w\mapsto \vec w''$ eine Drehung im $2\vartheta$ ist.
+\end{proof}
+
+\begin{hilfssatz}
+Die Spiegelung an $e$ gefolgt von einer Spiegelung an $u$ 
+ist eine Drehung $R$ um $2\vartheta$ in der von $|a\rangle$ und $u$
+aufgespannten Ebene.
+\label{skript:hilfssatz-schritt}
+\end{hilfssatz}
+
+\begin{proof}
+Zun"achst ist nach Hilfssatz~\label{skript:hilfssatz-winkel}
+der Winkel zwischen $u$ und $e$ gleich $\vartheta$.
+Nach Hilfssatz~\ref{skript:hilfssatz-drehung} ist die Spiegelung
+an $u$ gefolgt von einer Spiegelung an $e$ eine Drehung in der
+von $a$ und $u$ aufgespannten Ebene um den Winkel $2\vartheta$.
+\end{proof}
+
+\begin{hilfssatz}
+Die Spiegelung eines Vektors $w$ in der $u$-$a$-Ebene an
+der Achse $e$ kann mit einer Quantenoperation durchgef"uhrt werden.
+\label{skript:hilfssatz-spiegelung-e}
+\end{hilfssatz}
+
+\begin{proof}[Beweis]
+Um die Spiegelung eines Vektors $\vec w$ an der Achse $e$ durchzuf"uhren,
+m"ussen wir den Vektor in Komponenten parallel zu $e$ und senkrecht
+auf $e$ zerlegen, und das Vorzeichen der Komponenten senkrecht auf
+$e$ umkehren.
+Wir brauchen also eine Abbildung der Form
+\begin{align*}
+|a\rangle&\mapsto -|a\rangle\\
+|y\rangle&\mapsto \phantom{-}|y\rangle.
+\end{align*}
+Dazu brauchen wir zus"atzlich eine Abbildung mit Matrix
+\[
+Z=\begin{pmatrix}
+1&0\\0&-1
+\end{pmatrix},
+\]
+die wir auf ein Scratch-Bit wirken lassen.
+Wir setzen sie mit $U_f$ zusammen:
+\begin{equation}
+\begin{tabular}{
+>{$}l<{$}
+>{$}c<{$}
+>{$}l<{$}
+>{$}c<{$}
+>{$}l<{$}
+>{$}c<{$}
+>{$}l<{$}
+}
+          &Z      &                     &U_f    &                     &Z      &                     \\
+|a0\rangle&\mapsto&\phantom{-}|a0\rangle&\mapsto&\phantom{-}|a1\rangle&\mapsto&         - |a1\rangle\\
+|a1\rangle&\mapsto&         - |a1\rangle&\mapsto&         - |a0\rangle&\mapsto&         - |a0\rangle\\
+|y0\rangle&\mapsto&\phantom{-}|y0\rangle&\mapsto&\phantom{-}|y0\rangle&\mapsto&\phantom{-}|y0\rangle\\
+|y1\rangle&\mapsto&         - |y1\rangle&\mapsto&         - |y1\rangle&\mapsto&\phantom{-}|y1\rangle
+\end{tabular}
+\end{equation}
+Ignoriert man das Scratch-Bit, haben wir tats"achlich eine Abbildung realisiert,
+die genau die $|a\rangle$-Komponente umkehrt.
+\end{proof}
+
+\begin{hilfssatz}
+Die Spiegelung an der Achse $u$ kann mit einer Quantenoperation
+durchgef"uhrt werden.
+\label{skript:hilfssatz-spiegelung-u}
+\end{hilfssatz}
+
+\begin{proof}[Beweis]
+Wir wenden zuerst die Hadamard-Operation $H$ auf jedes Bit an.
+Dabei wird aus $u$ der Vektor $|0\dots 0\rangle$.
+Dazu berechnen wir die Wirkung von $H$ auf einem Zustand $u$:
+\begin{align*}
+Hu
+&=
+\frac1{2^{\frac{n}2}}\sum_{x'\in\{0,1\}^{n-1}}(H\,|0x'\rangle + H\,|1x'\rangle)
+=
+\frac1{\sqrt{2}}(H\,|0\rangle + H\,|1\rangle)\otimes
+  \frac1{2^{\frac{n-1}2}}\sum_{x'\in\{0,1\}^{n-1}} |x'\rangle
+\\
+&=
+|0\rangle\otimes
+  \frac1{2^{\frac{n-1}2}}\sum_{x'\in\{0,1\}^{n-1}} |x'\rangle
+\end{align*}
+Wiederholt man dies f"ur jedes Qubit, entsteht der Vektor $|0\dots 0\rangle$.
+Jetzt muss die $|0\rangle$-Komponente umgekehrt werden, was mit der Abbildung
+\begin{align*}
+|0\dots0\rangle&\mapsto          - |0\dots0\rangle\\
+|x\rangle      &\mapsto \phantom{-}|x\rangle,\qquad x\ne 0\dots 0
+\end{align*}
+geschehen kann, die offensichtlich unit"ar ist.
+Danach kehrt man die Hadamard-Abbildung wieder um.
+\end{proof}
+
+\begin{proof}[Beweis von Satz~\ref{skript:satz-von-grover}]
+Damit l"asst sich der Beweis von Satz~\ref{skript:satz-von-grover}
+nun vervollst"andigen.
+In der Beweisidee haben wir schon dargelegt, wie der Vektor
+$|a\rangle$ aus dem Vektor $|u\rangle$ durch gen"ugend viele
+Drehungen um den Winkel $2\vartheta$ entstehen kann.
+In Hilfssatz~\ref{skript:hilfssatz-schritt} haben wir gezeigt, dass
+die gesuchte Drehung als Zusammensetzung von Spiegelungen realisiert
+werden kann.
+In den Hilfss"atzen~\ref{skript:hilffsatz-spiegelung-u} und
+\ref{skript:hilfssatz-spiegelung-e} schliesslich haben wir gezeigt,
+dass beide Spiegelungen Quantenoperationen sind.
+Damit ist gezeigt, dass $|a\rangle$ durch Iteration von
+Quantenoperationen gefunden werden kann.
+\end{proof}
+
+Der Algorithmus von Grover zeigt geometrisch anschaulich, wie der
+``zus"atzliche Platz'' im Zustandsraum eines Quantencomputers
+die Konstruktion einer L"osung erm"oglich.
+Nat"urlich ist die quadratische Beschleunigung im Algorithmus
+von Grover nicht berauschend.
+Es wurden aber auch Algorithmen mit polynomieller Laufzeit f"ur
+SAT-verwandte Probleme gefuden, zum Beispiel der Algorithmus von
+Simon.
+Vielversprechend ist auch die Tatsacche, dass f"ur die Faktorisierung
+von Zahlen mit dem Algorithmus von Shor \cite{skript:arorabarak}
+ebenfalls ein polynomieller Algorithmus f"ur ein klassisch
+nicht polynomielles Problem bekannt ist.
+
+Die Beispiele illustrieren jedoch auch, dass ein n"utzlicher
+Quantencomputer "uber eine recht grosse Zahl von Qubits verf"ugen
+muss.
+F"ur kleine Problemgr"ossen lohnt sich der zus"atzliche Aufwand
+eines Quantencomputers nicht.
+Quantenalgorithmen sind ja grunds"atzlich probabilistischer
+Natur, Resultate sind erst nach vielen Wiederholungen verf"ugbar.
+Zum Beispiel l"asst sich SAT f"ur eine Formel mit 32 Variablen
+innert Sekunden auf einem klassischen Computer entscheiden.
+So grosse Qubit-Register lassen sich heute technisch noch nicht
+realisieren.
+
+Sollten einst gen"ugend grosse Qubit-Register zur Verf"ugung
+stehen, m"ussen immer noch die Quantenoperationen realisiert
+werden.
+Dabei besteht immer die Gefahr, dass der sensible verschr"ankte
+Quantenzustand zerst"ort wird.
+Daher verwenden alle bekannten Ans"atze zum Bau von
+Quanten-Computern auf Temperaturen nahe dem absoluten
+Nullpunkt gek"uhlte Komponenten, um eine Beinflussung des
+Zustandes durch die thermische Bewegung der Molek"ule
+zu verhindern.
+Bis zur vollst"andigen Realisierung eines Quanten-Computers
+ist also noch ein weiter Weg.
 
 \section*{"Ubungsaufgaben}
 \rhead{"Ubungsaufgaben}
