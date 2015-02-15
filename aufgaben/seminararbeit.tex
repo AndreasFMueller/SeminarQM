@@ -1,0 +1,297 @@
+%
+% seminararbeit.tex -- Anleitung für die Seminararbeit
+%
+% (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\documentclass[a4paper]{article}
+\usepackage{etex}
+\usepackage{geometry}
+\geometry{papersize={200mm,280mm},total={160mm,240mm},top=21mm}
+\usepackage[ngerman]{babel}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{txfonts}
+\usepackage{verbatim}
+\usepackage{array}
+\begin{document}
+\title{Anleitung zur Seminararbeit}
+\author{Prof.~Dr.~Andreas M"uller}
+\date{}
+\maketitle
+Das mathematische Seminar unterscheidet sich in gen"ugend vielen Aspekten
+von jeder anderen Lehrveranstaltung an der HSR.
+Dieses Dokument erkl"art die Ziele des Seminars und was es mit dem
+Seminar-Buch auf sich hat.
+Es gibt einige Hinweise zum Vortrag und zur Formatierung der
+Arbeit in \LaTeX.
+\section{Ziele}
+Ein wesentlicher Teil des mathematischen Seminars ist Ihre eigene 
+Seminararbeit.
+Sie haben zu diesem Zeitpunkt schon eine grosse Zahl von mathematischen
+Modulen absolviert, und viele "Ubungsaufgaben gel"ost.
+In Ihrer Seminararbeit l"osen Sie ebenfalls ein mathematisches
+Problem, allerdings sind die Voraussetzungen etwas anders:
+\begin{enumerate}
+\item
+Es ist m"oglicherweise nicht klar, was eigentlich das Problem ist. 
+Das kommt zwar gelegentlich auch bei "Ubungsaufgaben vor, dort ist
+das aber eher in Hinweis darauf, dass Sie den Anschluss an die Vorlesung
+verpasst haben.
+Es ist Ihre Aufgabe, das Problem zu analysieren, zu verstehen, zu
+mathematisieren und eine passende L"osung zu finden.
+\item
+Viele der Seminarthemen haben einen Anwendungshintergrund, und die
+Wahl des mathematischen Modells h"angt davon ab, welchen Aspekt des
+Anwendungsproblems man mit dem Modell verstehen will.
+Welche Aspekte interessant und wichtig sind, m"ussen Sie m"oglicherweise
+auch erst herausfinden.
+\item
+In anderen F"achern ist m"oglicherweise Ihr Ziel, die Mathematik
+m"oglichst zu vermeiden.
+Im Mathematischen Seminar wird von Ihnen erwartet, dass Sie die Mathematik
+aktiv suchen.
+\item
+Das doppelt unterstrichene Resultat, das bei "Ubungsaufgaben 
+den Erfolg signalisiert, bedeutet im Seminar nichts. 
+Ihr mathematisches Modell soll helfen, die Anwendung zu verstehen.
+Sie produzieren nicht Zahlen, sondern Einsichten.
+\item
+Ihr Resultat ist weniger wichtig als Ihr Weg dorthin. 
+Die Resultate findet man auch in B"uchern, oder in der Wikipedia.
+Ihre Aufgabe ist daher nicht nur, das Problem mathematisch in den
+Griff zu bekommen, sondern auch, den anderen Seminarteilnehmern zu
+erkl"aren, wie Sie das geschafft haben.
+\item
+Ihre Seminararbeit ist nicht nur f"ur Sie und f"ur den Dozenten,
+der Ihnen daf"ur eine Note machen muss, sondern vor allem auch f"ur
+Ihre Kollegen. 
+Sie sind erfolgreich, wenn Sie die wesentlichen Ideen Ihrer Arbeit
+Ihren Kollegen verst"andlich gemacht haben, und Ihr Text Ihren
+Kollegen helfen kann, den Einstieg in Ihr Thema zu finden.
+\end{enumerate}
+Das Seminar soll Ihnen also zum ersten Mal die M"oglichkeit geben,
+ein schwieriges mathematisches Thema zu "uberblicken und diese
+"Ubersicht weiterzugeben.
+M"oglicherweise ist dies auch Ihre erste Gelegenheit, ein
+technisch/mathematisches Paper zu verfassen.
+
+\section{Das Seminar-Buch}
+Wie in fr"uheren Jahren wird auch in diesem Seminar wieder ein
+Seminar-Buch entstehen.
+Das Seminar-Buch ist der kollektive Leistungsausweis der Seminarteilnehmer.
+Es beinhaltet das Skript sowie alle Seminararbeiten.
+
+\subsection{Ziele des Buches}
+Das Buch ist nicht einfach nur ein Erinnerung, es verfolgt ein paar
+konkrete Ziele:
+\begin{enumerate}
+\item
+Das Seminar ist eine Einf"uhrung in ein fortgeschrittenes mathematisches
+Thema.
+Es ist denkbar, dass Sie in ihrer Weiterausbildung das Thema vertiefen
+(zum Beispiel, wenn Sie an der ETH weiterstudieren wollen).
+Im besten Fall k"onnen Sie dann das Seminar-Buch wieder hervornehmen,
+Ihre Kenntnisse auffrischen und leichter den Einstieg
+in den neuen Stoff finden.
+\item
+Es ist zu hoffen, dass Sie in Ihrer Praxis irgendwann auf ein Problem
+stossen, welches sich mit den im Seminar behandelten Techniken
+l"osen l"asst. 
+Im besten Fall k"onnen Sie dann das Seminar-Buch hervornehmen, und
+schnell wieder den Einstieg in eine Technik finden, die Sie schon lange
+nicht mehr gebraucht haben.
+\item
+Das Seminar vermittelt nicht einfach nur ein paar Techniken, deren
+Beherrschung mit einer Modulbeschreibung und einer Note dokumentiert
+werden kann.
+Das Seminar hat jedes Jahr ein anderes Thema, und keine Modulbeschreibung,
+die auf den Inhalt eingehen w"urde.
+Das Seminar-Buch ist die einzige einigermassen vollst"andige Beschreibung
+dessen, was im Seminar eigentlich passiert.
+\item
+Im Seminar werden oft Themen behandelt, die in keinem anderen Modul
+Platz haben, aber durchaus f"ur ein breiteres Publikum von Interesse
+sein k"onnten.
+Das Seminar-Buch behandelt diese Theman auf eine Art, die mit den Grundlagen
+aus anderen Vorlesungen verstanden werden k"onnen.
+Oft ist es schwierig, ein Buch zu finden, welches vergleichbare
+Voraussetzungen macht.
+Das Seminar-Buch hat also auch die Aufgaben, anderen Studenten
+eine Einstiegshilfe zu bieten, weshalb auch immer ein Exemplar
+in der HSR-Bibliothek landet.
+\item
+Mit dem Seminar-Buch k"onnen Sie anderen einen ungewohnten Einblick 
+in die Arbeit geben, die Sie in Ihrem Studium geleistet haben.
+\end{enumerate}
+Neben diesen ernsthaften Zielen d"urfen Sie sich selbstverst"andlich an
+dem Resultat auch freuen und auf Ihren Beitrag dazu stolz sein.
+
+\subsection{Besonderheiten 2015}
+\begin{enumerate}
+\item
+So viele Teilnehmer wie dieses Jahr hatte das Seminar noch nie.
+Mehr Teilnehmer bedeutet auch mehr Seminarbeiten, mehr und
+breiter gestreute Themen.
+\item
+Dieses Jahr findet erstmals auch ein Seminar im MSE statt.
+Daher ist der Skriptteil etwas ausf"uhrlicher, er enth"alt auch Teile,
+die im MathSem Bachelor nicht oder weniger ausf"uhrlich behandelt werden.
+\item
+Die im MathSem-MSE erstellten Arbeiten sind ebenfalls im Seminar-Buch
+enthalten.
+\end{enumerate}
+
+\subsection{Die Seminararbeit}
+Die Ziele des Seminars und des Seminar-Buches haben Konsequenz daf"ur,
+was Ihre Seminararbeit erreichen soll.
+Hier ein paar konkrete Hinweise, worauf Sie achten sollten:
+\begin{enumerate}
+\item
+Verschaffen Sie sich Klarheit dar"uber, was eigentlich f"ur Kernaussagen
+mitteilen wollen.
+\item
+Pr"azision! 
+Vielleicht haben Sie mal gelernt, sch"one Aufs"atze zu schreiben,
+und blumige W"orter zu verwenden. Vergessen Sie alles.
+In der Mathematik z"ahlt nur eines: die gew"ahlten W"orter/Formulierungen
+m"ussen absolut pr"azis sein.
+\item
+Wenn Sie ein Argument aufschreiben, stellen Sie sicher, dass Sie alle
+Schritte aufschreiben, die Sie selbst brauchen w"urden, um das 
+Argument zu verstehen.
+\item
+Es gibt keine Vorgaben zur L"ange der Arbeit. 
+Ihre Arbeit wird so lang wie n"otig, um Ihre Kernaussagen zu
+begr"unden, aber nicht l"anger.
+\item
+Ihre Arbeit soll nicht m"oglichst kurz sein, sondern m"oglichst
+verst"andlich.
+\item
+Ihre Arbeit soll nicht beliebig ausf"uhrlich sein, denn wenn man sich
+durch tausend Details qu"alen muss, wird Ihre Arbeit schwer lesbar,
+und entsprechend schwer verst"andlich.
+\item 
+Strukturieren Sie ein kompliziertes Argument, formulieren Sie sinnvolle,
+eigenst"andige Zwischenresultate.
+Verwenden Sie Abschnitte (\verb+\section+), \verb+\subsection+ und
+\verb+\subsubsection+.
+Formulieren Sie Definitionen in einem \verb+definition+-Environment,
+und fassen Sie Erkenntnisse zum Beispiel in \verb+satz+- oder
+\verb+hilfssatz+-Environments zusammen.
+\item
+Wiederholen Sie nicht unn"otigerweise Argumente, die man als bekannt
+voraussetzen kann, weil sie zum Beispiel Gegenstand einer anderen
+Lehrveranstaltung an der HSR sind.
+Finden Sie eine Referenz (Buch aus der Bibliothek, Skript einer Vorlesung,
+Wikipedia oder andere Internet-Quelle) und beziehen Sie sich in
+Ihrem Text darauf.
+\item
+Ihre Arbeit wird nicht nach Gewicht bewertet, sondern nach Gehalt.
+Enzyklop"adische Vollst"andigkeit kann man in der Bibliothek oder
+auf dem Internet finden, sie tr"agt nur wenig zum Verst"andnis des
+Problems bei.
+\end{enumerate}
+
+\section{Der Vortrag}
+In Ihrem Vortrag machen Sie die Resultate ihren Kollegen zug"anglich.
+Sie w"ahlen aus, welche Resultate aus Ihrer Arbeit im Vortrag 
+Erw"ahnung finden sollen.
+
+\begin{enumerate}
+\item
+Ihr Ziel darf nicht sein, mit Ihren Kenntnissen und Resultaten
+zu imponieren. 
+Sie bekommen eine gute Note, wenn sie m"oglichst n"utzliche 
+Erkenntnisse zu vermitteln in der Lage sind.
+\item
+Ein Vortrag ist nicht ein vorgelesenes Paper.
+Ein Vortrag ist eher ein Schauspiel mit mathematischem Inhalt.
+\item
+W"ahlen Sie f"ur jeden Schritt das optimale Pr"asentationsmittel.
+Eine Rechnung oder Herleitung eignet sich nicht f"ur Folienpr"asentation,
+eine Zusammenstellung von Fakten eignet sich nicht f"ur die Wandtafel.
+\item
+Verzichten Sie auf Effekte um der Effekte willen.
+Powerpoint-Animationen bringen nur dann etwas, sie eine inhaltliche
+Aussage sinnvoll unterst"utzen.
+Andernfalls lenken sie nur ab.
+\item
+Bleiben Sie beim Thema.
+Vermeiden Sie jede Ablenkung von Ihren Kernaussagen.
+Eine elaborate und ausf"uhrlich kommentierte Choreographie von
+Pr"asentatoren lenkt nur ab.
+Wechseln Sie einfach ohne Kommentar ab.
+Ist ist akzeptabel, wenn nur einer pr"asentiert.
+\item
+Seien Sie gefasst auf Fragen. 
+Sie k"onnen sich im Team gegenseitig testen: der Zuh"orer versucht
+jeden einzelnen Schritt zu hinterfragen, der Vortragende muss
+antworten k"onnen.
+\item
+Einzelne Teams werden gebeten werden, ihren Vortrag auch im
+Master-Seminar ein zweites Mal zu halten.
+Damit das funktioniert, sollte ihr Vortrag m"oglichst eigenst"andig sein,
+und sich nicht auf Vortr"age von Kollegen beziehen, sondern nur auf
+Informationen, die auch im Skript zu finden sind.
+\end{enumerate}
+
+\section{Formatierung mit \LaTeX}
+Ich bin der Herausgeber des Seminar-Buches, ich gebe den Stil des
+Buches vor, und Ihre Arbeit hat sich daran zu halten. 
+\begin{enumerate}
+\item
+Sie haben keine Kontrolle "uber die Kapitelnummer, insbesondere
+kann es sein, dass Ihr Kapitel im letzten Moment vor Drucklegung
+verschoben wird.
+Ihre Verweise auf Formeln, Bilder oder Tabellen m"ussen also mit Hilfe
+von Labeln (\verb+\label+) und Referenzen (\verb+\ref+) implementiert
+sein.
+\item
+Sie haben keine Kontrolle "uber die Formatierung.
+Formulierungen wie ``auf der n"achsten Seite'', im letzten Kapitel
+ oder ``weiter unten'' 
+sind nicht zweckm"assig, denn das Seitenformat kann kurzfristig
+"andern, so dass sich ihr ganzer Text verschieben kann.
+\item
+Sie haben keine Kontrolle dar"uber, wo Bilder platziert werden.
+Bilder werden mit dem \texttt{figure}-Environment erzeugt, ohne
+Optionen, mit denen Sie die Platzierung steuern k"onnen.
+Einzige Ausnahme: wenn Bilder eine "ahnliche Funktion wie Formeln haben
+(wie die Analysator-Diagramme im Kapitel~2 des Skriptteiles).
+\item
+Wenn Sie Informationen aus Quellen "ubernehmen, dann m"ussen Sie
+diese in einem Literaturverzeichnis ausweisen.
+Literatur oder Websites, die Sie zu Ihrer Inspiration verwendet haben,
+die aber keinen direkten Niederschlag in Ihrem Text gefunden hat,
+geh"ort nicht ins Literaturverzeichnis.
+\item
+Formeln k"onnen im Fliesstext oder in sogenannten ``Displays'' 
+dargestellt werden.
+F"ur den Fliesstext eignen sich nur Formeln, die nicht h"oher als
+eine Schriftzeile sind, und nur so kurz, dass sie nicht umgebrochen
+werden m"ussen.
+Freigestellte Formeln sollen so formuliert sein, dass sie m"oglichst
+genau und leicht lesbar den mathematischen Gehalt wiedergeben.
+So sind zum Beispiel Wurzelzeichen leichter lesbar als Exponenten $\frac12$.
+\item
+Ihre Graphiken sollen aussagekr"aftig und einfach lesbar sein. 
+Vermeiden Sie die phantasievollen Verzierungen wie Farben,
+und Schattierungen, mit denen Excel fehlende Substanz zu verdecken
+versucht.
+Screen-Shots oder Pixel-Graphiken sind selten f"ur ein gedrucktes
+Dokument geeignet.
+Am besten geeignet sind PDF-Graphiken, wie man sie mit Octave oder
+R, oder mit etwas mehr Aufwand mit Metapost herstellen kann.
+\item
+Stellen Sie sicher, dass alle Begriffe und Konzepte, die man in Ihrer
+Arbeit k"onnte suchen wollen, mit \verb+\index+-Befehlen ausgezeichnet
+werden und so im Index des Seminar-Buches gesammelt werden.
+\end{enumerate}
+
+\section{Die Aufgaben}
+\input aufgaben.tex
+
+\end{document}
