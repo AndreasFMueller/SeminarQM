@@ -5,3 +5,6 @@
 #
 seminararbeit.pdf:	seminararbeit.tex aufgaben.tex
 	pdflatex seminararbeit.tex
+
+praesentation.pdf:	praesentation.tex
+	pdflatex praesentation.tex
