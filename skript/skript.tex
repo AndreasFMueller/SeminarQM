@@ -31,6 +31,7 @@
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{wasysym}
+\usepackage{environ}
 \usetikzlibrary{calc,intersections,through,backgrounds,graphs,positioning,shapes,arrows}
 \usetikzlibrary{patterns,decorations.pathreplacing}
 \usetikzlibrary{decorations.pathreplacing}
@@ -173,14 +174,28 @@ Hochschule f"ur Technik, Rapperswil, 2015
 \def\swallow#1{
 %nothing
 }
-\newenvironment{loesung}{%
-\begin{proof}[L"osung]%
+\NewEnviron{loesung}[1][L"osung]{%
+\begin{proof}[#1]%
 \renewcommand{\qedsymbol}{$\bigcirc$}
-}{\end{proof}}
-\newenvironment{diskussion}{}{}
+\BODY
+\end{proof}
+}
+\NewEnviron{bewertung}{%
+\begin{proof}[Bewertung]%
+\renewcommand{\qedsymbol}{}
+\BODY
+\end{proof}
+}
+\NewEnviron{diskussion}{
+\begin{proof}[Diskussion]
+\renewcommand{\qedsymbol}{}
+\BODY
+\end{proof}
+}
 \def\keineloesungen{%
-\renewenvironment{loesung}{\swallow\begingroup}{\endgroup}%
-\renewenvironment{diskussion}{\swallow\begingroup}{\endgroup}%
+\RenewEnviron{loesung}{\relax}
+\RenewEnviron{bewertung}{\relax}
+\RenewEnviron{diskussion}{\relax}
 }
 \newenvironment{beispiel}{%
 \begin{proof}[Beispiel]%
@@ -200,6 +215,7 @@ Hochschule f"ur Technik, Rapperswil, 2015
 \mainmatter
 \input vorwort.tex
 \part{Grundlagen}
+%\keineloesungen
 \begin{refsection}
 \input einleitung.tex
 \input einfach.tex
