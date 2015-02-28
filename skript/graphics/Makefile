@@ -15,7 +15,7 @@ fest: $(fest_FILES)
 linear_FILES = linear-1.pdf
 linear:	$(linear_FILES)
 
-h_FILES = h-1.pdf
+h_FILES = h-1.pdf h-2.pdf
 h:	$(h_FILES)
 
 lagrange_FILES = lagrange-1.pdf lagrange-2.pdf
@@ -135,7 +135,7 @@ $(lagrange_FILES):	lagrange.mp
 
 $(h_FILES):	h.mp
 	TEX=latex mpost h.mp
-	for i in 1; \
+	for i in 1 2 3; \
 	do \
 		mptopdf h.$${i}; \
 	done

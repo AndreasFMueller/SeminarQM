@@ -91,7 +91,7 @@ r^2\frac{\partial}{\partial r}
 \frac1{r^2\sin^2\vartheta}\frac{\partial^2}{\partial\varphi^2}.
 \]
 
-\section{L"osung der Schr"odingergleichung}
+\section{L"osung der Schr"odingergleichung\label{section:schroedinger}}
 \rhead{L"osung der Schr"odingergleichung}
 Wir suchen jetzt also L"osungen des Eigenwertproblems (\ref{skript:h2schroedinger})
 als $L^2$-Funktionen in Kugel-Koordinaten $(r,\varphi,\vartheta)$. Wir
@@ -232,16 +232,20 @@ die m"oglichen Werte $m^2$ reduziert. Teilen wir die Gleichung durch
 $\sin^2\vartheta$, und bringen die von $\vartheta$ abh"angenden Terme
 auf die rechte Seite, erhalten wir die Gleichung
 \begin{equation}
+-\frac{\hbar^2}{2m_e}
 \frac{1}{R(r)}\frac{d}{dr}\bigl(r^2R'(r)\bigr)
-+\biggl(\frac{m_e}{2\pi\varepsilon_0\hbar^2}\frac{e^2}{r}
+-\biggl(\frac{1}{4\pi\varepsilon_0}\frac{e^2}{r}
 +
-\frac{2m_eE}{\hbar^2}\biggr)r^2
+E
+\biggr)r^2
 =
--
+\frac{\hbar^2}{2m_e}
+\biggl(
 \frac1{\sin\vartheta\Theta(\vartheta) }
 \frac{d}{d\vartheta}\bigl(\sin\vartheta \Theta'(\vartheta)\bigr)
-+
+-
 \frac{m^2}{\sin^2\vartheta}
+\biggr)
 \label{skript:thetasepariert}
 \end{equation}
 Die linke Seite von (\ref{skript:thetasepariert}) h"angt nicht von $\vartheta$
@@ -396,13 +400,12 @@ Auch diese allgemeineren Funktionen $P_l^m(z)$ sind orthogonal.
 \subsection{Abh"angigkeit von $r$}
 Die Funktion $R(r)$ erf"ullt die Differentialgleichung
 \begin{align}
-\frac{1}{r^2}\frac{d}{dr}\bigl(r^2R'(r)\bigr)
-+\biggl(\frac{m_e}{2\pi\varepsilon_0\hbar^2}\frac{e^2}{r}
-+
-\frac{2m_eE}{\hbar^2}
--\frac{\lambda}{r^2}
-\biggr)R(r)
-&=0
+-\frac{\hbar^2}{2m_e} \frac{1}{r^2}\frac{d}{dr}\bigl(r^2R'(r)\bigr)
+-
+\biggl(\frac{e^2}{4\pi\varepsilon_0r} + E \biggr) R(r)
+&=
+\frac{\hbar^2}{2m_e}\frac{\lambda}{r^2}
+R(r).
 \label{skript:radialgleichung}
 \end{align}
 \begin{figure}
@@ -410,107 +413,454 @@ Die Funktion $R(r)$ erf"ullt die Differentialgleichung
 \includegraphics{graphics/h-1.pdf}
 \caption{Durch den Drehimpuls modifiziertes effektives Potential.
 \label{skript:modifiziertes-potential}}
-\end{figure}
-Wir wissen bereits, dass $\lambda=l(l+1)$, also k"onnen wir die
-Gleichung umformen zu
+\end{figure}%
+Wir wissen bereits, dass $\lambda=l(l+1)$.
+Ausserdem k"onnen wir die ganze Gleichung durch $\hbar^2/2m_e$ teilen
+und die Ableitung nach $r$ auf der linken Seite ausrechnen. 
+Wir erhalten dann die Gleichung
 \begin{align*}
-\frac{1}{r^2}\frac{d}{dr}\bigl(r^2R'(r)\bigr)
-+\biggl(\frac{m_e}{2\pi\varepsilon_0\hbar^2}\frac{e^2}{r}
-+
-\frac{2m_eE}{\hbar^2}
+R''(r)+\frac{2}{r}R'(r)
++\frac{2m_e}{\hbar^2}
+\biggl(\frac{e^2}{4\pi\varepsilon_0r} + E \biggr) R(r)
 -\frac{l(l+1)}{r^2}
-\biggr)R(r)
+R(r)
 &=0.
 \end{align*}
-Der Drehimpuls $l$ modifiziert das Potential mit einem Term
+In den folgenden Abschnitten suchen wir L"osungen dieser Gleichung.
+Es wird sich zeigen, dass nur f"ur eine diskrete Menge von $E$-Werten
+"uberhaupt eine L"osung existiert.
+\subsubsection{Modifizieres Potential}
+Schreiben wir
+\begin{equation}
+A=\frac{2m_eE}{\hbar^2}
+\qquad\text{und}\qquad
+B=\frac{m_ee^2}{4\pi\varepsilon_0\hbar^2},
+\label{skript:AundB}
+\end{equation}
+k"onnen wir die Gleichung noch etwas "ubersichtlicher als
+\begin{equation}
+R''(r)+\frac2{r}R'(r)+\biggl(A+\frac{2B}r-\frac{l(l+1)}{r^2}\biggr)R(r)=0
+\label{skript:hreduziert}
+\end{equation}
+schreiben.
+In dieser Form erkennt man, dass $l\ne 0$
+das Potential modifiziert mit einem Term
 $\sim\frac1{r^2}$ (Abbildung~\ref{skript:modifiziertes-potential}).
+Dieser Term bewirkt, dass sich das Elektron bevorzugt in einer
+gewissen Entfernung vom Kern aufh"alt, die umso gr"osser ist, je
+gr"osser $l$ ist.
+Wir werden im n"achsten Kapitel lernen, dass $l$ die Bedeutung des
+Drehimpulses hat.
 
-Die Gleichungen k"onnen etwas vereinfacht werden, wenn man einen
-Faktor $r$ abspaltet, also 
+\subsubsection{Verhalten f"ur $r\to\infty$}
+Wir interessieren uns f"ur an das Atom gebundene Elektronen, also
+Zust"ande mit negativer Energie.
+In diesem Fall ist auch $A$ negativ.
+Aus den Beispielen des Kapitels~\ref{chapter:quantisierung} wissen wir,
+dass in diesem Fall f"ur grosse Entfernung die Wellenfunktion exponentiell
+abfallen muss.
+Wir untersuchen daher das Verhalten der Gleichung (\ref{skript:hreduziert})
+f"ur grosse $r$.
+Indem wir die Terme mit $1/r$ und $1/r^2$ vernachl"assigen, da sie in
+diesem Fall klein sind, erhalten wir f"ur grosse $r$ die Differentialgleichung
 \[
-R(r)=\frac{\chi(r)}{r}
+R''(r)+AR(r)=0,
 \]
-verwendet.
-Die Ableitungen von $R(r)$ sind
+die die L"osungen
+\[
+R(r)=K_\pm e^{\pm\sqrt{-A}r}
+\]
+hat.
+Die L"osung mit dem positiven Vorzeichen kommt nicht in Frage, weil
+sie f"ur grosse $r$ exponentiell anw"achst.
+
+\subsubsection{Reduzierte Radialfunktionen}
+Die Funktion $Ke^{-\sqrt{-A}r}$ ist zwar eine asymptotische L"osung
+f"ur grosse $r$, f"ur kleine $r$ muss sie aber nochmals modifiziert
+werden.
+Wir versuchen daher f"ur die Funktion $R(r)$ einen Ansatz der Form
+\begin{equation}
+R(r)=w(r)e^{-\sqrt{-A}r}.
+\label{skript:Ransatz}
+\end{equation}
+Wir brauchen davon die erste und zweite Ableitung
 \begin{align*}
-R'(r)&=\frac{\chi'(r)r-\chi(r)}{r^2},\\
-\frac{d}{dr}\bigl(r^2R'(r)\bigr)
-&=
-\frac{d}{dr}\bigl(\chi'(r)r-\chi(r)\bigr)
-=
-\chi''(r)r+\chi'(r)-\chi'(r)=r\chi''(r).
-\end{align*}
-Setzt man dies in die Differentialgleichung (\ref{skript:radialgleichung}) ein,
-erh"alt
-\begin{align*}
-\frac{\chi''(r)}{r}
-+\biggl(\frac{m_e}{2\pi\varepsilon_0\hbar^2}\frac{e^2}{r}
-+
-\frac{2m_eE}{\hbar^2}
--\frac{l(l+1)}{r^2}
-\biggr)\frac{\chi(r)}{r}
-&=0
+R'(r)&=(w'(r)-\sqrt{-A}w(r))e^{-\sqrt{-A}r},
 \\
-\chi''(r)
-+\biggl(\frac{m_e}{2\pi\varepsilon_0\hbar^2}\frac{e^2}{r}
-+
-\frac{2m_eE}{\hbar^2}
--\frac{l(l+1)}{r^2}
-\biggr)\chi(r)
-&=0
+R''(r)&=(w''(r)-2\sqrt{-A}w'(r)-Aw(r))e^{-\sqrt{-A}r},
 \end{align*}
+um sie in die Differentialgleichung~(\ref{skript:hreduziert}) einzusetzen.
+Nach Division durch den immer positiven Exponentialfaktor
+erhalten wir die Differentialgleichung
+\begin{align}
+&&
+w''(r)-2\sqrt{-A}w'(r)-Aw(r)
++\frac2{r}(w'(r)-\sqrt{-A}w(r))
++\biggl(A+\frac{2B}r-\frac{l(l+1)}{r^2}\biggr)w(r)&=0
+\notag
+\\
+&\Leftrightarrow&
+w''(r)+\biggl(\frac{2}{r}-2\sqrt{-A}\biggr)w'(r)
++\biggl(\frac{2B-2\sqrt{-A}}{r}-\frac{l(l+1)}{r^2}\biggr)w(r)&=0
+\notag
+\\
+&\Leftrightarrow&
+\underbrace{
+w''(r)+\frac{2}{r}w'(r)
+}_{\text{\normalsize\ding{192}}}
+\underbrace{\mathstrut-2\sqrt{-A}w'(r)
++\frac{2B-2\sqrt{-A}}{r} w(r)
+}_{\text{\normalsize\ding{193}}}
+\underbrace{\mathstrut-\frac{l(l+1)}{r^2}w(r)}_{\text{\normalsize\ding{194}}}&=0
+\label{skript:wequation}
+\end{align}
+f"ur $w(r)$.
 
-
-Die gesuchte L"osung $R(r)$ muss f"ur grosse Entfernungen $r$ exponentiell
-abfallen.
-Wir versuchen daher einen Ansatz der Form
+\subsubsection{Polynomansatz f"ur $w(r)$}
+Wir erwarten, dass das wesentliche Verhalten der Funktion $R(r)$ 
+f"ur $r\to\infty$ bereits durch den Exponentialfaktor abgehandelt ist.
+Die Funktion $w(r)$ muss also nur noch das Verhalten f"ur kleine $r$
+abbilden.
+Sie darf daher im Vergleich zu der Exponentialfunktion nur langsam wachsen,
+ein Polynom w"urde diese Bedingung erf"ullen.
+Wir schreiben daher
 \[
-R(r)=\biggl(\frac{2r}{n}\biggr)^le^{-\frac{r}{n}}w\biggl(\frac{2r}{n}\biggr)
+w(r)=\sum_{k=0}^N a_kr^k,
 \]
+und versuchen zu ermitteln, f"ur welche Werte von $A$ und $B$ diese
+Wahl von $w(r)$ "uberhaupt m"oglich ist.
 
-%Wir versuchen eine L"osung f"ur $R(r)$ zu finden. Um die Differentialgleichung
-%f"ur $R(r)$ etwas zu vereinfachen, formulieren wir sie um f"ur 
-%\[
-%R(r)=\frac{\chi(r)}{r}.
-%\]
-%Die Ableitung von $R(r)$ ist
-%\[
-%R'(r)=\frac{\chi'(r)r-\chi(r)}{r^2},
-%\]
-%Der erste Term in (\ref{skript:thetasepariert}) wird dadurch besonders einfach,
-%n"amlich
-%\[
-%\frac1{r^2}\frac{d}{dr}\bigl(r^2R'(r)\bigr)
-%=\frac1{r^2}\frac{d}{dr} \bigl(\chi'(r)r-\chi(r)\bigr)
-%=\frac1{r^2}(\chi''(r)r +\chi'(r) -\chi'(r))=\frac{\chi''(r)}r,
-%\]
-%und die Differentialgleichung wird
-%\begin{align*}
-%\frac{\chi''(r)}{r}
-%+
-%\biggl(\frac{m_e}{2\pi\varepsilon_0\hbar^2}\frac{e^2}{r}
-%+
-%\frac{2m_eE}{\hbar^2}
-%-\frac{\lambda}{r^2}
-%\biggr)R(r)
-%&=0
-%\\
-%\Rightarrow\qquad
-%\chi''(r)
-%+
-%\biggl(\frac{m_e}{2\pi\varepsilon_0\hbar^2}\frac{e^2}{r}
-%+
-%\frac{2m_eE}{\hbar^2}
-%-\frac{\lambda}{r^2}
-%\biggr)\chi(r)
-%&=0.
-%\end{align*}
+Auch in diesem Fall brauchen wir die ersten und zweiten Ableitungen von
+$w(r)$
+\begin{align*}
+w'(r)&=\sum_{k=1}^Nka_kr^{k-1}
+&
+w''(r)&=\sum_{k=2}^Nk(k-1)a_kr^{k-2},
+\end{align*}
+um sie in die Gleichung (\ref{skript:wequation}) einsetzen zu k"onnen.
 
+\subsubsection{Koeffizientenvergleich}
+Nach dem Einsetzen unseres Ansatzes f"ur $w(r)$ in die Gleichung
+(\ref{skript:wequation})
+m"ussen alle Koeffizienten der Potenzen von $r$ verschwinden.
+Man beachte, dass die Ableitung wie auch die Division durch $r^2$ den
+Grad der Potenzen von $r$ reduziert.
+Wir beginnen also damit, einzelne Terme der Gleichung
+(\ref{skript:wequation}) zusammenzufassen und sie so zu schreiben,
+dass wir immer Summen erhalten, in denen $k$ von $1$ bis $N$ l"auft, 
+und in denen immer die Potenz $r^{k-2}$ vorkommt.
+Damit wird es besonders einfach werden, den Koeffizientenvergleich
+durchzuf"uhren.
+
+Nat"urlich k"onnen dabei Terme stehen bleiben, die
+sich nicht in dieser Form schreiben lassen.
+Dies wird uns sp"ater zus"atzliche Bedingungen f"ur die Koeffizienten $a_k$
+geben.
+
+Zun"achst betrachten wir den Teil
+\begin{align*}
+\text{\ding{192}}=
+w''(r)+\frac2{r}w'(r)
+&=
+\sum_{k=2}^N k(k-1)a_kr^{k-2} + \frac{2}{r}\sum_{k=1}^Nka_kr^{k-1}
+\\
+&=
+\sum_{k=2}^N\bigl(k(k-1)a_kr^{k-2} + 2ka_kr^{k-2}\bigr) + \frac{2a_1}{r}
+\\
+&=
+\sum_{k=2}^Nk(k+1)a_kr^{k-2} + \frac{2a_1}r
+\\
+&=
+\sum_{k=1}^Nk(k+1)a_kr^{k-2}.
+\end{align*}
+Analog k"onnen wir die Terme 
+\begin{align*}
+\text{\ding{193}}&=
+\frac{2B-2\sqrt{-A}}{r}w(r)-2\sqrt{-A}w'(r)
+\\
+&=
+(2B-2\sqrt{-A})\frac{a_0}{r}
++
+(2B-2\sqrt{-A})\sum_{k=1}^Na_kr^{k-1}
+-2\sqrt{-A}\sum_{k=1}^Nka_kr^{k-1}
+\\
+&=
+(2B-2\sqrt{-A})\frac{a_0}{r}
++
+\sum_{k=1}^N
+(2B-2\sqrt{-A}
+-2k\sqrt{-A})a_kr^{k-1}
+\\
+&=
+(2B-2\sqrt{-A})\frac{a_0}{r}
++
+\sum_{k=1}^N
+(2B-2(k+1)\sqrt{-A})a_kr^{k-1}
+\\
+&=
+(2B-2\sqrt{-A})\frac{a_0}{r}
++
+\sum_{k=2}^{N+1}
+(2B-2k\sqrt{-A})a_{k-1}r^{k-2}
+\\
+&=
+\sum_{k=1}^{N+1}
+(2B-2k\sqrt{-A})a_{k-1}r^{k-2}
+\end{align*}
+behandeln.
+Auch den Drehimpulsterm k"onnen wir in dieser Form schreiben:
+\begin{align*}
+\text{\ding{194}}=
+-\frac{l(l+1)}{r^2}w(r)
+&=
+-l(l+1)\frac{a_0}{r^2}
+-
+\sum_{k=1}^Nl(l+1)a_kr^{k-2}.
+\end{align*}
+Damit haben wir alle Teile in der vorgeschlagenen Form als Summen
+"uber $k$ von $1$ bis $N$ geschrieben mit Potenzen $r^{k-2}$.
+Ein spezieller Term $r^{-2}$ ist hinzu gekommen.
+
+Nach diesen Vorbereitungen k"onnen wir jetzt den Koeffizientenvergleich
+durchf"uhren, indem wir alle Terme zusammennehmen:
+\begin{equation}
+\text{\ding{192}}
++
+\text{\ding{193}}
++
+\text{\ding{194}}
+=
+\sum_{k=1}^{N}
+\biggl(
+\underbrace{
+(k(k+1)-l(l+1))a_k
+}_{\text{\normalsize\ding{192}}}
++
+\underbrace{
+2(B-k\sqrt{-A})a_{k-1}
+}_{\text{\normalsize\ding{193}}}
+\biggr)r^{k-2}
+\underbrace{
+\mathstrut
+-l(l+1)\frac{a_0}{r^2}
+}_{\text{\normalsize\ding{194}}}
+\label{skript:wkoeffizientenvergleich}
+\end{equation}
+Zun"achst f"allt auf, dass der Term $1/r^2$ nicht durch einen anderen
+Term kompensiert werden kann, es muss also gelten
+\[
+a_0l(l+1)=0,
+\]
+der Koeffizient $a_0$ kann nur dann nicht verschwinden, wenn $l=0$ ist.
+
+Wenn $l>0$ ist, muss $a_0$ verschwinden, aber es k"onnten auch noch
+weitere Terme verschwinden.
+Sei $k\ge 1$ der kleinste Index, f"ur den $a_k$ nicht verschwindet.
+Nat"urlich ist dann $a_{k-1}=0$.
+Der Klammerterm in der Summe von (\ref{skript:wkoeffizientenvergleich})
+besteht dann nur noch aus dem ersten Summanden, der daher verschwinden
+muss
+\[
+(k(k+1)-l(l+1))a_k=0
+\]
+Wegen $a_k\ne 0$ k"onnen wir schliessen, dass $k(k+1)-l(l+1)=0$,
+oder $k=l$.
+Also ist der erste nicht verschwindende
+Koeffizient in $w(r)$ derjenige mit dem Index $l$.
+
+Den Klammerterm in der Summe von (\ref{skript:wkoeffizientenvergleich})
+k"onnen wir jetzt nutzen, um eine Rekursionsformel f"ur $a_k$
+aufzustellen
+\begin{gather}
+(k(k+1)-l(l+1))a_k+2(B-k\sqrt{-A})a_{k-1} =0
+\notag
+\\
+\Rightarrow\qquad
+a_k=2\frac{B-k\sqrt{-A}}{k(k+1)-l(l+1)} a_{k-1}.
+\label{skript:wrekursion}
+\end{gather}
+Wir erwarten, dass die $a_k$ ab einem bestimmten Index $n$ verschwinden.
+Das ist nur m"oglich, wenn der Z"ahler in (\ref{skript:wrekursion})
+verschwindet. Es gibt also einen Index $n$, f"ur den gilt
+\begin{align*}
+B-n\sqrt{-A}&=0.
+\\
+\frac{B}{n}&=\sqrt{-A}
+\\
+A&=-\frac{B^2}{n^2}
+\end{align*}
+In (\ref{skript:AundB}) hatten wir $A$ durch die Energie $E$ ausgedr"uckt,
+wir k"onnen also durch aufl"osen nach $E$ die Energie durch den Index $k$
+ausdr"ucken:
+\begin{align}
+\frac{2m_eE}{\hbar^2}
+&=
+-
+\biggl(
+\frac{m_ee^2}{4\pi\varepsilon_0\hbar^2}
+\biggr)^2
+\frac{1}{n^2}
+\notag
+\\
+E&=-\frac{m_e e^4}{32\pi^2\varepsilon_0^2\hbar^2}\cdot\frac{1}{n^2}
+=-\frac{m_ee^4}{8\varepsilon_0^2h^2}\cdot\frac{1}{n^2}.
+\label{skript:henergy}
+\end{align}
+Die Energie h"angt also nur von $n$ ab, nicht von $l$ oder $m$.
+
+
+\section{Spektrum des Wasserstoffatoms}
+\rhead{Spektrum}
+Die L"osung der Schr"odingergleichung im vorangegangenen Abschnitt
+hat gezeigt, dass der Hamiltonoperator des Wasserstoffatoms zu jeder ganzen
+Zahl $l\ge 0$ eine Eigenfunktion der Form
+\[
+|n,l,m\rangle
+=
+P_l^m(\cos\vartheta) e^{im\varphi}e^{-rB/n}w_{l,n}(r)
+,\quad
+B=\frac{m_ee^2}{4\pi\varepsilon_0\hbar^2}
+\]
+hat mit $n>0$, $m=-l,-l+1,\dots,l-1,l$.
+Die zugeh"orige Energie ist
+\[
+E_n=-\frac{m_ee^4}{8\varepsilon_0^2h^2}\cdot \frac1{n^2}.
+\]
+Die Energie eines Zustandes h"angt nur von $n$ ab, nicht von $l$ oder $m$.
+Bei einem "Ubergang zwischen zwischen Zust"anden mit Quantenzahlen $n_1$ und
+$n_2$ wird ein Energiequantum der Gr"osse
+\begin{equation}
+\Delta E
+=
+-\frac{m_ee^4}{8\varepsilon_0^2h^2}
+\biggl(
+\frac{1}{n_1^2}
+-
+\frac{1}{n_2^2}
+\biggr)
+=
+-13.606\text{eV}
+\biggl(
+\frac{1}{n_1^2}
+-
+\frac{1}{n_2^2}
+\biggr)
+\end{equation}
+Die Frequenz des ausgestrahlten oder absorbierten Lichtes ist h"angt
+mit der Energie "uber $h\nu=\Delta E$ zusammen, und diese mit der
+Wellenl"ange durch $\lambda = c/\nu$.
+Damit bekommen wir f"ur die Wellenl"ange die Formel
+\begin{align}
+\frac{1}{\lambda}
+&=
+\frac{m_ee^4}{8\varepsilon_0^2h^3c}
+\biggl(
+\frac{1}{n_1^2}
+-
+\frac{1}{n_2^2}
+\biggr)
+=
+1.0974\cdot 10^7\frac1{\text{m}}
+\biggl(
+\frac{1}{n_1^2}
+-
+\frac{1}{n_2^2}
+\biggr).
+\notag
+\\
+\lambda
+&=
+\frac{n_1^2n_2^2}{n_2^2-n_1^2}
+\cdot
+91.127\text{nm}.
+\label{skript:wellenlaengenformel}
+\end{align}
+Die daraus berechneten Wellenl"angen sind in der
+Tabelle~\ref{skript:h2wellenlaengen} zusammengestellt, die
+Zust"ande sind im Zustandsdiagramm in Abbildung~\ref{skript:zustandsdiagramm}
+dargestellt, die zugeh"origen Wellenl"angen in der
+Abbildung~\ref{skript:hspektrallinien}.
+Die "Uberg"ange zum Grundzustand werden in der Lyman-Serie zusammengefasst.
+Diese Spektrallinien befinden sich im ultravioletten Teil des Spektrums.
+"Uberg"ange von einem h"oheren Zustand zum Zustand mit $n=2$ 
+heissen Balmer-Serie nach dem Basler Mathematiklehrer Johann Jakob Balmer,
+der die Formel (\ref{skript:wellenlaengenformel}) f"ur die Wellenl"ange 
+im Jahre 1885 gefunden hat.
+F"ur kleine Werte von $n_2$ liegen die Balmer-Linien im sichtbaren Bereich.
+Besonders wichtig ist die Balmer-Linie mit $n_2=3$, die auch H-$\alpha$
+heisst.
+
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{graphics/h-3.pdf}
+\caption{Spektrallinien des Wasserstoffatoms, die Linien-Serien in
+verschiedenen Farben
+\label{skript:hspektrallinien}}
+\end{figure}
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{crrrrrr}
+\hline
+Serie:&  Lyman  &  Balmer & Paschen          & Bracket &  Pfund  & Humphreys \\
+$n_2$ & $n_1=1$ & $n_1=2$ & $n_1=3$          & $n_1=4$ & $n_1=5$ & $n_1=6$   \\
+\hline
+    2 &  121.57 &         &                  &         &         &           \\
+    3 &  102.57 &   656.3 &                  &         &         &           \\
+    4 &   97.25 &   486.1 &  1875\phantom{.0}&         &         &           \\
+    5 &   94.97 &   434.0 &  1282\phantom{.0}&  4051   &         &           \\
+    6 &   93.78 &   410.2 &  1094\phantom{.0}&  2625   &   7460  &           \\
+    7 &   93.03 &   397.0 &  1005\phantom{.0}&  2166   &   4654  & 12370     \\
+    8 &   92.57 &   388.8 &   954.6          &  1944   &   3741  &  7503     \\
+    9 &   92.27 &   383.4 &   922.9          &  1817   &   3297  &  5908     \\
+   10 &   92.05 &   379.7 &   901.3          &  1736   &   3039  &  5129     \\
+   11 &   91.89 &   377.0 &   886.0          &  1680   &   3038  &  4673     \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Wellenl"ange der Spektrallinien des Wasserstoffspektrums
+\label{skript:h2wellenlaengen}}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics{graphics/h-2.pdf}
+\caption{Zustandsdiagramm des Wasserstoffatoms
+\label{skript:zustandsdiagramm}}
+\end{figure}
+
+Unsere L"osung kann auch dazu verwendet werden, das Spektrum eines
+positiven Helium-Ions oder anderer stark ionisierter Atome zu berechnen.
+Dazu ist die Ladung $e$ durch die effektive Ladung $Ze$ des Atomkernes
+zu ersetzen, was auf die Formel
+\[
+\lambda = \frac{8\varepsilon_0^2h^3c}{m_eZ^2e^4}
+\frac{n_1^2n_2^2}{n_2^2-n_1^2}
+\]
+f"uhrt.
+
+\section{Orbitale}
 \begin{figure}
 \centering
 \includegraphics[width=0.4\hsize]{images/crackedorbital.png}
 \caption{Berufsbild des Quantenmechanikers: Kenntnisse der Orbitale
 sind unerl"asslich\label{skript:crackedorbital}}
 \end{figure}
+Die L"osung der Schr"odinger-Gleichung in Abschnitt~\ref{section:schroedinger} 
+zeigt, welche geometrische Form die Wellenfunktionen der Atome haben.
+Man nennt diese Ein-Elektronen-Wellenfunktionen auch Orbitale.
 
-\section{Hybridorbitale}
+Bindungen zwischen Atomen kann man sich vorstellen als Konfigurationen,
+in denen Atome derart angeordnet sind, so dass die Bereiche hoher
+Wahrscheinlichkeitsdichte der Orbitale der beiden Atome sich "uberlagern.
+Traditionell werden die Orbitale zu verschiedenen $l$-Werten mit den
+Buchstaben $s$, $p$, $d$, $f$ bezeichnet.
+
+Da alle Orbitale mit gleichem $n$ die gleiche Energie haben, sind auch
+Linearkombinationen von solchen Orbitalen Eigenzust"ande des Atoms.
+Solche Orbitale werden auch Hybridorbitale genannt, und mit
+Buchstabenkombinationen wie $sp^2$ oder $sp^3$ bezeichnet.
+Hybridorbitale erm"oglichen zus"atzliche Geometrien f"ur atomare Bindungen.
+
+
