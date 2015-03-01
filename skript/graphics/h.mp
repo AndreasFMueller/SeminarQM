@@ -10,6 +10,7 @@ verbatimtex
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{txfonts}
+\usepackage{german}
 \begin{document}
 etex;
 
@@ -66,7 +67,7 @@ endfig;
 beginfig(2)
 
 z0 = (0,0);
-z1 = (330,0);
+z1 = (205,0);
 z2 = (0,-480);
 
 pickup pencircle scaled 1pt;
@@ -78,72 +79,91 @@ label.ulft(btex $E$ etex, 1.05[z2,z0]);
 numeric Z;
 Z = -480;
 
+def hoehe(expr n) =
+	(Z/(n*n))
+enddef;
+
 def uebergang(expr x,n,m) =
-	drawarrow (x,Z/(n*n))--(x,Z/(m*m)) withcolor (1,0,0);
+	drawarrow (x, hoehe(n))--(x, hoehe(m)) withcolor (1,0,0);
 enddef;
 
 pickup pencircle scaled 0.5pt;
 
-uebergang(10, 2, 1);
-uebergang(14, 3, 1);
-uebergang(18, 4, 1);
-uebergang(22, 5, 1);
-uebergang(26, 6, 1);
-uebergang(30, 7, 1);
+uebergang(210, 2, 1);
+uebergang(214, 3, 1);
+uebergang(218, 4, 1);
+uebergang(222, 5, 1);
+uebergang(226, 6, 1);
+uebergang(230, 7, 1);
 
-label.rt(btex Lyman-Serie etex, (32, 5*Z/8)) withcolor(1,0,0);
+label.top(btex Lyman-Serie etex, (0,0)) rotated 90
+	shifted (210, 5*Z/8) withcolor(1,0,0);
 
-uebergang(50, 3, 2);
-uebergang(54, 4, 2);
-uebergang(58, 5, 2);
-uebergang(62, 6, 2);
-uebergang(66, 7, 2);
-uebergang(70, 8, 2);
+uebergang(250, 3, 2);
+uebergang(254, 4, 2);
+uebergang(258, 5, 2);
+uebergang(262, 6, 2);
+uebergang(266, 7, 2);
+uebergang(270, 8, 2);
 
-label.rt(btex Balmer-Serie etex, (72, 3*Z/16)) withcolor(1,0,0);
+label.lft(btex Balmer-Serie etex, (0,0)) rotated 90
+	shifted (260, hoehe(2)) withcolor(1,0,0);
 
-uebergang( 90, 4, 3);
-uebergang( 94, 5, 3);
-uebergang( 98, 6, 3);
-uebergang(102, 7, 3);
-uebergang(106, 8, 3);
-uebergang(110, 9, 3);
+uebergang(290, 4, 3);
+uebergang(294, 5, 3);
+uebergang(298, 6, 3);
+uebergang(302, 7, 3);
+uebergang(306, 8, 3);
+uebergang(310, 9, 3);
 
-draw (112, 3 * Z/32)--(140, Z/8) withcolor(1,0,0);
-label.rt(btex Paschen-Serie etex,  (140, Z/8)) withcolor(1,0,0);
+label.lft(btex Paschen-Serie etex, (0,0)) rotated 90
+	shifted (300, hoehe(3)) withcolor(1,0,0);
 
-uebergang(130,  5, 4);
-uebergang(134,  6, 4);
-uebergang(138,  7, 4);
-uebergang(142,  8, 4);
-uebergang(146,  9, 4);
-uebergang(150, 10, 4);
+uebergang(330,  5, 4);
+uebergang(334,  6, 4);
+uebergang(338,  7, 4);
+uebergang(342,  8, 4);
+uebergang(346,  9, 4);
+uebergang(350, 10, 4);
 
-draw (152, 3 * Z/64)--(165, 1.25 * Z/16) withcolor(1,0,0);
-label.rt(btex Bracket-Serie etex,  (165, 1.25 * Z/16)) withcolor(1,0,0);
+label.lft(btex Bracket-Serie etex, (0,0)) rotated 90
+	shifted (340, hoehe(4)) withcolor(1,0,0);
 
-uebergang(170,  6, 5);
-uebergang(174,  7, 5);
-uebergang(178,  8, 5);
-uebergang(182,  9, 5);
-uebergang(186, 10, 5);
-uebergang(190, 11, 5);
+label.top(btex Zustands"uberg"ange etex, (280, 0));
 
-uebergang(210,  7, 6);
-uebergang(214,  8, 6);
-uebergang(218,  9, 6);
-uebergang(222, 10, 6);
-uebergang(226, 11, 6);
-uebergang(230, 12, 6);
+pickup pencircle scaled 0.2pt;
+
+draw ( 40, hoehe(1))--(240, hoehe(1));
+draw ( 80, hoehe(2))--(280, hoehe(2));
+draw (120, hoehe(3))--(320, hoehe(3));
+draw (160, hoehe(4))--(355, hoehe(4));
+
+for i = 5 step 1 until 10:
+	draw (210, hoehe(i))--(355, hoehe(i));
+endfor;
+
+%uebergang(170,  6, 5);
+%uebergang(174,  7, 5);
+%uebergang(178,  8, 5);
+%uebergang(182,  9, 5);
+%uebergang(186, 10, 5);
+%uebergang(190, 11, 5);
+
+%uebergang(210,  7, 6);
+%uebergang(214,  8, 6);
+%uebergang(218,  9, 6);
+%uebergang(222, 10, 6);
+%uebergang(226, 11, 6);
+%uebergang(230, 12, 6);
 
 label.top(btex $l=0$ etex, (20,0));
 label.top(btex $l=1$ etex, (60,0));
 label.top(btex $l=2$ etex, (100,0));
 label.top(btex $l=3$ etex, (140,0));
 label.top(btex $l=4$ etex, (180,0));
-label.top(btex $l=5$ etex, (220,0));
-label.top(btex $l=6$ etex, (260,0));
-label.top(btex $l=7$ etex, (300,0));
+%label.top(btex $l=5$ etex, (220,0));
+%label.top(btex $l=6$ etex, (260,0));
+%label.top(btex $l=7$ etex, (300,0));
 
 %label.bot(btex $m=0$ etex, (20,Z));
 %label.bot(btex $|m|\le 1$ etex, (60, Z/4));
@@ -163,7 +183,7 @@ label.bot(btex $\text{$-3.40$eV}$ etex, (60,Z/4));
 label.bot(btex $\text{$-1.52$eV}$ etex, (100,Z/9));
 label.bot(btex $\text{$-0.85$eV}$ etex, (140,Z/16));
 label.bot(btex $\text{$-0.54$eV}$ etex, (180,Z/25));
-label.bot(btex $\text{$-0.38$eV}$ etex, (220,Z/36));
+%label.bot(btex $\text{$-0.38$eV}$ etex, (220,Z/36));
 
 pickup pencircle scaled 0.5pt;
 
@@ -172,8 +192,8 @@ for n = 1 step 1 until 20:
 	h := Z / (n * n);
 	numeric m;
 	m := n - 1;
-	if n > 7:
-		m := 7;
+	if n > 4:
+		m := 4;
 	fi;
 	for l = 0 step 1 until m:
 		draw (20 + l* 40 - 15,h)--(20+l*40+15,h);
