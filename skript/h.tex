@@ -2,6 +2,7 @@
 \lhead{Wasserstoffatom}
 \rhead{}
 Der bisher entwickelte Formalismus erlaubt bereits, das Wasserstoff-Atom
+\index{Wasserstoff}
 zu verstehen. Die Quantenmechanik erkl"art die Stabilit"at der
 Materie, und sagt das Wasserstoff-Spektrum korrekt voraus.
 \section{Schr"odinger-Gleichung f"ur das Wasserstoffatom}
@@ -57,8 +58,9 @@ F"ur unsere Zwecke reicht es, eine ad hoc L"osung zu finden.
 
 \section{Kugelkoordinaten}
 \rhead{Kugelkoordinaten}
-Das Eigenwertproblem (\ref{skript:h2schroedinger}) kann in kartesischen Koordinaten
-nicht direkt gel"ost werden. Dies liegt daran, dass die kartesischen
+Das Eigenwertproblem (\ref{skript:h2schroedinger}) kann in kartesischen
+Koordinaten nicht direkt gel"ost werden.
+Dies liegt daran, dass die kartesischen
 Koordinaten die vorhandene Kugelsymmetrie des Problems nicht ausreichend
 ber"ucksichtigen. Es ist viel besser, Kugelkoordinaten zu verwenden.
 
@@ -93,11 +95,13 @@ r^2\frac{\partial}{\partial r}
 
 \section{L"osung der Schr"odingergleichung\label{section:schroedinger}}
 \rhead{L"osung der Schr"odingergleichung}
-Wir suchen jetzt also L"osungen des Eigenwertproblems (\ref{skript:h2schroedinger})
+Wir suchen jetzt also L"osungen des Eigenwertproblems
+(\ref{skript:h2schroedinger})
 als $L^2$-Funktionen in Kugel-Koordinaten $(r,\varphi,\vartheta)$. Wir
 verwenden dazu die Methode der Separation der Variablen.
 
 \subsection{Separationsansatz}
+\index{Separationsansatz}
 Wir nehmen an,
 dass sich die L"osung $\psi(r,\vartheta,\varphi)$ schreiben l"asst als
 ein Produkt von drei Funktionen, die je nur von einer Koordinate
@@ -320,6 +324,7 @@ d.~h.~wir m"ussen die Differentialgleichung
 \end{equation}
 l"osen.
 Dies ist die sogenannte Legendresche Differentialgleichung,
+\index{Legendre-Differentialgleichung}
 deren L"osung in einer guten Formelsammlung gefunden werden k"onnen.
 
 Wir versuchen eine L"osung in Form eines Polynoms vom
@@ -346,6 +351,7 @@ $Q_l$, diese ist jedoch nicht beschr"ankt und kommt daher als L"osungsfunktion
 f"ur unser Problem nicht in Frage.
 
 \subsubsection{Legendre-Polynome}
+\index{Legendre-Polynom}
 Indem man den Ansatz (\ref{skript:legendreansatz}) f"ur alle Koeffizienten
 auswertet, nicht nur f"ur $a_l$, kann man die Polynome $P_l(z)$ 
 bestimmen, sie heissen Legendre-Polynome.
@@ -383,7 +389,7 @@ Die Legendre-Polynome sind orthogonal.
 %\end{align*}
 
 \subsubsection{Der Fall $m\ne 0$}
-F"ur den allgemeinen Fall mit beliebigen $m$ m"ussen L"osungen der
+F"ur den allgemeinen Fall mit beliebigem $m$ m"ussen L"osungen der
 Gleichung
 \begin{equation}
 \frac{d}{dz}\biggl((1-z^2)\frac{d}{dz}Z(z)\biggr)
@@ -414,6 +420,7 @@ R(r).
 \caption{Durch den Drehimpuls modifiziertes effektives Potential.
 \label{skript:modifiziertes-potential}}
 \end{figure}%
+\index{Potential!effektives}
 Wir wissen bereits, dass $\lambda=l(l+1)$.
 Ausserdem k"onnen wir die ganze Gleichung durch $\hbar^2/2m_e$ teilen
 und die Ableitung nach $r$ auf der linken Seite ausrechnen. 
@@ -711,6 +718,7 @@ Die Energie h"angt also nur von $n$ ab, nicht von $l$ oder $m$.
 
 \section{Spektrum des Wasserstoffatoms}
 \rhead{Spektrum}
+\index{Spektrum}
 Die L"osung der Schr"odingergleichung im vorangegangenen Abschnitt
 hat gezeigt, dass der Hamiltonoperator des Wasserstoffatoms zu jeder ganzen
 Zahl $l\ge 0$ eine Eigenfunktion der Form
@@ -760,6 +768,13 @@ Damit bekommen wir f"ur die Wellenl"ange die Formel
 \frac{1}{n_2^2}
 \biggr)
 =
+R_{\text{H}}
+\biggl(
+\frac{1}{n_1^2}
+-
+\frac{1}{n_2^2}
+\biggr)
+=
 1.0974\cdot 10^7\frac1{\text{m}}
 \biggl(
 \frac{1}{n_1^2}
@@ -775,17 +790,23 @@ Damit bekommen wir f"ur die Wellenl"ange die Formel
 91.127\text{nm}.
 \label{skript:wellenlaengenformel}
 \end{align}
+Die Konstante $R_{\text{H}}$ heisst die Rydberg-Konstante des
+Wysserstoffs.
+\index{Rydberg-Konstante}
 Die daraus berechneten Wellenl"angen sind in der
 Tabelle~\ref{skript:h2wellenlaengen} zusammengestellt, die
 Zust"ande sind im Zustandsdiagramm in Abbildung~\ref{skript:zustandsdiagramm}
 dargestellt, die zugeh"origen Wellenl"angen in der
 Abbildung~\ref{skript:hspektrallinien}.
 Die "Uberg"ange zum Grundzustand werden in der Lyman-Serie zusammengefasst.
+\index{Lyman-Serie}
 Diese Spektrallinien befinden sich im ultravioletten Teil des Spektrums.
 "Uberg"ange von einem h"oheren Zustand zum Zustand mit $n=2$ 
 heissen Balmer-Serie nach dem Basler Mathematiklehrer Johann Jakob Balmer,
 der die Formel (\ref{skript:wellenlaengenformel}) f"ur die Wellenl"ange 
 im Jahre 1885 gefunden hat.
+\index{Balmer-Serie}
+\index{Balmer!Johann Jakob}
 F"ur kleine Werte von $n_2$ liegen die Balmer-Linien im sichtbaren Bereich.
 Besonders wichtig ist die Balmer-Linie mit $n_2=3$, die auch H-$\alpha$
 heisst.
@@ -795,6 +816,9 @@ Prozessen wo auf der Sonnenoberfl"ache ablaufen.
 F"ur die geplante Solar Orbiter-Mission der ESA soll mit dem Instrument
 EUI (Extreme Ultraviolett Imager) in die Lage versetzt werden, Bilder
 der Sonne in der Ly-$\alpha$-Linie aufzunehmen.
+\index{Paschen-Serie}
+\index{EUI}
+\index{Solar Orbiter}
 
 \begin{figure}
 \centering
@@ -827,6 +851,9 @@ $n_2$ & $n_1=1$ & $n_1=2$ & $n_1=3$          & $n_1=4$ & $n_1=5$ & $n_1=6$   \\
 \end{center}
 \caption{Wellenl"ange der Spektrallinien des Wasserstoffspektrums
 \label{skript:h2wellenlaengen}}
+\index{Bracket-Serie}
+\index{Pfund-Serie}
+\index{Humphreys-Serie}
 \end{table}
 
 \begin{figure}
@@ -851,20 +878,15 @@ in denen "Uberg"ange in Wasserstoffatomen zeigen.
 Unsere L"osung kann auch dazu verwendet werden, das Spektrum eines
 positiven Helium-Ions oder anderer stark ionisierter Atome zu berechnen.
 Dazu ist die Ladung $e$ durch die effektive Ladung $Ze$ des Atomkernes
-zu ersetzen, was auf die Formel
+zu ersetzen, man findet die Formel
 \[
 \lambda = \frac{8\varepsilon_0^2h^3c}{m_eZ^2e^4}
-\frac{n_1^2n_2^2}{n_2^2-n_1^2}
+\frac{n_1^2n_2^2}{n_2^2-n_1^2}.
 \]
-f"uhrt.
 
-\section{Orbitale}
-\begin{figure}
-\centering
-\includegraphics[width=0.4\hsize]{images/crackedorbital.png}
-\caption{Berufsbild des Quantenmechanikers: Kenntnisse der Orbitale
-sind unerl"asslich\label{skript:crackedorbital}}
-\end{figure}
+\section{Orbitale\label{section:orbitale}}
+\rhead{Orbitale}
+\index{Orbital}
 Die L"osung der Schr"odinger-Gleichung in Abschnitt~\ref{section:schroedinger} 
 zeigt, welche geometrische Form die Wellenfunktionen der Atome haben.
 Man nennt diese Ein-Elektronen-Wellenfunktionen auch Orbitale.
@@ -874,6 +896,7 @@ in denen Atome derart angeordnet sind, so dass die Bereiche hoher
 Wahrscheinlichkeitsdichte der Orbitale der beiden Atome sich "uberlagern.
 Traditionell werden die Orbitale zu verschiedenen $l$-Werten mit den
 Buchstaben s, p, d, f bezeichnet.
+\index{Atombindung}
 
 Da alle Orbitale mit gleichem $n$ die gleiche Energie haben, sind auch
 Linearkombinationen von solchen Orbitalen Eigenzust"ande des Atoms.
@@ -882,6 +905,7 @@ Buchstabenkombinationen wie $\text{sp}^2$ oder $\text{sp}^3$ bezeichnet.
 Hybridorbitale erm"oglichen zus"atzliche Geometrien f"ur atomare Bindungen.
 
 \subsection{s-Orbitale}
+\index{s-Orbital}
 Die s-Orbitale geh"oren zu $l=0$ und damit auch zu $m=0$.
 Das zugeh"orige Legendre-Polynom ist eine Konstante ebenso wie die
 Funktion $\Phi(\varphi)$.
@@ -909,11 +933,62 @@ geschrieben werden, sie lautet
 \]
 Man beachte, dass der Exponentialfaktor mit gr"osser werdendem $n$ immer
 langsamer abf"allt, es ist also davon auszugehen, dass f"ur gr"osseres
-$n$ sich das Elektron im Mittel weiter vom Kern entfernt aufhalten wird.
+$n$ sich das Elektron im Mittel weiter vom Kern entfernt aufhalten wird
+(Abbildung~\ref{skript:radialgraphs}).
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{graphics/radial-1.pdf}
+\caption{Radiusabh"angigkeit der Wellenfunktionen ein einem Wasserstoff-Atom,
+Maximalwert auf $1$ normiert.
+\label{skript:radialgraphs}}
+\end{figure}
 
+\subsection{p-Orbitale}
+\index{p-Orbital}
+Die p-Orbitale geh"oren zu $l=1$, somit gibt es drei Eigenfunktionen
+entsprechenden den m"oglichen Werten $m=-1$, $m=0$ und $m=1$.
+F"ur den Fall $m=0$ haben wir fr"uher gezeigt, dass
+\[
+P_1(z)=\frac{d}{dz}(z^2-1)=2z.
+\]
+Die Wellenfunktion h"angt aber nicht von $m$ ab.
+Die Wahrscheinlichkeit, das Elektron in der N"ahe der $x$-$y$-Ebene
+zu finden, ist also sehr klein.
+Dieses Orbital wird auch p$\mathstrut_z$ genannt.
 
+F"ur $m=\pm$ ist die $z$-Abh"angigkeit
+\[
+P_1^1(z)=2\sqrt{1-z^2} = 2\sin\vartheta,
+\]
+Insbesondere ist f"ur diese Wellenfunktionen die Wahrscheinlichkeit 
+am gr"ossten, das Elektron in der N"ahe der $x$-$y$-Ebene zu finden.
+Die $\varphi$-Abh"angigkeit ist $e^{im\varphi}$, aber dies ist
+nur ein Phasenfaktor.
+Die Linearkombinationen
+\[
+e^{im\varphi}+e^{-im\varphi}=2\cos\varphi=2x
+\qquad\text{und}\qquad
+e^{im\varphi}-e^{-im\varphi}=2i\sin\varphi=2iy
+\]
+sind gleichwertige Wellenfunktionen.
+Im ersten Fall h"alt sich das Elektron bevorzugt entlang der $x$-Achse
+auf w"ahrend die Wahrscheinlichkeit f"ur $x$ klein also in der N"ahe der
+$y$-$z$-Ebene sehr klein ist.
+Im zweiten Fall meidet das Elektron die $y$-$z$-Ebene.
+Diese Orbitale heissen auch $\text{p}_x$ und $\text{p}_y$
+(Abbildung~\ref{skript:porbitale}).
 
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{images/orbital.png}
+\caption{p-Orbitale dargestellt als Niveau-Fl"ache der Wellenfunktion
+(Bildquelle: Wikipedia)
+\label{skript:porbitale}}
+\end{figure}
 
-
-
-
+\begin{figure}
+\centering
+\includegraphics[width=0.4\hsize]{images/crackedorbital.png}
+\caption{Berufsbild des Quantenmechanikers: Kenntnisse der Orbitale
+sind unerl"asslich\label{skript:crackedorbital}}
+\end{figure}

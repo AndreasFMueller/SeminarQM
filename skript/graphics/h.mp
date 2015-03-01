@@ -156,6 +156,7 @@ label.lft(btex $n=2$ etex, (0,Z/4));
 label.lft(btex $n=3$ etex, (0,Z/9));
 label.lft(btex $n=4$ etex, (0,Z/16));
 label.lft(btex $n=5$ etex, (0,Z/25));
+label.lft(btex $\dots$ etex, (0, Z/50));
 
 label.bot(btex $\text{$-13.6$eV}$ etex, (20,Z));
 label.bot(btex $\text{$-3.40$eV}$ etex, (60,Z/4));

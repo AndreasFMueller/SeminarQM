@@ -59,28 +59,35 @@
 \usepackage{standalone}
 \usepackage[backend=bibtex]{biblatex}
 \addbibresource{references.bib}
-\addbibresource{tunneldiode/main.bib}
-\addbibresource{atomuhr/main.bib}
-%\addbibresource{rtm/main.bib}
-\addbibresource{efeld/main.bib}
-\addbibresource{kugel/main.bib}
-%\addbibresource{orbitale/main.bib}
-\addbibresource{flash/main.bib}
-%\addbibresource{franckhertz/main.bib}
-\addbibresource{anharmonisch/main.bib}
-\addbibresource{laser/main.bib}
-%\addbibresource{maser/main.bib}
-\addbibresource{mri/main.bib}
+% Quanteninformatik
 \addbibresource{crypto/main.bib}
 \addbibresource{teleport/main.bib}
 \addbibresource{simon/main.bib}
-%\addbibresource{quantumdot/main.bib}
+% Halbleiterbauteile
+\addbibresource{tunneldiode/main.bib}
+\addbibresource{flash/main.bib}
+% Anwendungen der Störungstheorie
+\addbibresource{atomuhr/main.bib}
+\addbibresource{efeld/main.bib}
+\addbibresource{anharmonisch/main.bib}
+% Sphaerische harmonische Analyse
+\addbibresource{kugel/main.bib}
+% Weitere Anwendungen der Quantenmechanik
+\addbibresource{laser/main.bib}
+\addbibresource{mri/main.bib}
+% Supraleitung
 \addbibresource{supraleitung/main.bib}
 \addbibresource{bose/main.bib}
+
 \addbibresource{heisenberg/main.bib}
 \addbibresource{stark/main.bib}
 \addbibresource{bell/main.bib}
 \addbibresource{feldquantisierung/main.bib}
+%\addbibresource{rtm/main.bib}
+%\addbibresource{orbitale/main.bib}
+%\addbibresource{franckhertz/main.bib}
+%\addbibresource{maser/main.bib}
+%\addbibresource{quantumdot/main.bib}
 \AtEndDocument{\clearpage\ifodd\value{page}\else\null\clearpage\fi}
 \makeindex
 \begin{document}
@@ -108,36 +115,14 @@ Quantenmechanik%
 Leitung: Andreas M"uller\\
 \vspace{40pt}
 \Large
-Dorian~Amiet,
-Hannes~Badertscher,
-Roger~Billeter,
-Joel~Brunner,
-Christian~Cavegn,
-Michael~Cerny,
-Reto~Christen,
-Hannes~Diethelm,
-Benny~G"achter,
-Daniel~Gubser,
-Thomas~Gujer,
-Stefan~Hedinger,
-Marc~Juchli,
-Simon~Kuster,
-Gabriel~Looser,
-Andreas~Linggi,
-Daniel~Monti,
-Max~Obrist,
-Nicola~Ochsenbein,
-Kirusanth~Poopalasingam,
-Nicol\'as~Rom\'an~L"uthold,
-Stefan~Schindler,
-Christoph~Schmitz-Dr"ager,
-Arwed~Schudel,
-Michael~Schwenter,
-Tobias~Stauber,
-Stefan~Steiner,
-Claudio~Stucki,
-Pascal~Stump,
-Martin~Stypinski
+Dorian~Amiet, Hannes~Badertscher, Roger~Billeter, Joel~Brunner,
+Christian~Cavegn, Michael~Cerny, Reto~Christen, Hannes~Diethelm,
+Benny~G"achter, Daniel~Gubser, Thomas~Gujer, Stefan~Hedinger,
+Marc~Juchli, Simon~Kuster, Gabriel~Looser, Andreas~Linggi,
+Daniel~Monti, Max~Obrist, Nicola~Ochsenbein, Kirusanth~Poopalasingam,
+Nicol\'as~Rom\'an~L"uthold, Stefan~Schindler, Christoph~Schmitz-Dr"ager,
+Arwed~Schudel, Michael~Schwenter, Tobias~Stauber, Stefan~Steiner,
+Claudio~Stucki, Pascal~Stump, Martin~Stypinski
 \end{flushright}
 \vspace*{\stretch{2}}
 \begin{center}
@@ -249,28 +234,34 @@ Hochschule f"ur Technik, Rapperswil, 2015
 \lhead{Anwendungen}
 \input uebersicht.tex
 \def\chapterauthor#1{{\large #1}\bigskip\bigskip}
-\input tunneldiode/main.tex
-\input atomuhr/main.tex
-%\input rtm/main.tex
-\input efeld/main.tex
-\input kugel/main.tex
-%\input orbitale/main.tex
-\input flash/main.tex
-%\input franckhertz/main.tex
-\input anharmonisch/main.tex
-\input laser/main.tex
-%\input maser/main.tex
-\input mri/main.tex
+% Quanteninformatik
 \input crypto/main.tex
 \input teleport/main.tex
 \input simon/main.tex
-%\input quantumdot/main.tex
+% Halbleiterbauelement
+\input tunneldiode/main.tex
+\input flash/main.tex
+% Anwendung der Störungstheorie
+\input atomuhr/main.tex
+\input efeld/main.tex
+\input anharmonisch/main.tex
+% Sphärische harmonische Analyse
+\input kugel/main.tex
+% Weitere Anwendungen
+\input laser/main.tex
+\input mri/main.tex
+% Supraleitung
 \input supraleitung/main.tex
 \input bose/main.tex
 \input heisenberg/main.tex
 \input stark/main.tex
 \input bell/main.tex
 \input feldquantisierung/main.tex
+%\input rtm/main.tex
+%\input orbitale/main.tex
+%\input franckhertz/main.tex
+%\input maser/main.tex
+%\input quantumdot/main.tex
 \vfill
 \pagebreak
 \ifodd\value{page}\else\null\clearpage\fi
