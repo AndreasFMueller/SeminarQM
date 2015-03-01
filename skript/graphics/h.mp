@@ -178,11 +178,11 @@ label.lft(btex $n=4$ etex, (0,Z/16));
 label.lft(btex $n=5$ etex, (0,Z/25));
 label.lft(btex $\dots$ etex, (0, Z/50));
 
-label.bot(btex $\text{$-13.6$eV}$ etex, (20,Z));
-label.bot(btex $\text{$-3.40$eV}$ etex, (60,Z/4));
+label.bot(btex $\text{$-13.6$eV}$ etex, (100,Z));
+label.bot(btex $\text{$-3.40$eV}$ etex, (100,Z/4));
 label.bot(btex $\text{$-1.52$eV}$ etex, (100,Z/9));
-label.bot(btex $\text{$-0.85$eV}$ etex, (140,Z/16));
-label.bot(btex $\text{$-0.54$eV}$ etex, (180,Z/25));
+label.bot(btex $\text{$-0.85$eV}$ etex, (100,Z/16));
+label.bot(btex $\text{$-0.54$eV}$ etex, (100,Z/25));
 %label.bot(btex $\text{$-0.38$eV}$ etex, (220,Z/36));
 
 pickup pencircle scaled 0.5pt;
