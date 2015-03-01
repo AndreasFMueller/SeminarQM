@@ -163,3 +163,8 @@ $(komplex_FILES):	komplex.mp
 
 airyzeros:	airyzeros.c
 	gcc -o airyzeros airyzeros.c `gsl-config --libs`
+
+radial-1.pdf:	radial.mp
+	TEX=latex mpost radial.mp
+	mptopdf radial.1
+
