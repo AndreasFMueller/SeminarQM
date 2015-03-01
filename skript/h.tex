@@ -342,7 +342,7 @@ Zahl sein muss.
 
 Wie jede Differentialgleichung zweiter Ordnung hat die Legendresche
 Differentialgleichung ausser den $P_l$ auch noch eine L"osung
-$Q_l$, diese ist jedoch nicht eschr"ankt und kommt daher als L"osungsfunktion
+$Q_l$, diese ist jedoch nicht beschr"ankt und kommt daher als L"osungsfunktion
 f"ur unser Problem nicht in Frage.
 
 \subsubsection{Legendre-Polynome}
@@ -789,6 +789,12 @@ im Jahre 1885 gefunden hat.
 F"ur kleine Werte von $n_2$ liegen die Balmer-Linien im sichtbaren Bereich.
 Besonders wichtig ist die Balmer-Linie mit $n_2=3$, die auch H-$\alpha$
 heisst.
+Abbildung~\ref{skript:sonnehalpha} zeigt die Sonne im H-$\alpha$-Licht,
+solche schmalbandigen Aufnahmen geben Aufschluss dar"uber, welche Art von
+Prozessen wo auf der Sonnenoberfl"ache ablaufen.
+F"ur die geplante Solar Orbiter-Mission der ESA soll mit dem Instrument
+EUI (Extreme Ultraviolett Imager) in die Lage versetzt werden, Bilder
+der Sonne in der Ly-$\alpha$-Linie aufzunehmen.
 
 \begin{figure}
 \centering
@@ -830,6 +836,18 @@ $n_2$ & $n_1=1$ & $n_1=2$ & $n_1=3$          & $n_1=4$ & $n_1=5$ & $n_1=6$   \\
 \label{skript:zustandsdiagramm}}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.6\hsize]{images/Sonne-Halpha.jpg}
+\caption{Sonne im Lichte der H-$\alpha$ Spektrallinie. Im Gegensatz
+zu breitbandigen Bildern, die im Wesentlichen die Intensit"at der
+Scharzk"orperstrahlung und damit die Temperatur der Sonne zeigen,
+geben H-$\alpha$-Bilder Auskunft "uber die Lokalisierung von Prozessen,
+in denen "Uberg"ange in Wasserstoffatomen zeigen.
+(Bildquelle: Wikipedia)
+\label{skript:sonnehalpha}}
+\end{figure}
+
 Unsere L"osung kann auch dazu verwendet werden, das Spektrum eines
 positiven Helium-Ions oder anderer stark ionisierter Atome zu berechnen.
 Dazu ist die Ladung $e$ durch die effektive Ladung $Ze$ des Atomkernes
@@ -855,12 +873,47 @@ Bindungen zwischen Atomen kann man sich vorstellen als Konfigurationen,
 in denen Atome derart angeordnet sind, so dass die Bereiche hoher
 Wahrscheinlichkeitsdichte der Orbitale der beiden Atome sich "uberlagern.
 Traditionell werden die Orbitale zu verschiedenen $l$-Werten mit den
-Buchstaben $s$, $p$, $d$, $f$ bezeichnet.
+Buchstaben s, p, d, f bezeichnet.
 
 Da alle Orbitale mit gleichem $n$ die gleiche Energie haben, sind auch
 Linearkombinationen von solchen Orbitalen Eigenzust"ande des Atoms.
 Solche Orbitale werden auch Hybridorbitale genannt, und mit
-Buchstabenkombinationen wie $sp^2$ oder $sp^3$ bezeichnet.
+Buchstabenkombinationen wie $\text{sp}^2$ oder $\text{sp}^3$ bezeichnet.
 Hybridorbitale erm"oglichen zus"atzliche Geometrien f"ur atomare Bindungen.
+
+\subsection{s-Orbitale}
+Die s-Orbitale geh"oren zu $l=0$ und damit auch zu $m=0$.
+Das zugeh"orige Legendre-Polynom ist eine Konstante ebenso wie die
+Funktion $\Phi(\varphi)$.
+Die s-Orbitale sind somit kugelsymmetrisch.
+
+Die Radialfunktionen $w_{0,n}(r)$ sind Polynome vom Grad $n-1$.
+Im Grundzustand ist $w_{0,0}(r)$ eine Konstante.
+Die Rekursionsformel f"ur die Koeffizienten von $w_{n,0}(r)$ ist
+\[
+a_k=2B\frac{1-\frac{k}{n}}{k(k+1)}a_{k-1}.
+\]
+Den Faktor $2B$ kann man eliminieren, indem man statt der Variablen $r$
+die Variable $\varrho$ w"ahlt so, dass $r=2B \varrho$.
+Dr"uckt man $w$ in dieser neuen Variablen aus, erh"alt man ein neues
+Polynom $\tilde w_{n}(\varrho)$, die Rekursionsformel f"ur die 
+Koeffizienten $\tilde a_k$ von $\tilde w_n(\varrho)$ h"angt nicht mehr
+von $B$ ab:
+\[
+\tilde a_k = \frac{1-\frac{k}{n}}{k(k+1)}\tilde a_{k-1}.
+\]
+Die Radialfunktion $R_n(r)$ kann auch in der Variablen $\varrho$
+geschrieben werden, sie lautet
+\[
+\tilde R(\varrho)=\tilde w_n(\varrho)e^{-\varrho/2n}.
+\]
+Man beachte, dass der Exponentialfaktor mit gr"osser werdendem $n$ immer
+langsamer abf"allt, es ist also davon auszugehen, dass f"ur gr"osseres
+$n$ sich das Elektron im Mittel weiter vom Kern entfernt aufhalten wird.
+
+
+
+
+
 
 

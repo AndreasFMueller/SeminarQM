@@ -257,7 +257,7 @@ label.rt(btex Lyman etex, (0,0)) rotated 45
 
 draw ((position(38),-2)--(position(38),-5)--(position(75),-5)--(position(75),-2))
 	shifted (0,-5);
-label.bot(btex sichtbar etex, ((position(38)+position(75))/2, -10));
+label.bot(btex \strut sichtbar etex, ((position(38)+position(75))/2, -10));
 
 drawarrow (position(8),0)--(position(1500),0);
 label.bot(btex $\log\lambda$ etex, (position(1500),0));
