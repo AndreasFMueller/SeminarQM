@@ -60,8 +60,8 @@ def cosine(expr n) =
 		p := p..(x,height(n) + 10 * cosd(phi(n, x)));
 	endfor;
 	pickup pencircle scaled 1pt;
-	draw p withcolor (1,0,0);
 	fill p--cycle withcolor (1,0.9,0.9);
+	draw p withcolor (1,0,0);
 	pickup pencircle scaled 0.1pt;
 	draw (-100,height(n))--(100,height(n));
 enddef;
@@ -73,8 +73,8 @@ def sine(expr n) =
 		p := p..(x,height(n) + 10 * sind(phi(n, x)));
 	endfor;
 	pickup pencircle scaled 1pt;
-	draw p withcolor (1,0,0);
 	fill p--cycle withcolor (1,0.9,0.9);
+	draw p withcolor (1,0,0);
 	pickup pencircle scaled 0.1pt;
 	draw (-100,height(n))--(100,height(n));
 enddef;
