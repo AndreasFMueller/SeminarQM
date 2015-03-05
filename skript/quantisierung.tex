@@ -49,7 +49,8 @@ Dann gilt
 Als Spezialfall muss darin die Bewegung eines klassischen mechanischen Systems
 enthalten sein, wie wir es in Kapitel~\ref{chapter:mechanik}
 kennengelernt haben.
-Ein solches System zeichnet sich dadurch aus, dass die Wellenfunktion
+Ein solches System zeichnet sich dadurch aus, dass die {\em Wellenfunktion}
+\label{Wellenfunktion}
 $\Psi(x,t)=\langle x|\psi(t)\rangle$
 sehr gut lokalisiert ist.
 Nach de~Broglie werden Quantenph"anomene nur auf einer Entfernung sichtbar,
@@ -83,7 +84,7 @@ Poisson-Klammer durch einen Kommutator nach der Regel
 \end{equation}
 \end{satz}
 Aus den Regeln folgt auch, dass der Operator $\hat H$ tats"achlich
-der Operator ist, der der Observablen $H$ entspricht, also der 
+der Operator ist, der der klassischen Observablen $H$ entspricht, also der 
 Energie des Systems.
 \label{skript:hamilton-op-ist-energie}
 
@@ -91,74 +92,103 @@ Energie des Systems.
 Klassische Systeme werden in Koordinaten und Impulsen beschrieben, 
 die nat"urlich auch Observable sind.
 Ausserdem k"onnen wir den Zustandsvektor in der Ortsdarstellung
-ausdr"ucken, als Wellenfunktion $\Psi(x,t)=\langle x|\psi(t)\rangle$
-Es ist klar, dass der Operator, der zur Observablen $x$ geh"ort,
-die Multiplikation mit $x$ ist:
-\[
-x
-=
-\sum_x |x\rangle\,x\,\langle x|
-\qquad\Rightarrow\qquad
-\langle x\rangle
-=
-\int x|\Psi(x,t)|^2\,dx.
-\]
-Doch wie muss man den Operator f"ur den Impuls ausdr"ucken?
+als Wellenfunktion $\Psi(x,t)=\langle x|\psi(t)\rangle$
+ausdr"ucken.
+Statt mit den abstrakten Vektoren $|\psi\rangle$ zu rechnen, m"ochten
+wir mit den viel konkreteren Wellenfunktionen $\Psi(x,t)$ rechnen 
+k"onnen. Wir m"ussen also alle Operationen mit $|\psi\rangle$ neu
+als Operationen auf $\Psi(x,t)$ ausdr"ucken.
 
-Klassisch gilt f"ur jede Observable $G$
+Nach den allgemeinen Grunds"atzen des fr"uher entwickelten Formalismus
+muss $|\Psi(x,t)|^2$ die Wahrscheinlichkeitsdichte f"ur die Position
+des Teilchens sein.
+F"ur zwei verschiedene Zust"ande muss das Skalarprodukt daher als
+Integral gebildet werden:
+\[
+\left.
+\begin{aligned}
+\Psi(x,t)&=\langle x|\psi\rangle\\
+\Phi(x,t)&=\langle x|\varphi\rangle
+\end{aligned}
+\quad
+\right\}
+\qquad
+\Rightarrow
+\qquad
+\langle\varphi|\psi\rangle
+=
+\int \langle\varphi|x\rangle\langle x|\psi\rangle\,dx
+=
+\int \overline{\langle x| \varphi\rangle}\langle x|\psi\rangle\,dx
+=
+\int \bar\Phi(x,t)\Psi(x,t)\,dx.
+\]
+
+Wir erinnern daran, wie Erwartungswerte zu berechnen sind.
+F"ur eine klassische  Observable $G$, die nur vom Ort eines Teilchens abh"angt,
+muss f"ur den Erwartungswert gelten
+\[
+\langle G\rangle = \int G(x)\cdot |\Psi(x,t)|^2\,dx
+=
+\int\bar\Psi(x,t)\,G(x)\,\Psi(x,t)\,dx.
+\]
+Der in der Ortsdarstellung zu $G$ geh"orige Operator ist also nichts
+anderes als die Multiplikation mit $G(x)$.
+
+Doch wie muss man den Operator f"ur den Impuls ausdr"ucken?
+Um die Wirkung von $\hat p$ zu ermitteln, verwenden wir die
+Quantisierungsregeln.
+F"ur eine klassische Observable $G(x)$, die nur von $x$
+abh"angt, gilt
 \begin{equation}
-(p,G)=\frac{\partial G}{\partial x}.
+(p,G)=-\frac{\partial G}{\partial x}.
 \label{skript:pGobservable}
 \end{equation}
-Wenn $G$ nicht von $a$ abh"angt, wir die Poisson-Klammer also $0$ sein,
-und auch der zugeh"orige Quantenmechanische Operator wird verschwinden.
-Interessant sind also nur Observable, die nur von $x$ abh"angen,
-aber wir wissen bereits, dass wir diese mit Funktionen von $x$
-identifizieren k"onnen.
-Die Quantisierungsvorschrift~(\ref{skript:quantisierung-observable})
-macht aus~(\ref{skript:pGobservable})
+Wir wenden jetzt die
+Quantisierungsvorschrift~(\ref{skript:quantisierung-observable})
+auf (\ref{skript:pGobservable}) an und erhalten
 \[
--\frac{i}{\hbar}[\hat p,\hat G]
-=
-\widehat{\frac{\partial G}{\partial q}}
-=
-\frac{\partial G}{\partial q}.
+\begin{CD}
+\displaystyle(p,G)     @=   \displaystyle-\frac{\partial G}{\partial x}.\\
+@V\text{Quantisierung}VV           @V\text{Quantisierung}VV   \\
+\displaystyle-\frac{i}{\hbar}[\hat p,\hat G]
+@=
+\displaystyle-\widehat{\frac{\partial G}{\partial x}}.\\
+@V\textstyle\langle\,.\,\rangle VV           @V\textstyle\langle\,.\,\rangle VV   \\
+\displaystyle -\int \bar\Psi(x,t)\;\biggl(\frac{i}{\hbar}\hat p G(x)-G(x)\frac{i}{\hbar}\hat p\biggr)\Psi(x,t)\,dx
+@=
+\displaystyle -\int \bar \Psi(x,t)\,\frac{\partial G}{\partial x}\,\Psi(x,t)\,dx
+\end{CD}
 \]
-Will man davon einen Erwartungswert berechnen, erh"alt man
-\begin{align*}
-\biggl\langle
-\widehat{\frac{\partial G}{\partial x}}
-\biggr\rangle
-&=\int \bar\Psi(x,t)\frac{\partial G}{\partial x}\Psi(x,t)\,dx.
-\end{align*}
-Diesen Ausdruck kann man mit partieller Integration noch etwas
-vereinfachen:
-\begin{align*}
-\biggl\langle
-\widehat{\frac{\partial G}{\partial x}}
-\biggr\rangle
+Man beachte, dass in der letzten Gleichung auf der linken Seite der Operator
+$\hat p$ auf das Produkt $G(x)\Psi(x,t)$ wirkt.
+Damit daraus eine Ableitung von $G$ entstehen kann, muss der Operator
+$\hat p$ selbst wie eine Ableitung operieren. Setzen wir
+\begin{equation}
+\frac{i}{\hbar}\hat p = \frac{\partial}{\partial x},
+\label{skript:praeimpulsoperator}
+\end{equation}
+wird die letzte Gleichung zu
+\begin{align}
+-\int \bar\Psi(x,t)\;\biggl(\frac{\partial}{\partial x}G(x)-G(x)\frac{\partial}{\partial x}\biggr)\Psi(x,t)\,dx
 &=
-\biggl[
-\bar\Psi(x,t)\frac{\partial G}{\partial x}\Psi(x,t)
-\biggr]_{-\infty}^\infty
--
-\int_{-\infty}^{\infty}
-\biggl(\frac{\partial}{\partial x}
-\bar\Psi(x,t)\biggr) G
-\Psi(x,t)
+-\int \bar \Psi(x,t)\,\frac{\partial G}{\partial x}\,\Psi(x,t)\,dx
+\notag
+\\
+-\int \bar\Psi(x,t)\;\biggl(
+\frac{\partial G}{\partial x}
 +
-\bar\Psi(x,t) G
-\biggl(\frac{\partial}{\partial x}
-\Psi(x,t)
-\biggr)
-\,dx.
-\end{align*}
-Dies stimmt genau dann mit dem Kommutator "uberein, wenn wir setzen
-\[
-\hat p = \frac{\hbar}{i}\frac{\partial}{\partial x},
-\]
-Wir bekommen damit die vereinfachten Quantisierungsregeln in der
-Ortsdarstellung:
+G(x)\frac{\partial}{\partial x}
+-G(x)\frac{\partial}{\partial x}\biggr)\Psi(x,t)\,dx
+&=
+-\int \bar \Psi(x,t)\,\frac{\partial G}{\partial x}\,\Psi(x,t)\,dx.
+\label{skript:produktregelpG}
+\end{align}
+Darin haben wir die Produktregel auf das Produkt $G(x)\Psi(x,t)$ angewendet.
+Offenbar war (\ref{skript:praeimpulsoperator}) die richtige Wahl, und wir
+haben eine vereinfachte Quantisierungsregel f"ur die Ortsdarstellung
+gefunden.
+
 \begin{satz}
 \label{skript:quantisierungsregeln-ortsdarstellung}
 \index{Quantisierungsregeln!in Ortsdarstellung}
@@ -171,6 +201,102 @@ verwendet werden. Den Hamilton-Operator $\hat H$ erh"alt man, indem man
 in der Hamilton-Funktion $H$ die Variablen $p$ durch die Operatoren 
 $\hat p$ ersetzt.
 \end{satz}
+
+{\small
+Alternativ kann man die Quantisierungsregel f"ur den Impulsoperator
+auch wie folgt verstehen.
+Die Anwendung der Produktregel in (\ref{skript:produktregelpG}) kann
+man auch als eine Anwendung der partiellen Integration ansehen.
+Wir berechnen dazu direkt den Erwartungswert von $\partial G/\partial x$:
+\begin{align*}
+\biggl\langle
+\frac{\partial G}{\partial x}
+\biggr\rangle
+&=
+\int \bar\Psi(x,t)\frac{\partial G(x)}{\partial x}\Psi(x,t)\,dx
+\\
+&=
+\underbrace{
+\biggl[
+\bar\Psi(x,t) G(x)\Psi(x,t)
+\biggr]_{-\infty}^\infty}_{=0}
+-
+\int_{-\infty}^{\infty}
+\biggl(\frac{\partial}{\partial x}
+\bar\Psi(x,t)\biggr) G(x)
+\Psi(x,t)
++
+\bar\Psi(x,t) G(x)
+\,
+\frac{\partial}{\partial x}
+\Psi(x,t)
+\,dx
+\\
+&=
+\int_{-\infty}^{\infty}
+\biggl(-\frac{\partial}{\partial x}
+\bar\Psi(x,t)\biggr) G(x)
+\Psi(x,t)
+-
+\bar\Psi(x,t) G(x)
+\,
+\frac{\partial}{\partial x}
+\Psi(x,t)
+\,dx
+\\
+&=\biggl\langle
+\biggl(-\frac{\partial}{\partial x}\biggr)^* G
+- G\frac{\partial}{\partial x}
+\biggr\rangle
+\end{align*}
+%Der Ableitungsoperator mit dem $\mathstrut^*$ in der letzten Zeile
+%wirkt auf die Wellenfunktion links. Dieser Operator ist nicht
+%hermitesch, vielmehr gilt
+%\begin{align*}
+%\biggl\langle \varphi\bigg|\,
+%\biggl(\frac{\partial}{\partial x}\biggr)^*
+%\,\bigg|\psi\biggr\rangle
+%&=
+%\int \frac{\partial\bar\Phi(x,t)}{\partial x}\Psi(x,t)\,dx
+%%\\
+%%&=
+%\underbrace{
+%\biggl[\bar\Phi(x,t)\Psi(x,t)\biggr]_{-\infty}^\infty
+%}_{=0}
+%-
+%\int \bar\Phi(x,t)\frac{\partial\Psi(x,t)}{\partial x}\,dx
+%=
+%-\biggl\langle
+%\varphi\bigg|\,
+%\frac{\partial}{\partial x}
+%\,\bigg|\psi
+%\biggr\rangle
+%\end{align*}
+Setzt man jetzt wieder (\ref{skript:praeimpulsoperator}) ein, erh"alt
+man daraus
+\[
+\biggl\langle
+\frac{\partial G}{\partial x}
+\biggr\rangle
+=
+\biggl\langle
+\biggl(-\frac{i}{\hbar}\hat p
+\biggr)^* G
+- G\frac{i}{\hbar}\hat p
+\biggr\rangle
+=
+\frac{i}{\hbar}
+\biggl\langle
+\hat p
+ G
+- G \hat p
+\biggr\rangle
+=
+\frac{i}{\hbar}[\hat p,G],
+\]
+was wieder mit der Quantisierung der klassischen Beziehung
+\ref{skript:pGobservable} "ubereinstimmt.
+}
 
 \section{Schr"odingergleichung}
 \rhead{Schr"odingergleichung}
@@ -194,7 +320,7 @@ der Hamilton-Operator:
 \[
 \hat H
 =
-\frac{1}{2m}\biggl(-\frac{\hbar}{i}\frac{\partial }{\partial x}\biggr)^2
+\frac{1}{2m}\biggl(\frac{\hbar}{i}\frac{\partial }{\partial x}\biggr)^2
 +V(x)
 =
 -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}+V(x).
@@ -211,7 +337,7 @@ H=\frac1{2m}\sum_{k=1}^3p_i^2+V(x)
 \]
 Die zugeh"orige zeitabh"angige Schr"odingergleichung ist
 \[
-i\hbar\frac{\partial}{\partial x}\psi(x,t)
+i\hbar\frac{\partial}{\partial x}\Psi(x,t)
 =
 -\frac{\hbar^2}{2m}\Delta\Psi(x,t) + V(x)\Psi(x,t).
 \]

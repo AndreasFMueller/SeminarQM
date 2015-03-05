@@ -5,26 +5,37 @@ Teilchens zu berechnen, welches in einem Interval $[-l,l]$ eingesperrt ist.
 Realisiert werden kann diese Situation n"aherungsweise dadurch, dass 
 ein Teilchen durch eine sehr hohe (unendlich hohe) Potentialbarriere
 am verlassen des Bereiches gehindert wird.
-Die Wellenfunktion eines solchen Teilchens muss ausserhalb des Intervals
-verschwinden, denn die Wahrscheinlichkeit, das Teilchen dort zu
+Die Wellenfunktion $\psi(x)$ eines solchen Teilchens muss ausserhalb des
+Intervals verschwinden, denn die Wahrscheinlichkeit, das Teilchen dort zu
 finden, soll ja $0$ sein.
+Man erreicht dies, indem man in den Punkten $\pm l$ eine unendlich
+hohe Potentialbarriere errichtet.
 
 \subsubsection{Hamilton-Operator und Schr"odingergleichung}
 Der Hamilton-Operator des Problems ist
 \[
-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2},
+\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}+V(x),
 \]
-und die zugen"orige zeitunabh"angige Schr"odingergleichung
+das Potential hat die Form
+\[
+V(x)=\begin{cases}
+0&\qquad |x|<l\\
+\infty&\qquad\text{sonst.}
+\end{cases}
+\]
+Die zugeh"orige zeitunabh"angige Schr"odingergleichung ist
 \begin{equation}
 -\frac{\hbar}{2m}\psi''(x)=E\psi(x)
 \label{skript:schroedingerkasten}
 \end{equation}
-Wir suchen eine L"osung der Schr"odingergleichung,
+im Inneren des Intervals.
+Wir suchen eine L"osung von (\ref{skript:schroedingerkasten}),
 die ausserdem den Randbedingungen
 \[
 \psi(\pm l)=0
 \]
-gen"ugen soll.
+gen"ugen soll, damit wird dem unendlich hohen Potential ausserhalb des
+Kastens Rechnung getragen.
 Das charakteristische Polynome der Gleichung (\ref{skript:schroedingerkasten}) ist
 \[
 -\frac{\hbar^2}{2m}\lambda^2-E=0,
@@ -107,6 +118,11 @@ k&=\frac{\pi}{l}\biggl(n+\frac12\biggr),\quad n\in\mathbb Z
 	&&&
 		k&=\frac{\pi}{l}n,\quad n\in\mathbb Z.
 \end{align*}
+Es sind also alle $k$-Werte m"oglich, die ganzzahlige Vielfache von
+$\pi/2l$ sind.
+Die geraden Vielfache f"uhren zu einer $\sin$-L"osung, die ungeraden
+zu einer $\cos$-L"osung.
+
 Aus den m"oglichen $k$-Werten k"onnen wir jetzt die m"oglichen 
 Energiewerte ableiten
 \begin{align*}
@@ -176,7 +192,7 @@ Raum eingesperrt, und wir k"onnen versuchen, die minimale Energie
 eines Neutrons abzusch"atzen.
 Der Atomkern hat einen Durchmesser von $10\text{fm}=10\cdot 10^{-15}\text{m}$,
 das Neutron hat eine Masse von $m_n=1.67\cdot 10^{-27}\text{kg}$,
-die Grundzustandsenergie ist daher $E_1=3.28\cdot10^{-13}$.
+die Grundzustandsenergie ist daher $E_1=3.28\cdot10^{-13}\text{J}$.
 Mit der Formel $E=mc^2$ entspr"ache dieser Energie die Masse
 $3.656\cdot 10^{-30}\text{kg}$, oder etwa $0.2\%$ der Masse eines
 Neutrons, und mehr als der Masse eines Elektrons.

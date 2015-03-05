@@ -13,3 +13,6 @@ seminararbeit.pdf:	seminararbeit.tex aufgaben.tex
 
 praesentation.pdf:	praesentation.tex
 	pdflatex praesentation.tex
+
+planung.pdf:	planung.tex
+	pdflatex planung.tex

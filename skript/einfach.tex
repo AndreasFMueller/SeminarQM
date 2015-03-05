@@ -980,24 +980,44 @@ wie gross also
 \end{equation}
 sein wird. Dazu leiten wir (\ref{skript:observable-zeitabhaengigkeit}) nach der
 Zeit ab und setzen die Schr"odingergleichung ein:
-\begin{align*}
+\begin{align}
 \frac{d}{dt}\langle A\rangle
 &=
 \biggl(\frac{d}{dt}\langle\psi(t)|\biggr)A\,|\psi(t)\rangle
 +
 \langle\psi(t)|\,A\biggl(\frac{d}{dt}\,|\psi(t)\rangle\biggr)
+\notag
 \\
 &=
-\biggl(\frac{1}{i\hbar}H\langle\psi(t)|\biggr)A\,|\psi(t)\rangle
+\biggl(\frac{d}{dt}|\psi(t)\rangle\biggr)^*A\,|\psi(t)\rangle
++
+\langle\psi(t)|\,A\biggl(\frac{d}{dt}\,|\psi(t)\rangle\biggr)
+\notag
+\\
+&=
+\biggl(\frac{1}{i\hbar}H\,|\psi(t)\rangle\biggr)^*A\,|\psi(t)\rangle
 +
 \langle\psi(t)|\,A\frac{1}{i\hbar}H\,|\psi(t)\rangle
+\notag
+\\
+&=
+-\langle \psi(t)| {\frac{1}{i\hbar}}H^*A\,|\psi(t)\rangle
++
+\langle\psi(t)|\,A\frac{1}{i\hbar}H\,|\psi(t)\rangle
+\notag
 \\
 &=
 \frac{i}{\hbar}
 \langle\psi(t)|\, HA-AH \,|\psi(t)\rangle
+\notag
 \\
+\frac{d}{dt}\langle A\rangle
 &=\langle\psi(t)|\, \frac{i}{\hbar}[H,A] \,|\psi(t)\rangle
-\end{align*}
+=\biggl\langle
+-\frac{i}{\hbar}[H,A]
+\biggr\rangle
+\label{skript:observableZeitentwicklung}
+\end{align}
 Die Zeitabh"angigkeit einer Observablen $A$ wird also im Wesentlichen
 durch den Kommutator $[H,A]$ der Observablen mit dem Hamiltonoperator $H$
 gegeben. Erhaltungsgr"ossen sind also Observable, die mit dem
