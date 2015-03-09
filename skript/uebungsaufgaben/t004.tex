@@ -1,0 +1,73 @@
+Betrachten Sie den Hamilton-Operator
+\[
+\hat H=-\frac{\hbar^2}{2m_e}\frac{\partial^2}{\partial x^2}-V_0.
+\]
+Welche der folgenden Wellenfunktionen ist eine L"osung der zugeh"origen
+zeitabh"angigen Schr"odingergleichung?
+\begin{itemize}
+\item[\hbox to1cm{L)\hfill}]
+$
+\Psi(x,t)
+=
+(V_0+x+Et)^{i\hbar}
+$
+\item[\hbox to1cm{M)\hfill}]
+$
+\Psi(x,t)
+=
+\exp\left(\frac{i}{\hbar}(x\sqrt{2m(E+V_0)}-Et)\right)
+$
+\item[\hbox to1cm{N)\hfill}]
+$
+\Psi(x,t)
+=
+\sin(\hbar (Et-xV_0))
+$
+\end{itemize}
+
+\begin{loesung}
+Die Schr"odingergleichung ist 
+\[
+-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\Psi(x,t)-V_0\Psi(x,t)=i\hbar\frac{\partial}{\partial t}\Psi(x,t).
+\]
+Wir berechnen die einzelnen Teile f"ur den einzig wahrscheinlichen
+Kandidaten M):
+\begin{align*}
+-\frac{\hbar^2}{2m}
+\frac{\partial^2}{\partial x^2}
+\Psi(x,t)
+&=
+-\frac{\hbar^2}{2m}
+\biggl(\frac{i}{\hbar}\sqrt{2m(E+V_0)}\biggr)^2
+\exp\biggl(\frac{i}{\hbar}(x\sqrt{2m(E+V_0)}-Et)\biggr)
+\\
+&=
+-\frac{\hbar^2}{2m}
+\biggl(-\frac{1}{\hbar^2}2m(E+V_0)\biggr)
+\exp\biggl(\frac{i}{\hbar}(x\sqrt{2m(E+V_0)}-Et)\biggr)
+\\
+&=
+(E+V_0)
+\exp\biggl(\frac{i}{\hbar}(x\sqrt{2m(E+V_0)}-Et)\biggr)
+\\
+&=(E+V_0)\Psi(x,t)
+\\
+-\frac{\hbar^2}{2m}
+\frac{\partial^2}{\partial x^2}
+\Psi(x,t)
+-V_0\Psi(x,t)
+&=
+E\Psi(x,t)
+\\
+i\hbar
+\frac{\partial}{\partial t} \Psi(x,t)
+&=
+i\hbar
+\biggl(-\frac{i}{\hbar}E\biggr)
+\exp\biggl(\frac{i}{\hbar}(x\sqrt{2m(E+V_0)}-Et)\biggr)
+\\
+&=
+E\Psi(x,t)
+\end{align*}
+Die Schr"odingergleichung ist erf"ullt, M) ist die richtige L"osung.
+\end{loesung}

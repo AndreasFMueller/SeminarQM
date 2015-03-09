@@ -1,0 +1,51 @@
+Berechnen Sie den Kommutator $[\hat x,\hat p]$:
+\begin{itemize}
+\item[\hbox to 1cm{$\clubsuit$)\hfill}]
+$[\hat x,\hat p]=\frac{\hbar}{i}\operatorname{id}$
+\item[\hbox to 1cm{$\heartsuit$)\hfill}]
+$[\hat x,\hat p]=-\frac{\hbar}{i}\operatorname{id}$
+\item[\hbox to 1cm{$\diamondsuit$)\hfill}]
+$[\hat x,\hat p]=\frac{i}{\hbar}\hat p$
+\item[\hbox to 1cm{$\spadesuit$)\hfill}]
+$[\hat x,\hat p]=\hat x$
+\end{itemize}
+
+\begin{hinweis}
+Sie k"onnen zur besseren "Ubersicht eine Wellenfunktion rechts neben
+die Operatoren schreiben. Man sieht dann besser, wie die Operatoren wirken.
+Am Schluss der Rechnung lassen Sie die Wellenfunktion wieder weg.
+\end{hinweis}
+
+\begin{loesung}
+Der Operator $\hat p$ operiert als Ableitung in der Ortsdarstellung:
+\begin{align*}
+[\hat x,\hat p]\Psi(x)
+&=
+(\hat x\hat p-\hat p\hat x)\Psi(x)
+=
+x\frac{\hbar}{i}\frac{\partial}{\partial x}\Psi(x)
+-
+\frac{\hbar}{i}\frac{\partial}{\partial x}x\Psi(x)
+\\
+&=
+x\frac{\hbar}{i}\frac{\partial\Psi(x)}{\partial x}\Psi(x)
+-
+\frac{\hbar}{i}\Psi(x)
+-
+\frac{\hbar}{i}x\frac{\partial \Psi(x)}{\partial x}\Psi(x)
+=
+-\frac{\hbar}{i}\Psi(x)
+\end{align*}
+Ohne die Wellenfunktion geschrieben:
+\[
+[\hat x,\hat p]=-\frac{\hbar}{i}\operatorname{id},
+\]
+wobei $\operatorname{id}$ die identische Abbildung ist.
+Antwort $\heartsuit$) ist richtig.
+
+Man kann auch argumentieren, dass die Poissonklammer von $x$ und $p$ $1$ ist,
+und daher nach den Quantisierungsregeln der Kommutator 
+$-\frac{\hbar}{i}\operatorname{id}$ sein muss.
+\end{loesung}
+
+
