@@ -69,13 +69,13 @@ kartesischen Koordinaten $(x,y,z)$ ist gegeben durch
 \begin{align*}
 x&=r
 \sin\vartheta
-\cos\varphi
+\cos\varphi,
 \\
 y&=r
 \sin\vartheta
-\sin\varphi
+\sin\varphi,
 \\
-z&=r\cos \vartheta
+z&=r\cos \vartheta.
 \end{align*}
 Eine etwas m"uhsame, im Anhang (Kapitel~\ref{chapter:kugelkoordinaten})
 durchgef"uhrte Rechnung erlaubt, den Laplace-Operator in Kugelkoordinaten
@@ -118,20 +118,20 @@ diese Ableitungen wirken jeweils nur auf einen der Faktoren:
 \[
 \frac{\partial}{\partial r}\psi(r,\vartheta,\varphi)
 =
-\frac{\partial R(r)}{\partial r}
+\frac{d R(r)}{d r}
 \cdot \Theta(\vartheta)
 \cdot  \Phi(\varphi)
 +
 R(r)
 \cdot \Theta(\vartheta)
-\cdot \underbrace{\frac{\partial\Phi(\varphi)}{\partial r}}_{=0}
+\cdot \underbrace{\frac{d\Phi(\varphi)}{dr}}_{=0}
 +
 R(r)
-\cdot \underbrace{\frac{\partial \Theta(\vartheta)}{\partial r}}_{=0}
+\cdot \underbrace{\frac{d \Theta(\vartheta)}{d r}}_{=0}
 \cdot \Phi(\varphi)
 =
 R'(r)
-\cdot \Theta(\vartheta),
+\cdot \Theta(\vartheta)
 \cdot \Phi(\varphi)
 \]
 und analog f"ur die anderen Variablen.
@@ -398,9 +398,11 @@ Gleichung
 gefunden werden. Man kann zeigen, dass die Funktionen
 \[
 P_l^m(z)=
-(1-z^2)^{\frac{m}2}\frac{d^m}{dz^m}P_l(z)
+(1-z^2)^{\frac{m}2}\frac{d^m}{dz^m}P_l(z),
+\qquad
+0\le m\le l
 \]
-eine L"osung f"ur $\lambda=l(l+1)$ ist.
+L"osungen f"ur $\lambda=l(l+1)$ sind.
 Auch diese allgemeineren Funktionen $P_l^m(z)$ sind orthogonal.
 
 \subsection{Abh"angigkeit von $r$}
@@ -420,7 +422,7 @@ R(r).
 \caption{Durch den Drehimpuls modifiziertes effektives Potential.
 \label{skript:modifiziertes-potential}}
 \end{figure}%
-\index{Potential!effektives}
+\index{Potential!effektives}%
 Wir wissen bereits, dass $\lambda=l(l+1)$.
 Ausserdem k"onnen wir die ganze Gleichung durch $\hbar^2/2m_e$ teilen
 und die Ableitung nach $r$ auf der linken Seite ausrechnen. 
@@ -436,7 +438,7 @@ R(r)
 In den folgenden Abschnitten suchen wir L"osungen dieser Gleichung.
 Es wird sich zeigen, dass nur f"ur eine diskrete Menge von $E$-Werten
 "uberhaupt eine L"osung existiert.
-\subsubsection{Modifizieres Potential}
+\subsubsection{Modifiziertes Potential}
 Schreiben wir
 \begin{equation}
 A=\frac{2m_eE}{\hbar^2}
@@ -458,6 +460,12 @@ gewissen Entfernung vom Kern aufh"alt, die umso gr"osser ist, je
 gr"osser $l$ ist.
 Wir werden im n"achsten Kapitel lernen, dass $l$ die Bedeutung des
 Drehimpulses hat.
+
+Wir erwarten, dass das Elektron mit gr"osster Wahrscheinlichkeit
+in der N"ahe des Minimums des effektiven Potentials zu finden ist.
+Wir k"onnen daher aus der Form des effektiven Potentials bereits
+schliessen, dass sich die Elektronen bevorzugt auf Schalen befinden
+werden, deren Radius durch den Drehimpuls $l(l+1)$ gegeben ist.
 
 \subsubsection{Verhalten f"ur $r\to\infty$}
 Wir interessieren uns f"ur an das Atom gebundene Elektronen, also
@@ -481,7 +489,7 @@ hat.
 Die L"osung mit dem positiven Vorzeichen kommt nicht in Frage, weil
 sie f"ur grosse $r$ exponentiell anw"achst.
 
-\subsubsection{Reduzierte Radialfunktionen}
+\subsubsection{``Separation'' des asymptotischen Verhaltens}
 Die Funktion $Ke^{-\sqrt{-A}r}$ ist zwar eine asymptotische L"osung
 f"ur grosse $r$, f"ur kleine $r$ muss sie aber nochmals modifiziert
 werden.
@@ -490,6 +498,12 @@ Wir versuchen daher f"ur die Funktion $R(r)$ einen Ansatz der Form
 R(r)=w(r)e^{-\sqrt{-A}r}.
 \label{skript:Ransatz}
 \end{equation}
+Dies entspricht dem Separationsansatz f"ur die Funktion
+$\psi(r,\vartheta,\varphi)$, nur dass hier in einer Funktion nur einer
+Variablen das asymptotische Verhalten, ausgedr"uckt durch den
+Exponentialfaktor, vom lokalen Verhalten, ausgedr"uckt durch $w(r)$,
+getrennt wird.
+
 Wir brauchen davon die erste und zweite Ableitung
 \begin{align*}
 R'(r)&=(w'(r)-\sqrt{-A}w(r))e^{-\sqrt{-A}r},
@@ -639,9 +653,14 @@ durchf"uhren, indem wir alle Terme zusammennehmen:
 =
 \sum_{k=1}^{N}
 \biggl(
+\bigl(
 \underbrace{
-(k(k+1)-l(l+1))a_k
+k(k+1)
 }_{\text{\normalsize\ding{192}}}
+-\underbrace{
+l(l+1)
+}_{\text{\normalsize\ding{194}}}
+\bigr)a_k
 +
 \underbrace{
 2(B-k\sqrt{-A})a_{k-1}
@@ -683,18 +702,18 @@ aufzustellen
 \notag
 \\
 \Rightarrow\qquad
-a_k=2\frac{B-k\sqrt{-A}}{k(k+1)-l(l+1)} a_{k-1}.
+a_k=-2\frac{B-k\sqrt{-A}}{k(k+1)-l(l+1)} a_{k-1}.
 \label{skript:wrekursion}
 \end{gather}
 Wir erwarten, dass die $a_k$ ab einem bestimmten Index $n$ verschwinden.
 Das ist nur m"oglich, wenn der Z"ahler in (\ref{skript:wrekursion})
 verschwindet. Es gibt also einen Index $n$, f"ur den gilt
 \begin{align*}
-B-n\sqrt{-A}&=0.
+B-n\sqrt{-A}&=0,
 \\
-\frac{B}{n}&=\sqrt{-A}
+\frac{B}{n}&=\sqrt{-A},
 \\
-A&=-\frac{B^2}{n^2}
+A&=-\frac{B^2}{n^2}.
 \end{align*}
 In (\ref{skript:AundB}) hatten wir $A$ durch die Energie $E$ ausgedr"uckt,
 wir k"onnen also durch aufl"osen nach $E$ die Energie durch den Index $k$
@@ -977,6 +996,16 @@ $y$-$z$-Ebene sehr klein ist.
 Im zweiten Fall meidet das Elektron die $y$-$z$-Ebene.
 Diese Orbitale heissen auch $\text{p}_x$ und $\text{p}_y$
 (Abbildung~\ref{skript:porbitale}).
+
+\subsection{H"ohere Energie}
+F"ur gr"ossere Werte der Quantenzahl $n$ befindet sich das Elektron
+bevorzugt in einer weit vom Atomkern entfernten Schale, wie die
+Abbildung~\ref{skript:radialgraphs}.
+Dies trifft auch dann noch zu, wenn $l=0$ und $m=0$.
+Die Schalenstruktur entsteht also nicht ausschliesslich durch den 
+Drehimpuls, sondern ist ein davon unabh"angiges ein Quantenph"anomen.
+Man kann sich die Schale als eine radiale stehende Welle in dem
+kugelsymmetrischen Potentialtopf des Atomkernes vorstellen.
 
 \begin{figure}
 \centering
