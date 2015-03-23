@@ -180,7 +180,7 @@ Die Beobachtung hat also den Zustand ver"andert.
 
 Wir erweitern jetzt das urspr"ungliche Gedankenexperiment von Schr"odinger.
 Wir stellen uns vor, wir m"ochten gerne eine exotische Eigenschaft von
-Katzen messen, insbesondere m"ochten wir wissen eine lebende Katze oder
+Katzen messen, insbesondere m"ochten wir wissen ob eine lebende Katze oder
 eine tote Katze diese Eigenschaft hat. Das klassische Experiment
 daf"ur w"are, je eine lebendige und eine tote Katze zu pr"aparieren,
 und dann den Test f"ur die Eigenschaft auf beide anzuwenden.
@@ -670,9 +670,9 @@ gelesen werden m"ssen.
 Das {\em Tofoli-Gatter} operatiert auf zwei Qubits $a$ und $b$ und einem
 Scratch-Bit $c$ und implementiert die Abbildung
 \[
-|abc\rangle
+|a\otimes b\otimes c\rangle
 \mapsto
-|a\rangle|b\rangle|(a\wedge b)\oplus c\rangle.
+|a\rangle\otimes|b\rangle\otimes|(a\wedge b)\oplus c\rangle.
 \]
 Darin ist $\oplus$ die XOR-Operation. 
 Im Detail beschreibt dies folgende Abbildung
@@ -731,7 +731,7 @@ Ein Quanten-Computer kann das nicht:
 Es gibt keine unit"are Matrix, die einen beliebigen Zustand kopieren
 kann, d.~h.~die Abbildung
 \[
-|\psi\rangle\,|k\rangle\mapsto |\psi\rangle\,|\psi\rangle
+|\psi\rangle\otimes|k\rangle\mapsto |\psi\rangle\otimes|\psi\rangle
 \]
 kann nicht unit"ar sein.
 \end{satz}
@@ -740,10 +740,10 @@ kann nicht unit"ar sein.
 Nehmen wir an, es g"abe eine unit"are Abbildung $U$, die ein Qubit clonen
 kann:
 \[
-U(|\psi\rangle\,|k\rangle)=|\psi\rangle\,|\psi\rangle.
+U(|\psi\rangle\otimes k\rangle)=|\psi\rangle\otimes psi\rangle.
 \]
 Wenden wir $U$ auf einen analog konstruierten Zustand
-$|\varphi\rangle\,|k\rangle$ an, dann muss, weil $U$ unit"ar ist,
+$|\varphi\rangle\otimes k\rangle$ an, dann muss, weil $U$ unit"ar ist,
 das Skalarprodukt der beiden beiden Zust"ande vor und nach der Anwendung
 von $U$ gleich sein.
 \begin{equation}
@@ -901,11 +901,11 @@ $\sin\vartheta=1/2^{\frac{n}2}$.
 F"ur grosses $n$ ist $\vartheta\simeq 1/2^{\frac{n}2}$.
 
 Wir suchen jetzt eine Folge von Drehungen, und damit
-eine Folge von Vektoren $w_1$, $w_2$, \dots, die den Vektor $u$ successive
+eine Folge von Vektoren $w_1$, $w_2$, \dots, die den Vektor $u$ sukzessive
 immer n"aher an $a$ herandreht.
 Wir m"ochten, dass der Winkel zwischen $w_i$ und $a$ in jedem Schritt 
 um $\vartheta$ kleiner wird.
-Um den Vektor $a$ zu erreichen brauchen wir also eine Anzahl Schritte
+Um den Vektor $a$ zu erreichen, brauchen wir also eine Anzahl Schritte
 in der Gr"ossenordnung von $O(1/\vartheta)=O(2^{\frac{n}2})$.
 
 Um dies durchzuf"uhren m"ussen wir jetzt also nur noch die Drehungen
@@ -1112,7 +1112,7 @@ Daher verwenden alle bekannten Ans"atze zum Bau von
 Quanten-Computern auf Temperaturen nahe dem absoluten
 Nullpunkt gek"uhlte Komponenten, um eine Beeinflussung des
 Zustandes durch die thermische Bewegung der Molek"ule
-zu verhindern.
+zu beschr"anken.
 Bis zur vollst"andigen Realisierung eines Quanten-Computers
 ist also noch ein weiter Weg.
 
