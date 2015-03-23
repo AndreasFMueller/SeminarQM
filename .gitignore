@@ -1,3 +1,11 @@
+*.bbl
+*.blg
+*.dvi
+*.synctex.gz
+*.bib
+*.idx
+*.out
+*.toc
 *.aux
 *.log
 
