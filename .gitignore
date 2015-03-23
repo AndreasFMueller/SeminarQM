@@ -1,0 +1,8 @@
+*.aux
+*.log
+
+*~
+
+Thumbs.db
+
+*.pdf
