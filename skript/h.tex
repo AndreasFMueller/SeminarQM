@@ -555,6 +555,7 @@ Auch in diesem Fall brauchen wir die ersten und zweiten Ableitungen von
 $w(r)$
 \begin{align*}
 w'(r)&=\sum_{k=1}^Nka_kr^{k-1}
+&&\text{und}
 &
 w''(r)&=\sum_{k=2}^Nk(k-1)a_kr^{k-2},
 \end{align*}
@@ -734,6 +735,10 @@ E&=-\frac{m_e e^4}{32\pi^2\varepsilon_0^2\hbar^2}\cdot\frac{1}{n^2}
 \end{align}
 Die Energie h"angt also nur von $n$ ab, nicht von $l$ oder $m$.
 
+DIe Quantenzahl $n$ ist der Index, ab dem all Koeffizienten verschwinden,
+also hat das Polynom $w(r)$ den Grad $n-1$.
+Andererseits ist $l$ der Index des ersten nicht verschwindenden Koeffiziente
+von $w(r)$, $w(r)$ hat also mindestens den Grad $l$. Es folgt $0\le l < n$.
 
 \section{Spektrum des Wasserstoffatoms}
 \rhead{Spektrum}
@@ -744,7 +749,7 @@ Zahl $l\ge 0$ eine Eigenfunktion der Form
 \[
 |n,l,m\rangle
 =
-P_l^m(\cos\vartheta) e^{im\varphi}e^{-rB/n}w_{l,n}(r)
+P_l^m(\cos\vartheta) e^{im\varphi}e^{-rB/n}w_{nl}(r)
 ,\quad
 B=\frac{m_ee^2}{4\pi\varepsilon_0\hbar^2}
 \]
@@ -930,36 +935,55 @@ Das zugeh"orige Legendre-Polynom ist eine Konstante ebenso wie die
 Funktion $\Phi(\varphi)$.
 Die s-Orbitale sind somit kugelsymmetrisch.
 
-Die Radialfunktionen $w_{0,n}(r)$ sind Polynome vom Grad $n-1$.
-Im Grundzustand ist $w_{0,0}(r)$ eine Konstante.
-Die Rekursionsformel f"ur die Koeffizienten von $w_{n,0}(r)$ ist
+Die Radialfunktionen $w_{n0}(r)$ sind Polynome vom Grad $n-1$.
+Im Grundzustand ist $w_{10}(r)$ eine Konstante.
+Die Rekursionsformel f"ur die Koeffizienten von $w_{n0}(r)$ ist
 \[
-a_k=2B\frac{1-\frac{k}{n}}{k(k+1)}a_{k-1}.
+a_k=-2B\frac{1-\frac{k}{n}}{k(k+1)}a_{k-1}.
 \]
 Den Faktor $2B$ kann man eliminieren, indem man statt der Variablen $r$
 die Variable $\varrho$ w"ahlt so, dass $r=2B \varrho$.
 Dr"uckt man $w$ in dieser neuen Variablen aus, erh"alt man ein neues
-Polynom $\tilde w_{n}(\varrho)$, die Rekursionsformel f"ur die 
-Koeffizienten $\tilde a_k$ von $\tilde w_n(\varrho)$ h"angt nicht mehr
+Polynom $\tilde w_{nl}(\varrho)$, die Rekursionsformel f"ur die 
+Koeffizienten $\tilde a_k$ von $\tilde w_{nl}(\varrho)$ h"angt nicht mehr
 von $B$ ab:
 \[
-\tilde a_k = \frac{1-\frac{k}{n}}{k(k+1)}\tilde a_{k-1}.
+\tilde a_k = -\frac{1-\frac{k}{n}}{k(k+1)}\tilde a_{k-1}.
 \]
-Die Radialfunktion $R_n(r)$ kann auch in der Variablen $\varrho$
+Die Radialfunktion $R_{n0}(r)$ kann auch in der Variablen $\varrho$
 geschrieben werden, sie lautet
 \[
-\tilde R(\varrho)=\tilde w_n(\varrho)e^{-\varrho/2n}.
+\tilde R_{n0}(\varrho)=\tilde w_{n0}(\varrho)e^{-\varrho/2n}.
 \]
-Man beachte, dass der Exponentialfaktor mit gr"osser werdendem $n$ immer
-langsamer abf"allt, es ist also davon auszugehen, dass f"ur gr"osseres
+Mit zunehmendem $n$ steigt der Grad und damit die Anzahl der
+Nullstellen von $\tilde w_{n0}$ an, es entstehen zus"atzlich lokale
+Maxima, die Wahrscheinlichkeit, dass man das Elektron in gr"osserer
+Entfernung vom Kern findet, steigt also an.
+
+Das andere Extrem sind die Zust"ande mit maximalem $l=n-1$.
+In diesem Fall ist $\tilde w_{nl}(\varrho)$ nur ein Monom.
+Je gr"osser $n$ ist, desto schneller steigt $\tilde w_{nl}(\varrho)$ 
+mit $\varrho$ an.
+Der Exponentialfaktor f"allt mit gr"osser werdendem $n$ immer
+langsamer ab, es ist also erst recht davon auszugehen, dass f"ur gr"osseres
 $n$ sich das Elektron im Mittel weiter vom Kern entfernt aufhalten wird
-(Abbildung~\ref{skript:radialgraphs}).
+(Abbildung~\ref{skript:radialgraphs-maxl}).
+
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{graphics/radial-1.pdf}
-\caption{Radiusabh"angigkeit der Wellenfunktionen ein einem Wasserstoff-Atom,
+\caption{Radiusabh"angigkeit der Wellenfunktionen in einem Wasserstoff-Atom
+f"ur $l=0$.
+\label{skript:radialgraphs-l0}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{graphics/radial-2.pdf}
+\caption{Radiusabh"angigkeit der Wellenfunktionen in einem Wasserstoff-Atom
+f"ur den Fall $l=n-1$,
 Maximalwert auf $1$ normiert.
-\label{skript:radialgraphs}}
+\label{skript:radialgraphs-maxl}}
 \end{figure}
 
 \subsection{p-Orbitale}
@@ -998,10 +1022,15 @@ Diese Orbitale heissen auch $\text{p}_x$ und $\text{p}_y$
 (Abbildung~\ref{skript:porbitale}).
 
 \subsection{H"ohere Energie}
-F"ur gr"ossere Werte der Quantenzahl $n$ befindet sich das Elektron
+F"ur gr"ossere Werte der Quantenzahl $n$ sind auch gr"ossere Werte
+von $l$ m"oglich.
+F"ur $l=0$ befindet sich das Elektron zwar immer noch bevorzugt in 
+Kernn"ahe, aber es sind zus"atzliche ``Schalen'' in gr"osserem Abstand
+auszumachen (Abbildung~\ref{skript:radialgraphs-l0}).
+F"ur $l=n-1$, dem gr"ossten m"oglichen Wert von $l$,
+befindet sich das Elektron
 bevorzugt in einer weit vom Atomkern entfernten Schale, wie die
-Abbildung~\ref{skript:radialgraphs}.
-Dies trifft auch dann noch zu, wenn $l=0$ und $m=0$.
+Abbildung~\ref{skript:radialgraphs-max} zeigt.
 Die Schalenstruktur entsteht also nicht ausschliesslich durch den 
 Drehimpuls, sondern ist ein davon unabh"angiges ein Quantenph"anomen.
 Man kann sich die Schale als eine radiale stehende Welle in dem
