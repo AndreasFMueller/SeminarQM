@@ -19,16 +19,17 @@ middle: subst(-a, x, T2) . invert(subst(a, x, T2));
    tut dasselbe fuer gewöhnliche Exponentialfunktionen und hyperbolische
    Funktionen */
 hypdemoivre(e) :=
-subst("^" = lambda([a,b], if a = %e then cosh(b) + sinh(b) else a^b),
-  demoivre(e))$
+subst("^" = lambda([a,b], if a = %e then cosh(b) + sinh(b) else a^b), e)$
 
 middle2: expand(hypdemoivre(middle));
 
 /* Damit kann jetzt das vollstaendige Matrizenprodukt ausgerechnet werden: */
-complete: invert(subst(-a, x, T1)) . middle2 . subst(a, x, T1);
+demoivre: false;
+c: invert(subst(-a, x, T1)) . middle2 . subst(a, x, T1);
+expand(c);
 
 /* wir moechten den sinh-Faktor ausklammern */
-result: facsum(expand(complete), sinh(2 * a * kappa));
+result: facsum(expand(c), sinh(2 * a * kappa));
 
 /* Darstellung im TeX-Format */
 tex(result);
