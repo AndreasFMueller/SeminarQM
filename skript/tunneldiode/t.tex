@@ -1,0 +1,287 @@
+\section{"Ubergangsmatrix}
+Die Matrix
+\[
+\begin{pmatrix}
+\frac{i\,e^{2\,i\,a\,k}\,\left(\kappa-k\right)\,\left(\kappa+k
+ \right)\,\sinh \left(2\,a\,\kappa\right)+2\,k\,e^{2\,i\,a\,k}\,
+ \kappa\,\cosh \left(2\,a\,\kappa\right)}{2\,k\,\kappa}
+&
+\frac{i\,
+ \left(\kappa^2+k^2\right)\,\sinh \left(2\,a\,\kappa\right)}{2\,
+ k\,\kappa}
+\\
+-\frac{i\,\left(\kappa^2+k^2\right)\,\sinh \left(2\,a\,
+ \kappa\right)}{2\,k\,\kappa}
+&
+\frac{2\,k\,e^ {- 2\,i\,a\,k }\,
+ \kappa\,\cosh \left(2\,a\,\kappa\right)-i\,e^ {- 2\,i\,a\,k }\,
+ \left(\kappa-k\right)\,\left(\kappa+k\right)\,\sinh \left(2\,a\,
+ \kappa\right)}{2\,k\,\kappa}
+\end{pmatrix}
+\]
+berechnet die Amplitude der einfallenden und reflektierten Wellen
+aus den Amplituden der Wellen rechts von der Barriere.
+Davon brauchen wir nur die erste Spalte.
+
+In allen Termen kann man $2a$ durch die Dicke $l$ der Barriere ersetzen.
+Die erste Spalte gibt wieder, wieviel mal wahrscheinlicher ein einfallendes
+teilchen im Vergleich zu einem durchgelassenen Teilchen ist:
+\[
+\begin{pmatrix}
+\displaystyle
+e^{ilk}\biggl(\cosh(l\kappa)
++\frac{i}{2}\biggl(\frac{\kappa}{k}-\frac{k}{\kappa}\biggr)\sinh(l\kappa)
+\biggr)
+\\
+\displaystyle
+- \frac{i}{2}
+\biggl(\frac{\kappa}{k}+\frac{k}{\kappa}\biggr)
+\sinh(l\kappa)
+\end{pmatrix}
+\]
+
+\section{Amplitude der Wellen links von der Barriere}
+Die Amplitude der einfallenden Welle ist
+\begin{align*}
+A_{\text{in}}
+&=
+\frac{i e^{i l k} (\kappa-k) (\kappa+k) 
+ \sinh (l \kappa)+2 k e^{i l k} \kappa \cosh 
+ (l \kappa)}{2 k \kappa}
+\\
+&=
+e^{i l k}
+\biggl(
+\frac{
+i
+(\kappa^2-k^2)
+}{2 k \kappa}
+\sinh (l \kappa)
++
+\cosh (l \kappa)
+\biggr)
+\\
+|A_{\text{in}}|^2
+&=
+\cosh^2(l\kappa)
++
+\frac14\biggl(
+\frac{\kappa}{k}-\frac{k}{\kappa}
+\biggr)^2
+\sinh^2(l\kappa)
+\\
+A_{\text{reflect}}
+&=
+-\frac{i}{2}
+\biggl(\frac{\kappa}{k}+\frac{k}{\kappa}\biggr)
+\sinh (2 a \kappa)
+\\
+|A_{\text{reflect}}|^2
+&=
+\frac14
+\biggl(\frac{\kappa}{k}+\frac{k}{\kappa}\biggr)^2
+\sinh^2 (2 a \kappa)
+\end{align*}
+
+\section{Wellenfunktion in der Barriere}
+Betragsquadrat der Wellenfunktion in der Barriere
+\begin{align*}
+|\psi_{\text{Barrier}}(x)|^2
+&=
+\frac{
+(\kappa^2+k^2)\cosh (2\kappa x-2a\kappa)+(\kappa-k)(\kappa+k)
+}{
+2\kappa ^2
+}
+\\
+&=
+\frac12
+\biggl(1+\frac{k^2}{\kappa^2}\biggr)
+\cosh (2\kappa(x-a))
++
+\frac12
+\biggl(1-\frac{k^2}{\kappa^2}\biggr)
+\\
+&=
+\cosh (2\kappa(x-a))+1
++
+\frac{k^2}{\kappa^2}
+(\underbrace{\cosh (2\kappa(x-a))-1}_{\ge 0})
+>0
+\end{align*}
+f"ur $x\le a$.
+
+Intensit"atsverh"altnis zwischen einfallender und durchgelassener
+Welle
+\[
+\frac{1}{
+\displaystyle
+\cosh^2 l\kappa 
++
+4\biggl(\displaystyle\frac{\kappa}{k}-\frac{k}{\kappa}\biggr)^2\sinh^2l\kappa
+}
+\]
+
+Intensit"atsverh"altnis zwischen einfallender und reflektierter
+Welle:
+\[
+\frac{
+4\coth^2l\kappa + \biggl(\displaystyle\frac{\kappa}{k}-\frac{k}{\kappa}\biggr)^2
+}{
+\biggl(\displaystyle\frac{\kappa}{k}+\frac{k}{\kappa}\biggr)^2
+}
+\]
+
+F"ur die Amplitude der Wellenfunktion links von der Barriere
+ist es n"utzlich, die beiden Gr"ossen
+\begin{align*}
+K_p&=\frac{\kappa^2+k^2}{2\kappa k}
+\\
+K_m&=\frac{\kappa^2-k^2}{2\kappa k}
+\end{align*}
+als Abk"urzung zu verwenden. Damit kann man die von \texttt{maxima} berechnete
+Wahrscheinlichkeit wie folgt umformen:
+\begin{align*}
+|\psi_{\text{left}}(x)|^2
+&=
+\frac{
+-
+2 \sin (2 \delta) k \kappa (\kappa^2+k^2) \sinh (4 a \kappa)
++
+(\kappa^2+k^2)^2 \cosh (4 a \kappa)
+}{4 k ^2 \kappa^2}
+\\
+&\qquad
++
+\frac{
+-
+\cos (2 \delta) (\kappa-k) (\kappa+k) (\kappa^2+k^2) \cosh (4 a \kappa)
+-
+(\kappa-k)^2 (\kappa+k)^2
+}{4 k ^2 \kappa^2}
+\\
+&\qquad
++
+\frac{
+\cos (2 \delta) (\kappa-k) (\kappa+k) (\kappa^2+k^2)
+}{4 k ^2 \kappa^2}
+\\
+&=
+-
+\frac{
+2 \sin (2 \delta) k \kappa (\kappa^2+k^2) \sinh (4 a \kappa)
+}{4 k ^2 \kappa^2}
++
+\frac{
+(\kappa^2+k^2)^2 \cosh (4 a \kappa)
+}{4 k ^2 \kappa^2}
+\\
+&\qquad
+-
+\frac{
+\cos (2 \delta) (\kappa-k) (\kappa+k) (\kappa^2+k^2) \cosh (4 a \kappa)
+}{4 k ^2 \kappa^2}
+-
+\frac{
+(\kappa-k)^2 (\kappa+k)^2
+}{4 k ^2 \kappa^2}
+\\
+&\qquad
++
+\frac{
+\cos (2 \delta) (\kappa-k) (\kappa+k) (\kappa^2+k^2)
+}{4 k ^2 \kappa^2}
+\\
+&=
+-
+\frac{
+(\kappa^2+k^2)
+}{2 k \kappa}
+\sin (2 \delta)
+\sinh (4 a \kappa)
++
+\frac{
+(\kappa^2+k^2)^2
+}{4 k ^2 \kappa^2}
+\cosh (4 a \kappa)
+\\
+&\qquad
+-
+\frac{
+(\kappa^2-k^2) (\kappa^2+k^2)
+}{4 k ^2 \kappa^2}
+\cos (2 \delta)
+\cosh (4 a \kappa)
+-
+\frac{
+(\kappa-k)^2 (\kappa+k)^2
+}{4 k ^2 \kappa^2}
+\\
+&\qquad
++
+\frac{
+(\kappa^2-k^2) (\kappa^2+k^2)
+}{4 k ^2 \kappa^2}
+\cos (2 \delta)
+\\
+&=
+-
+K_p
+\sin (2 \delta)
+\sinh (4 a \kappa)
++
+K_p^2
+\cosh (4 a \kappa)
+-
+K_pK_m
+\cos (2 \delta)
+\cosh (4 a \kappa)
+-
+K_m^2
++
+K_pK_m
+\cos (2 \delta)
+\\
+&=
+-
+K_p \sin (2 k (x+a)) \sinh (4 a \kappa)
++
+K_p^2 \cosh (4 a \kappa)
+-
+K_pK_m \cos (2 k(x+a)) (\cosh (4 a \kappa)-1)
+-
+K_m^2
+\end{align*}
+
+
+\section{Fall $E>V_0$}
+
+\[
+\begin{pmatrix}
+\frac{2\,k\,e^{2\,i\,a\,k}\,\kappa\,\cos \left(2\,a\,\kappa
+ \right)-i\,e^{2\,i\,a\,k}\,\left(i\,\kappa^2+\kappa^2-i\,k^2+k^2
+ \right)\,\sin \left(2\,a\,\kappa\right)}{2\,k\,\kappa}
+&
+-\frac{i\,
+ \left(\kappa+k\right)\,\left(i\,\kappa+\kappa+i\,k-k\right)\,\sin 
+ \left(2\,a\,\kappa\right)}{2\,k\,\kappa}
+\\
+\frac{i\,\left(\kappa-
+ k\right)\,\left(i\,\kappa+\kappa-i\,k+k\right)\,\sin \left(2\,a\,
+ \kappa\right)}{2\,k\,\kappa}
+&
+\frac{i\,e^ {- 2\,i\,a\,k }\,\left(i
+ \,\kappa^2+\kappa^2-i\,k^2+k^2\right)\,\sin \left(2\,a\,\kappa
+ \right)+2\,k\,e^ {- 2\,i\,a\,k }\,\kappa\,\cos \left(2\,a\,\kappa
+ \right)}{2\,k\,\kappa}
+\end{pmatrix}
+\]
+
+\begin{figure}
+\centering
+\includegraphics{tunneldiode/tunnel-1.pdf}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics{tunneldiode/tunnel-2.pdf}
+\end{figure}
