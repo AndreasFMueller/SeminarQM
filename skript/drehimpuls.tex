@@ -48,11 +48,11 @@ Drehimpuls-Quantenzahlen zu verstehen.
 Zun"achst erinnern wir an die grundlegenden Vertauschungsrelationen zwischen
 Ort und Impuls:
 \[
-[P,X]=i\hbar \operatorname{id}
+[P,X]=-i\hbar \operatorname{id}
 \]
 oder die "aquivalente Formulierung
 \[
-PX=XP+i\hbar \operatorname{id}.
+PX=XP-i\hbar \operatorname{id}.
 \]
 Daraus sollen jetzt schrittweise die Vertauschungsrelationen f"ur die
 Drehimpulskomponenten und f"ur $\vec L^2$ abgeleitet werden.
@@ -71,7 +71,7 @@ Drehimpulskomponenten mit $X$ und $P$:
 &=
 X_2X_2P_3-X_2X_3P_2-X_2P_3X_2+X_3P_2X_2
 =X_3[P_2,X_2]
-=i\hbar X_3
+=-i\hbar X_3
 \\
 [X_3,L_1]
 &=
@@ -80,7 +80,7 @@ X_3X_2P_3-X_3X_3P_2-X_2P_3X_3+X_3P_2X_3
 =
 -X_2[P_3,X_3]
 =
--i\hbar X_2
+i\hbar X_2
 \\
 [P_1,L_1]&=0\\
 [P_2,L_1]
@@ -89,23 +89,23 @@ P_2X_2P_3 - P_2X_3P_2 - X_2P_3P_2 + X_3P_2P_2
 =
 P_3[P_2,X_2]
 =
-i\hbar P_3
+-i\hbar P_3
 \\
 [P_3,L_1]
 &=
 P_3X_2P_3 - P_3X_3P_2 - X_2P_3P_3 + X_3P_2P_3
 =
--P_2[P_3,X_3]=-i\hbar P_2
+P_2[P_3,X_3]=i\hbar P_2
 \end{align*}
 Weitere Vertauschungsrelationen k"onnen durch zyklische Vertauschung
 gewonnen werden:
 \begin{align*}
-[X_1,L_1] &= 0          & [X_1,L_2] &=-i\hbar X_3 & [X_1,L_3] &= i\hbar X_2\\
-[X_2,L_1] &= i\hbar X_3 & [X_2,L_2] &= 0          & [X_2,L_3] &=-i\hbar X_1\\
-[X_3,L_1] &=-i\hbar X_2 & [X_3,L_2] &= i\hbar X_1 & [X_3,L_3] &= 0         \\
-[P_1,L_1] &= 0          & [P_1,L_2] &=-i\hbar P_3 & [P_1,L_3] &= i\hbar P_2\\
-[P_2,L_1] &= i\hbar P_3 & [P_2,L_2] &= 0          & [P_2,L_3] &=-i\hbar P_1\\
-[P_3,L_1] &=-i\hbar P_2 & [P_3,L_2] &= i\hbar P_1 & [P_3,L_3] &= 0
+[X_1,L_1] &= 0          & [X_1,L_2] &= i\hbar X_3 & [X_1,L_3] &=-i\hbar X_2\\
+[X_2,L_1] &=-i\hbar X_3 & [X_2,L_2] &= 0          & [X_2,L_3] &= i\hbar X_1\\
+[X_3,L_1] &= i\hbar X_2 & [X_3,L_2] &=-i\hbar X_1 & [X_3,L_3] &= 0         \\
+[P_1,L_1] &= 0          & [P_1,L_2] &= i\hbar P_3 & [P_1,L_3] &=-i\hbar P_2\\
+[P_2,L_1] &=-i\hbar P_3 & [P_2,L_2] &= 0          & [P_2,L_3] &= i\hbar P_1\\
+[P_3,L_1] &= i\hbar P_2 & [P_3,L_2] &=-i\hbar P_1 & [P_3,L_3] &= 0
 \end{align*}
 Die Drehimpulskomponenten vertauschen mit den Orts- und Impulskomponenten
 mit gleicher Richtung, aber nicht mit den anderen.
@@ -125,7 +125,7 @@ berechnet werden:
 =
 X_2[P_3,L_2]-P_2[X_3,L_2]
 =
-X_2i\hbar P_1-P_2i\hbar X_1
+-X_2i\hbar P_1+P_2i\hbar X_1
 =
 i\hbar L_3.
 \label{skript:drehimpulskommutator}
