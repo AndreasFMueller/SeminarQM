@@ -76,6 +76,7 @@ articleimages:	$(imagetimestamps)
 
 tunneldiode/timestamp:
 	cd tunneldiode; make
+	touch tunneldiode/timestamp
 
 skript.pdf:	articleimages skript.tex $(TEXFILES) skript.ind $(IMAGES) \
 			$(BLXFILES)
