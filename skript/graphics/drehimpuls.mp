@@ -21,9 +21,9 @@ beginfig(1)
 pickup pencircle scaled 0.7pt;
 
 drawarrow (0,-10)--(0,120);
-label.ulft(btex $\sqrt{\lambda}$ etex,(0,120));
+label.ulft(btex $l$ etex,(0,120));
 drawarrow (-120,0)--(120,0);
-label.urt(btex $l_3$ etex, (120,0));
+label.urt(btex $m$ etex, (120,0));
 
 pickup pencircle scaled 1pt;
 
