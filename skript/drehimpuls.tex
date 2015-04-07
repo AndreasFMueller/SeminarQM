@@ -48,11 +48,11 @@ Drehimpuls-Quantenzahlen zu verstehen.
 Zun"achst erinnern wir an die grundlegenden Vertauschungsrelationen zwischen
 Ort und Impuls:
 \[
-[P,X]=i\hbar \operatorname{id}
+[P,X]=-i\hbar \operatorname{id}
 \]
 oder die "aquivalente Formulierung
 \[
-PX=XP+i\hbar \operatorname{id}.
+PX=XP-i\hbar \operatorname{id}.
 \]
 Daraus sollen jetzt schrittweise die Vertauschungsrelationen f"ur die
 Drehimpulskomponenten und f"ur $\vec L^2$ abgeleitet werden.
@@ -61,6 +61,7 @@ bringen, und so f"ur jeden Ausdruck in $X_i$ und $P_i$ eine
 ``Standardform'' zu finden, so dass solche Ausdr"ucke sogar algorithmisch
 miteinander verglichen werden k"onnen.
 
+\subsection{Vertauschungsrelationen}
 Zun"achst berechnen wir die Vertauschungsrelationen der
 Drehimpulskomponenten mit $X$ und $P$:
 \index{Drehimpuls!Vertauschungsrelationen}
@@ -70,7 +71,7 @@ Drehimpulskomponenten mit $X$ und $P$:
 &=
 X_2X_2P_3-X_2X_3P_2-X_2P_3X_2+X_3P_2X_2
 =X_3[P_2,X_2]
-=i\hbar X_3
+=-i\hbar X_3
 \\
 [X_3,L_1]
 &=
@@ -79,7 +80,7 @@ X_3X_2P_3-X_3X_3P_2-X_2P_3X_3+X_3P_2X_3
 =
 -X_2[P_3,X_3]
 =
--i\hbar X_2
+i\hbar X_2
 \\
 [P_1,L_1]&=0\\
 [P_2,L_1]
@@ -88,23 +89,23 @@ P_2X_2P_3 - P_2X_3P_2 - X_2P_3P_2 + X_3P_2P_2
 =
 P_3[P_2,X_2]
 =
-i\hbar P_3
+-i\hbar P_3
 \\
 [P_3,L_1]
 &=
 P_3X_2P_3 - P_3X_3P_2 - X_2P_3P_3 + X_3P_2P_3
 =
--P_2[P_3,X_3]=-i\hbar P_2
+P_2[P_3,X_3]=i\hbar P_2
 \end{align*}
 Weitere Vertauschungsrelationen k"onnen durch zyklische Vertauschung
 gewonnen werden:
 \begin{align*}
-[X_1,L_1] &= 0          & [X_1,L_2] &=-i\hbar X_3 & [X_1,L_3] &= i\hbar X_2\\
-[X_2,L_1] &= i\hbar X_3 & [X_2,L_2] &= 0          & [X_2,L_3] &=-i\hbar X_1\\
-[X_3,L_1] &=-i\hbar X_2 & [X_3,L_2] &= i\hbar X_1 & [X_3,L_3] &= 0         \\
-[P_1,L_1] &= 0          & [P_1,L_2] &=-i\hbar P_3 & [P_1,L_3] &= i\hbar P_2\\
-[P_2,L_1] &= i\hbar P_3 & [P_2,L_2] &= 0          & [P_2,L_3] &=-i\hbar P_1\\
-[P_3,L_1] &=-i\hbar P_2 & [P_3,L_2] &= i\hbar P_1 & [P_3,L_3] &= 0
+[X_1,L_1] &= 0          & [X_1,L_2] &= i\hbar X_3 & [X_1,L_3] &=-i\hbar X_2\\
+[X_2,L_1] &=-i\hbar X_3 & [X_2,L_2] &= 0          & [X_2,L_3] &= i\hbar X_1\\
+[X_3,L_1] &= i\hbar X_2 & [X_3,L_2] &=-i\hbar X_1 & [X_3,L_3] &= 0         \\
+[P_1,L_1] &= 0          & [P_1,L_2] &= i\hbar P_3 & [P_1,L_3] &=-i\hbar P_2\\
+[P_2,L_1] &=-i\hbar P_3 & [P_2,L_2] &= 0          & [P_2,L_3] &= i\hbar P_1\\
+[P_3,L_1] &= i\hbar P_2 & [P_3,L_2] &=-i\hbar P_1 & [P_3,L_3] &= 0
 \end{align*}
 Die Drehimpulskomponenten vertauschen mit den Orts- und Impulskomponenten
 mit gleicher Richtung, aber nicht mit den anderen.
@@ -124,7 +125,7 @@ berechnet werden:
 =
 X_2[P_3,L_2]-P_2[X_3,L_2]
 =
-X_2i\hbar P_1-P_2i\hbar X_1
+-X_2i\hbar P_1+P_2i\hbar X_1
 =
 i\hbar L_3.
 \label{skript:drehimpulskommutator}
@@ -239,6 +240,11 @@ den Gesamtdrehimpuls gleichzeitig mit einer der Komponenten zu messen,
 aber es ist nicht m"oglich, mehr als eine Komponente des Drehimpulses
 zu messen.
 
+\begin{hilfssatz}
+$[\vec L^2, L_3]=0$, es gibt gemeinsame Eigenzust"ande
+der Vektoren $\vec L^2$ und $L_3$.
+\end{hilfssatz}
+
 Damit stellt sich die Frage, ob der Gesamtdrehimpuls etwas ist,
 was man unabh"angig vom Bewegungszustand messen kann.
 Dazu m"ussen die Vertauschungsrelationen von $\vec L^2$ mit den
@@ -297,6 +303,237 @@ Information "uber den Impuls.
 Da man aber Ort und Impuls nicht gleichzeitig wissen kann, muss es auch
 eine Vertauschungsrelation geben, die verhindert, dass wir zu viel
 gleichzeitiges Wissen "uber Ort und Drehimpuls erhalten k"onnen.
+
+\subsection{Auf- und Absteigeoperatoren}
+\index{Drehimpuls!Eigenzust\"ande von $L_3$}%
+\index{Drehimpuls!Auf- und Absteigeoperatoren}%
+Aus den Operatoren $L_1$ und $L_2$ k"onnen wir "ahnlich wie beim
+harmonischen Oszillator zwei neue Operatoren
+\begin{align*}
+L_+&=L_1+iL_2
+&
+&\text{und}&
+L_-&=L_1-iL_2
+\end{align*}
+konstruieren.
+Auch hier gilt die Einschr"ankung, dass dies keine selbstadjungierten
+Operatoren sind, $L_\pm$ entspricht also nicht einer beobachtbaren
+physikalischen Gr"osse. 
+Immerhin ist $L_+^*=L_-$.
+
+\begin{hilfssatz}
+$L_+$ und $L_-$ erf"ullen die Vertauschungsrelation
+\begin{align*}
+[L_+, L_-]&=2\hbar L_3.
+\end{align*}
+Ausserdem l"asst sich der Gesamtdrehimpuls durch $L_+$, $L_-$ und $L_3$ als
+\[
+\vec L^2 = \frac12(L_+L_- + L_-L_+)+L_3^2
+\]
+ausdr"ucken.
+\end{hilfssatz}
+
+\begin{proof}[Beweis]
+Wir berechnen die Produkte der Operatoren $L_+$ und $L_-$:
+\begin{align*}
+L_+L_-
+&=
+L_1^2+L_2^2 +iL_2L_1-iL_1L_2=L_1^2+L_2^2 -i[L_1,L_2]=L_1^2+L_2^2+\hbar L_3
+\\
+L_-L_+
+&=
+L_1^2  + L_2^2 +i[L_1,L_2]=L_1^2+L_2^2-\hbar L_3
+\end{align*}
+Daraus kann man jetzt sowohl den Kommutator
+\begin{align*}
+[L_+,L_-]
+&=
+2\hbar L_3
+\end{align*}
+als auch den Gesamtdrehimpuls $\vec L^2$
+\begin{align*}
+{\textstyle \frac12}(L_+L_-+L_-L_+)&=L_1^2+L_2^2,
+\\
+\vec L^2
+&=
+{\textstyle\frac12}(L_+L_-+L_-L_+)+L_3^2.
+\end{align*}
+berechnen.
+\end{proof}
+
+Wir brauchen die Vertauschungsrelationen der Operatoren $L_+$ und $L_-$
+mit den Drehimpulskomponenten.
+Die Rechnung ergibt
+\begin{equation}
+\begin{aligned} 
+\phantom{ }	% this is a workaround to prevent from the aligned environment
+		% from interpreting the next commutator as an option to the
+		% environment
+[L_\pm, L_1]
+&=
+[L_1,L_1]\pm i[L_2,L_1]
+=
+\pm \hbar L_3
+\\
+[L_\pm, L_2]
+&=
+[L_1,L_2]\pm i[L_2,L_2]
+=
+i\hbar L_3
+\\
+[L_\pm,L_3]
+&=
+[L_1,L_3]\pm i[L_2,L_3]
+=
+-i\hbar L_2
+\mp
+\hbar L_1
+=
+\mp \hbar L_\pm
+\end{aligned}
+\label{skript:lpmlkommutator}
+\end{equation}
+
+\begin{hilfssatz}
+$[L_3,L_\pm]=\pm\hbar L_{\pm}$, insbesondere 
+\begin{align*}
+L_3L_+&=(L_3+\hbar)L_+\\
+L_3L_-&=(L_3-\hbar)L_-
+\end{align*}
+\end{hilfssatz}
+
+\begin{proof}[Beweis]
+Nehmen wir an, dass $|\psi\rangle$ ein Eigenzustand von $L_3$ mit
+Eigenwert $l_3$ ist, dann gilt
+\[
+L_3L_+\,|\psi\rangle
+=
+L_+L_3\,|\psi\rangle+\hbar L_+|\psi\rangle
+=
+l_3L_+\,|\psi\rangle+\hbar L_+|\psi\rangle
+=
+(l_3+\hbar)L_+\,|\psi\rangle,
+\]
+der Zustand $L_+\,|\rangle$ ist also wieder ein Eigenzustand von $L_3$,
+allerdings ist der Eigenwert um $\hbar$ erh"oht worden.
+Analog kann man aus
+\[
+L_3L_-\,|\psi\rangle
+=
+L_-L_3\,|\psi\rangle-\hbar L_-\,|\psi\rangle
+=
+(l_3-\hbar)L_-\,|\psi\rangle
+\]
+ablesen,  dass $L_-\,|\psi\rangle$ ein Eigenzustand von $L_3$ ist, dessen
+Eigenwert gegen"uber dem von $|\psi\rangle$ um $\hbar$ verringert
+worden ist.
+Die Operatoren $L_+$ und $L_-$ haben also genau die Eigenschaften,
+die wir bei den Auf- und Absteigeoperatoren beim harmonischen Oszillator
+kennengelernt hatten.
+\end{proof}
+
+\begin{hilfssatz}
+$[\vec L^2,L_\pm]=0.$
+\end{hilfssatz}
+
+\begin{proof}[Beweis]
+Der Kommutator kann
+aus (\ref{skript:lpmlkommutator}) und aus
+Hilfssatz~\ref{skript:commutatora2b} berechnet werden:
+\begin{align*}
+\\
+[L_\pm,L_1^2]
+&=
+\{ [L_\pm, L_1], L_1 \}
+=
+\{ \pm \hbar L_3, L_1 \}
+=
+\pm \hbar \{ L_1, L_3 \}
+\\
+[L_\pm,L_2^2]
+&=
+\{ [L_\pm, L_2], L_2 \}
+=
+\{ i\hbar L_3, L_2 \}
+=
+i\hbar \{ L_2, L_3 \}
+\\
+[L_\pm,L_1^2 + L_2^2]
+&=
+\pm \hbar \{ L_1, L_3 \}
++
+i\hbar \{ L_2, L_3 \}
+=
+\pm \hbar \{ L_1 \mp iL_2, L_3 \}
+=
+\pm \hbar\{L_\pm, L_3\}
+\\
+[L_\pm,L_3^2]
+&=
+\{ [L_\pm, L_3], L_3 \}
+=
+\mp \{ i\hbar L_\pm, L_3 \}
+=
+\mp i\hbar \{ L_\pm, L_3 \}
+\\
+\Rightarrow\qquad [L_\pm,\vec L^2]
+&=0
+\end{align*}
+\end{proof}
+
+Die Operatoren $L_\pm$ vertauschen also mit $\vec L^2$.
+Ist $|\psi\rangle$ ein Eigenzustand von $\vec L^2$ mit Eigenwert $\lambda$,
+dann gilt auch 
+\begin{align*}
+\vec L^2\,|\psi\rangle&=\lambda\,|\psi\rangle
+\\
+L_\pm\vec L^2\,|\psi\rangle&=
+\vec L^2L_\pm\,|\psi\rangle=
+\lambda L_\pm\,|\psi\rangle
+\end{align*}
+also ist  auch $L_\pm\,|\psi\rangle$ ein Eigenzustand von $\vec L^2$ mit
+dem gleichen Eigenwert.
+
+\subsection{M"ogliche Eigenwerte}
+
+\begin{hilfssatz}
+F"ur ein beliebiges Polynom $p(x)$ gilt
+\begin{align*}
+p(L_3)L_+ &= L_+ p(L_3+\hbar)\\
+p(L_3)L_- &= L_- p(L_3-\hbar)
+\end{align*}
+\end{hilfssatz}
+
+\begin{proof}[Beweis]
+F"ur $p(L_3)=L_3$ haben wir dies schon gezeigt.
+F"ur beliebige Potenzen $L_3^k$
+k"onnen wir es mittels vollst"andiger Induktion zeigen.
+Es ist
+\begin{align*}
+L_3^kL_+ &= L_3^{k-1}L_+(L_3+\hbar) = L_+(L_3+\hbar)^{k-1}(L_3+\hbar)
+= L_+(L_3+\hbar)^k,
+\\
+L_3^kL_- &= L_3^{k-1}L_-(L_3-\hbar) = L_-(L_3-\hbar)^{k-1}(L_3-\hbar)
+= L_-(L_3-\hbar)^k.
+\end{align*}
+Ein beliebiges Polynom $p(L_3)$ ist eine Linearkombination von Potentzen
+$L_3^k$.
+\end{proof}
+
+\begin{hilfssatz}
+\begin{align*}
+L_-^kL_+^k
+&=
+\prod_{j=1}^k (\vec L^2 - (L_3+(j-1)\hbar)(L_3+j\hbar))
+\\
+L_+^kL_-^k
+&=
+\prod_{j=1}^k (\vec L^2 - (L_3-(j-1)\hbar)(L_3-j\hbar))
+\end{align*}
+\end{hilfssatz}
+
+\begin{proof}[Beweis]
+\end{proof}
 
 \section{Drehimpulszust"ande\label{section:drehimpulszustaende}}
 \rhead{Drehimpulszust"ande}
@@ -565,7 +802,7 @@ mit Eigenwert $0$.
 Der Drehimpulsbetrag $\vec L^2$ und die Drehimpulskomponenten $L_3$ 
 k"onnen also gleichzeitig bekannt sein, es gibt gemeinsame Eigenzust"ande,
 und wir sind bereits in der Lage, innerhalb der Eigenzust"ande mit einem
-bestimmten Wert f"ur $\vec L^2$ k"onnen wir zwischen verschiedene
+bestimmten Wert f"ur $\vec L^2$ zwischen verschiedene
 Eigenwerten von $L_3$ hin- und hernavigieren.
 
 \begin{figure}

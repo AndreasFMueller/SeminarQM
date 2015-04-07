@@ -1,0 +1,35 @@
+/* Definition der Matrizen */
+T1: matrix([exp(%i * k * x), exp(-%i * k * x)],
+	%i * k * [exp(%i * k * x), -exp(-%i * k * x)]);
+T2: matrix([exp(%i * kappa * x), exp(-%i * kappa * x)],
+	%i * kappa * [exp(%i * kappa * x), -%i * exp(-%i * kappa * x)]);
+
+/* Substitution von -a bzw. a in der Matrix 
+subst(-a, x, T2);
+invert(subst(a, x, T2));
+*/
+
+/* Berechnung der mittleren Matrix, dies ist vorteilhaft, weil sich die
+   Terme zu sinh und cosh vereinfachen lassen */
+middle: subst(-a, x, T2) . invert(subst(a, x, T2));
+
+/* Die eingebaute Funktion demoivre funktioniert nur fuer komplexe
+   exponentialfunktionen, die folgende Version 
+   (https://www.ma.utexas.edu/pipermail/maxima/2010/021070.html)
+   tut dasselbe fuer gewöhnliche Exponentialfunktionen und hyperbolische
+   Funktionen */
+hypdemoivre(e) :=
+subst("^" = lambda([a,b], if a = %e then cosh(b) + sinh(b) else a^b), e)$
+
+middle2: expand(demoivre(middle));
+
+/* Damit kann jetzt das vollstaendige Matrizenprodukt ausgerechnet werden: */
+demoivre: false;
+c: invert(subst(-a, x, T1)) . middle2 . subst(a, x, T1);
+expand(c);
+
+/* wir moechten den sin-Faktor ausklammern */
+result: facsum(expand(c), sin(2 * a * kappa));
+
+/* Darstellung im TeX-Format */
+tex(result);
