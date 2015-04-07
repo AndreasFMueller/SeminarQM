@@ -335,15 +335,17 @@ ausdr"ucken.
 
 \begin{proof}[Beweis]
 Wir berechnen die Produkte der Operatoren $L_+$ und $L_-$:
-\begin{align*}
+\begin{align}
 L_+L_-
 &=
 L_1^2+L_2^2 +iL_2L_1-iL_1L_2=L_1^2+L_2^2 -i[L_1,L_2]=L_1^2+L_2^2+\hbar L_3
+\label{skript:l+l-}
 \\
 L_-L_+
 &=
 L_1^2  + L_2^2 +i[L_1,L_2]=L_1^2+L_2^2-\hbar L_3
-\end{align*}
+\label{skript:l-l+}
+\end{align}
 Daraus kann man jetzt sowohl den Kommutator
 \begin{align*}
 [L_+,L_-]
@@ -400,6 +402,7 @@ $[L_3,L_\pm]=\pm\hbar L_{\pm}$, insbesondere
 L_3L_+&=(L_3+\hbar)L_+\\
 L_3L_-&=(L_3-\hbar)L_-
 \end{align*}
+\label{skript:laufab}
 \end{hilfssatz}
 
 \begin{proof}[Beweis]
@@ -495,6 +498,18 @@ also ist  auch $L_\pm\,|\psi\rangle$ ein Eigenzustand von $\vec L^2$ mit
 dem gleichen Eigenwert.
 
 \subsection{M"ogliche Eigenwerte}
+Der Hilfssatz~\ref{skript:laufab} zeigt bereits, dass $L_+$ und $L_-$
+innerhalb der Eigenzust"ande von $L_3$ in Einheiten von $\hbar$
+auf- bzw.~absteigen. 
+Wir vermuten daher, dass die Eigenwerte ganzzahlige Vielfache von $\hbar$
+sind.
+Es w"are aber auch m"oglich, dass es mehrere Mengen von Eigenvektoren
+gibt, deren Eigenwerte sich zwar jeweils um ganzzahlige Vielfache von $\hbar$
+unterscheiden, aber die Eigenwerte der verschiedenen Mengen haben nichts
+miteinander zu tun.
+Das Ziel dieses Abschnittes ist daher, die m"oglichen Eigenwerte zu
+berechnen und zu zeigen, dass nur ganz- oder halbzahlige Vielfache von
+$\hbar$ m"oglich sind.
 
 \begin{hilfssatz}
 F"ur ein beliebiges Polynom $p(x)$ gilt
@@ -533,7 +548,122 @@ L_+^kL_-^k
 \end{hilfssatz}
 
 \begin{proof}[Beweis]
+Auch diese Eigenschaft kann mit vollst"andiger Induktion bewiesen
+werden.
+Die Induktionsverankerung, also der Fall $k=1$ wird bewiesen durch
+die Formeln~(\ref{skript:l+l-}) und (\ref{skript:l-l+}).
+
+F"ur den Induktionsschritt rechnen wir
+\begin{align*}
+L_+^kL_-^k
+=
+L_+ L_+^{k-1}L_-^{k-1}L_-
+&=
+L_+\biggl(
+\prod_{j=1}^{k-1} (\vec L^2 - (L_3-(j-1)\hbar)(L_3-j\hbar))
+\biggr)L_-
+\\
+&=
+\biggl(
+\prod_{j=1}^{k-1} (\vec L^2 - (L_3-j\hbar)(L_3-(j+1)\hbar))
+\biggr)L_+L_-
+\\
+&=
+\biggl(
+\prod_{j=2}^{k} (\vec L^2 - (L_3-(j-1)\hbar)(L_3-j)\hbar))
+\biggr)
+(\vec L^2 -L_3^2+\hbar L_3)
+\\
+&=
+\prod_{j=1}^{k} (\vec L^2 - (L_3-j\hbar)(L_3-(j+1)\hbar)).
+\end{align*}
+Die entsprechende Rechnung f"ur $L_-^kL_+^k$ ist
+\begin{align*}
+L_-^kL_+^k
+=
+L_-L_-^{k-1}L_+^{k-1}L_+
+&=
+L_-\biggl(
+\prod_{j=1}^{k-1}
+(\vec L^2-(L_3-(j-1)\hbar)(L_3-j\hbar))
+\biggr)L_+
+\\
+&=
+L_-L_+\biggl(
+\prod_{j=1}^{k-1}
+(\vec L^2-(L_3-j)\hbar)(L_3-(j+1)\hbar))
+\biggr)
+\\
+&=
+(\vec L^2-L_3^2-\hbar L_3)\biggl(
+\prod_{j=2}^k
+(\vec L^2-(L_3-(j-1)\hbar)(L_3-j\hbar))
+\biggr)
+\\
+&=
+\prod_{j=1}^k
+(\vec L^2-(L_3-(j-1))\hbar)(L_3-j\hbar))
+\end{align*}
+Damit ist der Induktionsschritt auch im Fall $L_-^kL_+^k$ vollzogen, und
+damit der Hilfssatz vollst"andig bewiesen.
 \end{proof}
+
+Sei jetzt $|\psi\rangle$ ein Eigenzustand von $\vec L^2$ und $L_3$.
+Wir messen die Eigenwerte in Einheiten $\hbar^2$ bwz.~$\hbar$, wir
+k"onnen also schreiben
+\begin{align*}
+\vec L^2\, |\psi\rangle &= l(l+1)\hbar^2\,|\psi\rangle \\
+     L_3\, |\psi\rangle &= m\hbar\,       |\psi\rangle,
+\end{align*}
+wobei wir vorl"aufig noch keine Voraussetzungen $m$ und $l$ machen.
+Ziel ist zu zeigen, dass $l$ und $m$ ganz- oder halbzahlig sind.
+Wir setzen aber voraus, dass $|\psi\rangle$ normiert ist, dass also
+$\langle\psi|\psi\rangle=1$ ist.
+
+Wir berechnen jetzt das Normquadrat von $L_-^k\,|\psi\rangle$. Wegen
+$L_-^*=L_+$ gilt
+\begin{align*}
+0
+\le
+\langle\psi|\, (L_-^*)^kL_-^k\,|\psi\rangle
+&=
+\langle\psi|\, L_+^kL_-^k\,|\psi\rangle
+=
+\prod_{j=1}^k(l(l+1)-(m-(j-1))(m-j))\hbar^2
+\\
+0
+\le
+\langle\psi|\, (L_+^*)^kL_+^k\,|\psi\rangle
+&=
+\langle\psi|\, L_-^kL_+^k\,|\psi\rangle
+=
+\prod_{j=1}^k(l(l+1)+(m+(j-1))(m+j))\hbar^2
+\end{align*}
+Der Term $(m\pm j+1)(m\pm j))$ w"achst mit $j$ quadratisch an, 
+f"ur ausreichend grosses $j$ wird der Faktor im Produkt also negativ.
+Die Ungleichung kann also nur dann nicht verletzt werden, wenn 
+es ganze Zahlen $j_\pm$ gibt mit
+\begin{align*}
+l(l+1)+(m+(j_+-1))(m+j_+))&=0
+\\
+l(l+1)-(m-(j_--1))(m-j_-))&=0
+\end{align*}
+Wir m"ussen $l$ und $m$ aus $j_\pm$ berechnen.
+Durch Ausmultiplizieren erhalten wir
+\begin{align*}
+l(l+1)+
+m^2+2mj_++j_+^2-m-j_+
+&=0
+\\
+l(l+1)
+-
+m^2+2mj_--j_-^2-m+j_-
+&=0
+\end{align*}
+Die Differenz dieser beiden Gleichungen ist
+\[
+2m^2+2m(j_+-j_-)+j_+^2+j_-^2-j_+-j_-=0
+\]
 
 \section{Drehimpulszust"ande\label{section:drehimpulszustaende}}
 \rhead{Drehimpulszust"ande}
