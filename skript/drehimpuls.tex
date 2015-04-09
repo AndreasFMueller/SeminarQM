@@ -339,11 +339,13 @@ Wir berechnen die Produkte der Operatoren $L_+$ und $L_-$:
 L_+L_-
 &=
 L_1^2+L_2^2 +iL_2L_1-iL_1L_2=L_1^2+L_2^2 -i[L_1,L_2]=L_1^2+L_2^2+\hbar L_3
+=\vec L^2-L_3^2+\hbar L_3
 \label{skript:l+l-}
 \\
 L_-L_+
 &=
 L_1^2  + L_2^2 +i[L_1,L_2]=L_1^2+L_2^2-\hbar L_3
+=\vec L^2-L_3^2-\hbar L_3
 \label{skript:l-l+}
 \end{align}
 Daraus kann man jetzt sowohl den Kommutator
@@ -397,10 +399,15 @@ i\hbar L_3
 \end{equation}
 
 \begin{hilfssatz}
-$[L_3,L_\pm]=\pm\hbar L_{\pm}$, insbesondere 
+Die Auf- und Absteigeoperatoren $L_\pm$ f"ur den Drehimpuls vertauschen 
+nicht mit $L_3$, es gilt
+\[
+[L_3,L_\pm]=\pm\hbar L_{\pm},
+\]
+insbesondere gilt auch
 \begin{align*}
-L_3L_+&=(L_3+\hbar)L_+\\
-L_3L_-&=(L_3-\hbar)L_-
+L_3L_+&=(L_3+\hbar)L_+\qquad\text{und}\\
+L_3L_-&=(L_3-\hbar)L_-.
 \end{align*}
 \label{skript:laufab}
 \end{hilfssatz}
@@ -520,8 +527,9 @@ p(L_3)L_- &= L_- p(L_3-\hbar)
 \end{hilfssatz}
 
 \begin{proof}[Beweis]
-F"ur $p(L_3)=L_3$ haben wir dies schon gezeigt.
-F"ur beliebige Potenzen $L_3^k$
+F"ur $p(L_3)=L_3$ haben wir dies bereits in Hilfssatz~\ref{skript:laufab}
+gezeigt.
+F"ur beliebige Potenzen $L_3^k$ mit $k>1$
 k"onnen wir es mittels vollst"andiger Induktion zeigen.
 Es ist
 \begin{align*}
@@ -531,19 +539,20 @@ L_3^kL_+ &= L_3^{k-1}L_+(L_3+\hbar) = L_+(L_3+\hbar)^{k-1}(L_3+\hbar)
 L_3^kL_- &= L_3^{k-1}L_-(L_3-\hbar) = L_-(L_3-\hbar)^{k-1}(L_3-\hbar)
 = L_-(L_3-\hbar)^k.
 \end{align*}
-Ein beliebiges Polynom $p(L_3)$ ist eine Linearkombination von Potentzen
+Ein beliebiges Polynom $p(L_3)$ ist eine Linearkombination von Potenzen
 $L_3^k$.
 \end{proof}
 
 \begin{hilfssatz}
+F"ur $k\ge 0$ gilt 
 \begin{align*}
 L_-^kL_+^k
 &=
-\prod_{j=1}^k (\vec L^2 - (L_3+(j-1)\hbar)(L_3+j\hbar))
+\prod_{j=1}^k (\vec L^2 - (L_3+(j-1)\hbar)(L_3+j\hbar))\qquad\text{und}
 \\
 L_+^kL_-^k
 &=
-\prod_{j=1}^k (\vec L^2 - (L_3-(j-1)\hbar)(L_3-j\hbar))
+\prod_{j=1}^k (\vec L^2 - (L_3-(j-1)\hbar)(L_3-j\hbar)).
 \end{align*}
 \end{hilfssatz}
 
