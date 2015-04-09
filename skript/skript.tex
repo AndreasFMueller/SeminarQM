@@ -33,6 +33,7 @@
 \usepackage{wasysym}
 \usepackage{environ}
 \usepackage{pifont}
+\usepackage{appendix}
 \usetikzlibrary{calc,intersections,through,backgrounds,graphs,positioning,shapes,arrows}
 \usetikzlibrary{patterns,decorations.pathreplacing}
 \usetikzlibrary{decorations.pathreplacing}
@@ -219,9 +220,11 @@ Hochschule f"ur Technik, Rapperswil, 2015
 \input drehimpuls.tex
 \input spin.tex
 \input festkoerper.tex
+\begin{appendices}
 \input komplex.tex
 \input kugelkoordinaten.tex
 \input konstanten.tex
+\end{appendices}
 \vfill
 \pagebreak
 \ifodd\value{page}\else\null\clearpage\fi
