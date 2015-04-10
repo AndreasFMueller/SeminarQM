@@ -34,6 +34,7 @@ pickup pencircle scaled linewidth;
 
 % einfache Quantensysteme
 	z1 = (0, 7 * unit);
+		z17 = (15 * unit, 7 * unit);
 	z2 = (0, 0 * unit);
 		z15 = (10 * unit, 0 * unit);
 
@@ -84,6 +85,7 @@ box(z8, btex \vbox{\centering\hsize80pt 8. Harmonischer\\Oszillator} etex, (1,1,
 box(z9, btex \vbox{\centering\hsize80pt 9. Wasserstoff} etex, (1,1,1));
 box(z15, btex \vbox{\centering\hsize80pt A. Komplexe Zahlen} etex, (0.9,0.9,0.9));
 box(z16, btex \vbox{\centering\hsize80pt B. Kugelkoordinaten} etex, (0.9,0.9,0.9));
+box(z17, btex \vbox{\centering\hsize80pt C. Konstanten} etex, (0.9,0.9,0.9));
 box(z10, btex \vbox{\centering\hsize80pt 10. St\"orungstheorie} etex, (1,1,1));
 box(z11, btex \vbox{\centering\hsize80pt 11. Magnetfeld} etex, (1,1,1));
 box(z12, btex \vbox{\centering\hsize80pt 12. Drehimpuls} etex, (1,1,1));
