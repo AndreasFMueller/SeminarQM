@@ -332,4 +332,32 @@ clip currentpicture to
 
 endfig;
 
+beginfig(4)
+
+fill (-200,-10)--(-30,-10)--(-30,200)--(-200,200)--cycle
+	withcolor (0.95,0.95,1);
+fill (30,-10)--(200,-10)--(200,200)--(30,200)--cycle
+	withcolor (0.95,1,0.95);
+fill (-30,-10)--(30,-10)--(30,200)--(-30,200)--cycle
+	withcolor (1,0.95,0.95);
+
+label(btex   I etex, (-115,180)) withcolor blue;
+label(btex  II etex, ( -10,180)) withcolor red;
+label(btex III etex, ( 115,180)) withcolor green;
+
+pickup pencircle scaled 1pt;
+
+drawarrow (-210,0)..(210,0);
+drawarrow (0,-10)..(0,210);
+label.rt(btex $V$ etex, (0,210));
+label.top(btex $x$ etex, (210,0));
+
+pickup pencircle scaled 1.5pt;
+
+draw (-200,0)--(-30,0)--(-30,150)--(30,150)--(30,0)--(200,0);
+
+label.top(btex $V_0$ etex, (15,150));
+
+endfig;
+
 end

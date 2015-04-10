@@ -3,8 +3,14 @@
 #
 # (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
-tunnel-1.pdf:	tunnel.mp
+tunnel_files = tunnel-1.pdf tunnel-2.pdf tunnel-3.pdf tunnel-4.pdf
+
+$(tunnel_files): tunnel.mp
 	TEX=latex mpost tunnel.mp
-	mptopdf tunnel.1
-	mptopdf tunnel.2
-	mptopdf tunnel.3
+	for i in 1 2 3 4; \
+	do \
+		mptopdf tunnel.$${i}; \
+	done
+
+
+

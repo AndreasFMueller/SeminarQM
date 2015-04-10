@@ -8,7 +8,16 @@
 *.toc
 *.aux
 *.log
-
+*.mpx
+*.[0-9]
+*.[0-9][0-9]
+timestamp
+*.ind
+*.ilg
+*.snm
+*.nav
+*.run.xml
+mpxerr.tex
 *~
 
 Thumbs.db

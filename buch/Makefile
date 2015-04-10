@@ -3,7 +3,7 @@
 #
 # (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
-iamgefiles = tunnel-1.pdf tunnel-2.pdf tunnel-3.pdf
+imagefiles = tunnel-1.pdf tunnel-2.pdf tunnel-3.pdf
 
 timestamp:	$(imagefiles)
 	touch timestamp
