@@ -54,10 +54,41 @@ Die Ausgangsgleichung f\"ur $\hat{H}$ lautet
             + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + a*x )
 \]
 
+\subsubsection{ Modell der St\"orung }
+In diesem Modell wollen wir den Grundzustand mit einem elektrischen Feld st\"oren.
+
+Diese St\"orung heisst in der 1. N\"aherung $\hat{H_1}$
+
+Die gesammte St\"orung wird \"uber den Parameter $\varepsilon$ gesteuert.
+
+$\hat{H_1}$ wird als lineares Feld definiert:
+\[
+  \hat{H_1} = a*x + b
+\]
+
+Der Parameter $a$ steht f\"ur die Feldst\"arke. Da diese jedoch bereits durch 
+$\varepsilon$ beschriben wird, k\"onnen wir die Formel f\"ur $\hat{H}$ vereinfachen:
+\[
+  \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
+            + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + x )
+\]
+
 
 \subsection{ 1. N"aherung }
 
 Wie kamen wir darauf?
+
+\begin{enumerate}
+\item Gegeben ist eine Gleichung $F_\varepsilon(x)=0$, gesucht
+sind die L"osungen $x_\varepsilon$ der Gleichung in Abh"angigkeit von
+$\varepsilon$.
+\item Die L"osung $x_0$ der Gleichung f"ur den Parameterwert $\varepsilon=0$
+ist bekannt.
+\item Setze die L"osung in Form einer Potenzreihe an:
+$x_\varepsilon = x_0+x_1\varepsilon+x_2\varepsilon^2+\dots$
+\item Setze den L"osungsansatz in die Gleichung $F_\varepsilon(x)=0$ ein
+und ermittle die Koeffizienten $x_1,x_2,\dots$ durch Koeffizientenvergleich.
+\end{enumerate}
 
 \subsection{ 2. N\"aherung (evt. nach Vortrag) }
 
