@@ -360,4 +360,271 @@ label.top(btex $V_0$ etex, (15,150));
 
 endfig;
 
+%
+% Funktionen für die Kennlinien
+%
+def tunneldiode(expr vunit, iunit) =
+  (  0 * vunit, 0.00 * iunit)
+--(  4 * vunit, 2.63 * iunit)
+--( 10 * vunit, 6.93 * iunit)
+--( 15 * vunit, 9.18 * iunit)
+--( 21 * vunit,12.14 * iunit)
+--( 26 * vunit,14.2  * iunit)
+--( 31 * vunit,16.08 * iunit)
+--( 37 * vunit,18.01 * iunit)
+--( 42 * vunit,19.09 * iunit)
+--( 48 * vunit,20.29 * iunit)
+--( 55 * vunit,20.86 * iunit)
+--( 61 * vunit,21.29 * iunit)
+--( 74 * vunit,21.2  * iunit)
+--(129 * vunit,16.09 * iunit)
+--(140 * vunit,15.46 * iunit)
+--(185 * vunit,13.56 * iunit)
+--(208 * vunit,12.9  * iunit)
+--(229 * vunit,12.31 * iunit)
+--(252 * vunit,11.7  * iunit)
+--(289 * vunit, 9.62 * iunit)
+--(326 * vunit, 6.85 * iunit)
+--(382 * vunit, 2.75 * iunit)
+--(402 * vunit, 2.43 * iunit)
+--(418 * vunit, 2.53 * iunit)
+--(433 * vunit, 2.74 * iunit)
+--(453 * vunit, 3.23 * iunit)
+--(469 * vunit, 4.11 * iunit)
+--(480 * vunit, 5.17 * iunit)
+--(488 * vunit, 6.33 * iunit)
+--(497 * vunit, 8.36 * iunit)
+--(506 * vunit,10.93 * iunit)
+--(514 * vunit,14.15 * iunit)
+--(520 * vunit,17.6  * iunit)
+--(525 * vunit,20.85 * iunit)
+--(530 * vunit,25.84 * iunit)
+enddef;
+
+def germaniumdiodeAA(expr vunit, iunit) =
+  ( 21 * vunit, 0.01 * iunit)
+..( 60 * vunit, 0.02 * iunit)
+..(104 * vunit, 0.03 * iunit)
+..(121 * vunit, 0.04 * iunit)
+..(130 * vunit, 0.05 * iunit)
+..(139 * vunit, 0.06 * iunit)
+..(151 * vunit, 0.09 * iunit)
+..(164 * vunit, 0.12 * iunit)
+..(172 * vunit, 0.14 * iunit)
+..(181 * vunit, 0.18 * iunit)
+..(189 * vunit, 0.22 * iunit)
+..(200 * vunit, 0.28 * iunit)
+..(213 * vunit, 0.38 * iunit)
+..(222 * vunit, 0.47 * iunit)
+..(235 * vunit, 0.62 * iunit)
+..(249 * vunit, 0.82 * iunit)
+..(263 * vunit, 1.08 * iunit)
+..(275 * vunit, 1.37 * iunit)
+..(288 * vunit, 1.72 * iunit)
+..(310 * vunit, 2.5  * iunit)
+..(324 * vunit, 3.14 * iunit)
+..(339 * vunit, 3.92 * iunit)
+..(356 * vunit, 5.02 * iunit)
+..(368 * vunit, 5.87 * iunit)
+..(385 * vunit, 7.32 * iunit)
+..(399 * vunit, 8.71 * iunit)
+..(414 * vunit,10.4  * iunit)
+..(429 * vunit,12.33 * iunit)
+..(445 * vunit,14.61 * iunit)
+..(460 * vunit,17.28 * iunit)
+..(472 * vunit,19.27 * iunit)
+..(490 * vunit,22.95 * iunit)
+..(505 * vunit,26.13 * iunit)
+enddef;
+
+def germaniumdiodeNT(expr vunit, iunit) =
+  ( 21 * vunit,  0.01 * iunit)
+..( 52 * vunit,  0.02 * iunit)
+..( 77 * vunit,  0.01 * iunit)
+..(105 * vunit,  0.01 * iunit)
+..(128 * vunit,  0.01 * iunit)
+..(156 * vunit,  0.02 * iunit)
+..(201 * vunit,  0.02 * iunit)
+..(227 * vunit,  0.03 * iunit)
+..(252 * vunit,  0.06 * iunit)
+..(278 * vunit,  0.11 * iunit)
+..(301 * vunit,  0.2  * iunit)
+..(352 * vunit,  0.49 * iunit)
+..(400 * vunit,  0.88 * iunit)
+..(451 * vunit,  1.33 * iunit)
+..(499 * vunit,  1.81 * iunit)
+..(548 * vunit,  2.32 * iunit)
+..(600 * vunit,  2.91 * iunit)
+..(647 * vunit,  3.69 * iunit)
+..(696 * vunit,  5.36 * iunit)
+..(721 * vunit,  6.94 * iunit)
+..(737 * vunit,  8.34 * iunit)
+..(751 * vunit,  9.97 * iunit)
+..(774 * vunit, 14.28 * iunit)
+..(785 * vunit, 16.82 * iunit)
+..(795 * vunit, 19.52 * iunit)
+..(830 * vunit, 34.64 * iunit)
+enddef;
+
+def germaniumdiodeSpitzen(expr vunit, iunit) =
+  (  0 * vunit,0.00 * iunit)
+..( 24 * vunit,0.02 * iunit)
+..( 30 * vunit,0.02 * iunit)
+..( 45 * vunit,0.02 * iunit)
+..( 60 * vunit,0.02 * iunit)
+..( 85 * vunit,0.02 * iunit)
+..(100 * vunit,0.03 * iunit)
+..(150 * vunit,0.06 * iunit)
+..(175 * vunit,0.11 * iunit)
+..(201 * vunit,0.18 * iunit)
+..(220 * vunit,0.26 * iunit)
+..(250 * vunit,0.43 * iunit)
+..(275 * vunit,0.61 * iunit)
+..(299 * vunit,0.83 * iunit)
+..(350 * vunit,1.36 * iunit)
+..(400 * vunit,2.01 * iunit)
+..(453 * vunit,2.73 * iunit)
+..(503 * vunit,3.51 * iunit)
+..(552 * vunit,4.3  * iunit)
+..(602 * vunit,5.19 * iunit)
+..(650 * vunit,6.08 * iunit)
+..(725 * vunit,7.5  * iunit)
+..(814 * vunit,9.3  * iunit)
+..(902 * vunit,11.2 * iunit)
+enddef;
+
+color gray;
+gray = (0.8,0.8,0.8);
+
+def grid(expr vunit, iunit) =
+	pickup pencircle scaled 0.5pt;
+
+	for vf = 100 step 100 until 900:
+		draw (vf * vunit, 0)--(vf * vunit, 27 * iunit) withcolor gray;
+	endfor;
+	pickup pencircle scaled 0.2pt;
+	for iforward = 1 step 1 until 26:
+		draw (0, iforward * iunit)--(950 * vunit, iforward * iunit)
+			withcolor gray;
+	endfor;
+	pickup pencircle scaled 0.5pt;
+	for iforward = 5 step 5 until 25:
+		draw (0, iforward * iunit)--(950 * vunit, iforward * iunit)
+			withcolor gray;
+	endfor;
+enddef;
+
+def koordinatensystem(expr vunit, iunit) =
+	clip currentpicture to
+		(0,0)--(915 * vunit, 0)--(915 * vunit, 26.5 * iunit)
+			--(0, 26.5 * iunit)--cycle;
+
+	pickup pencircle scaled 1pt;
+
+	drawarrow (-5, 0)--(930 * vunit,  0 * iunit);
+	drawarrow ( 0,-5)--(  0 * vunit, 27 * iunit);
+
+	label.top(btex $V_F\text{\,[m\/V]}$ etex, (930 * vunit, 3));
+	label.lft(btex $I_F\text{\,[mA]}$ etex, (-3, 27 * iunit));
+
+	draw (200 * vunit, -2)--(200 * vunit, 2);
+	draw (400 * vunit, -2)--(400 * vunit, 2);
+	draw (600 * vunit, -2)--(600 * vunit, 2);
+	draw (800 * vunit, -2)--(800 * vunit, 2);
+
+	label.bot(btex 200 etex, (200 * vunit, -2));
+	label.bot(btex 400 etex, (400 * vunit, -2));
+	label.bot(btex 600 etex, (600 * vunit, -2));
+	label.bot(btex 800 etex, (800 * vunit, -2));
+
+	draw (-2,  5 * iunit)--(2,  5 * iunit);
+	draw (-2, 10 * iunit)--(2, 10 * iunit);
+	draw (-2, 15 * iunit)--(2, 15 * iunit);
+	draw (-2, 20 * iunit)--(2, 20 * iunit);
+	draw (-2, 25 * iunit)--(2, 25 * iunit);
+
+	label.lft(btex  5 etex, (-2,  5 * iunit));
+	label.lft(btex 10 etex, (-2, 10 * iunit));
+	label.lft(btex 15 etex, (-2, 15 * iunit));
+	label.lft(btex 20 etex, (-2, 20 * iunit));
+	label.lft(btex 25 etex, (-2, 25 * iunit));
+enddef;
+
+beginfig(5)
+
+numeric iunit, vunit;
+vunit := 0.3;
+iunit := 10;
+
+fill germaniumdiodeNT(vunit,  1 * iunit)
+	-- (reverse (germaniumdiodeAA(vunit,  1 * iunit)))
+	--cycle withcolor (1,0.98,0.98);
+clip currentpicture to
+	(0,0)--(915 * vunit, 0)--(915 * vunit, 26 * iunit)--(0, 26 * iunit)
+		--cycle;
+
+grid(vunit, iunit);
+
+pickup pencircle scaled 1.5pt;
+
+draw germaniumdiodeAA(vunit,  1 * iunit) withcolor red;
+label(btex AA143 etex, (0,0)) rotated 80
+	shifted (455 * vunit, 20 * iunit) withcolor red;
+draw germaniumdiodeNT(vunit,  1 * iunit) withcolor red;
+label(btex NTE109 etex, (0,0)) rotated 84
+	shifted (820 * vunit, 20 * iunit) withcolor red;
+%draw germaniumdiodeSpitzen(vunit,  1 * iunit) withcolor red;
+draw tunneldiode(vunit, iunit) withcolor blue;
+label.top(btex 1N3721 etex, (80 * vunit, 21.3 * iunit)) withcolor blue;
+
+koordinatensystem(vunit, iunit);
+
+
+endfig;
+
+beginfig(6)
+
+numeric iunit, vunit;
+vunit := 0.3;
+iunit := 10;
+
+fill germaniumdiodeNT(vunit,  1 * iunit)
+	-- (reverse (germaniumdiodeAA(vunit,  1 * iunit)))
+	--cycle withcolor (1,0.98,0.98);
+clip currentpicture to
+	(0,0)--(915 * vunit, 0)--(915 * vunit, 26 * iunit)--(0, 26 * iunit)
+		--cycle;
+
+grid(vunit, iunit);
+
+pickup pencircle scaled 1.5pt;
+
+draw germaniumdiodeAA(vunit,  1 * iunit) withcolor red;
+label(btex AA143 etex, (0,0)) rotated 80
+	shifted (455 * vunit, 20 * iunit) withcolor red;
+draw germaniumdiodeNT(vunit,  1 * iunit) withcolor red;
+label(btex NTE109 etex, (0,0)) rotated 84
+	shifted (820 * vunit, 20 * iunit) withcolor red;
+
+koordinatensystem(vunit, iunit);
+
+endfig;
+
+beginfig(7)
+
+numeric iunit, vunit;
+vunit := 0.3;
+iunit := 10;
+
+grid(vunit, iunit);
+
+pickup pencircle scaled 1.5pt;
+
+draw tunneldiode(vunit, iunit) withcolor blue;
+label.top(btex 1N3721 etex, (80 * vunit, 21.3 * iunit)) withcolor blue;
+
+koordinatensystem(vunit, iunit);
+
+endfig;
+
 end
