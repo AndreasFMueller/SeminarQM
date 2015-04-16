@@ -4,6 +4,7 @@
 # (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
 tunnel_files = tunnel-1.pdf tunnel-2.pdf tunnel-3.pdf tunnel-4.pdf
+	tunnel-5.pdf tunnel-6.pdf tunnel-7.pdf
 
 $(tunnel_files): tunnel.mp
 	TEX=latex mpost tunnel.mp
