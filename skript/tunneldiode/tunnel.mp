@@ -550,11 +550,11 @@ def koordinatensystem(expr vunit, iunit) =
 	label.lft(btex 25 etex, (-2, 25 * iunit));
 enddef;
 
-beginfig(5)
-
 numeric iunit, vunit;
-vunit := 0.3;
+vunit := 0.4;
 iunit := 10;
+
+beginfig(5)
 
 fill germaniumdiodeNT(vunit,  1 * iunit)
 	-- (reverse (germaniumdiodeAA(vunit,  1 * iunit)))
@@ -584,10 +584,6 @@ endfig;
 
 beginfig(6)
 
-numeric iunit, vunit;
-vunit := 0.3;
-iunit := 10;
-
 fill germaniumdiodeNT(vunit,  1 * iunit)
 	-- (reverse (germaniumdiodeAA(vunit,  1 * iunit)))
 	--cycle withcolor (1,0.98,0.98);
@@ -611,10 +607,6 @@ koordinatensystem(vunit, iunit);
 endfig;
 
 beginfig(7)
-
-numeric iunit, vunit;
-vunit := 0.3;
-iunit := 10;
 
 grid(vunit, iunit);
 
