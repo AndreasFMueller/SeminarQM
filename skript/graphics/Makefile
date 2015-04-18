@@ -5,7 +5,7 @@
 #
 all:	pert analysator arctan drehimpuls gatter dependencies periodensystem \
 	potential harmonisch heisenberg lagrange h linear fest komplex \
-	radial
+	radial spin
 
 .SUFFIXES:
 
@@ -47,7 +47,8 @@ analysator:	$(analysator_FILES)
 arctan_FILES = arctan-1.pdf
 arctan:	$(arctan_FILES)
 
-drehimpuls_FILES = drehimpuls-1.pdf drehimpuls-2.pdf drehimpuls-3.pdf
+drehimpuls_FILES = drehimpuls-1.pdf drehimpuls-2.pdf drehimpuls-3.pdf \
+	drehimpuls-4.pdf drehimpuls-5.pdf
 drehimpuls: $(drehimpuls_FILES)
 
 gatter_FILES = gatter-1.pdf gatter-2.pdf gatter-3.pdf gatter-4.pdf \
@@ -59,8 +60,13 @@ gatter: $(gatter_FILES)
 radial_FILES = radial-1.pdf radial-2.pdf
 radial:	$(radial_FILES)
 
-periodensystem_FILES = periodensystem-1.pdf
+periodensystem_FILES = periodensystem-1.pdf periodensystem-2.pdf \
+	periodensystem-3.pdf periodensystem-4.pdf
 periodensystem: $(periodensystem_FILES)
+
+spin_FILES = spin-1.pdf spin-2.pdf
+spin:	$(spin_FILES)
+
 
 $(pert_FILES):	pert.mp
 	TEX=latex mpost pert.mp
@@ -85,7 +91,7 @@ $(arctan_FILES):	arctan.mp
 
 $(drehimpuls_FILES):	drehimpuls.mp
 	TEX=latex mpost drehimpuls.mp
-	for i in 1 2 3; \
+	for i in 1 2 3 4 5; \
 	do \
 		mptopdf drehimpuls.$${i}; \
 	done
@@ -175,5 +181,12 @@ $(radial_FILES):	radial.mp
 	for i in 1 2; \
 	do \
 		mptopdf radial.$${i}; \
+	done
+
+$(spin_FILES):	spin.mp
+	TEX=latex mpost spin.mp
+	for i in 1 2; \
+	do \
+		mptopdf spin.$${i}; \
 	done
 

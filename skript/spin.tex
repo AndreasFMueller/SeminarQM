@@ -20,6 +20,41 @@ Experimente zeigen jedoch, dass ein Elektron auch mit einem Magnetfeld
 wechselwirken kann, als ob es ein magnetisches Moment h"atte. 
 
 \section{Das Experiment von Stern und Gerlach}
+Der Drehimpuls eines Elektrons in einem Atom "aussert sich ein einem
+magnetischen Dipolmoment vom Betrag
+\[
+\frac{\hbar em}{m_ec}.
+\]
+In einem inhomogenen Magnetfeld erf"ahrt ein Teilchen mit einem magnetischen
+Moment eine von der Orientierung des magnetischen Dipolmomentes 
+abh"angige Kraft.
+Ein ihomogenes Magnetfeld sollte also
+einen Strahl aus solchen Teilchen in mehrere Teilstrahlen
+aufgeteilen, einen f"ur jeden m"oglichen Drehimpulszustand.
+
+Dieses Experiment ist erstmals 1922 von Otto Stern und Walther Gerlach
+mit einem Strahl von Silber-Atomen durchgef"uhrt.
+Sie erwarteten die Aufspaltung in drei Teilstrahlen, die den
+Werten $m=-1$, $m=0$ und $m=1$ entsprechen.
+Beobachtet wurden aber nur zwei Strahlen, und vermuteten daher, dass
+der Zustand $m=0$ fehle.
+
+Erst 1925 wurde durch Goudsmith und Uhlenbeck postuliert, dass Elektronen
+einen Eigendrehimpuls haben, der aber nur zwei Werte annehmen darf.
+Die zugeh"origen Quantenzahlen mussten daher die Werte $l=\frac12$ und
+$m=\frac12$ haben.
+Es bestand aber immer noch die M"oglichkeit, dass die Aufspaltung
+in nur zwei Teilstrahlen mit einem noch nicht verstandenen quantenmechanischen
+Effekt in den doch recht komplizierten Silberatomen (Ordnungszahl 47)
+erkl"art werden k"onnte.
+Diese M"oglichkeit schlossen Experimente an Wasserstoffatomen
+von Phipps und Taylor 1927 aus, die auch nur eine Aufspaltung
+in zwei Strahlen zeigten.
+Das Wasserstoffatom aus nur einem einzigen Eletron und einem Proton
+ist sehr viel einfacher gebaut, es kann mit den Grundlagen
+der Quantenmechanik bereits vollst"andig berechnet werden,
+man darf annehmen, dass man das Wasserstoffatom versteht, und
+schliessen, dass die Aufspaltung durch Spin verursacht wird.
 
 %
 % XXX man sollte von der zweiwertigkeit ausgehen, und am Schluss
@@ -28,15 +63,40 @@ wechselwirken kann, als ob es ein magnetisches Moment h"atte.
 %
 \section{Spin}
 \rhead{Spin}
-Die Experimente zeigen, dass Elektronen sich verhalten, wie wenn sie
-trotz allem rotieren k"onnten.
-Es ist zwar nicht m"oglich, mit Hilfe der Drehimpulsoperatoren
-aus Kapitel~\ref{chapter:drehimpuls}
-dem Elektron einen Eigendrehimpuls zuzuteilen.
-Trotzdem kann man feststellen, dass im Elektron zus"atzlicher
-Drehimpuls stecken muss, denn gew"ohnlicher Drehimpuls kann verschwinden,
-da der Drehimpuls erhalten ist, muss er in das Elektron "ubergegangen
-sein.
+\begin{figure}
+\centering
+\includegraphics{graphics/spin-2.pdf}
+\caption{Termschema f"ur die "Uberg"ange im Natrium-Atom, die zu gelben
+Doppellinie (D-Linie) f"uhren
+\label{skript:natriumdlinie}}
+\end{figure}
+Die Experimente zeigen also , dass Elektronen sich verhalten, als k"onnten
+sie trotz ihrer punktf"ormigen Geometrie rotieren.
+Ein Elektron tr"agt also nicht nur seinen ganzzahligen Bahndrehimpuls,
+der mit Hilfe der Drehimpulsoperatoren aus Kapitel~\ref{chapter:drehimpuls}
+verstanden werden kann, sondern auch noch den halbzahligen Spin.
+
+Bei "Uberg"angen zwischen Energiezust"anden muss auch der Gesamtdrehimpuls
+aus Bahndrehimpuls uns Spin erhalten bleiben.
+Da Photonen ebenfalls einen Drehimpuls in Form zirkul"arer Polarisierung 
+haben, muss ein "Ubergang den Gesamtdrehimpuls des Atoms immer um genau
+eine Drehimpulseinheit $\hbar$ "andern.
+Der Elektronen-Spin stellt einen zus"atzlichen Freiheitsgrad dar, der die
+Zahl der "Uberg"ange vermehrt.
+Abbildung~\ref{skript:natriumdlinie} ist das (vereinfachte) Termschema f"ur 
+Natrium, es zeigt zwei "Uberg"ange aus einem Zustand mit $l=1$ in einen
+Zustand mit $l=0$ aus Zust"anden, die sich nur in der Orientierung
+des Spins gegen"uber dem Bahndrehimpuls unterscheiden. 
+Im Magnetfeld des Bahndrehimpuls entsteht eine Aufspaltung, die sich
+in einer Aufspaltung der gelben Linie des Natriums "aussert.
+
+%Es ist zwar nicht m"oglich, mit Hilfe der Drehimpulsoperatoren
+%aus Kapitel~\ref{chapter:drehimpuls}
+%dem Elektron einen Eigendrehimpuls zuzuteilen.
+%Trotzdem kann man feststellen, dass im Elektron zus"atzlicher
+%Drehimpuls stecken muss, denn gew"ohnlicher Drehimpuls kann verschwinden,
+%da der Drehimpuls erhalten ist, muss er in das Elektron "ubergegangen
+%sein.
 
 Wir schliessen daraus, dass es einen Operator $\vec S$ gibt, der sich
 genau so verh"alt wie ein Drehimpulsoperator, allerdings wirkt er nicht
@@ -45,7 +105,7 @@ Der Operator $\vec S$ heisst der Spin eines Elektrons.
 \index{Elektronspin}
 Experimentell weiss man auch, dass Elektronen nur zwei verschiedene
 Spinzust"ande haben k"onnen, was bedeutet, dass sich $\vec S$ wie ein
-Drehimpulsoperator auf Zustandsvektoren mit $j=\frac12$ verh"alt.
+Drehimpulsoperator auf Zustandsvektoren mit $l=\frac12$ verh"alt.
 Der Spin-Operator muss auf einen zweidimensionalen Hilbertraum
 wirken, die Komponenten des Spin-Operators m"ussen also hermitesche
 $2\times 2$-Matrizen sein, die die Vertauschungsrelationen eines
