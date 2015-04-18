@@ -190,3 +190,7 @@ $(spin_FILES):	spin.mp
 		mptopdf spin.$${i}; \
 	done
 
+sterngerlach.png:	sterngerlach.pov Makefile
+	povray -A -W3840 -H2160 sterngerlach.pov
+#	povray -A -W1920 -H1080 sterngerlach.pov
+#	povray -AM1 -A -W960 -H520 sterngerlach.pov
