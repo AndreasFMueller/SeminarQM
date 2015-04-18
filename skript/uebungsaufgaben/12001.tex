@@ -1,0 +1,212 @@
+Gegeben sind zwei Paare von Operatoren $a_i$ und $a_i^+$ mit $i=1,2$
+mit den Vertauschungsrelationen
+\begin{align*}
+[a_1,a_1^+]&=1&[a_1,a_2^+]&=0&[a_1,a_2]&=0\\
+[a_2,a_2^+]&=1&[a_2,a_1^+]&=0&[a_1^+,a_2^+]&=0
+\end{align*}
+Ausserdem setzen wir 
+\[
+N_i=a_i^+a_i
+\qquad
+\Rightarrow
+\qquad
+a_ia_i^+=a_i^+a_i+1=N_i+1
+\]
+und
+\begin{align*}
+J_+
+&=
+\hbar a_1^+a_2
+&
+J_1
+&=
+\frac12(J_++J_-)
+=
+\frac{\hbar}2(a_1^+a_2+a_1a_2^+)
+\\
+J_-
+&=
+\hbar a_2^+a_1
+&
+J_2
+&=
+\frac1{2i}(J_+-J_-)
+=
+\frac{\hbar}{2i}(a_1^+a_2-a_1a_2^+)
+\\
+&&
+J_3
+&=
+\frac{\hbar}2(a_1^+a_1+a_2^+a_2)
+=
+\frac{\hbar}2(N_1-N_2)
+\end{align*}
+\begin{teilaufgaben}
+\item Berechnen Sie $[N_i,a_i^+]$ und $[N_i,a_i]$ und leiten Sie daraus
+die Regeln
+\begin{align*}
+N_ia_i^+&= a_i^+ N_i + a_i^+
+&
+N_ia_i  &= a_i   N_i - a_i
+\\
+a_i^+N_i&= N_ia_i^+ - a_i^+
+&
+a_i N_i  &= N_i a_i   + a_i
+\end{align*}
+ab.
+\item Berechnen Sie $[J_+,J_-]$.
+\item Zeigen Sie, dass gilt $[J_1,J_2]=i\hbar J_3$.
+\item Berechnen Sie $[J_3,J_+]$ und $[J_3,J_-]$.
+\item Zeigen Sie, dass gilt $[J_2,J_3]=i\hbar J_1$ und $[J_3,J_1]=i\hbar J_2$.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item Die Rechnung folgt der entsprechenden Rechnung f"ur die Auf- und
+Absteigeoperatoren beim harmonischen Oszillator.
+\begin{align*}
+[N_i,a_i^+]
+&=
+a_i^+a_ia_i^+-a_i^+a_i^+a_i
+=
+a_i^+[a_i,a_i^+]=a_i^+
+\\
+[N_i,a_i]
+&=
+a_i^+a_ia_i-a_ia_i^+a_i
+=
+[a_i^+,a_i]a_i
+=-a_i
+\end{align*}
+Die verlangten Rechenregeln bekommt man durch Aufl"osen des Kommutators.
+\item
+Wir setzen die Definition der Operatoren $J_+$ und $J_-$ ein und
+erhalten
+\begin{align*}
+[J_+,J_-]
+&=
+\hbar^2(a_1^+a_2a_2^+a_1 - a_2^+a_1a_1^+a_2)
+=
+\hbar^2(a_1^+a_1 a_2a_2^+ - a_1a_1^+ a_2^+a_2)
+\\
+&=
+\hbar^2\bigg(N_1(N_2+1)- (N_1+1)N_2\bigg)
+=2\hbar\frac{\hbar}2(N_1N_2+N_1-N_1N_2-N_2)=2\hbar J_3
+\end{align*}
+\item
+Da sich $J_1$ und $J_2$ durch $J_+$ und $J_-$ ausdr"ucken lassen,
+k"onnen wir den Kommutator ebenfalls in $J_+$ und $J_-$
+ausdr"ucken:
+\begin{align*}
+[J_1,J_2]
+&=
+\frac{1}{4i}[J_++J_-,J_+-J_-]
+=
+\frac{1}{4i}\bigl(
+[J_+,J_+] -[J_+,J_-] +[J_-,J_+] -[J_-,-J_-]
+\bigr)
+\\
+&=
+-\frac1{i}[J_+,J_-]
+=
+-\frac1{i}\hbar J_3
+=i\hbar J_3.
+\end{align*}
+\item
+Wir setzen wiederum die Definition ein und erhalten
+\begin{align*}
+[J_3,J_+]
+&=
+\frac{\hbar^2}2\bigl(
+(N_1-N_2) a_1^+a_2 - a_1^+a_2 (N_1-N_2)
+\bigr)
+\\
+&=
+\frac{\hbar^2}2\bigl(
+N_1 a_1^+a_2 - N_2 a_1^+ a_2 - a_1^+a_2 N_1 + a_1^+a_2 N_2
+\bigr)
+\\
+&=
+\frac{\hbar^2}2\bigl(
+N_1a_1^+ a_2
+-
+a_1^+ N_2 a_2
+-
+(N_1a_1^+-a_1^+)a_2
++
+a_1^+(N_2a_2 +a_2)
+\bigl)
+\\
+&=\frac{\hbar^2}{2}
+\bigl( a_1^+a_2 +a_1^+a_2
+\bigr)
+=\hbar^2 a_1^+a_2=\hbar J_+
+\\
+[J_3,J_-]
+&=
+\frac{\hbar^2}2\bigl(
+(N_1-N_2) a_2^+a_1 - a_2^+a_1 (N_1-N_2)
+\bigr)
+\\
+&=
+\frac{\hbar^2}2\bigl(
+N_1 a_2^+a_1 - N_2 a_2^+ a_1 - a_2^+a_1 N_1 + a_2^+a_1 N_2
+\bigr)
+\\
+&=
+\frac{\hbar^2}2\bigl( 
+a_2^+N_1 a_1 - N_2 a_2^+ a_1 - a_2^+(N_1a_1+a_1) + (N_2a_2^+-a_2^+)a_1
+\bigr)
+\\
+&=\frac{\hbar^2}{2}
+\bigl(
+-a_2^+a_1 - a_2^+a_1
+\bigr)
+=-\hbar^2 a_2^+a_1=-\hbar J_-
+\end{align*}
+\item 
+Da man $J_1$ und $J_2$ durch die $J_\pm$ ausdr"ucken kann, kann man
+die verlangten Kommutatoren aus den
+Kommutatoren $[J_3,J_\pm]$ ermitteln, die in der letzten Teilaufgabe
+ausgerechnet worden sind.
+Man erh"alt nach einsetzen der Definition f"ur $J_2$ und $J_1$:
+\begin{align*}
+[J_2,J_3]
+&=
+\frac1{2i}[J_+-J_-,J_3]
+=
+i\frac{1}{2}\bigl([J_3,J_+] - [J_3,J_-]\bigr)
+=
+\frac1{2i}\bigl(\hbar J_+-(-\hbar J_-)\bigr)
+=i\hbar J_1
+\\
+[J_3,J_1]
+&=
+\frac{1}{2}[J_3,J_++J_-]
+=
+\frac{1}{2}\bigl(
+[J_3,J_+]
++
+[J_3,J_-]
+\bigr)
+=\frac12\bigl(
+\hbar J_+
+-
+\hbar J_-
+\bigr)
+=i\hbar L_2
+\end{align*}
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+Die Aufgabe zeigt, dass die Operatoren $J_i$ die gleichen algebraischen
+Regeln wie die Operatoren $L_i$ des Drehimpulses erf"ullen. 
+Man kann sie daher als eine alternative Darstellung der Operatoren
+$L_i$ betrachten.
+W"ahrend sich mit $L_\pm$ nur die Drehimpulszust"ande f"ur festes
+$l$ zum Beispiel aus dem Zustand mit $m=0$ konstruieren lassen,
+kann man mit Hilfe der Operatoren $a_i$ und $a_i^+$ alle Drehimpulszust"ande
+aus einem Zustand mit $l=0$ und $m=0$ konstruieren.
+\end{diskussion}
+
