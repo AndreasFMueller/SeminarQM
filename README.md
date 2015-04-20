@@ -26,6 +26,33 @@ skript
 	alle Seminar-Arbeiten
 
 
+Git Download
+------------
+
+Um Git auf Linux zu installieren, sollte das Repository der jeweiligen Distribution 
+verwendet werden.
+
+Beispiel Debian oder Ubuntu:
+	sudo apt-get install git
+
+Um das Projekt auf den Rechner zu kopieren, legen sie zuerst auf Github einen Fork
+des Originals (https://github.com/AndreasFMueller/SeminarQM) an.
+
+Um beim Projekt mit ssh arbeiten zu können wird ein Schlüssel ben"otigt, Sie können diesen mit folgendem Befehl generieren:
+	ssh-keygen -t rsa -b 4096
+
+Der Schl"ussel muss auf Github in ihrem Account hinterlegt werden.
+
+Klonen Sie nun das Projekt von ihrem eigen Account:
+	git clone git@github.com:${AccountName}/SeminarQM.git
+
+Wechseln Sie in das frisch angelegte Verzeichnis und f"ugen sie das Original Repository dazu:
+	git remote add -t master original https://github.com/AndreasFMueller/SeminarQM.git
+
+Ab jetzt k"onnen Sie den aktuellen Stand des mit folgendem Befehl einpflegen:
+	git pull original master
+
+
 TeX-Installation
 ----------------
 
