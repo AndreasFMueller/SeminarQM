@@ -26,8 +26,8 @@ skript
 	alle Seminar-Arbeiten
 
 
-Git Download
-------------
+Git Einrichten
+--------------
 
 Um Git auf Linux zu installieren, sollte das Repository der jeweiligen Distribution 
 verwendet werden.
