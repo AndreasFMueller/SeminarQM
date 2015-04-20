@@ -38,7 +38,7 @@ fill ((0,0)--(2,0)--(2,1)--(0,1)--cycle) scaled unit withcolor(1,0.9,0.9);
 element(btex \no{1} etex, btex \el{H}  etex, ( 0,0));
 element(btex \no{2} etex, btex \el{He} etex, ( 1,0));
 
-label.lft(btex $n=0$ etex, (0, 0.5) scaled unit);
+label.lft(btex $n=1$ etex, (0, 0.5) scaled unit);
 
 endfig;
 
@@ -48,9 +48,9 @@ fill ((0,0)--(1,0)--(1,3)--(0,3)--cycle) scaled unit withcolor(1.0,0.9,0.9);
 fill ((7,0)--(8,0)--(8,3)--(7,3)--cycle) scaled unit withcolor(1.0,0.9,0.9);
 fill ((1,0)--(7,0)--(7,2)--(1,2)--cycle) scaled unit withcolor(0.9,1.0,0.9);
 
-label.lft(btex $n=0$ etex, (0, 2.5) scaled unit);
-label.lft(btex $n=1$ etex, (0, 1.5) scaled unit);
-label.lft(btex $n=2$ etex, (0, 0.5) scaled unit);
+label.lft(btex $n=1$ etex, (0, 2.5) scaled unit);
+label.lft(btex $n=2$ etex, (0, 1.5) scaled unit);
+label.lft(btex $n=3$ etex, (0, 0.5) scaled unit);
 
 element(btex \no{1} etex, btex \el{H}  etex, ( 0,2));
 element(btex \no{2} etex, btex \el{He} etex, ( 7,2));
@@ -85,11 +85,11 @@ fill ((12,0)--(17,0)--(17,4)--(12,4)--cycle) scaled unit withcolor(0.9,1.0,0.9);
 
 fill ((2,0)--(12,0)--(12,2)--(2,2)--cycle) scaled unit withcolor(0.9,0.9,1.0);
 
-label.lft(btex $n=0$ etex, (0, 4.5) scaled unit);
-label.lft(btex $n=1$ etex, (0, 3.5) scaled unit);
-label.lft(btex $n=2$ etex, (0, 2.5) scaled unit);
-label.lft(btex $n=3$ etex, (0, 1.5) scaled unit);
-label.lft(btex $n=4$ etex, (0, 0.5) scaled unit);
+label.lft(btex $n=1$ etex, (0, 4.5) scaled unit);
+label.lft(btex $n=2$ etex, (0, 3.5) scaled unit);
+label.lft(btex $n=3$ etex, (0, 2.5) scaled unit);
+label.lft(btex $n=4$ etex, (0, 1.5) scaled unit);
+label.lft(btex $n=5$ etex, (0, 0.5) scaled unit);
 
 element(btex \no{1} etex, btex \el{H}  etex, ( 0,4));
 element(btex \no{2} etex, btex \el{He} etex, (17,4));
@@ -165,13 +165,13 @@ fill ((17,0)--(26,0)--(26,4)--(17,4)--cycle) scaled unit withcolor(0.9,0.9,1.0);
 
 fill ((3,0)--(17,0)--(17,2)--(3,2)--cycle) scaled unit withcolor(1.0,1.0,0.9);
 
-label.lft(btex $n=0$ etex, (0, 6.5) scaled unit);
-label.lft(btex $n=1$ etex, (0, 5.5) scaled unit);
-label.lft(btex $n=2$ etex, (0, 4.5) scaled unit);
-label.lft(btex $n=3$ etex, (0, 3.5) scaled unit);
-label.lft(btex $n=4$ etex, (0, 2.5) scaled unit);
-label.lft(btex $n=5$ etex, (0, 1.5) scaled unit);
-label.lft(btex $n=6$ etex, (0, 0.5) scaled unit);
+label.lft(btex $n=1$ etex, (0, 6.5) scaled unit);
+label.lft(btex $n=2$ etex, (0, 5.5) scaled unit);
+label.lft(btex $n=3$ etex, (0, 4.5) scaled unit);
+label.lft(btex $n=4$ etex, (0, 3.5) scaled unit);
+label.lft(btex $n=5$ etex, (0, 2.5) scaled unit);
+label.lft(btex $n=6$ etex, (0, 1.5) scaled unit);
+label.lft(btex $n=7$ etex, (0, 0.5) scaled unit);
 
 element(btex \no{1} etex, btex \el{H}   etex, ( 0,6));
 element(btex \no{2} etex, btex \el{He}  etex, (31,6));

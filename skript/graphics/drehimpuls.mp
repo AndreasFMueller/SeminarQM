@@ -146,4 +146,142 @@ endfor;
 
 endfig;
 
+%
+% Drehimpuls, mögliche halbzahlige Werte
+%
+beginfig(4)
+
+pickup pencircle scaled 0.3pt;
+for l = 30 step 30 until 90:
+	draw (-l, l)--(110,l);
+endfor;
+
+pickup pencircle scaled 0.7pt;
+
+drawarrow (0,-10)--(0,120);
+label.ulft(btex $l$ etex,(0,120));
+drawarrow (-120,0)--(120,0);
+label.bot(btex $m$ etex, (120,-2));
+
+pickup pencircle scaled 5pt;
+for l = 0 step 15 until 105:
+	for m = -l step 30 until l:
+		draw(m,l) withcolor white;
+	endfor
+endfor
+
+pickup pencircle scaled 1pt;
+
+drawarrow (15,45)--(45,45) withcolor (1,0,0);
+label.bot(btex $L_+$ etex, (45,45)) withcolor (1,0,0);
+drawarrow (-15,45)--(-45,45) withcolor (1,0,0);
+label.bot(btex $L_-$ etex, (-45,45)) withcolor (1,0,0);
+
+for m = -90 step 30 until 90:
+	if (m > 0) or (m < 0):
+		draw (m,-2)--(m,2);
+	fi;
+endfor;
+
+
+draw (0,0);
+
+pickup pencircle scaled 3pt;
+for l = 0 step 15 until 105:
+	for m = -l step 30 until l:
+		draw(m,l) withcolor blue;
+	endfor
+endfor
+
+%label.rt(btex $l=\frac12$ etex, (110, 15));
+label.rt(btex $l=1$ etex,       (110, 30));
+%label.rt(btex $l=\frac32$ etex, (110, 45));
+label.rt(btex $l=2$ etex,       (110, 60));
+%label.rt(btex $l=\frac52$ etex, (110, 75));
+label.rt(btex $l=3$ etex,       (110, 90));
+
+label.bot(btex $ 1$ etex, ( 30,-3));
+label.bot(btex $ 2$ etex, ( 60,-3));
+label.bot(btex $ 3$ etex, ( 90,-3));
+label.bot(btex $-1$ etex, (-30,-3));
+label.bot(btex $-2$ etex, (-60,-3));
+label.bot(btex $-3$ etex, (-90,-3));
+
+endfig;
+
+%
+% Drehimpuls, bei einem Atom beobachtete Werte
+%
+beginfig(5)
+
+numeric d;
+d := 7;
+for l = 0 step 30 until 105:
+	fill (-l,l-d)--(l,l-d)..(l+d,l)..(l,l+d)--(-l,l+d)..(-l-d,l)..cycle
+		withcolor (0.9,0.9,1.0);
+endfor
+
+pickup pencircle scaled 0.3pt;
+for l = 30 step 30 until 90:
+	draw (-l, l)--(110,l);
+endfor;
+
+pickup pencircle scaled 0.7pt;
+
+drawarrow (0,-10)--(0,120);
+label.ulft(btex $l$ etex,(0,120));
+drawarrow (-120,0)--(120,0);
+label.bot(btex $m$ etex, (120,-2));
+
+pickup pencircle scaled 5pt;
+for l = 0 step 15 until 105:
+	for m = -l step 30 until l:
+		draw(m,l) withcolor white;
+	endfor
+endfor
+
+pickup pencircle scaled 1pt;
+
+%drawarrow (15,45)--(45,45) withcolor (1,0,0);
+%label.bot(btex $L_+$ etex, (45,45)) withcolor (1,0,0);
+%drawarrow (-15,45)--(-45,45) withcolor (1,0,0);
+%label.bot(btex $L_-$ etex, (-45,45)) withcolor (1,0,0);
+
+for m = -90 step 30 until 90:
+	if (m > 0) or (m < 0):
+		draw (m,-2)--(m,2);
+	fi;
+endfor;
+
+
+draw (0,0);
+
+pickup pencircle scaled 3pt;
+for l = 0 step 30 until 105:
+	for m = -l step 30 until l:
+		draw(m,l) withcolor blue;
+	endfor
+endfor
+for l = 15 step 30 until 105:
+	for m = -l step 30 until l:
+		draw(m,l) withcolor (0.7,0.7,1);
+	endfor
+endfor
+
+%label.rt(btex $l=\frac12$ etex, (110, 15));
+label.rt(btex $l=1$ etex,       (110, 30));
+%label.rt(btex $l=\frac32$ etex, (110, 45));
+label.rt(btex $l=2$ etex,       (110, 60));
+%label.rt(btex $l=\frac52$ etex, (110, 75));
+label.rt(btex $l=3$ etex,       (110, 90));
+
+label.bot(btex $ 1$ etex, ( 30,-3));
+label.bot(btex $ 2$ etex, ( 60,-3));
+label.bot(btex $ 3$ etex, ( 90,-3));
+label.bot(btex $-1$ etex, (-30,-3));
+label.bot(btex $-2$ etex, (-60,-3));
+label.bot(btex $-3$ etex, (-90,-3));
+
+endfig;
+
 end

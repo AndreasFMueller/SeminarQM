@@ -125,7 +125,7 @@ zu finden.
 \caption{Schr"odingersche Katze in einem "Uberlagerungszustand
 \label{skript:deadandalive}}
 \end{figure}
-Dass in der Quantenmechanik ein System nicht mir in einem reinen Zustand
+Dass in der Quantenmechanik ein System nicht in einem reinen Zustand
 zu sein braucht, hat Erwin Schr"odinger mit seinem ber"uhmten 
 Gedankenexperiment mit der Katze illustriert.
 In einer Kiste befindet sich eine Katze und ein Mechanismus,
@@ -197,7 +197,7 @@ Kapitel~\ref{chapter:einfache-quantensysteme} als
 darstellen. 
 
 F"ur Schr"odingers Katze k"onnen wir die Frage, ob die Eigenschaft $Q$
-in f"ur lebende oder tote Katzen vorhanden ist, jin einem einzigen
+in f"ur lebende oder tote Katzen vorhanden ist, in einem einzigen
 Durchgang beantworten.
 Dazu stellen wir zuerst eine Katze in einem "Uberlagerungszustand
 $|\psi\rangle$ von $|\smiley\rangle$ und $|\frownie\rangle$ her\footnote{
@@ -587,14 +587,15 @@ Die {\em Hadamard-Operation} implementiert eine lineare Abbildung
 \end{align*}
 wobei die Vektoren auf der rechten Seite noch normiert werden m"ussen.
 Die zugeh"orige Matrix ist
-\[
+\begin{equation}
 H=
 \frac1{\sqrt{2}}
 \begin{pmatrix}
 1&\phantom{1}1\\
 1&-1
 \end{pmatrix}.
-\]
+\label{skript:hadamard}
+\end{equation}
 Die Matrix $H$ ist orthogonal, also insbesondere auch unit"ar.
 \end{beispiel}
 
@@ -720,6 +721,81 @@ Man kann aus einem Tofoli-Gatter mit Hilfe eines Scratch-Bit ein
 \textsc{CNOT}-Gatter machen, wie in Abbildung~\ref{skript:cnot=tofoli}
 dargestellt.
 \end{beispiel}
+
+\subsection{Die Hadamard-Operation}
+Die Hadamard-Operation (\ref{skript:hadamard}) auf einem einzelnen
+Qubit wird durch die Matrix
+\[
+H=
+\frac{1}{\sqrt{2}}\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+\]
+gegeben.
+Die Wirkung von $H$ auf einem einzelnen Qubit $|x\rangle$ ergibt die Summe oder
+Differenz von $|0\rangle$ und $|1\rangle$, je nachdem ob $x=0$ oder $x=1$.
+Man kann dies auch durch
+\[
+H\,|x\rangle = \frac1{\sqrt{2}}(|0\rangle + (-1)^x|1\rangle)
+\]
+ausdr"ucken.
+
+Auf einem $n$-Qubit-Register $|x\rangle$ wirkt $H^{\otimes n}$ bitweise.
+F"ur ein $2$-Qubit-Register bedeutet dies
+\begin{align*}
+|x_1\rangle \otimes |x_2\rangle
+&\mapsto
+\frac1{\sqrt{2}} \biggl( |0\rangle + (-1)^{x_1}|1\rangle \biggr)
+\frac1{\sqrt{2}} \biggl( |0\rangle + (-1)^{x_2}|1\rangle \biggr)
+\\
+&=
+\frac12(
+|00\rangle
++
+(-1)^{x_1}
+|10\rangle
++
+(-1)^{x_2}
+|01\rangle
++
+(-1)^{x_1+x_2}
+|11\rangle
+)
+\\
+&=
+\frac12
+\sum_{y} (-1)^{x\cdot y} |y\rangle.
+\end{align*}
+Die zugeh"orige unit"are Matrix in der Basis
+$\{|00\rangle,
+|10\rangle,
+|01\rangle,
+|11\rangle\}$
+ist
+\[
+H^{\otimes 2}
+=
+\frac12
+\begin{pmatrix}
+ 1& 1& 1& 1\\
+ 1&-1& 1&-1\\
+ 1& 1&-1&-1\\
+ 1&-1&-1& 1
+\end{pmatrix}.
+\]
+Es ist offensichtlich, dass die Zeilen und Spalten orthonormiert sind,
+wie man das f"ur eine unit"are Matrix erwartet.
+Ausserdem pr"uft man leicht nach, dass $H^{\otimes 2}\cdot H^{\otimes 2}=E$.
+
+F"ur ein $n$-Qubit-Register $|x\rangle$ gilt analog
+\begin{align*}
+H^{\otimes n}\, |x\rangle
+=
+\frac1{(\sqrt{2})^n}
+\sum_y (-1)^{x\cdot y}|y\rangle
+\end{align*}
+Das Resultat der Hadamard-Operation ist also ein Zustand, in dem
+jeder m"ogliche reine Zustand mit gleicher Wahrscheinlichkeit vertreten ist.
+Das Vorzeichen von $|y\rangle$ in $H^{\otimes n}|x\rangle$ ist
+$(-1)^{x\cdot y}$.
 
 \subsection{No-Cloning Theorem}
 Ein klassischer Computer kann ein Ausgangssignal als Input f"ur viele
@@ -1116,8 +1192,8 @@ zu beschr"anken.
 Bis zur vollst"andigen Realisierung eines Quanten-Computers
 ist also noch ein weiter Weg.
 
-\section*{"Ubungsaufgaben}
-\rhead{"Ubungsaufgaben}
+\section*{"Ubungsaufgabe}
+\rhead{"Ubungsaufgabe}
 \begin{uebungsaufgaben}
 \item
 \input uebungsaufgaben/04001.tex

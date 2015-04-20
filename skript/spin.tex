@@ -1,7 +1,7 @@
 \chapter{Spin\label{chapter:spin}}
 \lhead{Spin}
 \rhead{}
-\index{Spin!eines Elektrons}
+\index{Spin!eines Elektrons}%
 Ein Elektron verh"alt sich nicht wie ein punktf"ormiges Teilchen.
 Die L"osung der Schr"odingergleichung, und vor allem die "Ubereinstimmung
 der L"osung mit Messungen zeigt, dass das Elektron sich beliebig nahe 
@@ -19,6 +19,55 @@ mit einem Magnetfeld.
 Experimente zeigen jedoch, dass ein Elektron auch mit einem Magnetfeld
 wechselwirken kann, als ob es ein magnetisches Moment h"atte. 
 
+\section{Das Experiment von Stern und Gerlach}
+\index{Stern, Otto}
+\index{Gerlach, Walther}
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{graphics/sterngerlach.jpg}
+\caption{Schematische Darstellung des Experimentes von Stern und
+Gerlach: ein Strahl von Silber-Atomen wird durch ein inhomegenes
+Magnetfeld in zwei Strahlen aufgeteilt.
+\label{skript:sterngerlachimage}}
+\end{figure}
+Der Drehimpuls eines Elektrons in einem Atom "aussert sich ein einem
+magnetischen Dipolmoment vom Betrag
+\[
+\frac{\hbar em}{m_ec}.
+\]
+In einem inhomogenen Magnetfeld erf"ahrt ein Teilchen mit einem magnetischen
+Moment eine von der Orientierung des magnetischen Dipolmomentes 
+abh"angige Kraft.
+Ein ihomogenes Magnetfeld sollte also
+einen Strahl aus solchen Teilchen in mehrere Teilstrahlen
+aufgeteilen, einen f"ur jeden m"oglichen Drehimpulszustand.
+
+Dieses Experiment ist erstmals 1922 von Otto Stern und Walther Gerlach
+mit einem Strahl von Silber-Atomen durchgef"uhrt
+\index{Stern-Gerlach!Versuch von}
+(Abbildung~\ref{skript:sterngerlachimage}).
+Sie erwarteten die Aufspaltung in drei Teilstrahlen, die den
+Werten $m=-1$, $m=0$ und $m=1$ entsprechen.
+Beobachtet wurden aber nur zwei Strahlen, und vermuteten daher, dass
+der Zustand $m=0$ fehle.
+
+Erst 1925 wurde durch Goudsmith und Uhlenbeck postuliert, dass Elektronen
+einen Eigendrehimpuls haben, der aber nur zwei Werte annehmen darf.
+Die zugeh"origen Quantenzahlen mussten daher die Werte $l=\frac12$ und
+$m=\frac12$ haben.
+Es bestand aber immer noch die M"oglichkeit, dass die Aufspaltung
+in nur zwei Teilstrahlen mit einem noch nicht verstandenen quantenmechanischen
+Effekt in den doch recht komplizierten Silberatomen (Ordnungszahl 47)
+erkl"art werden k"onnte.
+Diese M"oglichkeit schlossen Experimente an Wasserstoffatomen
+von Phipps und Taylor 1927 aus, die auch nur eine Aufspaltung
+in zwei Strahlen zeigten.
+Das Wasserstoffatom aus nur einem einzigen Eletron und einem Proton
+ist sehr viel einfacher gebaut, es kann mit den Grundlagen
+der Quantenmechanik bereits vollst"andig berechnet werden,
+man darf annehmen, dass man das Wasserstoffatom versteht, und
+schliessen, dass die Aufspaltung durch Spin verursacht wird.
+
 %
 % XXX man sollte von der zweiwertigkeit ausgehen, und am Schluss
 % XXX erkennen, dass dieser Spin die gleichen Vertauschungsregeln
@@ -26,24 +75,49 @@ wechselwirken kann, als ob es ein magnetisches Moment h"atte.
 %
 \section{Spin}
 \rhead{Spin}
-Die Experimente zeigen, dass Elektronen sich verhalten, wie wenn sie
-trotz allem rotieren k"onnten.
-Es ist zwar nicht m"oglich, mit Hilfe der Drehimpulsoperatoren
-aus Kapitel~\ref{chapter:drehimpuls}
-dem Elektron einen Eigendrehimpuls zuzuteilen.
-Trotzdem kann man feststellen, dass im Elektron zus"atzlicher
-Drehimpuls stecken muss, denn gew"ohnlicher Drehimpuls kann verschwinden,
-da der Drehimpuls erhalten ist, muss er in das Elektron "ubergegangen
-sein.
+\begin{figure}
+\centering
+\includegraphics{graphics/spin-2.pdf}
+\caption{Termschema f"ur die "Uberg"ange im Natrium-Atom, die zur gelben
+Doppellinie (D-Linie) f"uhren.
+\label{skript:natriumdlinie}}
+\end{figure}%
+Die Experimente zeigen also , dass Elektronen sich verhalten, als k"onnten
+sie trotz ihrer punktf"ormigen Geometrie rotieren.
+Ein Elektron tr"agt also nicht nur seinen ganzzahligen Bahndrehimpuls,
+der mit Hilfe der Drehimpulsoperatoren aus Kapitel~\ref{chapter:drehimpuls}
+verstanden werden kann, sondern auch noch den halbzahligen Spin.
+
+Bei "Uberg"angen zwischen Energiezust"anden muss auch der Gesamtdrehimpuls
+aus Bahndrehimpuls uns Spin erhalten bleiben.
+Da Photonen ebenfalls einen Drehimpuls in Form zirkul"arer Polarisierung 
+haben, muss ein "Ubergang den Gesamtdrehimpuls des Atoms immer um genau
+eine Drehimpulseinheit $\hbar$ "andern.
+Der Elektronen-Spin stellt einen zus"atzlichen Freiheitsgrad dar, der die
+Zahl der "Uberg"ange vermehrt.
+Abbildung~\ref{skript:natriumdlinie} ist das (vereinfachte) Termschema f"ur 
+Natrium, es zeigt zwei "Uberg"ange aus einem Zustand mit $l=1$ in einen
+Zustand mit $l=0$ aus Zust"anden, die sich nur in der Orientierung
+des Spins gegen"uber dem Bahndrehimpuls unterscheiden. 
+Im Magnetfeld des Bahndrehimpuls entsteht eine Aufspaltung, die sich
+in einer Aufspaltung der gelben Linie des Natriums "aussert.
+
+%Es ist zwar nicht m"oglich, mit Hilfe der Drehimpulsoperatoren
+%aus Kapitel~\ref{chapter:drehimpuls}
+%dem Elektron einen Eigendrehimpuls zuzuteilen.
+%Trotzdem kann man feststellen, dass im Elektron zus"atzlicher
+%Drehimpuls stecken muss, denn gew"ohnlicher Drehimpuls kann verschwinden,
+%da der Drehimpuls erhalten ist, muss er in das Elektron "ubergegangen
+%sein.
 
 Wir schliessen daraus, dass es einen Operator $\vec S$ gibt, der sich
 genau so verh"alt wie ein Drehimpulsoperator, allerdings wirkt er nicht
 auf die Ortskoordinaten.
 Der Operator $\vec S$ heisst der Spin eines Elektrons.
-\index{Elektronspin}
+\index{Elektronspin}%
 Experimentell weiss man auch, dass Elektronen nur zwei verschiedene
 Spinzust"ande haben k"onnen, was bedeutet, dass sich $\vec S$ wie ein
-Drehimpulsoperator auf Zustandsvektoren mit $j=\frac12$ verh"alt.
+Drehimpulsoperator auf Zustandsvektoren mit $l=\frac12$ verh"alt.
 Der Spin-Operator muss auf einen zweidimensionalen Hilbertraum
 wirken, die Komponenten des Spin-Operators m"ussen also hermitesche
 $2\times 2$-Matrizen sein, die die Vertauschungsrelationen eines
@@ -73,7 +147,7 @@ Multiplizieren wir sie mit $i$, erhalten wir die hermiteschen Matrizen
 \end{pmatrix}
 \label{spin:paulimatrizen}
 \end{align}
-\index{Pauli-Matrizen}
+\index{Pauli-Matrizen}%
 die auch {\em Pauli-Matrizen} genannt werden.
 Diese Matrizen haben die folgenden Multiplikationseigenschaften:
 \begin{align*}
@@ -109,7 +183,7 @@ Diese Matrizen haben die folgenden Multiplikationseigenschaften:
 &=
 \begin{pmatrix} 0&-1\\1&0 \end{pmatrix} = -i\sigma_2.
 \end{align*}
-\index{Pauli-Matrizen!Vertauschungsrelationen}
+\index{Pauli-Matrizen!Vertauschungsrelationen}%
 Die Vertauschungsrelationen sind
 \begin{align*}
 [\sigma_1,\sigma_2]
@@ -134,7 +208,7 @@ daher k"onnen wir den Vektoroperator
 \label{spin:vektoroperator}
 \end{equation}
 als Spin-Operator verwenden.
-\index{Spin-Operator}
+\index{Spin-Operator}%
 Der Betrag des Spin-Operators ist
 \begin{align*}
 \vec S^2
@@ -156,7 +230,7 @@ S_3\,|\downarrow\rangle&=-\frac{\hbar}{2}\,|\downarrow\rangle
 \end{align*}
 
 Die Auf- und Absteigeoperatoren f"ur den Spin sind
-\index{Spin!Auf- und Absteigeoperatoren}
+\index{Spin!Auf- und Absteigeoperatoren}%
 \begin{align}
 S_+
 &=
@@ -200,14 +274,14 @@ Diese Wechselwirkung kann durch einen zus"atzlichen Term im
 Hamilton-Operator modelliert werden.
 Die Wechselwirkung eines magnetischen Dipolmoments mit einem
 Magnetfeld $\vec B$ wird durch das Skalarprodukt gegeben,
-der Hamilton-Operator mit dieser Wechselwirkung ist
-\index{Spin!im Magnetfeld}
+der Hamilton-Operator, der sie ber"ucksichtigt, ist daher
+\index{Spin!im Magnetfeld}%
 % XXX Masseinheit: SI?
 \[
 H=H_0 + \frac{e}{m_ec}\vec S\cdot\vec B.
 \]
 Darin ist $H_0$ der Hamilton-Operator ohne die Wechselwirkung 
-des Spins.
+zwischen Spin und Magnetfeld.
 
 Wir k"onnen die St"orungstheorie verwenden, um den Einfluss eines
 Magnetfeldes auf den Spin abzusch"atzen.
@@ -259,7 +333,7 @@ unterscheidet.
 
 \section{Spin und Statistik}
 \rhead{Spin und Statistik}
-\index{Spin!und Statistik}
+\index{Spin!und Statistik}%
 Die Theorie sagt aus, dass ein Teilchen nur einen totalen Spin haben kann,
 der ein Vielfaches von $\frac12$ ist. Tats"achlich gibt es Teilchen
 ganz ohne Spin, die $\pi$-Mesonen geh"oren dazu, aber auch das Higgs-Boson.
@@ -313,7 +387,7 @@ Gr"ossen m"ussen gleich bleiben.
 
 Wir k"onnen die Operation, die die Koordinaten vertauscht, also
 Operator $A$ betrachten:
-\index{Austauschoperator}
+\index{Austauschoperator}%
 \[
 |\psi_2\rangle
 =
@@ -366,7 +440,7 @@ $|\psi_{\text{antisymmetrisch}}\rangle$ in der Natur tats"achlich
 vorkommt.
 Experimentell hat man festgestellt, dass Teilchen mit halbzahligem
 Spin, sogenannte Fermionen, nur mit einer antisymmetrischen
-\index{Fermion}
+\index{Fermion}%
 Wellenfunktion vorkommen k"onnen, w"ahrend Teilchen mit
 ganzzahligem Spin, sogenannte Bosonen, nur mit einer symmetrischen
 Wellenfunktion auftreten.
@@ -401,7 +475,7 @@ Energie- und Drehimpuls-Quantenzahlen haben, wenn sie sich im
 Spin unterscheiden.
 
 \subsection{Periodensystem}
-\index{Periodensystem}
+\index{Periodensystem}%
 Die Elektronen in einem Atom sind nicht voneinander unabh"angig,
 jedes Elektron bewegt sich in einem Potential, welches vom Kern
 und allen anderen Elektronen zusammen erzeugt wird.
@@ -441,10 +515,10 @@ Man kann also erwarten, dass die Elemente "ahnliche Eigenschaften
 zeigen, wenn ihre "aussersten Elektronen die gleichen $l$ und $m$
 Quantenzahlen haben.
 
-Das niedrigste Energieniveau ist $n=0$, in diesem Niveau gibt es
+Das niedrigste Energieniveau ist $n=1$, in diesem Niveau gibt es
 keine Zust"ande mit Drehimpuls $l\ne 0$. Es bleiben nur die
 beiden Spin-Zust"ande, es gibt also nur zwei Atome, bei denen nur
-die Zust"ande f"ur $n=0$ besetzt sind:
+die Zust"ande f"ur $n=1$ besetzt sind:
 \begin{center}
 \includegraphics{graphics/periodensystem-1.pdf}
 \end{center}
