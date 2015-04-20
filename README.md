@@ -29,17 +29,19 @@ skript
 Git einrichten
 --------------
 
-Um Git auf Linux zu installieren, sollte das Repository der jeweiligen Distribution 
-verwendet werden.
+Um Git auf Linux zu installieren, sollte das Repository der jeweiligen
+Distribution verwendet werden.
 
 Beispiel Debian oder Ubuntu:
 
 	sudo apt-get install git
 
-Um das Projekt auf den Rechner zu kopieren, legen sie zuerst auf Github einen Fork
-des Originals (https://github.com/AndreasFMueller/SeminarQM) an.
+Um das Projekt auf den Rechner zu kopieren, legen sie zuerst auf
+Github einen Fork des Originals
+(https://github.com/AndreasFMueller/SeminarQM) an.
 
-Um beim Projekt mit ssh arbeiten zu können wird ein Schlüssel benötigt, Sie können diesen mit folgendem Befehl generieren:
+Um beim Projekt mit ssh arbeiten zu können wird ein Schlüssel
+benötigt, Sie können diesen mit folgendem Befehl generieren:
 
 	ssh-keygen -t rsa -b 4096
 
@@ -49,11 +51,13 @@ Klonen Sie nun das Projekt von ihrem eigen Account:
 
 	git clone git@github.com:${AccountName}/SeminarQM.git
 
-Wechseln Sie in das frisch angelegte Verzeichnis und fügen sie das Original Repository dazu:
+Wechseln Sie in das frisch angelegte Verzeichnis und fügen sie das
+Original Repository dazu:
 
 	git remote add -t master original https://github.com/AndreasFMueller/SeminarQM.git
 
-Ab jetzt können Sie den aktuellen Stand des mit folgendem Befehl einpflegen:
+Ab jetzt können Sie den aktuellen Stand des mit folgendem Befehl
+einpflegen:
 
 	git pull original master
 
