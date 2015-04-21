@@ -47,18 +47,150 @@ zweifelt niemand daran, dass der Mond auch existiert wenn gerade niemand
 zum Mond hinaufschaut.
 
 \section{Das Einstein-Podolsky-Rosen Paradoxon}
+Das Einstein-Podolsky-Rosen Paradoxon (EPR Paradoxon) ist ein 
+Gedankenexperiment, welches 1935 im Paper \cite{Einstein1935}
+\emph{Can quantum-mechanical description of physical reality be considered complete}
+von Albert Einstein, Boris Podolsky und Nathan Rosen publiziert wurde,
+bezeichnet.
+Wie der Titel bereits verr\"at, gehen Einstein \emph{et al.} dabei auf
+die Frage ein, ob die Theorie Quantenmechanik vollständig ist, oder
+ob damit die Realit\"at (noch) nicht korrekt beschrieben werden kann.
+Einstein geht dabei von den in Abschnitt \ref{section:bell:lokalitaet}
+beschriebenen Annahmen der Lokalit\"at und des Realismus aus.
+
+\subsection{Das EPR Paper}
+Das EPR Paper betrachtet zwei quantenmechanische Systeme, $I$ und $II$,
+welche von $t=0$ bis zu einem Zeitpunkt $t=T$ miteinander 
+interagieren k\"onnen. Darauf ist keine Interaktion mehr m\"oglich.
+Visualisiert wird das Gedankenexperiment durch eine Quelle, welche
+Elektron-Positron Paare emittiert. 
+Dabei wird das Elektron ($I$) zu einem Detektoren $A$ und das 
+Positron ($II$) zu einem Detektoren $B$ gesandt.
+Diese sind physikalisch getrennt, sodass kein Informationsaustausch
+zwischen den Detektoren m\"oglich ist.
+Der Messaufbau ist in \figurename~\ref{fig:bell:EPR_Messaufbau} abgebildet.
+
 \begin{figure}
     \centering
     \includegraphics{bell/images/experiment_setup.pdf}
     \caption{Messaufbau im Gedankenexperiment von EPR}
     \label{fig:bell:EPR_Messaufbau}
 \end{figure}
+
+Diese zwei Partikel werden so generiert, dass sie einen komplement\"aren
+Spin-Zustand besitzen. 
+Wenn also bei Detektor $A$ der Spin des Elektrons entlang der $z$-Achse
+gemessen wird und das Messresultat $+z$ ist, so besitzt das Positron bei
+Detektor $B$ den Spin $-z$.
+
+Aus der Heisenbergschen Unsch\"arferelation
+\textsuperscript{[Citation needed]}
+folgt, dass der Zustand zweier Observablen, deren Kommuntator
+nicht $0$ betr\"agt, d.h. die nicht vertauschen, nicht gleichzeitig
+bekannt sein kann.
+
+Das Paper endet mit den Worten
+\begin{quote}
+    While we have thus shown that the wave function does not provide
+    a complete description of the physical reality, we left open the
+    question of whether or not such a description exists.
+    We believe, however, that such a theory is possible.
+\end{quote}
+%TODO: weiter
+
+\subsection{Mathematische Herleitung}
+Anhand der quantenmechanischen Definition des Spins
+\textsuperscript{[Citation needed]}
+kann das EPR Paradoxon mathematisch beschrieben werden.
+Die Spin Operatoren in $x-$, $y-$ bzw. $z-$ Richtung werden dabei durch
+die Pauli Matrizen 
+
+\begin{align*}
+    S_x &= \frac{\hbar}{2} \begin{bmatrix}
+    0 & 1 \\ 1 & 0
+    \end{bmatrix}
+    &
+    S_y &= \frac{\hbar}{2} \begin{bmatrix}
+    0 & -i \\ i & 0
+    \end{bmatrix}
+    &
+    S_z &= \frac{\hbar}{2} \begin{bmatrix}
+    1 & 0 \\ 0 & -1
+    \end{bmatrix}
+\end{align*}
+
+mit den jeweiligen Eigenvektoren
+\begin{align*}
+    |{+}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\1 \end{pmatrix} &
+    |{-}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\-1 \end{pmatrix} &
+    |{+}y\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\i \end{pmatrix} &
+    |{-}y\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} i\\1 \end{pmatrix} &
+    |{+}z\rangle &= \begin{pmatrix} 1\\0 \end{pmatrix} &
+    |{-}z\rangle &= \begin{pmatrix} 0\\1 \end{pmatrix} &
+\end{align*}
+beschrieben.
+
+Damit ist Spin der z-Achse eines Elektron-Positron Paares
+\begin{equation}
+    |\psi\rangle = \frac{1}{\sqrt{2}} \left( 
+        |{+}z\rangle \otimes |{-}z\rangle - |{}z\rangle \otimes |{+}z\rangle
+     \right).
+\end{equation}
+
+Mit der Messung des z-Spins bei Detektor $A$ wird eine Projektion auf
+entweder $|{+}z\rangle$ oder $|{-}z\rangle$ gemacht, womit der Zustand
+$|\psi\rangle$ auf
+\[
+    |{+}z\rangle \otimes |{-}z\rangle
+\]
+respektive
+\[
+    |{-}z\rangle \otimes |{+}z\rangle
+\]
+reduziert wird.
+Das Ergebnis einer Messung $S_z$ bei Detektor $B$ ist damit sofort, 
+ohne \"uberhaupt eine Messung durchf\"uhren zu m\"ussen, bekannt und wird
+$-z$ resp. $+z$ ergeben.
+
+%TODO: kommuntatoren einfügen
+
+\subsection{Verborgene lokale Variablen}
+Die verbreitete Erkl\"arung zur L\"osung des EPR Paradoxons war die Theorie
+der verborgenen, lokalen Variablen. Damit sind generell Theorien gemeint,
+welche die Zuf\"alligkeiten der Quantenmechanik durch das Einf\"uhren von
+zus\"atzlichen Variablen eliminieren. Da zu diesem Zeitpunkt keine solchen
+gemessen werden konnten, wurden diese als \emph{verborgene}
+Variablen bezeichnet. Weiter wird verlangt, dass diese Variablen sowohl
+die Forderungen an Lokalit\"at wie auch Realismus erf\"ullen.
+
+F\"ur das Beispiel des Elektron-Positron Paares ist eine 
+einzelne 3-dimensionale Variable $\lambda$ ausreichend um jegliche
+Kombinationen zwischen Spin $+$ und $-$ in allen 3 Dimensionen 
+$x$, $y$ und $z$ abdecken zu k\"onnen.
+Eine Visualisierung einer solchen Variable ist in
+\figurename~\ref{fig:Bell:hidden_var} gezeigt. Dabei h\"angt der Zusammenhang
+zwischen Spin in $x$, $y$ bzw. $z$ Richtung vom Quadranten ab, in welchem
+die Variable $\lambda$ liegt. Der Wert von $\lambda$ wird hier in der Quelle
+f\"ur beide Partikel gleich gesetzt und ist somit ab $t=T$ fix bestimmt.
+
 \begin{figure}
     \centering
     \includegraphics{bell/images/hidden_vars.pdf}
     \caption{Visualisierung der verborgenen Variable $\lambda$ des Spin-Zustands}
     \label{fig:Bell:hidden_var}
 \end{figure}
+
+
+\section{Die Bell'sche Ungleichung}
+
+
+\section{Experimente}
+\subsection{Freedman Clauser}
+\subsection{Alain Aspect}
+
+\section{Zusammenfassung}
+
+
 \printbibliography[heading=subbibliography]
 \end{refsection}
 
