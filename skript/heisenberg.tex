@@ -12,8 +12,9 @@ $AB=BA$ f"ur zwei quantenmechanische Observable ``fast'' stimmen
 muss, in dem Sinne, dass der Unterschied der beiden Seiten sehr
 klein sein muss. 
 
-\section{Kommutator und Antikommutator}
-\rhead{Kommutator und Antikommutator}
+\section{Vertauschungsrelationen und Eigenvektoren}
+\rhead{Vertauschungsrelationen und Eigenvektoren}
+%\subsection{Definitionen}
 \index{Kommutator}
 \index{Antikommutator}
 Zu zwei Operatoren $A$ und $B$ kann man Kommutator und Antikommutator
@@ -32,9 +33,17 @@ der Kommutator gibt also an, ob die beiden Operatoren vertauschen (kommutieren).
 Wenn $\{A,B\}=AB+BA=0$ folgt $AB=-BA$,
 der Kommutator gibt also an, ob die beiden Operatoren antikommutieren.
 
+\subsection{Kommutator und Eigenvektoren}
 Falls $A$ and $B$ Observable sind, die nicht vertauschen, dann k"onnen
 gemeinsame Eigenvektoren nicht beliebig sein.
-Nehmen wir n"amlich an, $|\psi\rangle$ sei ein gemeinsamer Eigenvektor
+
+\begin{hilfssatz}
+\label{skript:kommutatorannihliertev}
+Der Kommutator $[A,B]$ annihiliert gemeinsame Eigenvektoren von $A$ und $B$.
+\end{hilfssatz}
+
+\begin{proof}[Beweis]
+Nehmen wir an, $|\psi\rangle$ sei ein gemeinsamer Eigenvektor
 von $A$ mit Eigenwert $\alpha$ und $B$ mit Eigenwert $\beta$.
 Dann wirkt der Kommutator auf $|\psi\rangle$ wie folgt
 \[
@@ -50,7 +59,19 @@ A\beta\,|\psi\rangle -B\alpha\,|\psi\rangle
 \]
 Ein gemeinsamer Eigenvektor $|\psi\rangle$ wird also von $[A,B]$
 zu $0$ gemacht.
+\end{proof}
 
+In vielen F"allen ist der Kommutator ein Vielfaches der identischen
+Abbildung. F"ur diese F"alle l"asst sich eine etwas sch"arfere
+Folgerung ableiten.
+
+\begin{satz}
+Wenn zwei Observable einen Kommutator haben, der ein Vielfaches
+der identischen Abbildung ist, dann haben die Observable keine
+gemeinsamen Eigenvektoren.
+\end{satz}
+
+\begin{beispiel}
 F"ur die Observablen $X$ f"ur Ort und $P$ f"ur den Impuls eines Teilchens,
 k"onnen wir den Kommutator in der Ortsdarstellung explizt ausrechnen:
 \begin{align*}
@@ -79,46 +100,127 @@ Der Kommutator ist also
 \]
 ein Vielfaches der identischen Abbildung.
 Die identische Abbildung hat nat"urlich keine Vektoren, die von ihr
-zu $0$ gemacht werden.
+annihiliert werden.
 Orts- und Impuls-Operatoren k"onnen also keine gemeinsamen Eigenvektoren
 haben.
-Es gibt also keinen Zustand, in dem sowohl Ort als auch Impuls exakt
-bestimmt sind.
+\end{beispiel}
+
+\subsection{Eigenbasen von zwei Operatoren}
+Umgekehrt stellt sich die Frage, unter welchen Voraussetzungen zwei
+Observable eine Basis von gemeinsamen Eigenvektoren haben k"onnen.
+Der n"achste Satz liefert ein Kriterium daf"ur.
 
 \begin{satz}
-Wenn zwei Observable einen Kommutator haben, der ein Vielfaches
-der identischen Abbildung ist, dann haben die Observable keine
-gemeinsamen Eigenvektoren.
-Insbesondere k"onnen die beiden Observablen nicht gleichzeitig 
-exakt bestimmt sein.
+\label{skript:kommevbasis}
+Wenn zwei selbstadjungierte Operatoren vertauschen, dann gibt es eine
+gemeinsame Basis von Eigenvektoren.
 \end{satz}
 
-In der klassischen Mechanik haben wir keine Schwierigkeit, Ort und
-Impuls gleichzeitig festzustellen. Das liegt nat"urlich daran, dass
-der Kommutator den sehr kleinen Faktor $\hbar$ enth"alt.
-F"ur makroskopische Zwecke sind Ort und Impuls also gleichzeitig 
-feststellbar.
+\begin{proof}[Beweis]
+Wir f"uhren den Beweis nur f"ur einen endlichdimensionalen Zustandsraum.
+Seien also $A$ und $B$ zwei selbstadjungierte Operatoren mit $[A,B]=0$.
+Ist $v$ ein Eigenvektor von $A$ zum Eigenwert $a$, dann gilt
+$ Av=av $.
+F"ur den Vektor $Bv$ gilt dann
+\[
+A(Bv)=BAv=Bav=aBv,
+\]
+$Bv$ ist also ebenfalls ein Eigenvektor von $A$ zum gleichen Eigenwert.
+F"ur einen Eigenvektor $u$ von $B$ gilt analog, dass $Au$ ein Eigenvektor
+von $B$ zum gleichen Eigenwert ist.
 
-Wenn es also nicht m"oglich ist, Ort und Impuls eines Teilchens
-gleichzeitig exakt zu wissen, wie genau ist es dann m"oglich,
-Ort und Impuls zu wissen?
-Um diese Frage zu beantworten m"ussen wir zun"achst ein Mass f"ur
-die Genauigkeit finden, mit der Ort oder Impuls in einem bestimmten
-Zustand bekannt sein kann.
-Wir werden es die Unsch"arfe nennen.
-Wir erwarten dann eine Ungleichung, die uns sagt, wie grosse 
-Unsch"arfe sein muss, eine Unsch"arferelation.
+Zu jedem Eigenwert $a$ von $A$ sie $E_a$ der Raum der von den 
+Eigenvektoren von $A$ zum Eigenwert $a$ aufgespannte Vektorraum.
+$E_a$ heisst Eigenraum von $A$ zum Eigenwert $a$.
+Nach Satz~\ref{skript:evorthogonal} sind die Eigenr"aume $E_a$ 
+f"ur verschiedene $a$ orthogonal, und in jedem Eigenraum wirkt $A$
+wie das $a$-fache der Einheitsmatrix.
+
+Es gibt nur endliche viele verschiedene Eigenwert $a_1,\dots,a_k$.
+Bildet man eine Basis des Zustandsraumes, indem man in jedem $E_{a_i}$
+eine Basis w"ahlt, dann bekommt $A$ die Form
+\[
+A=\left(
+\begin{array}{ccccccccccc}
+a_1   &\dots &0     &      &      &      &      &      &      &      &      \\
+\vdots&\ddots&\vdots&      &      &      &      &      &      &      &      \\
+0     &\dots &a_1   &      &      &      &      &      &      &      &      \\
+%\hline
+      &      &      &a_2   &\dots &0     &      &      &      &      &      \\
+      &      &      &\vdots&\ddots&\vdots&      &      &      &      &      \\
+      &      &      &0     &\dots &a_2   &      &      &      &      &      \\
+%\hline
+      &      &      &      &      &      &\ddots&      &      &      &      \\
+      &      &      &      &      &      &      &\ddots&      &      &      \\
+%\hline
+      &      &      &      &      &      &      &      &a_k   &\dots &0     \\
+      &      &      &      &      &      &      &      &\vdots&\ddots&\vdots\\
+      &      &      &      &      &      &      &      &0     &\dots &a_k   
+\end{array}
+\right)
+\]
+
+Weiter oben wurde gezeigt, dass der Operator $B$ die Eigenr"aume $E_a$ in sich
+abbildet: $BE_a\subset E_a$. Da $B$ ausserdem selbstadjungiert ist, kann man
+in jedem Eigenraum $E_{a_i}$ eine Basis
+${\cal B}_i= \{b_1^{(i)},\dots,b_{l_i}^{(i)}\}$
+aus Eigenvektoren f"ur $B$ finden. Die Vektoren $b_j^{(i)}$ sind nach
+Konstruktion sowohl Eigenvektoren von $A$ zum Eigenwert $a_i$ als auch
+Eigenvektoren von $B$. Die Vereinigung
+\[
+{\cal B}
+=
+\bigcup_{i=1}^k{\cal B}_i
+=
+\{
+b_1^{(1)},\dots,b_{l_1}^{(1)},
+b_1^{(2)},\dots,b_{l_2}^{(2)},
+\dots,
+b_k^{(k)},\dots,b_{l_k}^{(k)}
+\}
+\]
+der Basen ${\cal B}_i$ ist eine Basis des Zustandsraumes aus gemeinsamen
+Eigenvektoren von $A$ und $B$, in ihr haben beide Operatoren Diagonalform.
+\end{proof}
+
+\begin{satz}
+Zwei Observablen haben genau dann eine gemeinsame Basis aus Eigenvektoren,
+wenn sie vertauschen.
+\end{satz}
+
+\begin{proof}[Beweis]
+Aus Satz~\ref{skript:kommevbasis} leiten wir ab, dass das Kriterium
+gen"ugend ist.
+Der Kommutator $[A,B]$ annihiliert gemeinsame Eigenvektoren von $A$
+und $B$.
+G"abe es eine Basis aus Eigenvektoren, dann m"usste der Kommutator alle
+Basisvektoren annihilieren, es folgte $[A,B]=0$. Dieser
+Widerspruch zeigt, dass das Kriterium auch notwendig ist.
+\end{proof}
 
 
-\section{Varianz, Kovarianz und Unsch"arfe}
-\rhead{Varianz, Kovarianz und Unsch"arfe}
-Sie $A$ eine Observable und $|\psi\rangle$ ein Zustand. Dann ist
-$\langle \psi|\,A\,|\psi\rangle$ der Erwartungswert der Observablen $A$ 
-im Zustand $|\psi\rangle$.
+\section{Unscharfe Kenntnis von Observablen}
+\rhead{Unscharfe Kenntnis von Observablen}
+Im Allgemeinen kann man nicht annehmen, dass ein Beobachtung einer
+Observablen $A$ im Zustand $|\psi\rangle$ immer den gleichen Wert ergibt.
+Die Messwerte werden zum Beispiel wegen der unvermeidlichen
+Unzul"anglichkeiten der Messung streuen.
+Dann ist der Erwartungswert $\langle \psi|\,A\,|\psi\rangle$
+der Observablen $A$ im Zustand $|\psi\rangle$ die genaueste Information,
+die wir erhalten k"onnen.
 Zur Abk"urzung schreiben wir $\langle A\rangle=\langle\psi|\,A\,|\psi\rangle$.
 Mit $A$ ist auch $A-\langle A\rangle$ eine Observable, und ihr Erwartungswert
 ist nat"urlich $0$.
 
+Damit stellt sich die Frage, ob man f"ur spezielle Zust"ande eventuell
+mehr Information erhalten kann.
+Da die Varianz misst, wie stark die m"oglichen Werte streuen, suchen
+wir Zust"ande mit verschwindender Varianz.
+Es wird sich zeigen, dass dies genau die Eigenzust"ande sind.
+Genaue Kenntnis von Observablenwerten ist also genau f"ur die
+Eigenzust"ande m"oglich.
+
+\subsection{Varianz}
 In der Wahrscheinlichkeitsrechnung lernt man mit der Varianz eine
 Gr"osse kennen, die angibt, wie nahe bei $\langle A\rangle$ die
 Werte der Observable im Mittel anzutreffen sind.
@@ -129,16 +231,20 @@ werden:
 \begin{align*}
 \operatorname{var}(A)
 &=
+\operatorname{var}_{|\psi\rangle}(A)
+=
 \langle \psi|\, (A-\langle A\rangle)^2\,|\psi\rangle
 =
 \langle\psi|\, A^2-2\langle A\rangle A+\langle A\rangle^2\,|\psi\rangle
-=
+\\
+&=
 \langle\psi|\,A^2\,|\psi\rangle 
 -2\langle A\rangle \langle\psi|\,A\,|\psi\rangle
 +\langle A\rangle^2\langle\psi|\psi\rangle
-\\
-&=\langle A^2\rangle -\langle A\rangle^2.
+=\langle A^2\rangle -\langle A\rangle^2.
 \end{align*}
+Wir schreiben den Zustand als Index zum $\operatorname{var}$-Operator
+nur, wenn nicht klar ist, welcher Zustand gemeint ist.
 Dies entspricht der aus der Wahrscheinlichkeitsrechung bekannten Formel
 $E(X^2)-E(X)^2$.
 Wir nennen die Standardabweichung, also
@@ -152,6 +258,122 @@ Wir nennen die Standardabweichung, also
 auch die {\em Unsch"arfe} der Messung von $A$, und schreiben daf"ur abgek"urzt
 auch $\Delta A$.
 
+Die Varianz misst, wie scharf ein Messwert in einem bestimmten Zustand
+bekannt sein kann.
+Der n"achste Satz zeigt, dass Zust"ande verschwindender Varianz
+automatisch Eigenzust"ande sind. 
+Von einem scharf definierten Wert einer Observablen kann man also nur
+bei Eigenzust"anden sprechen.
+
+\begin{satz}
+Ist $A$ eine Observable und $|\psi\rangle$ ein Zustand, dann verschwindet
+die Varianz im Zustand $|\psi\rangle$ genau dann, wenn $|\psi\rangle$
+ein Eigenverktor von $A$ ist.
+\end{satz}
+
+\begin{proof}[Beweis]
+Wir d"urfen ohne Einschr"ankung der Allgemeinheit annehmen, dass
+$\langle\psi|\psi\rangle=1$. Ausserdem k"onnen wir schreiben
+\[
+A\,|\psi\rangle = a_{\|}\,|\psi\rangle + a_{\perp}\,|\varphi\rangle,
+\]
+wobei $|\varphi\rangle$ ein auf $|\psi\rangle$ senkrecht stehender,
+normierter Vektor ist. Es ist also $\langle\psi|\varphi\rangle=0$
+und $\langle\varphi|\varphi\rangle=1$.
+
+Nach diesen Voraussetzungen berechnen wir jetzt die Varianz von $A$ im
+Zustand $|\psi\rangle$:
+\begin{align*}
+\langle A\rangle
+&=
+\langle\psi|\,A\,|\psi\rangle
+=
+\langle\psi|\,a_{\|}\,|\psi\rangle
++
+\langle\psi|\,b_{\perp}\,|\varphi\rangle
+=
+a_{\|}\langle\psi|\psi\rangle
++
+b_{\perp}\langle\psi|\varphi\rangle
+=
+a_{\|}
+\\
+\langle A^2\rangle
+&=
+\langle\psi|\,A^2\,|\psi\rangle
+=
+(\langle\psi|\,\bar a + \langle\varphi|\,\bar a_{\perp})(a\,|\psi\rangle+a_{\perp}\,|\varphi\rangle)
+\\
+&=
+\langle\psi|    \bar a_{\|} a_{\|} |\psi\rangle
++
+\langle\psi|    \bar a_{\|} a_{\perp} |\varphi\rangle
++
+\langle\varphi| \bar a_{\perp} a_{\|} |\psi\rangle
++
+\langle\varphi| \bar a_{\perp} a_{\perp} |\varphi\rangle
+\\
+&=
+|a_{\|}|^2+|a_{\perp}|^2
+\\
+\operatorname{var}(A)
+&=
+\langle A^2\rangle -\langle A\rangle^2
+=
+|a_{\|}|^2+|a_{\perp}|^2
+-
+a_{\|}^2
+\end{align*}
+Aus der Gleichung f"ur $\langle A\rangle$ kann man ablesen, dass $a_{\|}$ 
+als Erwartungswert eines selbstadjungierten Operators reell ist.
+Zusammen mit der Gleichung f"ur $\operatorname{var}(A)$ folgt daraus, dass
+$
+\operatorname{var}(A)=|a_{\perp}|^2
+$ ist.
+
+Wenn die Varianz verschwindet, dann muss also $a_{\perp}=0$ sein, somit
+gilt f"ur $|\psi\rangle$, dass
+\[
+A\,|\psi\rangle = a_{\|}\,|\psi\rangle,
+\]
+$|\psi\rangle$ ist also ein Eigenvektor von $A$ zum Eigenwert $a_{\|}$.
+Ist umgekehrt $|\psi\rangle$ ein Eigenvektor, dann ist $a_{\perp}=0$,
+und die Varianz verschwindet.
+\end{proof}
+
+\subsection{Gleichzeitige Kenntnis von Observablen}
+Exakte Kenntnis von Observablenwerten ist also genau dann m"oglich, wenn
+ein Eigenzustand vorliegt.
+Exakte Kenntnis der Werte von zwei Observablen $A$ und $B$ ist genau
+dann m"oglich, wenn der Zustand ein Eigenzustand von {\em beiden }
+Operatoren ist.
+Vollst"andige gleichzeitige Kenntnis der Werte von zwei Observablen
+ist also m"oglich, wenn es eine Basis des Zustandsraumes gibt, 
+die aus Eigenvektoren f"ur beide Operatoren besteht. 
+Mit Satz~\ref{skript:kommevbasis} k"onnen wir jetzt ein Kriterium
+daf"ur formulieren:
+
+\begin{satz} Gleichzeitige exakte Kenntnis von Observablen ist genau
+m"oglich, wenn die Observablen vertauschen.
+\end{satz}
+
+In der klassischen Mechanik haben wir keine Schwierigkeit, Ort und
+Impuls gleichzeitig festzustellen. Das liegt nat"urlich daran, dass
+der Kommutator den sehr kleinen Faktor $\hbar$ enth"alt.
+F"ur makroskopische Zwecke sind Ort und Impuls also gleichzeitig 
+feststellbar.
+
+%Wenn es also nicht m"oglich ist, Ort und Impuls eines Teilchens
+%gleichzeitig exakt zu wissen, wie genau ist es dann m"oglich,
+%Ort und Impuls zu wissen?
+%Um diese Frage zu beantworten m"ussen wir zun"achst ein Mass f"ur
+%die Genauigkeit finden, mit der Ort oder Impuls in einem bestimmten
+%Zustand bekannt sein kann.
+%Wir werden es die Unsch"arfe nennen.
+%Wir erwarten dann eine Ungleichung, die uns sagt, wie grosse 
+%Unsch"arfe sein muss, eine Unsch"arferelation.
+
+\subsection{Kovarianz und Unsch"arfeprodukt}
 Die Varianz ist ein Spezialfall der Kovarianz, die als 
 \[
 \operatorname{cov}(X,Y)
@@ -173,6 +395,7 @@ definieren.
 Man beachte, dass die Gr"osse $\langle A,B\rangle$ nicht symmetrisch zu
 sein braucht, ausser wenn die Operatoren $A$ und $B$ vertauscht werden
 k"onnen.
+
 
 Man kann $\langle A,B\rangle$ auch als den Wert der Transformationsfunktion 
 zweier Zust"ande ansehen:
@@ -284,7 +507,7 @@ ausrechnen:
 =
 (\operatorname{Re}z)^2+(\operatorname{Im}z)^2
 =
-\biggl(\frac{z+\bar z}2\biggr)^2 + \biggl(\frac{z-\bar z}{2i}\biggr)^2
+\biggl(\frac{z+\bar z}2\biggr)^2 + \biggl(\frac{z-\bar z}{2i}\biggr)^2.
 \]
 (Vergleiche hierzu auch die Formeln (\ref{skript:realteil-formel}) und 
 (\ref{skript:imaginaerteil-formel})).
@@ -294,7 +517,7 @@ Jetzt setzen wir $z=\langle a|b\rangle$ ein:
 =
 \biggl(\frac{\langle a|b\rangle + \langle b|a\rangle}2\biggr)^2
 +
-\biggl(\frac{\langle a|b\rangle - \langle b|a\rangle}{2i}\biggr)^2
+\biggl(\frac{\langle a|b\rangle - \langle b|a\rangle}{2i}\biggr)^2.
 \label{skript:unschaerfe2}
 \end{equation}
 Wir m"ussen also die Terme $\langle a|b\rangle + \langle b|a\rangle$
@@ -313,7 +536,7 @@ und $\langle a|b\rangle - \langle b|a\rangle$ ausrechnen:
 &=
 \frac{\langle\psi|AB-BA|\psi\rangle}{2i}
 =
-\frac1{2i}\langle [A,B]\rangle
+\frac1{2i}\langle [A,B]\rangle.
 \end{align*}
 Eingesetzt in (\ref{skript:unschaerfe2}) finden wir
 \[
