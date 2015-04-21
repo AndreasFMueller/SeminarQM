@@ -849,15 +849,16 @@ i\hbar \frac{d}{dt}\,|\psi(t)\rangle = H\,|\psi(t)\rangle,
 \end{equation}
 die mit Hilfe der Exponentialfunktion sofort gel"ost werden kann:
 \[
-|\psi(t)\rangle = e^{i\hbar H}\,|\psi(0)\rangle
+|\psi(t)\rangle = e^{-\frac{i}{\hbar}H t}\,|\psi(0)\rangle
 \]
 Da $H$ eine Observable ist, k"onnen wir eine Basis von Eigenvektoren
 von $H$ konstruieren, ist $|k\rangle$ ein Eigenvektor von $H$ mit
 Eigenwert $E_k$, dann ist die Zeitentwicklung f"ur $|\psi(0)\rangle = |k\rangle$
+% XXX 1/hbar?
 \[
 |\psi(t)\rangle
 =
-e^{i\hbar E_k}\,|k\rangle.
+e^{-\frac{i}{\hbar}E_kt}\,|k\rangle.
 \]
 Insbesondere ist in diesem Spezialfall eines zeitunabh"angigen $H$-Operators
 die Zeitentwicklung vollst"andig bekannt, wenn man die Eigenwerte und
@@ -950,9 +951,9 @@ a_2\,|E_2\rangle
 \qquad\Rightarrow\qquad
 |\psi(t)\rangle
 =
-a_1e^{i\hbar E_1t}\,|E_1\rangle
+a_1e^{\frac{i}{\hbar}E_1t}\,|E_1\rangle
 +
-a_2e^{i\hbar E_2t}\,|E_2\rangle
+a_2e^{\frac{i}{\hbar}E_2t}\,|E_2\rangle
 \]
 ergibt.
 Die Koeffizienten $a_1$ und $a_2$ k"onnen mit Hilfe der Skalarprodukte

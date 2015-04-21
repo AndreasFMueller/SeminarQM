@@ -3,7 +3,7 @@
 #
 # (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
-all:	zuteilung.pdf
+all:	vortragsnoten.txt
 
 zuteilung.pdf:	zuteilung.tex
 	pdflatex zuteilung.tex
@@ -16,3 +16,6 @@ praesentation.pdf:	praesentation.tex
 
 planung.pdf:	planung.tex
 	pdflatex planung.tex
+
+vortragsnoten.txt:	vortragsnoten.R vortraege.csv
+	R --vanilla --quite --slave -f vortragsnoten.R | tee vortragsnoten.txt
