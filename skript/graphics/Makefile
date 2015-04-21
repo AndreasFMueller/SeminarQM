@@ -194,3 +194,13 @@ sterngerlach.png:	sterngerlach.pov Makefile
 	povray -A -W3840 -H2160 sterngerlach.pov
 #	povray -A -W1920 -H1080 sterngerlach.pov
 #	povray -AM1 -A -W960 -H520 sterngerlach.pov
+
+harm:	harm.c
+	gcc -o harm -Wall harm.c -lm
+
+harm.mp:	harm
+	./harm > harm.mp
+
+harm-1.pdf:	harm.mp
+	TEX=latex mpost harm.mp
+	mptopdf harm.1
