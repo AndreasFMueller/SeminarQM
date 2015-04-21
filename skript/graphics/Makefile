@@ -5,7 +5,7 @@
 #
 all:	pert analysator arctan drehimpuls gatter dependencies periodensystem \
 	potential harmonisch heisenberg lagrange h linear fest komplex \
-	radial spin
+	radial spin harm-1.pdf
 
 .SUFFIXES:
 
