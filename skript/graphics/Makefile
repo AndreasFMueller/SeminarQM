@@ -5,7 +5,7 @@
 #
 all:	pert analysator arctan drehimpuls gatter dependencies periodensystem \
 	potential harmonisch heisenberg lagrange h linear fest komplex \
-	radial spin
+	radial spin harm-1.pdf
 
 .SUFFIXES:
 
@@ -194,3 +194,13 @@ sterngerlach.png:	sterngerlach.pov Makefile
 	povray -A -W3840 -H2160 sterngerlach.pov
 #	povray -A -W1920 -H1080 sterngerlach.pov
 #	povray -AM1 -A -W960 -H520 sterngerlach.pov
+
+harm:	harm.c
+	gcc -o harm -Wall harm.c -lm
+
+harm.mp:	harm
+	./harm > harm.mp
+
+harm-1.pdf:	harm.mp
+	TEX=latex mpost harm.mp
+	mptopdf harm.1
