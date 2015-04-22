@@ -303,8 +303,12 @@ E_k^{(1)}\,|\psi_k^{(0)}\rangle + E_k^{(0)} \,|\psi_k^{(1)}\rangle+\dots
 Die Punkte stehen f"ur Terme, die minstens einen Faktor $\varepsilon$
 enthalten.
 Aus diesen Gleichungen m"ussen wir $E_k^{(1)}$ und $|\psi_k^{(1)}\rangle$
-bestimmen. Dazu multiplizieren wir $\langle \psi_l^{(0)}|$:
-\begin{align*}
+bestimmen. Dazu multiplizieren wir $\langle \psi_l^{(0)}|$.
+Da die ungest"orten Eigenfunktionen orthogonal sind, kann der erste
+Term auf der rechten Seite durch $\delta_{kl}E_k^{(0)}$ ersetzt werden,
+man bekommt
+\begin{equation}
+\begin{aligned}
 \langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
 +
 \langle \psi_l^{(0)}|\, H_0 \,|\psi_k^{(1)}\rangle
@@ -312,15 +316,26 @@ bestimmen. Dazu multiplizieren wir $\langle \psi_l^{(0)}|$:
 E_k^{(1)}\langle\psi_l^{(0)}|\psi_k^{(0)}\rangle
 +
 E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
-=
+\\
+&=
 \delta_{kl} E_k^{(1)}
 +
 E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle.
-\end{align*}
-Die ungest"orten Eigenfunktionen sind orthogonal, der erste
-Term auf der rechten Seite wird daher zu $\delta_{kl}E_k^{(0)}$.
-Da $H_0$ selbstadjungiert ist, kann man auch den zweiten Term links
-aufl"osen:
+\end{aligned}
+\label{skript:pert-1}
+\end{equation}
+Da $H_0$ selbstadjungiert ist, kann man auch den zweiten Term auf der
+linken Seite aufl"osen:
+\[
+\langle\psi_l^{(0)}|\,H_0\,|\psi_k^{(1)}\rangle
+=
+(\langle\psi_l^{(0)}|\,H_0)\,|\psi_k^{(1)}\rangle
+=
+\langle\psi_l^{(0)}|\,E_l^{(0)}\,|\psi_k^{(1)}\rangle
+=
+E_l^{(0)}\langle \psi_l^{(0)}|\psi_k^{(1)}\rangle.
+\]
+Die Gleichung (\ref{skript:pert-1}) wird damit zu
 \begin{align*}
 \langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
 +
