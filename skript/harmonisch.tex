@@ -598,6 +598,23 @@ im klassisch erlaubten Gebiet eines quantenmechanischen Oszillators f"ur
 das Energieniveau $n=100$ dargestellt zusammen mit der durch die
 Wellenfunktion gegebenen Wahrscheinlichkeitsdichte $|\psi_n(x)|^2$.
 
+Die Berechnung der Wellenfunktionen ist in diesem Fall nicht trivial.
+Weil $n$ so gross ist, kann man die Normierungskonstante nicht direkt
+mit Formel (\ref{skript:aufsteigrenormierungn}) berechnen, Z"ahler und
+Nenner sind ``unendlich'' gross.
+Und auch die Berechnung der Werte der Hermitepolynome f"uhrt mit Octave
+nicht zum Ziel.
+Man kann aber die Rekursionsformel
+\[
+h_{k+1}(x) = 2 (x h_k(x) - k h_{k-1}(x))
+\]
+verwenden, und als Anfangswerte die Bekannten Werte $h_0(x)=1$ und $h_1(x)=2x$
+verwenden.
+Ebenso kann man die Normierungskonstante statt mit der Formel
+(\ref{skript:aufsteigrenormierungn}) iterativ berechnen.
+So kann $N_nh_n(x)e^{-x^2/2}$ auf robuste Art mit dem Computer berechnet
+werden.
+
 % XXX Anwendung auf Molek"ulschwingungen
 %\section{Anwendung auf Molek"ulschwingungen}
 
