@@ -6,3 +6,72 @@
 \printbibliography[heading=subbibliography]
 \end{refsection}
 
+\section{Maxwell-Gleichungen und elektromagnetische Wellen}
+
+Die in der Elektrotechnik wohl bekannten Maxwell-Gleichungen in SI Einheiten lauten:
+\begin{equation}
+\begin{split}
+\nabla\cdot E &= \frac{\rho}{\varepsilon_0} \\
+\nabla\times B &= \mu_0( J  + \varepsilon_0\frac{\partial E}{\partial t}) \\
+\nabla\cdot B &=0 \\
+\nabla\times E &= -\frac{\partial B }{\partial t}\\
+\end{split}
+\end{equation}
+
+Dieses Einheitensystem is willk"urlich \cite{skript:em_units}. Im Heaviside-
+Lorentz System, das von nun an verwendet wird, lauten die Gleichungen:
+
+\begin{equation}
+\begin{split}
+\nabla\cdot E &= \rho \\
+\nabla\times B &= \frac{1}{c}( J  + \frac{\partial E}{\partial t}) \\
+\nabla\cdot B &=0 \\
+\nabla\times E &= -\frac{1}{c} \frac{\partial B }{\partial t}\\
+\end{split}
+\end{equation}
+
+Diese Gleichungen können durch folgende Substitution umformuliert werden:
+\begin{equation}
+B = \nabla\times A 
+\end{equation}
+
+Daraus folgt:
+\begin{equation}
+\nabla \cdot B \rightarrow \nabla \cdot ( \nabla\times A ) = 0 \quad \text{ da } \operatorname{div}(\operatorname{rot}(A)) = 0
+\end{equation}
+
+\begin{equation}
+\nabla\times E + \frac{1}{c} \frac{\partial B }{\partial t} = 0
+\rightarrow \nabla\times E + \frac{1}{c} \frac{\partial \nabla\times A }{\partial t} = 0 \rightarrow E = -\frac{1}{c} \dfrac{\partial A}{\partial t} - \nabla \phi
+\end{equation}
+
+$\nabla \phi$ kann als Integrationskonstante angesehen werden und $\phi$ entspricht dem skalaren Potential des Feldes.
+
+Durch weiteres Einsetzen können die vier Maxwell-Gleichungen in zwei Gleichungen umgeschrieben werden:
+\begin{equation}
+\begin{split}
+ \nabla^2 \phi + \frac{1}{c} \dfrac{\partial \nabla A}{\partial t} &= -\rho \\
+ \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} - \nabla \left( \nabla \cdot A + \frac{1}{c} \frac{\partial \phi }{\partial t} \right) &= - \frac{1}{c} J
+\end{split}
+\end{equation}
+
+dabei gelten die Korrespondenzen:
+\begin{equation}
+\begin{split}
+B &= \nabla\times A \\
+E &= -\frac{1}{c} \dfrac{\partial A}{\partial t} - \nabla \phi
+\end{split}
+\end{equation}
+
+Es kann gezeigt werden, dass $\phi$ durch eine Eichtransformation geeignet gew"ahlt werden kann, damit:
+
+\begin{equation}
+\nabla \cdot A + \frac{1}{c} \frac{\partial \phi }{\partial t} = 0
+\end{equation}
+
+In einem Transversalfeld im Vakkum gilt zudem $\nabla \cdot A = 0$  sowie $J = 0$.
+
+Dadurch vereinfachen sich die gekoppelten Differentialgleichung zu einer Differentialgleichung in A:
+\begin{equation}
+\nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} = 0
+\end{equation}
