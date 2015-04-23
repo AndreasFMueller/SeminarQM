@@ -196,7 +196,7 @@ sterngerlach.png:	sterngerlach.pov Makefile
 #	povray -AM1 -A -W960 -H520 sterngerlach.pov
 
 harm:	harm.c
-	gcc -o harm -Wall harm.c -lm
+	gcc -std=c99 -o harm -Wall harm.c -lm
 
 harm.mp:	harm
 	./harm > harm.mp
