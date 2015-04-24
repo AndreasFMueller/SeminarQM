@@ -8,7 +8,7 @@
 
 \section{Maxwell-Gleichungen und elektromagnetische Wellen}
 
-Hilfreich dazu ist auch die Beschreibung von Magnetfeldern in Kapitel \ref{chapter:magnetfeld}. In diese Kapitel wird der Gradient durch $\nabla$ ersetzt \cite{skript:nabla}. Dadurch k"onnen die Gleichungen einfacher geschrieben werden. 
+Hilfreich dazu ist auch die Beschreibung von Magnetfeldern in Kapitel \ref{chapter:magnetfeld}. In diese Kapitel wird der Gradient durch $\nabla$ ersetzt \cite{fq:nabla}. Dadurch k"onnen die Gleichungen einfacher geschrieben werden. 
 
 Die in der Elektrotechnik wohl bekannten Maxwell-Gleichungen in SI Einheiten lauten:
 \begin{equation}
@@ -20,7 +20,7 @@ Die in der Elektrotechnik wohl bekannten Maxwell-Gleichungen in SI Einheiten lau
 \end{split}
 \end{equation}
 
-Dieses Einheitensystem is willk"urlich \cite{skript:em_units}. Im Heaviside-
+Dieses Einheitensystem is willk"urlich \cite{fq:em_units}. Im Heaviside-
 Lorentz System, das von nun an verwendet wird, lauten die Gleichungen:
 \begin{equation}
 \begin{split}
@@ -41,7 +41,7 @@ Dadurch gilt $\nabla \cdot B = 0 $ automatisch:
 \nabla \cdot B = 0 \rightarrow \nabla \cdot ( \nabla\times A ) = 0 \text{ gilt f"ur jedes A! }
 \end{equation}
 
-Durch Einsetzen erhält man die Gleichung f"ur E:
+Durch Einsetzen erh"alt man die Gleichung f"ur E:
 \begin{equation}
 \nabla\times E + \frac{1}{c} \frac{\partial B }{\partial t} = 0
 \rightarrow \nabla\times E + \frac{1}{c} \frac{\partial \nabla\times A }{\partial t} = 0 \rightarrow E = -\frac{1}{c} \dfrac{\partial A}{\partial t} - \nabla \phi
@@ -85,6 +85,7 @@ In einem Transversalfeld im Vakkum gilt zudem $\nabla \cdot A = 0$. (ToDo: ??) D
 \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} = 0
 \end{equation}
 
+\section{Von der Welle zu gekoppelten Oszillatoren}
 L"osungen dieser Gleichung f"ur periodische Randbedingungen und $t=0$ in einer Box mit Seitenl"ange $L = V^{1/3}$ sind durch die Fourier Reihe gegeben:
 
 \begin{equation}
@@ -108,5 +109,104 @@ Da $\epsilon^{(\alpha)}$ und $k$ orthogonal sind gilt dabei auch automatisch:
 
 \begin{equation}
 \nabla \cdot A = \frac{1}{\sqrt{V}} \sum_K \sum_{\alpha=1,2} (i c_{k,\alpha}(0) \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{ikx} - i c^*_{k,\alpha}(0) \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{-ikx}) = 0
+\end{equation}
+
+Weiterhin gilt durch wegen der Orthogonalit"at auch:
+\begin{equation}
+\begin{split}
+\dfrac{1}{A} \int c_{k,\alpha} \cdot c^*_{k',\alpha'} d^3 x &= \delta_{kk'}\delta{aa'} \\
+\dfrac{1}{A} \int c_{k,\alpha} \cdot c_{k',\alpha'} d^3 x &= 0 \\
+\dfrac{1}{A} \int c^*_{k,\alpha} \cdot c^*_{k',\alpha'} d^3 x &= 0
+\end{split}
+\end{equation}
+
+Um $A(x,t)$ zu erhalten, wird:
+\begin{equation}
+c_{k,\alpha}(t) = c_{k,\alpha}(0) e^{-i \omega t}
+\end{equation}
+
+Dabei ist:
+\begin{equation}
+\begin{split}
+\omega=|k|c \\
+\lambda = \frac{2 \pi}{|k|}
+\end{split}
+\end{equation}
+
+Die komplette Wellengleichung wird somit:
+\begin{equation}
+A(x,t) = \frac{1}{\sqrt{V}} \sum_K \sum_{\alpha=1,2} (c_{k,\alpha}(0) \epsilon^{(\alpha)} e^{i (kx - \omega t)} + c^*_{k,\alpha}(0) \epsilon^{(\alpha)} e^{-i(kx - \omega t)})
+\end{equation}
+
+Die Hamilton-Funktion einer elektromagnetischen Welle ist gegeben durch:
+\begin{equation}
+\begin{split}
+H &= \frac{1}{2} \int (|B|^2 + |E|^2) d^3 x \\
+	&= \frac{1}{2} \int (| \nabla\times A |^2 + \left| \frac{1}{c} \dfrac{\partial A}{\partial t} \right|^2) d^3 x 
+\end{split}
+\end{equation}
+
+Es kann gezeigt werden, dass die L"osung dieses Integrals gegeben ist durch:
+\begin{equation}
+H = \sum_K \sum_{\alpha=1,2} 2 \left(\frac{\omega}{c}\right)^2 c^*_{k,\alpha}(t) c_{k,\alpha}(t)
+\end{equation}
+
+Durch folgende Definition:
+\begin{equation}
+Q_{k,\alpha} = \frac{1}{c}(c_{k,\alpha}(t) + c^*_{k,\alpha}(t)) \quad P_{k,\alpha} = -\frac{i\omega}{c}(c_{k,\alpha}(t) - c^*_{k,\alpha}(t)) 
+\end{equation}
+
+wird die Hamilton-Funktion zu:
+\begin{equation} \label{fq:hamilton}
+\begin{split}
+H &= \sum_K \sum_{\alpha=1,2} 2 \left(\frac{\omega}{c}\right)^2 \left[ \frac{c(\omega Q_{k,\alpha} - i P_{k,\alpha})}{2 \omega} \right] \left[ \frac{c(\omega Q_{k,\alpha} + i P_{k,\alpha})}{2 \omega} \right] \\
+&= \sum_K \sum_{\alpha=1,2} \frac{1}{2} (P_{k,\alpha}^2 + \omega^2 Q_{k,\alpha}^2)
+\end{split}
+\end{equation}
+
+Hier sieh man nun, dass es m"oglich ist, eine Welle durch unabh"angige Oszillatoren dar zu stellen.
+
+$Q_{k,\alpha}$ und $P_{k,\alpha}$ k"onnen nun als Koordinaten und Impulse der einzelnen Oszillatoren aufgefasst werden:
+\begin{equation}
+\dfrac{\partial H}{\partial Q_{k,\alpha}} = -\dot{P}_{k,\alpha} \quad \dfrac{\partial H}{\partial P_{k,\alpha}} = \dot{Q}_{k,\alpha}
+\end{equation}
+
+\section{Quantisierung der Welle}
+
+Wie beim harmonischen Oszillator können $Q_{k,\alpha}$ und $P_{k,\alpha}$ nun als Opperatoren aufgefasst werden. Die Vertauschungsrelationen werden dabei zu:
+\begin{equation}
+\begin{split}
+[Q_{k,\alpha}, P_{k',\alpha'}] &= i \hbar \delta_{kk'}\delta_{aa'} \\
+[Q_{k,\alpha}, Q_{k',\alpha'}] &= 0 \\
+[P_{k,\alpha}, P_{k',\alpha'}] &= 0
+\end{split}
+\end{equation}
+
+Wir definieren die Operatoren:
+\begin{equation}
+\begin{split}
+a_{k,\alpha} &= (1/\sqrt{2 \hbar \omega})(\omega Q_{k,\alpha} + iP_{k,\alpha})) \\
+a^+_{k,\alpha} &= (1/\sqrt{2 \hbar \omega})(\omega Q_{k,\alpha} - iP_{k,\alpha}))\\
+N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha}
+\end{split}
+\end{equation}
+
+Ein Vergleich mit \ref{fq:hamilton} liefert:
+\begin{equation}
+ c_{k,\alpha} \rightarrow c \sqrt{\hbar/2 \omega} \, a_{k,\alpha} \quad c^*_{k,\alpha} \rightarrow c \sqrt{\hbar/2 \omega} \, a^+_{k,\alpha}
+\end{equation}
+Somit entsprechen diese Operatoren den Fourier-Koeffizienten.
+
+Die Kommentatoren f"ur diese Operatoren sind:
+\begin{equation}
+\begin{split}
+[a_{k,\alpha} , a^+_{k',\alpha'}] &= - \frac{i}{2 \hbar} [Q_{k,\alpha}, P_{k',\alpha'}] + \frac{i}{2 \hbar} [P_{k,\alpha}, Q_{k',\alpha'}] \\
+	 &= \delta_{kk'}\delta_{aa'} \\
+[a_{k,\alpha} , a_{k',\alpha'}] &= [a^+_{k,\alpha} , a^+_{k',\alpha'}] \\
+	 &= 0 \\
+[a_{k,\alpha} , N_{k',\alpha'}] &= [a_{k,\alpha} , a^+_{k',\alpha'}]a_{k',\alpha'} - a^+_{k',\alpha'}[a_{k',\alpha'} , a_{k,\alpha}]\\
+	&= \delta_{kk'}\delta_{aa'} a_{k,\alpha} \\
+[a^+_{k,\alpha} , N_{k',\alpha'}] &= -\delta_{kk'}\delta_{aa'} a^+_{k,\alpha}
+\end{split}
 \end{equation}
 
