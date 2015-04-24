@@ -212,7 +212,7 @@ Hochschule f"ur Technik, Rapperswil, 2015
 \renewcommand{\qedsymbol}{$\bigcirc$}
 }{\end{proof}}
 
-\input linsys.tex
+\input{linsys.tex}
 \allowdisplaybreaks
 
 \lhead{Inhaltsverzeichnis}
@@ -223,28 +223,28 @@ Hochschule f"ur Technik, Rapperswil, 2015
 \newtheorem{definition}{Definition}[chapter]
 \newtheorem{annahme}{Annahme}[chapter]
 \mainmatter
-\input vorwort.tex
+\input{vorwort.tex}
 \part{Grundlagen}
 %\keineloesungen
 \begin{refsection}
-\input einleitung.tex
-\input einfach.tex
-\input hilbert.tex
-\input quantencomputer.tex
-\input hamilton.tex
-\input quantisierung.tex
-\input heisenberg.tex
-\input harmonisch.tex
-\input h.tex
-\input stoerungstheorie.tex
-\input magnetfeld.tex
-\input drehimpuls.tex
-\input spin.tex
-\input festkoerper.tex
+\input{einleitung.tex}
+\input{einfach.tex}
+\input{hilbert.tex}
+\input{quantencomputer.tex}
+\input{hamilton.tex}
+\input{quantisierung.tex}
+\input{heisenberg.tex}
+\input{harmonisch.tex}
+\input{h.tex}
+\input{stoerungstheorie.tex}
+\input{magnetfeld.tex}
+\input{drehimpuls.tex}
+\input{spin.tex}
+\input{festkoerper.tex}
 \begin{appendices}
-\input komplex.tex
-\input kugelkoordinaten.tex
-\input konstanten.tex
+\input{komplex.tex}
+\input{kugelkoordinaten.tex}
+\input{konstanten.tex}
 \end{appendices}
 \vfill
 \pagebreak
@@ -256,41 +256,41 @@ Hochschule f"ur Technik, Rapperswil, 2015
 
 \part{Anwendungen und Weiterf"uhrende Themen}
 \lhead{Anwendungen}
-\input uebersicht.tex
+\input{uebersicht.tex}
 \def\chapterauthor#1{{\large #1}\bigskip\bigskip}
 % Quanteninformatik
-\input crypto/main.tex
-\input teleport/main.tex
-\input simon/main.tex
+\input{crypto/main.tex}
+\input{teleport/main.tex}
+\input{simon/main.tex}
 % Halbleiterbauelement
-\input tunneldiode/main.tex
-\input flash/main.tex
+\input{tunneldiode/main.tex}
+\input{flash/main.tex}
 % Anwendung der Störungstheorie
-\input atomuhr/main.tex
-\input efeld/main.tex
-\input anharmonisch/main.tex
+\input{atomuhr/main.tex}
+\input{efeld/main.tex}
+\input{anharmonisch/main.tex}
 % Sphärische harmonische Analyse
-\input kugel/main.tex
+\input{kugel/main.tex}
 % Weitere Anwendungen
-\input laser/main.tex
-\input mri/main.tex
+\input{laser/main.tex}
+\input{mri/main.tex}
 % Supraleitung
-\input supraleitung/main.tex
-\input bose/main.tex
-\input heisenberg/main.tex
-%\input stark/main.tex
-\input bell/main.tex
-\input feldquantisierung/main.tex
-%\input rtm/main.tex
-%\input orbitale/main.tex
-%\input franckhertz/main.tex
-%\input maser/main.tex
-%\input quantumdot/main.tex
+\input{supraleitung/main.tex}
+\input{bose/main.tex}
+\input{heisenberg/main.tex}
+%\input{stark/main.tex}
+\input{bell/main.tex}
+\input{feldquantisierung/main.tex}
+%\input{rtm/main.tex}
+%\input{orbitale/main.tex}
+%\input{franckhertz/main.tex}
+%\input{maser/main.tex}
+%\input{quantumdot/main.tex}
 \vfill
 \pagebreak
 \ifodd\value{page}\else\null\clearpage\fi
 \lhead{Index}
 \rhead{}
-\input skript.ind
+\input{skript.ind}
 
 \end{document}
