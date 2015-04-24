@@ -13,6 +13,7 @@ integrieren zu k"onnen.
 
 \section{Vektorpotential\label{section:vektorpotential}}
 \rhead{Vektorpotential}
+\index{Vektorpotential}
 F"ur die quantenmechanische Beschreibung eines Teilchens in einem
 elektrischen Feld konnten wir das Potential verwenden, welches
 direkt die Energie eines Teilchens aus der Position zu bestimmen
@@ -29,7 +30,8 @@ Das elektrische Feld $\vec E$ kann aus dem Potential mittels
 \]
 rekonstruiert werden.
 Das Magnetfeld hat kein Potential, aus dem es als Gradient wiedergewonnen
-werden k"onnte, und die Lorentzkraft, die das Magnetfeld
+werden k"onnte, und die Lorentz-Kraft, die das Magnetfeld
+\index{Lorentz-Kraft}
 auf ein Teilchen aus"ubt, sind nicht vom Ort, sondern von der Geschwindigkeit
 abh"angig.
 
@@ -144,7 +146,9 @@ daher auch keinen Beitrag zu Energie leisten.
 
 Mit dem Laplace-Formalismus kann man die korrekte Form der
 Hamilton-Funktion finden.
-Dabei zeigt sich, dass man eine andere Impulskoordinate $\vec P$
+Wir wollen diese Rechnung nicht durchf"uhren, sondern nur das Resultat
+angeben.
+Es zeigt sich, dass man eine andere Impulskoordinate $\vec P$
 an Stelle der bekannten Impulse $\vec p$ verwenden muss. 
 Die neue Impulskoordinate ist 
 \[
@@ -441,6 +445,7 @@ aber nicht $\vec B$ "andert, trotzdem stellt das Experiment eine
 Beeinflussung fest.
 
 \subsection{Eichtransformationen der Potentiale}
+\index{Eichtransformation!der Potentiale}
 Das Vektorpotential ist nicht eindeutig: wenn man zu $\vec A$
 den Gradienten einer Funktion $\chi$ hinzuaddiert, "andert sich
 $\vec B$ nicht, weil
@@ -588,7 +593,7 @@ e^{-\frac{i}{\hbar}\chi}
 +
 e^{-\frac{i}{\hbar}\chi}
 \frac{\partial}{\partial t}
-\psi
+\psi.
 \]
 Wenn sich also die Schr"odingergleichung nicht "andern soll, dann
 muss der Summand $\partial\chi/\partial t$ zum Potential im
@@ -607,14 +612,23 @@ Wenn man also in der Schr"odingergleichung alle "Anderungen
 \psi
 &\mapsto
 e^{-\frac{i}{\hbar}\chi}\psi
-\label{skript:eichtransformation}
+\label{skript:eichtransformationpsi}
 \end{aligned}
 \end{equation}
 gleichzeitig durchf"uhrt, dann "andert sich physikalisch nichts,
 auch wenn sich sowohl das Vektorpotential als auch das
 elektrische Potential "andert.
 
-Die Transformation (\ref{skript:eichtransformation}) heisst Eichtransformation.
-Die Schr"odingergleichungen sind invariant bez"uglich Eichtransformationen.
+Die Transformation (\ref{skript:eichtransformationpsi}) heisst 
+{\em Eichtransformation} der Felder und der Wellenfunktion.
+\index{Eichtransformation!der Felder und der Wellenfunktion}
+Die Schr"odingergleichung ist invariant bez"uglich Eichtransformationen.
+Die Eichtransformation stellt eine innere Symmetrie der Theorie dar.
+Unterwirft man das Problem einer Eichtransformation, zum Beispiel um
+es einer L"osung zug"anglicher zu machen, spricht man auch von der {\em Wahl
+einer Eichung}.
+
+
+
 
 
