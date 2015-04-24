@@ -173,6 +173,7 @@ $Q_{k,\alpha}$ und $P_{k,\alpha}$ k"onnen nun als Koordinaten und Impulse der ei
 
 \section{Quantisierung der Welle}
 
+\subsection{Vertauschungsrelationen sowie Auf- und Absteige Operatoren}
 Wie beim harmonischen Oszillator können $Q_{k,\alpha}$ und $P_{k,\alpha}$ nun als Opperatoren aufgefasst werden. Die Vertauschungsrelationen werden dabei zu:
 \begin{equation}
 \begin{split}
@@ -187,7 +188,8 @@ Wir definieren die Operatoren:
 \begin{split}
 a_{k,\alpha} &= (1/\sqrt{2 \hbar \omega})(\omega Q_{k,\alpha} + iP_{k,\alpha})) \\
 a^+_{k,\alpha} &= (1/\sqrt{2 \hbar \omega})(\omega Q_{k,\alpha} - iP_{k,\alpha}))\\
-N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha}
+N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha} = \frac{1}{2 \hbar \omega} (P_{k,\alpha}^2 + \omega^2 Q_{k,\alpha}^2 + i\omega [Q_{k,\alpha},P_{k,\alpha}] ) \\
+ &= \frac{1}{ \hbar \omega } H - \frac{1}{2}
 \end{split}
 \end{equation}
 
@@ -202,11 +204,50 @@ Die Kommentatoren f"ur diese Operatoren sind:
 \begin{split}
 [a_{k,\alpha} , a^+_{k',\alpha'}] &= - \frac{i}{2 \hbar} [Q_{k,\alpha}, P_{k',\alpha'}] + \frac{i}{2 \hbar} [P_{k,\alpha}, Q_{k',\alpha'}] \\
 	 &= \delta_{kk'}\delta_{aa'} \\
-[a_{k,\alpha} , a_{k',\alpha'}] &= [a^+_{k,\alpha} , a^+_{k',\alpha'}] \\
-	 &= 0 \\
+[a_{k,\alpha} , a_{k',\alpha'}] &= [a^+_{k,\alpha} , a^+_{k',\alpha'}] = 0 \\
 [a_{k,\alpha} , N_{k',\alpha'}] &= [a_{k,\alpha} , a^+_{k',\alpha'}]a_{k',\alpha'} - a^+_{k',\alpha'}[a_{k',\alpha'} , a_{k,\alpha}]\\
 	&= \delta_{kk'}\delta_{aa'} a_{k,\alpha} \\
 [a^+_{k,\alpha} , N_{k',\alpha'}] &= -\delta_{kk'}\delta_{aa'} a^+_{k,\alpha}
 \end{split}
+\end{equation}
+
+\subsection{Wirkung auf Zustandsvektoren}
+
+In diesem Unterkapitel werden Suffixes $_n$ und $_k$ weggelassen, diese gelten aber weiterhin. 
+
+Diese Opperatoren werden nun wie beim harmonischen Oszillator auf den Zustand angewendet. Wir suchen einen Eigevektor $|n\rangle$ und Eigenwert $e_n$ zum Opperator $N$ so dass:
+\begin{equation}
+N|n\rangle = e_n|n\rangle
+\end{equation}
+
+Auf Grund der Beziehungen der Operatoren gilt dadurch:
+\begin{equation}
+\begin{split}
+Na^+|n\rangle &= (a^+N + a^+)|n\rangle = (e_n + 1)a^+|n\rangle \\
+Na|n\rangle &= (aN - a)|n\rangle = (e_n - 1)a|n\rangle
+\end{split}
+\end{equation}
+
+Wiederum m"ussen die neuen Eigenvektoren normalisiert werden. Daf"ur werden die Konstanten $c_+$ und $c_-$ eingeführt.
+\begin{equation}
+\begin{split}
+a^+|n\rangle &= c_+|n+1\rangle \\
+a|n\rangle &= c_-|n-1\rangle
+\end{split}
+\end{equation}
+
+$c_\pm$ wird folgendermassen berechnet:
+\begin{equation}
+\begin{split}
+	|c_+|^2 &= |c_+|^2 \langle n+1 | n+1 \rangle = \langle a^+n | a^+n \rangle \\
+		&= \langle n | aa^+ |n \rangle = \langle n | N + [a,a^+] |n \rangle \\
+		&= e_n+1 \\
+	|c_-|^2 &= 	\langle an | an \rangle = \langle n | a^+a | n \rangle = e_n
+\end{split}
+\end{equation}
+
+Da die Energie nicht negativ sein kann gilt:
+\begin{equation}
+e_n = \langle n | N |n \rangle = \langle n | a^+a |n \rangle \geq 0
 \end{equation}
 
