@@ -25,7 +25,7 @@ uns in diesem Kapitel.
 
 \section{Fermikugel}
 In erster N"aherung betrachen wir den Festk"orper als einen
-sehr grossen Potenialkasten, aus dem die Elektronen nicht austreten
+sehr grossen Potentialkasten, aus dem die Elektronen nicht austreten
 k"onnen.
 Die gebundenen Elektronen haben so tiefe Energie, dass wir davon
 ausgehen k"onnen, dass diese Zust"ande immer besetzt sind.
@@ -43,8 +43,8 @@ wir in (\ref{skript:3dzustaende}) bereits berechnet.
 \begin{figure}
 \centering
 \includegraphics{graphics/fest-1.pdf}
-\caption{Fermi-Kugel im Raum der Zust"ande eines Elektrons in einem
-Potentialkasten
+\caption{Fermi-Kugel im Raum der Impuls-Zust"ande eines Elektrons in einem
+zweidimensionalen Potentialkasten.
 \label{skript:fermi-kugel}}
 \end{figure}
 Nat"urlich m"ussen sich die Elektronen ausserdem an das Pauli-Prinzip
@@ -69,6 +69,64 @@ im Raum der m"oglichen Elektronenzust"ande, die Fermi-Kugel.
 Je gr"osser die Dichte der frei beweglichen Elektronen ist, desto
 h"oher ist auch die Fermi-Energie $E_F$.
 
+% XXX Wellenzahl
+
+\subsection{Periodische Randbedingungen}
+Das Modell des Potentialkastens f"uhrt auf mathematisch sehr unangenehme
+Randbedingungen, die sich in speziellen Randeffekten "aussern.
+Solange unser Ziel ist, vor allem das Innere des Festk"orpers zu verstehen,
+sind wir frei, andere Randbedingungen zu w"ahlen, solange Sie im Wesentlichen
+das gleiche Energiespektrum ergeben. Erst wenn der Festk"orper im Vergleich
+zu den Atomabst"anden klein wird, werden die Randeffekte "uberhand nehmen,
+dies ist zum Beispiel bei Quantum-Dots der Fall. 
+
+Ein besonders einfaches Modell ist, sich den Festk"orper unendlich 
+ausgedehnt vorzustellen. Diese Modell kann aber nicht zutreffen, denn
+es f"uhrt dazu, dass wir mit unendlich vielen Elektronen arbeiten m"ussen.
+Die m"oglichen Wellenzahlen $k_x$, $k_y$ und $k_z$ w"urden stetig, die
+diskrete Natur der Quantenmechanik geht in diesem Modell verloren.
+
+Wir m"ussen dem unendlichen Festk"orpermodell also zus"atzlich Bedingungen
+aufzwingen, die die diskrete Natur zur"uckbringen. Die Fourier-Transformation
+auf $\mathbb R$ f"uhrt uns in einen stetigen Frequenzraum, wenn wir
+aber nur die periodischen Funktionen auf $\mathbb R$ betrachten, sind
+nur noch diskrete Frequenzen m"oglich.
+Wir fordern daher, dass die Wellenfunktionen periodisch sind,
+\begin{align*}
+\psi(x-l, y  ,z  )&=\psi(x+l,y  ,z  ),
+\\
+\psi(x  , y-l,z  )&=\psi(x  ,y+l,z  ),
+\\
+\psi(x  , y  ,z-l)&=\psi(x  ,y  ,z+l).
+\end{align*}
+Elektronen mit dem Hamilton-Operator 
+\[
+H=\frac{p^2}{2m_e}=-\frac{\hbar^2}{2m_e}\Delta
+\]
+haben als Wellenfunktionen ebenen Wellen
+\[
+|\vec k\rangle
+=
+\psi_{\vec k}(\vec x)
+=
+e^{\frac{i}{\hbar}\vec k\cdot \vec x}
+\]
+mit Energie
+\[
+E_{\vec k}=\frac{\hbar^2\vec k^2}{2m_e}.
+\]
+Die periodischen Randbedingungen verlangen, dass $2l k_x$, $2lk_y$ und $2lk_z$
+Vielfache von $2\pi$ sind, dass es also Zahlen $n_x$, $n_y$ und $n_z$ gibt mit
+\[
+k_x=\frac{2\pi n_x}{2l}=\frac{\pi n_x}{l},\qquad
+k_y=\frac{2\pi n_y}{2l}=\frac{\pi n_y}{l}\qquad\text{und}\qquad
+k_z=\frac{2\pi n_z}{2l}=\frac{\pi n_z}{l}.
+\]
+Die m"oglichen $\vec k$-Zust"ande bilden also wieder ein Gitter im
+$\vec k$-Raum wie in Abbildung~\ref{skript:fermi-kugel}, und das Modell
+der Fermi-Kugel ist auch f"ur diese Randbedingungen angemessen.
+
+\subsection{Gebundene Elektronen}
 \begin{figure}
 \centering
 \includegraphics{graphics/fest-2.pdf}
@@ -82,6 +140,20 @@ h"oher ist auch die Fermi-Energie $E_F$.
 gebundenen Niveaus frei beweglich.
 \label{skript:gebundene-niveaus-komprimiert}}
 \end{figure}
+Das Modell der Fermi-Kugel ist nur anwendbar auf Elektronen, die sich
+innerhalb des Festk"orpers im Wesentlichen frei bewegen k"onnen.
+Im Allgemeinen wird nur ein Teil der Elektronen diese Bedingung erf"ullen,ischer Leiter ist.
+die meisten Elektronen werden sich auf tiefen Energieniveaus in unmittelbarerischer Leiter ist.
+N"ahe der Atomkerne aufhalten, wie in Abbildung~\ref{skript:gebundene-niveaus}
+dargestellt.
+
+Erst wenn gen"ugend Elektronen vorhanden sind, dass alle diese gebundenen
+Niveaus zu besetzt sind, k"onnen weitere Elektronen sich Elektronen mit
+noch h"oherer Energie freier bewegen.
+Erst f"ur diese Elektronen ist es sinnvoll, von der Fermi-Kugel zu sprechen,
+und erst wenn solche Elektronen vorhanden sind, k"onnen wir erwarten,
+dass der Festk"orper ein elektrischer Leiter ist.
+
 Wenn also gen"ugen Elektronen vorhanden sind, dass $E_F$ "uber dem
 ``Bodenniveaus'' des Potentialkastens liegt, dann liegt ein Leiter vor.
 Diese Situation kann auch erzwungen werden.
@@ -94,7 +166,7 @@ Diesen Zustand erreicht Wasserstoff unter extrem hohem Druck,
 man vermutet dass man solchen metallischen Wasserstoff im Inneren
 von Jupiter und anderen Gas-Riesen finden kann.
 
-\section{Teilchen in einem schwachen periodischen Potential}
+\section{Elektronen in einem periodischen Potential}
 Das im letzten Abschnitt verwendete Modell eines Festk"orpers ging davon aus,
 dass sich die Elektronen innerhalb des Festk"orpers im wesentlichen
 ungehindert bewegen k"onnen.
@@ -108,7 +180,7 @@ ver"andern, und mit ihnen m"oglicherweise die elektrischen Eigenschaften.
 
 Ziel dieses Abschnittes ist das Energiespektrum in einem periodischen
 Potential zu verstehen, insbesondere das Enstehen von Energieb"andern.
-Wir verwenden dazu ein eindimensionales Modell, in dem sich die
+Wir beschr"anken uns dabei auf ein eindimensionales Modell, in dem sich die
 wesentlichen Einfl"usse bereits verstehen lassen.
 
 \subsection{Gitter}
@@ -177,5 +249,6 @@ Ebene Wellen haben die Form $e^{i\vec k\cdot\vec x}$.
 
 \subsection{Kristall-Elektronen}
 
-\subsection{Energieb"ander}
+\subsection{Schwaches Potential}
+
 
