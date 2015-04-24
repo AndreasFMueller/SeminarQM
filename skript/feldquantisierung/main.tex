@@ -8,6 +8,8 @@
 
 \section{Maxwell-Gleichungen und elektromagnetische Wellen}
 
+Hilfreich dazu ist auch die Beschreibung von Magnetfeldern in Kapitel \ref{chapter:magnetfeld}. In diese Kapitel wird der Gradient durch $\nabla$ ersetzt \cite{skript:nabla}. Dadurch k"onnen die Gleichungen einfacher geschrieben werden. 
+
 Die in der Elektrotechnik wohl bekannten Maxwell-Gleichungen in SI Einheiten lauten:
 \begin{equation}
 \begin{split}
@@ -20,7 +22,6 @@ Die in der Elektrotechnik wohl bekannten Maxwell-Gleichungen in SI Einheiten lau
 
 Dieses Einheitensystem is willk"urlich \cite{skript:em_units}. Im Heaviside-
 Lorentz System, das von nun an verwendet wird, lauten die Gleichungen:
-
 \begin{equation}
 \begin{split}
 \nabla\cdot E &= \rho \\
@@ -30,16 +31,17 @@ Lorentz System, das von nun an verwendet wird, lauten die Gleichungen:
 \end{split}
 \end{equation}
 
-Diese Gleichungen können durch folgende Substitution umformuliert werden:
+Da $\nabla \cdot B = 0 $ gilt k"onnen diese Gleichungen durch folgende Substitution umformuliert werden:
 \begin{equation}
 B = \nabla\times A 
 \end{equation}
 
-Daraus folgt:
+Dadurch gilt $\nabla \cdot B = 0 $ automatisch:
 \begin{equation}
-\nabla \cdot B \rightarrow \nabla \cdot ( \nabla\times A ) = 0 \quad \text{ da } \operatorname{div}(\operatorname{rot}(A)) = 0
+\nabla \cdot B = 0 \rightarrow \nabla \cdot ( \nabla\times A ) = 0 \text{ gilt f"ur jedes A! }
 \end{equation}
 
+Durch Einsetzen erhält man die Gleichung f"ur E:
 \begin{equation}
 \nabla\times E + \frac{1}{c} \frac{\partial B }{\partial t} = 0
 \rightarrow \nabla\times E + \frac{1}{c} \frac{\partial \nabla\times A }{\partial t} = 0 \rightarrow E = -\frac{1}{c} \dfrac{\partial A}{\partial t} - \nabla \phi
@@ -47,7 +49,7 @@ Daraus folgt:
 
 $\nabla \phi$ kann als Integrationskonstante angesehen werden und $\phi$ entspricht dem skalaren Potential des Feldes.
 
-Durch weiteres Einsetzen können die vier Maxwell-Gleichungen in zwei Gleichungen umgeschrieben werden:
+Durch weiteres Einsetzen k"onnen die vier Maxwell-Gleichungen in zwei Gleichungen umgeschrieben werden:
 \begin{equation}
 \begin{split}
  \nabla^2 \phi + \frac{1}{c} \dfrac{\partial \nabla A}{\partial t} &= -\rho \\
@@ -63,15 +65,48 @@ E &= -\frac{1}{c} \dfrac{\partial A}{\partial t} - \nabla \phi
 \end{split}
 \end{equation}
 
-Es kann gezeigt werden, dass $\phi$ durch eine Eichtransformation geeignet gew"ahlt werden kann, damit:
+Es kann gezeigt werden, dass $\phi$ durch eine Eichtransformation (Siehe \ref{section:eichtransformation}) geeignet gew"ahlt werden kann, damit:
 
 \begin{equation}
 \nabla \cdot A + \frac{1}{c} \frac{\partial \phi }{\partial t} = 0
 \end{equation}
 
-In einem Transversalfeld im Vakkum gilt zudem $\nabla \cdot A = 0$  sowie $J = 0$.
+Dadurch werden die zwei gekoppelten Gleichungen entkoppelt und es gilt:
+\begin{equation}
+\begin{split}
+\nabla^2 \phi - \frac{1}{c^2} \dfrac{\partial^2 \nabla \phi}{\partial t^2} &= -\rho \\
+\nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} &= - \frac{1}{c} J
+\end{split}
+\end{equation}
 
-Dadurch vereinfachen sich die gekoppelten Differentialgleichung zu einer Differentialgleichung in A:
+F"ur weiter wollen ein Feld im Vakkum betrachten. Hierf"ur gilt $J = 0$, da keine Leiter vorhanden sind.
+In einem Transversalfeld im Vakkum gilt zudem $\nabla \cdot A = 0$. (ToDo: ??) Dadurch vereinfachen sich die gekoppelten Differentialgleichung zu einer Differentialgleichung in A:
 \begin{equation}
 \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} = 0
 \end{equation}
+
+L"osungen dieser Gleichung f"ur periodische Randbedingungen und $t=0$ in einer Box mit Seitenl"ange $L = V^{1/3}$ sind durch die Fourier Reihe gegeben:
+
+\begin{equation}
+A(x,0) = \frac{1}{\sqrt{V}} \sum_K \sum_{\alpha=1,2} (c_{k,\alpha}(0) \epsilon^{(\alpha)} e^{ikx} + c^*_{k,\alpha}(0) \epsilon^{(\alpha)} e^{-ikx})
+\end{equation}
+
+oder durch setzen von $u_{k,\alpha}(x) = \epsilon^{(\alpha)} e^{ikx}$:
+\begin{equation}
+A(x,0) = \frac{1}{\sqrt{V}} \sum_K \sum_{\alpha=1,2} (c_{k,\alpha}(0)u_{k,\alpha}(x) + c^*_{k,\alpha}(0) u^*_{k,\alpha}(x))
+\end{equation}
+
+Wenn diese Gleichung ausgeschrieben wird, sieht man, dass $A(x,t)$ durch diese Wahl f"ur alle $c_{k,\alpha}(t)$ reell bleibt:
+\begin{equation}
+(a + ib)(\cos kx + i \sin kx ) + (a - ib)(\cos kx - i \sin kx ) = 2 ( a \cos kx - b \sin kx )
+\end{equation}
+%=a \cos kx + ib \cos kx + ia \sin kx - b \sin kx + a \cos kx - ib \cos kx - ia \sin kx - b \sin kx
+
+$k$ ist der Ausbreitungsvektor der Welle und zeigt in die Ausbreitungsrichtung. $\epsilon^{(\alpha)}$ ist die Polarisation. Dabei wird vorausgesetzt, dass $(\epsilon^{(1)}, \epsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
+
+Da $\epsilon^{(\alpha)}$ und $k$ orthogonal sind gilt dabei auch automatisch:
+
+\begin{equation}
+\nabla \cdot A = \frac{1}{\sqrt{V}} \sum_K \sum_{\alpha=1,2} (i c_{k,\alpha}(0) \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{ikx} - i c^*_{k,\alpha}(0) \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{-ikx}) = 0
+\end{equation}
+
