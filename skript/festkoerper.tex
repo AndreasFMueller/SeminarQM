@@ -218,6 +218,12 @@ Wir schreiben $T_v$ f"ur den Verschiebe-Operator, definiert durch
 Mit dem Verschiebeoperator l"asst sich die Periodizit"at des Potentials
 durch die Gleichung $T_vV=V$ ausdr"ucken.
 
+Die Translationsoperatoren sind mit der Addition vertr"aglich:
+\begin{align*}
+T_{u+v}\psi(x)&=\psi(x+u+v)=T_u\psi(x+v)=T_uT_v\psi(x),\\
+T_{nv}\psi(x)&=T_v^n\psi(x).
+\end{align*}
+
 \subsection{Hamilton-Operator}
 Der Hamilton-Operator eines Elektrons in einem Gitter hat in der Ortsdarstellung
 die Form
@@ -279,7 +285,8 @@ Also wird das reziproke Gitter von $2\pi a^{-1}$ aufgespannt.
 \end{beispiel}
 
 \begin{beispiel}
-Wir betrachten das zweidimensionale Gitter aufgespannt von den Vektoren
+Wir betrachten das zweidimensionale, rechteckiges Gitter
+aufgespannt von den Vektoren
 \[
 v_1=\begin{pmatrix}1\\0\end{pmatrix}
 \qquad\text{und}\qquad
@@ -294,6 +301,7 @@ V^{-1}=\begin{pmatrix}1&0\\0&\frac1a\end{pmatrix}
 \vec k_1=\begin{pmatrix}2\pi\\0\end{pmatrix},\quad
 \vec k_2=\begin{pmatrix}0\\\frac{2\pi}a\end{pmatrix}
 \]
+Das reziproke Gitter ist wieder ein rechteckiges Gitter.
 \end{beispiel}
 
 \begin{figure}
@@ -304,7 +312,7 @@ V^{-1}=\begin{pmatrix}1&0\\0&\frac1a\end{pmatrix}
 \includegraphics{graphics/fest-5.pdf}
 \caption{Hexagonales Gitter (oben) und dazu geh"origes reziprokes Gitter
 (unten)
-\label{skript:hexaonalesgitter}}
+\label{skript:hexagonalesgitter}}
 \end{figure}
 
 \begin{beispiel}
@@ -351,10 +359,150 @@ $\Gamma$ zu entsprechend k"urzeren Basisvektoren des reziproken
 Gitters $\Gamma'$ f"uhren.
 
 \subsection{Folgen der Translations-Invarianz}
-Sei jetzt $\psi$ eine 
+Im Folgenden beschr"anken wir uns wieder auf ein eindimensionales Gitter
+$\Gamma$ mit Gitterkonstante $a$.
+Vektoren im Gitter $v\in\Gamma$ sind Vielfache $v=na$ der Gitterkonstanten,
+und es gilt $T_{v}=T_{na}=T_a^n$.
+Das reziproke Gitter $\Gamma'$ hat die Gitterkonstante $2\pi/a$.
+
+Da der Hamilton-Operator $H$ mit allen Translationen $T_v$ vertauscht,
+gibt es eine Basis aus gleichzeitigen Eigenfunktionen von $H$ und $T_v$.
+Sei also $|\psi\rangle$ ein translationsinvarianter Eigenzustand mit
+Wellenfunktion $\psi(x)$. Da $|\psi\rangle$ ein Eigenzustand aller $T_v$
+ist, muss gelten
+\[
+T_v\psi(x)=\psi(x+v)=\lambda_v\psi(x)
+\]
+f"ur jeden Vektor $v=na$.
+Weil $T_v=T_a^n$ ist, muss es eine Zahl $\lambda=\lambda_a$ geben mit
+$\lambda_v=\lambda^n$.
+
+Ausserdem gelten weiterhin die periodischen Randbedingungen,
+was soviel bedeutet wie dass $T_{2l}$ der Einheitsoperator ist%
+\footnote{Hier
+steckt der Grund, warum wir uns f"ur die aktuelle Diskussion wieder
+auf den eindimensionalen Fall beschr"anken. Die Diskussion l"asst sich
+selbstverst"andlich auf ein dreidimensionales Gitter "ubertragen, aber
+die Definition der periodischen Randbedingungen muss mit etwas mehr
+Sorgfalt erfolgen.}.
+Dies bedeutet, dass es eine ganze Zahl $n$ geben muss so,
+dass $T_a^n=\operatorname{id}$. F"ur den Eigenvektor $|\psi\rangle$
+von $T_a$ mit Eigenwert $\lambda$, bedeutet dies, dass $\lambda^n=1$
+sein muss. Insbesondere muss $|\lambda|=1$ sein. 
+
+Die Zahl $\lambda$ kann in der Form $\lambda=e^{iKa}$ geschrieben werden,
+und wegen $\lambda^n=e^{inKa}$ muss $nKa$ ein Vielfaches von $2\pi$ sein.
+$K$ ist nicht eindeutig bestimmt, denn addiert man $k\in\Gamma'$, dann ist
+\[
+e^{i(K+k)a}=e^{iKa}\underbrace{e^{ika}}_{=1}=e^{iKa}.
+\]
+$K$ ist also nur bis auf einen Vektor in $\Gamma'$ bestimmt.
+Insbesondere kann man unter alle in Frage kommenden Vektoren $K$ immer
+denjenigen ausw"ahlen, der am n"achsten beim Nullpunkt liegt.
+
+Wir schreiben jetzt
+\[
+u(x)=e^{-iKx}\psi(x)
+\qquad\Rightarrow\qquad
+\psi(x)=e^{iKx}u(x).
+\]
+Die Wirkung des Operators $T_a$ kann man jetzt ausrechnen:
+\begin{equation}
+\left.
+\begin{aligned}
+T_a\psi(x)&=\psi(x+a)=e^{iK(x+a)}u(x+a)=\lambda e^{iKx}u(x+a)
+\\
+=\psi(x)&=e^{iKx}u(x)
+\end{aligned}
+\right\}
+\qquad\Rightarrow\qquad
+u(x+a)=u(x).
+\end{equation}
+Die Funktion $u(x)$ ist also gitterperiodisch.
+
+Die m"oglichen Werte von $K$ sind nicht beliebig, da $e^{iKx}$ die
+periodischen Randbedingungen des Kristalls erf"ullen muss. Wenn $l=Na$
+ist, dann muss $K$ ein Vielfaches von $\frac{2\pi}{Na}$ sein.
+Je gr"osser der Kristall ist, desto n"aher liegen die m"oglichen
+Wert von $K$ beeinander.
+Wir nehmen im Folgenden an, dass $N$ sehr gross ist, so dass die
+m"oglichen Werte von $K$ so nahe beeinander liegen, dass man sie in
+einer graphischen Darstellung nicht mehr unterscheiden kann.
 
 \subsection{Kristall-Elektronen}
+Ein Energiezustand $|\psi\rangle$ von $H$ mit Energie $E$
+kann immer beschrieben werden als ein Produkt $e^{iKx} u(x)$,
+wobei $K$ ein beliebiger Wellenzahlvektor ist.
+Die Wirkung des Hamilton-Operators k"onnen wir nat"urlich auch
+berechnen:
+\[
+H|\psi\rangle
+=
+e^{iKx}\biggl(
+\frac{\hbar^2K^2}{2m_e}-\frac{\hbar^2}{2m_e}\frac{\partial^2}{\partial x^2}
++V(x)
+\biggr)u(x)
+=
+e^{iKx}E(K)u(x) + e^{iKx} Hu(x)
+=
+e^{iKx}Eu(x)
+\]
+mit
+\[
+E(K)=\frac{\hbar^2K^2}{2m_e}.
+\]
+Die Funktion $u$ Ist also ein Eigenzustand des Operators $H-E(K)$. Umgekehrt
+kann man aus jeder periodischen Eigenfunktion $u(x)$ von $H$ mit Energie
+$E_u$ einen Eigenvektor $e^{iKx}u(x)$ von $H$ mit Energie $E_u+E(K)$, machen.
+
+Die L"osungen $u(x)$ ist in der Umgebung jedes Gitterpunktes gleich.
+Da die Gitteratome nicht unterscheidbar sind, kann ein Elektron
+nicht ``feststellen'', ob es sich beim richtigen Atom befindet.
+$u(x)$ beschreibt also ein Elektron, welches sich in der N"ahe jedes
+Kristallatoms gleich verh"alt.
+Man nennt die periodischen Eigenzust"ande von $H$ daher auch
+{\em Kristall-Elektronen}.
+Der zugeh"orige Eigenwert ist die Energie des Elektrons als ans Gitter
+gebundenes Elektron.
+
+Der Faktor $e^{iKx}$ beschreibt die Bewegung eines Kristallelektrons
+durch das Gitter. Er gbit dem Elektron die zus"atzliche Bewegungsenergie
+$E(K)$.
+
+Man beachte, dass diese Zerlegung der Eigenzust"ande selbst dann gilt,
+wenn das Potential verschwindet.
+Dann sind die Funktionen $u$ besonders einfach zu beschreiben, es
+sind die gitterperiodischen ebenen Wellen, also die Funktionen $e^{ik_0x}$ mit
+$k_0\in\Gamma'$.
+Tats"achlich l"asst sich jede ebene Welle $e^{ikx}$ schreiben als
+\[
+e^{ikx}=e^{i(K+k_0)x} = e^{iKx}e^{ik_0x}
+\]
+schreiben.
+
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{graphics/fest-6.pdf}
+\caption{Energieparabeln f"ur verschiedene Vektoren $K$. Die Energie
+eines Zustands setzt sich zusammen aus der Energie $E(K)$ und der
+Energie des zugeh"origen Kristallelektrons.
+Die auf der $K$-Achse eingezeichneten Punkte stellen das reziproke
+Gitter dar.
+Grau hinterlegt die Wigner-Seitz-Zelle des reziproken Gitters.
+\label{skript:dispersion}}
+\end{figure}
+
+Abbildung~\ref{skript:dispersion} zeigt die Energieparabeln in Abh"angikeit
+von $K$. Da die Wahl von $K$ nur bis auf einen Summanden im reziproken
+Gitter eindeutig ist, kann man einen Zustand gen"ugend hoher Gesamtenergie
+auf verschiedene Arten in ein Kristallelektron und einen Faktor 
+$e^{iKx}$ zerlegen.
+In der Wigner-Seitz-Zelle des reziproken Gitters (hellgrau hinterlegt)
+l"asst sich bereits
+das ganze Energiespektrum der Elektronen im Festk"orper ablesen.
 
 \subsection{Schwaches Potential}
+In den bisherigen "Uberlegungen haben wir das Potential $V(x)$ der Gitteratome
+vernachl"assigt.
 
 

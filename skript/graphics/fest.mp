@@ -255,4 +255,71 @@ clipit(1);
 
 endfig;
 
+%
+% Dispersionsrelation
+%
+beginfig(6)
+
+numeric unit;
+unit := 60;
+numeric xmin;
+numeric xmax;
+path p;
+
+numeric a;
+a := 0.5;
+
+def parabola(expr c) =
+	p := (-5,16 * a);
+	for x = -5.9 step 0.1 until 5:
+		p := p--(x, x * x * a);
+	endfor;
+	draw p scaled unit shifted (c * unit, 0);
+enddef;
+
+fill (-0.5*unit,0)--(0.5*unit,0)--(0.5*unit,5*unit)--(-0.5*unit,5*unit)--cycle
+	withcolor (0.95,0.95,0.95);
+
+pickup pencircle scaled 1pt;
+draw (-3.2 * unit,0)--(3.2*unit, 0);
+draw (0,-5)--(0,5*unit);
+
+for c = -5 step 1 until 5:
+	pickup pencircle scaled 0.7pt;
+	parabola(c)
+	pickup pencircle scaled 0.2pt;
+	draw ((c+0.5) * unit, -5)--((c+0.5)*unit, 300);
+endfor;
+
+pickup pencircle scaled 1.5pt;
+parabola(0);
+
+for c = -5 step 1 until 5:
+	pickup pencircle scaled 4pt;
+	draw (c * unit, 0) withcolor white;
+	pickup pencircle scaled 3pt;
+	draw (c * unit, 0);
+	pickup pencircle scaled 2pt;
+	draw (c * unit, 0) withcolor white;
+endfor;
+
+clip currentpicture to (-3.2 * unit, -5)--(3.2 * unit,-5)
+		--(3.2*unit,3.5 * unit)--(-3.2*unit,3.5*unit)--cycle;
+
+label.bot(btex 0 etex, (0 * unit, -5));
+label.bot(btex $1\cdot \frac{2\pi}{a}$ etex, ( 1 * unit, -2));
+label.bot(btex $2\cdot \frac{2\pi}{a}$ etex, ( 2 * unit, -2));
+label.bot(btex $3\cdot \frac{2\pi}{a}$ etex, ( 3 * unit, -2));
+label.bot(btex $-1\cdot \frac{2\pi}{a}$ etex, (-1 * unit, -2));
+label.bot(btex $-2\cdot \frac{2\pi}{a}$ etex, (-2 * unit, -2));
+label.bot(btex $-3\cdot \frac{2\pi}{a}$ etex, (-3 * unit, -2));
+
+pickup pencircle scaled 1pt;
+drawarrow (3.2*unit,0)--(3.5*unit,0);
+label.top(btex $K$ etex, (3.5*unit,0));
+drawarrow (0,3.5*unit)--(0,3.7*unit);
+label.rt(btex $E$ etex, (0,3.7*unit));
+
+endfig;
+
 end
