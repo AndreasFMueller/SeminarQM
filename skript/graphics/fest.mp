@@ -162,4 +162,97 @@ draw (0,-210)--(0,10); label.ulft(btex $E$ etex, (0,0));
 
 endfig;
 
+%
+% Hexagonales Gitter
+%
+def clipit(expr s) =
+	clip currentpicture to (((-140,-100)--(140,-100)--(140,100)--(-140,100)--cycle) scaled s)
+enddef;
+
+beginfig(4)
+
+numeric unit;
+unit = 40;
+
+z0 = (0,0);
+z1 = (unit, 0);
+z2 = (unit / 2, unit * sqrt(3) / 2);
+z3 = z2 shifted -z1;
+
+pickup pencircle scaled 1pt;
+drawarrow z0--z1;
+drawarrow z0--z2;
+
+label.bot(btex $v_1$ etex, 0.5[z0,z1]);
+label.ulft(btex $v_2$ etex, 0.5[z0,z2]);
+
+pickup pencircle scaled 0.2pt;
+for i = -5 step 1 until 5:
+	draw (z0 shifted (i * z1) shifted (-5 * z2))--
+		(z0 shifted (i * z1) shifted (5 * z2));
+	draw (z0 shifted (-5 * z1) shifted (i * z2))--
+		(z0 shifted (5 * z1) shifted (i * z2));
+	draw (z0 shifted (i * z1) shifted (5 * z3))--
+		(z0 shifted (i * z1) shifted (-5 * z3));
+endfor;
+
+for i = -5 step 1 until 5:
+	for j = -5 step 1 until 5:
+		pickup pencircle scaled 4pt;
+		draw z0 shifted (i * z1) shifted (j * z2) withcolor white;
+		pickup pencircle scaled 3pt;
+		draw z0 shifted (i * z1) shifted (j * z2);
+		pickup pencircle scaled 2pt;
+		draw z0 shifted (i * z1) shifted (j * z2) withcolor white;
+	endfor;
+endfor;
+
+clipit(1);
+
+endfig;
+
+%
+% duales hexagonales Gitter
+%
+beginfig(5)
+
+z0 = (0,0);
+
+% duales gitter
+z11 = 1.5 * unit * (1, -1/sqrt(3));
+z12 = 1.5 * unit * (0,2/sqrt(3));
+z13 = z12 shifted z11;
+
+pickup pencircle scaled 1pt;
+drawarrow z0--z11;
+drawarrow z0--z12;
+
+label.lft(btex $k_2$ etex, 0.5[z0,z12]);
+label.llft(btex $k_1$ etex, 0.5[z0,z11]);
+
+pickup pencircle scaled 0.2pt;
+for i = -5 step 1 until 5:
+	draw (z0 shifted (i * z11) shifted (-5 * z12))--
+		(z0 shifted (i * z11) shifted (5 * z12));
+	draw (z0 shifted (-5 * z11) shifted (i * z12))--
+		(z0 shifted (5 * z11) shifted (i * z12));
+	draw (z0 shifted (i * z11) shifted (5 * z13))--
+		(z0 shifted (i * z11) shifted (-5 * z13));
+endfor;
+
+for i = -5 step 1 until 5:
+	for j = -5 step 1 until 5:
+		pickup pencircle scaled 4pt;
+		draw z0 shifted (i * z11) shifted (j * z12) withcolor white;
+		pickup pencircle scaled 3pt;
+		draw z0 shifted (i * z11) shifted (j * z12);
+		pickup pencircle scaled 2pt;
+		draw z0 shifted (i * z11) shifted (j * z12) withcolor white;
+	endfor;
+endfor;
+
+clipit(1);
+
+endfig;
+
 end

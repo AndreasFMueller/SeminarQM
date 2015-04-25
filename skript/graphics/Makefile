@@ -12,7 +12,7 @@ all:	pert analysator arctan drehimpuls gatter dependencies periodensystem \
 komplex_FILES = komplex-1.pdf
 komplex: $(komplex_FILES)
 
-fest_FILES = fest-1.pdf fest-2.pdf fest-3.pdf
+fest_FILES = fest-1.pdf fest-2.pdf fest-3.pdf fest-4.pdf fest-5.pdf
 fest: $(fest_FILES)
 
 linear_FILES = linear-1.pdf
@@ -161,7 +161,7 @@ $(linear_FILES):	linear.mp
 
 $(fest_FILES):	fest.mp
 	TEX=latex mpost fest.mp
-	for i in 1 2 3; \
+	for i in 1 2 3 4 5; \
 	do \
 		mptopdf fest.$${i}; \
 	done
