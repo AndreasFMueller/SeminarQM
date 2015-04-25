@@ -234,18 +234,124 @@ In einem ersten Schritt betrachten wir den Fall $V=0$.
 In diesem Fall wird der Hamilton-Operator zum Hamilton-Operator eines
 freien Elektrons, f"ur den wir sofort ebene Wellen als Eigenzust"ande
 angeben k"onnen:
-\[
-\psi(x)=e^{i\vec k\cdot \vec x}
-\]
+\begin{equation}
+\psi_{\vec k}(x)=e^{i\vec k\cdot \vec x}
+\label{skript:ebenewelle}
+\end{equation}
 Diese Eigenfunktionen von $H$ sind aber nicht gleichzeitig auch
 Eigenfunktionen des Translationsoperators. Wegen $[H,T_v]=0$
 sollte es aber m"oglich sein, eine Basis von gleichzeitigen
 Eigenvektoren von $H$ und $T_v$ zu w"ahlen.
 
 \subsection{Das reziproke Gitter}
-Ebene Wellen haben die Form $e^{i\vec k\cdot\vec x}$.
+Welche Vektoren $\vec k$ ergeben ebenen Wellen, die periodisch sind?
+F"ur jeden Vektor $v\in\Gamma$ des Gitters muss gelten
+\[
+\psi_{\vec k}(x+v)=\psi_{\vec k}(x).
+\]
+Mit (\ref{skript:ebenewelle}) folgt daraus, dass
+$\vec k\cdot v$ ein Vielfaches von $2\pi$ sein muss.
+Ausgehend von einer Basis $\vec v_i$ des Gitters sind
+\[
+\vec k\cdot v_i=2\pi n_i
+\]
+linear unbh"angige Gleichungen f"ur den Vektor $\vec k$. Schreibt man
+die Koeffizienten der Vekoren $v_i$ als Zeilen in eine Matrix $V$
+und die Zahlen $n_i$ in als Spaltenvektore $\vec n$,
+dann kann man das Gleichungssystem als
+\[
+V\vec k=2\pi\vec n
+\]
+schreiben, und man kann die L"osungen mit der inversen Matrix als
+\[
+\vec k = 2\pi V^{-1}\vec n
+\]
+finden.
+Insbesondere bilden die Vektoren $\vec k$, die zu gitterperiodischen
+ebenen Wellen f"uhren, selbst ein Gitter, welches von den Spaltenvektoren
+von $2\pi V^{-1}$ aufgespannt wird.
+Es heisst das reziproke Gitter $\Gamma'$ von $\Gamma$.
+
+\begin{beispiel}
+Sei $\Gamma = \{ na\,|\, n\in\mathbb Z\}$ ein eindimensionales Gitter.
+Es wird erzeugt von $v_1=a$.
+Also wird das reziproke Gitter von $2\pi a^{-1}$ aufgespannt.
+\end{beispiel}
+
+\begin{beispiel}
+Wir betrachten das zweidimensionale Gitter aufgespannt von den Vektoren
+\[
+v_1=\begin{pmatrix}1\\0\end{pmatrix}
+\qquad\text{und}\qquad
+v_2=\begin{pmatrix}0\\a\end{pmatrix}.
+\]
+Das reziproke Gitter wird erzeugt von den Spalten von $2\pi V^{-1}$,
+\[
+V=\begin{pmatrix} 1&0\\ 0&a \end{pmatrix}
+\qquad\Rightarrow\qquad
+V^{-1}=\begin{pmatrix}1&0\\0&\frac1a\end{pmatrix}
+\qquad\Rightarrow\qquad
+\vec k_1=\begin{pmatrix}2\pi\\0\end{pmatrix},\quad
+\vec k_2=\begin{pmatrix}0\\\frac{2\pi}a\end{pmatrix}
+\]
+\end{beispiel}
+
+\begin{figure}
+\centering
+\includegraphics{graphics/fest-4.pdf}
+\bigskip
+
+\includegraphics{graphics/fest-5.pdf}
+\caption{Hexagonales Gitter (oben) und dazu geh"origes reziprokes Gitter
+(unten)
+\label{skript:hexaonalesgitter}}
+\end{figure}
+
+\begin{beispiel}
+Wir betrachten das hexonale Gitter aufgespannt von den Vektoren
+\[
+v_1=\begin{pmatrix}1\\0\end{pmatrix}
+\qquad\text{and}\qquad
+v_2=\begin{pmatrix}\frac12\\\frac{\sqrt{3}}2\end{pmatrix}.
+\]
+Die Inverse der Matrix $V$ ist
+\[
+V=\begin{pmatrix}
+1&0\\
+\frac12&\frac{\sqrt{3}}2
+\end{pmatrix}
+\qquad\Rightarrow\qquad
+V^{-1}=\begin{pmatrix}
+1&0\\
+-\frac1{\sqrt{3}}&\frac{2}{\sqrt{3}}
+\end{pmatrix}.
+\]
+Die Spaltenvektoren haben beide die L"ange $2/\sqrt{3}$, und der
+Zwischenwinkel ist 
+\[
+\cos\alpha
+=
+\frac{
+\begin{pmatrix}1\\-\frac1{\sqrt{3}}\end{pmatrix}
+\cdot
+\begin{pmatrix}0\\\frac{2}{\sqrt{3}}\end{pmatrix}
+}{\frac{4}{3}}
+=
+\frac{3}{4}\cdot \biggl(-\frac{2}{3}\biggr)
+=
+-\frac12
+\qquad \Rightarrow \qquad
+\alpha=\frac{2\pi}3.
+\]
+Abbildung~\ref{skript:hexagonalesgitter} zeigt das hexagonale Gitter 
+und das zugeh"orige reziproke Gitter.
+\end{beispiel}
+Die Beispiele illustrieren, wie l"angere Basisvektoren f"ur das Gitter
+$\Gamma$ zu entsprechend k"urzeren Basisvektoren des reziproken
+Gitters $\Gamma'$ f"uhren.
 
 \subsection{Folgen der Translations-Invarianz}
+Sei jetzt $\psi$ eine 
 
 \subsection{Kristall-Elektronen}
 
