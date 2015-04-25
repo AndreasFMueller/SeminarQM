@@ -343,7 +343,7 @@ Zwischenwinkel ist
 \begin{pmatrix}1\\-\frac1{\sqrt{3}}\end{pmatrix}
 \cdot
 \begin{pmatrix}0\\\frac{2}{\sqrt{3}}\end{pmatrix}
-}{\frac{4}{3}}
+}{\displaystyle\frac{4}{3}}
 =
 \frac{3}{4}\cdot \biggl(-\frac{2}{3}\biggr)
 =
@@ -504,5 +504,170 @@ das ganze Energiespektrum der Elektronen im Festk"orper ablesen.
 \subsection{Schwaches Potential}
 In den bisherigen "Uberlegungen haben wir das Potential $V(x)$ der Gitteratome
 vernachl"assigt.
+Wir wollen jetzt den Fall eines schwachen Potentials untersichen.
+Auch dies ist noch kein realisitisches Modell f"ur alle Elektronen im 
+Kristall. Elektronen mit geringer Energie werden sich bevorzugt in der
+N"ahe der Atomkerne aufhalten, und entsprechend ein starkes Potential
+sp"uren.
+Dadurch schirmen sie die positive Kernladung wenigstens zum Teil ab, 
+so dass die Elektronen mit hoher Energie nur noch ein stark reduziertes
+Feld sp"uren. Es ist also plausibel, dass die N"aherung eines schwachen
+Feldes f"ur Elektronen mit hoher Energie anwendbar ist.
+
+Ein freies Elektron mit Wellenzahl $k$ hat Energie $\hbar^2k^2/2m_e$, und wir
+k"onnen die Wellenfunktion zerlegen in ein Kristallelektron und einen
+Faktor $e^{iKx}$.
+Das Kristallelektron ist ebenfalls eine ebene Welle.
+Unter der Wirkung eines schwachen Potentials ist die Zerlegung in
+Kristallelektron $u(k,x)$ und eine ebene Welle $e^{iKx}$.
+Der Beitrag der Energie vom Faktor $e^{iKx}$ ist immer noch $\hbar^2K^2/2m_e$,
+aber die Gesammtenergie $E(k)$ wird wohl von $\hbar^2k^2/2m_e$ abweichen.
+Ziel ist, die Funktion $E(k)$ zu berechnen.
+
+Wir wollen die Wellenfunktion des Kristallelektrons berechnen 
+f"ur eine gegebene Wellenzahl $k$.
+Da die Funktion $u(x)$ periodisch ist, k"onnen wir sie in eine Fourier-Reihe
+entwickeln, wir nennen die Koeffizienten $u_k$:
+\[
+u(x)=\sum_{k'\in\Gamma'} u_{k'} e^{ik'x}.
+\]
+
+Die Wellenfunktion $\psi(k,x)$ kann mit den Koeffizienten $u_{k'}$ als
+\[
+\psi(k,x)
+=
+e^{ikx}\sum_{k'\in\Gamma'}u_{k'}e^{ik'x}
+=
+\sum_{k'\in\Gamma'}u_{k'}e^{i(k+k')x}.
+\]
+ausgedr"uckt werden.
+F"ur $k'=0$ erhalten wir eine ebene Welle.
+Da wir von einem schwachen Potential ausgehen, darf die Wellenfunktion
+nicht stark von der ebenen Welle abweichen. Wir k"onnen also davon ausgehen,
+dass $u_0$ nahe bei $1$ ist und dass die Koeffizienten $u_{k'}$
+mit $k'\ne 0$ sind also wesentlich kleiner als $u_0$.
+
+Das periodische Potential $V(x)$ kann ebenfalls in eine Fourier-Reihe
+entwickeltw werden, wir schreiben
+\[
+V(x) = \sum_{k'\in\Gamma'}V_ke^{ik'x}.
+\]
+Wir nehmen an, dass der Mittelwert von $V(x)$ verschwindet, dass also $V_0=0$.
+
+Damit haben wir alles in Fourier-Koeffizienten entwickelt, und k"onnen die
+Ausdr"ucke in die Schr"odingergleichung einsetzen:
+\begin{align}
+H\psi(k,x)
+=
+-\frac{\hbar^2}{2m_e}\frac{\partial^2}{\partial x^2} \psi(k,x)
++V(x)\psi(k,x)
+&=E(k)\psi(k,x)
+\notag
+\\
+\sum_{k'\in\Gamma'}\biggl(
+\frac{\hbar^2}{2m_e}(k+k')^2
++
+\sum_{k''\in\Gamma'}V_{k''}e^{ik''x}
+\biggr)u_{k'}e^{i(k+k')x}
+&=
+E(k)\sum_{k'\in\Gamma'} u_{k'}e^{i(k+k')x}
+\notag
+\\
+\sum_{k'\in\Gamma'}\biggl(
+\frac{\hbar^2}{2m_e}(k+k')^2
+-E(k)
++
+\sum_{k''\in\Gamma'}V_{k''}e^{ik''x}
+\biggr)u_{k'}e^{i(k+k')x}
+&=
+0
+\label{skript:periodicschroedinger}
+\end{align}
+Die innere Summe hindert uns daran, direkt einen Koeffizientenvergleich
+anzustellen.
+Wir formen daher den Potentialterm wie folgt um
+\begin{equation*}
+\sum_{k'\in\Gamma'}\sum_{k''\in\Gamma'}V_{k''}u_{k'}e^{i(k+k'+k'')x}
+=
+\sum_{\bar k\in\Gamma'}\sum_{k''\in\Gamma'}V_{\bar k-k''}u_{k''}e^{i(k+\bar k)x}
+\end{equation*}
+Dabei haben wir $\bar k=k'+k''$ gesetzt, $k'=\bar k-k''$. Schreiben wir jetzt
+wieder $k'=\bar k$, dann k"onnen wir die
+Gleichung~(\ref{skript:periodicschroedinger}) vereinfachen zu
+\begin{align*}
+\sum_{k'\in\Gamma'}\biggl(
+\frac{\hbar^2}{2m_e}(k+k')^2
+-E(k)
+\biggr)u_{k'}e^{i(k+k')x}
++
+\sum_{k'\in\Gamma'}\sum_{k''\in\Gamma'}V_{k'-k''}u_{k''}e^{i(k+k')x}
+&=
+0
+\\
+\sum_{k'\in\Gamma'}\biggl(
+\biggl(
+\frac{\hbar^2}{2m_e}(k+k')^2
+-E(k)
+\biggr)u_{k'}
++
+\sum_{k''\in\Gamma'}V_{k'-k''}u_{k''}
+\biggl)
+e^{i(k+k')x}
+&=
+0
+\end{align*}
+Durch Koeffizientenvergleich k"onnen wir jetzt ablesen, dass
+\begin{equation}
+\biggl(
+\frac{\hbar^2}{2m_e}(k+k')^2
+-E(k)
+\biggr)u_{k'}
++
+\sum_{k''\in\Gamma'}V_{k'-k''}u_{k''}
+=
+0
+\label{skript:ukgleichung}
+\end{equation}
+Aus dieser Gleichung k"onnen wir zwar die $u_{k'}$ nicht exakt
+bestimmen, aber es sollten sich mindestens in erster Ordnung
+Absch"atzungen f"ur die Koeffizienten und vor allem f"ur $E(k)$
+machen lassen.
+
+\subsubsection{Bestimmung der $u_{k'}$ in erster N"aherung}
+Die Energie $E(k)$ wird in erster N"aherung mit der Energie f"ur das
+freie Elektron "ubereinstimmen.
+Die Koeffizienten $u_{k''}$ sind bis auf $u_0$ in erster N"aherung
+vernachl"assigbar, damit wird die Gleichung~(\ref{skript:ukgleichung})
+zu
+\begin{align*}
+\frac{\hbar^2}{2m_e}((k+k')^2 -k^2)
+u_{k'}
++
+V_{k'}
+&=
+0,
+\end{align*}
+die wir nach $u_{k'}$ aufl"osen k"onnen
+\begin{align*}
+u_{k'}
+&=
+-
+\frac{V_{k'}}{
+\displaystyle
+\frac{\hbar^2}{2m_e}((k+k')^2 -k^2)
+}.
+\end{align*}
+Solange der Nenner klein ist, werden auch die Koeffizienten $u_{k'}$
+klein sein.
+Diese N"aherung wird aber nicht mehr funktionieren, wenn $(k+k')^2\simeq k^2$
+wird.
+Diese Situation kann eintreten, wenn $k\simeq -\pi/a$ und $k'\simeq 2\pi/a$,
+also in der N"ahe der vertikalen Linien in Abbildung~\ref{skript:dispersion}.
+In diesem Fall k"onnen wir auch nicht mehr annehmen,
+dass $E(k)=\hbar^2k^2/2m_e$.
+
+\subsubsection{Bragg-Reflexionen}
+
+\subsubsection{$E(k)$ in der N"ahe von Bragg-Reflexionen}
 
 
