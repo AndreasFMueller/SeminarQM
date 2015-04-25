@@ -30,8 +30,14 @@ def r(expr x, y) =
 	u * sqrt((x / u) * (x / u) + (y / u) * (y / u))
 enddef;
 
-for x = (-10.5 * u) step u until (10.5 * u):
-	for y = (-10.5 * u) step u until (10.5 * u):
+pickup pencircle scaled 1pt;
+drawarrow (-10.5 * u, 0)--(10.5 * u, 0);
+drawarrow (0, -10.5 * u)--(0, 10.5 * u);
+label.top(btex $k_x$ etex, (10.5 * u, 0));
+label.lft(btex $k_y$ etex, (0, 10.5 * u));
+
+for x = (-10 * u) step u until (10 * u):
+	for y = (-10 * u) step u until (10 * u):
 		if EF > r(x, y):
 			fill (x-0.5*u, y-0.5*u)--(x+0.5*u, y-0.5*u)
 				--(x+0.5*u, y+0.5*u)--(x-0.5*u, y+0.5*u)--cycle
@@ -41,19 +47,27 @@ for x = (-10.5 * u) step u until (10.5 * u):
 	endfor;
 endfor;
 
-for x = -10 * u step u until 10 * u:
-	draw (x,-10 * u - 5)--(x,10 * u + 5);
+pickup pencircle scaled 0.2pt;
+for x = -9.5 * u step u until 10 * u:
+	draw (x,-9.5 * u - 5)--(x,9.5 * u + 5);
 endfor;
 
-for y = -10 * u step u until 10 * u:
-	draw (-10 * u - 5,y)--(10 * u + 5,y);
+for y = -9.5 * u step u until 10 * u:
+	draw (-9.5 * u - 5,y)--(9.5 * u + 5,y);
 endfor;
+
+pickup pencircle scaled 3pt;
+draw (0,0);
 
 pickup pencircle scaled 1pt;
 
 draw (EF, 0)..(0,EF)..(-EF,0)..(0,-EF)..cycle withcolor (1,0,0);
 
-label.urt(btex $E_F$ etex, (6 * u, 6 * u)) withcolor (1,0,0);
+numeric d;
+d = EF + 0.1 * u;
+numeric a;
+a = 50;
+label.urt(btex $E_F$ etex, (d * cosd(a), d * sind(a))) withcolor (1,0,0);
 
 endfig;
 

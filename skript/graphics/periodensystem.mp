@@ -20,6 +20,10 @@ numeric linewidth;
 linewidth := 0.5pt;
 numeric	unit;
 unit := 20;
+numeric bright;
+bright := 0.92;
+numeric tint;
+tint := 0.8;
 
 def element(expr Z, symbol, position) =
 	pickup pencircle scaled linewidth;
@@ -34,7 +38,7 @@ enddef;
 
 beginfig(1)
 
-fill ((0,0)--(2,0)--(2,1)--(0,1)--cycle) scaled unit withcolor(1,0.9,0.9);
+fill ((0,0)--(2,0)--(2,1)--(0,1)--cycle) scaled unit withcolor(1,tint,tint);
 element(btex \no{1} etex, btex \el{H}  etex, ( 0,0));
 element(btex \no{2} etex, btex \el{He} etex, ( 1,0));
 
@@ -44,9 +48,9 @@ endfig;
 
 beginfig(2)
 
-fill ((0,0)--(1,0)--(1,3)--(0,3)--cycle) scaled unit withcolor(1.0,0.9,0.9);
-fill ((7,0)--(8,0)--(8,3)--(7,3)--cycle) scaled unit withcolor(1.0,0.9,0.9);
-fill ((1,0)--(7,0)--(7,2)--(1,2)--cycle) scaled unit withcolor(0.9,1.0,0.9);
+fill ((0,0)--(1,0)--(1,3)--(0,3)--cycle) scaled unit withcolor(1.0,tint,tint);
+fill ((7,0)--(8,0)--(8,3)--(7,3)--cycle) scaled unit withcolor(1.0,tint,tint);
+fill ((1,0)--(7,0)--(7,2)--(1,2)--cycle) scaled unit withcolor(tint,1.0,tint);
 
 label.lft(btex $n=1$ etex, (0, 2.5) scaled unit);
 label.lft(btex $n=2$ etex, (0, 1.5) scaled unit);
@@ -77,13 +81,15 @@ endfig;
 
 beginfig(3)
 
-fill ((0,0)--(1,0)--(1,5)--(0,5)--cycle) scaled unit withcolor(1.0,0.9,0.9);
-fill ((17,0)--(18,0)--(18,5)--(17,5)--cycle) scaled unit withcolor(1.0,0.9,0.9);
+fill ((0,0)--(1,0)--(1,5)--(0,5)--cycle) scaled unit withcolor(1.0,tint,tint);
+fill ((17,0)--(18,0)--(18,5)--(17,5)--cycle) scaled unit withcolor(1.0,tint,tint);
 
-fill ((1,0)--(2,0)--(2,4)--(1,4)--cycle) scaled unit withcolor(0.9,1.0,0.9);
-fill ((12,0)--(17,0)--(17,4)--(12,4)--cycle) scaled unit withcolor(0.9,1.0,0.9);
+fill ((1,0)--(2,0)--(2,4)--(1,4)--cycle) scaled unit withcolor(tint,1.0,tint);
+fill ((12,0)--(17,0)--(17,4)--(12,4)--cycle) scaled unit withcolor(tint,1.0,tint);
 
-fill ((2,0)--(12,0)--(12,2)--(2,2)--cycle) scaled unit withcolor(0.9,0.9,1.0);
+fill ((2,0)--(12,0)--(12,2)--(2,2)--cycle) scaled unit withcolor(tint,tint,1.0);
+
+fill ((6,0)--(7,0)--(7,1)--(6,1)--cycle) scaled unit withcolor(bright,bright,1.0);
 
 label.lft(btex $n=1$ etex, (0, 4.5) scaled unit);
 label.lft(btex $n=2$ etex, (0, 3.5) scaled unit);
@@ -154,16 +160,28 @@ endfig;
 
 beginfig(4)
 
-fill ((0,0)--(1,0)--(1,7)--(0,7)--cycle) scaled unit withcolor(1.0,0.9,0.9);
-fill ((31,0)--(32,0)--(32,7)--(31,7)--cycle) scaled unit withcolor(1.0,0.9,0.9);
+fill ((0,0)--(1,0)--(1,7)--(0,7)--cycle) scaled unit withcolor(1.0,tint,tint);
+fill ((31,0)--(32,0)--(32,7)--(31,7)--cycle) scaled unit withcolor(1.0,tint,tint);
 
-fill ((1,0)--(2,0)--(2,6)--(1,6)--cycle) scaled unit withcolor(0.9,1.0,0.9);
-fill ((26,0)--(31,0)--(31,6)--(26,6)--cycle) scaled unit withcolor(0.9,1.0,0.9);
+fill ((1,0)--(2,0)--(2,6)--(1,6)--cycle) scaled unit withcolor(tint,1.0,tint);
+fill ((26,0)--(31,0)--(31,6)--(26,6)--cycle) scaled unit withcolor(tint,1.0,tint);
 
-fill ((2,0)--(3,0)--(3,4)--(2,4)--cycle) scaled unit withcolor(0.9,0.9,1.0);
-fill ((17,0)--(26,0)--(26,4)--(17,4)--cycle) scaled unit withcolor(0.9,0.9,1.0);
+fill ((2,0)--(3,0)--(3,4)--(2,4)--cycle) scaled unit withcolor(tint,tint,1.0);
+fill ((17,0)--(26,0)--(26,4)--(17,4)--cycle) scaled unit withcolor(tint,tint,1.0);
 
-fill ((3,0)--(17,0)--(17,2)--(3,2)--cycle) scaled unit withcolor(1.0,1.0,0.9);
+fill ((3,0)--(17,0)--(17,2)--(3,2)--cycle) scaled unit withcolor(1.0,1.0,tint);
+
+fill ((20,2)--(21,2)--(21,3)--(20,3)--cycle) scaled unit withcolor(bright,bright,1.0);
+fill ((6,1)--(7,1)--(7,2)--(6,2)--cycle) scaled unit withcolor(1.0,1.0,bright);
+fill ((29,1)--(31,1)--(31,2)--(29,2)--cycle) scaled unit withcolor(bright,1.0,bright);
+fill ((31,1)--(32,1)--(32,2)--(31,2)--cycle) scaled unit withcolor(1.0,bright,bright);
+fill ((0,0)--(1,0)--(1,1)--(0,1)--cycle) scaled unit withcolor(1.0,bright,bright);
+fill ((1,0)--(2,0)--(2,1)--(1,1)--cycle) scaled unit withcolor(bright,1.0,bright);
+fill ((2,0)--(3,0)--(3,1)--(2,1)--cycle) scaled unit withcolor(bright,bright,1.0);
+fill ((3,0)--(17,0)--(17,1)--(3,1)--cycle) scaled unit withcolor(1.0,1.0,bright);
+fill ((17,0)--(26,0)--(26,1)--(17,1)--cycle) scaled unit withcolor(bright,bright,1.0);
+fill ((26,0)--(31,0)--(31,1)--(26,1)--cycle) scaled unit withcolor(bright,1.0,bright);
+fill ((31,0)--(32,0)--(32,1)--(31,1)--cycle) scaled unit withcolor(1.0,bright,bright);
 
 label.lft(btex $n=1$ etex, (0, 6.5) scaled unit);
 label.lft(btex $n=2$ etex, (0, 5.5) scaled unit);

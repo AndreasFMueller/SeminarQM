@@ -4,6 +4,111 @@
 \chapterauthor{Michael Cerny und Stefan Schindler}
 
 
+In diesem Kapitel erweitern wir das Beispiel des Potentialkastenss 
+(Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten})
+um eine St\"orung.
+
+\section{ St"orungstheorie }
+Grundsätzlich wir mit der St\"orungstheorie ein einfaches Modell-System um eine St\"orung
+erg"antzt, statt von Anfang an mit einem komplexen Modell zu rechnen.
+
+Wir erg\"anzen das Modell des einfachen Systems $\hat{H_0}$
+(Siehe Abbildung \ref{skript:potentialkasten})
+um $\hat{H_1}$, welches das angelegte Feld darstellt.
+\[
+\hat{H} = \varepsilon^0 \hat{H_0} + \varepsilon^1 \hat{H_1}
+\]
+
+
+
+
+
+\section{ Beispiele }
+
+\subsection{ Potentialkasten mit eFeld }
+Als $\hat{H_0}$ nehmen wir
+\[
+  \hat{H_0} = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x)
+\]
+f\"ur das Potential $V_0(x)$ gilt
+\[
+  V_0(x)=\begin{cases}
+    0       & \qquad |x|<l\\
+    \infty  & \qquad\text{sonst.}
+  \end{cases}
+\]
+
+F\"ur $\hat{H_1}$ gilt
+\[
+  \hat{H_1} = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_1(x)
+\]
+
+f\"ur das Potential $V_1(x)$ gilt
+\[
+  V_1(x) = a*x +b ; b = 0 \text{ weil es dann symetisch ist }
+\]
+
+Die Ausgangsgleichung f\"ur $\hat{H}$ lautet
+\[
+  \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
+            + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + a*x )
+\]
+
+\subsubsection{ Modell der St\"orung }
+In diesem Modell wollen wir den Grundzustand mit einem elektrischen Feld st\"oren.
+
+Diese St\"orung heisst in der 1. N\"aherung $\hat{H_1}$
+
+Die gesammte St\"orung wird \"uber den Parameter $\varepsilon$ gesteuert.
+
+$V_1$ wird als lineares Feld definiert:
+\[
+  V_1 = a*x + b
+\]
+
+Der Parameter $a$ steht f\"ur die Feldst\"arke. Da diese jedoch bereits durch 
+$\varepsilon$ beschriben wird, k\"onnen wir die Formel f\"ur $V_1$ mit $a = 1$ vereinfachen:
+\[
+  \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
+            + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + x )
+\]
+
+
+\subsection{ 1. N"aherung }
+
+Wie kamen wir darauf?
+
+\begin{enumerate}
+\item Gegeben ist eine Gleichung $F_\varepsilon(x)=0$, gesucht
+sind die L"osungen $x_\varepsilon$ der Gleichung in Abh"angigkeit von
+$\varepsilon$.
+\item Die L"osung $x_0$ der Gleichung f"ur den Parameterwert $\varepsilon=0$
+ist bekannt.
+\item Setze die L"osung in Form einer Potenzreihe an:
+$x_\varepsilon = x_0+x_1\varepsilon+x_2\varepsilon^2+\dots$
+\item Setze den L"osungsansatz in die Gleichung $F_\varepsilon(x)=0$ ein
+und ermittle die Koeffizienten $x_1,x_2,\dots$ durch Koeffizientenvergleich.
+\end{enumerate}
+
+\subsection{ 2. N\"aherung (evt. nach Vortrag) }
+
+\subsection{ Energie "Anderung }
+
+Was passiert?
+
+\section{ 3. Anwendung Potentialtopf }
+
+\[
+  V_1 = \text{ innen \& aussen am Topf ... }
+\]
+]
+
+\section{ 3. Anwendung Stark Effekt (evt.) }
+
+\subsection{ Alg. Quantum Confined Stark Effect }
+
+\subsection{ Laser, mehr Energie }
+Was passiert mit der Frequenz des Emitierten Lichts, wenn man mehr oder weniger Energie an den Laser gibt.
+
 \printbibliography[heading=subbibliography]
 \end{refsection}
-
