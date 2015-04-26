@@ -250,6 +250,16 @@ sollte es aber m"oglich sein, eine Basis von gleichzeitigen
 Eigenvektoren von $H$ und $T_v$ zu w"ahlen.
 
 \subsection{Das reziproke Gitter}
+\begin{figure}
+\centering
+\includegraphics{graphics/fest-4.pdf}
+\bigskip
+
+\includegraphics{graphics/fest-5.pdf}
+\caption{Hexagonales Gitter (oben) und dazu geh"origes reziprokes Gitter
+(unten)
+\label{skript:hexagonalesgitter}}
+\end{figure}
 Welche Vektoren $\vec k$ ergeben ebenen Wellen, die periodisch sind?
 F"ur jeden Vektor $v\in\Gamma$ des Gitters muss gelten
 \[
@@ -276,7 +286,8 @@ finden.
 Insbesondere bilden die Vektoren $\vec k$, die zu gitterperiodischen
 ebenen Wellen f"uhren, selbst ein Gitter, welches von den Spaltenvektoren
 von $2\pi V^{-1}$ aufgespannt wird.
-Es heisst das reziproke Gitter $\Gamma'$ von $\Gamma$.
+Es heisst das {\em reziproke Gitter} $\Gamma'$ von $\Gamma$.
+\index{reziprokes Gitter}%
 
 \begin{beispiel}
 Sei $\Gamma = \{ na\,|\, n\in\mathbb Z\}$ ein eindimensionales Gitter.
@@ -303,17 +314,6 @@ V^{-1}=\begin{pmatrix}1&0\\0&\frac1a\end{pmatrix}
 \]
 Das reziproke Gitter ist wieder ein rechteckiges Gitter.
 \end{beispiel}
-
-\begin{figure}
-\centering
-\includegraphics{graphics/fest-4.pdf}
-\bigskip
-
-\includegraphics{graphics/fest-5.pdf}
-\caption{Hexagonales Gitter (oben) und dazu geh"origes reziprokes Gitter
-(unten)
-\label{skript:hexagonalesgitter}}
-\end{figure}
 
 \begin{beispiel}
 Wir betrachten das hexonale Gitter aufgespannt von den Vektoren
@@ -357,6 +357,154 @@ und das zugeh"orige reziproke Gitter.
 Die Beispiele illustrieren, wie l"angere Basisvektoren f"ur das Gitter
 $\Gamma$ zu entsprechend k"urzeren Basisvektoren des reziproken
 Gitters $\Gamma'$ f"uhren.
+
+\subsection{Bragg-Reflexionen}
+Zu einem gegebenen Vektor $\vec K\in \Gamma'$ im reziproken Gitter ist
+jede der Mengen
+\[
+\sigma(\vec K,N)=\{ \vec x\in \mathbb R^3\,|\, \vec K\cdot \vec x=2\pi N\}
+\]
+eine Ebene.
+Diese Ebenen heissen {\em Netzebenen} senkrecht auf $\vec K$.
+\index{Netzebene}%
+Nach Definition des reziproken Gitters sind alle Gitterpunkte in
+einer Netzebene enthalten. 
+Es ist aber durchaus m"oglich, dass $\sigma(\vec K,N)$ nicht
+f"ur jedes $N$ "uberhaupt Gitterpunkte erh"alt.
+
+\begin{beispiel}
+In einem eindimensionalen Gitter $\Gamma$ mit Gitterkonstante $a$ besteht das
+reziproke Gitter $\Gamma'$ aus den Vielfachen von $2\pi/a$.
+Mit $K=2\cdot 2\pi/a$ gilt f"ur die Punkte des Gitters
+\[
+K\cdot x=2\frac{2\pi}a\cdot na=2n\cdot 2\pi,
+\]
+insbesondere gibt es keine Gitterpunkte, f"ur die der Wert $2\pi$
+erreicht wird.
+Die Ebenen $\sigma(\vec K,1)$ enth"alt daher keine Gitterpunkte.
+\end{beispiel}
+
+Atomkerne in einem Gitter sind in der Lage, Wellen zu streuen.
+Da ein Kristall aus vielen Netz\-ebenen mit Gitteratomen besteht,
+m"ussen die an verschiedenen Netzebenen reflektierten Wellen konstruktiv
+interferieren, andernfalls kann sich die reflektierte Welle im
+Kristall nicht ausbreiten.
+Eine solche Reflexion nennt man {\em Bragg-Reflexion}.
+\index{Bragg-Reflexion}%
+Die Wellenzahlvektoren $\vec k$ und $\vec k'$  zweier ebener Wellen,
+die durch Bragg-Reflexion auseinander hervorgehen, m"ussen zwei
+Bedingunge erf"ullen:
+\begin{enumerate}
+\item Spiegelungsbedingung: $\vec k'$ muss die Spiegelung des Vektors
+$\vec k$ an der Ebene senkrecht einen Vektor $\vec K\in\Gamma'$ sein.
+\item Phasenbedingung: Der durch die Reflexion an unterschiedlichen
+Netzebenen verursachte Wegunterschied muss ein Vielfaches der Wellenl"ange
+sein.
+\end{enumerate}
+
+\subsubsection{Spiegelungsbedingung}
+\begin{figure}
+\centering
+\includegraphics{graphics/fest-7.pdf}
+\caption{Herleitung der Formeln f"ur die Spiegelung eines Vektors $\vec k$
+an einer Ebene mit Normale $\vec K$.
+\label{skript:spiegelungsbedingung}}
+\end{figure}
+Sei jetzt $\vec K\in\Gamma'$ ein reziproker Gittervektor, der eine
+Schar von Netzebenen beschreibt.
+Wir schreiben $\vec K^0=\vec K/|\vec K|$ f"ur den Einheitsvektor mit
+Richtung $\vec K$.
+In Abbildung~\ref{skript:spiegelungsbedingung} wird die Bedingung f"ur die
+Spiegelung dargestellt. 
+Der Vektor $\vec k_{\perp}$ ist die Orthogonalprojektion von $\vec k$
+auf den Vektor $\vec K$, es gilt
+\begin{align*}
+\vec k_{\perp}&=(\vec k\cdot\vec K^0)\vec K^0,
+\\
+\vec k_{\|}&=\vec k -\vec k_{\perp} = \vec k-(\vec k\cdot \vec K^0)\vec K^0.
+\end{align*}
+Der gespiegelte Wellenzahlvektor ist dann
+\begin{equation}
+\vec k'=\vec k_{\|}-\vec k_{\perp}=\vec k-2(\vec k\cdot\vec K^0)\vec K^0.
+\end{equation}
+Die Differenz der beiden Wellenzahlvektoren ist
+\begin{equation}
+\vec k- \vec k'=2(\vec k\cdot\vec K^0)\vec K^0,
+\label{skript:wellenzahldifferenz}
+\end{equation}
+also ein Vielfaches von $\vec K^0$.
+Es ist klar, dass die Spiegelungsbedingung auch zur Folge hat, dass
+$|\vec k|=|\vec k'|$.
+
+\subsubsection{Phasenbedingung}
+\begin{figure}
+\centering
+\includegraphics{graphics/fest-8.pdf}
+\caption{Phasenbedingung f"ur ein Bragg-Reflexion
+\label{skript:phasenbedingung}}
+\end{figure}
+Die Phasenbedingung verlangt, dass sich die Wegl"angen f"ur die zwei in
+Abbildung~\ref{skript:phasenbedingung} dargestellten Wege um ein
+ganzahliges Vielfaches der Wellenl"ange unterscheiden.
+Der Wegl"angenunterschied ist $2s$, dabei ist $s$ die Projektion des
+Vektors $\vec d$ auf den Vektor $\vec k$. Der Abstand der Netzebenen
+ist $d=2\pi / |\vec K|$,
+\[
+s
+=
+\frac{\vec k\cdot \vec d}{|\vec k|}
+=
+\frac{\vec k\cdot \vec K^0}{|\vec k|}\frac{2\pi}{|\vec K]}.
+\]
+Die Phasenbedingung lautet jetzt, dass $2s$ ein Vielfaches der Wellenl"ange
+$\lambda = 2\pi/|\vec k|$ sein muss, also
+\begin{align}
+2s
+=
+2\cdot \frac{\vec k\cdot \vec K^0}{|\vec k|}\frac{2\pi}{|\vec K|}
+&=
+\lambda N
+=
+\frac{2\pi}{|\vec k|} N
+\notag
+\\
+2\cdot \frac{\vec k\cdot \vec K^0}{|\vec K|}
+&=
+N
+\notag
+\\
+\vec k\cdot \vec K^0=\frac{N}2 |\vec K|
+\label{skript:kK0skalarprodukt}
+\end{align}
+Setzen wir den Wert~(\ref{skript:kK0skalarprodukt}) in die Formel
+(\ref{skript:wellenzahldifferenz})
+f"ur die Wellenzahldifferenz ein, finden wir
+\[
+\vec k-\vec k'=2 \frac{N}2 |\vec K|\vec K^0=N\vec K.
+\]
+Damit haben wir im Wesentlichen folgendes Resultat hergeleitet:
+\begin{satz}
+\label{skript:braggsatz}
+Die Welle mit Wellenzahl $\vec k'$ geht aus der Welle mit Wellenzahl
+$\vec k$ durch
+Bragg-Reflexion an der durch $\vec K\in\Gamma'$ definierten Netzebene
+hervor, wenn $\vec k-\vec k'$ ein Vielfaches von $\vec K$ ist und
+wenn $|\vec k|=|\vec k'|$.
+\end{satz}
+
+Als Spezialfall weisen wir noch darauf hin, dass f"ur ein eindimensionales
+Gitter die Bedingung des Satzes nur erf"ullt werden kann, wenn
+$k=-k'$ und $2k=K\in\Gamma'$ gilt.
+
+\begin{proof}[Beweis]
+Die Phasenbedingung ist unter den Voraussetzungen des Satzes erf"ullt,
+es ist aber nicht klar, dass auch die Reflexionsbedingung erf"ullt ist.
+Wenn $|\vec k|=|\vec k'|$, dann ist das Dreieck $\vec k$, $\vec k'$
+und $\vec k- \vec k'$ ein gleichseitigs Dreieck, also sind die Winkel
+zwischen $\vec k$ bzw.~$\vec k'$ und $\vec K$ gleich gross, und die
+Reflexionsbedingung ist erf"ullt.
+\end{proof}
+
 
 \subsection{Folgen der Translations-Invarianz}
 Im Folgenden beschr"anken wir uns wieder auf ein eindimensionales Gitter
@@ -436,7 +584,7 @@ wobei $K$ ein beliebiger Wellenzahlvektor ist.
 Die Wirkung des Hamilton-Operators k"onnen wir nat"urlich auch
 berechnen:
 \[
-H|\psi\rangle
+H\,|\psi\rangle
 =
 e^{iKx}\biggl(
 \frac{\hbar^2K^2}{2m_e}-\frac{\hbar^2}{2m_e}\frac{\partial^2}{\partial x^2}
@@ -451,7 +599,7 @@ mit
 \[
 E(K)=\frac{\hbar^2K^2}{2m_e}.
 \]
-Die Funktion $u$ Ist also ein Eigenzustand des Operators $H-E(K)$. Umgekehrt
+Die Funktion $u$ ist also ein Eigenzustand des Operators $H-E(K)$. Umgekehrt
 kann man aus jeder periodischen Eigenfunktion $u(x)$ von $H$ mit Energie
 $E_u$ einen Eigenvektor $e^{iKx}u(x)$ von $H$ mit Energie $E_u+E(K)$, machen.
 
@@ -462,6 +610,7 @@ $u(x)$ beschreibt also ein Elektron, welches sich in der N"ahe jedes
 Kristallatoms gleich verh"alt.
 Man nennt die periodischen Eigenzust"ande von $H$ daher auch
 {\em Kristall-Elektronen}.
+\index{Kristall-Elektronen}%
 Der zugeh"orige Eigenwert ist die Energie des Elektrons als ans Gitter
 gebundenes Elektron.
 
@@ -664,18 +813,28 @@ Solange der Nenner klein ist, werden auch die Koeffizienten $u_{k'}$
 klein sein.
 Diese N"aherung wird aber nicht mehr funktionieren, wenn $(k+k')^2\simeq k^2$
 wird.
+Nach Satz~\ref{skript:braggsatz} ist dies genau die Bedingung daf"ur,
+dass die Wellen mit Wellenzahl $k$ und $k+k'$ durch eine Braggreflexion
+an der Netzebene mit Normale $\vec k'$ auseinander hervorgehen.
+
 Diese Situation tritt ein, wenn $k\simeq -n\pi/a$ und $k'\simeq 2n\pi/a$.
 In diesem Fall k"onnen wir auch nicht mehr annehmen,
 dass $E(k)=\hbar^2k^2/2m_e$.
 
-\subsubsection{Bragg-Reflexionen}
-Die Bedingung $(k+k')^2\simeq k^2$ f"uhrt auf $k=\mp\pi n/a$ und
-$k'=\pm 2\pi n/a$.
-Die ebene Welle zur Wellenzahl $-\pi n/a$ ist die reflektierte 
-Welle mit der Wellenzahl $\pi n/a$.
-Dies sind die einzigen Wellen, deren Refklexionen konstruktiv interferieren
-k"onnen, sie heissen Bragg Reflexionen.
-Das Intervall $[-\frac{\pi}a,\frac{\pi}a]$ heisst Brillouin-Zone.
+%\subsubsection{Bragg-Reflexionen}
+%Die Bedingung $(k+k')^2\simeq k^2$ f"uhrt auf $k=\mp\pi n/a$ und
+%$k'=\pm 2\pi n/a$.
+%Die ebene Welle zur Wellenzahl $-\pi n/a$ ist die reflektierte 
+%Welle mit der Wellenzahl $\pi n/a$.
+%Dies sind die einzigen Wellen, deren Refklexionen konstruktiv interferieren
+%k"onnen, sie heissen Bragg Reflexionen.
+%Das Intervall $[-\frac{\pi}a,\frac{\pi}a]$ heisst Brillouin-Zone.
+%
+%Ich in einem dreidimensionalen Kristall treten solche Reflexionen auf.
+%Eine ebene Welle mit Wellenzahlvektor $\vec k$ hat als Bragg-refkletiert
+%Welle jene mit Wellenzahl $\vec k'$, wenn $|\vec k|=|\vec k'|$
+%und die Differenz ein Vektor des reziproken Gitters ist
+%$\vec k-\vec k'\in\Gamma'$.
 
 \subsubsection{$E(k)$ in der N"ahe von Bragg-Reflexionen}
 Bragg-Reflexionen verst"arken die Komponenten $u_{\pm K}$,
@@ -762,10 +921,25 @@ V_{K}
 \biggr)^2-|V_K|^2=0.
 \]
 Aufl"osen nach $E(k)$ ergibt
-\[
+\begin{equation}
 E(k)=\frac{\hbar^2}{2m_e}k^2\pm|V_K|.
-\]
+\label{skript:Ekbaender}
+\end{equation}
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{graphics/fest-9.pdf}
+\caption{Gem"ass (\ref{skript:Ekbaender}) Modifizierte Energieparabeln
+mit verbotenen B"andern.
+Grau hinterlegt die Bereiche, in denen die Energie m"oglicher 
+Eigenzust"ande des Hamilton-Operators liegen k"onnen.
+\label{skript:baenderstruktur}}
+\end{figure}%
+Das vormals stetige Energiespektrum zerf"allt jetzt in ein Reihe von
+B"andern.
 
-
-
+\section{Hartree-Fock-N"aherung}
+Bisher wurden immer nur einzelne Elektronen betrachtet, in einem 
+Festk"orper wirkt jedoch eine grosse Zahl von Elektronen zusammen.
+Ein realistischeres Modell muss alle Elektronen modellieren, und
+insbesondere deren Wechselwirkung ber"ucksichtigen.
 
