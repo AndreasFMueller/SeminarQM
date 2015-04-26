@@ -322,4 +322,251 @@ label.rt(btex $E$ etex, (0,3.7*unit));
 
 endfig;
 
+%
+% Reflexion eines Wellenzahlvektors
+%
+beginfig(7)
+
+numeric unit;
+unit := 30;
+
+z0 = ( 0, 0);
+z1 = ( 0, 2) * unit;
+z2 = (-4, 0) * unit;
+z3 = ( 4, 0) * unit;
+z4 = (-4,-1) * unit;
+z5 = ( 4,-1) * unit;
+
+pickup pencircle scaled 1pt;
+
+drawarrow z0--z1;
+label.rt(btex $\vec K$ etex, 0.8[z0,z1]);
+
+pickup pencircle scaled 0.5pt;
+
+draw z2--z3;
+draw z4--z5;
+draw z0--(z0 shifted (0,-1.5 * unit));
+
+pickup pencircle scaled 3pt;
+draw (z0 shifted (0,0));
+
+z6 = (-4, 1.5) * unit;
+z7 = ( 4, 1.5) * unit;
+z8 = (-4, 0.5) * unit;
+z9 = ( 4, 0.5) * unit;
+
+pickup pencircle scaled 0.2pt;
+
+draw z6--z0--z7;
+z10 = 0.3333[z6,z0];
+z11 = 0.6666[z0,z7];
+draw z10--z11;
+drawarrow z10--(0.5[z10,z11]);
+drawarrow (0.5[z10,z11])--z0;
+
+label.top(btex $\vec k_{\|}$  etex, (0.2[z10,z11]));
+label.top(btex $\vec k'_{\|}$ etex, (0.8[z10,z11]));
+label.rt(btex $\vec k_{\perp}$ etex, (0,unit * 0.6));
+
+pickup pencircle scaled 1pt;
+
+drawarrow (0.3333[z6,z0])--z0;
+drawarrow z0--(0.6666[z0,z7]);
+
+label.llft(btex $\vec k$ etex, (0.5[z6,z0]));
+label.lrt(btex $\vec k'$ etex, (0.5[z0,z7]));
+
+
+endfig;
+
+%
+% Phasenbedingung f"ur Bragg-Reflexion
+%
+beginfig(8)
+
+numeric unit;
+unit := 30;
+
+z0 = ( 0, 0);
+z1 = ( 0, 2) * unit;
+z2 = (-4, 0) * unit;
+z3 = ( 4, 0) * unit;
+z4 = (-4,-1) * unit;
+z5 = ( 4,-1) * unit;
+
+pickup pencircle scaled 1pt;
+
+drawarrow z0--z1;
+label.rt(btex $\vec K$ etex, 0.8[z0,z1]);
+
+pickup pencircle scaled 0.5pt;
+
+draw z2--z3;
+draw z4--z5;
+draw z0--(z0 shifted (0,-1.5 * unit));
+
+pickup pencircle scaled 3pt;
+draw (z0 shifted (0,0));
+
+z6 = (-4, 1.5) * unit;
+z7 = ( 4, 1.5) * unit;
+z8 = (-4, 0.5) * unit;
+z9 = ( 4, 0.5) * unit;
+
+pickup pencircle scaled 0.2pt;
+
+draw z6--z0--z7;
+draw (z6--z0--z7) shifted (0,-unit);
+z10 = 0.3333[z6,z0];
+z11 = 0.6666[z0,z7];
+
+z12 = (-1.5,-4) * unit;
+z13 = ( 1.5,-4) * unit;
+
+numeric t;
+numeric s;
+
+z14 = (z0--z12) intersectionpoint (z8--(z0 shifted (0,-unit)));
+z15 = (z0--z13) intersectionpoint (z9--(z0 shifted (0,-unit)));
+
+draw z0--z14;
+draw z0--z15;
+
+drawarrow (3 * unit, 0 * unit)--(3 * unit, -1 * unit);
+drawarrow (3 * unit,-1 * unit)--(3 * unit,  0 * unit);
+label.rt(btex $d$ etex, (3 * unit, -0.5 * unit));
+
+pickup pencircle scaled 1.5pt;
+
+draw z14--(z0 shifted (0,-unit))--z15 withcolor red;
+
+pickup pencircle scaled 1pt;
+
+drawarrow (z0 shifted (0,-unit))--z0 withcolor red;
+label.rt(btex $\vec d$ etex, (0,-0.2*unit)) withcolor red;
+
+drawarrow (0.3333[z6,z0])--z0;
+drawarrow z0--(0.6666[z0,z7]);
+
+label.llft(btex $\vec k$ etex, (0.5[z6,z0]));
+label.lrt(btex $\vec k'$ etex, (0.5[z0,z7]));
+
+label.llft(btex $s$ etex, 0.5[z14,z0 shifted (0,-unit)] shifted (0,-2)) withcolor red;
+label.lrt( btex $s$ etex, 0.5[z15,z0 shifted (0,-unit)] shifted (0,-2)) withcolor red;
+
+endfig;
+
+%
+% Baendermodell
+%
+beginfig(9)
+
+numeric unit;
+unit := 60;
+numeric xmin;
+numeric xmax;
+path p;
+
+numeric a;
+a := 0.5;
+numeric beta;
+beta := 0.20;
+
+def cos(expr x) = (beta / 90) * cosd(90 * x / beta)  enddef;
+
+numeric l;
+l := 0.5 * 180 / 3.1415926535;
+
+def pfunc(expr x, c, xmin, xmax) =
+	if (x - xmin) < beta:
+		-2 * l * (xmin + beta - c) * cos(x - xmin)
+			+ a * (xmin + beta - c) * (xmin + beta - c)
+	elseif (xmax -x) < beta:
+		2 * l * (xmax - beta - c) * cos(xmax - x)
+			+ a * (xmax - beta - c) * (xmax - beta - c)
+	else:
+		a * (x - c) * (x - c)
+	fi
+enddef;
+
+for xmin = 0 step 0.5 until 4:
+	numeric ymin;
+	ymin := pfunc(xmin      , 0, xmin, xmin + 0.5);
+	numeric ymax;
+	ymax := pfunc(xmin + 0.5, 0, xmin, xmin + 0.5);
+	show xmin;
+	show unit * ymin;
+	show unit * ymax;
+	fill ((-4, ymin)--( 4, ymin)--( 4, ymax)--(-4, ymax)--cycle)
+		scaled unit withcolor (0.9,0.9,0.9);
+endfor;
+
+def parabola(expr c, xmin, xmax) =
+	p := (xmin, pfunc(xmin, c, xmin, xmax));
+	for x = xmin + 0.01 step 0.01 until xmax + 0.005:
+		p := p--(x, pfunc(x, c, xmin, xmax));
+	endfor;
+	draw p scaled unit;
+enddef;
+
+def para(expr c) =
+	p := (-5,16 * a);
+	for x = -5.9 step 0.1 until 5:
+		p := p--(x, x * x * a);
+	endfor;
+	draw p scaled unit shifted (c * unit, 0);
+enddef;
+
+%fill (-0.5*unit,0)--(0.5*unit,0)--(0.5*unit,5*unit)--(-0.5*unit,5*unit)--cycle
+%	withcolor (0.95,0.95,0.95);
+
+pickup pencircle scaled 1pt;
+draw (-3.2 * unit,0)--(3.2*unit, 0);
+draw (0,-5)--(0,5*unit);
+
+for c = -5 step 1 until 5:
+	pickup pencircle scaled 0.2pt;
+	para(c);
+	pickup pencircle scaled 0.7pt;
+	for xmin = -5 step 0.5 until 5:
+		parabola(c, xmin, xmin + 0.5);
+	endfor;
+	pickup pencircle scaled 0.2pt;
+	draw ((c+0.5) * unit, -5)--((c+0.5)*unit, 300);
+endfor;
+
+pickup pencircle scaled 1.5pt;
+for xmin = -5 step 0.5 until 5:
+	parabola(0, xmin, xmin + 0.5);
+endfor;
+
+for c = -5 step 1 until 5:
+	pickup pencircle scaled 4pt;
+	draw (c * unit, 0) withcolor white;
+	pickup pencircle scaled 3pt;
+	draw (c * unit, 0);
+	pickup pencircle scaled 2pt;
+	draw (c * unit, 0) withcolor white;
+endfor;
+
+clip currentpicture to (-3.2 * unit, -5)--(3.2 * unit,-5)
+		--(3.2*unit,3.5 * unit)--(-3.2*unit,3.5*unit)--cycle;
+
+label.bot(btex   0                      etex, ( 0 * unit, -5));
+label.bot(btex $ 1\cdot \frac{2\pi}{a}$ etex, ( 1 * unit, -2));
+label.bot(btex $ 2\cdot \frac{2\pi}{a}$ etex, ( 2 * unit, -2));
+label.bot(btex $ 3\cdot \frac{2\pi}{a}$ etex, ( 3 * unit, -2));
+label.bot(btex $-1\cdot \frac{2\pi}{a}$ etex, (-1 * unit, -2));
+label.bot(btex $-2\cdot \frac{2\pi}{a}$ etex, (-2 * unit, -2));
+label.bot(btex $-3\cdot \frac{2\pi}{a}$ etex, (-3 * unit, -2));
+
+pickup pencircle scaled 1pt;
+drawarrow (3.2*unit,0)--(3.5*unit,0);
+label.top(btex $K$ etex, (3.5*unit,0));
+drawarrow (0,3.5*unit)--(0,3.7*unit);
+label.rt(btex $E$ etex, (0,3.7*unit));
+
+endfig;
+
 end
