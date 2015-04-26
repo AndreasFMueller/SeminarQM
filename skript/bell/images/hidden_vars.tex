@@ -39,10 +39,12 @@
 
 \setmainfont[Path=../humor_sans/]{Humor-Sans-1.0.ttf}
 
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \begin{document}
 
     \begin{tikzpicture}[
+        scale = 0.7,
         pen/.style={decoration={random steps,segment length=4pt,amplitude=0.4pt},decorate}
     ]
 
@@ -63,35 +65,9 @@
     \node at (1.4,1.4)   {\Large ++};
     \node at (-1.4,1.4)  {\Large -+};
     \node at (1.4,-1.4)  {\Large +-};
-    \node at (-1.4,-1.4) {\Large --};
+    \node at (-1.4,-1.4) {\Large {-}{-}};
 
     
     \end{tikzpicture}
 
 \end{document}
-
-%    \begin{axis}[
-%        axis equal,
-%        axis lines = center,
-%        xlabel = {$x$},
-%        ylabel = {$y$},
-%        zlabel = {$z$},
-%        ticks=none,
-%        enlargelimits=0.3,
-%        view/h=45,
-%        scale uniformly strategy=units only,
-%    ]
-%    
-%        \addplot3[
-%            opacity = 0.3,
-%            surf,
-%            z buffer = sort,
-%            samples = 31,
-%            variable = \u,
-%            variable y = \v,
-%            domain = 0:180,
-%            y domain = 0:360,
-%        ]
-%        ({cos(u)*sin(v)}, {sin(u)*sin(v)}, {cos(v)});
-%    
-%    \end{axis}
