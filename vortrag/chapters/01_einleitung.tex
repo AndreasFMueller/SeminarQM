@@ -40,7 +40,27 @@
 
 \begin{frame}
   \frametitle{Vergleich Verschiedener Atomuhren}
-    
+
+  \begin{columns}
+    \column{.5\textwidth}
+    \begin{description}
+    \item[1949] Ammoniak
+    \item[1967] \num{9192631770} Caesium-133
+    \item[1998] Frequenzkamm
+    \item[2014] \num{e-18}
+    \end{description}
+
+    \column{.5\textwidth}
+    \begin{tabularx}{\columnwidth}{X r r}
+      Quarz         & & \num{e-5}\\
+      OCXO          & \SI{10}{\mega\hertz}    & \num{2e-8}\\
+      \ce{NH3}      & \SI{23.79}{\giga\hertz} & \num{2e-8}\\
+      \ce{^{87}Ru}  & \SI{6.83}{\giga\hertz}  & \num{e-9}\\
+      \ce{^{133}Cs} & \SI{9.19}{\giga\hertz}  & \num{e-15}\\
+      \ce{^{1}H}    & \SI{1.42}{\giga\hertz}  & \num{5e-16}
+    \end{tabularx}
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}
@@ -93,9 +113,12 @@
   \node[name=Fr, below of=Cs, AlkaliMetal] {\NaturalElementTextFormat{87}{223}{Fr}{Francium}};
 
 %% Group 2 - IIA
-  \node[name=Be, right of=Li, AlkalineEarthMetal] {\NaturalElementTextFormat{4}{9.0122}{Be}{Beryllium}};
-  \node[name=Mg, below of=Be, AlkalineEarthMetal] {\NaturalElementTextFormat{12}{24.305}{Mg}{Magnesium}};
-  \node[name=Ca, below of=Mg, AlkalineEarthMetal] {\NaturalElementTextFormat{20}{40.078}{Ca}{Calcium}};
+  \only<-2>{  \node[name=Be, right of=Li, AlkalineEarthMetal] {\NaturalElementTextFormat{4}{9.0122}{Be}{Beryllium}};}
+  \only<3->{  \node[name=Be, right of=Li, AtomicClockOptic] {\NaturalElementTextFormat{4}{9.0122}{Be}{Beryllium}};}
+  \only<-2>{  \node[name=Mg, below of=Be, AlkalineEarthMetal] {\NaturalElementTextFormat{12}{24.305}{Mg}{Magnesium}};}
+  \only<3->{  \node[name=Mg, below of=Be, AtomicClockOptic] {\NaturalElementTextFormat{12}{24.305}{Mg}{Magnesium}};}
+  \only<-2>{  \node[name=Ca, below of=Mg, AlkalineEarthMetal] {\NaturalElementTextFormat{20}{40.078}{Ca}{Calcium}};}
+  \only<3->{  \node[name=Ca, below of=Mg, AtomicClockOptic] {\NaturalElementTextFormat{20}{40.078}{Ca}{Calcium}};}
   \only<-2>{  \node[name=Sr, below of=Ca, AlkalineEarthMetal] {\NaturalElementTextFormat{38}{87.62}{Sr}{Strontium}};}
   \only<3->{  \node[name=Sr, below of=Ca, AtomicClockOptic] {\NaturalElementTextFormat{38}{87.62}{Sr}{Strontium}};}
   \node[name=Ba, below of=Sr, AlkalineEarthMetal] {\NaturalElementTextFormat{56}{137.33}{Ba}{Barium}};
@@ -160,7 +183,8 @@
 %% Group 12 - IIB
   \node[name=Zn, right of=Cu, Metal] {\NaturalElementTextFormat{30}{65.39}{Zn}{Zinc}};
   \node[name=Cd, below of=Zn, Metal] {\NaturalElementTextFormat{48}{112.41}{Cd}{Cadmium}};
-  \node[name=Hg, below of=Cd, Metal] {\NaturalElementTextFormat{80}{200.59}{Hg}{Mercury}};
+  \only<-2>{  \node[name=Hg, below of=Cd, Metal] {\NaturalElementTextFormat{80}{200.59}{Hg}{Mercury}};}
+  \only<3->{  \node[name=Hg, below of=Cd, AtomicClockOptic] {\NaturalElementTextFormat{80}{200.59}{Hg}{Mercury}};}
   \node[name=Uub, below of=Hg, Metal] {\SyntheticElementTextFormat{112}{285}{Uub}{Ununbium}};
 
 %% Group 13 - IIIA
@@ -168,7 +192,8 @@
   \only<-2>{  \node[name=Al, above of=Ga, Metal] {\NaturalElementTextFormat{13}{26.982}{Al}{Aluminium}};}
   \only<3->{  \node[name=Al, above of=Ga, AtomicClockOptic] {\NaturalElementTextFormat{13}{26.982}{Al}{Aluminium}};}
   \node[name=B, above of=Al, Metalloid] {\NaturalElementTextFormat{5}{10.811}{B}{Boron}};
-  \node[name=In, below of=Ga, Metal] {\NaturalElementTextFormat{49}{114.82}{In}{Indium}};
+  \only<-2>{  \node[name=In, below of=Ga, Metal] {\NaturalElementTextFormat{49}{114.82}{In}{Indium}};}
+  \only<3->{  \node[name=In, below of=Ga, AtomicClockOptic] {\NaturalElementTextFormat{49}{114.82}{In}{Indium}};}
   \node[name=Tl, below of=In, Metal] {\NaturalElementTextFormat{81}{204.38}{Tl}{Thallium}};
   \node[name=Uut, below of=Tl, Metal] {\SyntheticElementTextFormat{113}{284}{Uut}{Ununtrium}};
 
@@ -242,50 +267,51 @@
   \node[name=Group17, above of=F, GroupLabel] {17 \hfill VIIA};
   \node[name=Group18, above of=He, GroupLabel] {18 \hfill VIIIA};
 
-% %% Lanthanide
-%   \node[name=La, below of=Rf, LanthanideActinide, yshift=-1cm] {\NaturalElementTextFormat{57}{138.91}{La}{Lanthanum}};
-%   \node[name=Ce, right of=La, LanthanideActinide] {\NaturalElementTextFormat{58}{140.12}{Ce}{Cerium}};
-%   \node[name=Pr, right of=Ce, LanthanideActinide] {\NaturalElementTextFormat{59}{140.91}{Pr}{Praseodymium}};
-%   \node[name=Nd, right of=Pr, LanthanideActinide] {\NaturalElementTextFormat{60}{144.24}{Nd}{Neodymium}};
-%   \node[name=Pm, right of=Nd, LanthanideActinide] {\NaturalElementTextFormat{61}{145}{Pm}{Promethium}};
-%   \node[name=Sm, right of=Pm, LanthanideActinide] {\NaturalElementTextFormat{62}{150.36}{Sm}{Samarium}};
-%   \node[name=Eu, right of=Sm, LanthanideActinide] {\NaturalElementTextFormat{63}{151.96}{Eu}{Europium}};
-%   \node[name=Gd, right of=Eu, LanthanideActinide] {\NaturalElementTextFormat{64}{157.25}{Gd}{Gadolinium}};
-%   \node[name=Tb, right of=Gd, LanthanideActinide] {\NaturalElementTextFormat{65}{158.93}{Tb}{Terbium}};
-%   \node[name=Dy, right of=Tb, LanthanideActinide] {\NaturalElementTextFormat{66}{162.50}{Dy}{Dysprosium}};
-%   \node[name=Ho, right of=Dy, LanthanideActinide] {\NaturalElementTextFormat{67}{164.93}{Ho}{Holmium}};
-%   \node[name=Er, right of=Ho, LanthanideActinide] {\NaturalElementTextFormat{68}{167.26}{Er}{Erbium}};
-%   \node[name=Tm, right of=Er, LanthanideActinide] {\NaturalElementTextFormat{69}{168.93}{Tm}{Thulium}};
-%   \node[name=Yb, right of=Tm, LanthanideActinide] {\NaturalElementTextFormat{70}{173.04}{Yb}{Ytterbium}};
-%   \node[name=Lu, right of=Yb, LanthanideActinide] {\NaturalElementTextFormat{71}{174.97}{Lu}{Lutetium}};
+%% Lanthanide
+  \node[name=La, below of=Rf, LanthanideActinide, yshift=-1cm] {\NaturalElementTextFormat{57}{138.91}{La}{Lanthanum}};
+  \node[name=Ce, right of=La, LanthanideActinide] {\NaturalElementTextFormat{58}{140.12}{Ce}{Cerium}};
+  \node[name=Pr, right of=Ce, LanthanideActinide] {\NaturalElementTextFormat{59}{140.91}{Pr}{Praseodymium}};
+  \node[name=Nd, right of=Pr, LanthanideActinide] {\NaturalElementTextFormat{60}{144.24}{Nd}{Neodymium}};
+  \node[name=Pm, right of=Nd, LanthanideActinide] {\NaturalElementTextFormat{61}{145}{Pm}{Promethium}};
+  \node[name=Sm, right of=Pm, LanthanideActinide] {\NaturalElementTextFormat{62}{150.36}{Sm}{Samarium}};
+  \node[name=Eu, right of=Sm, LanthanideActinide] {\NaturalElementTextFormat{63}{151.96}{Eu}{Europium}};
+  \node[name=Gd, right of=Eu, LanthanideActinide] {\NaturalElementTextFormat{64}{157.25}{Gd}{Gadolinium}};
+  \node[name=Tb, right of=Gd, LanthanideActinide] {\NaturalElementTextFormat{65}{158.93}{Tb}{Terbium}};
+  \node[name=Dy, right of=Tb, LanthanideActinide] {\NaturalElementTextFormat{66}{162.50}{Dy}{Dysprosium}};
+  \node[name=Ho, right of=Dy, LanthanideActinide] {\NaturalElementTextFormat{67}{164.93}{Ho}{Holmium}};
+  \node[name=Er, right of=Ho, LanthanideActinide] {\NaturalElementTextFormat{68}{167.26}{Er}{Erbium}};
+  \node[name=Tm, right of=Er, LanthanideActinide] {\NaturalElementTextFormat{69}{168.93}{Tm}{Thulium}};
+  \only<-2>{  \node[name=Yb, right of=Tm, LanthanideActinide] {\NaturalElementTextFormat{70}{173.04}{Yb}{Ytterbium}};}
+  \only<3->{  \node[name=Yb, right of=Tm, AtomicClockOptic] {\NaturalElementTextFormat{70}{173.04}{Yb}{Ytterbium}};}
+  \node[name=Lu, right of=Yb, LanthanideActinide] {\NaturalElementTextFormat{71}{174.97}{Lu}{Lutetium}};
 
-% %% Actinide
-%   \node[name=Ac, below of=La, LanthanideActinide, yshift=-1cm] {\NaturalElementTextFormat{89}{227}{Ac}{Actinium}};
-%   \node[name=Th, right of=Ac, LanthanideActinide] {\NaturalElementTextFormat{90}{232.04}{Th}{Thorium}};
-%   \node[name=Pa, right of=Th, LanthanideActinide] {\NaturalElementTextFormat{91}{231.04}{Pa}{Protactinium}};
-%   \node[name=U, right of=Pa, LanthanideActinide] {\NaturalElementTextFormat{92}{238.03}{U}{Uranium}};
-%   \node[name=Np, right of=U, LanthanideActinide] {\SyntheticElementTextFormat{93}{237}{Np}{Neptunium}};
-%   \node[name=Pu, right of=Np, LanthanideActinide] {\SyntheticElementTextFormat{94}{244}{Pu}{Plutonium}};
-%   \node[name=Am, right of=Pu, LanthanideActinide] {\SyntheticElementTextFormat{95}{243}{Am}{Americium}};
-%   \node[name=Cm, right of=Am, LanthanideActinide] {\SyntheticElementTextFormat{96}{247}{Cm}{Curium}};
-%   \node[name=Bk, right of=Cm, LanthanideActinide] {\SyntheticElementTextFormat{97}{247}{Bk}{Berkelium}};
-%   \node[name=Cf, right of=Bk, LanthanideActinide] {\SyntheticElementTextFormat{98}{251}{Cf}{Californium}};
-%   \node[name=Es, right of=Cf, LanthanideActinide] {\SyntheticElementTextFormat{99}{252}{Es}{Einsteinium}};
-%   \node[name=Fm, right of=Es, LanthanideActinide] {\SyntheticElementTextFormat{100}{257}{Fm}{Fermium}};
-%   \node[name=Md, right of=Fm, LanthanideActinide] {\SyntheticElementTextFormat{101}{258}{Md}{Mendelevium}};
-%   \node[name=No, right of=Md, LanthanideActinide] {\SyntheticElementTextFormat{102}{259}{No}{Nobelium}};
-%   \node[name=Lr, right of=No, LanthanideActinide] {\SyntheticElementTextFormat{103}{262}{Lr}{Lawrencium}};
+%% Actinide
+  \node[name=Ac, below of=La, LanthanideActinide, yshift=-1cm] {\NaturalElementTextFormat{89}{227}{Ac}{Actinium}};
+  \node[name=Th, right of=Ac, LanthanideActinide] {\NaturalElementTextFormat{90}{232.04}{Th}{Thorium}};
+  \node[name=Pa, right of=Th, LanthanideActinide] {\NaturalElementTextFormat{91}{231.04}{Pa}{Protactinium}};
+  \node[name=U, right of=Pa, LanthanideActinide] {\NaturalElementTextFormat{92}{238.03}{U}{Uranium}};
+  \node[name=Np, right of=U, LanthanideActinide] {\SyntheticElementTextFormat{93}{237}{Np}{Neptunium}};
+  \node[name=Pu, right of=Np, LanthanideActinide] {\SyntheticElementTextFormat{94}{244}{Pu}{Plutonium}};
+  \node[name=Am, right of=Pu, LanthanideActinide] {\SyntheticElementTextFormat{95}{243}{Am}{Americium}};
+  \node[name=Cm, right of=Am, LanthanideActinide] {\SyntheticElementTextFormat{96}{247}{Cm}{Curium}};
+  \node[name=Bk, right of=Cm, LanthanideActinide] {\SyntheticElementTextFormat{97}{247}{Bk}{Berkelium}};
+  \node[name=Cf, right of=Bk, LanthanideActinide] {\SyntheticElementTextFormat{98}{251}{Cf}{Californium}};
+  \node[name=Es, right of=Cf, LanthanideActinide] {\SyntheticElementTextFormat{99}{252}{Es}{Einsteinium}};
+  \node[name=Fm, right of=Es, LanthanideActinide] {\SyntheticElementTextFormat{100}{257}{Fm}{Fermium}};
+  \node[name=Md, right of=Fm, LanthanideActinide] {\SyntheticElementTextFormat{101}{258}{Md}{Mendelevium}};
+  \node[name=No, right of=Md, LanthanideActinide] {\SyntheticElementTextFormat{102}{259}{No}{Nobelium}};
+  \node[name=Lr, right of=No, LanthanideActinide] {\SyntheticElementTextFormat{103}{262}{Lr}{Lawrencium}};
 
-% %% Draw dotted lines connecting Lanthanide breakout to main table
-%   \draw (LaLu.north west) edge[dotted] (La.north west)
-%         (LaLu.north east) edge[dotted] (Lu.north east)
-%         (LaLu.south west) edge[dotted] (La.south west)
-%         (LaLu.south east) edge[dotted] (Lu.south east);
-% %% Draw dotted lines connecting Actinide breakout to main table
-%   \draw (AcLr.north west) edge[dotted] (Ac.north west)
-%         (AcLr.north east) edge[dotted] (Lr.north east)
-%         (AcLr.south west) edge[dotted] (Ac.south west)
-%         (AcLr.south east) edge[dotted] (Lr.south east);
+%% Draw dotted lines connecting Lanthanide breakout to main table
+  \draw (LaLu.north west) edge[dotted] (La.north west)
+        (LaLu.north east) edge[dotted] (Lu.north east)
+        (LaLu.south west) edge[dotted] (La.south west)
+        (LaLu.south east) edge[dotted] (Lu.south east);
+%% Draw dotted lines connecting Actinide breakout to main table
+  \draw (AcLr.north west) edge[dotted] (Ac.north west)
+        (AcLr.north east) edge[dotted] (Lr.north east)
+        (AcLr.south west) edge[dotted] (Ac.south west)
+        (AcLr.south east) edge[dotted] (Lr.south east);
 
 % %% Legend
 %   \draw[black, AlkaliMetalFill] ($(La.north -| Fr.west) + (1em,-0.0em)$)
