@@ -587,12 +587,14 @@ Die innere Summe hindert uns daran, direkt einen Koeffizientenvergleich
 anzustellen.
 Wir formen daher den Potentialterm wie folgt um
 \begin{equation*}
-\sum_{k'\in\Gamma'}\sum_{k''\in\Gamma'}V_{k''}u_{k'}e^{i(k+k'+k'')x}
+\sum_{k'\in\Gamma'}
+\sum_{k''\in\Gamma'}V_{k''}u_{k'}e^{i(k+k'+k'')x}
 =
-\sum_{\bar k\in\Gamma'}\sum_{k''\in\Gamma'}V_{\bar k-k''}u_{k''}e^{i(k+\bar k)x}
+\sum_{\tilde k\in\Gamma'}
+\sum_{k''\in\Gamma'}V_{\tilde k-k''}u_{k''}e^{i(k+\tilde k)x}.
 \end{equation*}
-Dabei haben wir $\bar k=k'+k''$ gesetzt, $k'=\bar k-k''$. Schreiben wir jetzt
-wieder $k'=\bar k$, dann k"onnen wir die
+Dabei haben wir $\tilde k=k'+k''$ gesetzt, $k'=\tilde k-k''$.
+Schreiben wir jetzt wieder $k'=\tilde k$, dann k"onnen wir die
 Gleichung~(\ref{skript:periodicschroedinger}) vereinfachen zu
 \begin{align*}
 \sum_{k'\in\Gamma'}\biggl(
@@ -614,9 +616,10 @@ Gleichung~(\ref{skript:periodicschroedinger}) vereinfachen zu
 \biggl)
 e^{i(k+k')x}
 &=
-0
+0.
 \end{align*}
-Durch Koeffizientenvergleich k"onnen wir jetzt ablesen, dass
+Koeffizientenvergleich besagt nun, dass der grosse Klammerausdruck
+verschwinden muss f"ur jeden Vektor $k'\in\Gamma'$:
 \begin{equation}
 \biggl(
 \frac{\hbar^2}{2m_e}(k+k')^2
@@ -625,7 +628,7 @@ Durch Koeffizientenvergleich k"onnen wir jetzt ablesen, dass
 +
 \sum_{k''\in\Gamma'}V_{k'-k''}u_{k''}
 =
-0
+0.
 \label{skript:ukgleichung}
 \end{equation}
 Aus dieser Gleichung k"onnen wir zwar die $u_{k'}$ nicht exakt
@@ -652,7 +655,7 @@ die wir nach $u_{k'}$ aufl"osen k"onnen
 u_{k'}
 &=
 -
-\frac{V_{k'}}{
+\frac{\displaystyle V_{k'}}{
 \displaystyle
 \frac{\hbar^2}{2m_e}((k+k')^2 -k^2)
 }.
@@ -661,13 +664,108 @@ Solange der Nenner klein ist, werden auch die Koeffizienten $u_{k'}$
 klein sein.
 Diese N"aherung wird aber nicht mehr funktionieren, wenn $(k+k')^2\simeq k^2$
 wird.
-Diese Situation kann eintreten, wenn $k\simeq -\pi/a$ und $k'\simeq 2\pi/a$,
-also in der N"ahe der vertikalen Linien in Abbildung~\ref{skript:dispersion}.
+Diese Situation tritt ein, wenn $k\simeq -n\pi/a$ und $k'\simeq 2n\pi/a$.
 In diesem Fall k"onnen wir auch nicht mehr annehmen,
 dass $E(k)=\hbar^2k^2/2m_e$.
 
 \subsubsection{Bragg-Reflexionen}
+Die Bedingung $(k+k')^2\simeq k^2$ f"uhrt auf $k=\mp\pi n/a$ und
+$k'=\pm 2\pi n/a$.
+Die ebene Welle zur Wellenzahl $-\pi n/a$ ist die reflektierte 
+Welle mit der Wellenzahl $\pi n/a$.
+Dies sind die einzigen Wellen, deren Refklexionen konstruktiv interferieren
+k"onnen, sie heissen Bragg Reflexionen.
+Das Intervall $[-\frac{\pi}a,\frac{\pi}a]$ heisst Brillouin-Zone.
 
 \subsubsection{$E(k)$ in der N"ahe von Bragg-Reflexionen}
+Bragg-Reflexionen verst"arken die Komponenten $u_{\pm K}$,
+mit $k'=\frac{2\pi n}a$, man kann also diesen Koeffizienten nicht mehr
+als klein voraussetzen.
+In den Gleichungen~\ref{skript:ukgleichung} m"ussen wir jetzt weitere
+Terme hinzunehmen.
+
+Wir schreiben $K=2\pi n/a$.
+Sei $k$ ein Wellenzahl in der N"ahe von $-\pi n/a$, eine Wellenzahl, welche
+zu Bragg-Reflexionen f"uhrt.
+Die Gleichungen~(\ref{skript:ukgleichung})
+f"ur $k'=0$ und $k'=K$ sind:
+\begin{equation}
+\begin{aligned}
+\biggl(
+\frac{\hbar^2}{2m_e}k^2
+-E(k)
+\biggr)u_{0}
++
+V_{-K}u_{K}
+&=
+0,
+\\
+\biggl(
+\frac{\hbar^2}{2m_e}(k+K)^2
+-E(k)
+\biggr)u_{K}
++
+V_{K}u_{0}
+&=
+0.
+\end{aligned}
+\label{skript:u0ukgleichungen}
+\end{equation}
+Da $V(x)$ reell ist, sind die Fourier-Koeffizienten zu entgegengesetzten
+$k'$ konjugiert komplex, also $V_{-k'}=\bar V_{k'}$.
+Ausserdem ist $k$ so gew"ahlt, dass $(k+K)^2=k^2$ ist.
+Die Gleichungen~(\ref{skript:u0ukgleichungen}) bilden ein lineares
+homogenes Gleichungssystem f"ur $u_0$ und $u_K$.
+Wir schreiben es in vertrauterer Form:
+\begin{equation}
+\begin{linsys}{3}
+\displaystyle \biggl(
+\frac{\hbar^2}{2m_e}k^2
+-E(k)
+\biggr)u_{0}
+&
++
+&
+\bar V_{K}u_{K}
+&=&
+0\phantom{.}
+\\
+V_{K}u_{0}
+&+&
+\displaystyle \biggl(
+\frac{\hbar^2}{2m_e}k^2
+-E(k)
+\biggr)u_{K}
+&=&
+0.
+\end{linsys}
+\end{equation}
+Es kann nur dann
+eine nichttriviale L"osung haben, wenn die Determinate verschwindet:
+\[
+\left|
+\begin{matrix}
+\displaystyle\frac{\hbar^2}{2m_e}k^2
+-E(k)
+&
+\bar V_{K}
+\\
+V_{K}
+&
+\displaystyle\frac{\hbar^2}{2m_e}k^2
+-E(k)
+\end{matrix}
+\right|
+=
+\biggl(
+\frac{\hbar^2}{2m_e}k^2-E(k)
+\biggr)^2-|V_K|^2=0.
+\]
+Aufl"osen nach $E(k)$ ergibt
+\[
+E(k)=\frac{\hbar^2}{2m_e}k^2\pm|V_K|.
+\]
+
+
 
 
