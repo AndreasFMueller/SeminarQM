@@ -86,6 +86,7 @@ skript.pdf:	articleimages skript.tex $(TEXFILES) skript.ind $(IMAGES) \
 skript.ind:	articleimages skript.tex $(TEXFILES)
 	touch skript.ind
 	pdflatex skript.tex
+	(cd supraleitung; mpost phonon.mp)
 	makeindex skript.idx
 
 # References

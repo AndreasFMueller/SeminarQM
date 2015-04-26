@@ -1,0 +1,39 @@
+\newcommand{\marrow}[5]{%
+    \fmfcmd{style_def marrow#1
+    expr p = drawarrow subpath (1/4, 3/4) of p shifted 6 #2 withpen pencircle scaled 0.4;
+    label.#3(btex #4 etex, point 0.5 of p shifted 6 #2);
+    enddef;}
+    \fmf{marrow#1,tension=0}{#5}}
+\begin{center}
+\begin{fmffile}{supraleitung/phonon}
+\begin{fmfgraph*}(100,60)
+\fmfleftn{i}{2}
+\fmfrightn{o}{2}
+\fmflabel{$\vec k$}{i1}
+\fmflabel{$\vec k+\vec q$}{i2}
+\fmflabel{$\vec k'$}{o1}
+\fmflabel{$\vec k'-\vec q$}{o2}
+\fmf{fermion}{i1,v1,i2}
+\fmf{fermion}{o1,v2,o2}
+\fmf{zigzag,label=$\vec q$}{v1,v2}
+\fmfdot{v1,v2}
+\marrow{c}{up}{top}{}{v1,v2}
+\end{fmfgraph*}
+\qquad
+\qquad
+\qquad
+\begin{fmfgraph*}(100,60)
+\fmfleftn{i}{2}
+\fmfrightn{o}{2}
+\fmflabel{$\vec k$}{i1}
+\fmflabel{$\vec k+\vec q$}{i2}
+\fmflabel{$\vec k'$}{o1}
+\fmflabel{$\vec k'-\vec q$}{o2}
+\fmf{fermion}{i1,v1,i2}
+\fmf{fermion}{o1,v2,o2}
+\fmf{zigzag,label=$-\vec q$}{v1,v2}
+\fmfdot{v1,v2}
+\marrow{c}{up}{top}{}{v2,v1}
+\end{fmfgraph*}
+\end{fmffile}
+\end{center}

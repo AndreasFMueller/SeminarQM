@@ -33,6 +33,7 @@
 \usepackage{wasysym}
 \usepackage{environ}
 \usepackage{pifont}
+\usepackage{feynmp}
 \usepackage{appendix}
 \usetikzlibrary{calc,intersections,through,backgrounds,graphs,positioning,shapes,arrows}
 \usetikzlibrary{patterns,decorations.pathreplacing}
@@ -91,6 +92,7 @@
 %\addbibresource{quantumdot/main.bib}
 \AtEndDocument{\clearpage\ifodd\value{page}\else\null\clearpage\fi}
 \makeindex
+\DeclareGraphicsRule{*}{mps}{*}{}
 \begin{document}
 \pagestyle{fancy}
 \frontmatter
