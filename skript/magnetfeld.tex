@@ -519,6 +519,70 @@ und $\vec B'$ stimmen also mit den urspr"unglichen Feldern $\vec E$
 und $\vec B$ "uberein.
 \end{proof}
 
+\subsubsection{Transversale Eichung}
+\index{Transversale Eichung}
+\index{Coulomb-Eichung}
+Das Vektorpotential und elektrische Potential sind nicht eindeutig bestimmt.
+Mit eine Eichtransformation kann 
+Die Transversale Eichung oder auch Coulomb-Eichung verlangt zus"atzlich,
+dass das Vektorpotential quellenfrei sein soll,
+also $\operatorname{div}\vec A=0$ erf"ullen soll.
+Um transversale Eichung zu erreichen, muss die Funktion $\chi$
+der Eichtransformation die Gleichung
+\begin{align*}
+\operatorname{div}(\vec A+\operatorname{grad}\chi)
+&=
+\operatorname{div}\vec A + \operatorname{div}\operatorname{grad}\chi
+=
+\operatorname{div}\vec A + \Delta\chi
+=0
+\end{align*}
+Die Funktion $\chi$ ist also L"osung der Differentialgleichung
+\[
+\Delta \chi = -\operatorname{div}\vec A.
+\]
+Diese partialle Differentialgleichung kann zum Beispiel mit der
+Greenschen Funktion gel"ost werden.
+Es l"asst sich also immer transversale Eichung erreichen.
+
+\subsubsection{Lorentz-Eichung}
+In der Lorentz-Eichung wird zus"atzlich verlangt, dass Vektorpotential
+und eletrisches Potential die Bedingung
+\[
+\operatorname{div}\vec A+\frac1{c^2}\frac{\partial}{\partial t}\varphi=0
+\]
+erf"ullt.
+Die Funktion $\chi$ der Eichtransformation muss dazu der Gleichung
+\begin{equation*}
+\begin{aligned}
+&&
+\operatorname{div}(\vec A+\operatorname{grad}\chi)
++
+\frac1{c^2}\frac{\partial}{\partial t}
+\biggl(\varphi-\frac{\partial\chi}{\partial t}\biggr)
+&=0
+\\
+&\Rightarrow&
+\operatorname{div}\vec A +\Delta\chi
++
+\frac{1}{c}\frac{\partial\varphi}{\partial t}
+-
+\frac1{c^2}\frac{\partial^2\chi}{\partial t^2}
+&=0
+\\
+&\Rightarrow&
+\Delta\chi-\frac1{c^2}\frac{\partial^2}{\partial t^2}\chi
+=
+\square\chi
+&=
+-\operatorname{div}\vec A-\frac1{c}\frac{\partial\varphi}{\partial t}
+\end{aligned}
+\end{equation*}
+gen"ugen, wobei $\square$ der d'Alembert-Operator ist.
+Diese Wellengleichung kann zum Beispiel durch retarierte Potentiale 
+gefunden werden, insbesondere kann man also Lorentz-Eichung immer
+erreichen.
+
 \subsection{Eichtransformation der Schr"odingergleichung}
 Wenn man eine Eichtransformation auf die Potentiale in der
 Schr"odingergleichug anwendet, dann darf sich keine beobachtbare
