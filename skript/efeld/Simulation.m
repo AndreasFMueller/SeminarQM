@@ -73,6 +73,7 @@ for ln = n
 end
 
 print('Psi_ungestoert', '-depsc', '-noui')
+print('Psi_ungestoert', '-dpdf', '-noui')
 
 figure
 hold on;
@@ -86,7 +87,7 @@ for ln = n
 end
 
 print('Psi_gestoert', '-depsc', '-noui')
-%print('grafik_1_Psi', '-dpdf', '-noui')
+print('Psi_gestoert', '-dpdf', '-noui')
 
 %-----Plot grafik 2: E(n, a)-----
 figure
