@@ -1,4 +1,5 @@
 *.bbl
+*.bcf
 *.blg
 *.dvi
 *.synctex.gz
