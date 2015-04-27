@@ -3,10 +3,10 @@
 #
 # (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
-all:	$(tunnel_files) schematic.pdf
-
 tunnel_files = tunnel-1.pdf tunnel-2.pdf tunnel-3.pdf tunnel-4.pdf \
-	tunnel-5.pdf tunnel-6.pdf tunnel-7.pdf
+	tunnel-5.pdf tunnel-6.pdf tunnel-7.pdf tunnel-8.pdf
+
+all:	$(tunnel_files) schematic.pdf
 
 $(tunnel_files): tunnel.mp
 	TEX=latex mpost tunnel.mp
