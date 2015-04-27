@@ -66,11 +66,13 @@ hold on;
 
 s = zeros(1, length(n));
 for ln = n
-%	subplot(length(n), 1, ln)
+	%subplot(length(n), 1, ln)
 	plot(x, Psi(ln, 1:length(x)) +(ln-1)*1e05)		% Psi
 
 	s(ln) = sum(Psi(ln, 1:length(x)).^2.*delta);
 end
+
+print('Psi_ungestoert', '-depsc', '-noui')
 
 figure
 hold on;
@@ -83,15 +85,15 @@ for ln = n
 	sG(ln) = sum(abs(PsiG(ln, 1:length(x))).^2.*delta);
 end
 
-print('grafik_1_Psi', '-depsc', '-noui')
+print('Psi_gestoert', '-depsc', '-noui')
 %print('grafik_1_Psi', '-dpdf', '-noui')
 
 %-----Plot grafik 2: E(n, a)-----
-% figure
-% hold on;
-% for ln = n
-% 	plot(x, E(ln))		% Psis
-% end
+figure
+hold on;
+for ln = n
+ 	plot(x, E(ln))		 % Psis
+end
 
 %print('grafik_2_Energy', '-depsc', '-noui')
 %print('grafik_2_Energy', '-dpdf', '-noui')
