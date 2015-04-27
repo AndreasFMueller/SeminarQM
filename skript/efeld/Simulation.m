@@ -45,7 +45,7 @@ end
 Psi(ln,1:length(x)) = 1/sqrt(l) .* y;
 end
 
-%-----Verarbeitung gestört-----
+%-----Verarbeitung gestï¿½rt-----
 gamma = 0.000000000;
 epsilon = 5*10^-4;
 El = zeros(1, length(n));
@@ -78,7 +78,7 @@ hold on;
 sG = zeros(1, length(n));
 for ln = n
 %	subplot(length(n), 1, ln)
-	plot(x, PsiG(ln, 1:length(x)) +ln*2e05)		% Psi
+	plot(x, PsiG(ln, 1:length(x)) +(ln-1)*1e05)		% Psi
 
 	sG(ln) = sum(abs(PsiG(ln, 1:length(x))).^2.*delta);
 end
