@@ -65,7 +65,7 @@ E &= -\frac{1}{c} \dfrac{\partial A}{\partial t} - \nabla \phi
 \end{split}
 \end{equation}
 
-Es kann gezeigt werden, dass $\phi$ durch eine Eichtransformation (Siehe \ref{section:eichtransformation}) geeignet gew"ahlt werden kann, damit:
+Mittels der Lorenz-Eichung (Siehe \ref{section:eichtransformation}) kann $\phi$ so gew"ahlt werden, dass:
 
 \begin{equation}
 \nabla \cdot A + \frac{1}{c} \frac{\partial \phi }{\partial t} = 0
@@ -80,10 +80,12 @@ Dadurch werden die zwei gekoppelten Gleichungen entkoppelt und es gilt:
 \end{equation}
 
 F"ur weiter wollen ein Feld im Vakkum betrachten. Hierf"ur gilt $J = 0$, da keine Leiter vorhanden sind.
-In einem Transversalfeld im Vakkum gilt zudem $\nabla \cdot A = 0$. (ToDo: ??) Dadurch vereinfachen sich die gekoppelten Differentialgleichung zu einer Differentialgleichung in A:
+Dadurch vereinfachen sich die gekoppelten Differentialgleichung zu einer Differentialgleichung in A:
 \begin{equation}
 \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} = 0
 \end{equation}
+
+Zudem gilt f"ur Transversal-wellen $\nabla \cdot A = 0$.
 
 \section{Von der Welle zu gekoppelten Oszillatoren}
 L"osungen dieser Gleichung f"ur periodische Randbedingungen und $t=0$ in einer Box mit Seitenl"ange $L = V^{1/3}$ sind durch die Fourier Reihe gegeben:
@@ -177,7 +179,7 @@ $Q_{k,\alpha}$ und $P_{k,\alpha}$ k"onnen nun als Koordinaten und Impulse der ei
 \section{Quantisierung der Welle}
 
 \subsection{Vertauschungsrelationen sowie Auf- und Absteige Operatoren}
-Wie beim harmonischen Oszillator können $Q_{k,\alpha}$ und $P_{k,\alpha}$ nun als Opperatoren aufgefasst werden. Die Vertauschungsrelationen werden dabei zu:
+Wie beim harmonischen Oszillator k"onnen $Q_{k,\alpha}$ und $P_{k,\alpha}$ nun als Opperatoren aufgefasst werden. Die Vertauschungsrelationen werden dabei zu:
 \begin{equation}
 \begin{split}
 [Q_{k,\alpha}, P_{k',\alpha'}] &= i \hbar \delta_{kk'}\delta_{aa'} \\
@@ -231,7 +233,7 @@ Na|n\rangle &= (aN - a)|n\rangle = (e_n - 1)a|n\rangle
 \end{split}
 \end{equation}
 
-Wiederum m"ussen die neuen Eigenvektoren normalisiert werden. Daf"ur werden die Konstanten $c_+$ und $c_-$ eingeführt.
+Wiederum m"ussen die neuen Eigenvektoren normalisiert werden. Daf"ur werden die Konstanten $c_+$ und $c_-$ eingef"uhrt.
 \begin{equation}
 \begin{split}
 a^+|n\rangle &= c_+|n+1\rangle \\
@@ -263,7 +265,7 @@ Da die Energie nicht negativ sein kann gilt:
 e_n = \langle n | N |n \rangle = \langle n | a^+a |n \rangle \geq 0
 \end{equation}
 
-Hier muss $n$ ein Integer sein, damit die absteigende Folge bei null stehen bleibt. Die absteigende Folge der Zustände ist:
+Hier muss $n$ ein Integer sein, damit die absteigende Folge bei null stehen bleibt. Die absteigende Folge der Zust"ande ist:
 
 \begin{equation}
 a|n\rangle = \sqrt{e_n}|n-1\rangle \quad a|2\rangle = \sqrt{2}|1\rangle  \quad a|1\rangle = 0|0\rangle \quad a|0\rangle = 0|0\rangle
@@ -286,7 +288,7 @@ $n_{k,\alpha}$ ist dabei die Besetzungszahl f"ur den Zustand $(k,\alpha)$ Der Va
 |0\rangle = |0_{k_1,\alpha_1}\rangle |0_{k_2,\alpha_2}\rangle \, \hdots \, |0_{k_l,\alpha_l}\rangle
 \end{equation}
 
-Durch hinzufügen von Photonen mittels dem Aufsteige-Operator k"onnen nun Photonen hinzugef"ugt werden:
+Durch hinzuf"ugen von Photonen mittels dem Aufsteige-Operator k"onnen nun Photonen hinzugef"ugt werden:
 
 \begin{equation}
 \begin{split}
@@ -305,7 +307,22 @@ oder allgemein:
 Die Fourier Koeffizienten im Strahlungsfeld werden mittels den Korrespondenzen \ref{fq:opp_fourier} durch Operatoren ersetzt um das quantisierte Feld zu erhalten:
 
 \begin{equation}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c \sqrt{\hbar/2 \omega_k}\right)\left[a_{k,\alpha}(t) \epsilon^{(\alpha)} e^{ikx} + a^+_{k,\alpha}(t) \epsilon^{(\alpha)} e^{-ikx}\right]
+A(x,0) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c \sqrt{\hbar/2 \omega_k}\right)\left[a_{k,\alpha}(0) \epsilon^{(\alpha)} e^{ikx} + a^+_{k,\alpha}(0) \epsilon^{(\alpha)} e^{-ikx}\right]
+\end{equation}
+
+Die Zeitabh"angigkeit der Operatoren ist:
+\begin{equation}
+\begin{split}
+a_{k,\alpha}(t) &= a_{k,\alpha}(0) e^{-i \omega_k t} \\
+a^+_{k,\alpha}(t) &= a^+_{k,\alpha}(0) e^{i \omega_k t}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+A(x,t) &= \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c \sqrt{\hbar/2 \omega_k}\right)\left[a_{k,\alpha}(0) e^{-i \omega_k t} \epsilon^{(\alpha)} e^{ikx} + a^+_{k,\alpha}(0) e^{i \omega_k t} \epsilon^{(\alpha)} e^{-ikx}\right]\\
+	&= \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c \sqrt{\hbar/2 \omega_k}\right)\left[a_{k,\alpha}(0) \epsilon^{(\alpha)} e^{i(kx-\omega_k t)} + a^+_{k,\alpha}(0) \epsilon^{(\alpha)} e^{-i(kx-\omega_k t)}\right]
+\end{split}
 \end{equation}
 
 Auch wenn diese Gleichung mit \ref{fq:wave_eq} verwandt ist, ist die Bedeutung sehr verschieden. \ref{fq:wave_eq} ist eine klassische Funktion in $x$ und $t$. Diese Gleichung ist nun ein Operator aus Linearkombinationen von Auf- und Absteigeopperatoren f"ur jeden Punkt im Raum. Ein solcher Operator heist Feldopperaor oder quantisiertes Feld.
@@ -329,8 +346,54 @@ Die Energieskala ist hier nun frei w"ahlbar. Durch die Wahl von $H|0\rangle = 0$
 H = \sum_k \sum_{\alpha=1,2} \hbar \omega_k N_{k,\alpha}
 \end{equation}
 
-Der Hamilton-Opperator angewendet auf viele Photonen ergibt nun als Eigenwert die Summe der Energie der Photonen mit den Zuständen $(k_i,\alpha_i)$:
+Der Hamilton-Opperator angewendet auf viele Photonen ergibt nun als Eigenwert die Summe der Energie der Photonen mit den Zust"anden $(k_i,\alpha_i)$:
 
 \begin{equation}
 H |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle = \sum_i \hbar \omega_k n_{k_i,\alpha_i} |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle
 \end{equation}
+
+\section{Wechselwirkung zwischen Photonen und Atomen}
+
+Um die Hamilton-Funktion eines Teilchens im Magnetfeld zu erhalten, wird $p$ gem"ass \ref{section:hamilton-funktion-im-magnetfeld} durch $p -eA/c$ ersetzt. $A$ ist nun das quantisierte Feld. Die Hamilton-Funktion wird somit zu:
+
+\begin{equation}
+H = \sum_i \left[ -\frac{e}{2mc}(p_i \cdot A(x_i, t) + A(x_i, t) \cdot p_i) + \frac{e^2}{2mc^2}A(x_i, t) \cdot A(x_i, t)\right] + H^{(spin)}
+\end{equation}
+
+Die Summe geht hierbei "uber alle Elektronen von Atomen die an der Wechselwirkung teilhaben. $p_i$ ist wiederum ein Operator mit Ableitung nach dem Ort. Da $\nabla \cdot A = 0$ gilt, vertauschen $p_i \cdot A(x_i, t)$.
+
+Zudem leitet auch der Spin einen (wenn auch oft vernachl"assigbar kleinen) Beitrag zu $H$:
+\begin{equation}
+H^{(spin)} = - \sum_i \frac{e \hbar}{2mc}\sigma_i \left[\nabla \times A(x_i, t)\right]
+\end{equation}
+
+Dieser Hamilton-Operator wirkt nun nicht nur auf den Zust"anden der Elektronen der Atome sondern auch auf den Zust"anden der Photonen und beschreibt die Wechselwirkung von Photonen und Atomen. Man spricht hier von dem Anfangszustand $A$, dem Endzustand $B$ und allenfalls von einem Zwischenzustand $I$.
+
+Nehmen wir an, ein Atom absorbiert ein Photon vom Zustand $(k,\alpha)$ und wechselt dabei vom Zustand $A$ in den Zustand $B$. Der einfach heit halber ber"ucksichtigen wir nur Photonen im Zustand $(k,\alpha)$. Der Quadratische Term $A \cdot A$ spielt hier keine Rolle, da dieser Term nur Zustands"anderungen von $0$ oder $\pm 2$ Photonen erzeugt. Die Beschreibung der Zustands"anderung ($H^{(spin)}$ vernachl"assigt) ist:
+
+\begin{equation}
+\begin{split}
+\langle B; n_{k,\alpha} - 1 &| H | A; n_{k,\alpha} \rangle \\
+&= -\frac{e}{mc} \left\langle B; n_{k,\alpha} - 1 \left| 
+\frac{1}{\sqrt{V}} \sum_i \left(c \sqrt{\hbar/2 \omega_k}\right)a_{k,\alpha}(0) \epsilon^{(\alpha)} e^{i(kx_i-\omega_k t)} p_i 
+\right| A; n_{k,\alpha} \right\rangle\\
+&= -\frac{e}{m} \sqrt{\frac{n_{k,\alpha} \hbar}{2 \omega_k V}} \sum_i \left\langle B \left| 
+\epsilon^{(\alpha)} e^{ikx_i} p_i 
+\right| A \right\rangle e^{-i\omega_k t}
+\end{split}
+\end{equation}
+
+Der Emissionsprozess wird beschrieben durch:
+\begin{equation}
+\begin{split}
+\langle B; n_{k,\alpha} + 1 &| H | A; n_{k,\alpha} \rangle \\
+&= -\frac{e}{mc} \left\langle B; n_{k,\alpha} + 1 \left| 
+\frac{1}{\sqrt{V}} \sum_i \left(c \sqrt{\hbar/2 \omega_k}\right)a^+_{k,\alpha}(0) \epsilon^{(\alpha)} e^{-i(kx_i-\omega_k t)} p_i 
+\right| A; n_{k,\alpha} \right\rangle\\
+&= -\frac{e}{m} \sqrt{\frac{ (n_{k,\alpha}+1) \hbar}{2 \omega_k V}} \sum_i \left\langle B \left| 
+\epsilon^{(\alpha)} e^{-ikx_i} p_i 
+\right| A \right\rangle e^{i\omega_k t}
+\end{split}
+\end{equation}
+
+Hierbei ist interessant, dass die Wahrscheinlichkeit f"ur die Emission bei nicht vorhandener elektromagnetischer Strahlung ($n_{k,\alpha} = 0$) gr"osser als null ist, da $\sqrt{n_{k,\alpha}+1} > 0$. Dies es Ph"anomen wird spontane Emission genannt. Bei st"arkerer Strahlung ist die Wahrscheinlichkeit einer Emission ungef"ahr proportional zu der Anzahl Photonen und wird stimulierte Emission genannt.
