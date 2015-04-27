@@ -67,7 +67,7 @@ hold on;
 s = zeros(1, length(n));
 for ln = n
 %	subplot(length(n), 1, ln)
-	plot(x, Psi(ln, 1:length(x)) +ln*1e05)		% Psi
+	plot(x, Psi(ln, 1:length(x)) +(ln-1)*1e05)		% Psi
 
 	s(ln) = sum(Psi(ln, 1:length(x)).^2.*delta);
 end
