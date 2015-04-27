@@ -1,0 +1,166 @@
+%
+% Tunneldioden-Oszillator
+%
+% (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Tunneldioden-Oszillator}
+\rhead{Tunneldioden-Oszillator}
+\begin{figure}
+\centering
+\includestandalone{tunneldiode/schematic}
+\caption{Oszillator-Schaltung mit Tunneldiode
+\label{tunnel:tunneldioden-oszillator}}
+\end{figure}
+Eine Tunneldiode kann dazu verwendet werden, einen Schwingkreis zu
+entd"ampfen und so einen einfachen Oszillator zu konstruieren.
+Eine m"ogliche Schaltung zeigt Abbildung~\ref{tunnel:tunneldioden-oszillator}.
+
+Um die Schaltung zu analysieren, brauchen wir ein Modell f"ur die
+Charakteristik der Tunneldiode. Wir nehmen dazu an, dass $U_0$ kleiner
+ist also die Spannung, bei der die normale Diodenleitung einsetzt.
+Dann k"onnen wir zwischen dem Strom $I_T$ durch die Tunneldiode
+und der Vorw"artsspannung $U_T$ einen linearen Zusammenhang
+\begin{equation}
+I_T=b-aU_T
+\label{tunnel:charakteristik}
+\end{equation}
+annehmen. $b$ entspricht in etwa dem Peak-Strom $I_{\text{peak}}$, der
+Tunnelstrom bricht bei der Spannung $b/a$ zusammen.
+
+Jetzt k"onnen wir die Differentialgleichung f"ur die Spannung $U(t)$
+aufstellen. Wir bezeichnen den Spannungsabfall "uber dem Bauteil $X$
+mit $U_X$ und den Strom durch das Bauteil mit $I_X$. Die Knotengleichung
+bei $U(t)$ besagt:
+\[
+I_L+I_C=I_T
+\]
+Daraus und aus $U_T=U_0-U(t)$ kann $I_T$ mit Hilfe der angenommenen
+Charakteristik~(\ref{tunnel:charakteristik}) der Tunneldiode eliminert werden.
+Es ist
+\begin{equation}
+I_L+I_C=b-aU_T=b-a(U_0-U(t)).
+\label{tunnel:knotengleichung}
+\end{equation}
+F"ur die Str"ome im Schwingkreis gilt
+\begin{align*}
+C\dot U_C&=I_C \qquad\text{und}\\
+U_L&=L\dot I_L
+\end{align*}
+Nat"urlich ist $U_L=U_C=U(t)$.
+Da wir in der zweiten Gleichung nur die Ableitung von $I_L$ nach
+der Zeit haben, leiten wir
+auch die erste und die Gleichung~(\ref{tunnel:knotengleichung}) nach
+der Zeit ab, und setzen die abgeleiteten Str"ome
+in~(\ref{tunnel:knotengleichung}) ein.
+So erhalten wir die Differentialgleichung
+\begin{equation*}
+\frac1{L}U(t) +C\ddot U(t)=a\dot U(t)
+\end{equation*}
+oder
+\begin{equation}
+\ddot U(t)
+-\frac{a}{C}\dot U(t)
++\frac1{LC}U(t)
+=0.
+\label{tunnel:dgl1}
+\end{equation}
+F"ur $a=0$ wird daraus eine gew"ohnliche Schwingungsdifferentialgleichung
+mit Kreisfrequenz $\omega_0^2=1/LC$.
+
+\begin{figure}
+\centering
+\includegraphics{tunneldiode/tunnel-8.pdf}
+\caption{Designparameter $L$ und $C$ des Tunneldioden-Oszillators nach
+Abbildung~\ref{tunnel:tunneldioden-oszillator}. 
+Die Hyperbeln verbinden Punkte gleicher Eigenfrequenz des Schwingkreises.
+Dass hellgraue Gebiet wird ausgeschlossen durch die Bedingung, dass die
+Kapazit"at gross genug sein muss.
+Das dunkelgraue Gebiet schliesst Werte der Induktivit"at aus, wenn die
+Kreisfrequenz $\omega$ erreicht werden soll.
+\label{tunnel:designparameter}}
+\end{figure}
+
+Das charakteristische Polynom der Differentialgleichung~(\ref{tunnel:dgl1})
+ist
+\[
+\lambda^2-\frac{a}{C}\lambda +\omega_0^2\lambda=0
+\]
+mit den Nullstellen
+\[
+\lambda_\pm = \frac{a}{2C}\pm\sqrt{\frac{a^2}{4C^2}-\omega_0^2}.
+\]
+Damit tats"achlich Schwingungsl"osungen entstehen, muss der Radikand
+negativ sein, es muss also gelten
+\[
+\frac{a^2}{4C^2}<\frac1{LC}
+\qquad\Rightarrow\qquad
+\frac{C}{L} > \frac{a^2}{4}.
+\]
+Die Kapazit"at $C$ muss also ausreichend gross sein.
+Abbildung~\ref{tunnel:designparameter} zeigt den Raum der Design-Parameter
+$C$ und $L$.
+
+Eine grosse Kapazit"at $C$ bewirkt aber auch, dass der Koeffizient
+$-a/C$ des $\dot U(t)$-Terms kleiner wird. Mit zunehmender Kapazit"at
+wird als die Entd"ampfung geringer, und je nach parasit"arer D"ampfung
+kann es schwierig werden, dass die Schaltung "uberhaupt anschwingt.
+
+Die Schwingungsfrequenz wird f"ur $a\ne 0$ modifiziert zu
+\begin{equation}
+\omega
+=
+\sqrt{
+\frac{1}{LC}
+-
+\frac{a^2}{4C^2}
+}.
+\label{tunnel:oszillatorfrequenz}
+\end{equation}
+Bei vorgegebener Schwingungsfrequenz und Induktivit"at ist dies eine
+quadratische Gleichung f"ur $C$, wir schreiben sie in der gebr"auchlicheren
+Form
+\[
+\omega^2 C^2 -\frac1{L}C+\frac{a^2}{4}=0.
+\]
+Diese Gleichung hat nur dann reelle L"osungen f"ur $C$, wenn die Diskriminante
+positiv ist, also
+\begin{equation}
+\begin{aligned}
+\frac1{L^2}-4\omega^2\frac{a^2}4&>0
+&
+&\Rightarrow&
+\frac1{L^2}&>\omega^2a^2
+&
+&\Rightarrow&
+L<&\frac1{a\omega}
+\end{aligned}
+\end{equation}
+Wenn also die Kreisfrequenz $\omega$ angestrebt werden soll, dann darf die
+Induktivit"at nicht zu gross sein.
+Dies wird in Abbildung~\ref{tunnel:designparameter} durch das dunkelgraue
+Gebiet dargestellt.
+
+\begin{beispiel}
+Die in diesem Kapitel genauer untersuchte Tunneldiode 1N3721 hat einen
+Spitzenstrom von $I_{\text{peak}}=25\,\text{mA}$, der Tunnelstrom
+bricht bei $450\,\text{mV}$ zusammen.
+Wir k"onnen also von $a=25/450=0.0555\text{A/V}$ ausgehen.
+Mit einer Induktivit"at von $L=0.1\mu\text{H}$ l"asst sich dann bestenfalls
+die Kreisfrequenz
+$\omega=1/(aL)=1/(10^{-7}\cdot 0.055)=180\cdot 10^6\,\text{s}^{-1}$
+erreichen,
+also die Frequenz $28.7\,\text{MHz}$.
+Die Kapazit"at muss mindestens $C>La^2/4=77\text{pF}$ sein.
+
+Mit einem $100\,\text{nF}$-Kondensator gilt f"ur die Eigenkreisfrequenz
+$\omega_0$ des Schwingkreises $\omega_0^2=1/LC=10^{14}$, die Eigenfrequenz
+ist also etwa $1.5915\,\text{MHz}$.
+F"ur die Frequenz des Oszillators muss allerdings die
+Formel~(\ref{tunnel:oszillatorfrequenz}) verwendet werden.
+Da aber in unserem Fall $a^2/4\simeq 0.00077$ ziemlich klein ist, ist
+die Frequenz fast gleich wie die Eigenfrequenz des Schwingkreises.
+Anwendung der Formel~(\ref{tunnel:oszillatorfrequenz})
+ergibt $1.5909\,\text{MHz}$, also tats"achlich nur ein sehr kleiner
+Unterschied zur Eigenfrequenz.
+\end{beispiel}
+

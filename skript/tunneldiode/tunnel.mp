@@ -619,4 +619,72 @@ koordinatensystem(vunit, iunit);
 
 endfig;
 
+beginfig(8)
+
+numeric width;
+numeric height;
+width := 200;
+height := 140;
+
+numeric A;
+A := 0.25;
+numeric a;
+a := 2 * sqrt(A);
+def omega(expr Omega) =
+	sqrt(2 * Omega)
+enddef;
+
+pickup pencircle scaled 1.5pt;
+
+def hyp(expr x, Omega) =
+	Omega / x
+enddef;
+
+def hyperbola(expr Omega) =
+	numeric x;
+	x := 3;
+	path p;
+	p := (x, hyp(x,Omega));
+	for x = 4 step 1 until width:
+		p := p..(x, hyp(x,Omega));
+	endfor;
+	draw p;
+enddef;
+
+fill (0.6 * width,0)--(width,0)--(width,height)--(0.6*width,height)--cycle
+	withcolor (0.7,0.7,0.7);
+
+z2 = (0.8 * width, 0.67 * height);
+fill ((z2 shifted(-20,-13))--(z2 shifted(20,-13))--(z2 shifted(20,13))
+	--(z2 shifted(-20,13))--cycle) withcolor white;
+label(btex $\displaystyle L \ge \frac1{a\omega}$ etex, z2);
+
+hyperbola(500 *  1);
+hyperbola(500 *  4);
+hyperbola(500 *  9);
+hyperbola(500 * 16);
+hyperbola(500 * 25);
+hyperbola(500 * 36);
+hyperbola(500 * 49);
+
+pickup pencircle scaled 1pt;
+
+fill (0,0)--(width + 5,0)--(width + 5,0.25 * (width + 5))--cycle
+	withcolor (0.9,0.9,0.9);
+
+clip currentpicture to (0,0)--(width,0)--(width,height)--(0,height)--cycle;
+
+drawarrow (-5, 0)--(width + 5,         0);
+drawarrow ( 0,-5)--(        0,height + 5);
+
+label.top(btex $L$ etex, (width + 5,         0));
+label.lft(btex $C$ etex, (        0,height + 5));
+
+label(btex $\displaystyle \frac{C}{L}\le \frac{a^2}4$ etex, (0.8 * width, 0.1 * width));
+
+z0 = (0.5 * width, hyp(0.5 * width, 9 * 500));
+z1 = z0 shifted (10,0);
+
+endfig;
+
 end

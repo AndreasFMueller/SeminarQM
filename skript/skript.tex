@@ -27,12 +27,13 @@
 \usepackage{tikz}
 \usepackage{placeins}
 \usepackage{subfigure}
-\usepackage{csquotes}
+\usepackage[autostyle=false,english=american]{csquotes}
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{wasysym}
 \usepackage{environ}
 \usepackage{pifont}
+\usepackage{feynmp}
 \usepackage{appendix}
 \usetikzlibrary{calc,intersections,through,backgrounds,graphs,positioning,shapes,arrows}
 \usetikzlibrary{patterns,decorations.pathreplacing}
@@ -57,7 +58,7 @@
   numberstyle=\ttfamily\tiny
 }
 \usepackage{caption}
-\usepackage{standalone}
+\usepackage[mode=buildnew]{standalone}
 \usepackage[backend=bibtex]{biblatex}
 \addbibresource{references.bib}
 % Quanteninformatik
@@ -91,6 +92,7 @@
 %\addbibresource{quantumdot/main.bib}
 \AtEndDocument{\clearpage\ifodd\value{page}\else\null\clearpage\fi}
 \makeindex
+\DeclareGraphicsRule{*}{mps}{*}{}
 \begin{document}
 \pagestyle{fancy}
 \frontmatter

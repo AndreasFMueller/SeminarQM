@@ -13,6 +13,7 @@ integrieren zu k"onnen.
 
 \section{Vektorpotential\label{section:vektorpotential}}
 \rhead{Vektorpotential}
+\index{Vektorpotential}
 F"ur die quantenmechanische Beschreibung eines Teilchens in einem
 elektrischen Feld konnten wir das Potential verwenden, welches
 direkt die Energie eines Teilchens aus der Position zu bestimmen
@@ -29,7 +30,8 @@ Das elektrische Feld $\vec E$ kann aus dem Potential mittels
 \]
 rekonstruiert werden.
 Das Magnetfeld hat kein Potential, aus dem es als Gradient wiedergewonnen
-werden k"onnte, und die Lorentzkraft, die das Magnetfeld
+werden k"onnte, und die Lorentz-Kraft, die das Magnetfeld
+\index{Lorentz-Kraft}
 auf ein Teilchen aus"ubt, sind nicht vom Ort, sondern von der Geschwindigkeit
 abh"angig.
 
@@ -144,7 +146,9 @@ daher auch keinen Beitrag zu Energie leisten.
 
 Mit dem Laplace-Formalismus kann man die korrekte Form der
 Hamilton-Funktion finden.
-Dabei zeigt sich, dass man eine andere Impulskoordinate $\vec P$
+Wir wollen diese Rechnung nicht durchf"uhren, sondern nur das Resultat
+angeben.
+Es zeigt sich, dass man eine andere Impulskoordinate $\vec P$
 an Stelle der bekannten Impulse $\vec p$ verwenden muss. 
 Die neue Impulskoordinate ist 
 \[
@@ -441,6 +445,7 @@ aber nicht $\vec B$ "andert, trotzdem stellt das Experiment eine
 Beeinflussung fest.
 
 \subsection{Eichtransformationen der Potentiale}
+\index{Eichtransformation!der Potentiale}
 Das Vektorpotential ist nicht eindeutig: wenn man zu $\vec A$
 den Gradienten einer Funktion $\chi$ hinzuaddiert, "andert sich
 $\vec B$ nicht, weil
@@ -513,6 +518,70 @@ Die aus den eichtransformierten Potentialen abgeleiteten Felder $\vec E'$
 und $\vec B'$ stimmen also mit den urspr"unglichen Feldern $\vec E$
 und $\vec B$ "uberein.
 \end{proof}
+
+\subsubsection{Transversale Eichung}
+\index{Transversale Eichung}
+\index{Coulomb-Eichung}
+Das Vektorpotential und elektrische Potential sind nicht eindeutig bestimmt.
+Mit eine Eichtransformation kann 
+Die Transversale Eichung oder auch Coulomb-Eichung verlangt zus"atzlich,
+dass das Vektorpotential quellenfrei sein soll,
+also $\operatorname{div}\vec A=0$ erf"ullen soll.
+Um transversale Eichung zu erreichen, muss die Funktion $\chi$
+der Eichtransformation die Gleichung
+\begin{align*}
+\operatorname{div}(\vec A+\operatorname{grad}\chi)
+&=
+\operatorname{div}\vec A + \operatorname{div}\operatorname{grad}\chi
+=
+\operatorname{div}\vec A + \Delta\chi
+=0
+\end{align*}
+Die Funktion $\chi$ ist also L"osung der Differentialgleichung
+\[
+\Delta \chi = -\operatorname{div}\vec A.
+\]
+Diese partialle Differentialgleichung kann zum Beispiel mit der
+Greenschen Funktion gel"ost werden.
+Es l"asst sich also immer transversale Eichung erreichen.
+
+\subsubsection{Lorentz-Eichung}
+In der Lorentz-Eichung wird zus"atzlich verlangt, dass Vektorpotential
+und eletrisches Potential die Bedingung
+\[
+\operatorname{div}\vec A+\frac1{c^2}\frac{\partial}{\partial t}\varphi=0
+\]
+erf"ullt.
+Die Funktion $\chi$ der Eichtransformation muss dazu der Gleichung
+\begin{equation*}
+\begin{aligned}
+&&
+\operatorname{div}(\vec A+\operatorname{grad}\chi)
++
+\frac1{c^2}\frac{\partial}{\partial t}
+\biggl(\varphi-\frac{\partial\chi}{\partial t}\biggr)
+&=0
+\\
+&\Rightarrow&
+\operatorname{div}\vec A +\Delta\chi
++
+\frac{1}{c}\frac{\partial\varphi}{\partial t}
+-
+\frac1{c^2}\frac{\partial^2\chi}{\partial t^2}
+&=0
+\\
+&\Rightarrow&
+\Delta\chi-\frac1{c^2}\frac{\partial^2}{\partial t^2}\chi
+=
+\square\chi
+&=
+-\operatorname{div}\vec A-\frac1{c}\frac{\partial\varphi}{\partial t}
+\end{aligned}
+\end{equation*}
+gen"ugen, wobei $\square$ der d'Alembert-Operator ist.
+Diese Wellengleichung kann zum Beispiel durch retarierte Potentiale 
+gefunden werden, insbesondere kann man also Lorentz-Eichung immer
+erreichen.
 
 \subsection{Eichtransformation der Schr"odingergleichung}
 Wenn man eine Eichtransformation auf die Potentiale in der
@@ -615,12 +684,13 @@ auch wenn sich sowohl das Vektorpotential als auch das
 elektrische Potential "andert.
 
 Die Transformation (\ref{skript:eichtransformationpsi}) heisst 
-Eichtransformation der Felder und der Wellenfunktion.
+{\em Eichtransformation} der Felder und der Wellenfunktion.
+\index{Eichtransformation!der Felder und der Wellenfunktion}
 Die Schr"odingergleichung ist invariant bez"uglich Eichtransformationen.
 Die Eichtransformation stellt eine innere Symmetrie der Theorie dar.
 Unterwirft man das Problem einer Eichtransformation, zum Beispiel um
-es einer L"osung zug"anglicher zu machen, spricht man auch von der Wahl
-einer Eichung.
+es einer L"osung zug"anglicher zu machen, spricht man auch von der {\em Wahl
+einer Eichung}.
 
 
 
