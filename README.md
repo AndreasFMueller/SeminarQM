@@ -56,7 +56,7 @@ Original Repository dazu:
 
 	git remote add -t master original https://github.com/AndreasFMueller/SeminarQM.git
 
-Ab jetzt können Sie den aktuellen Stand des mit folgendem Befehl
+Ab jetzt können Sie den aktuellen Stand des Repos mit folgendem Befehl
 einpflegen:
 
 	git pull original master

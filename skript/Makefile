@@ -70,11 +70,11 @@ BLXFILES = skript1-blx.bbl skript2-blx.bbl skript3-blx.bbl skript4-blx.bbl \
 	skript13-blx.bbl skript14-blx.bbl skript15-blx.bbl skript16-blx.bbl \
 	skript17-blx.bbl
 
-imagetimestamps = tunneldiode/timestamp
+imagetimestamps = tunneldiode_timestamp
 
 articleimages:	$(imagetimestamps)
 
-tunneldiode/timestamp:
+tunneldiode_timestamp:
 	cd tunneldiode; make
 	touch tunneldiode/timestamp
 
