@@ -3,6 +3,46 @@
 \subsection{Regelkreis}
 \begin{frame}
   \frametitle{Technischer Aufbau}
+
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}
+      [node distance=1.3cm,
+     conn/.style={->,shorten >=0.1cm,>=stealth',very thick}]
+    \node[draw, circle, inner sep=1.5mm] (lamp) {\ce{^{87}Ru}};
+    \node[draw, circle, inner sep=1.5mm] (absorber) [right=of lamp]
+    {\(
+      \begin{matrix}
+        & \downarrow & \uparrow\\
+        \uparrow & \downarrow &\\
+        & \uparrow & \downarrow\\
+        \downarrow & & \uparrow
+      \end{matrix}
+    \)};
+    \node (diode) [right=of absorber] {};
+    \draw(diode) ++ (0.0,-1.0) to[empty photodiode] ++ (0.0,2.0);
+    \node[draw, rectangle, inner sep=5mm, align=center] (vcxo) [right=of diode]
+    {\SI{20}{\mega\hertz}\\VCXO};
+    \node[draw, rectangle, inner sep=5mm, yshift=-1.5cm] (hfgen)
+    [below=of diode] {Multip.};
+
+    % connections
+    \draw[conn] (lamp.east) -- (absorber.west);
+    \draw[conn, shorten >=0.4cm] (absorber.east) -- (diode.west);
+    \draw[conn] (diode.east) ++ (0.3cm,0.0) -- (vcxo.west);
+    \draw[conn] (vcxo.south) |- (hfgen.east);
+    \draw[conn] (hfgen.west) -| (absorber.south);
+  \end{tikzpicture}
+ \end{figure}
+
+\end{frame}
+
+\begin{frame}
+  
+\begin{circuitikz}\draw
+  (0,0) node[anchor=east](start){rought} ++ (0,1)
+         to[R=\(R_{\mathrm{rough}}\),o-] ++ (3,0)
+;\end{circuitikz}
 \end{frame}
 
 
