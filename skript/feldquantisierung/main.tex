@@ -6,6 +6,8 @@
 \printbibliography[heading=subbibliography]
 \end{refsection}
 
+Die Ausf"uhrungen in diesem Kapitel basieren gr"osstenteils auf: \cite{fq:aqm}
+
 \section{Maxwell-Gleichungen und elektromagnetische Wellen}
 
 Hilfreich dazu ist auch die Beschreibung von Magnetfeldern in Kapitel \ref{chapter:magnetfeld}. In diese Kapitel wird der Gradient durch $\nabla$ ersetzt \cite{fq:nabla}. Dadurch k"onnen die Gleichungen einfacher geschrieben werden. 
@@ -81,7 +83,7 @@ Dadurch werden die zwei gekoppelten Gleichungen entkoppelt und es gilt:
 
 Hier wollen wir ein Feld im Vakuum betrachten. Hierf"ur gilt $j = 0$, da keine Leiter vorhanden sind.
 Dadurch vereinfachen sich die gekoppelten Differentialgleichung zu einer Differentialgleichung in A:
-\begin{equation}
+\begin{equation} \label{fq:wave_dgl}
 \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} = 0
 \end{equation}
 
@@ -122,9 +124,9 @@ Weiterhin gilt durch die Orthogonalit"at auch:
 \end{split}
 \end{equation}
 
-Um $A(x,t)$ zu erhalten, wird unter der Ber"ucksichtigung der Wellengleichung:
+Um $A(x,t)$ zu erhalten, wird unter der Ber"ucksichtigung der Differentialgleichung \ref{fq:wave_dgl}:
 \begin{equation}
-c_{k,\alpha}(t) = c_{k,\alpha}(0) e^{-i \omega_k t} \rightarrow \ddot{c}_{k,\alpha}(t) = -\omega_k^2 c_{k,\alpha}(0) e^{-i \omega_k t}
+\ddot{c}_{k,\alpha}(t) = -\omega_k^2 c_{k,\alpha}(0) e^{-i \omega_k t} \rightarrow c_{k,\alpha}(t) = c_{k,\alpha}(0) e^{-i \omega_k t}
 \end{equation}
 
 Dabei ist:
@@ -283,12 +285,12 @@ Der Eigenvektor von $N_{k,\alpha}$ ist der Zustandsvektor f"ur einen Zustand mit
 |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots \, , n_{k_l,\alpha_l}\rangle = |n_{k_1,\alpha_1}\rangle |n_{k_2,\alpha_2}\rangle \, \hdots \, |n_{k_l,\alpha_l}\rangle
 \end{equation}
 
-$n_{k,\alpha}$ ist dabei die Besetzungszahl f"ur den Zustand $(k,\alpha)$ Der Vakuum-Zustand ist:
+$n_{k,\alpha}$ ist dabei die Besetzungszahl f"ur den Zustand $(k,\alpha)$. Der Vakuum-Zustand ist:
 \begin{equation}
 |0\rangle = |0_{k_1,\alpha_1}\rangle |0_{k_2,\alpha_2}\rangle \, \hdots \, |0_{k_l,\alpha_l}\rangle
 \end{equation}
 
-Durch hinzuf"ugen von Photonen mittels dem Aufsteige-Operator k"onnen nun Photonen hinzugef"ugt werden:
+Mit dem Aufsteige-Operator k"onnen nun Photonen hinzugef"ugt werden:
 
 \begin{equation}
 \begin{split}
@@ -310,7 +312,19 @@ Die Fourier Koeffizienten im Strahlungsfeld werden mittels den Korrespondenzen \
 A(x,0) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c \sqrt{\hbar/2 \omega_k}\right)\left[a_{k,\alpha}(0) \epsilon^{(\alpha)} e^{ikx} + a^+_{k,\alpha}(0) \epsilon^{(\alpha)} e^{-ikx}\right]
 \end{equation}
 
-Die Zeitabh"angigkeit der Operatoren ist:
+Die Zeitabh"angigkeit der Operatoren ist gegeben durch das Heisenberg-Bild \cite{fq:heisenberg_picture}:
+\begin{equation}
+\begin{split}
+\dot{a}_{k,\alpha}(t) &= \frac{i}{\hbar}[H,a_{k,\alpha}] \\
+	&= \frac{i}{\hbar} \sum_{k'} \sum_{\alpha'=1,2} [\hbar \omega_k N_{k',\alpha'},a_{k,\alpha}]\\
+	&= - i \omega_k a_{k,\alpha}\\
+\ddot{a}_{k,\alpha}(t) &= \frac{i}{\hbar}[H,\dot{a}_{k,\alpha}] \\
+	&= \frac{i}{\hbar}[H, - i \omega_k a_{k,\alpha}]\\
+	&= - \omega_k^2 a_{k,\alpha}
+\end{split}
+\end{equation}
+
+Daraus folgt die Zeitabh"angigkeit, die wiederum \ref{fq:wave_dgl} erf"ullt:
 \begin{equation}
 \begin{split}
 a_{k,\alpha}(t) &= a_{k,\alpha}(0) e^{-i \omega_k t} \\
@@ -354,7 +368,7 @@ H |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle = \sum_i \hbar \omega_k 
 
 \section{Wechselwirkung zwischen Photonen und Atomen}
 
-Um die Hamilton-Funktion eines Teilchens im Feld zu erhalten, wird $p$ gem"ass Kapitel \ref{section:hamilton-funktion-im-magnetfeld} durch $p -eA/c$ ersetzt. $A$ ist nun das quantisierte Feld. Die Hamilton-Funktion wird somit zu:
+Um den Hamilton-Operator eines Teilchens im Feld zu erhalten, wird $p$ gem"ass Kapitel \ref{section:hamilton-funktion-im-magnetfeld} durch $p -eA/c$ ersetzt. $A$ ist nun das quantisierte Feld. Der Hamilton-Operator wird somit zu:
 
 \begin{equation}
 H = \sum_i \left[ -\frac{e}{2mc}(p_i \cdot A(x_i, t) + A(x_i, t) \cdot p_i) + \frac{e^2}{2mc^2}A(x_i, t) \cdot A(x_i, t)\right] + H^{(spin)}
@@ -375,10 +389,10 @@ Nehmen wir an, ein Atom absorbiert ein Photon vom Zustand $(k,\alpha)$ und wechs
 \begin{split}
 \langle B; n_{k,\alpha} - 1 &| H | A; n_{k,\alpha} \rangle \\
 &= -\frac{e}{mc} \left\langle B; n_{k,\alpha} - 1 \left| 
-\frac{1}{\sqrt{V}} \sum_i \left(c \sqrt{\hbar/2 \omega_k}\right)a_{k,\alpha}(0) \epsilon^{(\alpha)} e^{i(kx_i-\omega_k t)} p_i 
+\frac{1}{\sqrt{V}} \sum_i \left(c \sqrt{\hbar/2 \omega_k}\right)a_{k,\alpha}(0) \epsilon^{(\alpha)} e^{i(kx_i-\omega_k t)} \cdot p_i 
 \right| A; n_{k,\alpha} \right\rangle\\
 &= -\frac{e}{m} \sqrt{\frac{n_{k,\alpha} \hbar}{2 \omega_k V}} \sum_i \left\langle B \left| 
-\epsilon^{(\alpha)} e^{ikx_i} p_i 
+e^{ikx_i} \epsilon^{(\alpha)} \cdot p_i 
 \right| A \right\rangle e^{-i\omega_k t}
 \end{split}
 \end{equation}
@@ -388,10 +402,10 @@ Der Emissionsprozess wird beschrieben durch:
 \begin{split}
 \langle B; n_{k,\alpha} + 1 &| H | A; n_{k,\alpha} \rangle \\
 &= -\frac{e}{mc} \left\langle B; n_{k,\alpha} + 1 \left| 
-\frac{1}{\sqrt{V}} \sum_i \left(c \sqrt{\hbar/2 \omega_k}\right)a^+_{k,\alpha}(0) \epsilon^{(\alpha)} e^{-i(kx_i-\omega_k t)} p_i 
+\frac{1}{\sqrt{V}} \sum_i \left(c \sqrt{\hbar/2 \omega_k}\right)a^+_{k,\alpha}(0) \epsilon^{(\alpha)} e^{-i(kx_i-\omega_k t)} \cdot p_i 
 \right| A; n_{k,\alpha} \right\rangle\\
 &= -\frac{e}{m} \sqrt{\frac{ (n_{k,\alpha}+1) \hbar}{2 \omega_k V}} \sum_i \left\langle B \left| 
-\epsilon^{(\alpha)} e^{-ikx_i} p_i 
+e^{-ikx_i} \epsilon^{(\alpha)} \cdot p_i 
 \right| A \right\rangle e^{i\omega_k t}
 \end{split}
 \end{equation}
