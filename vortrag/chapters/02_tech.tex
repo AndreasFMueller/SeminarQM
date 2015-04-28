@@ -7,10 +7,41 @@
   \begin{figure}
     \centering
     \begin{tikzpicture}
-      [node distance=1.3cm,
-     conn/.style={->,shorten >=0.1cm,>=stealth',very thick}]
-    \node[draw, circle, inner sep=1.5mm] (lamp) {\ce{^{87}Ru}};
-    \node[draw, circle, inner sep=1.5mm] (absorber) [right=of lamp]
+    [node distance=1.3cm]
+
+    \tikzstyle{conn} = [->,shorten >=0.1cm,>=stealth',very thick];
+
+    \only<1>{\tikzstyle{connLamp} = [->,shorten
+      >=0.1cm,>=stealth',very thick];}
+    \only<2->{\tikzstyle{connLamp} =
+      [->,decorate,decoration={snake,amplitude=1.5mm,segment
+        length=1.7mm,post length=2.7mm},shorten
+      >=0.1cm,>=stealth',very thick,color=red!50!black];}
+
+    \only<-2>{\tikzstyle{connAbsorber} = [->,shorten
+      >=0.1cm,>=stealth',very thick];}
+    \only<3->{\tikzstyle{connAbsorber} = [->,shorten
+      >=0.1cm,>=stealth',line width=1mm];}
+    \only<6->{\tikzstyle{connAbsorber} = [->,shorten
+      >=0.1cm,>=stealth',semithick];}
+
+    \only<-3>{\tikzstyle{connHfgen} = [->,shorten
+      >=0.1cm,>=stealth',very thick];}
+    \only<4->{\tikzstyle{connHfgen} =
+      [->,decorate,decoration={snake,amplitude=1.5mm,segment
+        length=9mm,post length=2.5mm},shorten >=0.1cm,>=stealth',very
+      thick]; }
+
+    \only<1>{\tikzstyle{lamp} = [draw,thick,circle,inner sep=1.5mm];}
+    \only<2->{\tikzstyle{lamp} = [draw=red!50!black,thick,circle,inner sep=1.5mm,
+      fill=red!30];}
+
+    \tikzstyle{absorber} = [draw,thick,circle, inner sep=1.5mm];
+    \tikzstyle{vcxo} = [draw,thick, rectangle, inner sep=5mm, align=center];
+    \tikzstyle{hfgen} = [draw,thick, rectangle, inner sep=5mm];
+
+    \node[lamp] (lamp) {\ce{^{87}Ru}};
+    \only<-4>{\node[absorber] (absorber) [right=of lamp]
     {\(
       \begin{matrix}
         & \downarrow & \uparrow\\
@@ -18,31 +49,34 @@
         & \uparrow & \downarrow\\
         \downarrow & & \uparrow
       \end{matrix}
-    \)};
+    \)}; }
+    \only<5->{\node[absorber] (absorber) [right=of lamp]
+    {\(
+      \begin{matrix}
+        & \uparrow & \uparrow\\
+        \uparrow & \uparrow &\\
+        & \uparrow & \uparrow\\
+        \uparrow & & \uparrow
+      \end{matrix}
+    \)}; }
     \node (diode) [right=of absorber] {};
-    \draw(diode) ++ (0.0,-1.0) to[empty photodiode] ++ (0.0,2.0);
-    \node[draw, rectangle, inner sep=5mm, align=center] (vcxo) [right=of diode]
+    \draw[semithick](diode) ++ (0.0,-1.0) to[empty photodiode] ++ (0.0,2.0);
+    \node[vcxo] (vcxo) [right=of diode]
     {\SI{20}{\mega\hertz}\\VCXO};
-    \node[draw, rectangle, inner sep=5mm, yshift=-1.5cm] (hfgen)
-    [below=of diode] {Multip.};
+    \node[hfgen] (hfgen) [below=of absorber] {\(\times\)};
+
+    \only<2>{\node[] (note) [left=of hfgen] {\SI{750}{\nano\meter}}; }
+    \only<4>{\node[xshift=1cm] (note) [left=of hfgen]
+      {\SI{6.8346875}{\giga\hertz}}; }
 
     % connections
-    \draw[conn] (lamp.east) -- (absorber.west);
-    \draw[conn, shorten >=0.4cm] (absorber.east) -- (diode.west);
+    \draw[connLamp] (lamp.east) -- (absorber.west);
+    \draw[connAbsorber, shorten >=0.4cm] (absorber.east) -- (diode.west);
     \draw[conn] (diode.east) ++ (0.3cm,0.0) -- (vcxo.west);
     \draw[conn] (vcxo.south) |- (hfgen.east);
-    \draw[conn] (hfgen.west) -| (absorber.south);
+    \draw[connHfgen] (hfgen.north) -- (absorber.south);
   \end{tikzpicture}
  \end{figure}
-
-\end{frame}
-
-\begin{frame}
-  
-\begin{circuitikz}\draw
-  (0,0) node[anchor=east](start){rought} ++ (0,1)
-         to[R=\(R_{\mathrm{rough}}\),o-] ++ (3,0)
-;\end{circuitikz}
 \end{frame}
 
 
