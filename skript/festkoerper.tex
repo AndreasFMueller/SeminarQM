@@ -126,7 +126,7 @@ Die m"oglichen $\vec k$-Zust"ande bilden also wieder ein Gitter im
 $\vec k$-Raum wie in Abbildung~\ref{skript:fermi-kugel}, und das Modell
 der Fermi-Kugel ist auch f"ur diese Randbedingungen angemessen.
 
-\subsection{Gebundene Elektronen}
+\subsection{Gebundene Elektronen\label{skript:gebundeneelektronen}}
 \begin{figure}
 \centering
 \includegraphics{graphics/fest-2.pdf}
@@ -566,7 +566,9 @@ T_a\psi(x)&=\psi(x+a)=e^{iK(x+a)}u(x+a)=\lambda e^{iKx}u(x+a)
 \qquad\Rightarrow\qquad
 u(x+a)=u(x).
 \end{equation}
-Die Funktion $u(x)$ ist also gitterperiodisch.
+Die Funktion $u(x)$ ist also gitterperiodisch, sie heisst auch
+{\em Block-Funktion}.
+\index{Bloch-Funktion}%
 
 Die m"oglichen Werte von $K$ sind nicht beliebig, da $e^{iKx}$ die
 periodischen Randbedingungen des Kristalls erf"ullen muss. Wenn $l=Na$
@@ -606,16 +608,19 @@ $E_u$ einen Eigenvektor $e^{iKx}u(x)$ von $H$ mit Energie $E_u+E(K)$, machen.
 Die L"osungen $u(x)$ ist in der Umgebung jedes Gitterpunktes gleich.
 Da die Gitteratome nicht unterscheidbar sind, kann ein Elektron
 nicht ``feststellen'', ob es sich beim richtigen Atom befindet.
-$u(x)$ beschreibt also ein Elektron, welches sich in der N"ahe jedes
-Kristallatoms gleich verh"alt.
-Man nennt die periodischen Eigenzust"ande von $H$ daher auch
-{\em Kristall-Elektronen}.
+Die Bloch-Funktion $u(x)$ beschreibt also ein Elektron,
+welches sich in der N"ahe jedes Kristallatoms gleich verh"alt.
+Man nennt diese periodischen Eigenzust"ande von $H$ daher auch
+{\em Kristall-Elektronen}
+oder
+{\em Bloch-Elektronen}.
 \index{Kristall-Elektronen}%
+\index{Bloch-Elektronen}%
 Der zugeh"orige Eigenwert ist die Energie des Elektrons als ans Gitter
 gebundenes Elektron.
 
-Der Faktor $e^{iKx}$ beschreibt die Bewegung eines Kristallelektrons
-durch das Gitter. Er gbit dem Elektron die zus"atzliche Bewegungsenergie
+Der Faktor $e^{iKx}$ beschreibt die Bewegung eines Kristall-Elektrons
+durch das Gitter. Er gibt dem Elektron die zus"atzliche Bewegungsenergie
 $E(K)$.
 
 Man beachte, dass diese Zerlegung der Eigenzust"ande selbst dann gilt,
@@ -634,7 +639,7 @@ schreiben.
 \includegraphics[width=\hsize]{graphics/fest-6.pdf}
 \caption{Energieparabeln f"ur verschiedene Vektoren $K$. Die Energie
 eines Zustands setzt sich zusammen aus der Energie $E(K)$ und der
-Energie des zugeh"origen Kristallelektrons.
+Energie des zugeh"origen Kristall-Elektrons.
 Die auf der $K$-Achse eingezeichneten Punkte stellen das reziproke
 Gitter dar.
 Grau hinterlegt die Wigner-Seitz-Zelle des reziproken Gitters.
@@ -644,11 +649,84 @@ Grau hinterlegt die Wigner-Seitz-Zelle des reziproken Gitters.
 Abbildung~\ref{skript:dispersion} zeigt die Energieparabeln in Abh"angikeit
 von $K$. Da die Wahl von $K$ nur bis auf einen Summanden im reziproken
 Gitter eindeutig ist, kann man einen Zustand gen"ugend hoher Gesamtenergie
-auf verschiedene Arten in ein Kristallelektron und einen Faktor 
+auf verschiedene Arten in ein Kristall-Elektron und einen Faktor 
 $e^{iKx}$ zerlegen.
 In der Wigner-Seitz-Zelle des reziproken Gitters (hellgrau hinterlegt)
 l"asst sich bereits
 das ganze Energiespektrum der Elektronen im Festk"orper ablesen.
+
+\subsection{Gebundene Elektronen 2.0\label{skript:gebundeneelektronen20}}
+Wir haben uns im Abschnitt~\ref{skript:gebundeneelektronen20} bereits 
+qualititativ Gedanken gemacht.
+Mit unserer Kenntnis der Kristall-Elektronen sind wir jetzt in der Lage,
+diese Diskussion wesentlich zu vertiefen.
+
+Auch die gebundenen Elektronen lassen sich durch eine Bloch-Funktion $u(x)$ 
+und eine ebene Welle $e^{iKx}$ beschreiben, $\psi(x)=e^{iKx}u(x)$.
+Ein gebundenes Elektron befindet sich vor allem in der N"ahe ``seines''
+Atomkerns, wo es das Potential der anderen Atomkerne kaum ``sp"urt''.
+Seine Wellenfunktion sieht daher in der N"ahe des Atomkernes wie die die
+Elektron-Wellenfunktion eines einzelnen Atoms aus.
+Es muss also mindestens f"ur die gebundenen Zust"ande mit tiefer Energie
+eine Korrespondenz zwischen Elektronwellenfunktionen eines einzelnen
+Atoms und den Bloch-Funktionen des Kristalls geben. Die Bloch-Funktionen
+lassen sich daher nach den Orbital-Bezeich\-nungen gruppieren, die wir
+im Kapitel~\ref{chapter:wasserstoff} kennengelernt haben.
+
+Zu jeder Bloch-Funktion $u(x)$ mit Energie $E_u$ gibt es die Wellenfunktionen
+\[
+\psi_{u,K}(x)=e^{iKx}u(x)
+\qquad\text{mit Energie}\qquad
+E=E_u+\frac{\hbar^2K^2}{2m_e},
+\]
+wobei $K$ nur kleine Werte durchl"auft.
+Ausser dem ``Grundzustand'' mit Energie $E_u$ gibt es also weitere
+Zust"ande mit gegen"uber $E_u$ um $\hbar^2K^2/2m_e$ erh"ohter Energie.
+Zu jeder Bloch-Funktion geh"ort also ein ganzes Energieband, in dem man
+Zust"ande mit gleicher Bloch-Funktion finden kann.
+Diese B"ander kann man also wieder mit den Orbitalen des Einzelatoms
+in Beziehung setzen.
+Die minimale Energie des Bandes, die {\em Bandunterkante}, ist die Energie $E_u$
+die maximale Energie, die {\em Bandoberkante}, wird durch den gr"osstm"oglichen
+Vektor $K$ in der Wigner-Seitz-Zelle gegeben.
+\index{Energieband}%
+\index{Bandkante}%
+
+\begin{figure}
+\centering
+\includegraphics{graphics/fest-11.pdf}
+\caption{Zustandsdichte der Energieb"ander in einem eindimensionalen
+Kristall (qualitativ)\label{skript:zustandsdichte1d}}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics{graphics/fest-10.pdf}
+\caption{Zustandsdichte der Energieb"ander in einem dreidimensionalen
+Kristall (qualitativ). Die Zustandsdichte w"achst oberhalb der
+Bandkante proportional zu $(E-E_u)^{\frac12}$ an, der Abfall bei
+der Bandoberkante h"angt von der Geometrie des reziproken Gitters des
+Kristalles ab.
+\label{skript:zustandsdichte3d}}
+\end{figure}
+
+In einem eindimensionalen Kristall sind die m"oglichen $K$-Werte
+gleichverteilt, die Zustandsdichte in den B"ander ist daher eine
+Rechteckfunktion (Abbildung~\ref{skript:zustandsdichte1d}).
+\index{Zustandsdichte}
+
+In einem mehrdimensionalen Kristall definiert die Geometrie der
+Wigner-Seitz-Zelle des reziproken Gitters die Zustandsdichte
+(Abbildung~\ref{skript:zustandsdichte3d}).
+Wir stellen uns im reziproken Gitter eine Kugel zur Energie $E$ vor.
+F"ur kleine Energie w"achst die Zahl der Zust"ande mit dem Volumn der
+Kugel, also mit der dritten Potenz des Radius. Die Zahl der Zust"ande
+w"achst proportional zu $E^{\frac32}$, die Zustandsdichte w"achst daher
+proportional zu $E^{\frac12}$.
+Sobald die Kugel den Rand der Wigner-Seitz-Zelle trifft kann die 
+Zahl der Zust"ande aber nicht mehr gleich wachsen, die Zustandsdichte
+wird daher weniger stark zunehmen oder sogar abnehmen.
+Sie wird ganz verschwinden, wenn die Kugel die ganze Wigner-Seitz-Zelle
+umfasst.
 
 \subsection{Schwaches Potential}
 In den bisherigen "Uberlegungen haben wir das Potential $V(x)$ der Gitteratome
@@ -664,16 +742,16 @@ Feld sp"uren. Es ist also plausibel, dass die N"aherung eines schwachen
 Feldes f"ur Elektronen mit hoher Energie anwendbar ist.
 
 Ein freies Elektron mit Wellenzahl $k$ hat Energie $\hbar^2k^2/2m_e$, und wir
-k"onnen die Wellenfunktion zerlegen in ein Kristallelektron und einen
+k"onnen die Wellenfunktion zerlegen in ein Kristall-Elektron und einen
 Faktor $e^{iKx}$.
-Das Kristallelektron ist ebenfalls eine ebene Welle.
+Das Kristall-Elektron ist ebenfalls eine ebene Welle.
 Unter der Wirkung eines schwachen Potentials ist die Zerlegung in
-Kristallelektron $u(k,x)$ und eine ebene Welle $e^{iKx}$.
+Kristall-Elektron $u(k,x)$ und eine ebene Welle $e^{iKx}$.
 Der Beitrag der Energie vom Faktor $e^{iKx}$ ist immer noch $\hbar^2K^2/2m_e$,
 aber die Gesammtenergie $E(k)$ wird wohl von $\hbar^2k^2/2m_e$ abweichen.
 Ziel ist, die Funktion $E(k)$ zu berechnen.
 
-Wir wollen die Wellenfunktion des Kristallelektrons berechnen 
+Wir wollen die Wellenfunktion des Kristall-Elektrons berechnen 
 f"ur eine gegebene Wellenzahl $k$.
 Da die Funktion $u(x)$ periodisch ist, k"onnen wir sie in eine Fourier-Reihe
 entwickeln, wir nennen die Koeffizienten $u_k$:
