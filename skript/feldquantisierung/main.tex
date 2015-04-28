@@ -212,7 +212,8 @@ Die Kommentatoren f"ur diese Operatoren sind:
 [a_{k,\alpha} , a^+_{k',\alpha'}] &= - \frac{i}{2 \hbar} [Q_{k,\alpha}, P_{k',\alpha'}] + \frac{i}{2 \hbar} [P_{k,\alpha}, Q_{k',\alpha'}] \\
 	 &= \delta_{kk'}\delta_{aa'} \\
 [a_{k,\alpha} , a_{k',\alpha'}] &= [a^+_{k,\alpha} , a^+_{k',\alpha'}] = 0 \\
-[a_{k,\alpha} , N_{k',\alpha'}] &= [a_{k,\alpha} , a^+_{k',\alpha'}]a_{k',\alpha'} - a^+_{k',\alpha'}[a_{k',\alpha'} , a_{k,\alpha}]\\
+[a_{k,\alpha} , N_{k',\alpha'}] &= a_{k,\alpha} a^+_{k',\alpha'} a_{k',\alpha'} - a^+_{k',\alpha'} a_{k',\alpha'} a_{k,\alpha} \\
+	&= [a_{k,\alpha} , a^+_{k',\alpha'}]a_{k',\alpha'} - a^+_{k',\alpha'}[a_{k',\alpha'} , a_{k,\alpha}]\\
 	&= \delta_{kk'}\delta_{aa'} a_{k,\alpha} \\
 [a^+_{k,\alpha} , N_{k',\alpha'}] &= -\delta_{kk'}\delta_{aa'} a^+_{k,\alpha}
 \end{split}
