@@ -181,7 +181,7 @@ $Q_{k,\alpha}$ und $P_{k,\alpha}$ k"onnen nun als Koordinaten und Impulse der ei
 \section{Quantisierung der Welle}
 
 \subsection{Vertauschungsrelationen sowie Auf- und Absteige Operatoren}
-Wie beim harmonischen Oszillator k"onnen $Q_{k,\alpha}$ und $P_{k,\alpha}$ nun als Opperatoren aufgefasst werden. Die Vertauschungsrelationen werden dabei zu:
+Wie beim harmonischen Oszillator k"onnen $Q_{k,\alpha}$ und $P_{k,\alpha}$ nun als Operatoren aufgefasst werden. Die Vertauschungsrelationen werden dabei zu:
 \begin{equation}
 \begin{split}
 [Q_{k,\alpha}, P_{k',\alpha'}] &= i \hbar \delta_{kk'}\delta_{aa'} \\
@@ -222,7 +222,7 @@ Die Kommentatoren f"ur diese Operatoren sind:
 
 In diesem Unterkapitel werden Suffixes $_n$ und $_k$ weggelassen, diese gelten aber weiterhin. 
 
-Diese Opperatoren werden nun wie beim harmonischen Oszillator auf den Zustand angewendet. Wir suchen einen Eigevektor $|n\rangle$ und Eigenwert $e_n$ zum Opperator $N$ so dass:
+Diese Opperatoren werden nun wie beim harmonischen Oszillator auf den Zustand angewendet. Wir suchen einen Eigenvektor $|n\rangle$ und Eigenwert $e_n$ zum Opperator $N$ so dass:
 \begin{equation}
 N|n\rangle = e_n|n\rangle
 \end{equation}
@@ -339,9 +339,9 @@ A(x,t) &= \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c \sqrt{\hbar/2 \ome
 \end{split}
 \end{equation}
 
-Auch wenn diese Gleichung mit \ref{fq:wave_eq} verwandt ist, ist die Bedeutung sehr verschieden. \ref{fq:wave_eq} ist eine klassische Funktion in $x$ und $t$. Diese Gleichung ist nun ein Operator aus Linearkombinationen von Auf- und Absteigeopperatoren f"ur jeden Punkt im Raum. Ein solcher Operator heisst Feldopperaor oder quantisiertes Feld.
+Auch wenn diese Gleichung mit \ref{fq:wave_eq} verwandt ist, ist die Bedeutung sehr verschieden. \ref{fq:wave_eq} ist eine klassische Funktion in $x$ und $t$. Diese Gleichung ist nun ein Operator aus Linearkombinationen von Auf- und Absteigeoperatoren f"ur jeden Punkt im Raum. Ein solcher Operator heisst Feldoperator oder quantisiertes Feld.
 
-Der Hamilton-Operator ist nun:
+Der Hamiltonoperator ist nun:
 \begin{equation}
 H = \frac{1}{2} \int (B \cdot B + E \cdot E) d^3 x
 \end{equation}
@@ -360,7 +360,7 @@ Die absolute Energieskala ist hier nun frei w"ahlbar. Durch die Wahl von $H|0\ra
 H = \sum_k \sum_{\alpha=1,2} \hbar \omega_k N_{k,\alpha}
 \end{equation}
 
-Der Hamilton-Opperator angewendet auf viele Photonen ergibt nun als Eigenwert die Summe der Energie der Photonen mit den Zust"anden $(k_i,\alpha_i)$:
+Der Hamiltonoperator angewendet auf viele Photonen ergibt nun als Eigenwert die Summe der Energie der Photonen mit den Zust"anden $(k_i,\alpha_i)$:
 
 \begin{equation}
 H |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle = \sum_i \hbar \omega_k n_{k_i,\alpha_i} |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle
@@ -368,7 +368,7 @@ H |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle = \sum_i \hbar \omega_k 
 
 \section{Wechselwirkung zwischen Photonen und Atomen}
 
-Um den Hamilton-Operator eines Teilchens im Feld zu erhalten, wird $p$ gem"ass Kapitel \ref{section:hamilton-funktion-im-magnetfeld} durch $p -eA/c$ ersetzt. $A$ ist nun das quantisierte Feld. Der Hamilton-Operator wird somit zu:
+Um den Hamiltonoperator eines Teilchens im Feld zu erhalten, wird $p$ gem"ass Kapitel \ref{section:hamilton-funktion-im-magnetfeld} durch $p -eA/c$ ersetzt. $A$ ist nun das quantisierte Feld. Der Hamiltonoperator wird somit zu:
 
 \begin{equation}
 H = \sum_i \left[ -\frac{e}{2mc}(p_i \cdot A(x_i, t) + A(x_i, t) \cdot p_i) + \frac{e^2}{2mc^2}A(x_i, t) \cdot A(x_i, t)\right] + H^{(spin)}
@@ -381,9 +381,9 @@ Zudem leitet auch der Spin einen (wenn auch oft vernachl"assigbar kleinen) Beitr
 H^{(spin)} = - \sum_i \frac{e \hbar}{2mc}\sigma_i \left[\nabla \times A(x_i, t)\right]
 \end{equation}
 
-Dieser Hamilton-Operator wirkt nun nicht nur auf den Zust"anden der Elektronen der Atome sondern auch auf den Zust"anden der Photonen und beschreibt die Wechselwirkung von Photonen und Atomen. Man spricht hier von dem Anfangszustand $A$, dem Endzustand $B$ und allenfalls von einem Zwischenzustand $I$.
+Dieser Hamiltonoperator wirkt nun nicht nur auf den Zust"anden der Elektronen der Atome sondern auch auf den Zust"anden der Photonen und beschreibt die Wechselwirkung von Photonen und Atomen. Man spricht hier von dem Anfangszustand $A$, dem Endzustand $B$ und allenfalls von einem Zwischenzustand $I$.
 
-Nehmen wir an, ein Atom absorbiert ein Photon vom Zustand $(k,\alpha)$ und wechselt dabei vom Zustand $A$ in den Zustand $B$. Der einfach heit halber ber"ucksichtigen wir nur Photonen im Zustand $(k,\alpha)$. Der Quadratische Term $A \cdot A$ spielt hier keine Rolle, da dieser Term nur Zustands"anderungen von $0$ oder $\pm 2$ Photonen erzeugt. Die Beschreibung der Zustands"anderung ($H^{(spin)}$ vernachl"assigt) ist:
+Nehmen wir an, ein Atom absorbiert ein Photon vom Zustand $(k,\alpha)$ und wechselt dabei vom Zustand $A$ in den Zustand $B$. Der Einfachheit halber ber"ucksichtigen wir nur Photonen im Zustand $(k,\alpha)$. Der Quadratische Term $A \cdot A$ spielt hier keine Rolle, da dieser Term nur Zustands"anderungen von $0$ oder $\pm 2$ Photonen erzeugt. Die Beschreibung der Zustands"anderung ($H^{(spin)}$ vernachl"assigt) ist:
 
 \begin{equation}
 \begin{split}
