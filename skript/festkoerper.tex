@@ -358,153 +358,6 @@ Die Beispiele illustrieren, wie l"angere Basisvektoren f"ur das Gitter
 $\Gamma$ zu entsprechend k"urzeren Basisvektoren des reziproken
 Gitters $\Gamma'$ f"uhren.
 
-\subsection{Bragg-Reflexionen}
-Zu einem gegebenen Vektor $\vec K\in \Gamma'$ im reziproken Gitter ist
-jede der Mengen
-\[
-\sigma(\vec K,N)=\{ \vec x\in \mathbb R^3\,|\, \vec K\cdot \vec x=2\pi N\}
-\]
-eine Ebene.
-Diese Ebenen heissen {\em Netzebenen} senkrecht auf $\vec K$.
-\index{Netzebene}%
-Nach Definition des reziproken Gitters sind alle Gitterpunkte in
-einer Netzebene enthalten. 
-Es ist aber durchaus m"oglich, dass $\sigma(\vec K,N)$ nicht
-f"ur jedes $N$ "uberhaupt Gitterpunkte erh"alt.
-
-\begin{beispiel}
-In einem eindimensionalen Gitter $\Gamma$ mit Gitterkonstante $a$ besteht das
-reziproke Gitter $\Gamma'$ aus den Vielfachen von $2\pi/a$.
-Mit $K=2\cdot 2\pi/a$ gilt f"ur die Punkte des Gitters
-\[
-K\cdot x=2\frac{2\pi}a\cdot na=2n\cdot 2\pi,
-\]
-insbesondere gibt es keine Gitterpunkte, f"ur die der Wert $2\pi$
-erreicht wird.
-Die Ebenen $\sigma(\vec K,1)$ enth"alt daher keine Gitterpunkte.
-\end{beispiel}
-
-Atomkerne in einem Gitter sind in der Lage, Wellen zu streuen.
-Da ein Kristall aus vielen Netz\-ebenen mit Gitteratomen besteht,
-m"ussen die an verschiedenen Netzebenen reflektierten Wellen konstruktiv
-interferieren, andernfalls kann sich die reflektierte Welle im
-Kristall nicht ausbreiten.
-Eine solche Reflexion nennt man {\em Bragg-Reflexion}.
-\index{Bragg-Reflexion}%
-Die Wellenzahlvektoren $\vec k$ und $\vec k'$  zweier ebener Wellen,
-die durch Bragg-Reflexion auseinander hervorgehen, m"ussen zwei
-Bedingunge erf"ullen:
-\begin{enumerate}
-\item Spiegelungsbedingung: $\vec k'$ muss die Spiegelung des Vektors
-$\vec k$ an der Ebene senkrecht einen Vektor $\vec K\in\Gamma'$ sein.
-\item Phasenbedingung: Der durch die Reflexion an unterschiedlichen
-Netzebenen verursachte Wegunterschied muss ein Vielfaches der Wellenl"ange
-sein.
-\end{enumerate}
-
-\subsubsection{Spiegelungsbedingung}
-\begin{figure}
-\centering
-\includegraphics{graphics/fest-7.pdf}
-\caption{Herleitung der Formeln f"ur die Spiegelung eines Vektors $\vec k$
-an einer Ebene mit Normale $\vec K$.
-\label{skript:spiegelungsbedingung}}
-\end{figure}
-Sei jetzt $\vec K\in\Gamma'$ ein reziproker Gittervektor, der eine
-Schar von Netzebenen beschreibt.
-Wir schreiben $\vec K^0=\vec K/|\vec K|$ f"ur den Einheitsvektor mit
-Richtung $\vec K$.
-In Abbildung~\ref{skript:spiegelungsbedingung} wird die Bedingung f"ur die
-Spiegelung dargestellt. 
-Der Vektor $\vec k_{\perp}$ ist die Orthogonalprojektion von $\vec k$
-auf den Vektor $\vec K$, es gilt
-\begin{align*}
-\vec k_{\perp}&=(\vec k\cdot\vec K^0)\vec K^0,
-\\
-\vec k_{\|}&=\vec k -\vec k_{\perp} = \vec k-(\vec k\cdot \vec K^0)\vec K^0.
-\end{align*}
-Der gespiegelte Wellenzahlvektor ist dann
-\begin{equation}
-\vec k'=\vec k_{\|}-\vec k_{\perp}=\vec k-2(\vec k\cdot\vec K^0)\vec K^0.
-\end{equation}
-Die Differenz der beiden Wellenzahlvektoren ist
-\begin{equation}
-\vec k- \vec k'=2(\vec k\cdot\vec K^0)\vec K^0,
-\label{skript:wellenzahldifferenz}
-\end{equation}
-also ein Vielfaches von $\vec K^0$.
-Es ist klar, dass die Spiegelungsbedingung auch zur Folge hat, dass
-$|\vec k|=|\vec k'|$.
-
-\subsubsection{Phasenbedingung}
-\begin{figure}
-\centering
-\includegraphics{graphics/fest-8.pdf}
-\caption{Phasenbedingung f"ur ein Bragg-Reflexion
-\label{skript:phasenbedingung}}
-\end{figure}
-Die Phasenbedingung verlangt, dass sich die Wegl"angen f"ur die zwei in
-Abbildung~\ref{skript:phasenbedingung} dargestellten Wege um ein
-ganzahliges Vielfaches der Wellenl"ange unterscheiden.
-Der Wegl"angenunterschied ist $2s$, dabei ist $s$ die Projektion des
-Vektors $\vec d$ auf den Vektor $\vec k$. Der Abstand der Netzebenen
-ist $d=2\pi / |\vec K|$,
-\[
-s
-=
-\frac{\vec k\cdot \vec d}{|\vec k|}
-=
-\frac{\vec k\cdot \vec K^0}{|\vec k|}\frac{2\pi}{|\vec K]}.
-\]
-Die Phasenbedingung lautet jetzt, dass $2s$ ein Vielfaches der Wellenl"ange
-$\lambda = 2\pi/|\vec k|$ sein muss, also
-\begin{align}
-2s
-=
-2\cdot \frac{\vec k\cdot \vec K^0}{|\vec k|}\frac{2\pi}{|\vec K|}
-&=
-\lambda N
-=
-\frac{2\pi}{|\vec k|} N
-\notag
-\\
-2\cdot \frac{\vec k\cdot \vec K^0}{|\vec K|}
-&=
-N
-\notag
-\\
-\vec k\cdot \vec K^0=\frac{N}2 |\vec K|
-\label{skript:kK0skalarprodukt}
-\end{align}
-Setzen wir den Wert~(\ref{skript:kK0skalarprodukt}) in die Formel
-(\ref{skript:wellenzahldifferenz})
-f"ur die Wellenzahldifferenz ein, finden wir
-\[
-\vec k-\vec k'=2 \frac{N}2 |\vec K|\vec K^0=N\vec K.
-\]
-Damit haben wir im Wesentlichen folgendes Resultat hergeleitet:
-\begin{satz}
-\label{skript:braggsatz}
-Die Welle mit Wellenzahl $\vec k'$ geht aus der Welle mit Wellenzahl
-$\vec k$ durch
-Bragg-Reflexion an der durch $\vec K\in\Gamma'$ definierten Netzebene
-hervor, wenn $\vec k-\vec k'$ ein Vielfaches von $\vec K$ ist und
-wenn $|\vec k|=|\vec k'|$.
-\end{satz}
-
-Als Spezialfall weisen wir noch darauf hin, dass f"ur ein eindimensionales
-Gitter die Bedingung des Satzes nur erf"ullt werden kann, wenn
-$k=-k'$ und $2k=K\in\Gamma'$ gilt.
-
-\begin{proof}[Beweis]
-Die Phasenbedingung ist unter den Voraussetzungen des Satzes erf"ullt,
-es ist aber nicht klar, dass auch die Reflexionsbedingung erf"ullt ist.
-Wenn $|\vec k|=|\vec k'|$, dann ist das Dreieck $\vec k$, $\vec k'$
-und $\vec k- \vec k'$ ein gleichseitigs Dreieck, also sind die Winkel
-zwischen $\vec k$ bzw.~$\vec k'$ und $\vec K$ gleich gross, und die
-Reflexionsbedingung ist erf"ullt.
-\end{proof}
-
 
 \subsection{Folgen der Translations-Invarianz}
 Im Folgenden beschr"anken wir uns wieder auf ein eindimensionales Gitter
@@ -567,7 +420,7 @@ T_a\psi(x)&=\psi(x+a)=e^{iK(x+a)}u(x+a)=\lambda e^{iKx}u(x+a)
 u(x+a)=u(x).
 \end{equation}
 Die Funktion $u(x)$ ist also gitterperiodisch, sie heisst auch
-{\em Block-Funktion}.
+{\em Bloch-Funktion}.
 \index{Bloch-Funktion}%
 
 Die m"oglichen Werte von $K$ sind nicht beliebig, da $e^{iKx}$ die
@@ -727,6 +580,171 @@ Zahl der Zust"ande aber nicht mehr gleich wachsen, die Zustandsdichte
 wird daher weniger stark zunehmen oder sogar abnehmen.
 Sie wird ganz verschwinden, wenn die Kugel die ganze Wigner-Seitz-Zelle
 umfasst.
+
+F"ur einen Leiter ist dieses Modell jedoch unzul"anglich.
+Die Annahme, dass Elektronen an die Atomkerne gebunden sind, ist offensichtlich
+falsch.
+Mindestens ein Teil der Elektronen kann sich im Kristall mehr oder weniger
+frei bewegen, f"ur diese Elektronen ist das Potential der Atomkerne
+als schwach anzusehen.
+
+\subsection{Bragg-Reflexionen}
+Wir erwarten in einem Leiter ausgedehnte Elektronen-Wellenfunktionen
+"ahnlich der ebenen Wellen, die von den Atomkernen nur leicht modifiziert
+werden.
+Nach dem Huygensschen Prinzip erwarten wir, dass die Wellen an den
+Atomkernen gestreut werden, und es durch das Zusammenwirken einer grosser
+Zahl von Atomkernen zu Reflexionen kommt.
+Wir wollen den Zusammenhang zwischen solchen Reflexionen und der Geometrie
+des reziproken Gitters kl"aren.
+%Solche Reflexionen heissen {\em Bragg-Reflexionen}.
+
+\subsubsection{Netzebenen}
+Zu einem gegebenen Vektor $\vec K\in \Gamma'$ im reziproken Gitter ist
+jede der Mengen
+\[
+\sigma(\vec K,N)=\{ \vec x\in \mathbb R^3\,|\, \vec K\cdot \vec x=2\pi N\}
+\]
+eine Ebene.
+Diese Ebenen heissen {\em Netzebenen} senkrecht auf $\vec K$.
+\index{Netzebene}%
+Nach Definition des reziproken Gitters sind alle Gitterpunkte in
+einer Netzebene enthalten. 
+Es ist aber durchaus m"oglich, dass $\sigma(\vec K,N)$ nicht
+f"ur jedes $N$ "uberhaupt Gitterpunkte erh"alt.
+
+\begin{beispiel}
+In einem eindimensionalen Gitter $\Gamma$ mit Gitterkonstante $a$ besteht das
+reziproke Gitter $\Gamma'$ aus den Vielfachen von $2\pi/a$.
+Mit $K=2\cdot 2\pi/a$ gilt f"ur die Punkte des Gitters
+\[
+K\cdot x=2\frac{2\pi}a\cdot na=2n\cdot 2\pi,
+\]
+insbesondere gibt es keine Gitterpunkte, f"ur die der Wert $2\pi$
+erreicht wird.
+Die Ebenen $\sigma(\vec K,1)$ enth"alt daher keine Gitterpunkte.
+\end{beispiel}
+
+%Atomkerne in einem Gitter sind in der Lage, Wellen zu streuen.
+Da ein Kristall aus vielen Netz\-ebenen mit Gitteratomen besteht,
+m"ussen die an verschiedenen Netzebenen reflektierten Wellen konstruktiv
+interferieren, andernfalls kann sich die reflektierte Welle im
+Kristall nicht ausbreiten.
+Eine solche Reflexion nennt man {\em Bragg-Reflexion}.
+\index{Bragg-Reflexion}%
+Die Wellenzahlvektoren $\vec k$ und $\vec k'$  zweier ebener Wellen,
+die durch Bragg-Reflexion auseinander hervorgehen, m"ussen zwei
+Bedingunge erf"ullen:
+\begin{enumerate}
+\item Spiegelungsbedingung: $\vec k'$ muss die Spiegelung des Vektors
+$\vec k$ an der Ebene senkrecht einen Vektor $\vec K\in\Gamma'$ sein.
+\item Phasenbedingung: Der durch die Reflexion an unterschiedlichen
+Netzebenen verursachte Wegunterschied muss ein Vielfaches der Wellenl"ange
+sein.
+\end{enumerate}
+
+\subsubsection{Spiegelungsbedingung}
+\begin{figure}
+\centering
+\includegraphics{graphics/fest-7.pdf}
+\caption{Herleitung der Formeln f"ur die Spiegelung eines Vektors $\vec k$
+an einer Ebene mit Normale $\vec K$.
+\label{skript:spiegelungsbedingung}}
+\end{figure}
+Sei jetzt $\vec K\in\Gamma'$ ein reziproker Gittervektor, der eine
+Schar von Netzebenen beschreibt.
+Wir schreiben $\vec K^0=\vec K/|\vec K|$ f"ur den Einheitsvektor mit
+Richtung $\vec K$.
+In Abbildung~\ref{skript:spiegelungsbedingung} wird die Bedingung f"ur die
+Spiegelung dargestellt. 
+Der Vektor $\vec k_{\perp}$ ist die Orthogonalprojektion von $\vec k$
+auf den Vektor $\vec K$, es gilt
+\begin{align*}
+\vec k_{\perp}&=(\vec k\cdot\vec K^0)\vec K^0,
+\\
+\vec k_{\|}&=\vec k -\vec k_{\perp} = \vec k-(\vec k\cdot \vec K^0)\vec K^0.
+\end{align*}
+Der gespiegelte Wellenzahlvektor ist dann
+\begin{equation}
+\vec k'=\vec k_{\|}-\vec k_{\perp}=\vec k-2(\vec k\cdot\vec K^0)\vec K^0.
+\end{equation}
+Die Differenz der beiden Wellenzahlvektoren ist
+\begin{equation}
+\vec k- \vec k'=2(\vec k\cdot\vec K^0)\vec K^0,
+\label{skript:wellenzahldifferenz}
+\end{equation}
+also ein Vielfaches von $\vec K^0$.
+Es ist klar, dass die Spiegelungsbedingung auch zur Folge hat, dass
+$|\vec k|=|\vec k'|$.
+
+\subsubsection{Phasenbedingung}
+\begin{figure}
+\centering
+\includegraphics{graphics/fest-8.pdf}
+\caption{Phasenbedingung f"ur ein Bragg-Reflexion
+\label{skript:phasenbedingung}}
+\end{figure}
+Die Phasenbedingung verlangt, dass sich die Wegl"angen f"ur die zwei in
+Abbildung~\ref{skript:phasenbedingung} dargestellten Wege um ein
+ganzahliges Vielfaches der Wellenl"ange unterscheiden.
+Der Wegl"angenunterschied ist $2s$, dabei ist $s$ die Projektion des
+Vektors $\vec d$ auf den Vektor $\vec k$. Der Abstand der Netzebenen
+ist $d=2\pi / |\vec K|$,
+\[
+s
+=
+\frac{\vec k\cdot \vec d}{|\vec k|}
+=
+\frac{\vec k\cdot \vec K^0}{|\vec k|}\frac{2\pi}{|\vec K]}.
+\]
+Die Phasenbedingung lautet jetzt, dass $2s$ ein Vielfaches der Wellenl"ange
+$\lambda = 2\pi/|\vec k|$ sein muss, also
+\begin{align}
+2s
+=
+2\cdot \frac{\vec k\cdot \vec K^0}{|\vec k|}\frac{2\pi}{|\vec K|}
+&=
+\lambda N
+=
+\frac{2\pi}{|\vec k|} N
+\notag
+\\
+2\cdot \frac{\vec k\cdot \vec K^0}{|\vec K|}
+&=
+N
+\notag
+\\
+\vec k\cdot \vec K^0=\frac{N}2 |\vec K|
+\label{skript:kK0skalarprodukt}
+\end{align}
+Setzen wir den Wert~(\ref{skript:kK0skalarprodukt}) in die Formel
+(\ref{skript:wellenzahldifferenz})
+f"ur die Wellenzahldifferenz ein, finden wir
+\[
+\vec k-\vec k'=2 \frac{N}2 |\vec K|\vec K^0=N\vec K.
+\]
+Damit haben wir im Wesentlichen folgendes Resultat hergeleitet:
+\begin{satz}
+\label{skript:braggsatz}
+Die Welle mit Wellenzahl $\vec k'$ geht aus der Welle mit Wellenzahl
+$\vec k$ durch
+Bragg-Reflexion an der durch $\vec K\in\Gamma'$ definierten Netzebene
+hervor, wenn $\vec k-\vec k'$ ein Vielfaches von $\vec K$ ist und
+wenn $|\vec k|=|\vec k'|$.
+\end{satz}
+
+Als Spezialfall weisen wir noch darauf hin, dass f"ur ein eindimensionales
+Gitter die Bedingung des Satzes nur erf"ullt werden kann, wenn
+$k=-k'$ und $2k=K\in\Gamma'$ gilt.
+
+\begin{proof}[Beweis]
+Die Phasenbedingung ist unter den Voraussetzungen des Satzes erf"ullt,
+es ist aber nicht klar, dass auch die Reflexionsbedingung erf"ullt ist.
+Wenn $|\vec k|=|\vec k'|$, dann ist das Dreieck $\vec k$, $\vec k'$
+und $\vec k- \vec k'$ ein gleichseitigs Dreieck, also sind die Winkel
+zwischen $\vec k$ bzw.~$\vec k'$ und $\vec K$ gleich gross, und die
+Reflexionsbedingung ist erf"ullt.
+\end{proof}
 
 \subsection{Schwaches Potential}
 In den bisherigen "Uberlegungen haben wir das Potential $V(x)$ der Gitteratome
