@@ -347,13 +347,14 @@ E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle.
 \end{align*}
 Bringen wir den zweiten Term links auf die rechte Seite, erhalten wir
 die Gleichung
-\begin{align*}
+\begin{align}
 \langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
 &=
 \delta_{kl} E_k^{(1)}
 +
 (E_k^{(0)}-E_l^{(0)})\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle.
-\end{align*}
+\label{skript:stoerungsgleichung}
+\end{align}
 Sie entspricht der Gleichung~(\ref{skript:stoerung-1ordnung})
 des Einf"uhrungsbeispiels und erlaubt uns, die Koeffizienten
 erster Ordnung der St"orungsreihe zu berechnen.
@@ -362,7 +363,7 @@ erster Ordnung der St"orungsreihe zu berechnen.
 \rhead{Nicht entartete Zust"ande}
 Falls die Zust"ande nicht entartet sind, sind alle Energiewerte
 verschieden, und $E_k^{(0)}-E_l^{(0)}\ne 0$ f"ur $k\ne l$. 
-Dann kann man die L"osung ablesen:
+Dann kann man aus (\ref{skript:stoerungsgleichung}) die L"osung ablesen:
 \begin{equation}
 \begin{aligned}
 k&=l
@@ -638,10 +639,10 @@ Wir verzichten darauf, die Formeln explizit darzustellen.
 
 \section{Entartung}
 \rhead{Entartung}
-Da bei Entartung einge der Nenner in (\ref{skript:stoerungsloesung1ordnung})
+Da bei Entartung einige der Nenner in (\ref{skript:stoerungsgleichung})
 verschwinden, kann die St"orungstheorie auf entartete Zust"ande
 in dieser Form nicht angwendet werden.
-Die Nenner w"aren kein Problem, wenn in (\ref{skript:stoerungsloesung1ordnung})
+Die Nenner w"aren kein Problem, wenn in (\ref{skript:stoerungsgleichung})
 immer dann, wenn ein Nenner verschwindet, auch der zugeh"orige Z"ahler
 verschwindet.
 Wenn $|\psi_k^{(0)}\rangle$ und $|\psi_l^{(0)}\rangle$ den gleichen
@@ -650,7 +651,7 @@ Linearkombination den gleichen Eigenwert.
 Das Problem ist also vor allem, dass wir im Eigenraum zu diesem
 Eigenwert bisher eine unzweckm"assige Basis gew"ahlt haben.
 
-Wir illustrieren diese an einem Beispiel in zwei Dimensionen:
+Wir illustrieren dies an einem Beispiel in zwei Dimensionen:
 \begin{beispiel}
 Der Operator
 \[
