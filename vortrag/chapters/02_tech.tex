@@ -66,8 +66,10 @@
     \node[hfgen] (hfgen) [below=of absorber] {\(\times\)};
 
     \only<2>{\node[] (note) [left=of hfgen] {\SI{750}{\nano\meter}}; }
-    \only<4>{\node[xshift=1cm] (note) [left=of hfgen]
+    \only<4-6>{\node[xshift=1cm] (note) [left=of hfgen]
       {\SI{6.8346875}{\giga\hertz}}; }
+    \uncover<7>{\node[xshift=1cm] (note) [left=of hfgen]
+      {\SI{\approx6.8346875}{\giga\hertz}}; }
 
     % connections
     \draw[connLamp] (lamp.east) -- (absorber.west);
@@ -75,6 +77,12 @@
     \draw[conn] (diode.east) ++ (0.3cm,0.0) -- (vcxo.west);
     \draw[conn] (vcxo.south) |- (hfgen.east);
     \draw[connHfgen] (hfgen.north) -- (absorber.south);
+
+    % B field
+    \uncover<7>{
+    \foreach \x in {-1.25, -0.75, -0.25, 0.25, 0.75, 1.25}
+      \draw[->, >=stealth', very thick, green!50!black] (absorber) ++
+      (\x,1.5cm) --++ (0.0,-3cm); }
   \end{tikzpicture}
  \end{figure}
 \end{frame}
