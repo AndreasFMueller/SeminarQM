@@ -101,7 +101,7 @@ Dadurch vereinfachen sich die gekoppelten Differentialgleichung zu einer Differe
 L"osungen dieser Gleichung f"ur periodische Randbedingungen und $t=0$ in einer Box mit Seitenl"ange $L = V^{1/3}$ sind durch die Fourier Reihe gegeben \cite{fq:em_wave_eq}:
 
 \begin{equation} \label{fq:wave_eq}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (c_{k,\alpha} \epsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + c^*_{k,\alpha} \epsilon^{(\alpha)} e^{-i(k \cdot x - \omega_k t)})
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (c_{k,\alpha} \epsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + \bar{c}_{k,\alpha} \epsilon^{(\alpha)} e^{-i(k \cdot x - \omega_k t)})
 \end{equation}
 
 Dabei ist:
@@ -112,7 +112,7 @@ Dabei ist:
 
 oder durch setzen von $c_{k,\alpha}(t) = c_{k,\alpha} e^{-i \omega_k t}$ sowie $u_{k,\alpha}(x) = \epsilon^{(\alpha)} e^{ik \cdot x}$:
 \begin{equation}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (c_{k,\alpha}(t)u_{k,\alpha}(x) + c^*_{k,\alpha}(t) u^*_{k,\alpha}(x))
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (c_{k,\alpha}(t)u_{k,\alpha}(x) + \bar{c}_{k,\alpha}(t) \bar{u}_{k,\alpha}(x))
 \end{equation}
 
 $A(x,t)$ wird durch die konjugiert komplexe Wahl der Koeffizienten f"ur alle $c_{k,\alpha}$ reell:
@@ -124,17 +124,17 @@ $A(x,t)$ wird durch die konjugiert komplexe Wahl der Koeffizienten f"ur alle $c_
 $k$ ist der Ausbreitungsvektor der Welle und zeigt in die Ausbreitungsrichtung und $\epsilon^{(\alpha)}$ ist die Polarisation. 
 
 \begin{equation}
-B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k ik \times \epsilon^{(\alpha)} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - c^*_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})
+B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k ik \times \epsilon^{(\alpha)} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})
 \end{equation}
 
 \begin{equation}
-E = -\frac{1}{c} \frac{\partial A}{\partial t} = \frac{1}{c} \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \epsilon^{(\alpha)} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - c^*_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})
+E = -\frac{1}{c} \frac{\partial A}{\partial t} = \frac{1}{c} \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \epsilon^{(\alpha)} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})
 \end{equation}
 
 Aus der Elektrotechnik ist bekannt, dass $B \cdot E = 0$ gilt:
 
 \begin{equation}
-B \cdot E = \frac{1}{\sqrt{V}} \sum_{\alpha=1,2}   \sum_k -\omega_k \underbrace{k \times  \epsilon^{(\alpha)} \cdot \epsilon^{(\alpha)}}_{=0} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - c^*_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})^2 = 0
+B \cdot E = \frac{1}{\sqrt{V}} \sum_{\alpha=1,2}   \sum_k -\omega_k \underbrace{k \times  \epsilon^{(\alpha)} \cdot \epsilon^{(\alpha)}}_{=0} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})^2 = 0
 \end{equation}
 
 Dies wird erreicht, in dem vorausgesetzt wird, dass $(\epsilon^{(1)}, \epsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
@@ -142,15 +142,15 @@ Dies wird erreicht, in dem vorausgesetzt wird, dass $(\epsilon^{(1)}, \epsilon^{
 Da $\epsilon^{(\alpha)}$ und $k$ orthogonal sind gilt dabei auch automatisch:
 
 \begin{equation}
-\nabla \cdot A = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (i c_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{i (k \cdot x - \omega_k t)} - i c^*_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{-i(k \cdot x - \omega_k t)} = 0
+\nabla \cdot A = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (i c_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{i (k \cdot x - \omega_k t)} - i \bar{c}_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{-i(k \cdot x - \omega_k t)} = 0
 \end{equation}
 
 Weiterhin gilt wegen der Orthogonalit"at der komplexen Exponentialfunktion auch:
 \begin{equation}
 \begin{split}
-\dfrac{1}{A} \int u_{k,\alpha} \cdot u^*_{k',\alpha'} d^3 x &= \delta_{kk'}\delta{aa'} \\
+\dfrac{1}{A} \int u_{k,\alpha} \cdot \bar{u}_{k',\alpha'} d^3 x &= \delta_{kk'}\delta{aa'} \\
 \dfrac{1}{A} \int u_{k,\alpha} \cdot u_{k',\alpha'} d^3 x &= 0 \\
-\dfrac{1}{A} \int u^*_{k,\alpha} \cdot u^*_{k',\alpha'} d^3 x &= 0
+\dfrac{1}{A} \int \bar{u}_{k,\alpha} \cdot \bar{u}_{k',\alpha'} d^3 x &= 0
 \end{split}
 \end{equation}
 
@@ -164,18 +164,18 @@ H &= \frac{1}{2} \int (|B|^2 + |E|^2) d^3 x \\
 
 Es kann gezeigt werden, dass die L"osung dieses Integrals gegeben ist durch:
 \begin{equation}
-H = \sum_k \sum_{\alpha=1,2} 2 \left(\frac{\omega_k}{c}\right)^2 c^*_{k,\alpha}(t) c_{k,\alpha}(t)
+H = \sum_k \sum_{\alpha=1,2} 2 \left(\frac{\omega_k}{c}\right)^2 \bar{c}_{k,\alpha}(t) c_{k,\alpha}(t)
 \end{equation}
 
 Durch folgende Definition:
 \begin{equation}
-Q_{k,\alpha} = \frac{1}{c}(c_{k,\alpha}(t) + c^*_{k,\alpha}(t)) \quad P_{k,\alpha} = -\frac{i\omega_k}{c}(c_{k,\alpha}(t) - c^*_{k,\alpha}(t)) 
+Q_{k,\alpha} = \frac{1}{c}(c_{k,\alpha}(t) + \bar{c}_{k,\alpha}(t)) \quad P_{k,\alpha} = -\frac{i\omega_k}{c}(c_{k,\alpha}(t) - \bar{c}_{k,\alpha}(t)) 
 \end{equation}
 
 wird die Hamilton-Funktion zu:
 \begin{equation} \label{fq:hamilton}
 \begin{split}
-H &= \sum_k \sum_{\alpha=1,2} 2 \left(\frac{\omega_k}{c}\right)^2 \underbrace{\left[ \frac{c(\omega_k Q_{k,\alpha} + i P_{k,\alpha})}{2 \omega_k} \right]}_{c^*_{k,\alpha}(t)} \underbrace{\left[ \frac{c(\omega_k Q_{k,\alpha} - i P_{k,\alpha})}{2 \omega_k} \right]}_{c_{k,\alpha}(t)}\\
+H &= \sum_k \sum_{\alpha=1,2} 2 \left(\frac{\omega_k}{c}\right)^2 \underbrace{\left[ \frac{c(\omega_k Q_{k,\alpha} + i P_{k,\alpha})}{2 \omega_k} \right]}_{\bar{c}_{k,\alpha}(t)} \underbrace{\left[ \frac{c(\omega_k Q_{k,\alpha} - i P_{k,\alpha})}{2 \omega_k} \right]}_{c_{k,\alpha}(t)}\\
 &= \sum_k \sum_{\alpha=1,2} \frac{1}{2} (P_{k,\alpha}^2 + \omega_k^2 Q_{k,\alpha}^2)
 \end{split}
 \end{equation}
@@ -211,7 +211,7 @@ N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha} = \frac{1}{2 \hbar \omega_k} (P_{k,\
 
 Ein Vergleich mit \ref{fq:hamilton} liefert:
 \begin{equation} \label{fq:opp_fourier}
- c_{k,\alpha} \rightarrow c \sqrt{\hbar/2 \omega_k} \, a_{k,\alpha} \quad c^*_{k,\alpha} \rightarrow c \sqrt{\hbar/2 \omega_k} \, a^+_{k,\alpha}
+ c_{k,\alpha} \rightarrow c \sqrt{\hbar/2 \omega_k} \, a_{k,\alpha} \quad \bar{c}_{k,\alpha} \rightarrow c \sqrt{\hbar/2 \omega_k} \, a^+_{k,\alpha}
 \end{equation}
 Somit entsprechen diese Operatoren den Fourier-Koeffizienten.
 
@@ -333,7 +333,7 @@ a^+_{k,\alpha}(t) &= a^+_{k,\alpha} e^{i \omega_k t}
 \end{equation}
 
 \begin{equation}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c \sqrt{\hbar/2 \omega_k}\right)\left[a_{k,\alpha}(t) u_{k,\alpha}(x) + a^+_{k,\alpha}(t) u^*_{k,\alpha}(x) \right]
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c \sqrt{\hbar/2 \omega_k}\right)\left[a_{k,\alpha}(t) u_{k,\alpha}(x) + a^+_{k,\alpha}(t) \bar{u}_{k,\alpha}(x) \right]
 \end{equation}
 
 Auch wenn diese Gleichung mit \ref{fq:wave_eq} verwandt ist, ist die Bedeutung sehr verschieden. \ref{fq:wave_eq} ist eine klassische Funktion in $x$ und $t$. Diese Gleichung ist nun ein Operator aus Linearkombinationen von Auf- und Absteigeoperatoren f"ur jeden Punkt im Raum. Ein solcher Operator heisst Feldoperator oder quantisiertes Feld.
