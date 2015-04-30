@@ -101,7 +101,7 @@ Dadurch vereinfachen sich die gekoppelten Differentialgleichung zu einer Differe
 L"osungen dieser Gleichung f"ur periodische Randbedingungen und $t=0$ in einer Box mit Seitenl"ange $L = V^{1/3}$ sind durch die Fourier Reihe gegeben \cite{fq:em_wave_eq}:
 
 \begin{equation} \label{fq:wave_eq}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (c_{k,\alpha} \epsilon^{(\alpha)} e^{i (kx - \omega_k t)} + c^*_{k,\alpha} \epsilon^{(\alpha)} e^{-i(kx - \omega_k t)})
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (c_{k,\alpha} \epsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + c^*_{k,\alpha} \epsilon^{(\alpha)} e^{-i(k \cdot x - \omega_k t)})
 \end{equation}
 
 Dabei ist:
@@ -110,31 +110,31 @@ Dabei ist:
 \lambda = \frac{2 \pi}{|k|}
 \end{align}
 
-oder durch setzen von $c_{k,\alpha}(t) = c_{k,\alpha} e^{-i \omega_k t}$ sowie $u_{k,\alpha}(x) = \epsilon^{(\alpha)} e^{ikx}$:
+oder durch setzen von $c_{k,\alpha}(t) = c_{k,\alpha} e^{-i \omega_k t}$ sowie $u_{k,\alpha}(x) = \epsilon^{(\alpha)} e^{ik \cdot x}$:
 \begin{equation}
 A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (c_{k,\alpha}(t)u_{k,\alpha}(x) + c^*_{k,\alpha}(t) u^*_{k,\alpha}(x))
 \end{equation}
 
 $A(x,t)$ wird durch die konjugiert komplexe Wahl der Koeffizienten f"ur alle $c_{k,\alpha}$ reell:
 \begin{equation}
-(a + ib)(\cos kx + i \sin kx ) + (a - ib)(\cos kx - i \sin kx ) = 2 ( a \cos kx - b \sin kx )
+(a + ib)(\cos k \cdot x + i \sin k \cdot x ) + (a - ib)(\cos k \cdot x - i \sin k \cdot x ) = 2 ( a \cos k \cdot x - b \sin k \cdot x )
 \end{equation}
-%=a \cos kx + ib \cos kx + ia \sin kx - b \sin kx + a \cos kx - ib \cos kx - ia \sin kx - b \sin kx
+%=a \cos k \cdot x + ib \cos k \cdot x + ia \sin k \cdot x - b \sin k \cdot x + a \cos k \cdot x - ib \cos k \cdot x - ia \sin k \cdot x - b \sin k \cdot x
 
 $k$ ist der Ausbreitungsvektor der Welle und zeigt in die Ausbreitungsrichtung und $\epsilon^{(\alpha)}$ ist die Polarisation. 
 
 \begin{equation}
-B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k ik \times \epsilon^{(\alpha)} (c_{k,\alpha} e^{i (kx - \omega_k t)} - c^*_{k,\alpha} e^{-i(kx - \omega_k t)})
+B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k ik \times \epsilon^{(\alpha)} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - c^*_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})
 \end{equation}
 
 \begin{equation}
-E = -\frac{1}{c} \frac{\partial A}{\partial t} = \frac{1}{c} \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \epsilon^{(\alpha)} (c_{k,\alpha} e^{i (kx - \omega_k t)} - c^*_{k,\alpha} e^{-i(kx - \omega_k t)})
+E = -\frac{1}{c} \frac{\partial A}{\partial t} = \frac{1}{c} \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \epsilon^{(\alpha)} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - c^*_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})
 \end{equation}
 
-Aus der Elektrotechnik ist bekannt, dass $E \cdot B = 0$ gilt:
+Aus der Elektrotechnik ist bekannt, dass $B \cdot E = 0$ gilt:
 
 \begin{equation}
-E \cdot B = \frac{1}{\sqrt{V}} \sum_{\alpha=1,2}   \sum_k -\omega_k \underbrace{\epsilon^{(\alpha)} \cdot k}_{=0} \times \epsilon^{(\alpha)} (c_{k,\alpha} e^{i (kx - \omega_k t)} - c^*_{k,\alpha} e^{-i(kx - \omega_k t)})^2 = 0
+B \cdot E = \frac{1}{\sqrt{V}} \sum_{\alpha=1,2}   \sum_k -\omega_k \underbrace{k \times  \epsilon^{(\alpha)} \cdot \epsilon^{(\alpha)}}_{=0} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - c^*_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})^2 = 0
 \end{equation}
 
 Dies wird erreicht, in dem vorausgesetzt wird, dass $(\epsilon^{(1)}, \epsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
@@ -142,7 +142,7 @@ Dies wird erreicht, in dem vorausgesetzt wird, dass $(\epsilon^{(1)}, \epsilon^{
 Da $\epsilon^{(\alpha)}$ und $k$ orthogonal sind gilt dabei auch automatisch:
 
 \begin{equation}
-\nabla \cdot A = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (i c_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{i (kx - \omega_k t)} - i c^*_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{-i(kx - \omega_k t)} = 0
+\nabla \cdot A = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (i c_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{i (k \cdot x - \omega_k t)} - i c^*_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{-i(k \cdot x - \omega_k t)} = 0
 \end{equation}
 
 Weiterhin gilt wegen der Orthogonalit"at der komplexen Exponentialfunktion auch:
@@ -321,7 +321,7 @@ oder allgemein:
 Die Fourier Koeffizienten im Strahlungsfeld werden mittels den Korrespondenzen \ref{fq:opp_fourier} durch Operatoren ersetzt um das quantisierte Feld zu erhalten:
 
 \begin{equation}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c \sqrt{\hbar/2 \omega_k}\right)\left[a_{k,\alpha} \epsilon^{(\alpha)} e^{i (kx - \omega_k t)} + a^+_{k,\alpha} \epsilon^{(\alpha)} e^{-i (kx - \omega_k t)}\right]
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c \sqrt{\hbar/2 \omega_k}\right)\left[a_{k,\alpha} \epsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + a^+_{k,\alpha} \epsilon^{(\alpha)} e^{-i (k \cdot x - \omega_k t)}\right]
 \end{equation}
 
 Durch die Definition zeitabhängiger Operatoren kann dies umgeschrieben werden:
@@ -386,10 +386,10 @@ Nehmen wir an, ein Atom absorbiert ein Photon vom Zustand $(k,\alpha)$ und wechs
 \begin{split}
 \langle Y; n_{k,\alpha} - 1 &| H | X; n_{k,\alpha} \rangle \\
 &= -\frac{e}{mc} \left\langle Y; n_{k,\alpha} - 1 \left| 
-\frac{1}{\sqrt{V}} \sum_i \left(c \sqrt{\hbar/2 \omega_k}\right)a_{k,\alpha}(0) \epsilon^{(\alpha)} e^{i(kx_i-\omega_k t)} \cdot p_i 
+\frac{1}{\sqrt{V}} \sum_i \left(c \sqrt{\hbar/2 \omega_k}\right)a_{k,\alpha}(0) \epsilon^{(\alpha)} e^{i(k \cdot x-\omega_k t)} \cdot p_i 
 \right| X; n_{k,\alpha} \right\rangle\\
 &= -\frac{e}{m} \sqrt{\frac{n_{k,\alpha} \hbar}{2 \omega_k V}} \sum_i \left\langle Y \left| 
-e^{ikx_i} \epsilon^{(\alpha)} \cdot p_i 
+e^{ik \cdot x} \epsilon^{(\alpha)} \cdot p_i 
 \right| X \right\rangle e^{-i\omega_k t}
 \end{split}
 \end{equation}
@@ -399,10 +399,10 @@ Der Emissionsprozess wird beschrieben durch:
 \begin{split}
 \langle Y; n_{k,\alpha} + 1 &| H | X; n_{k,\alpha} \rangle \\
 &= -\frac{e}{mc} \left\langle Y; n_{k,\alpha} + 1 \left| 
-\frac{1}{\sqrt{V}} \sum_i \left(c \sqrt{\hbar/2 \omega_k}\right)a^+_{k,\alpha}(0) \epsilon^{(\alpha)} e^{-i(kx_i-\omega_k t)} \cdot p_i 
+\frac{1}{\sqrt{V}} \sum_i \left(c \sqrt{\hbar/2 \omega_k}\right)a^+_{k,\alpha}(0) \epsilon^{(\alpha)} e^{-i(k \cdot x-\omega_k t)} \cdot p_i 
 \right| X; n_{k,\alpha} \right\rangle\\
 &= -\frac{e}{m} \sqrt{\frac{ (n_{k,\alpha}+1) \hbar}{2 \omega_k V}} \sum_i \left\langle Y \left| 
-e^{-ikx_i} \epsilon^{(\alpha)} \cdot p_i 
+e^{-ik \cdot x} \epsilon^{(\alpha)} \cdot p_i 
 \right| X \right\rangle e^{i\omega_k t}
 \end{split}
 \end{equation}
