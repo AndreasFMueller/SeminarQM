@@ -190,6 +190,7 @@ f\"ur das Positron, sowie $-z$ f\"ur das Elektron und $+z$ f\"ur das Positron:
     |\psi\rangle = \frac{1}{\sqrt{2}} \Big( 
         |{+}z\rangle \otimes |{-}z\rangle - |{-}z\rangle \otimes |{+}z\rangle
      \Big)
+     \label{equ:bell:spinstate}
 \end{equation}
 Damit gilt
 \begin{align}
@@ -386,58 +387,180 @@ zuerst auf einfache Weise herleiten und danach mathematisch beweisen.
 
 \subsection{Mathematische Herleitung\label{subsection:bell:bell:herleitung}}
 
-Die Vorhersage der Quantenmechanik verletzt  %TODO: bitte noch deutsch und deutlich
-jedoch die Bell'sche Ungleichung.
-Wir betrachten dazu erneut die Pauli Matrizen \eqref{equ:bell:paulimatrizen}
-mit den Eigenvektoren $|{+}x\rangle$ und $|{-}x\rangle$.
-Damit ist der Spin Zustand $|\psi\rangle$ wie in \eqref{equ:bell:psix}
-hergeleitet
-\[
-    |\psi\rangle = \frac{1}{\sqrt{2}} \Big( 
-    |{+}x\rangle \otimes |{-}x\rangle -
-    |{-}x\rangle \otimes |{+}x\rangle
-    \Big)
-\]
-
 Wir verwenden erneut den Messaufbau aus Abbildung~\ref{fig:bell:EPR_Messaufbau}
 und nehmen an, dass der Winkel der Messung des Spins bei beiden Detektoren 
 $A$ und $B$ unabh\"angig, beliebig eingestellt werden kann.
 Wir nehmen ebenfalls an, dass eine Theorie der verborgenen Variablen vorliegt
 und eine Variable $\lambda$ existiert.
 \"Uber die Art dieser Variable wird hier keine Annahme gemacht.
-Die Resultate der Messungen $A$ und $B$ h\"angen damit von $\lambda$ und 
-den Einstellungen der Detektoren $a$ und $b$ ab und betragen,
-da die Messungen dem Spin entsprechen, entweder ${+}1$ oder ${-}1$ bzw.
-Spin up oder Spin down \textsuperscript{[Citation needed]}:
-\begin{align}
-    A(a,\lambda) = \operatorname{sign} \Big( \langle a,\lambda \rangle \Big) && 
-    B(b,\lambda) = \operatorname{sign} \Big( \langle b,\lambda \rangle \Big) 
-\end{align}
-Der Fall $A(a,\lambda) = 0$ ist mit dieser Definition nat\"urlich undefiniert,
-doch da die Wahrscheinlichkeit dieses Falls $0$ ist, kann dieser Fall hier
-schlicht vernachl\"assigt werden.
-
-Wir betrachten nun ein Partikel mit Spin Zustand $p$ mit der verborgenen
-Variable $\lambda$, wobei $\lambda$ gleichverteilt auf
-$\langle \lambda , p \rangle > 0$ ist.
-Es sind also alle $\lambda$ m\"oglich, f\"ur welche die Messung von $p$
-das Resultat $+1$ ergeben wird.
-
-Die folgenden Beziehungen k\"onnen damit einfach hergeleitet werden:
-\begin{align}
-    E(a,a) &= -E(a,-a) = -1 \\
-    E(a,b) &= 0 & \text{if } \langle a,b \rangle = 0
-\end{align}
-
-
-Unter der grundlegenden Annahme, dass die Detektoren $A$ und $B$ unabh\"angig
-sind, kann die Korrelation $E$ zwischen der Resultate der Messungen $A$ und $B$
-mit den Einstellungen $a$ und $b$ geschrieben werden als
+Betrachten wir nun die Einstellung $a$ an Detektor $A$ und die Einstellung
+$b$ an Detektor $B$.
+Wir bezeichnen das Resultat der Messung $a$ als $s$ und das Resultat
+der Messung $b$ als $t$.
+Nun definieren wir die Wahrscheinlichkeit, dass die Messung $a$ f\"ur ein
+gegebenes $\lambda$ das Resultat $s$ ergibt, gegeben dass die Messung $b$ das
+Resultat $t$ ergeben hat als $p_{\lambda}^1(s \mid a,b,t)$.
+Gleich definieren wir als $p_{\lambda}^2(t \mid a,b,s)$ die Wahrscheinlichkeit
+dass die Messung $b$ das Resultat $t$ ergibt, f\"ur ein gegebenes $\lambda$ und
+das Resultat $t$ bei Messung $a$. 
+Wir m\"ochten daraus die Wahrscheinlichkeit berechnen, dass die Messungen
+$a$ und $b$ die Resultate $s$ und $t$ mit $s,t \in [-1,1]$ ergeben. 
+Unter der Annahme, dass die Messungen $a$ und $b$ unabh\"angig sind und sich
+nicht gegenseitig beeinflussen k\"onnen -- was in einer lokalen Theorie
+aufgrund der Distanz der Teilchen gegeben sein muss -- kann diese geschrieben
+werden als
 \begin{equation}
-    E(a,b) = \int A(a,\lambda) B(b,\lambda) \rho(\lambda) d\lambda
+    p_{\lambda}(s,t \mid a,b) 
+    = p_{\lambda}^1(s \mid a,b,t) p_{\lambda}^2(t \mid a,b,s)
+    = p_{\lambda}^1(s \mid a) p_{\lambda}^2(t \mid b)
+    \label{equ:bell:wkeit}
 \end{equation}
-mit der Wahrscheinlichkeitsdichte $\rho(\lambda)$.
 
+Der Erwartungswert der Ergebnisse $s,t$ wird damit zu
+\begin{equation}
+    E_{\lambda}(a,b) = \sum_s \sum_t p_{\lambda}(s,t \mid a,b) (st)
+    \label{equ:bell:erwartungswert}
+\end{equation}
+
+Zur Herleitung der Bell'schen Ungleichung aus \eqref{equ:bell:wkeit} und
+\eqref{equ:bell:erwartungswert} f\"uhren wir den
+Hilfssatz~\ref{hilfssatz:bell:interval} ein.
+
+\begin{hilfssatz}
+    F\"ur die Variablen $q, q', r, r' \in [-1,1]$ liegt 
+    $S \equiv qr + qr' + q'r - q'r'$ im geschlossenen Intervall $[-2,2]$.
+    \label{hilfssatz:bell:interval}
+\end{hilfssatz}
+\begin{proof}[Beweis]
+    $S$ ist linear in allen vier Variablen $q, q', r, r'$.
+    Damit liegen das Maximum und das Minimum von $S$ an je einer der Ecken des
+    Definitionsbereichs. Damit sind
+    \begin{align*}
+        S_{\text{min}} = (-1) + (-1) + (-1) - 1 = -4 &&
+        S_ {\text{max}} = 1 + 1 + 1 - (-1) = 4
+    \end{align*}
+    Jedoch kann $S$ geschrieben werden als
+    \[
+        S = (q + q')(r + r') - 2 q'r'.
+    \]
+    Da die Extremstellen an den Grenzen, also $+1$ bzw. $-1$ f\"ur jede der
+    Variablen, liegen muss, k\"onnen die Terme $(q+q')$ und $(r+r')$ nun nur
+    die Werte $-2, 0, +2$ annehmen, w\"ahrend der Term $2q'r'$ 
+    entweder $-2$ oder $+2$ betr\"agt.
+    Damit sind f\"ur $S$ die Werte $\pm 3$ und $\pm 4$ an den Grenzen der
+    Definitionsbereiche \emph{nicht} m\"oglich und $S$ wird den Wertebereich
+    $[-2,2]$ haben.
+\end{proof}
+
+Wir definieren nun die in Hilfssatz~\ref{hilfssatz:bell:interval} erw\"ahnten
+Gr\"ossen $q,q',r,r'$ als
+\begin{align}
+    q  &= \sum_s s p_{\lambda}^1 (s \mid a)  \label{equ:bell:q}\\
+    q' &= \sum_s s p_{\lambda}^1 (s \mid a') \\
+    r  &= \sum_t t p_{\lambda}^2 (t \mid b)  \\
+    r' &= \sum_t t p_{\lambda}^2 (t \mid b') \label{equ:bell:rs}
+\end{align}
+Nun setzen wir \eqref{equ:bell:q}-\eqref{equ:bell:rs} in $S$ aus 
+Hilfssatz~\ref{hilfssatz:bell:interval} ein und vereinfachen dies mithilfe von
+\eqref{equ:bell:erwartungswert}
+\begin{equation}
+    -2 \leq E_{\lambda}(a,b) + E_{\lambda}(a,b') + E_{\lambda}(a',b) - E_{\lambda}(a',b') \leq +2
+    \label{equ:bell:ineq1}
+\end{equation}
+Nun nutzen wir die Tatsache, dass die verborgene Variable $\lambda$ ebenfalls
+mit einer Wahrscheinlichkeitsdichte $\rho(\lambda)$ mit 
+$\lambda \in \Lambda$ beschrieben werden kann.
+Die Wahrscheinlichkeit der Ereignisse $s$ und $t$ wird damit zu
+\begin{equation}
+    p_{\rho}(s,t  \mid a,b) = \int_{\Lambda} p_{\lambda}(s,t \mid a,b) d\rho
+\end{equation}
+mit Erwartungswert
+\begin{equation}
+    E_{\rho}(a,b) = \int_{\Lambda} E_{\lambda}(a,b) d\rho 
+    = \sum_s \sum_t \int_{\Lambda} p_m(s,t \mid a,b) (st) \:d\rho
+\end{equation}
+Dies in \eqref{equ:bell:ineq1} eingesetzt ergibt
+\begin{equation}
+    -2 \leq E_{\rho}(a,b) + E_{\rho}(a,b') + E_{\rho}(a',b) - E_{\rho}(a',b') \leq +2
+    \label{equ:bell:bellineq}
+\end{equation}
+Die Ungleichung \eqref{equ:bell:bellineq} wird nun als
+\enquote{Bell-Clauser-Horne-Shimony-Holt (BCHSH) Ungleichung} bezeichnet
+\textsuperscript{[Citation needed]}.
+
+Nun verbinden wir diese Herleitung mit dem Resultat \eqref{equ:bell:bellineq}
+mit dem in Abbildung~\ref{fig:bell:EPR_Messaufbau} dargestellten Messaufbau.
+Betrachten wir erneut das Elektron-Positron Paar mit dem in
+\eqref{equ:bell:spinstate} hergeleiteten Spin-Zustand
+\begin{equation*}
+    |\psi\rangle = \frac{1}{\sqrt{2}} \Big( 
+        |{+}z\rangle \otimes |{-}z\rangle - |{-}z\rangle \otimes |{+}z\rangle
+     \Big)
+\end{equation*}
+F\"ur zwei Messungen $a$ und $b$ mit jeweils einem fixen Winkel $\theta_s$ bzw.
+$\phi_t$ zur $xy$-Ebene wird dies verallgemeinert zu
+\begin{equation}
+    |\psi\rangle = \frac{1}{\sqrt{2}} \Big(
+        |\theta_{+1}\rangle_A |\theta_{-1}\rangle_B + |\theta_{-1}\rangle_A |\theta_{+1}\rangle_B
+    \Big)
+\end{equation}
+Die Wahrscheinlichkeit der Messung von $s$ und $t$ ist
+\begin{equation}
+    P_{\psi}(s,t \mid a,b) = 
+    \Big| \langle \psi \; |\theta_s \rangle_A \; |\phi_t\rangle_B\Big|^2
+    \label{equ:bell:prob_st}
+\end{equation}
+Da $|\theta_{+1}\rangle_A$ und $|\theta_{+1}\rangle_B$ orthogonal sind und
+das Produkt $|\theta_{+1}\rangle_A|\theta_{-1}\rangle_B = 1$ betragen muss,
+kann \eqref{equ:bell:prob_st} f\"ur den Fall $s=1,t=-1$ vereinfacht werden zu
+\[
+    P_{\psi}(1,-1 \mid a,b) = 
+    \frac{1}{2} \; \Big| {}_B\langle \theta_1 \mid \phi_1 \rangle_B  \ \Big|^2
+\]
+
+Um diese Wahrscheinlichkeit berechnen zu k\"onnen, wird ohne Beweis der
+Hilfssatz~\ref{hilfssatz:bell:malus} eingef\"uhrt
+\textsuperscript{[Citation needed]}.
+
+\begin{hilfssatz}\label{hilfssatz:bell:malus}
+    Das Gesetz von Malus, welches die Transmission einer polarisierten
+    Strahlung durch einen idealen Polarisator beschreibt: 
+    $I = I_0 \cos^2(\alpha)$, gilt ebenfalls f\"ur Elektronen und Positronen
+    mit dem jeweiligen Spin.
+\end{hilfssatz}
+
+Damit wird die Wahrscheinlichkeit $P_{\psi}(1,-1 \mid a,b)$ mit dem Winkel
+$\sigma$ zwischen $a$ und $b$ zu
+\begin{equation}
+    P_{\psi}(1,-1 \mid a,b) = \frac{1}{2} \cos^2\sigma
+\end{equation}
+Genau gleich werden die Wahrscheinlichkeiten von $s=-1,t=1$, sowie
+$s=t=1$ und $s=t=-1$ berechnet:
+\begin{align}
+    P_{\psi}(-1,1 \mid a,b) &= \frac{1}{2} \cos^2\sigma \\
+    P_{\psi}(1,1 \mid a,b) &= \frac{1}{2} \sin^2\sigma \\
+    P_{\psi}(-1,-1 \mid a,b) &= \frac{1}{2} \sin^2\sigma
+\end{align}
+Der Erwartungswert $E_{\psi}$ wird damit zu
+\begin{align}
+    E_{\psi}(a,b) &= P_{\psi}(1,-1 \mid a,b) + P_{\psi}(-1,1 \mid a,b) -
+        P_{\psi}(1,1 \mid a,b) - P_{\psi}(-1,-1 \mid a,b)  \notag \\
+    &= \cos^2\sigma - \sin^2\sigma  = \cos 2\sigma
+\end{align}
+
+Nun werden betrachten wir die konkreten Werte 
+$a=\frac{\pi}{4}, a'=0, b=\frac{\pi}{8}, b' = \frac{3\pi}{8}$ 
+und setzen diese in \eqref{equ:bell:bellineq} ein. Wir erhalten
+\begin{equation}
+    S_{\psi} = E_{\psi}(a,b) + E_{\psi}(a,b') + E_{\psi}(a',b) - E_{\psi}(a',b') \stackrel{!}{=} 2.828
+    \label{equ:bell:bellineq_beweis}
+\end{equation}
+
+Die quantenmechanische Vorhersage \emph{verletzt} also die Bell'sche 
+Ungleichung \eqref{equ:bell:bellineq}, welche f\"ur jede Theorie mit lokalen
+verborgenen Variablen gelten \emph{muss}.
+Die Quantenmechanik kann also \emph{keine} verborgenen lokalen Variablen
+enthalten und die Vermutung Einsteins ist somit widerlegt.
 
 \section{Experimente}
 \subsection{Freedman Clauser}
