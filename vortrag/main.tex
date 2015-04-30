@@ -17,11 +17,11 @@
 
 %%% LaTeX PREAMBLE
 \documentclass[compressd]
-              {beamer}
+{beamer}
 \usecolortheme[named=orange]{structure}
 \mode<presentation>
 {
-  \usetheme{Frankfurt}
+	\usetheme{Frankfurt}
 }
 
 \setbeamertemplate{itemize items}[default]
@@ -39,39 +39,39 @@
 \title[MathSem QM]{Mathematisches Seminar Quantenmechanik}
 \subtitle{Atomuhr}
 \author{Stefan Steiner \and Pascal Stump}
-\institute{HSR Hochschule fÃ¼r Technik Rapperswil}
+\institute{HSR Hochschule für Technik Rapperswil}
 \date{04.\,Mai 2014}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% BEGIN DOCUMENT
 \begin{document}
-
-%%% input tex files
-\begin{frame}
-  \titlepage
-\end{frame}
-
-%%%
-% 00_Themen; BegrÃ¼ssung
-\section{BegrÃ¼ssung}
-\input{chapters/00_themen}
-
-% 01_Einleitung
-\section{Einleitung}
-\input{chapters/01_einleitung}
-
-% 02_Tech; Technischer Aufbau
-\section[Tech]{Technische Betrachtung}
-\input{chapters/02_tech} 
-
-% 03_Math; Mathematische Beschreibung
-\section[Math]{Mathematische Betrachtung}
-\input{chapters/03_math}
-
-% 04_Schluss/Fragen
-\section[?]{ Schluss/Fragen}
-\input{chapters/04_schluss}
-
-%%% END DOCUMENT
+	
+	%%% input tex files
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	%%%
+	% 00_Themen; Begrüssung
+	\section{Begrüssung}
+	\input{chapters/00_themen}
+	
+	% 01_Einleitung
+	\section{Einleitung}
+	\input{chapters/01_einleitung}
+	
+	% 02_Tech; Technischer Aufbau
+	\section[Tech]{Technische Betrachtung}
+	\input{chapters/02_tech} 
+	
+	% 03_Math; Quantenmechanische Beschreibung
+	\section[Math]{Quantenmechanische Betrachtung}
+	\input{chapters/03_math}
+	
+	% 04_Schluss/Fragen
+	\section[?]{ Schluss/Fragen}
+	\input{chapters/04_schluss}
+	
+	%%% END DOCUMENT
 \end{document}
