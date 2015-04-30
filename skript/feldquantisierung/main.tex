@@ -78,7 +78,7 @@ Dadurch vereinfachen sich die gekoppelten Differentialgleichung zu einer Differe
 L"osungen dieser Gleichung f"ur periodische Randbedingungen und $t=0$ in einer Box mit Seitenl"ange $L = V^{1/3}$ sind durch die Fourier Reihe gegeben \cite{fq:em_wave_eq}:
 
 \begin{equation} \label{fq:wave_eq}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (c_{k,\alpha} \epsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + \bar{c}_{k,\alpha} \epsilon^{(\alpha)} e^{-i(k \cdot x - \omega_k t)})
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c_{k,\alpha} \epsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + \bar{c}_{k,\alpha} \epsilon^{(\alpha)} e^{-i(k \cdot x - \omega_k t)}\right)
 \end{equation}
 
 Dabei ist:
@@ -89,7 +89,7 @@ Dabei ist:
 
 oder durch setzen von $c_{k,\alpha}(t) = c_{k,\alpha} e^{-i \omega_k t}$ sowie $u_{k,\alpha}(x) = \epsilon^{(\alpha)} e^{ik \cdot x}$:
 \begin{equation}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (c_{k,\alpha}(t)u_{k,\alpha}(x) + \bar{c}_{k,\alpha}(t) \bar{u}_{k,\alpha}(x))
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c_{k,\alpha}(t)u_{k,\alpha}(x) + \bar{c}_{k,\alpha}(t) \bar{u}_{k,\alpha}(x) \right)
 \end{equation}
 
 $A(x,t)$ wird durch die konjugiert komplexe Wahl der Koeffizienten f"ur alle $c_{k,\alpha}$ reell:
@@ -101,17 +101,17 @@ $A(x,t)$ wird durch die konjugiert komplexe Wahl der Koeffizienten f"ur alle $c_
 $k$ ist der Ausbreitungsvektor der Welle und zeigt in die Ausbreitungsrichtung und $\epsilon^{(\alpha)}$ ist die Polarisation. 
 
 \begin{equation}
-B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k ik \times \epsilon^{(\alpha)} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})
+B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k ik \times \epsilon^{(\alpha)} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
 \end{equation}
 
 \begin{equation}
-E = - \frac{\partial A}{\partial t} = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \epsilon^{(\alpha)} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})
+E = - \frac{\partial A}{\partial t} = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \epsilon^{(\alpha)} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
 \end{equation}
 
 Aus der Elektrotechnik ist bekannt, dass $B \cdot E = 0$ gilt:
 
 \begin{equation}
-B \cdot E = \frac{1}{\sqrt{V}} \sum_{\alpha=1,2}   \sum_k -\omega_k \underbrace{k \times  \epsilon^{(\alpha)} \cdot \epsilon^{(\alpha)}}_{=0} (c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)})^2 = 0
+B \cdot E = \frac{1}{\sqrt{V}} \sum_{\alpha=1,2}   \sum_k -\omega_k \underbrace{k \times  \epsilon^{(\alpha)} \cdot \epsilon^{(\alpha)}}_{=0} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)}\right)^2 = 0
 \end{equation}
 
 Dies wird erreicht, in dem vorausgesetzt wird, dass $(\epsilon^{(1)}, \epsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
@@ -119,7 +119,7 @@ Dies wird erreicht, in dem vorausgesetzt wird, dass $(\epsilon^{(1)}, \epsilon^{
 Da $\epsilon^{(\alpha)}$ und $k$ orthogonal sind gilt dabei auch automatisch:
 
 \begin{equation}
-\nabla \cdot A = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} (i c_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{i (k \cdot x - \omega_k t)} - i \bar{c}_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{-i(k \cdot x - \omega_k t)} = 0
+\nabla \cdot A = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(i c_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{i (k \cdot x - \omega_k t)} - i \bar{c}_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{-i(k \cdot x - \omega_k t)}\right) = 0
 \end{equation}
 
 Weiterhin gilt wegen der Orthogonalit"at der komplexen Exponentialfunktion auch:
@@ -134,7 +134,7 @@ Weiterhin gilt wegen der Orthogonalit"at der komplexen Exponentialfunktion auch:
 Die Hamilton-Funktion einer elektromagnetischen Welle ist gegeben durch:
 \begin{equation}
 \begin{split}
-H &= \frac{1}{2} \int (\frac{1}{\mu_0}|B|^2 + \varepsilon_0|E|^2) d^3 x \\
+H &= \frac{1}{2} \int \left(\frac{1}{\mu_0}|B|^2 + \varepsilon_0|E|^2\right) d^3 x \\
 	&= \frac{1}{2} \int \left(\frac{1}{\mu_0} | \nabla\times A |^2 + \frac{1}{c^2 \mu_0} \left| \dfrac{\partial A}{\partial t} \right|^2 \right) d^3 x 
 \end{split}
 \end{equation}
@@ -146,7 +146,7 @@ H = \sum_k \sum_{\alpha=1,2} \frac{2}{\mu_0} \left(\frac{\omega_k}{c}\right)^2 \
 
 Durch folgende Definition:
 \begin{equation}
-Q_{k,\alpha} = \frac{1}{\sqrt{\mu_0} c}(c_{k,\alpha}(t) + \bar{c}_{k,\alpha}(t)) \quad P_{k,\alpha} = -\frac{i\omega_k}{\sqrt{\mu_0} c}(c_{k,\alpha}(t) - \bar{c}_{k,\alpha}(t)) 
+Q_{k,\alpha} = \frac{1}{\sqrt{\mu_0} c}\left(c_{k,\alpha}(t) + \bar{c}_{k,\alpha}(t)\right) \quad P_{k,\alpha} = -\frac{i\omega_k}{\sqrt{\mu_0} c}\left(c_{k,\alpha}(t) - \bar{c}_{k,\alpha}(t)\right) 
 \end{equation}
 
 wird die Hamilton-Funktion zu:
@@ -155,7 +155,7 @@ wird die Hamilton-Funktion zu:
 H &= \sum_k \sum_{\alpha=1,2} 2 \left(\frac{\omega_k}{c}\right)^2 
 	\underbrace{\left[ \frac{c(\omega_k Q_{k,\alpha} - i P_{k,\alpha})}{2 \omega_k} \right]}_{\frac{1}{\sqrt{\mu_0}} \bar{c}_{k,\alpha}(t)}
 	\underbrace{\left[ \frac{c(\omega_k Q_{k,\alpha} + i P_{k,\alpha})}{2 \omega_k} \right]}_{\frac{1}{\sqrt{\mu_0}} c_{k,\alpha}(t)} \\
-&= \sum_k \sum_{\alpha=1,2} \frac{1}{2} (P_{k,\alpha}^2 + \omega_k^2 Q_{k,\alpha}^2)
+&= \sum_k \sum_{\alpha=1,2} \frac{1}{2} \left(P_{k,\alpha}^2 + \omega_k^2 Q_{k,\alpha}^2\right)
 \end{split}
 \end{equation}
 
@@ -183,7 +183,7 @@ Wir definieren die Operatoren:
 \begin{split}
 a_{k,\alpha} &= \frac{1}{\sqrt{2 \hbar \omega_k}} (\omega_k Q_{k,\alpha} + iP_{k,\alpha}) \\
 a^+_{k,\alpha} &= \frac{1}{\sqrt{2 \hbar \omega_k}} (\omega_k Q_{k,\alpha} - iP_{k,\alpha})\\
-N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha} = \frac{1}{2 \hbar \omega_k} (P_{k,\alpha}^2 + \omega_k^2 Q_{k,\alpha}^2 + i\omega_k [Q_{k,\alpha},P_{k,\alpha}] ) \\
+N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha} = \frac{1}{2 \hbar \omega_k} \left(P_{k,\alpha}^2 + \omega_k^2 Q_{k,\alpha}^2 + i\omega_k [Q_{k,\alpha},P_{k,\alpha}] \right) \\
  &= \frac{1}{ \hbar \omega_k } H - \frac{1}{2} = {\cal H} - \frac{1}{2}
 \end{split}
 \end{equation}
@@ -294,7 +294,7 @@ oder allgemein:
 
 \begin{equation}
 |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots \, , n_{k_l,\alpha_l}\rangle =
- \prod_{k_i,\alpha_i}\underbrace{\frac{1}{\sqrt{n_{k_i,\alpha_i}}}}_{Normierung} \underbrace{(a^+_{k_i,\alpha_i})^{n_{k_i,\alpha_i}}}_{Aufsteigeopperator} |0\rangle
+ \prod_{k_i,\alpha_i}\underbrace{\frac{1}{\sqrt{n_{k_i,\alpha_i}}}}_{Normierung} \underbrace{\left(a^+_{k_i,\alpha_i}\right)^{n_{k_i,\alpha_i}}}_{Aufsteigeopperator} |0\rangle
 \end{equation}
 
 Die Fourier Koeffizienten im Strahlungsfeld werden mittels den Korrespondenzen \ref{fq:opp_fourier} durch Operatoren ersetzt um das quantisierte Feld zu erhalten:
@@ -325,8 +325,8 @@ H = \frac{1}{2} \int (B \cdot B + E \cdot E) d^3 x
 Dieses Integral kann wiederum ausgewertet werden, nur muss dieses mal die Reihenfolge von $a_{k,\alpha}$ und $a^+_{k,\alpha}$ eingehalten werden:
 \begin{equation}
 \begin{split}
-H &= \frac{1}{2} \sum_k \sum_{\alpha=1,2} \hbar \omega_k (a^+_{k,\alpha} a_{k,\alpha} + a_{k,\alpha} a^+_{k,\alpha}) \\
-&= \sum_k \sum_{\alpha=1,2} \hbar \omega_k (N_{k,\alpha} + \frac{1}{2} )
+H &= \frac{1}{2} \sum_k \sum_{\alpha=1,2} \hbar \omega_k \left(a^+_{k,\alpha} a_{k,\alpha} + a_{k,\alpha} a^+_{k,\alpha}\right) \\
+&= \sum_k \sum_{\alpha=1,2} \hbar \omega_k \left(N_{k,\alpha} + \frac{1}{2} \right)
 \end{split}
 \end{equation}
 
@@ -347,14 +347,18 @@ H |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle = \sum_i \hbar \omega_k 
 Um den Hamiltonoperator eines Elektrons im Feld zu erhalten, wird $p$ gem"ass Kapitel \ref{section:hamilton-funktion-im-magnetfeld} durch $p -eA/c$ ersetzt. $A$ ist nun das quantisierte Feld. Der Hamiltonoperator wird somit zu:
 
 \begin{equation}
-H = -\frac{e}{2mc}(p \cdot A(x, t) + A(x, t) \cdot p) + \frac{e^2}{2mc^2}A(x, t) \cdot A(x, t) + H^{(spin)}
+H = -\frac{e}{2mc}\left[p \cdot A(x, t) + A(x, t) \cdot p\right] + \frac{e^2}{2mc^2}A(x, t) \cdot A(x, t) + H^{(spin)}
 \end{equation}
 
-$p$ ist wiederum ein Operator mit Ableitung nach dem Ort. Da $\nabla \cdot A = 0$ gilt, vertauschen $p \cdot A(x, t)$.
+$p$ ist wiederum ein Operator mit Ableitung nach dem Ort. Da $\nabla \cdot A = 0$ gilt, vertauschen $p \cdot A(x, t)$. Dadurch wird der Hamilton:
+
+\begin{equation}
+H = -\frac{e}{mc}p \cdot A(x, t) + \frac{e^2}{2mc^2}A(x, t) \cdot A(x, t) + H^{(spin)}
+\end{equation}
 
 Zudem leitet auch der Spin einen (wenn auch oft vernachl"assigbar kleinen) Beitrag zu $H$:
 \begin{equation}
-H^{(spin)} = - \frac{e \hbar}{2mc}\sigma \left[\nabla \times A(x, t)\right]
+H^{(spin)} = - \frac{e \hbar}{2mc}\sigma \left[\nabla \times A(x, t)\right] \approx 0
 \end{equation}
 
 Dieser Hamiltonoperator wirkt nun nicht nur auf dem Zustand des Elektrons sondern auch auf den Zust"anden der Photonen und beschreibt die Wechselwirkung von Photonen und Elektronen. Man spricht hier von dem Anfangszustand $X$, dem Endzustand $Y$.
