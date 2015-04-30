@@ -99,7 +99,7 @@ W\"ahrend Einstein \emph{et al.} in ihrem Paper das Gedankenexperiment sehr
 allgemein halten, betrachten wir hier ein anschaulicheres Beispiel, welches
 1957 von David Bohm und Yakir Aharonov \cite{Bell:Bohm1957} pr\"asentiert wurde.
 
-\subsection{Das Gedankenexperiment\label{subsection:bell:epr:experiment}}
+\subsection{Das Gedankenexperiment\label{subsection:bell:epr:idee}}
 Wir betrachten zwei quantenmechanische Systeme, $I$ und $II$,
 welche von $t=0$ bis zu einem Zeitpunkt $t=T$ miteinander 
 interagieren k\"onnen. Darauf ist keine Interaktion mehr m\"oglich.
@@ -156,7 +156,7 @@ Wie in den Gleichungen~\ref{spin:paulimatrizen}--\ref{spin:vektoroperator}
 hergeleitet wird der Spin-Operator durch die hermiteschen Pauli-Matrizen
 beschrieben.
 
-\begin{align*}
+\begin{align}
     S_x &= \frac{\hbar}{2} \begin{pmatrix}
     0 & 1 \\ 1 & 0
     \end{pmatrix}
@@ -167,19 +167,19 @@ beschrieben.
     &
     S_z &= \frac{\hbar}{2} \begin{pmatrix}
     1 & 0 \\ 0 & -1
-    \end{pmatrix}
-\end{align*}
+    \end{pmatrix}\label{equ:bell:paulimatrizen}
+\end{align}
 
 Die zugeh\"origen Eigenvektoren wurden in einer \"Ubung hergeleitet und
 betragen:
-\begin{align*}
+\begin{align}
     |{+}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\1 \end{pmatrix} &
     |{-}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\-1 \end{pmatrix} &
     |{+}y\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\i \end{pmatrix} &
     |{-}y\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} i\\1 \end{pmatrix} &
     |{+}z\rangle &= \begin{pmatrix} 1\\0 \end{pmatrix} &
     |{-}z\rangle &= \begin{pmatrix} 0\\1 \end{pmatrix} &
-\end{align*}
+\end{align}
 
 Der Spin-Zustand $|\psi\rangle$ entlang der $z$-Achse eines 
 Elektron-Positron Paares  kann durch alle m\"oglichen Kombination der beiden
@@ -230,7 +230,7 @@ Damit gilt
       &= 
       -\frac{1}{\sqrt{2}} \Big( 
               |{+}x\rangle \otimes |{-}x\rangle - |{-}x\rangle \otimes |{+}x\rangle
-           \Big)
+           \Big)\label{equ:bell:psix}
 \end{align}
 
 Wir haben also gezeigt, dass mit der Spin-Zustand $|\psi\rangle$ des
@@ -269,7 +269,7 @@ Da die Operatoren $S_x$ und $S_z$ also nicht vertauschen, ist nach der Theorie
 der Quantenmechanik die gleichzeitige Kenntnis der beiden Messungen nicht
 m\"oglich.
 Dass dies jedoch hier der Fall ist, haben wir sowohl intuitiv in
-Abschnitt~\ref{subsection:bell:epr:experiment}, wie auch mathematisch in
+Abschnitt~\ref{subsection:bell:epr:idee}, wie auch mathematisch in
 diesem Abschnitt bewiesen. 
 Damit m\"ussen wir zur Schlussfolgerung kommen, dass entweder 
 (1) eine sofortige Kommunikation zwischen dem Elektron und dem Positron
@@ -359,8 +359,84 @@ Er entwickelte dazu eine dem EPR-Experiment sehr \"ahnliche Idee, indem er
 nicht Position und Drehmoment, sondern den Spin zweier Partikel betrachtete.
 Dieses Gedankenexperiment ist einfacher zu analysieren (weshalb wir im
 Abschnitt~\ref{section:bell:epr} das Experiment von Bohm, und nicht das
-originale von Einstein betrachtet haben), sondern ist experimentell einfacher
+originale von Einstein betrachtet haben), und ist experimentell einfacher
 zu pr\"ufen.
+
+Als sich John Bell, noch als Student, mit dem EPR Paradoxon und insbesondere
+der Arbeit von David Bohm zu besch\"aftigen begann, war er \"uberzeugt von
+der Theorie der verborgenen lokalen Variablen zur L\"osung des EPR Paradoxons
+\textsuperscript{[Citation needed]}.
+Er besch\"aftigte sich insbesondere mit der Frage, ob eine solche Theorie
+\"uberhaupt eine Lokalit\"at zul\"asst, oder ob die Annahme Bohms,
+dass eine lokale Quantenmechanik nicht m\"oglich ist, zutrifft.
+Obwohl \"uberzeugt von verborgenen lokalen Variablen, gelang es Bell 1964
+in seinem Paper 
+\enquote{On the Einstein Podolsky Rosen Paradox} \cite{Bell:Bell1964}
+zu beweisen, dass eine Theorie der verborgenen Variablen -- sollte eine
+solche existieren -- \emph{nicht} lokal sein kann.
+Als erstem Physiker gelang es die Frage umzudrehen, und nicht nach solchen
+Variablen bzw. Teilchen zu suchen, sondern gleich deren Nicht-Existenz
+zu beweisen.
+
+Wie bereits im Abschnitt~\ref{section:bell:epr} werden wir das Paper
+von John Bell, h\"aufig als \enquote{Bell'sche Ungleichung} bezeichnet,
+zuerst auf einfache Weise herleiten und danach mathematisch beweisen.
+
+\subsection{Die Bell'sche Ungleichung\label{subsection:bell:bell:idee}}
+
+\subsection{Mathematische Herleitung\label{subsection:bell:bell:herleitung}}
+
+Die Vorhersage der Quantenmechanik verletzt  %TODO: bitte noch deutsch und deutlich
+jedoch die Bell'sche Ungleichung.
+Wir betrachten dazu erneut die Pauli Matrizen \eqref{equ:bell:paulimatrizen}
+mit den Eigenvektoren $|{+}x\rangle$ und $|{-}x\rangle$.
+Damit ist der Spin Zustand $|\psi\rangle$ wie in \eqref{equ:bell:psix}
+hergeleitet
+\[
+    |\psi\rangle = \frac{1}{\sqrt{2}} \Big( 
+    |{+}x\rangle \otimes |{-}x\rangle -
+    |{-}x\rangle \otimes |{+}x\rangle
+    \Big)
+\]
+
+Wir verwenden erneut den Messaufbau aus Abbildung~\ref{fig:bell:EPR_Messaufbau}
+und nehmen an, dass der Winkel der Messung des Spins bei beiden Detektoren 
+$A$ und $B$ unabh\"angig, beliebig eingestellt werden kann.
+Wir nehmen ebenfalls an, dass eine Theorie der verborgenen Variablen vorliegt
+und eine Variable $\lambda$ existiert.
+\"Uber die Art dieser Variable wird hier keine Annahme gemacht.
+Die Resultate der Messungen $A$ und $B$ h\"angen damit von $\lambda$ und 
+den Einstellungen der Detektoren $a$ und $b$ ab und betragen,
+da die Messungen dem Spin entsprechen, entweder ${+}1$ oder ${-}1$ bzw.
+Spin up oder Spin down \textsuperscript{[Citation needed]}:
+\begin{align}
+    A(a,\lambda) = \operatorname{sign} \Big( \langle a,\lambda \rangle \Big) && 
+    B(b,\lambda) = \operatorname{sign} \Big( \langle b,\lambda \rangle \Big) 
+\end{align}
+Der Fall $A(a,\lambda) = 0$ ist mit dieser Definition nat\"urlich undefiniert,
+doch da die Wahrscheinlichkeit dieses Falls $0$ ist, kann dieser Fall hier
+schlicht vernachl\"assigt werden.
+
+Wir betrachten nun ein Partikel mit Spin Zustand $p$ mit der verborgenen
+Variable $\lambda$, wobei $\lambda$ gleichverteilt auf
+$\langle \lambda , p \rangle > 0$ ist.
+Es sind also alle $\lambda$ m\"oglich, f\"ur welche die Messung von $p$
+das Resultat $+1$ ergeben wird.
+
+Die folgenden Beziehungen k\"onnen damit einfach hergeleitet werden:
+\begin{align}
+    E(a,a) &= -E(a,-a) = -1 \\
+    E(a,b) &= 0 & \text{if } \langle a,b \rangle = 0
+\end{align}
+
+
+Unter der grundlegenden Annahme, dass die Detektoren $A$ und $B$ unabh\"angig
+sind, kann die Korrelation $E$ zwischen der Resultate der Messungen $A$ und $B$
+mit den Einstellungen $a$ und $b$ geschrieben werden als
+\begin{equation}
+    E(a,b) = \int A(a,\lambda) B(b,\lambda) \rho(\lambda) d\lambda
+\end{equation}
+mit der Wahrscheinlichkeitsdichte $\rho(\lambda)$.
 
 
 \section{Experimente}
