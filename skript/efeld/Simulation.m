@@ -129,6 +129,11 @@ end
 
 % figure
 % hold on;
+% print('Psi_ungestoert', '-depsc', '-noui')
+% print('Psi_ungestoert', '-dpdf', '-noui')
+
+% figure
+% hold on;
 
 sG = zeros(1, length(n));
 for ln = n		% gestoerter Plot
@@ -142,6 +147,8 @@ end
 
 %print('grafik_1_Psi', '-depsc', '-noui')
 %print('grafik_1_Psi', '-dpdf', '-noui')
+% print('Psi_gestoert', '-depsc', '-noui')
+print('Psi_gestoert', '-dpdf', '-noui')
 
 %-----Plot grafik 2: E(n, a)-----
 figure
@@ -154,7 +161,7 @@ end
 %print('grafik_2_Energy', '-depsc', '-noui')
 %print('grafik_2_Energy', '-dpdf', '-noui')
 
-hold off;
+hold off
 
 
 
