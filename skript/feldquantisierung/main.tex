@@ -131,13 +131,11 @@ Aufgrund von \ref{fq:lorenz_eq} gilt dadurch:
 \end{equation}
 
 Weiterhin gilt wegen der Orthogonalit"at der komplexen Exponentialfunktion auch:
-\begin{equation}
-\begin{split}
+\begin{align}
 \dfrac{1}{A} \int u_{k,\alpha} \cdot \bar{u}_{k',\alpha'} d^3 x &= \delta_{kk'}\delta{aa'} \\
 \dfrac{1}{A} \int u_{k,\alpha} \cdot u_{k',\alpha'} d^3 x &= 0 \\
 \dfrac{1}{A} \int \bar{u}_{k,\alpha} \cdot \bar{u}_{k',\alpha'} d^3 x &= 0
-\end{split}
-\end{equation}
+\end{align}
 
 Die Hamilton-Funktion einer elektromagnetischen Welle ist gegeben durch:
 \begin{equation}
@@ -178,23 +176,21 @@ $Q_{k,\alpha}$ und $P_{k,\alpha}$ k"onnen nun als Koordinaten und Impulse der ei
 
 \subsection{Vertauschungsrelationen sowie Auf- und Absteige Operatoren}
 Wie beim harmonischen Oszillator (Kapitel \ref{chapter:harmonischeroszillator}) k"onnen $Q_{k,\alpha}$ und $P_{k,\alpha}$ nun als Operatoren aufgefasst werden. Die Vertauschungsrelationen werden dabei zu:
-\begin{equation}
-\begin{split}
+\begin{align}
 [Q_{k,\alpha}, P_{k',\alpha'}] &= i \hbar \delta_{kk'}\delta_{aa'} \\
 [Q_{k,\alpha}, Q_{k',\alpha'}] &= 0 \\
 [P_{k,\alpha}, P_{k',\alpha'}] &= 0
-\end{split}
-\end{equation}
+\end{align}
 
 Wir definieren die Operatoren:
-\begin{equation}
-\begin{split}
+\begin{align}
 a_{k,\alpha} &= \frac{1}{\sqrt{2 \hbar \omega_k}} (\omega_k Q_{k,\alpha} + iP_{k,\alpha}) \\
 a^+_{k,\alpha} &= \frac{1}{\sqrt{2 \hbar \omega_k}} (\omega_k Q_{k,\alpha} - iP_{k,\alpha})\\
+\begin{split}
 N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha} = \frac{1}{2 \hbar \omega_k} \left(P_{k,\alpha}^2 + \omega_k^2 Q_{k,\alpha}^2 + i\omega_k [Q_{k,\alpha},P_{k,\alpha}] \right) \\
  &= \frac{1}{ \hbar \omega_k } H - \frac{1}{2} = {\cal H} - \frac{1}{2}
 \end{split}
-\end{equation}
+\end{align}
 
 Ein Vergleich mit \ref{fq:hamilton} sowie $c\sqrt{\mu_0}=1/\sqrt{\epsilon_0}$ liefert:
 \begin{equation} \label{fq:opp_fourier}
@@ -203,17 +199,19 @@ Ein Vergleich mit \ref{fq:hamilton} sowie $c\sqrt{\mu_0}=1/\sqrt{\epsilon_0}$ li
 Somit entsprechen diese Operatoren den Fourier-Koeffizienten.
 
 Die Kommutatoren f"ur diese Operatoren sind:
-\begin{equation}
+\begin{align}
 \begin{split}
 [a_{k,\alpha} , a^+_{k',\alpha'}] &= - \frac{i}{2 \hbar} [Q_{k,\alpha}, P_{k',\alpha'}] + \frac{i}{2 \hbar} [P_{k,\alpha}, Q_{k',\alpha'}] \\
-	 &= \delta_{kk'}\delta_{aa'} \\
+	 &= \delta_{kk'}\delta_{aa'}
+\end{split}\\
 [a_{k,\alpha} , a_{k',\alpha'}] &= [a^+_{k,\alpha} , a^+_{k',\alpha'}] = 0 \\
+\begin{split}
 [a_{k,\alpha} , N_{k',\alpha'}] &= a_{k,\alpha} a^+_{k',\alpha'} a_{k',\alpha'} - a^+_{k',\alpha'} a_{k',\alpha'} a_{k,\alpha} \\
 	&= [a_{k,\alpha} , a^+_{k',\alpha'}]a_{k',\alpha'} - a^+_{k',\alpha'}[a_{k',\alpha'} , a_{k,\alpha}]\\
-	&= \delta_{kk'}\delta_{aa'} a_{k,\alpha} \\
+	&= \delta_{kk'}\delta_{aa'} a_{k,\alpha}
+\end{split} \\
 [a^+_{k,\alpha} , N_{k',\alpha'}] &= -\delta_{kk'}\delta_{aa'} a^+_{k,\alpha}
-\end{split}
-\end{equation}
+\end{align}
 
 \subsection{Wirkung auf Zustandsvektoren}
 
@@ -225,41 +223,35 @@ N|n\rangle = e_n|n\rangle
 \end{equation}
 
 Auf Grund der Beziehungen der Operatoren gilt dadurch:
-\begin{equation}
-\begin{split}
+\begin{align}
 Na^+|n\rangle &= (a^+N + a^+)|n\rangle = (e_n + 1)a^+|n\rangle \\
 Na|n\rangle &= (aN - a)|n\rangle = (e_n - 1)a|n\rangle
-\end{split}
-\end{equation}
+\end{align}
 
 Die Auf- und Absteige Operatoren f"ugen dem quantisiertem Feld Energiequanten hinzu oder entfernen solche. Diese Energiequanten werden auch Photonen genannt. 
 
 Wiederum m"ussen die neuen Eigenvektoren normalisiert werden. Daf"ur werden die Konstanten $c_+$ und $c_-$ eingef"uhrt.
-\begin{equation}
-\begin{split}
+\begin{align}
 a^+|n\rangle &= c_+|n+1\rangle \\
 a|n\rangle &= c_-|n-1\rangle
-\end{split}
-\end{equation}
+\end{align}
 
 $c_\pm$ wird folgendermassen berechnet:
-\begin{equation}
+\begin{align}
 \begin{split}
 	|c_+|^2 &= |c_+|^2 \langle n+1 | n+1 \rangle = ( a^+ \langle n |) \; a^+ | n \rangle \\
 		&= \langle n | aa^+ |n \rangle = \langle n | N + [a,a^+] |n \rangle \\
-		&= e_n+1 \\
+		&= e_n+1
+\end{split}\\
 	|c_-|^2 &= 	( a \langle n |) \; a | n \rangle = \langle n | a^+a | n \rangle = e_n
-\end{split}
-\end{equation}
+\end{align}
 
 Die Phase von $c_{\pm}$ ist nicht definiert. Sie kann auf null bei $t=0$ gesetzt werden. Bei $t=0$ gilt:
 
-\begin{equation}
-\begin{split}
+\begin{align}
 a^+|n\rangle &= \sqrt{e_n+1}|n+1\rangle \\
 a|n\rangle &= \sqrt{e_n}|n-1\rangle
-\end{split}
-\end{equation}
+\end{align}
 
 Da die Energie nicht negativ sein kann gilt:
 \begin{equation}
@@ -291,12 +283,10 @@ $n_{k,\alpha}$ ist dabei die Besetzungszahl f"ur den Zustand $(k,\alpha)$. Der V
 
 Mit dem Aufsteige-Operator k"onnen nun Photonen hinzugef"ugt werden:
 
-\begin{equation}
-\begin{split}
+\begin{align}
 a^+_{k,\alpha}|0\rangle & \quad \text{ein Photon}\\
-\left(1/\sqrt{2}\right)a^+_{k_1,\alpha_1}a^+_{k_2,\alpha_2}|0\rangle & \quad \text{zwei Photonen}\\
-\end{split}
-\end{equation}
+\left(1/\sqrt{2}\right)a^+_{k_1,\alpha_1}a^+_{k_2,\alpha_2}|0\rangle & \quad \text{zwei Photonen}
+\end{align}
 
 oder allgemein:
 
@@ -312,12 +302,10 @@ A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \epsil
 \end{equation}
 
 Durch die Definition zeitabh"angiger Operatoren kann dies umgeschrieben werden:
-\begin{equation}
-\begin{split}
+\begin{align}
 a_{k,\alpha}(t) &= a_{k,\alpha} e^{-i \omega_k t} \\
 a^+_{k,\alpha}(t) &= a^+_{k,\alpha} e^{i \omega_k t}
-\end{split}
-\end{equation}
+\end{align}
 
 \begin{equation}
 A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k}}\left[a_{k,\alpha}(t) u_{k,\alpha}(x) + a^+_{k,\alpha}(t) \bar{u}_{k,\alpha}(x) \right]
