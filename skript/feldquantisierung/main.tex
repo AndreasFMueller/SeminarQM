@@ -6,6 +6,12 @@
 \printbibliography[heading=subbibliography]
 \end{refsection}
 
+\section{Einleitung}
+
+Ziel dieses Kapitels ist, auf Basis der Maxwell-Gleichungen, der Fourier-Theorie und einer Quantisierung analog des harmonischen Oszillators (Kapitel \ref{chapter:harmonischeroszillator}) die Feldquantisierung f"ur elektromagnetische Wellen her zu leiten.
+
+Auf Grund der Quantisierung werden somit aus elektromagnetischen Wellen Energiequanten, genannt Photonen, die mit Elektronen wechselwirken k"onnen. Die Form der Wechselwirkung l"asst unter anderem R"uckschl"usse zu, die praktisch in Lasern Verwendung finden.
+
 Die Ausf"uhrungen in diesem Kapitel basieren gr"osstenteils auf: \cite{fq:aqm}
 
 \section{Maxwell-Gleichungen und elektromagnetische Wellen}
@@ -174,8 +180,13 @@ $Q_{k,\alpha}$ und $P_{k,\alpha}$ k"onnen nun als Koordinaten und Impulse der ei
 
 \section{Quantisierung des Wellenfeldes}
 
-\subsection{Vertauschungsrelationen sowie Auf- und Absteige Operatoren}
-Wie beim harmonischen Oszillator (Kapitel \ref{chapter:harmonischeroszillator}) k"onnen $Q_{k,\alpha}$ und $P_{k,\alpha}$ nun als Operatoren aufgefasst werden. Die Vertauschungsrelationen werden dabei zu:
+\subsection{Einleitung}
+Die im vorigen Kapitel hergeleitete Darstellung des Wellenfeldes als einzelne unabh"angige Oszillatoren l"asst die Interpretation dieser als harmonische Oszillatoren, wie in Kapitel \ref{chapter:harmonischeroszillator} beschrieben, zu. Dadurch ist eine analoge Quantisierung möglich, die es erlaubt, Wechselwirkungen zwischen Photonen und Elektronen zu beschreiben.
+
+Analog zum harmonischen Oszillator werden zuerst die Vertauschungsrelationen und die Auf- und Absteige-Operatoren hergeleitet und dann die Wirkung auf die Zustandsvektoren berechnet. Dies ist praktisch identisch zum harmonischen Oszillator, nur geht es hier um elektromagnetische Wellen und nicht um Elektronen. Mit mehreren Photonen entsteht dadurch aus einem Wellenfeld ein Photonenfeld.
+
+\subsection{Vertauschungsrelationen sowie Auf- und Absteige-Operatoren}
+Wie beim harmonischen Oszillator k"onnen $Q_{k,\alpha}$ und $P_{k,\alpha}$ nun als Operatoren aufgefasst werden. Die Vertauschungsrelationen werden dabei zu:
 \begin{align*}
 [Q_{k,\alpha}, P_{k',\alpha'}] &= i \hbar \delta_{kk'}\delta_{aa'} \\
 [Q_{k,\alpha}, Q_{k',\alpha'}] &= 0 \\
@@ -228,7 +239,7 @@ Na^+|n\rangle &= (a^+N + a^+)|n\rangle = (e_n + 1)a^+|n\rangle \\
 Na|n\rangle &= (aN - a)|n\rangle = (e_n - 1)a|n\rangle
 \end{align*}
 
-Die Auf- und Absteige Operatoren f"ugen dem quantisiertem Feld Energiequanten hinzu oder entfernen solche. Diese Energiequanten werden auch Photonen genannt. 
+Die Auf- und Absteige Operatoren f"ugen dem quantisiertem Feld Energiequanten hinzu oder entfernen solche.
 
 Wiederum m"ussen die neuen Eigenvektoren normalisiert werden. Daf"ur werden die Konstanten $c_+$ und $c_-$ eingef"uhrt.
 \begin{align*}
@@ -267,6 +278,8 @@ a|n\rangle = \sqrt{e_n}|n-1\rangle  \;, \quad \hdots \; , \quad a|2\rangle = \sq
 Hier ist der kleinst m"ogliche Eigenwert $e_n = 0$. Dem aufmerksamen Beobachter ist aufgefallen, dass der kleinste Eigenwert bei harmonischen Oszillator $e_n = \frac{1}{2}$ ist. Dies r"uhrt daher, dass wie hier f"ur $N$ Eigenwerte gesucht haben, im Kapitel \ref{chapter:harmonischeroszillator} aber f"ur ${\cal H}$. Die Korrektheit der Formeln gilt f"ur beide Operatoren. Der Grund liegt darin, dass der Nullpunkt der Energieskala nicht festgelegt ist und f"ur die Feldquantisierung keine Rolle spielt. Es gibt Anwendungen wie bei der Gravitation, wo der Nullpunkt nicht frei w"ahlbar ist. Wo dieser genau liegt ist stand der aktuellen Forschung.
 
 \subsection{Photonenfeld}
+
+Die mit den Auf- und Absteige-Operatoren hinzugefügten Energiequanten entsprechen den von Einstein in einer Publikation zum photoelektrischen Effekt vorausgesagten Energiequanten und werden Photonen genannt.
 
 Die im vorigen Kapitel hergeleitete Algebra kann nun auf ein Feld von Photonen, in dem die Anzahl Photonen mit bestimmter Polarisation ($\alpha$) und Impuls (Wellenl"ange $|k|$ sowie Ausbreitungsrichtung $k$) vergr"ossert oder verkleinert wird, angewendet werden.
 
@@ -340,6 +353,8 @@ H |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle = \sum_i \hbar \omega_k 
 
 \section{Wechselwirkung zwischen Photonen und Atomen}
 
+\subsection{Hamiltonoperator}
+
 Der allgemeine Hamiltonoperator ist:
 \begin{equation*}
 H = \frac{1}{2m}p^2 + V(x)
@@ -359,17 +374,19 @@ Zudem leitet auch der Spin einen (wenn auch oft vernachl"assigbar kleinen) Beitr
 H^{(spin)} = - \frac{e \hbar}{2m}\sigma \left[\nabla \times A(x, t)\right] \approx 0
 \end{equation*}
 
-$p$ ist ein Operator mit Ableitung nach dem Ort. Da $\nabla \cdot A = 0$ gilt, vertauschen $p \cdot A(x, t)$. Es interessieren uns später nur die Interaktionen mit einen Anfangszustand $X$ und Endzustand $Y$. Also der Form $\langle Y|H|X \rangle$. Da der Anfangszustand und der Endzustand orthogonal sind, gilt $\langle Y|p \cdot p|X \rangle = 0$ sowie $\langle Y|V(x)|X \rangle = 0$. Dadurch wird der Interaction-Hamilton zu:
+$p$ ist ein Operator mit Ableitung nach dem Ort. Da $\nabla \cdot A = 0$ gilt, vertauschen $p \cdot A(x, t)$. Es interessieren uns sp"ater nur die Interaktionen mit einen Anfangszustand $X$ und Endzustand $Y$. Also der Form $\langle Y|H|X \rangle$. Da der Anfangszustand und der Endzustand orthogonal sind, gilt $\langle Y|p \cdot p|X \rangle = 0$ sowie $\langle Y|V(x)|X \rangle = 0$. Dadurch wird der Interaction-Hamilton zu:
 
 \begin{equation*}
 H_{int} = -\frac{e}{m} A(x, t) \cdot p + \frac{e^2}{2m}A(x, t) \cdot A(x, t)
 \end{equation*}
 
-Dieser Hamiltonoperator wirkt nun nicht nur auf dem Zustand des Elektrons sondern auch auf den Zust"anden der Photonen und beschreibt die Wechselwirkung von Photonen und Elektronen. Man spricht hier von dem Anfangszustand $X$, dem Endzustand $Y$.
+\subsection{Wechselwirkung zwischen Photonen und Atomen}
 
-Nehmen wir an, ein Atom absorbiert ein Photon vom Zustand $(k,\alpha)$ und wechselt dabei vom Zustand $X$ in den Zustand $Y$. Der Einfachheit halber ber"ucksichtigen wir nur Photonen im Zustand $(k,\alpha)$. Der Quadratische Term $A \cdot A$ spielt hier keine Rolle, da dieser Term nur Zustands"anderungen von $0$ oder $\pm 2$ Photonen erzeugt. Die Beschreibung der Zustands"anderung ist:
+Wir wollen nun die Wechselwirkung zwischen Atomelektronen und Photonen herleiten. Dieser Hamiltonoperator wirkt nun nicht nur auf dem Zustand des Elektrons sondern auch auf den Zust"anden der Photonen und beschreibt die Wechselwirkung von Photonen und Elektronen. Man spricht hier von dem Anfangszustand $X$, dem Endzustand $Y$.
 
-\begin{equation*}
+Nehmen wir an, ein Elektron absorbiert ein Photon vom Zustand $(k,\alpha)$ und wechselt dabei vom Zustand $X$ in den Zustand $Y$. Der Einfachheit halber ber"ucksichtigen wir nur Photonen im Zustand $(k,\alpha)$. Der Quadratische Term $A \cdot A$ spielt hier keine Rolle, da dieser Term nur Zustands"anderungen von $0$ oder $\pm 2$ Photonen erzeugt. Die Beschreibung der Zustands"anderung ist:
+
+\begin{equation} \label{fq:absorbtion}
 \begin{split}
 \langle Y; n_{k,\alpha} - 1 &| H_{int} | X; n_{k,\alpha} \rangle \\
 &= -\frac{e}{m} \left\langle Y; n_{k,\alpha} - 1 \left| 
@@ -379,10 +396,10 @@ Nehmen wir an, ein Atom absorbiert ein Photon vom Zustand $(k,\alpha)$ und wechs
 e^{ik \cdot x} \epsilon^{(\alpha)} \cdot p_i 
 \right| X \right\rangle e^{-i\omega_k t}
 \end{split}
-\end{equation*}
+\end{equation}
 
 Der Emissionsprozess wird beschrieben durch:
-\begin{equation*}
+\begin{equation} \label{fq:emission}
 \begin{split}
 \langle Y; n_{k,\alpha} + 1 &| H_{int} | X; n_{k,\alpha} \rangle \\
 &= -\frac{e}{m} \left\langle Y; n_{k,\alpha} + 1 \left| 
@@ -392,8 +409,10 @@ Der Emissionsprozess wird beschrieben durch:
 e^{-ik \cdot x} \epsilon^{(\alpha)} \cdot p_i 
 \right| X \right\rangle e^{i\omega_k t}
 \end{split}
-\end{equation*}
+\end{equation}
 
-Hierbei ist interessant, dass die Wahrscheinlichkeit f"ur die Emission bei nicht vorhandener elektromagnetischer Strahlung ($n_{k,\alpha} = 0$) gr"osser als null ist, da $\sqrt{n_{k,\alpha}+1} > 0$. Dieses Ph"anomen wird spontane Emission genannt. Bei st"arkerer Strahlung ist die Wahrscheinlichkeit einer Emission ungef"ahr proportional zu der Anzahl Photonen und wird stimulierte Emission genannt.
+\subsection{Emission und Absorption}
+Beim betrachten von \ref{fq:emission} f"allt auf, dass die Wahrscheinlichkeit f"ur die Emission bei nicht vorhandener elektromagnetischer Strahlung ($n_{k,\alpha} = 0$) gr"osser als null ist, da $\sqrt{n_{k,\alpha}+1} > 0$. Dieses Ph"anomen wird spontane Emission genannt.
 
-Wenn das Feld gen"ugend stark ist ($n_{k,\alpha} >> 1$) ist die Absorptions- sowie Emissionswahrscheinlichkeit gleich da $\sqrt{n_{k,\alpha}+1} \approx \sqrt{n_{k,\alpha}}$. Damit ist auf einfache Weise bewiesen, dass bei den Einsteinkoeffizienten \cite{fq:einstein_koeff} $B_{12} = B_{21}$ gilt sowie dass eine spontane Emission ($A_{21} > 0$) existiert.
+Bei st"arkerer Strahlung ist die Wahrscheinlichkeit einer Emission ungef"ahr proportional zu Wurzel der Anzahl Photonen und wird stimulierte Emission genannt.
+Wenn das Feld gen"ugend stark ist ($n_{k,\alpha} >> 1$) ist die Absorptions- sowie Emissionswahrscheinlichkeit gleich, da $\sqrt{n_{k,\alpha}+1} \approx \sqrt{n_{k,\alpha}}$. Damit ist auf einfache Weise bewiesen, dass bei den Einsteinkoeffizienten \cite{fq:einstein_koeff} $B_{12} = B_{21}$ gilt sowie dass eine spontane Emission ($A_{21} > 0$) existiert.
