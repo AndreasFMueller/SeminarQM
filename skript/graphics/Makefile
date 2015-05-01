@@ -13,7 +13,7 @@ komplex_FILES = komplex-1.pdf
 komplex: $(komplex_FILES)
 
 fest_FILES = fest-1.pdf fest-2.pdf fest-3.pdf fest-4.pdf fest-5.pdf \
-	fest-6.pdf fest-7.pdf fest-8.pdf fest-9.pdf
+	fest-6.pdf fest-7.pdf fest-8.pdf fest-9.pdf fest-10.pdf fest-11.pdf
 fest: $(fest_FILES)
 
 linear_FILES = linear-1.pdf
@@ -162,7 +162,7 @@ $(linear_FILES):	linear.mp
 
 $(fest_FILES):	fest.mp
 	TEX=latex mpost fest.mp
-	for i in 1 2 3 4 5 6 7 8 9; \
+	for i in 1 2 3 4 5 6 7 8 9 10 11; \
 	do \
 		mptopdf fest.$${i}; \
 	done

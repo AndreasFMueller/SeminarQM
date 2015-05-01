@@ -4,7 +4,7 @@
 \chapterauthor{Michael Cerny und Stefan Schindler}
 
 
-In diesem Kapitel erweitern wir das Beispiel des Potentialkastenss 
+In diesem Kapitel erweitern wir das Beispiel des Potentialkastens 
 (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten})
 um eine St\"orung.
 
@@ -12,11 +12,11 @@ um eine St\"orung.
 Grundsätzlich wir mit der St\"orungstheorie ein einfaches Modell-System um eine St\"orung
 erg"antzt, statt von Anfang an mit einem komplexen Modell zu rechnen.
 
-Wir erg\"anzen das Modell des einfachen Systems $\hat{H_0}$
+Wir erg\"anzen das Modell des einfachen Systems $\hat H_0$
 (Siehe Abbildung \ref{skript:potentialkasten})
-um $\hat{H_1}$, welches das angelegte Feld darstellt.
+um $\hat H_1$, welches das angelegte Feld darstellt.
 \[
-\hat{H} = \varepsilon^0 \hat{H_0} + \varepsilon^1 \hat{H_1}
+\hat{H} = \varepsilon^0 \hat H_0 + \varepsilon^1 \hat H_1
 \]
 
 
@@ -26,9 +26,9 @@ um $\hat{H_1}$, welches das angelegte Feld darstellt.
 \section{ Beispiele }
 
 \subsection{ Potentialkasten mit eFeld }
-Als $\hat{H_0}$ nehmen wir
+Als $\hat H_0$ nehmen wir
 \[
-  \hat{H_0} = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x)
+  \hat H_0 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x)
 \]
 f\"ur das Potential $V_0(x)$ gilt
 \[
@@ -38,9 +38,9 @@ f\"ur das Potential $V_0(x)$ gilt
   \end{cases}
 \]
 
-F\"ur $\hat{H_1}$ gilt
+F\"ur $\hat H_1$ gilt
 \[
-  \hat{H_1} = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_1(x)
+  \hat H_1 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_1(x)
 \]
 
 f\"ur das Potential $V_1(x)$ gilt
@@ -57,7 +57,7 @@ Die Ausgangsgleichung f\"ur $\hat{H}$ lautet
 \subsubsection{ Modell der St\"orung }
 In diesem Modell wollen wir den Grundzustand mit einem elektrischen Feld st\"oren.
 
-Diese St\"orung heisst in der 1. N\"aherung $\hat{H_1}$
+Diese St\"orung heisst in der 1. N\"aherung $\hat H_1$
 
 Die gesammte St\"orung wird \"uber den Parameter $\varepsilon$ gesteuert.
 
@@ -89,6 +89,23 @@ $x_\varepsilon = x_0+x_1\varepsilon+x_2\varepsilon^2+\dots$
 \item Setze den L"osungsansatz in die Gleichung $F_\varepsilon(x)=0$ ein
 und ermittle die Koeffizienten $x_1,x_2,\dots$ durch Koeffizientenvergleich.
 \end{enumerate}
+
+\begin{figure}
+ \centering
+ \includegraphics[width=12cm]{efeld/Psi_ungestoert.pdf}
+ \caption{$\psi$ ungest\"ort}
+ \label{abb:efeld_psi_ungestoert}
+\end{figure}
+
+\begin{figure}
+ \centering
+ \includegraphics[width=12cm]{efeld/Psi_gestoert.pdf}
+ \caption{$\psi$ gest\"ort}
+ \label{abb:efeld_psi_gestoert}
+\end{figure}
+
+
+
 
 \subsection{ 2. N\"aherung (evt. nach Vortrag) }
 

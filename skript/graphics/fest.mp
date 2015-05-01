@@ -569,4 +569,71 @@ label.rt(btex $E$ etex, (0,3.7*unit));
 
 endfig;
 
+%
+% Zustandsdichte eines Bandes, dreidimensionaler Fall
+%
+beginfig(10)
+
+numeric a;
+a := 16;
+def band(expr Eu) =
+	path p;
+	p := (Eu,0){dir 90}..(Eu + 1, a);
+	for x = Eu + 2 step 1 until Eu + 30:
+		p := p--(x, a * sqrt(x - Eu));
+	endfor;
+	p := p--(Eu + 31, a * sqrt(Eu + 31 - Eu));
+	p := p{dir 45}..(Eu + 50,a * 6.2);
+	p := p--(Eu + 50,a * 6.2);
+	p := p..{dir -90}(Eu + 60,0);
+	pickup pencircle scaled 1pt;
+	fill p--cycle withcolor (0.9,0.9,0.9);
+	draw p;
+enddef;
+
+band(30);
+band(120);
+
+label.bot(btex $E_{u_1}$ etex, (30,-2));
+label.bot(btex $E_{u_2}$ etex, (120,-2));
+
+pickup pencircle scaled 1pt;
+drawarrow (-5,0)--(205,0);
+drawarrow (0,-5)--(0,145);
+label.lft(btex $Z$ etex, (0,145));
+label.top(btex $E$ etex, (205,0));
+
+endfig;
+
+%
+% Zustandsdichte eines Bandes, eindimensionaler Fall
+% 
+beginfig(11)
+
+numeric a;
+a := 16;
+def band(expr Eu) =
+	path p;
+	p := (Eu,0)--(Eu, 110)--(Eu+30,110)--(Eu+30,0);
+	pickup pencircle scaled 1pt;
+	fill p--cycle withcolor (0.9,0.9,0.9);
+	draw p;
+enddef;
+
+band(20);
+band(90);
+band(140);
+
+label.bot(btex $E_{u_1}$ etex, (20,-2));
+label.bot(btex $E_{u_2}$ etex, (90,-2));
+label.bot(btex $E_{u_3}$ etex, (140,-2));
+
+pickup pencircle scaled 1pt;
+drawarrow (-5,0)--(205,0);
+drawarrow (0,-5)--(0,145);
+label.lft(btex $Z$ etex, (0,145));
+label.top(btex $E$ etex, (205,0));
+
+endfig;
+
 end
