@@ -50,29 +50,29 @@ Durch Einsetzen erh"alt man die Gleichung f"ur E:
 \begin{split}
 \nabla\times E + \frac{\partial B }{\partial t} &= 0 \\
 \nabla\times E + \frac{\partial \nabla\times A }{\partial t} &= 0 \\
-\rightarrow E &= -\dfrac{\partial A}{\partial t} - \nabla \phi
+\rightarrow E &= -\dfrac{\partial A}{\partial t} - \nabla \varphi
 \end{split}
 \end{equation*}
 
-$\nabla \phi$ kann als Integrationskonstante angesehen werden und $\phi$ entspricht dem skalaren Potential des Feldes.
+$\nabla \varphi$ kann als Integrationskonstante angesehen werden und $\varphi$ entspricht dem skalaren Potential des Feldes.
 
 Durch weiteres Einsetzen k"onnen die vier Maxwell-Gleichungen in zwei Gleichungen umgeschrieben werden:
 \begin{align} 
  \label{fq:a_coupled_a}
- \nabla^2 \phi + \dfrac{\partial \nabla A}{\partial t} &= -\rho \\
+ \nabla^2 \varphi + \dfrac{\partial \nabla A}{\partial t} &= -\rho \\
  \label{fq:a_coupled_b}
- \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} - \nabla \left( \nabla \cdot A + \frac{1}{c^2} \frac{\partial \phi }{\partial t} \right) &= - \frac{1}{c} j
+ \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} - \nabla \left( \nabla \cdot A + \frac{1}{c^2} \frac{\partial \varphi }{\partial t} \right) &= - \frac{1}{c} j
 \end{align}
 
-Mittels der Lorenz-Eichung (Siehe Kapitel \ref{section:eichtransformation}) kann $\phi$ so gew"ahlt werden, dass:
+Mittels der Lorenz-Eichung (Siehe Kapitel \ref{section:eichtransformation}) kann $\varphi$ so gew"ahlt werden, dass:
 
 \begin{equation} \label{fq:lorenz_eq}
-\nabla \cdot A + \frac{1}{c^2} \frac{\partial \phi }{\partial t} = 0
+\nabla \cdot A + \frac{1}{c^2} \frac{\partial \varphi }{\partial t} = 0
 \end{equation}
 
 Dadurch werden die zwei gekoppelten Gleichungen \ref{fq:a_coupled_a} und \ref{fq:a_coupled_b} entkoppelt und es gilt:
 \begin{align*}
-\nabla^2 \phi - \frac{1}{c^2} \dfrac{\partial^2 \phi}{\partial t^2} &= -\rho \\
+\nabla^2 \varphi - \frac{1}{c^2} \dfrac{\partial^2 \varphi}{\partial t^2} &= -\rho \\
 \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} &= - \frac{1}{c} j
 \end{align*}
 
@@ -86,7 +86,7 @@ Dadurch vereinfachen sich die gekoppelten Differentialgleichung zu einer Differe
 L"osungen dieser Gleichung f"ur periodische Randbedingungen und $t=0$ in einer Box mit Seitenl"ange $L = V^{1/3}$ sind durch die Fourier-Reihe gegeben \cite{fq:em_wave_eq}:
 
 \begin{equation} \label{fq:wave_eq}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c_{k,\alpha} \epsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + \bar{c}_{k,\alpha} \epsilon^{(\alpha)} e^{-i(k \cdot x - \omega_k t)}\right)
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c_{k,\alpha} \varepsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + \bar{c}_{k,\alpha} \varepsilon^{(\alpha)} e^{-i(k \cdot x - \omega_k t)}\right)
 \end{equation}
 
 Dabei ist:
@@ -95,7 +95,7 @@ Dabei ist:
 \lambda = \frac{2 \pi}{|k|}
 \end{align*}
 
-oder durch setzen von $c_{k,\alpha}(t) = c_{k,\alpha} e^{-i \omega_k t}$ sowie $u_{k,\alpha}(x) = \epsilon^{(\alpha)} e^{ik \cdot x}$:
+oder durch setzen von $c_{k,\alpha}(t) = c_{k,\alpha} e^{-i \omega_k t}$ sowie $u_{k,\alpha}(x) = \varepsilon^{(\alpha)} e^{ik \cdot x}$:
 \begin{equation*}
 A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c_{k,\alpha}(t)u_{k,\alpha}(x) + \bar{c}_{k,\alpha}(t) \bar{u}_{k,\alpha}(x) \right)
 \end{equation*}
@@ -106,34 +106,34 @@ $A(x,t)$ wird durch die konjugiert komplexe Wahl der Koeffizienten f"ur alle $c_
 \end{equation*}
 %=a \cos k \cdot x + ib \cos k \cdot x + ia \sin k \cdot x - b \sin k \cdot x + a \cos k \cdot x - ib \cos k \cdot x - ia \sin k \cdot x - b \sin k \cdot x
 
-$k$ ist der Ausbreitungsvektor der Welle und zeigt in die Ausbreitungsrichtung und $\epsilon^{(\alpha)}$ ist die Polarisation. 
+$k$ ist der Ausbreitungsvektor der Welle und zeigt in die Ausbreitungsrichtung und $\varepsilon^{(\alpha)}$ ist die Polarisation. 
 
 \begin{equation*}
-B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k ik \times \epsilon^{(\alpha)} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
+B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k ik \times \varepsilon^{(\alpha)} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
 \end{equation*}
 
 \begin{equation*}
-E = - \frac{\partial A}{\partial t} = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \epsilon^{(\alpha)} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
+E = - \frac{\partial A}{\partial t} = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \varepsilon^{(\alpha)} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
 \end{equation*}
 
 Aus der Elektrotechnik ist bekannt, dass $B \cdot E = 0$ gilt:
 
 \begin{equation*}
-B \cdot E = \frac{1}{V} \sum_{\alpha=1,2}   \sum_k -\omega_k \underbrace{k \times  \epsilon^{(\alpha)} \cdot \epsilon^{(\alpha)}}_{=0} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)}\right)^2 = 0
+B \cdot E = \frac{1}{V} \sum_{\alpha=1,2}   \sum_k -\omega_k \underbrace{k \times  \varepsilon^{(\alpha)} \cdot \varepsilon^{(\alpha)}}_{=0} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)}\right)^2 = 0
 \end{equation*}
 
-Dies wird erreicht, in dem vorausgesetzt wird, dass $(\epsilon^{(1)}, \epsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
+Dies wird erreicht, in dem vorausgesetzt wird, dass $(\varepsilon^{(1)}, \varepsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
 
-Da $\epsilon^{(\alpha)}$ und $k$ orthogonal sind gilt dabei auch automatisch:
+Da $\varepsilon^{(\alpha)}$ und $k$ orthogonal sind gilt dabei auch automatisch:
 
 \begin{equation*}
-\nabla \cdot A = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(i c_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{i (k \cdot x - \omega_k t)} - i \bar{c}_{k,\alpha} \underbrace{\epsilon^{(\alpha)} k}_{=0} e^{-i(k \cdot x - \omega_k t)}\right) = 0
+\nabla \cdot A = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(i c_{k,\alpha} \underbrace{\varepsilon^{(\alpha)} k}_{=0} e^{i (k \cdot x - \omega_k t)} - i \bar{c}_{k,\alpha} \underbrace{\varepsilon^{(\alpha)} k}_{=0} e^{-i(k \cdot x - \omega_k t)}\right) = 0
 \end{equation*}
 
 Aufgrund von \ref{fq:lorenz_eq} gilt dadurch:
 
 \begin{equation*}
-\frac{\partial \phi }{\partial t} = 0
+\frac{\partial \varphi }{\partial t} = 0
 \end{equation*}
 
 Weiterhin gilt wegen der Orthogonalit"at der komplexen Exponentialfunktion auch:
@@ -203,9 +203,9 @@ N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha} = \frac{1}{2 \hbar \omega_k} \left(P
 \end{split}
 \end{align*}
 
-Ein Vergleich mit \ref{fq:hamilton} sowie $c\sqrt{\mu_0}=1/\sqrt{\epsilon_0}$ liefert:
+Ein Vergleich mit \ref{fq:hamilton} sowie $c\sqrt{\mu_0}=1/\sqrt{\varepsilon_0}$ liefert:
 \begin{equation} \label{fq:opp_fourier}
- c_{k,\alpha} \rightarrow \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k}} \, a_{k,\alpha} \quad \bar{c}_{k,\alpha} \rightarrow \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k}} \, a^+_{k,\alpha}
+ c_{k,\alpha} \rightarrow \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} \, a_{k,\alpha} \quad \bar{c}_{k,\alpha} \rightarrow \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} \, a^+_{k,\alpha}
 \end{equation}
 Somit entsprechen diese Operatoren den Fourier-Koeffizienten.
 
@@ -250,29 +250,29 @@ a|n\rangle &= c_-|n-1\rangle
 $c_\pm$ wird folgendermassen berechnet:
 \begin{align*}
 \begin{split}
-	|c_+|^2 &= |c_+|^2 \langle n+1 | n+1 \rangle = ( a^+ \langle n |) \; a^+ | n \rangle \\
-		&= \langle n | aa^+ |n \rangle = \langle n | N + [a,a^+] |n \rangle \\
+	|c_+|^2 &= |c_+|^2 \langle n+1 \, | \, n+1 \rangle = ( a^+ \langle n |\,) \; a^+ \,| n \rangle \\
+		&= \langle n |\, a \, a^+ \,|n \rangle = \langle n |\, N + [a,a^+] \,|n \rangle \\
 		&= e_n+1
 \end{split}\\
-	|c_-|^2 &= 	( a \langle n |) \; a | n \rangle = \langle n | a^+a | n \rangle = e_n
+	|c_-|^2 &= 	( a \langle n |\,) \; a \,| n \rangle = \langle n |\, a^+ a \,| n \rangle = e_n
 \end{align*}
 
 Die Phase von $c_{\pm}$ ist nicht definiert. Sie kann auf null bei $t=0$ gesetzt werden. Bei $t=0$ gilt:
 
 \begin{align*}
-a^+|n\rangle &= \sqrt{e_n+1}|n+1\rangle \\
-a|n\rangle &= \sqrt{e_n}|n-1\rangle
+a^+\,|n\rangle &= \sqrt{e_n+1}\,|n+1\rangle \\
+a\,|n\rangle &= \sqrt{e_n}\,|n-1\rangle
 \end{align*}
 
 Da die Energie nicht negativ sein kann gilt:
 \begin{equation*}
-e_n = \langle n | N |n \rangle = \langle n | a^+a |n \rangle \geq 0
+e_n = \langle n |\, N \,|n \rangle = \langle n |\, a^+a \,|n \rangle \geq 0
 \end{equation*}
 
 Hier muss $n$ ein Integer sein, damit die absteigende Folge bei null stehen bleibt. Die absteigende Folge der Zust"ande ist:
 
 \begin{equation*}
-a|n\rangle = \sqrt{e_n}|n-1\rangle  \;, \quad \hdots \; , \quad a|2\rangle = \sqrt{2}|1\rangle \; , \quad a|1\rangle = 0|0\rangle \;, \quad a|0\rangle = 0|0\rangle
+a\,|n\rangle = \sqrt{e_n}\,|n-1\rangle  \;, \quad \hdots \; , \quad a\,|2\rangle = \sqrt{2}\,|1\rangle \; , \quad a\,|1\rangle = 0\,|0\rangle \;, \quad a\,|0\rangle = 0\,|0\rangle
 \end{equation*}
 
 Hier ist der kleinst m"ogliche Eigenwert $e_n = 0$. Dem aufmerksamen Beobachter ist aufgefallen, dass der kleinste Eigenwert bei harmonischen Oszillator $e_n = \frac{1}{2}$ ist. Dies r"uhrt daher, dass wie hier f"ur $N$ Eigenwerte gesucht haben, im Kapitel \ref{chapter:harmonischeroszillator} aber f"ur ${\cal H}$. Die Korrektheit der Formeln gilt f"ur beide Operatoren. Der Grund liegt darin, dass der Nullpunkt der Energieskala nicht festgelegt ist und f"ur die Feldquantisierung keine Rolle spielt. Es gibt Anwendungen wie bei der Gravitation, wo der Nullpunkt nicht frei w"ahlbar ist. Wo dieser genau liegt ist stand der aktuellen Forschung.
@@ -311,7 +311,7 @@ oder allgemein:
 Die Fourier-Koeffizienten im Strahlungsfeld werden mittels den Korrespondenzen \ref{fq:opp_fourier} durch Operatoren ersetzt um das quantisierte Feld zu erhalten:
 
 \begin{equation*}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k}} \left[a_{k,\alpha} \epsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + a^+_{k,\alpha} \epsilon^{(\alpha)} e^{-i (k \cdot x - \omega_k t)}\right]
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} \left[a_{k,\alpha} \varepsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + a^+_{k,\alpha} \varepsilon^{(\alpha)} e^{-i (k \cdot x - \omega_k t)}\right]
 \end{equation*}
 
 Durch die Definition zeitabh"angiger Operatoren kann dies umgeschrieben werden:
@@ -321,7 +321,7 @@ a^+_{k,\alpha}(t) &= a^+_{k,\alpha} e^{i \omega_k t}
 \end{align*}
 
 \begin{equation*}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k}}\left[a_{k,\alpha}(t) u_{k,\alpha}(x) + a^+_{k,\alpha}(t) \bar{u}_{k,\alpha}(x) \right]
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}}\left[a_{k,\alpha}(t) u_{k,\alpha}(x) + a^+_{k,\alpha}(t) \bar{u}_{k,\alpha}(x) \right]
 \end{equation*}
 
 Auch wenn diese Gleichung mit \ref{fq:wave_eq} verwandt ist, ist die Bedeutung sehr verschieden. \ref{fq:wave_eq} ist eine klassische Funktion in $x$ und $t$. Diese Gleichung ist nun ein Operator aus Linearkombinationen von Auf- und Absteigeoperatoren f"ur jeden Punkt im Raum. Ein solcher Operator heisst Feldoperator oder quantisiertes Feld.
@@ -374,7 +374,7 @@ Zudem leitet auch der Spin einen (wenn auch oft vernachl"assigbar kleinen) Beitr
 H^{(spin)} = - \frac{e \hbar}{2m}\sigma \left[\nabla \times A(x, t)\right] \approx 0
 \end{equation*}
 
-$p$ ist ein Operator mit Ableitung nach dem Ort. Da $\nabla \cdot A = 0$ gilt, vertauschen $p \cdot A(x, t)$. Es interessieren uns sp"ater nur die Interaktionen mit einen Anfangszustand $X$ und Endzustand $Y$. Also der Form $\langle Y|H|X \rangle$. Da der Anfangszustand und der Endzustand orthogonal sind, gilt $\langle Y|p \cdot p|X \rangle = 0$ sowie $\langle Y|V(x)|X \rangle = 0$. Dadurch wird der Interaction-Hamilton zu:
+$p$ ist ein Operator mit Ableitung nach dem Ort. Da $\nabla \cdot A = 0$ gilt, vertauschen $p \cdot A(x, t)$. Es interessieren uns sp"ater nur die Interaktionen mit einen Anfangszustand $X$ und Endzustand $Y$. Also der Form $\langle Y| \, H \, |X \rangle$. Da der Anfangszustand und der Endzustand orthogonal sind, gilt $\langle Y| \, p \cdot p \, |X \rangle = 0$ sowie $\langle Y| \, V(x) \, |X \rangle = 0$. Dadurch wird der Interaction-Hamilton zu:
 
 \begin{equation*}
 H_{int} = -\frac{e}{m} A(x, t) \cdot p + \frac{e^2}{2m}A(x, t) \cdot A(x, t)
@@ -388,12 +388,12 @@ Nehmen wir an, ein Elektron absorbiert ein Photon vom Zustand $(k,\alpha)$ und w
 
 \begin{equation} \label{fq:absorbtion}
 \begin{split}
-\langle Y; n_{k,\alpha} - 1 &| H_{int} | X; n_{k,\alpha} \rangle \\
+\langle Y; n_{k,\alpha} - 1 &|\, H_{int} \,| X; n_{k,\alpha} \rangle \\
 &= -\frac{e}{m} \left\langle Y; n_{k,\alpha} - 1 \left| 
-\frac{1}{\sqrt{V}} \sum_i \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k}}a_{k,\alpha} \epsilon^{(\alpha)} e^{i(k \cdot x-\omega_k t)} \cdot p_i 
+ \, \frac{1}{\sqrt{V}} \sum_i \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}}a_{k,\alpha} \varepsilon^{(\alpha)} e^{i(k \cdot x-\omega_k t)} \cdot p_i \,
 \right| X; n_{k,\alpha} \right\rangle\\
-&= -\frac{e}{m} \sqrt{\frac{n_{k,\alpha} \hbar}{2 \epsilon_0 \omega_k V}} \sum_i \left\langle Y \left| 
-e^{ik \cdot x} \epsilon^{(\alpha)} \cdot p_i 
+&= -\frac{e}{m} \sqrt{\frac{n_{k,\alpha} \hbar}{2 \varepsilon_0 \omega_k V}} \sum_i \left\langle Y \left|
+\, e^{ik \cdot x} \varepsilon^{(\alpha)} \cdot p_i \,
 \right| X \right\rangle e^{-i\omega_k t}
 \end{split}
 \end{equation}
@@ -401,12 +401,12 @@ e^{ik \cdot x} \epsilon^{(\alpha)} \cdot p_i
 Der Emissionsprozess wird beschrieben durch:
 \begin{equation} \label{fq:emission}
 \begin{split}
-\langle Y; n_{k,\alpha} + 1 &| H_{int} | X; n_{k,\alpha} \rangle \\
+\langle Y; n_{k,\alpha} + 1 &|\, H_{int} \,| X; n_{k,\alpha} \rangle \\
 &= -\frac{e}{m} \left\langle Y; n_{k,\alpha} + 1 \left| 
-\frac{1}{\sqrt{V}} \sum_i \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k}}a^+_{k,\alpha} \epsilon^{(\alpha)} e^{-i(k \cdot x-\omega_k t)} \cdot p_i 
+\, \frac{1}{\sqrt{V}} \sum_i \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}}a^+_{k,\alpha} \varepsilon^{(\alpha)} e^{-i(k \cdot x-\omega_k t)} \cdot p_i \,
 \right| X; n_{k,\alpha} \right\rangle\\
-&= -\frac{e}{m} \sqrt{\frac{ (n_{k,\alpha}+1) \hbar}{2 \epsilon_0 \omega_k V}} \sum_i \left\langle Y \left| 
-e^{-ik \cdot x} \epsilon^{(\alpha)} \cdot p_i 
+&= -\frac{e}{m} \sqrt{\frac{ (n_{k,\alpha}+1) \hbar}{2 \varepsilon_0 \omega_k V}} \sum_i \left\langle Y \left| 
+\, e^{-ik \cdot x} \varepsilon^{(\alpha)} \cdot p_i \,
 \right| X \right\rangle e^{i\omega_k t}
 \end{split}
 \end{equation}
