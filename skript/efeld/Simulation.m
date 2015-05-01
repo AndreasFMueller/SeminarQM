@@ -48,7 +48,7 @@ end
 
 %-----Verarbeitung gestört-----
 gamma = 0;
-epsilon = 4*10^3;
+epsilon = 4*10^-3;
 E1_k = zeros(1, length(n));
 H1 = x;
 PsiG = zeros(length(n), length(x));
@@ -73,7 +73,7 @@ PsiG = zeros(length(n), length(x));
 
 loopCount = 0;
 for ln = n
-	E1_k(ln) = sum(~Psi(ln, :).*H1.*Psi(ln, :).*delta);
+	E1_k(ln) = dot(Psi(ln, :), H1.*Psi(ln, :));
 	
 	psi1_l = zeros(1, length(x));
 
@@ -86,14 +86,10 @@ for ln = n
 			loopCount = loopCount + 1;
 		end
 	else
-		psi0_l = sum(~Psi(1, :).*H1.*Psi(1, :).*delta) / (E(1)-0);
+		psi0_l = dot(Psi(1, :), H1.*Psi(1, :)) / E(1);
 		psi1_l = psi0_l .* Psi(1, :);
 		loopCount = loopCount + 1;
 	end
-	
-	figure
-	hold on;
-	plot(x, psi1_l(:), 'Color', 'green')
 	
 	PsiG(ln, 1:length(x)) = (1+1i*epsilon*gamma).*Psi(ln, 1:length(x)) ...
 													+ epsilon.*psi1_l;
@@ -101,7 +97,7 @@ end
 
 
 %-----Plot grafik 1: Psi(x)-----
-%clf('reset')			% clear figure
+clf('reset')			% clear figure
 hold on;
 
 s = zeros(1, length(n));
@@ -125,18 +121,19 @@ for ln = n		% gestoerter Plot
 end
 
 % print('Psi_gestoert', '-depsc', '-noui')
-% print('Psi_gestoert', '-dpdf', '-noui')
+print('Psi_gestoert', '-dpdf', '-noui')
 
 %-----Plot grafik 2: E(n, a)-----
 figure
 hold on;
+epsilon = 10^13
 xEpsilon = 0 : epsilon / xSteps : epsilon;
 for ln = n		% Energie Plot
 	plot(xEpsilon, E(ln) + xEpsilon*E1_k(ln))		% Psis
 end
 
-%print('grafik_2_Energy', '-depsc', '-noui')
-%print('grafik_2_Energy', '-dpdf', '-noui')
+%print('Energie_gestoert', '-depsc', '-noui')
+print('Energie_gestoert', '-dpdf', '-noui')
 
 hold off
 
