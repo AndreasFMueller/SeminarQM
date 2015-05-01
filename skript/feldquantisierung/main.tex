@@ -340,10 +340,18 @@ H |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle = \sum_i \hbar \omega_k 
 
 \section{Wechselwirkung zwischen Photonen und Atomen}
 
+Der allgemeine Hamiltonoperator ist:
+\begin{equation*}
+H = \frac{1}{2m}p^2 + V(x)
+\end{equation*}
+
 Um den Hamiltonoperator eines Elektrons im Feld zu erhalten, wird $p$ gem"ass Kapitel \ref{section:hamilton-funktion-im-magnetfeld} durch $p - eA$ ersetzt. $A$ ist nun das quantisierte Feld. Der Hamiltonoperator wird somit zu:
 
 \begin{equation*}
-H = -\frac{e}{2m}\left[p \cdot A(x, t) + A(x, t) \cdot p\right] + \frac{e^2}{2m}A(x, t) \cdot A(x, t) + H^{(spin)}
+\begin{split}
+H &= \frac{1}{2m}(p - eA)^2 + V(x)\\
+ &= \frac{1}{2m}\left[p \cdot p - e p \cdot A(x, t) - e A(x, t) \cdot p + e^2 A(x, t) \cdot A(x, t) \right] + V(x) + H^{(spin)}
+\end{split}
 \end{equation*}
 
 Zudem leitet auch der Spin einen (wenn auch oft vernachl"assigbar kleinen) Beitrag zu $H$:
@@ -351,10 +359,10 @@ Zudem leitet auch der Spin einen (wenn auch oft vernachl"assigbar kleinen) Beitr
 H^{(spin)} = - \frac{e \hbar}{2m}\sigma \left[\nabla \times A(x, t)\right] \approx 0
 \end{equation*}
 
-$p$ ist ein Operator mit Ableitung nach dem Ort. Da $\nabla \cdot A = 0$ gilt, vertauschen $p \cdot A(x, t)$. Dadurch wird der Hamilton:
+$p$ ist ein Operator mit Ableitung nach dem Ort. Da $\nabla \cdot A = 0$ gilt, vertauschen $p \cdot A(x, t)$. Es interessieren uns später nur die Interaktionen mit einen Anfangszustand $X$ und Endzustand $Y$. Also der Form $\langle Y|H|X \rangle$. Da der Anfangszustand und der Endzustand orthogonal sind, gilt $\langle Y|p \cdot p|X \rangle = 0$ sowie $\langle Y|V(x)|X \rangle = 0$. Dadurch wird der Interaction-Hamilton zu:
 
 \begin{equation*}
-H = -\frac{e}{m} A(x, t) \cdot p + \frac{e^2}{2m}A(x, t) \cdot A(x, t)
+H_{int} = -\frac{e}{m} A(x, t) \cdot p + \frac{e^2}{2m}A(x, t) \cdot A(x, t)
 \end{equation*}
 
 Dieser Hamiltonoperator wirkt nun nicht nur auf dem Zustand des Elektrons sondern auch auf den Zust"anden der Photonen und beschreibt die Wechselwirkung von Photonen und Elektronen. Man spricht hier von dem Anfangszustand $X$, dem Endzustand $Y$.
@@ -363,7 +371,7 @@ Nehmen wir an, ein Atom absorbiert ein Photon vom Zustand $(k,\alpha)$ und wechs
 
 \begin{equation*}
 \begin{split}
-\langle Y; n_{k,\alpha} - 1 &| H | X; n_{k,\alpha} \rangle \\
+\langle Y; n_{k,\alpha} - 1 &| H_{int} | X; n_{k,\alpha} \rangle \\
 &= -\frac{e}{m} \left\langle Y; n_{k,\alpha} - 1 \left| 
 \frac{1}{\sqrt{V}} \sum_i \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k}}a_{k,\alpha} \epsilon^{(\alpha)} e^{i(k \cdot x-\omega_k t)} \cdot p_i 
 \right| X; n_{k,\alpha} \right\rangle\\
@@ -376,7 +384,7 @@ e^{ik \cdot x} \epsilon^{(\alpha)} \cdot p_i
 Der Emissionsprozess wird beschrieben durch:
 \begin{equation*}
 \begin{split}
-\langle Y; n_{k,\alpha} + 1 &| H | X; n_{k,\alpha} \rangle \\
+\langle Y; n_{k,\alpha} + 1 &| H_{int} | X; n_{k,\alpha} \rangle \\
 &= -\frac{e}{m} \left\langle Y; n_{k,\alpha} + 1 \left| 
 \frac{1}{\sqrt{V}} \sum_i \sqrt{\frac{\hbar}{2 \epsilon_0 \omega_k}}a^+_{k,\alpha} \epsilon^{(\alpha)} e^{-i(k \cdot x-\omega_k t)} \cdot p_i 
 \right| X; n_{k,\alpha} \right\rangle\\
