@@ -17,7 +17,8 @@
 
 %-----Variabeln-----
 l = 10^-9;
-delta = (l/100);
+xSteps = 100;
+delta = (l/xSteps);
 %x = -l*1.5 : delta : +l*1.5;
 x = -l : delta : +l;
 n = 1 : 5;
@@ -45,61 +46,96 @@ end
 Psi(ln,1:length(x)) = 1/sqrt(l) .* y;
 end
 
-%-----Verarbeitung gestï¿½rt-----
-gamma = 0.000000000;
-epsilon = 5*10^-4;
-El = zeros(1, length(n));
+%-----Verarbeitung gestört-----
+gamma = 0;
+epsilon = 4*10^-3;
+E1_k = zeros(1, length(n));
 H1 = x;
 PsiG = zeros(length(n), length(x));
+
+% for ln = n
+% 	psi1_l = zeros(1, length(x));
+% 
+% 	E1_k(ln) = sum(~Psi(ln, :).*H1.*Psi(ln, :).*delta);
+% 
+% 	loopCount = 0;
+% 	k = ln;
+% 	if k > 1
+% 		for l = 1 : ln - 1
+% 			psi1_l = psi1_l + Psi(l, :).*H1.*Psi(k, :) ./ (E(k)-E(l));
+% 				loopCount = loopCount + 1;
+% 		end
+% 	else
+% 		psi1_l = psi1_l + Psi(k, :).*H1.*Psi(k, :) ./ (E(k));
+% 			loopCount = loopCount + 1;
+% 	end
+% end
+
+loopCount = 0;
 for ln = n
-%psi1_l = H1(1:length(x)).*Psi(ln, 1:length(x)) ./ (E(ln)-El(ln));
-psi1_l = 1/sqrt(l) * H1(1:length(x)).*Psi(ln, 1:length(x));
-PsiG(ln, 1:length(x)) = (1+1i*epsilon*gamma).*Psi(ln, 1:length(x)) ...
-						+ epsilon.*psi1_l;
-%PsiG(ln, 1:length(x)) = Psi(ln, 1:length(x));
+	E1_k(ln) = dot(Psi(ln, :), H1.*Psi(ln, :));
+	
+	psi1_l = zeros(1, length(x));
+
+	k = ln;
+	if k > 1
+		for l = 1 : k - 1
+%			psi0_l = sum(~Psi(l, :).*H1.*Psi(k, :).*delta) / (E(k)-E(l));
+			psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l));
+			psi1_l = psi1_l + psi0_l .* Psi(l, :);
+			loopCount = loopCount + 1;
+		end
+	else
+		psi0_l = dot(Psi(1, :), H1.*Psi(1, :)) / E(1);
+		psi1_l = psi0_l .* Psi(1, :);
+		loopCount = loopCount + 1;
+	end
+	
+	PsiG(ln, 1:length(x)) = (1+1i*epsilon*gamma).*Psi(ln, 1:length(x)) ...
+													+ epsilon.*psi1_l;
 end
+
 
 %-----Plot grafik 1: Psi(x)-----
 clf('reset')			% clear figure
 hold on;
-%plot(x, )		% Potentialskasten
 
 s = zeros(1, length(n));
-for ln = n
-	%subplot(length(n), 1, ln)
-	plot(x, Psi(ln, 1:length(x)) +(ln-1)*1e05)		% Psi
+for ln = n		% ungestoerter Plot
+	plot(x, Psi(ln, :) + (ln-1)*2e05, 'Color', 'black')		% Psi
 
-	s(ln) = sum(Psi(ln, 1:length(x)).^2.*delta);
+	s(ln) = sum(Psi(ln, :).^2.*delta);
 end
 
-print('Psi_ungestoert', '-depsc', '-noui')
-print('Psi_ungestoert', '-dpdf', '-noui')
+% print('Psi_ungestoert', '-depsc', '-noui')
+% print('Psi_ungestoert', '-dpdf', '-noui')
 
-figure
-hold on;
+% figure
+% hold on;
 
 sG = zeros(1, length(n));
-for ln = n
-%	subplot(length(n), 1, ln)
-	plot(x, PsiG(ln, 1:length(x)) +(ln-1)*1e05)		% Psi
+for ln = n		% gestoerter Plot
+	plot(x, PsiG(ln, 1:length(x)) + (ln-1)*2e05, 'Color', 'red')		% Psi
 
-	sG(ln) = sum(abs(PsiG(ln, 1:length(x))).^2.*delta);
+	sG(ln) = sum(PsiG(ln, :).^2.*delta);
 end
 
-print('Psi_gestoert', '-depsc', '-noui')
+% print('Psi_gestoert', '-depsc', '-noui')
 print('Psi_gestoert', '-dpdf', '-noui')
 
 %-----Plot grafik 2: E(n, a)-----
 figure
 hold on;
-for ln = n
- 	plot(x, E(ln))		 % Psis
+epsilon = 10^13
+xEpsilon = 0 : epsilon / xSteps : epsilon;
+for ln = n		% Energie Plot
+	plot(xEpsilon, E(ln) + xEpsilon*E1_k(ln))		% Psis
 end
 
-%print('grafik_2_Energy', '-depsc', '-noui')
-%print('grafik_2_Energy', '-dpdf', '-noui')
+%print('Energie_gestoert', '-depsc', '-noui')
+print('Energie_gestoert', '-dpdf', '-noui')
 
-hold off;
+hold off
 
 
 

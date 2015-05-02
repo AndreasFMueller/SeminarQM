@@ -1,21 +1,51 @@
-Thema, Rubrik, sg, g,gn,ug,kinb
-flash, A1,     14, 9, 0, 0, 0
-flash, A2,     14, 9, 0, 0, 0
-flash, A3,      7,14, 2, 0, 0
-flash, A4,      8,13, 2, 0, 0
-flash, A5,     11,12, 0, 0, 0
-flash, B1,     10,11, 2, 0, 0
-flash, B2,      9,11, 3, 0, 0
-flash, B3,      6,16, 1, 0, 0
-flash, B4,     15, 8, 0, 0, 0
-flash, B5,     15, 8, 0, 0, 0
-tunnel,A1,     21, 3, 0, 0, 0
-tunnel,A2,     13,10, 1, 0, 0
-tunnel,A3,     10,12, 2, 0, 0
-tunnel,A4,     10, 9, 5, 0, 0
-tunnel,A5,      7,12, 5, 0, 0
-tunnel,B1,     12,10, 2, 0, 0
-tunnel,B2,      4,17, 3, 0, 0
-tunnel,B3,      6,15, 2, 0, 1
-tunnel,B4,     14, 9, 1, 0, 0
-tunnel,B5,     16, 8, 0, 0, 0
+Thema,Rubrik, sg, g,gn,ug,kinb
+flash,A1,     14, 9, 0, 0, 0
+flash,A2,     14, 9, 0, 0, 0
+flash,A3,      7,14, 2, 0, 0
+flash,A4,      8,13, 2, 0, 0
+flash,A5,     11,12, 0, 0, 0
+flash,B1,     10,11, 2, 0, 0
+flash,B2,      9,11, 3, 0, 0
+flash,B3,      6,16, 1, 0, 0
+flash,B4,     15, 8, 0, 0, 0
+flash,B5,     15, 8, 0, 0, 0
+tunnel,A1,    21, 3, 0, 0, 0
+tunnel,A2,    13,10, 1, 0, 0
+tunnel,A3,    10,12, 2, 0, 0
+tunnel,A4,    10, 9, 5, 0, 0
+tunnel,A5,     7,12, 5, 0, 0
+tunnel,B1,    12,10, 2, 0, 0
+tunnel,B2,     4,17, 3, 0, 0
+tunnel,B3,     6,15, 2, 0, 1
+tunnel,B4,    14, 9, 1, 0, 0
+tunnel,B5,    16, 8, 0, 0, 0
+tele,A1,      19, 1, 0, 0, 0
+tele,A2,      13, 6, 1, 0, 0
+tele,A3,      12, 7, 1, 0, 0
+tele,A4,      11, 9, 0, 0, 0
+tele,A5,       7,12, 1, 0, 0
+tele,B1,      13, 7, 0, 0, 0
+tele,B2,       5,15, 0, 0, 0
+tele,B3,      12, 7, 1, 0, 0
+tele,B4,      14, 6, 0, 0, 0
+tele,B5,      15, 5, 0, 0, 0
+krypto,A1,    20, 1, 0, 0, 0
+krypto,A2,    11, 9, 1, 0, 0
+krypto,A3,     6,13, 2, 0, 0
+krypto,A4,     2,17, 2, 0, 0
+krypto,A5,    11, 9, 1, 0, 0
+krypto,B1,    11,10, 0, 0, 0
+krypto,B2,    13, 7, 0, 0, 0
+krypto,B3,    11, 8, 2, 0, 0
+krypto,B4,    13, 8, 0, 0, 0
+krypto,B5,    17, 3, 1, 0, 0
+simon,A1,     10,11, 0, 0, 0
+simon,A2,      6,13, 1, 1, 0
+simon,A3,      1,14, 6, 0, 0
+simon,A4,      3,15, 3, 0, 0
+simon,A5,      8,13, 0, 0, 0
+simon,B1,      5,10, 5, 1, 0
+simon,B2,      1,17, 2, 0, 1
+simon,B3,      3,16, 2, 0, 0
+simon,B4,      4,13, 3, 1, 0
+simon,B5,     11,10, 0, 0, 0
