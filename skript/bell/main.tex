@@ -379,14 +379,6 @@ Als erstem Physiker gelang es die Frage umzudrehen, und nicht nach solchen
 Variablen bzw. Teilchen zu suchen, sondern gleich deren Nicht-Existenz
 zu beweisen.
 
-Wie bereits im Abschnitt~\ref{section:bell:epr} werden wir das Paper
-von John Bell, h\"aufig als \enquote{Bell'sche Ungleichung} bezeichnet,
-zuerst auf einfache Weise herleiten und danach mathematisch beweisen.
-
-\subsection{Die Bell'sche Ungleichung\label{subsection:bell:bell:idee}}
-
-\subsection{Mathematische Herleitung\label{subsection:bell:bell:herleitung}}
-
 Wir verwenden erneut den Messaufbau aus Abbildung~\ref{fig:bell:EPR_Messaufbau}
 und nehmen an, dass der Winkel der Messung des Spins bei beiden Detektoren 
 $A$ und $B$ unabh\"angig, beliebig eingestellt werden kann.
@@ -478,6 +470,7 @@ mit Erwartungswert
 \begin{equation}
     E_{\rho}(a,b) = \int_{\Lambda} E_{\lambda}(a,b) d\rho 
     = \sum_s \sum_t \int_{\Lambda} p_m(s,t \mid a,b) (st) \:d\rho
+    \label{equ:bell:ew}
 \end{equation}
 Dies in \eqref{equ:bell:ineq1} eingesetzt ergibt
 \begin{equation}
@@ -547,6 +540,7 @@ Der Erwartungswert $E_{\psi}$ wird damit zu
         P_{\psi}(1,1 \mid a,b) - P_{\psi}(-1,-1 \mid a,b)  \notag \\
     &= \cos^2\sigma - \sin^2\sigma  = \cos 2\sigma
 \end{align}
+%TODO: aber das ist für photonen?!?!
 
 Nun werden betrachten wir die konkreten Werte 
 $a=\frac{\pi}{4}, a'=0, b=\frac{\pi}{8}, b' = \frac{3\pi}{8}$ 
@@ -564,6 +558,47 @@ enthalten und die Vermutung Einsteins ist somit widerlegt.
 %TODO: gute analyse und überleitung
 
 \section{Experimente}
+%TODO: einleitung
+
+Zur experimentellen \"Uberpr\"ufung der Bellschen Ungleichung werden meist
+nicht, wie hier besprochen, Elektron-Positron-Paare verwendet, sondern
+Photonen mit identischer Polarisation.
+Dabei k\"onnen die Photon entweder vertikal ($V$ bzw. $+$) oder horizontal
+($H$ bzw. $-$) polarisiert sein. 
+Es ergibt sich der folgende Polarisationszustand:
+\begin{equation}
+    |\psi\rangle = \frac{1}{\sqrt{2}} \Big(
+        |V\rangle \otimes |V\rangle + |H\rangle \otimes |H\rangle
+    \Big)
+\end{equation}
+Wird nun die Polarisation der beiden Elektronen in der gleichen Richtung 
+gemessen, sind die Messergebnisse perfekt korreliert.
+Bei Richtungen mit einem Winekl von \SI{45}{\degree} wird das Resultat
+unkorreliert sein, also komplett zuf\"allig.
+Wird in einem \SI{90}{\degree} gemessen, sind die Messergebnisse
+anti-korreliert.
+
+Die Erwartungswerte \eqref{equ:bell:ew} werden nun gesch\"atzt indem gez\"ahlt
+wird, wie h\"aufig die m\"oglichen Resultat $++$, $+-$, $-+$ und $--$
+vorkommen ($N_{++}, N_{+-}, N_{-+}, N_{--}$).
+Der Erwartungswert $E_(a,b)$ einer Detektor-Einstellung $(a,b)$ wird
+nun berechnet durch
+\begin{equation}
+    E = \frac{N_{++} + N_{--} - N_{+-} - N_{-+}}{N_{++} + N_{--} + N_{+-} + N_{-+}}
+\end{equation}
+Die Bellsche Ungleichung wird \"uberpr\"uft, indem die vier Einstellungen
+$(a,b)$, $(a,b')$, $(a',b)$ und $(a',b')$ gemessen und deren Erwartungswerte
+berechnet werden. 
+Diese Werte werden in die Bellsche Ungleichung eingesetzt:
+\begin{equation}
+    S = E(a,b) + E(a,b') + E(a',b) - E(a',b')
+\end{equation}
+
+\subsection{M\"ogliche Probleme}
+
+Detection Loophole
+Locality Loophole
+
 \subsection{Freedman Clauser}
     
     \begin{figure}[ht!]
