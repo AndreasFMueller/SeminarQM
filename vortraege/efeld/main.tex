@@ -16,21 +16,20 @@
 
 \begin{document}
 \begin{frame}
-\titlepage
+  \titlepage
 \end{frame}
 
 \begin{frame}
-\frametitle{ Inhalt }
-\tableofcontents
+  \frametitle{ Inhalt }
+  \tableofcontents
 \end{frame}
 
 \section{ Grundkonzept St\"orungstheorie } 
 \begin{frame}\frametitle{ Grundkonzept St\"orungstheorie } 
-\section{ Potentialkasten mit eFeld }
-\[
-\hat{H} = \varepsilon^0 \hat H_0 + \varepsilon^1 \hat H_1 + \ldots + \varepsilon^\infty \hat H_\infty
-\]
-
+  \section{ Potentialkasten mit eFeld }
+  \[
+  \hat{H} = \varepsilon^0 \hat H_0 + \varepsilon^1 \hat H_1 + \ldots + \varepsilon^\infty \hat H_\infty
+  \]
 \end{frame}
 
 \section{ Modell der St\"orung }
@@ -63,30 +62,57 @@
   \]
 \end{frame}
 
-\subsection{  }
+\subsection{ 1. N\"aherung der St\"orung }
 \begin{frame} 
+  \frametitle{ 1. N\"aherung der St\"orung }
 
+  F\"ur $\hat H_1$ gilt
+  \[
+    \hat H_1 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_1(x)
+  \]
 
-F\"ur $\hat H_1$ gilt
-\[
-  \hat H_1 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_1(x)
-\]
+  f\"ur das Potential $V_1(x)$ gilt
+  \[
+    V_1(x) = a*x +b ; b = 0 \text{ weil es dann symetisch ist }
+  \]
 
-f\"ur das Potential $V_1(x)$ gilt
-\[
-  V_1(x) = a*x +b ; b = 0 \text{ weil es dann symetisch ist }
-\]
-
-Die Ausgangsgleichung f\"ur $\hat{H}$ lautet
-\[
-  \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
-            + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + a*x )
-\]
+  Die Ausgangsgleichung f\"ur $\hat{H}$ lautet
+  \[
+    \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
+	      + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + a*x )
+  \]
 \end{frame}
+
+
+\section{ Gleichungen Umformen }
+\begin{frame}
+  \frametitle{ Gleichungen Umformen }
+  \begin{figure}
+    \centering
+    \includegraphics[height=5.6cm]{./179_e_to_the_pi_times_i.png}
+    % 179_e_to_the_pi_times_i.png: 0x0 pixel, 0dpi, 0.00x0.00 cm, bb=
+    \caption{ xkcd 1404 \textendash \ e to the pi times i }
+    \label{abb:179_e_to_the_pi_times_i}
+  \end{figure}
+
+\end{frame}
+
+\section{ Bilder }
+\begin{frame}
+  \frametitle{ Bilder }
+  \begin{figure}
+    \centering
+    \includegraphics[width=12cm]{../../skript/efeld/Psi_ungestoert.pdf}
+    \caption{$\psi$ ungest\"ort}
+    \label{abb:efeld_psi_ungestoert}
+  \end{figure}
+\end{frame}
+
+
 
 \section{ Fragen }
 \begin{frame}
- \frametitle{ Fragen }
+  \frametitle{ Fragen }
 \end{frame}
 
 
