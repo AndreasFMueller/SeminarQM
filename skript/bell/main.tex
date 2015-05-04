@@ -4,13 +4,13 @@
 \begin{refsection}
 \chapterauthor{Hannes Badertscher}
 
-In diesem Kapitel betrachten wir ein Theorem von Albert Einstein genauer.
-Wie Randall Munroe von xkcd im
-Comic~\ref{fig:bell:xkcd_einstein} illustriert konnten die Theorien von
-Einstein bisher selten widerlegt werden.
-Als einziges Beispiel Einstein zu widerlegen wird eine m\"oglicherweise falsche
-Entscheidung Einsteins, als er bei seiner Arbeit im Patentamt ein umstrittenes
-Patent zur Annahme empfahl, aufgef\"uhrt.
+In diesem Kapitel betrachten wir ein Gedankenexperiment von Albert Einstein
+genauer.
+Wie Randall Munroe von xkcd im Comic~\ref{fig:bell:xkcd_einstein} illustriert,
+konnten die Theorien von Einstein bisher selten widerlegt werden.
+Als einziges Beispiel, Einstein zu widerlegen, wird eine m\"oglicherweise
+falsche Entscheidung Einsteins aufgef\"uhrt, als er bei seiner Arbeit im
+Patentamt ein umstrittenes Patent zur Annahme empfahl.
 Obwohl scheinbar unm\"oglich, befassen wir uns in diesem Kapitel mit der Arbeit
 von Albert Einstein und versuchen diese kritisch zu beleuchten.
 
@@ -22,82 +22,124 @@ von Albert Einstein und versuchen diese kritisch zu beleuchten.
     \label{fig:bell:xkcd_einstein}
 \end{figure}
 
-
 Im Mai 1935 ver\"offentlichten Albert Einstein, Boris Podolsky und
 Nathan Rosen ein Gedankenexperiment mit welchem sie erkl\"arten, wieso
 die Quantenmechanik nicht vollst\"andig sein kann. Als Alternative
-sollten zus\"atzliche, verborgene, Variablen eingef\"ugt werden, welche
+sollten zus\"atzliche, verborgene Variablen eingef\"ugt werden, welche
 das zugrunde liegende Verhalten logisch erkl\"aren k\"onnen.
-Die Theorie der verborgenen lokalen Variablen nach Einstein war lange
-die verbreitete Ansicht -- die Frage war nur wann solche Variablen
-entdeckt werden. In vielen Bereichen der Quantenmechanik wurden tats\"achlich
+W\"ahrend Niels Bohr die bisherige (Kopenhagen-) Interpretation der 
+Quantenmechanik verteidigte, befassten sich diverse Physiker mit die Suche
+nach solchen verborgenen Variablen.
+In vielen Bereichen der Quantenmechanik wurden tats\"achlich
 kleinere Teilchen, Quantenzahlen und Variablen entdeckt, welche das
 Verst\"andnis der heutigen Quantenphysik pr\"agten.
+Zur L\"osung des Gedankenexperiments von Einstein, Rosen und Podolsky konnten
+jedoch bisher keine verborgenen Variablen gefunden werden.
 
 Wir betrachten das Gedankenexperiment von Einstein, indem wir zuerst die
 grundlegenden Annahmen der Lokalit\"at und des Realismus betrachten. Danach
 gehen wir auf das von Einstein, Rosen und Podolski ver\"offentlichte Paradoxon
-ein und kommen auf die darauf basierende Bell'sche Ungleichung, welche
+ein und kommen auf die darauf basierende Bellsche Ungleichung, welche
 1961 von John Bell ver\"offentlicht wurde.
 
-\section{Lokalit\"at und Realismus\label{section:bell:lokalitaet}}
+\section{Definitionen\label{section:bell:definitionen}}
 Zuerst stellt sich die Frage der Anforderungen an die Theorie der
-Quantenmechanik. Eine zentrale Eigenschaft ist hierbei die Lokalit\"at.
-Lokalit\"at bedeutet hierbei, dass jegliche Vorg\"ange nur einen Einfluss
+Quantenmechanik.
+In diesem Abschnitt werden diese Begriffe Anforderungen kurz definiert und
+besprochen, sodass diesbez\"uglich keine Unklarheiten entstehen.
+Albert Einstein stellte dabei die folgenden beiden Anforderungen an eine
+Theorie:
+
+\begin{enumerate}
+    \item Lokalit\"at
+    \item Realismus
+\end{enumerate}
+
+Die zentrale Eigenschaft ist dabei die Lokalit\"at.
+Dies bedeutet, dass jegliche Vorg\"ange nur einen Einfluss
 auf ihre direkte Umgebung haben k\"onnen.
 
-Die klassische Newton'sche Mechanik ist eine \emph{nicht}-lokale 
-Theorie. Eine Masse hat in der Gravitation sofort, ohne zeitliche 
-Verz"ogerung einen Einfluss auf andere Massen, unabh\"angig von der
-r\"aumlichen Distanz zwischen den beiden Massen. 
-In der speziellen Relativit\"atstheorie 
-\textsuperscript{[Citation needed]}
-wurden die Begriffe von Raum und Zeit so definiert, dass sich alle
-Materie und Energie h\"ochstens mit Lichtgeschwindigkeit fortbewegen
-kann. 
-Die allgemeine Relativit\"atstheorie ist eine alternative Formulierung
-der Newton'schen Gravitationstheorie, welche die in der speziellen
-Relativit\"atstheorie geforderte Lokalit\"at erf\"ullt.
-Von der Quantenmechanik kann ebenfalls erwartet werden, dass sich
-jegliche Ereignisse h\"ochstens mit Lichtgeschwindigkeit ausbreiten
-k\"onnen.
+\begin{definition}\label{def:bell:lokalitaet}
+    Eine physikalische Theorie ist \emph{lokal}, wenn zwei \"ortlich getrennte
+    Systeme keinen sofortigen Einfluss aufeinander haben k\"onnen.
+\end{definition}
 
-Eine Theorie wird als \emph{realistisch} bezeichnet, wenn die Theorie
-nicht direkt von der Messung abh\"angt. Eine Messung hat also einen
-vordefinierten Wert, auch wenn dieser nicht bekannt ist.
-Die bekannte Frage \enquote{Is the moon there if nobody looks?} zeigt auf,
-dass der Realismus rein intuitiv immer erf\"ullt sein m\"usste. Schliesslich
-zweifelt niemand daran, dass der Mond auch existiert wenn gerade niemand
-zum Mond hinaufschaut.
+\foreignquote{english}{Spooky actions at a distance} \cite[S.~158]{Bell:BornEinstein1971}
+konnte sich Einstein nicht vorstellen.
+Zum Beispiel war klassische Newtonsche Gravitationstheorie
+eine \emph{nicht}-lokale Theorie. 
+Eine Masse hat in der Gravitation sofort, ohne zeitliche 
+Verz\"ogerung, einen Einfluss auf andere Massen -- unabh\"angig von der
+r\"aumlichen Distanz zwischen den beiden Massen. 
+In der speziellen Relativit\"atstheorie wurden die Begriffe von Raum und Zeit
+so definiert, dass sich alle Materie und Energie h\"ochstens mit
+Lichtgeschwindigkeit fortbewegen kann. 
+Die allgemeine Relativit\"atstheorie ist eine alternative Formulierung
+der Newtonschen Gravitationstheorie, welche die in der speziellen
+Relativit\"atstheorie geforderte Lokalit\"at erf\"ullt.
+Einstein war sich deshalb sicher, dass auf f\"ur die Quantenmechanik eine
+Theorie herleiten l\"asst, in welcher sich jegliche Ereignisse h\"ochstens mit
+Lichtgeschwindigkeit ausbreiten k\"onnen.
+
+Mit der Forderung des Realismus wird verlangt, dass die Theorie eine
+physikalische \emph{Realit\"at} beschreibt.
+Das heisst dass eine Messung immer einen vorbestimmten Wert hat, und dieser
+g\"ultig ist und existiert, ob die Messung durchgef\"uhrt wird oder nicht.
+
+\begin{definition}\label{def:bell:}
+    Eine physikalische Theorie ist \emph{realistisch}, wenn das Ergebnis
+    jeglicher Messungen vorbestimmt ist.
+\end{definition}
+
+In einem Gespr\"ach mit Abraham Pais verdeutlichte Albert Einstein diese
+Forderung mit dem bekannten Spruch
+\foreignquote{english}{Do you really believe that the moon exists only when you look at it?}\cite{Bell:Pais1979}
+
+
 
 \section{Das Einstein-Podolsky-Rosen Paradoxon\label{section:bell:epr}}
 Das Einstein-Podolsky-Rosen Paradoxon (EPR Paradoxon) ist ein 
 Gedankenexperiment, welches 1935 im Paper \cite{Bell:Einstein1935}
-\emph{Can quantum-mechanical description of physical reality be considered complete}
+\enquote{Can quantum-mechanical description of physical reality be considered complete?}
 von Albert Einstein, Boris Podolsky und Nathan Rosen publiziert wurde.
-Wie der Titel bereits verr\"at, gehen Einstein \emph{et al.} dabei auf
-zwei Fragen ein: 
-(1) \enquote{Ist die Theorie korrekt?}
-und 
-(2) \enquote{Ist die Beschreibung durch die Theorie vollst\"andig?}
-Nur wenn beide diese Fragen mit \enquote{ja} beantwortet werden k\"onnen, kann
-die Theorie die Realit\"at zufriedenstellend beschreiben.
-Die erste Frage kann einfach gepr\"uft werden, indem die Resultate von
-Experimenten mit den Vorhersagen der Theorie verglichen werden. 
-Die Quantenmechanik konnte dabei in zahlreichen Experimenten die Wirklichkeit
-korrekt vorhersagen. 
-Einstein, Rosen und Podolski befassten sich deshalb mehr mit der zweiten
-Frage. 
-Die Vollst\"andigkeit einer Theorie wird dabei wie folgt definiert:
+Einstein \emph{et al.} beginnen das Paper mit zwei Fragen zur
+Quantenmechanik:
 
-\begin{definition}\label{def:Bell:Vollstaendigkeit}
+\begin{enumerate}
+    \item Ist die Theorie korrekt?
+    \item Ist die Beschreibung durch die Theorie vollst\"andig?
+\end{enumerate}
+
+Nur wenn beide diese Fragen mit \enquote{ja} beantwortet werden k\"onnen, 
+ist die Theorie eine zufriedenstellende Beschreibung der Realit\"at.
+Ob eine Theorie als korrekt bezeichnet werden kann wird definiert mit:
+
+\begin{definition}\label{def:bell:Korrektheit}
+    Die Korrektheit einer Theorie wird anhand des Grades der \"Ubereinstimmung
+    zwischen den Vorhersagen einer Theorie und den entsprechenden praktischen
+    Messungen und Experimenten.
+\end{definition}
+
+Diese Frage kann einfach gepr\"uft werden, indem die Resultate von
+Experimenten mit den Vorhersagen der Theorie verglichen werden. 
+Die Quantenmechanik konnte dabei, wie wir in diesem Buch in zahlreichen
+Anwendungen nachvollziehen konnten, die Wirklichkeit korrekt vorhersagen. 
+Um die zweite Frage zu diskutieren, definieren die Vollst\"andigkeit einer
+Theorie wie folgt:
+
+\begin{definition}\label{def:bell:Vollstaendigkeit}
     Jedes Element der physikalischen Realit\"at muss durch die Theorie
     genau beschrieben werden k\"onnen.
 \end{definition}
 
-W\"ahrend Einstein \emph{et al.} in ihrem Paper das Gedankenexperiment sehr
-allgemein halten, betrachten wir hier ein anschaulicheres Beispiel, welches
-1957 von David Bohm und Yakir Aharonov \cite{Bell:Bohm1957} pr\"asentiert wurde.
+Einstein, Podolsky und Rosen gehen in ihrem Paper genauer auf die Frage
+der Vollst\"andigkeit der Quantenmechanik ein.
+Dazu pr\"asentieren sie ein Gedankenexperiment, anhand welchem bewiesen
+werden soll, dass die Quantenmechanik nicht vollst\"andig ist.
+W\"ahrend Einstein \emph{et al.} das Gedankenexperiment sehr
+allgemein hielten, diskutieren wir hier ein anschaulicheres Beispiel, welches
+1957 von David Bohm und Yakir Aharonov \cite{Bell:Bohm1957} pr\"asentiert
+wurde.
 
 \subsection{Das Gedankenexperiment\label{subsection:bell:epr:idee}}
 Wir betrachten zwei quantenmechanische Systeme, $I$ und $II$,
