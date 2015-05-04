@@ -21,7 +21,8 @@ xSteps = 100;
 delta = (l/xSteps);
 %x = -l*1.5 : delta : +l*1.5;
 x = -l : delta : +l;
-n = 1 : 10;
+n = 1 : 20;
+nPlot = 1 : 5;
 %n = [1, 2];
 
 %-----Verarbeitung-----
@@ -48,28 +49,11 @@ end
 
 %-----Verarbeitung gestört-----
 gamma = 0;
-epsilon = 4*10^-3;
+%epsilon = 4*10^-3;
+epsilon = 10^-3;
 E1_k = zeros(1, length(n));
 H1 = x;
 PsiG = zeros(length(n), length(x));
-
-% for ln = n
-% 	psi1_l = zeros(1, length(x));
-% 
-% 	E1_k(ln) = sum(~Psi(ln, :).*H1.*Psi(ln, :).*delta);
-% 
-% 	loopCount = 0;
-% 	k = ln;
-% 	if k > 1
-% 		for l = 1 : ln - 1
-% 			psi1_l = psi1_l + Psi(l, :).*H1.*Psi(k, :) ./ (E(k)-E(l));
-% 				loopCount = loopCount + 1;
-% 		end
-% 	else
-% 		psi1_l = psi1_l + Psi(k, :).*H1.*Psi(k, :) ./ (E(k));
-% 			loopCount = loopCount + 1;
-% 	end
-% end
 
 loopCount = 0;
 for ln = n
@@ -91,13 +75,12 @@ for ln = n
 													+ epsilon.*psi1_l;
 end
 
-
 %-----Plot grafik 1: Psi(x)-----
 clf('reset')			% clear figure
 hold on;
 
 s = zeros(1, length(n));
-for ln = 1:5		% ungestoerter Plot
+for ln = nPlot		% ungestoerter Plot
 	plot(x, Psi(ln, :) + (ln-1)*2e05, 'Color', 'black')		% Psi
 
 	s(ln) = sum(Psi(ln, :).^2.*delta);
@@ -110,7 +93,7 @@ end
 % hold on;
 
 sG = zeros(1, length(n));
-for ln = 1:5		% gestoerter Plot
+for ln = nPlot		% gestoerter Plot
 	plot(x, PsiG(ln, 1:length(x)) + (ln-1)*2e05, 'Color', 'red')		% Psi
 
 	sG(ln) = sum(PsiG(ln, :).^2.*delta);
@@ -124,7 +107,7 @@ figure
 hold on;
 epsilon = 10^13
 xEpsilon = 0 : epsilon / xSteps : epsilon;
-for ln = n		% Energie Plot
+for ln = nPlot		% Energie Plot
 	plot(xEpsilon, E(ln) + xEpsilon*E1_k(ln))		% Psis
 end
 
