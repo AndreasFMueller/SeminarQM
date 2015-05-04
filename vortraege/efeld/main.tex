@@ -62,7 +62,20 @@
   \]
 \end{frame}
 
-\subsection{ 1. N\"aherung der St\"orung }
+\subsection{ Psi ungest\"ort }
+\begin{frame}
+  \frametitle{ Psi ungest\"ort }
+  \begin{figure}
+    \centering
+    % [clip=true,trim=links unten rechts oben]
+    \includegraphics[height=5.6cm,clip=true,trim=2cm 7cm 1cm 8cm]{../../skript/efeld/Psi_ungestoert.pdf}
+    \caption{$\psi$ ungest\"ort}
+    \label{abb:efeld_psi_ungestoert}
+  \end{figure}
+
+\end{frame}
+
+\subsection{ Modell 1. N\"aherung }
 \begin{frame} 
   \frametitle{ 1. N\"aherung der St\"orung }
 
@@ -73,16 +86,22 @@
 
   f\"ur das Potential $V_1(x)$ gilt
   \[
-    V_1(x) = a*x +b ; b = 0 \text{ weil es dann symetisch ist }
+    V_1(x) = a*x +b 
+  \]
+  
+  \[
+  a = 1 \text{ lineare S\"orung }
+  \]
+  \[
+  b = 0 \text{ weil es dann symetisch ist }
   \]
 
   Die Ausgangsgleichung f\"ur $\hat{H}$ lautet
   \[
     \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
-	      + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + a*x )
+               + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + x )
   \]
 \end{frame}
-
 
 \section{ Gleichungen Umformen }
 \begin{frame}
@@ -96,10 +115,78 @@
   \end{figure}
 \end{frame}
 
+\subsection{ 1. N\"aherung der St\"orung }
+\begin{frame}
+  \frametitle{ 1. N\"aherung der St\"orung }
+  \begin{align*}
+    \hat{H} &= \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
+               + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + x )
+  \\
+  \\
+    (H_0+\varepsilon H_1)\,|\psi_k(\varepsilon)\rangle
+    &=
+    E_k(\varepsilon)\,|\psi_k(\varepsilon)\rangle
+  \\
+  \\
+    |\psi_k(\varepsilon)\rangle
+    &=
+    |\psi_k^{(0)}\rangle+\varepsilon\,|\psi_k^{(1)}\rangle
+    +\varepsilon^2\,|\psi_k^{(2)}\rangle+\dots
+  \\
+    E_k(\varepsilon)
+    &=
+    E_k^{(0)}+\varepsilon E_k^{(1)} + \varepsilon^2 E_k^{(2)}+\dots
+  \end{align*}
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{ Wandtafel Beispiel }
+  
+  \[
+      \begin{aligned}
+      k&=l
+      &&\Rightarrow&
+      E_k^{(1)}
+      &=
+      \langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+      \\
+      k&\ne l
+      &&\Rightarrow&
+      \langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+      &=
+      \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+    \end{aligned}
+  \]
+  
+  \\
+  
+  \[
+    k = 5 ; \gamma = 0
+  \]
+  
+  \[
+    |\psi_k(\varepsilon)\rangle
+    =
+    (1+i\varepsilon \gamma)
+    \,|\psi_k^{(0)}\rangle
+    +
+    \varepsilon
+    \sum_{l=1}^{ l < k }
+    \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+    \,
+    |\psi_l^{(0)}\rangle
+  \]
+  
+\end{frame}
+
+
+
 \section{ Bilder }
 \subsection{ Psi ungest\"ort }
 \begin{frame}
-  \frametitle{ Bilder }
+  \frametitle{ Psi ungest\"ort }
   \begin{figure}
     \centering
     % [clip=true,trim=links unten rechts oben]
@@ -112,7 +199,10 @@
 
 \subsection{ Psi gest\"ort }
 \begin{frame}
-  \frametitle{ Bilder }
+  \frametitle{ Psi gest\"ort }
+  \[
+    \varepsilon = 4*10^{-3}
+  \]
   \begin{figure}
     \centering
     % [clip=true,trim=links unten rechts oben]
@@ -125,7 +215,7 @@
 
 \subsection{ E gest\"ort }
 \begin{frame}
-  \frametitle{ Bilder }
+  \frametitle{ E gest\"ort }
   \begin{figure}
     \centering
     % [clip=true,trim=links unten rechts oben]
