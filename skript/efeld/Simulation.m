@@ -78,19 +78,13 @@ for ln = n
 	psi1_l = zeros(1, length(x));
 
 	k = ln;
-	if k > 1
-		for l = 1 : k -1 % + ceil(l/2)
-			if l ~= k
-	%			psi0_l = sum(~Psi(l, :).*H1.*Psi(k, :).*delta) / (E(k)-E(l));
-				psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l));
-				psi1_l = psi1_l + psi0_l .* Psi(l, :);
-				loopCount = loopCount + 1;
-			end
+	for l = n % + ceil(l/2)
+		if l ~= k
+%			psi0_l = sum(~Psi(l, :).*H1.*Psi(k, :).*delta) / (E(k)-E(l));
+			psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l));
+			psi1_l = psi1_l + psi0_l .* Psi(l, :);
+			loopCount = loopCount + 1;
 		end
-	else
-		psi0_l = dot(Psi(1, :), H1.*Psi(1, :)) / E(1);
-		psi1_l = psi0_l .* Psi(1, :);
-		loopCount = loopCount + 1;
 	end
 	
 	PsiG(ln, 1:length(x)) = (1+1i*epsilon*gamma).*Psi(ln, 1:length(x)) ...
