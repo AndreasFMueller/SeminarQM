@@ -51,7 +51,7 @@ Durch Einsetzen in (\ref{fq:maxwell_4}) erh"alt man die Gleichung f"ur E:
 \end{split}
 \end{equation*}
 
-$\varphi$ ist das skalare Potential des Feldes. Durch einsetzen in (\ref{fq:maxwell_4}) wird ersichtlich, dass die Gleichung f"ur jedes $\varphi$ gelten:
+$\varphi$ ist das skalare Potential des Feldes. Durch einsetzen in (\ref{fq:maxwell_4}) wird ersichtlich, dass die Gleichung f"ur jedes $\varphi$ gilt:
 \begin{equation*}
 \nabla\times (-\dfrac{\partial A}{\partial t} - \nabla \varphi) + \frac{\partial \nabla\times A }{\partial t} = 
 - \frac{\partial \nabla\times A }{\partial t} - \underbrace{\nabla\times \nabla \varphi}_{=0\text{ f"ur jedes Potential } \varphi} + \frac{\partial \nabla\times A }{\partial t} = 0\\
@@ -84,7 +84,7 @@ Dadurch vereinfachen sich die gekoppelten Differentialgleichungen zu einer Diffe
 \end{equation}
 
 \section{Vom Wellenfeld zu unabh"angigen Oszillatoren}
-L"osungen dieser Gleichung f"ur periodische Randbedingungen und $t=0$ in einem Würfel mit Seitenl"ange $L = V^{1/3}$ sind durch die Fourier-Reihe gegeben \cite{fq:em_wave_eq}:
+L"osungen dieser Gleichung f"ur periodische Randbedingungen und $t=0$ in einem W"urfel mit Seitenl"ange $L = V^{1/3}$ sind durch die Fourier-Reihe gegeben \cite{fq:em_wave_eq}:
 
 \begin{equation} \label{fq:wave_eq}
 A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c_{k,\alpha} \varepsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + \bar{c}_{k,\alpha} \varepsilon^{(\alpha)} e^{-i(k \cdot x - \omega_k t)}\right)
@@ -392,10 +392,10 @@ Nehmen wir an, ein Elektron absorbiert ein Photon vom Zustand $(k,\alpha)$ und w
 \begin{split}
 \langle Y; n_{k,\alpha} - 1 |\, H_{\text{int}} \,| X; n_{k,\alpha} \rangle &=
  -\frac{e}{m} \left\langle Y; n_{k,\alpha} - 1 \biggl| 
- \, \frac{1}{\sqrt{V}} \sum_i \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}}a_{k,\alpha} \varepsilon^{(\alpha)} e^{i(k \cdot x-\omega_k t)} \cdot p_i \,
+ \, \frac{1}{\sqrt{V}} \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}}a_{k,\alpha} \varepsilon^{(\alpha)} e^{i(k \cdot x-\omega_k t)} \cdot p \,
 \biggl| X; n_{k,\alpha} \right\rangle\\
-&= -\frac{e}{m} \sqrt{\frac{n_{k,\alpha} \hbar}{2 \varepsilon_0 \omega_k V}} \sum_i \left\langle Y \left|
-\, e^{ik \cdot x} \varepsilon^{(\alpha)} \cdot p_i \,
+&= -\frac{e}{m} \sqrt{\frac{n_{k,\alpha} \hbar}{2 \varepsilon_0 \omega_k V}} \left\langle Y \left|
+\, e^{ik \cdot x} \varepsilon^{(\alpha)} \cdot p \,
 \right| X \right\rangle e^{-i\omega_k t}
 \end{split}
 \end{equation}
@@ -405,10 +405,10 @@ Der Emissionsprozess wird beschrieben durch:
 \begin{split}
 \langle Y; n_{k,\alpha} + 1 |\, H_{\text{int}} \,| X; n_{k,\alpha} \rangle &= 
 -\frac{e}{m} \left\langle Y; n_{k,\alpha} + 1 \biggl| 
-\, \frac{1}{\sqrt{V}} \sum_i \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}}a^+_{k,\alpha} \varepsilon^{(\alpha)} e^{-i(k \cdot x-\omega_k t)} \cdot p_i \,
+\, \frac{1}{\sqrt{V}} \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}}a^+_{k,\alpha} \varepsilon^{(\alpha)} e^{-i(k \cdot x-\omega_k t)} \cdot p \,
 \biggl| X; n_{k,\alpha} \right\rangle\\
-&= -\frac{e}{m} \sqrt{\frac{ (n_{k,\alpha}+1) \hbar}{2 \varepsilon_0 \omega_k V}} \sum_i \left\langle Y \left| 
-\, e^{-ik \cdot x} \varepsilon^{(\alpha)} \cdot p_i \,
+&= -\frac{e}{m} \sqrt{\frac{ (n_{k,\alpha}+1) \hbar}{2 \varepsilon_0 \omega_k V}} \left\langle Y \left| 
+\, e^{-ik \cdot x} \varepsilon^{(\alpha)} \cdot p \,
 \right| X \right\rangle e^{i\omega_k t}
 \end{split}
 \end{equation}
@@ -417,15 +417,15 @@ Der Emissionsprozess wird beschrieben durch:
 \subsubsection{Emission und Absorption}
 Beim betrachten von (\ref{fq:emission}) f"allt auf, dass die Wahrscheinlichkeit f"ur die Emission bei nicht vorhandener elektromagnetischer Strahlung ($n_{k,\alpha} = 0$) gr"osser als null ist, da $\sqrt{n_{k,\alpha}+1} > 0$. Dieses Ph"anomen wird spontane Emission genannt.
 
-Bei st"arkerer Strahlung ist die Wahrscheinlichkeit der Emission sowie der Absorption ungef"ahr proportional zu Wurzel der Anzahl Photonen und wird stimulierte Emission genannt.
+Bei st"arkerer Strahlung ist die Wahrscheinlichkeit der Emission ungef"ahr proportional zu Wurzel der Anzahl Photonen und wird stimulierte Emission genannt.
 
-Wenn das Feld gen"ugend stark ist ($n_{k,\alpha} \gg 1$) ist die Absorptions- sowie Emissionswahrscheinlichkeit gleich, da $\sqrt{n_{k,\alpha}+1} \approx \sqrt{n_{k,\alpha}}$. 
+Die Absorption ist proportional zu Wurzel der Anzahl Photonen. Wenn das Feld gen"ugend stark ist ($n_{k,\alpha} \gg 1$) ist die Absorptions- sowie Emissionswahrscheinlichkeit praktisch gleich, da $\sqrt{n_{k,\alpha}+1} \approx \sqrt{n_{k,\alpha}}$. 
 
 \subsubsection{Einsteinkoeffizienten}
-Die Einsteinkoeffizienten \cite{fq:einstein_koeff} werden zur Berechnung der spontanen und stimulierten Emission und Absorption verwendet. Es befinden sich $N_1$ Atome im Grundzustand $1$ sowie $N_2$ Atome im angeregten Zustand $N_2$. Zudem existiert ein Feld mit der Strahldichte $u$. Einstein definierte die Koeffizienten $B_{12}$, $B_{21}$ sowie $A_{21}$ so dass:
+Die Einsteinkoeffizienten \cite{fq:einstein_koeff} werden zur Berechnung der spontanen und stimulierten Emission sowie der Absorption verwendet. Es befinden sich $N_1$ Atome im Grundzustand $1$ sowie $N_2$ Atome im angeregten Zustand $N_2$. Zudem existiert ein Feld mit der Strahldichte $u$. Einstein definierte die Koeffizienten $B_{12}$, $B_{21}$ sowie $A_{21}$ so dass:
 \begin{itemize}
 	\item die Wahrscheinlichkeit der stimulierten Absorption durch $B_{12} N_1 u$
-	\item die Wahrscheinlichkeit der stimulierten Emission $B_{21} N_2 u$ und
+	\item die Wahrscheinlichkeit der stimulierten Emission durch $B_{21} N_2 u$ und
 	\item die Wahrscheinlichkeit der spontanen Emission durch $A_{21} N_2$ (F"ur $u=0$)
 \end{itemize}
 gegeben ist.
