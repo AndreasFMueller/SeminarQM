@@ -162,14 +162,17 @@ Der Messaufbau ist in \figurename~\ref{fig:bell:EPR_Messaufbau} abgebildet.
 
 Diese zwei Partikel werden so generiert, dass sie einen komplement\"aren
 Spin-Zustand besitzen. 
+Durch das Gesetz der Drehimpulserhaltung \textsuperscript{[Citation needed]}
+ist dies einfach m\"oglich, da der Gesamtdrehimpuls eines Elektron-Positron Paares $+\frac12 - \frac12 = 0$ betr\"agt.
+
 Wenn also bei Detektor $A$ der Spin des Elektrons entlang der $z$-Achse
 gemessen wird und das Messresultat $+z$ ist, so ist sofort klar, dass
 das das Positron bei Detektor $B$ den Spin $-z$ besitzen muss. 
 Ebenso wird, falls bei Detektor $A$ der Spin entlang der $x$-Achse als $+x$
 gemessen wird, das Positron bei Detektor $B$ den Spin $-x$ besitzen.
 
-Wie im Kapitel der Heisenbergschen Unsch\"arferelation
-\textsuperscript{[Citation needed]}
+Wie im Kapitel der Heisenbergschen Unsch\"arferelation 
+(Kapitel~\ref{chapter:heisenberg})
 erkl\"art wird, sind die Messungen des Spins in verschiedenen Dimensionen 
 komplement\"are Operatoren.
 Damit ist es unm\"oglich, gleichzeitig beide Eigenschaften eines Teilchens
@@ -212,13 +215,13 @@ beschrieben.
     \end{pmatrix}\label{equ:bell:paulimatrizen}
 \end{align}
 
-Die zugeh\"origen Eigenvektoren wurden in einer \"Ubung hergeleitet und
-betragen:
+Wie in Abschnitt~\ref{subsection:bell:epr:idee} erkl\"art, betrachten wir
+den Spin in $x$- und $z$-Richtung.
+Die Eigenwerte der entsprechenden Pauli-Matrizen betragen:
+
 \begin{align}
     |{+}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\1 \end{pmatrix} &
     |{-}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\-1 \end{pmatrix} &
-    |{+}y\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\i \end{pmatrix} &
-    |{-}y\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} i\\1 \end{pmatrix} &
     |{+}z\rangle &= \begin{pmatrix} 1\\0 \end{pmatrix} &
     |{-}z\rangle &= \begin{pmatrix} 0\\1 \end{pmatrix} &
 \end{align}
@@ -227,14 +230,34 @@ Der Spin-Zustand $|\psi\rangle$ entlang der $z$-Achse eines
 Elektron-Positron Paares  kann durch alle m\"oglichen Kombination der beiden
 Spins von Elektron und Positron beschrieben werden. 
 Diese umfassen $+z$ f\"ur das Elektron und $-z$
-f\"ur das Positron, sowie $-z$ f\"ur das Elektron und $+z$ f\"ur das Positron:
+f\"ur das Positron, sowie $-z$ f\"ur das Elektron und $+z$ f\"ur das Positron.
+Zur Notation dieser kombinierten Zust\"ande wird das Tensorprodukt verwendet.
+
+\begin{definition}\label{def:bell:tensorprodukt}
+    Das Tensorprodukt eines Ket $|\phi\rangle$ mit einem Bra $\langle\psi|$
+    wird geschrieben als
+    \[
+        \phi \otimes \psi \equiv |\phi\rangle\langle\psi|.
+    \]
+    Sind $\phi$ und $\psi$ Vektoren in $\mathbb{C}^2$, so entspricht das
+    Tensorprodukt $\mathbb{C}^2 \otimes \mathbb{C}^2 \to \mathbb{C}^4$ 
+    der Abbildung 
+    \[
+        \psi \otimes \phi = \sum_{i}\sum_{j} \phi_i \psi_j.
+    \]
+\end{definition}
+
+Damit ist der Zustand des Systems $|\psi\rangle$ definiert als
+
 \begin{equation}
     |\psi\rangle = \frac{1}{\sqrt{2}} \Big( 
         |{+}z\rangle \otimes |{-}z\rangle - |{-}z\rangle \otimes |{+}z\rangle
      \Big)
      \label{equ:bell:spinstate}
 \end{equation}
-Damit gilt
+
+und somit
+
 \begin{align}
     |\psi\rangle &= \frac{1}{\sqrt{2}} 
     \left( 
@@ -311,9 +334,8 @@ Der Kommutator $[S_x,S_z]$ ist
 Da die Operatoren $S_x$ und $S_z$ also nicht vertauschen, ist nach der Theorie
 der Quantenmechanik die gleichzeitige Kenntnis der beiden Messungen nicht
 m\"oglich.
-Dass dies jedoch hier der Fall ist, haben wir sowohl intuitiv in
-Abschnitt~\ref{subsection:bell:epr:idee}, wie auch mathematisch in
-diesem Abschnitt bewiesen. 
+Dass dies jedoch hier der Fall ist, haben wir in Abschnitt~\ref{subsection:bell:epr:idee}
+hergeleitet und mathematisch in diesem Abschnitt beweisen k\"onnen.
 Damit m\"ussen wir zur Schlussfolgerung kommen, dass entweder 
 (1) eine sofortige Kommunikation zwischen dem Elektron und dem Positron
 stattfindet, was  jedoch durch die Lokalit\"at ausgeschlossen wird,
