@@ -21,7 +21,7 @@ xSteps = 100;
 delta = (l/xSteps);
 %x = -l*1.5 : delta : +l*1.5;
 x = -l : delta : +l;
-n = 1 : 5;
+n = 1 : 10;
 %n = [1, 2];
 
 %-----Verarbeitung-----
@@ -79,11 +79,13 @@ for ln = n
 
 	k = ln;
 	if k > 1
-		for l = 1 : k - 1
-%			psi0_l = sum(~Psi(l, :).*H1.*Psi(k, :).*delta) / (E(k)-E(l));
-			psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l));
-			psi1_l = psi1_l + psi0_l .* Psi(l, :);
-			loopCount = loopCount + 1;
+		for l = 1 : k -1 % + ceil(l/2)
+			if l ~= k
+	%			psi0_l = sum(~Psi(l, :).*H1.*Psi(k, :).*delta) / (E(k)-E(l));
+				psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l));
+				psi1_l = psi1_l + psi0_l .* Psi(l, :);
+				loopCount = loopCount + 1;
+			end
 		end
 	else
 		psi0_l = dot(Psi(1, :), H1.*Psi(1, :)) / E(1);
@@ -101,7 +103,7 @@ clf('reset')			% clear figure
 hold on;
 
 s = zeros(1, length(n));
-for ln = n		% ungestoerter Plot
+for ln = 1:5		% ungestoerter Plot
 	plot(x, Psi(ln, :) + (ln-1)*2e05, 'Color', 'black')		% Psi
 
 	s(ln) = sum(Psi(ln, :).^2.*delta);
@@ -114,7 +116,7 @@ end
 % hold on;
 
 sG = zeros(1, length(n));
-for ln = n		% gestoerter Plot
+for ln = 1:5		% gestoerter Plot
 	plot(x, PsiG(ln, 1:length(x)) + (ln-1)*2e05, 'Color', 'red')		% Psi
 
 	sG(ln) = sum(PsiG(ln, :).^2.*delta);
