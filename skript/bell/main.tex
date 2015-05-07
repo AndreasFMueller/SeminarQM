@@ -630,7 +630,7 @@ Photonen mit identischer Polarisation.
 Dabei k\"onnen die Photon entweder vertikal ($V$ bzw. $+$) oder horizontal
 ($H$ bzw. $-$) polarisiert sein. 
 Es ergibt sich der folgende Polarisationszustand:
-\begin{equation}
+\begin{equation}\label{equ:bell:photonstate}
     |\psi\rangle = \frac{1}{\sqrt{2}} \Big(
         |V\rangle \otimes |V\rangle + |H\rangle \otimes |H\rangle
     \Big)
@@ -657,20 +657,92 @@ Diese Werte werden in die Bellsche Ungleichung eingesetzt:
 \begin{equation}
     S = E(a,b) + E(a,b') + E(a',b) - E(a',b')
 \end{equation}
+Wenn das gemessene $S$ die Ungleichung \eqref{equ:bell:bellineq} 
+$-2 \leq S \leq +2$
+verletzt, so st\"utzt das Experiment die Ergebnisse der Quantenmechanik.
+Kann nicht mit ausreichender statistischer Signifikanz belegt werden, dass
+die Bellsche Ungleichung verletzt wird, so kann die Existenz verborgener
+lokaler Variablen nicht ausgeschlossen werden.
 
 \subsection{M\"ogliche Probleme}
+Es gibt zahlreiche Herausforderungen bei der Entwicklung und der Durchf\"uhrung
+solcher Experimente.
+Die wichtigsten Probleme sind
 
-Detection Loophole
-Locality Loophole
+\paragraph{Effizienz der Detektoren}
+Die Entwicklung eines Detektoren, welcher einzelne Photonen detektieren muss,
+gestaltet sich nicht als einfach, und die optimale Effizienz von $\eta = 1$ wird
+nicht erreicht.
+Je h\"oher die Effizienz der verwendeten Detektoren ist, desto gr\"osser ist die
+Konfidenz in das Resultat der Messung. 
+
+\paragraph{Sicherstellen der Lokalit\"at}
+Im Experiment muss sichergestellt sein, dass die beiden Teilchen keine
+keine Informationen \"uber die Messung austauschen k\"onnen.
+Dazu m\"ussen die Detektoren so r\"aumlich getrennt werden, dass
+der gesamte Messprozess bei beiden Detektoren beendet ist, bevor Informationen,
+welche sich mit Lichtgeschwindigkeit ausbreiten, beim anderen Teilchen
+ankommen k\"onnen. 
+
+\paragraph{R\"aumliche Korrelation}
+Neben der Anforderung, dass ein Photonenpaar mit gleicher Polarisation erzeugt
+werden muss, m\"ussen die Photonen ebenfalls r\"aumlich so korreliert sein,
+dass diese wirklich zum Detektor gelangen.
+Dazu m\"ussen Betrag und Richtung des Impulses beider Photonen stark korreliert
+sein. Dies wird in Abbildung~\ref{fig:bell:raum_korr} illustriert.
+
+\begin{figure}
+    \centering
+    \includegraphics{bell/images/raum_korr.pdf}
+    \caption{Sind die Photonen r\"aumlich nur schwach korreliert,
+    so k\"onnen nicht notwendigerweise beide detektiert werden.}
+    \label{fig:bell:raum_korr}
+\end{figure}
 
 \subsection{Freedman Clauser}
-    
-    \begin{figure}[ht!]
-        \centering
-        \includegraphics{bell/images/what_if.pdf}
-    \end{figure}
+Das erste Experiment, welches die Bellsche Ungleichung \"uberpr\"ufte
+wurde 1972 von Stuart Freedman und John Clauser an der UC~Berkeley
+in Kalifornien durchgef\"uhrt.
+\cite{Bell:Freedman1972}
+Dazu wurden Calcium-40 Atome in den Zustand $\text{3d}\,\text{4p}\,^1\text{P}_1$
+angeregt. 
+Wie in Abbildung~\ref{fig:bell:freedman} dargestellt wird ein Teil der
+angeregten Atome direkt in den Grundzustand $\text{4s}^2\,^1\text{S}_0$
+\"ubergehen, w\"ahrend etwa \SI{7}{\percent} der Atome \"uber die Kaskade
+via $\text{4p}^2\,^1\text{S}_0$ und $\text{4p}\,\text{4s}\,^1\text{P}_1$ 
+in den Grundzustand \"ubergehen.
+Dabei werden zwei Photonen mit einer Wellenl\"ange von \SI{551.3}{\nano\meter}
+bzw. \SI{442.7}{\nano\meter} freigesetzt. 
+Da der Drehimpuls des Calcium Atoms $J=0$ betr\"agt, m\"ussen die Photonen
+eine entgegengesetzte Polarisation haben.
+Da, im Vergleich zu \eqref{equ:bell:photonstate}, die Photonen eine
+entgegengesetzte, nicht eine gleiche, Polarisation aufweisen, sind die 
+Zust\"ande nat\"urlich anders, das Verfahren bleibt jedoch gleich.
+
+\begin{figure}
+    \centering
+    \includegraphics{bell/images/freedman.pdf}
+    \caption{Atomare Kaskade im Calcium Atom, welche zwei Photonen mit
+    gegens\"atzlicher Polarisation erzeugt. \cite{Bell:Freedman1972}}
+    \label{fig:bell:freedman}
+\end{figure}
+
+Mit diesem Experiment konnten Freedman und Clauser erstmals die Bellsche
+Ungleichung testen und konnte eine klare Verletzung der Bellschen Ungleichung
+messen.
+Aufgrund einer sehr tiefen Detektor-Effizienz und nur schwacher r\"aumlicher
+Korrelation der Photonen konnte jedoch, trotz Best\"atigung in mehreren 
+\"ahnlichen Experimenten, die Existenz verborgener lokaler Variablen nicht
+mit Sicherheit ausgeschlossen werden.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics{bell/images/what_if.pdf}
+    \caption{Adaptiert von \cite{Bell:XkcdWhatIf}}
+\end{figure}
     
 \subsection{Alain Aspect}
+
 
 \section{Zusammenfassung}
 
