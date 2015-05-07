@@ -25,59 +25,47 @@ Die in der Elektrotechnik wohl bekannten Maxwell-Gleichungen in SI Einheiten lau
 \nabla\cdot B &=0 \label{fq:maxwell_3}\\
 \nabla\times E &= -\frac{\partial B }{\partial t} \label{fq:maxwell_4}
 \end{align}
-
-Weiter gilt:
-
+Zudem gilt:
 \begin{equation*}
 \mu_0\varepsilon_0=\frac{1}{c^2}
 \end{equation*}
 
 In Kapitel \ref{section:vektorpotential} wurde gezeigt, dass $B$ als Rotation des Vektorpotentials $A$ geschrieben werden kann:
-\begin{equation*}
+\begin{equation}
 B = \nabla\times A 
-\end{equation*}
-
+\end{equation}
 wodurch (\ref{fq:maxwell_3}) erf"ullt wird, da $\nabla \cdot ( \nabla\times V ) = 0$ f"ur jedes Vektorfeld V gilt:
 \begin{equation*}
 \nabla \cdot B = \nabla \cdot ( \nabla\times A ) = 0
 \end{equation*}
-
-Durch Einsetzen in (\ref{fq:maxwell_4}) erh"alt man die Gleichung f"ur E:
-\begin{equation*}
-\begin{split}
-\nabla\times E + \frac{\partial B }{\partial t} &= 0 \\
-\nabla\times E + \frac{\partial \nabla\times A }{\partial t} &= 0 \\
-\rightarrow E &= -\dfrac{\partial A}{\partial t} - \nabla \varphi
-\end{split}
-\end{equation*}
-
-$\varphi$ ist das skalare Potential des Feldes. Durch einsetzen in (\ref{fq:maxwell_4}) wird ersichtlich, dass die Gleichung f"ur jedes $\varphi$ gilt:
+Wir definieren $E$ als:
+\begin{equation}
+E = -\dfrac{\partial A}{\partial t} - \nabla \varphi
+\end{equation}
+wobei $\varphi$ ist das skalare Potential des Feldes ist. Durch Einsetzen von $E$ in (\ref{fq:maxwell_4}) wird ersichtlich, dass die Gleichung damit erf"ullt ist:
 \begin{equation*}
 \nabla\times (-\dfrac{\partial A}{\partial t} - \nabla \varphi) + \frac{\partial \nabla\times A }{\partial t} = 
 - \frac{\partial \nabla\times A }{\partial t} - \underbrace{\nabla\times \nabla \varphi}_{=0\text{ f"ur jedes Potential } \varphi} + \frac{\partial \nabla\times A }{\partial t} = 0\\
 \end{equation*}
-
-Durch weiteres Einsetzen k"onnen die vier Maxwell-Gleichungen in zwei Gleichungen umgeschrieben werden. (\ref{fq:maxwell_3}) und (\ref{fq:maxwell_4}) wurden bereits erf"ullt. Aus (\ref{fq:maxwell_1}) und (\ref{fq:maxwell_2}) werden:
+(\ref{fq:maxwell_3}) und (\ref{fq:maxwell_4}) wurden bereits erf"ullt. Durch Einsetzen von $E$ und $B$ wird aus (\ref{fq:maxwell_1}) und (\ref{fq:maxwell_2}):
 \begin{align} 
  \label{fq:a_coupled_a}
  \nabla^2 \varphi + \dfrac{\partial \nabla A}{\partial t} &= -\rho \\
  \label{fq:a_coupled_b}
  \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} - \nabla \left( \nabla \cdot A + \frac{1}{c^2} \frac{\partial \varphi }{\partial t} \right) &= - \frac{1}{c} j
 \end{align}
-
+Die vier Maxwell-Gleichungen k"onnen also auch als zwei Gleichungen dargestellt werden.
 Mittels der Lorenz-Eichung (Siehe Kapitel \ref{section:eichtransformation}) kann $\varphi$ so gew"ahlt werden, dass:
-
 \begin{equation} \label{fq:lorenz_eq}
 \nabla \cdot A + \frac{1}{c^2} \frac{\partial \varphi }{\partial t} = 0
 \end{equation}
-
 Dadurch werden die zwei gekoppelten Gleichungen (\ref{fq:a_coupled_a}) und (\ref{fq:a_coupled_b}) entkoppelt und es gilt:
 \begin{align*}
 \nabla^2 \varphi - \frac{1}{c^2} \dfrac{\partial^2 \varphi}{\partial t^2} &= -\rho \\
 \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} &= - \frac{1}{c} j
 \end{align*}
 
-F"ur die Feldquantisierung wollen wir ein freies Feld im Vakuum betrachten. Hierf"ur gilt $j = \rho = 0$.
+F"ur die Feldquantisierung wollen wir ein freies Feld im Vakuum betrachten. Hierf"ur gilt $j = 0$ sowie $\rho = 0$.
 Dadurch vereinfachen sich die gekoppelten Differentialgleichungen zu einer Differentialgleichung in A:
 \begin{equation} \label{fq:wave_dgl}
 \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} = 0
@@ -89,14 +77,12 @@ L"osungen dieser Gleichung f"ur periodische Randbedingungen und $t=0$ in einem W
 \begin{equation} \label{fq:wave_eq}
 A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c_{k,\alpha} \varepsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + \bar{c}_{k,\alpha} \varepsilon^{(\alpha)} e^{-i(k \cdot x - \omega_k t)}\right)
 \end{equation}
-
-Dabei ist:
+$k$ ist der Ausbreitungsvektor der Welle und zeigt in die Ausbreitungsrichtung und $\varepsilon^{(\alpha)}$ ist die Polarisation. Dabei ist:
 \begin{align*}
 \omega_k=|k|c \\
 \lambda = \frac{2 \pi}{|k|}
 \end{align*}
-
-oder durch setzen von $c_{k,\alpha}(t) = c_{k,\alpha} e^{-i \omega_k t}$ sowie $u_{k,\alpha}(x) = \varepsilon^{(\alpha)} e^{ik \cdot x}$:
+Durch setzen von $c_{k,\alpha}(t) = c_{k,\alpha} e^{-i \omega_k t}$ sowie $u_{k,\alpha}(x) = \varepsilon^{(\alpha)} e^{ik \cdot x}$ kann die Gleichung auch in einen Zeit- und einen Ortsabh"angigen Teil aufgeteilt werden:
 \begin{equation*}
 A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c_{k,\alpha}(t)u_{k,\alpha}(x) + \bar{c}_{k,\alpha}(t) \bar{u}_{k,\alpha}(x) \right)
 \end{equation*}
@@ -107,32 +93,23 @@ $A(x,t)$ wird durch die konjugiert komplexe Wahl der Koeffizienten f"ur alle $c_
 \end{equation*}
 %=a \cos k \cdot x + ib \cos k \cdot x + ia \sin k \cdot x - b \sin k \cdot x + a \cos k \cdot x - ib \cos k \cdot x - ia \sin k \cdot x - b \sin k \cdot x
 
-$k$ ist der Ausbreitungsvektor der Welle und zeigt in die Ausbreitungsrichtung und $\varepsilon^{(\alpha)}$ ist die Polarisation. 
+Es stellt sich nun die Frage, wie die Vektoren $k$ und $\varepsilon^{(\alpha)}$ gew"ahlt werden m"ussen. Damit die Orthogonalit"at der Fourier-Reihe gew"ahrleistet ist, m"ussen $(\varepsilon^{(1)}, \varepsilon^{(2)} \text{ und } \varepsilon^{(3)})$ orthogonal sein. Wir w"ahlen die L"ange $1$. Durch Linearkombinationen k"onnen somit beliebige Polarisation gew"ahlt werden. Zudem setzen wir fest, dass $\varepsilon^{(3)}$ sowie $k$ parallel sind.
 
+Die Berechnung von $B$ und $E$ liefert:
 \begin{equation*}
-B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k ik \times \varepsilon^{(\alpha)} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
+B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k i \underbrace{k \times \varepsilon^{(\alpha)}}_{\neq 0} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
 \end{equation*}
 
 \begin{equation*}
 E = - \frac{\partial A}{\partial t} = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \varepsilon^{(\alpha)} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
 \end{equation*}
+Hier darf der Term $k \times \varepsilon^{(\alpha)}$ nicht verschwinden, damit sich eine Welle bilden kann. Somit f"allt $\varepsilon^{(3)}$ weg, da das Vektorprodukt von parallelen Vektoren null ist. Wir definieren somit, dass $(\varepsilon^{(1)}, \varepsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
 
-Aus der Elektrotechnik ist bekannt, dass $B \cdot E = 0$ gilt:
-
-\begin{equation*}
-B \cdot E = \frac{1}{V} \sum_{\alpha=1,2}   \sum_k -\omega_k \underbrace{k \times  \varepsilon^{(\alpha)} \cdot \varepsilon^{(\alpha)}}_{=0} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)}\right)^2 = 0
-\end{equation*}
-
-Dies wird erreicht, in dem vorausgesetzt wird, dass $(\varepsilon^{(1)}, \varepsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
-
-Da $\varepsilon^{(\alpha)}$ und $k$ orthogonal sind gilt dabei auch automatisch:
-
+Da $\varepsilon^{(\alpha)}$ und $k$ orthogonal sind, gilt:
 \begin{equation*}
 \nabla \cdot A = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(i c_{k,\alpha} \underbrace{\varepsilon^{(\alpha)} \cdot k}_{=0} e^{i (k \cdot x - \omega_k t)} - i \bar{c}_{k,\alpha} \underbrace{\varepsilon^{(\alpha)} \cdot k}_{=0} e^{-i(k \cdot x - \omega_k t)}\right) = 0
 \end{equation*}
-
-Aufgrund von (\ref{fq:lorenz_eq}) gilt dadurch:
-
+Aufgrund der Lorenz-Eichung (\ref{fq:lorenz_eq}) gilt dadurch:
 \begin{equation*}
 \frac{\partial \varphi }{\partial t} = - c^2 \nabla \cdot A = 0
 \end{equation*}
@@ -151,17 +128,14 @@ H &= \frac{1}{2} \int \left(\frac{1}{\mu_0}|B|^2 + \varepsilon_0|E|^2\right) d^3
 	&= \frac{1}{2} \int \left(\frac{1}{\mu_0} | \nabla\times A |^2 + \frac{1}{c^2 \mu_0} \left| \dfrac{\partial A}{\partial t} \right|^2 \right) d^3 x 
 \end{split}
 \end{equation*}
-
 Es kann gezeigt werden, dass die L"osung dieses Integrals gegeben ist durch:
 \begin{equation*}
 H = \sum_k \sum_{\alpha=1,2} \frac{2}{\mu_0} \left(\frac{\omega_k}{c}\right)^2 \bar{c}_{k,\alpha}(t) c_{k,\alpha}(t)
 \end{equation*}
-
 Durch folgende Definition:
 \begin{equation*}
 Q_{k,\alpha} = \frac{1}{\sqrt{\mu_0} c}\left(c_{k,\alpha}(t) + \bar{c}_{k,\alpha}(t)\right) \quad P_{k,\alpha} = -\frac{i\omega_k}{\sqrt{\mu_0} c}\left(c_{k,\alpha}(t) - \bar{c}_{k,\alpha}(t)\right) 
 \end{equation*}
-
 wird die Hamilton-Funktion zu:
 \begin{equation} \label{fq:hamilton}
 \begin{split}
@@ -173,7 +147,6 @@ H &= \sum_k \sum_{\alpha=1,2} 2 \left(\frac{\omega_k}{c}\right)^2
 \end{equation}
 
 Hier sieht man nun, dass es m"oglich ist, eine Welle durch unabh"angige Oszillatoren dar zu stellen.
-
 $Q_{k,\alpha}$ und $P_{k,\alpha}$ k"onnen nun als Koordinaten und Impulse der einzelnen Oszillatoren aufgefasst werden:
 \begin{equation*}
 \dfrac{\partial H}{\partial Q_{k,\alpha}} = -\dot{P}_{k,\alpha} \qquad \dfrac{\partial H}{\partial P_{k,\alpha}} = \dot{Q}_{k,\alpha}
@@ -181,10 +154,9 @@ $Q_{k,\alpha}$ und $P_{k,\alpha}$ k"onnen nun als Koordinaten und Impulse der ei
 
 \section{Quantisierung des Wellenfeldes}
 
-\subsection{Einleitung}
-Die im vorigen Kapitel hergeleitete Darstellung des Wellenfeldes als einzelne unabh"angige Oszillatoren l"asst die Interpretation dieser als harmonische Oszillatoren, wie in Kapitel \ref{chapter:harmonischeroszillator} beschrieben, zu. Dadurch ist eine analoge Quantisierung m"oglich, die es erlaubt, Wechselwirkungen zwischen Photonen und Elektronen zu beschreiben.
+Die im vorigen Kapitel hergeleitete Darstellung des Wellenfeldes als einzelne unabh"angige Oszillatoren l"asst die Interpretation dieser wie in Kapitel \ref{chapter:harmonischeroszillator} beschrieben, zu. Dadurch ist eine analoge Quantisierung m"oglich, die es erlaubt, Wechselwirkungen zwischen dem Feld und Elektronen zu beschreiben.
 
-Analog zum harmonischen Oszillator werden zuerst die Vertauschungsrelationen und die Auf- und Absteige-Operatoren hergeleitet und dann die Wirkung auf die Zustandsvektoren berechnet. Dies ist praktisch identisch zum harmonischen Oszillator, nur geht es hier um elektromagnetische Wellen und nicht um Elektronen.
+Analog zum harmonischen Oszillator werden zuerst die Vertauschungsrelationen und die Auf- und Absteige-Operatoren hergeleitet und dann die Wirkung auf die Zustandsvektoren berechnet. Dies ist praktisch identisch zum harmonischen Oszillator, nur geht es hier um elektromagnetische Wellen.
 
 \subsection{Vertauschungsrelationen sowie Auf- und Absteige-Operatoren}
 Wie beim harmonischen Oszillator k"onnen $Q_{k,\alpha}$ und $P_{k,\alpha}$ nun als Operatoren aufgefasst werden. Die Vertauschungsrelationen werden dabei zu:
@@ -203,7 +175,6 @@ N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha} = \frac{1}{2 \hbar \omega_k} \left(P
  &= \frac{1}{ \hbar \omega_k } H - \frac{1}{2} = {\cal H} - \frac{1}{2}
 \end{split}
 \end{align*}
-
 Ein Vergleich mit (\ref{fq:hamilton}) sowie $c\sqrt{\mu_0}=1/\sqrt{\varepsilon_0}$ liefert:
 \begin{equation} \label{fq:opp_fourier}
  c_{k,\alpha} \rightarrow \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} a_{k,\alpha} \qquad 
@@ -228,13 +199,12 @@ Die Kommutatoren f"ur diese Operatoren sind:
 
 \subsection{Wirkung auf Zustandsvektoren}
 
-In diesem Unterkapitel werden Suffixes $k$ und $\alpha$ weggelassen, diese gelten aber weiterhin. 
+In diesem Unterkapitel werden Suffixes $k$ und $\alpha$ weggelassen, da wir nur die Wirkung der Operatoren auf einen einzelnen Oszillator betrachten. 
 
 Diese Operatoren werden nun wie beim harmonischen Oszillator auf den Zustand angewendet. Wir suchen einen Eigenvektor $|n\rangle$ und Eigenwert $e_n$ zum Operator $N$ so dass:
 \begin{equation*}
 N|n\rangle = e_n|n\rangle
 \end{equation*}
-
 Auf Grund der Beziehungen der Operatoren gilt dadurch:
 \begin{align*}
 Na^+|n\rangle &= (a^+N + a^+)|n\rangle = (e_n + 1)a^+|n\rangle \\
@@ -248,7 +218,6 @@ Wiederum m"ussen die neuen Eigenvektoren normalisiert werden. Daf"ur werden die 
 a^+|n\rangle &= c_+|n+1\rangle \\
 a|n\rangle &= c_-|n-1\rangle
 \end{align*}
-
 $c_\pm$ wird folgendermassen berechnet:
 \begin{align*}
 \begin{split}
@@ -258,9 +227,7 @@ $c_\pm$ wird folgendermassen berechnet:
 \end{split}\\
 	|c_-|^2 &= 	( a \langle n |\,) \; a \,| n \rangle = \langle n |\, a^+ a \,| n \rangle = e_n
 \end{align*}
-
 Die Phase von $c_{\pm}$ ist nicht definiert. Sie kann auf null bei $t=0$ gesetzt werden. Bei $t=0$ gilt:
-
 \begin{align*}
 a^+\,|n\rangle &= \sqrt{e_n+1}\,|n+1\rangle \\
 a\,|n\rangle &= \sqrt{e_n}\,|n-1\rangle
@@ -285,18 +252,7 @@ Die mit den Auf- und Absteige-Operatoren hinzugef"ugten Energiequanten entsprech
 
 Die im vorigen Kapitel hergeleitete Algebra kann nun auf ein Feld von Photonen, in dem die Anzahl Photonen mit bestimmter Polarisation ($\alpha$) und Impuls (Wellenl"ange $|k|$ sowie Ausbreitungsrichtung $k$) vergr"ossert oder verkleinert wird, angewendet werden.
 
-Der Eigenvektor von $N_{k,\alpha}$ ist der Zustandsvektor f"ur einen Zustand mit einer bestimmten Anzahl Photonen im Zustand $(k,\alpha)$. F"ur einen Zustand mit vielen Photonen in verschiedenen Zust"anden bilden wir das diskrete Produkt aus Eigenvektoren:
-
-\begin{equation*}
-|n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots \, , n_{k_l,\alpha_l}\rangle = |n_{k_1,\alpha_1}\rangle |n_{k_2,\alpha_2}\rangle \, \hdots \, |n_{k_l,\alpha_l}\rangle
-\end{equation*}
-
-$n_{k,\alpha}$ ist dabei die Besetzungszahl f"ur den Zustand $(k,\alpha)$. Der Vakuum-Zustand ist:
-\begin{equation*}
-|0\rangle = |0_{k_1,\alpha_1}\rangle |0_{k_2,\alpha_2}\rangle \, \hdots \, |0_{k_l,\alpha_l}\rangle
-\end{equation*}
-
-Mit dem Aufsteige-Operator k"onnen nun Photonen hinzugef"ugt werden:
+Der Eigenvektor von $N_{k,\alpha}$ ist der Zustandsvektor f"ur einen Zustand mit einer bestimmten Anzahl Photonen im Zustand $(k,\alpha)$. $n_{k,\alpha}$ ist dabei die Besetzungszahl f"ur den Zustand $(k,\alpha)$. Der Vakuum-Zustand ist $|0\rangle$. Mit dem Aufsteige-Operator k"onnen nun Photonen hinzugef"ugt werden:
 
 \begin{align*}
 a^+_{k,\alpha}|0\rangle & \quad \text{ein Photon}\\
@@ -307,7 +263,7 @@ oder allgemein:
 
 \begin{equation*}
 |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots \, , n_{k_l,\alpha_l}\rangle =
- \prod_{k_i,\alpha_i}\underbrace{\frac{1}{\sqrt{n_{k_i,\alpha_i}}}}_{Normierung} \underbrace{\left(a^+_{k_i,\alpha_i}\right)^{n_{k_i,\alpha_i}}}_{Aufsteigeoperator} |0\rangle
+ \prod_{k_i,\alpha_i}\underbrace{\frac{1}{\sqrt{n_{k_i,\alpha_i}}}}_{\text{Normierung}} \underbrace{\left(a^+_{k_i,\alpha_i}\right)^{n_{k_i,\alpha_i}}}_{\text{Aufsteigeoperator}} |0\rangle
 \end{equation*}
 
 Die Fourier-Koeffizienten im Strahlungsfeld werden mittels den Korrespondenzen (\ref{fq:opp_fourier}) durch Operatoren ersetzt um das quantisierte Feld zu erhalten:
@@ -316,18 +272,21 @@ Die Fourier-Koeffizienten im Strahlungsfeld werden mittels den Korrespondenzen (
 A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} \left[a_{k,\alpha} \varepsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + a^+_{k,\alpha} \varepsilon^{(\alpha)} e^{-i (k \cdot x - \omega_k t)}\right]
 \end{equation*}
 
-Durch die Definition zeitabh"angiger Operatoren kann dies umgeschrieben werden:
+Durch die Definition zeitabh"angiger Operatoren
 \begin{align*}
-a_{k,\alpha}(t) &= a_{k,\alpha} e^{-i \omega_k t} \\
-a^+_{k,\alpha}(t) &= a^+_{k,\alpha} e^{i \omega_k t}
+a_{k,\alpha}(t) &= a_{k,\alpha} e^{-i \omega_k t} &
+u_{k,\alpha}(x) &= \varepsilon^{(\alpha)} e^{ik \cdot x} \\
+a^+_{k,\alpha}(t) &= a^+_{k,\alpha} e^{i \omega_k t} &
+u^+_{k,\alpha}(x) &= \varepsilon^{(\alpha)} e^{-ik \cdot x}
 \end{align*}
-
+kann die Gleichung wiederum in einen Zeit- und einen Ortsabh"angigen Teil aufgeteilt werden:
 \begin{equation*}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}}\left[a_{k,\alpha}(t) u_{k,\alpha}(x) + a^+_{k,\alpha}(t) \bar{u}_{k,\alpha}(x) \right]
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}}\left[a_{k,\alpha}(t) u_{k,\alpha}(x) + a^+_{k,\alpha}(t) u^+_{k,\alpha}(x) \right]
 \end{equation*}
 
 Auch wenn diese Gleichung mit (\ref{fq:wave_eq}) verwandt ist, ist die Bedeutung sehr verschieden. Erstere ist eine klassische Funktion in $x$ und $t$. Diese Gleichung ist nun ein Operator aus Linearkombinationen von Auf- und Absteigeoperatoren f"ur jeden Punkt im Raum. Ein solcher Operator heisst {\em Feldoperator} oder {\em quantisiertes Feld}.
 
+\subsubsection{Feldenergie}
 Der Hamiltonoperator ist nun:
 \begin{equation*}
 H = \frac{1}{2} \int \left(\frac{1}{\mu_0} B \cdot B + \varepsilon_0 E \cdot E \right) d^3 x
@@ -353,7 +312,13 @@ Der Hamiltonoperator angewendet auf viele Photonen ergibt nun als Eigenwert die 
 H |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle = \sum_i \hbar \omega_k n_{k_i,\alpha_i} |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle
 \end{equation*}
 
-\section{Wechselwirkung zwischen Photonen und Atomen}
+\section{Wechselwirkung zwischen Photonen und Elektronen}
+
+In diesem Kapitel wird das Ziel erreicht, die Wechselwirkung zwischen Photonen und Elektronen zu beschreiben. Durch diese Beschreibung k"onnen die Einstein-Koeffizienten einfach hergeleitet werden.
+
+Zwischen Photonen und den Neutronen und Protonen eines Atomkerns gibt es zwar auch eine Wechselwirkung. Da die Kernzust"ande sehr viel h"ohere Energien beinhalten, w"aren f"ur eine Zustands"anderung Photonen weit "uber der Gammastrahlung n"otig. Zudem befinden sich viele Elektronen um den Kern, die den Kern praktisch abschirmen und somit viel eher mit den Photonen wechselwirken als der Kern.
+
+Der Spin von Photonen und Elektronen wird vernachl"assigt, da diese Einfluss zwar vorhanden, aber sehr klein ist.
 
 \subsection{Hamiltonoperator}
 
@@ -367,20 +332,24 @@ Um den Hamiltonoperator eines Elektrons im Feld zu erhalten, wird $p$ gem"ass Ka
 \begin{equation*}
 \begin{split}
 H &= \frac{1}{2m}(p - eA)^2 + V(x)\\
- &= \frac{1}{2m}\left[p \cdot p - e p \cdot A(x, t) - e A(x, t) \cdot p + e^2 A(x, t) \cdot A(x, t) \right] + V(x) + H_{\text{spin}}
+ &= \underbrace{\frac{1}{2m}p^2 + V(x)}_{H_0} + \underbrace{\frac{1}{2m}\left[- e p \cdot A(x, t) - e A(x, t) \cdot p + e^2 A(x, t) \cdot A(x, t) \right]}_{H_{\text{int}}}
 \end{split}
 \end{equation*}
 
-Zudem leistet auch der Spin einen, wenn auch oft sehr kleinen, Beitrag zu $H$:
-\begin{equation*}
-H_{\text{spin}} = - \frac{e \hbar}{2m}\sigma \cdot \left[\nabla \times A(x, t)\right] \approx 0
-\end{equation*}
-
-$p$ ist ein Operator mit Ableitung nach dem Ort. Da $\nabla \cdot A = 0$ gilt, vertauschen $p \cdot A(x, t)$. Es interessieren uns sp"ater nur die Interaktionen mit einen Anfangszustand $X$ und Endzustand $Y$. Also der Form $\langle Y| \, H \, |X \rangle$. Da der Anfangszustand und der Endzustand orthogonal sind, gilt $\langle Y| \, p \cdot p \, |X \rangle = 0$ sowie $\langle Y| \, V(x) \, |X \rangle = 0$. Zudem wird der Spin vernachl"assigt. Dadurch wird der Interaction-Hamilton zu:
+$p$ ist ein Operator mit Ableitung nach dem Ort. Da $\nabla \cdot A = 0$ gilt, vertauschen $p \cdot A(x, t)$.  Dadurch wird der Wechselwirkungs-Hamilton zu:
 
 \begin{equation*}
 H_{\text{int}} = -\frac{e}{m} A(x, t) \cdot p + \frac{e^2}{2m}A(x, t) \cdot A(x, t)
 \end{equation*}
+
+Es interessieren uns sp"ater nur die Interaktionen mit einen Anfangszustand $X$ und Endzustand $Y$, also der Form $\langle Y| \, H \, |X \rangle$. Der Anfangszustand und der Endzustand sind orthogonal.
+
+$H_0$ ist der Hamilton-Opperator f"ur das Elektron ohne das elektromagnetische Feld. Es gilt:
+\begin{equation*}
+\langle Y| \, H \, |X \rangle = \langle Y| \, H_0 + H_{\text{int}} \, |X \rangle = \langle Y| \, H_0 \, |X \rangle + \langle Y| \, H_{\text{int}} \, |X \rangle
+\end{equation*}
+
+Da $X$ und $Y$ verschiedene Eigenzust"ande des Elektrons, und somit von $H_0$, sind gilt $\langle Y| \, H_0 \, |X \rangle=0$. Wir nur m"ussen also nur $\langle Y| \, H_{\text{int}} \, |X \rangle$ betrachten.
 
 \subsection{Wechselwirkung zwischen Photonen und Atomen}
 
@@ -415,7 +384,7 @@ Der Emissionsprozess wird beschrieben durch:
 
 \subsection{Folgerungen}
 \subsubsection{Emission und Absorption}
-Beim betrachten von (\ref{fq:emission}) f"allt auf, dass die Wahrscheinlichkeit f"ur die Emission bei nicht vorhandener elektromagnetischer Strahlung ($n_{k,\alpha} = 0$) gr"osser als null ist, da $\sqrt{n_{k,\alpha}+1} > 0$. Dieses Ph"anomen wird spontane Emission genannt.
+Beim Betrachten von (\ref{fq:emission}) f"allt auf, dass die Wahrscheinlichkeit f"ur die Emission bei nicht vorhandener elektromagnetischer Strahlung ($n_{k,\alpha} = 0$) gr"osser als null ist, da $\sqrt{n_{k,\alpha}+1} > 0$. Dieses Ph"anomen wird spontane Emission genannt.
 
 Bei st"arkerer Strahlung ist die Wahrscheinlichkeit der Emission ungef"ahr proportional zu Wurzel der Anzahl Photonen und wird stimulierte Emission genannt.
 
@@ -424,9 +393,9 @@ Die Absorption ist proportional zu Wurzel der Anzahl Photonen. Wenn das Feld gen
 \subsubsection{Einsteinkoeffizienten}
 Die Einsteinkoeffizienten \cite{fq:einstein_koeff} werden zur Berechnung der spontanen und stimulierten Emission sowie der Absorption verwendet. Es befinden sich $N_1$ Atome im Grundzustand $1$ sowie $N_2$ Atome im angeregten Zustand $N_2$. Zudem existiert ein Feld mit der Strahldichte $u$. Einstein definierte die Koeffizienten $B_{12}$, $B_{21}$ sowie $A_{21}$ so dass:
 \begin{itemize}
-	\item die Wahrscheinlichkeit der stimulierten Absorption durch $B_{12} N_1 u$
-	\item die Wahrscheinlichkeit der stimulierten Emission durch $B_{21} N_2 u$ und
-	\item die Wahrscheinlichkeit der spontanen Emission durch $A_{21} N_2$ (F"ur $u=0$)
+	\item die Wahrscheinlichkeit der stimulierten Absorption $B_{12} N_1 u$
+	\item die Wahrscheinlichkeit der stimulierten Emission $B_{21} N_2 u$ und
+	\item die Wahrscheinlichkeit der spontanen Emission $A_{21} N_2$ (F"ur $u=0$)
 \end{itemize}
 gegeben ist.
 
