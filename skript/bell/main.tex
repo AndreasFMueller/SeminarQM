@@ -699,7 +699,7 @@ sein. Dies wird in Abbildung~\ref{fig:bell:raum_korr} illustriert.
     \label{fig:bell:raum_korr}
 \end{figure}
 
-\subsection{Freedman Clauser}
+\subsection{1. Generation -- Freedman Clauser (1972)}
 Das erste Experiment, welches die Bellsche Ungleichung \"uberpr\"ufte
 wurde 1972 von Stuart Freedman und John Clauser an der UC~Berkeley
 in Kalifornien durchgef\"uhrt.
@@ -735,13 +735,107 @@ Korrelation der Photonen konnte jedoch, trotz Best\"atigung in mehreren
 \"ahnlichen Experimenten, die Existenz verborgener lokaler Variablen nicht
 mit Sicherheit ausgeschlossen werden.
 
+\subsection{2. Generation -- Alain Aspect (1980--1985)}
+Anfang der 1980er Jahre wurde an der Universit\'e Paris-Sud in Orsay von Alain
+Aspect im Rahmen seiner Dissertation eine Serie neuer Experimente zur Pr\"ufung
+der Bellschen Ungleichung entwickelt und durchgef\"uhrt. 
+Aspect verwendete dazu dieselbe atomare Kaskade wie Freedman Clauser, jedoch
+wurden die Calcium Atome anders angeregt. 
+Das Problem der Lokalit\"at wurde mittels eines optischen Schalters, welcher 
+innerhalb von \SI{10}{\nano\second} zwischen den zu messenden 
+Polarisationsrichtungen umschalten konnte, behandelt.
+Damit wurde erst w\"ahrend die Photonen bereits auf dem Weg zum Detektor waren
+definiert, welche Messung stattfinden soll.
+Durch eine r\"aumliche Trennung von \SI{13}{\meter} zwischen den Detektoren
+sollte dieses Problem also behandelt werden. 
+
+Obwohl Aspect in allen Experimenten die Verletzung der Bellschen Ungleichung
+best\"atigen konnte, blieben durch die weiterhin geringe Detektor-Effizienz,
+sowie die geringe Distanz zwischen Detektoren Zweifel, ob die Bellsche
+Ungleichung damit tats\"achlich best\"atigt werden kann.
+\textsuperscript{[Citation needed]}
+
 \begin{figure}[ht!]
     \centering
     \includegraphics{bell/images/what_if.pdf}
     \caption{Adaptiert von \cite{Bell:XkcdWhatIf}}
 \end{figure}
     
-\subsection{Alain Aspect}
+\subsection{3. Generation}
+Die Experimente der dritten Generation basieren auf einem neuen Verfahren
+zur Erzeugung von Photonenpaaren, der \emph{parametrischen Fluoreszenz}.
+Dabei wird mittels eines Pumpstrahls mit Frequenz $\omega_p$ ein
+nichtlinearer optischer Kristall angeregt.
+Es entstehen durch den Satz der Energieerhaltung und $E_{ph}=\hbar \omega$
+zwei Photonen mit Frequenzen $\omega_1$ und $\omega_2$, sodass 
+$\omega_1 + \omega_2 = \omega_p$. \textsuperscript{[Citation needed]}
+Damit lassen sich zwei Photonen mit derselben Polarisation erzeugen.
+Mithilfe der Methode der parametrischer Fluoreszenz werden r\"aumlich
+stark korrelierte Photonen erzeugt, was ein deutlicher Vorteil
+gegen\"uber der Methode mit atomaren Kaskaden darstellt.
+Dank der Einkopplung der Photonen in Glasfaserkabel konnten diverse neue
+Experimente entwickelt werden. \textsuperscript{[Citation needed]}
+
+\paragraph{Weihs, Innsbruck 1998}
+Das Problem der Lokalit\"at konnte zum ersten Mal 1998 von einem Team
+um Gregor Weihs in Innsbruck gel\"ost werden \cite{Bell:Weihs1998}.
+Die Detektoren wurden dabei \SI{400}{\meter} voneinander getrennt platziert.
+Damit bleibt eine Zeit von
+\[
+    t_c = \frac{s}{c} = \frac{\SI{400}{\meter}}{\SI{2.998e8}{\meter\per\second}} \approx \SI{1.3}{\micro\second}
+\]
+zur Messung.
+Weihs entwickelte einen elektro-optischen Modulatoren, welcher die 
+Polarisationsrichtung eines Photons um \SI{45}{\degree} drehen konnte und
+mittels eines Zufallsgenerators gesteuert wurde.
+Damit konnte sichergestellt werden, dass die Messrichtung wirklich zuf\"allig
+ist.
+Die gesamte Verz\"ogerung im Messsystem betrug etwa 
+$t_m = \SI{100}{\nano\second}$, also deutlich unter $t_c = \SI{1.3}{\micro\second}$. 
+Damit war das Team um Weihs das erste, welches das Problem der Lokalit\"at
+beheben konnte.
+Ihr Ergebnis,
+\[
+    S(\SI{0}{\degree},\SI{45}{\degree},\SI{22.5}{\degree},\SI{67.5}{\degree})
+    = 2.73 \pm 0.02 \nleqslant 2
+\]
+konnte die Existenz einer Theorie der lokalen verborgenen Variablen klar 
+ausschliessen.
+Die Detektoreffizienz lag bei Weihs jedoch immer noch bei etwa \SI{5}{\percent},
+womit nicht alle Zweifel am Resultat des Experiment behoben werden konnten.
+
+\paragraph{Rowe, Boulder 2001}
+Das erste Experiment, in welchem die Detektoreffizienz gen\"ugend hoch war um
+alle Teilchen korrekt erkennen zu k\"onnen, wurde von Rowe \textit{et al.}
+in Boulder, Colordo durchgef\"uhrt \cite{Bell:Rowe2001}. 
+Durch die Verwendung von Beryllium-Ionen anstatt von Photonen konnte die
+Detektoreffizienz auf \"uber \SI{90}{\percent} erh\"oht werden.
+Auch Rowe kam in seinem Experiment mit
+\[
+    S(\SI{-22.5}{\degree},\SI{67.5}{\degree},\SI{-22.5}{\degree},\SI{67.5}{\degree})
+    = 2.25 \pm 0.03 \nleqslant 2
+\]
+auf eine klare Verletzung der Bellschen Ungleichung.
+Da die Beryllium-Ionen im Experiment jedoch nur \SI{3}{\micro\meter}
+auseinander platziert werden konnten, wurden bereits behobene Probleme in
+diesem Experiment wieder eingef\"uhrt.
+
+\paragraph{Aktuelle Forschung}
+Noch in keinem Experiment konnten gleichzeitig alle Probleme behandelt werden.
+Obwohl der Einfluss aller beschriebener Effekte jeweils einzeln experimentell
+ausgeschlossen werden konnte, kann noch nicht mit Sicherheit nachgewiesen
+werden, dass die Bellsche Ungleichung durch die Quantenmechanik verletzt wird.
+Die Existenz einer Theorie lokaler verborgener Variablen kann also noch nicht
+ausgeschlossen werden. 
+Aktuell wird daran geforscht, alle diese Probleme mit einem einzigen Experiment
+beheben zu k\"onnen. 
+Marissa Giustina (Wien, 2013) \cite{Bell:Giustina2013} konnte mit demselben 
+Aufbau jegliche Zweifel ausr\"aumen -- jedoch nicht gleichzeitig, sondern in 
+mehreren Messungen.
+Es wird erwartet, dass in den n\"achsten Jahren ein Experiment durchgef\"uhrt
+werden kann, welche jegliche Zweifel beseitigt und endg\"ultig nachweisen
+kann, dass die Intuition von Einstein falsch war und keine verborgenen
+lokalen Variablen existieren k\"onnen.
 
 
 \section{Zusammenfassung}
