@@ -687,4 +687,157 @@ z1 = z0 shifted (10,0);
 
 endfig;
 
+%
+% Baendermodell-Bilder für Erklaerung der Charakteristik
+%
+path p;
+path q;
+def band(expr Eup, Edown, w, l) =
+	p := (-l, Eup)--(-w, Eup);
+	numeric delta;
+	delta := 2 * w / 40;
+	for x = -w + delta step delta until w:
+		p := p--(x, (Eup + Edown) / 2
+			+ sind(90 * x / w) * (Edown - Eup) / 2);
+	endfor;
+	p := p--(l,Edown);
+enddef;
+
+def bands(expr Eup, Edown, w, l) =
+	pickup pencircle scaled 1pt;
+	band(Eup,Edown,w,l); draw p;
+	q := p;
+	band(-Edown,-Eup,w,l); draw p;
+	fill p..reverse q..cycle withcolor (1,1,1);
+	label.rt(btex $E_c$ etex, (80,Edown));
+	label.rt(btex $E_v$ etex, (80,-Eup));
+enddef;
+
+def fermi(expr Eup, Edown, w, l) =
+	path p;
+	p := (-l, Eup)--(-w, Eup);
+	numeric delta;
+	delta := 2 * w / 40;
+	for x = -w + delta step delta until w:
+		p := p--(x, (Eup + Edown) / 2
+			+ sind(90 * x / w) * (Edown - Eup) / 2);
+	endfor;
+	p := p--(l,Edown);
+	pickup pencircle scaled 0.3pt;
+	draw p dashed evenly;
+enddef;
+
+def backgrounds(expr l, h, w) =
+	fill (-l,-h)--(-w,-h)--(-w,h)--(-l,h)--cycle withcolor (1,0.9,0.9);
+	fill ( w,-h)--( l,-h)--( l,h)--( w,h)--cycle withcolor (0.9,0.9,1);
+	numeric delta;
+	delta := 2 * w / 10;
+	for i = 0 step 1 until 9:
+		fill (-w + i * delta, -h)
+			--(-w + i * delta + delta, -h)
+			--(-w + i * delta + delta,  h)
+			--(-w + i * delta, h)--cycle
+			withcolor (0.995 - i * 0.01,0.9,0.905 + i * 0.01);
+	endfor;
+	label.top(btex $p\mathstrut$ etex, (-l/2, h)) withcolor red;
+	label.top(btex $n\mathstrut$ etex, ( l/2, h)) withcolor blue;
+enddef;
+
+numeric diodewidth, tunnelwidth;
+diodewidth = 20;
+tunnelwidth = 5;
+
+%
+% Keine Spannung, normale Diode
+%
+beginfig(9)
+
+backgrounds(80,45, diodewidth);
+
+bands(40, 5, diodewidth, 80);
+
+fermi(0, 0, diodewidth, 80);
+label.ulft(btex $E_F$ etex, (-80,0));
+
+endfig;
+
+%
+% Keine Spannung, Tunneldiode (w klein)
+%
+beginfig(10)
+
+backgrounds(80,45, tunnelwidth);
+
+bands(40, -20, tunnelwidth, 80);
+
+fermi(0, 0, tunnelwidth, 80);
+label.llft(btex $E_F$ etex, (-80,0));
+
+endfig;
+
+%
+% Diodenleitung, normale Diode
+%
+beginfig(11)
+
+backgrounds(80,45,diodewidth);
+
+bands(40,20,diodewidth,80);
+
+fermi(-10,10, diodewidth, 80);
+label.ulft(btex $E_F$ etex, (-80,-10));
+
+endfig;
+
+%
+% Tunneldiode, maximaler Tunnelstrom
+%
+beginfig(12)
+
+backgrounds(80,45,tunnelwidth);
+
+bands(40,-10,tunnelwidth,80);
+
+fermi(-10,10,  tunnelwidth, 80);
+label.llft(btex $E_F$ etex, (-80,-10));
+
+label(btex $\ominus$ etex, (10, 4));
+label(btex $\ominus$ etex, (15,-4));
+label(btex $\ominus$ etex, (20, 4));
+label(btex $\ominus$ etex, (25,-4));
+label(btex $\ominus$ etex, (30, 4));
+label(btex $\ominus$ etex, (35,-4));
+drawarrow (10,0)--(-10,0);
+label.lft(btex $I_{\text{Tunnel}}$ etex, (-10,0));
+
+endfig;
+
+%
+% Tunnel-Strom bricht zusammen
+%
+beginfig(13)
+
+backgrounds(80,45,tunnelwidth);
+
+bands(40,0,tunnelwidth,80);
+
+fermi(-20,20,  tunnelwidth, 80);
+label.llft(btex $E_F$ etex, (-80,-20));
+
+endfig;
+
+%
+% Tunnel-Strom bricht zusammen
+%
+beginfig(14)
+
+backgrounds(80,45,tunnelwidth);
+
+bands(40,20,tunnelwidth,80);
+
+fermi(-40,40,  tunnelwidth, 80);
+label.lft(btex $E_F$ etex, (-80,-40));
+
+endfig;
+
 end
