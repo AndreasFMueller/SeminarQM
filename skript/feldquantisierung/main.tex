@@ -96,14 +96,11 @@ $A(x,t)$ wird durch die konjugiert komplexe Wahl der Koeffizienten f"ur alle $c_
 
 Es stellt sich nun die Frage, wie die Vektoren $k$ und $\varepsilon^{(\alpha)}$ gew"ahlt werden m"ussen. Damit die Orthogonalit"at der Fourier-Reihe gew"ahrleistet ist, m"ussen $(\varepsilon^{(1)}, \varepsilon^{(2)} \text{ und } \varepsilon^{(3)})$ orthogonal sein. Wir w"ahlen die L"ange $1$. Durch Linearkombinationen k"onnen somit beliebige Polarisationen gew"ahlt werden. Zudem setzen wir fest, dass $\varepsilon^{(3)}$ sowie $k$ parallel sind.
 
-Die Berechnung von $B$ und $E$ liefert:
+Die Berechnung von $B$ liefert:
 \begin{equation*}
 B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k i \underbrace{k \times \varepsilon^{(\alpha)}}_{\neq 0} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
 \end{equation*}
 
-\begin{equation*}
-E = - \frac{\partial A}{\partial t} = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \varepsilon^{(\alpha)} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
-\end{equation*}
 Hier darf der Term $k \times \varepsilon^{(\alpha)}$ nicht verschwinden, damit sich eine Welle bilden kann. $\varepsilon^{(3)}$ f"allt weg, da das Vektorprodukt von parallelen Vektoren null ist. Wir definieren somit, dass $(\varepsilon^{(1)}, \varepsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
 
 Da $\varepsilon^{(\alpha)}$ und $k$ orthogonal sind, gilt:
@@ -114,6 +111,12 @@ Aufgrund der Lorenz-Eichung (\ref{fq:lorenz_eq}) gilt dadurch:
 \begin{equation*}
 \frac{\partial \varphi }{\partial t} = - c^2 \nabla \cdot A = 0
 \end{equation*}
+
+Die Berechnung von $E$ liefert:
+\begin{equation*}
+	E = - \frac{\partial A}{\partial t} = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \varepsilon^{(\alpha)} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
+\end{equation*}
+Hier wird sichtbar, dass das $A$-Feld den selben Polarisations- sowie Ausbreitungsvektor hat, die Phase aber $90^\circ$ verschoben ist.
 
 Weiterhin gilt wegen der Orthogonalit"at der komplexen Exponentialfunktion auch:
 \begin{align*}
