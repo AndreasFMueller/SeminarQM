@@ -520,15 +520,41 @@ Somit wird der quantenmechanische Erwartungswert zu
 \end{equation}
 
 \subsection{Vorhersage mittels verborgener Variablen}
+Nehmen wir nun an, dass eine Theorie der verborgenen Variablen vorliegt
+und eine Variable $\lambda \in \Lambda$ existiert.
+\"Uber die Art dieser Variable, ob kontinuierlich oder diskret, wird hier keine
+Annahme gemacht.
+Die Wahrscheinlichkeitsverteilung dieser Variable sei $\rho(\lambda)$, womit gilt
+\begin{equation}\label{equ:bell:lambdaverteilung}
+    \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda
+\end{equation}
 
-Wir verwenden erneut den Messaufbau aus Abbildung~\ref{fig:bell:EPR_Messaufbau}
-und nehmen an, dass der Winkel der Messung des Spins bei beiden Detektoren 
-$A$ und $B$ unabh\"angig, beliebig eingestellt werden kann.
-Wir nehmen ebenfalls an, dass eine Theorie der verborgenen Variablen vorliegt
-und eine Variable $\lambda$ existiert.
-\"Uber die Art dieser Variable wird hier keine Annahme gemacht.
-Betrachten wir nun die Einstellung $a$ an Detektor $A$ und die Einstellung
-$b$ an Detektor $B$.
+Damit diese Theorie die Quantenmechanik erweitern kann, muss sie die Vorhersage
+der Quantenmechanik mit dem Erwartungswert 
+$E_{QM}(\vec{a},\vec{b}) = -\vec{a}\cdot\vec{b}$
+ebenfalls f\"ur alle Richtungen $\vec{a}$ und $\vec{b}$ produzieren.
+
+Die Messungen $A(\vec{a})$ und $B(\vec{b})$ h\"angen nun also von einer
+vorbestimmten Variable $\lambda$ ab.
+\begin{equation}\label{equ:bell:messungen_ab}
+    A(\vec{a}) \cdot B(\vec{b})(\lambda) = A(\vec{a},\lambda) \cdot B(\vec{b},\lambda)
+\end{equation}
+mit
+\[
+    A(\vec{a},\lambda) = \pm 1 \qquad \text{und} \qquad B(\vec{b},\lambda) = \pm 1
+\]
+Aus \eqref{equ:bell:lambdaverteilung} und \eqref{equ:bell:messungen_ab}
+l\"asst sich der Erwartungswert des Produkts der beiden Spin-Messungen
+bestimmen als
+\begin{equation}
+    E(\vec{a},\vec{b}) = \int_{\lambda\in\Lambda} 
+    \rho(\lambda) A(\vec{a},\lambda) B(\vec{b},\lambda) d\lambda
+\end{equation}
+
+
+
+
+\subsection{Herleitung der CHSH Ungleichung}
 Wir bezeichnen das Resultat der Messung $a$ als $s$ und das Resultat
 der Messung $b$ als $t$.
 Nun definieren wir die Wahrscheinlichkeit, dass die Messung $a$ f\"ur ein
