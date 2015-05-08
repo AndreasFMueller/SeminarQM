@@ -443,6 +443,84 @@ Als erstem Physiker gelang es die Frage umzudrehen, und nicht nach solchen
 Variablen bzw. Teilchen zu suchen, sondern gleich deren Nicht-Existenz
 zu beweisen.
 
+\subsection{Vorhersage der Quantenmechanik}
+Der Spin eines Teilchens in einer Richtung $\vec{a}$ wird durch die Projektion
+der Spin-Matrix des Teilchens $A$ auf die Richtung $\vec{a}$ gemessen.
+\begin{equation}\label{equ:bell:meas_a}
+    \vec{\hat{\sigma}}_A \cdot \vec{a}
+\end{equation}
+Dies kann mithilfe der Pauli-Matrizen \eqref{equ:bell:paulimatrizen} geschrieben
+werden als
+\begin{align}
+    \vec{a} \cdot \vec{\hat{\sigma}}_A &= 
+    a_1 \hat{\sigma}_x + a_2 \hat{\sigma}_y + a_3 \hat{\sigma}_z = 
+    a_1 \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} +
+    a_2 \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} + 
+    a_3 \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \\
+    & = \begin{pmatrix}
+       a_3 & a_1 - i a_2 \\
+       a_1 - i a_2 & -a_3
+    \end{pmatrix} \label{equ:bell:proj_a_s}
+\end{align}
+Der Spin-Zustand $|\psi\rangle$ des Elektron-Positron Paares kann mit
+\eqref{equ:bell:meas_a} und gleich f\"ur das Teilchen $B$: 
+$\vec{\hat{\sigma}}_B \cdot \vec{b}$ als Superposition der beiden
+Spin-Zust\"ande bei $A$ und $B$ geschrieben werden:
+\begin{equation}
+    |\psi\rangle = \left( \vec{\hat{\sigma}}_A \cdot \vec{a} \right)
+        \otimes \left( \vec{\hat{\sigma}}_B \cdot \vec{b} \right)
+\end{equation}
+Der Erwartungswert $E_{QM}$ des Produkts der zwei Spin-Messungen
+ist daher
+\begin{equation}\
+    E_{QM} = \left\langle \phi \left| 
+    \left( \vec{\hat{\sigma}}_A \cdot \vec{a} \right)
+            \otimes \left( \vec{\hat{\sigma}}_B \cdot \vec{b} \right)
+    \right| \phi \right\rangle
+\end{equation}
+Da die Messung jeweils entweder $|+\rangle$ oder $|-\rangle$ ergibt, kann
+dies analog zu \eqref{equ:bell:spinstate} umgeformt werden.
+\begin{equation} 
+\begin{split}
+   E_{QM }=&\left\langle \phi \left| 
+       \left( \vec{\hat{\sigma}}_A \cdot \vec{a} \right)
+               \otimes \left( \vec{\hat{\sigma}}_B \cdot \vec{b} \right)
+       \right| \phi \right\rangle
+    = \\
+    \frac{1}{2}\Bigg[ &
+        \left\langle{+}\left| \vec{\hat{\sigma}}_A \cdot \vec{a} \right|{+}\right\rangle_A
+        \left\langle{-}\left| \vec{\hat{\sigma}}_B \cdot \vec{b} \right|{-}\right\rangle_B
+        -
+        \left\langle{+}\left| \vec{\hat{\sigma}}_A \cdot \vec{a} \right|{-}\right\rangle_A
+        \left\langle{-}\left| \vec{\hat{\sigma}}_B \cdot \vec{b} \right|{+}\right\rangle_B \\
+        - &
+        \left\langle{-}\left| \vec{\hat{\sigma}}_A \cdot \vec{a} \right|{+}\right\rangle_A
+        \left\langle{+}\left| \vec{\hat{\sigma}}_B \cdot \vec{b} \right|{-}\right\rangle_B
+        +
+        \left\langle{-}\left| \vec{\hat{\sigma}}_A \cdot \vec{a} \right|{-}\right\rangle_A
+        \left\langle{+}\left| \vec{\hat{\sigma}}_B \cdot \vec{b} \right|{+}\right\rangle_B
+    \Bigg]
+\end{split}
+\end{equation}
+Was mit \eqref{equ:bell:proj_a_s} vereinfacht werden kann zu
+\begin{equation}\label{equ:bell:e_qm}
+\begin{split}
+    E_{QM} &= \frac{1}{2} \big[ -a_3b_3 - (a_1-ia_2)(b_1+ib_2) - (a_1+ia_2)(b_1-ib_2) - a_3b_3 \big] \\
+    &= -\big[ a_1b_1 + a_2b_2 + a_3b_3 \big] \stackrel{!}{=} -\vec{a} \cdot \vec{b}
+\end{split}
+\end{equation}
+Da $\vec{a}$ und $\vec{b}$ Einheitsvektoren sind, gilt
+\begin{equation}
+    \vec{a} \cdot \vec{b} = \cos(\theta_{ab}) \qquad \text{f\"ur} \quad |\vec{a}| = |\vec{b}| = 1
+\end{equation}
+mit dem Winkel $\theta_{ab}$ zwischen $\vec{a}$ und $\vec{b}$.
+Somit wird der quantenmechanische Erwartungswert zu
+\begin{equation}
+    E_{QM}(\vec{a},\vec{b}) = -\vec{a}\cdot\vec{b} = -\cos(\theta_{ab})
+\end{equation}
+
+\subsection{Vorhersage mittels verborgener Variablen}
+
 Wir verwenden erneut den Messaufbau aus Abbildung~\ref{fig:bell:EPR_Messaufbau}
 und nehmen an, dass der Winkel der Messung des Spins bei beiden Detektoren 
 $A$ und $B$ unabh\"angig, beliebig eingestellt werden kann.
