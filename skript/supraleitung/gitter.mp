@@ -105,7 +105,7 @@ enddef;
 %
 beginfig(1)
 
-gitter;
+gitterverschoben(0,0,0,red,red);
 clip currentpicture to frame;
 
 endfig;
