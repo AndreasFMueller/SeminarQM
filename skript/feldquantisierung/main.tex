@@ -38,6 +38,7 @@ wodurch (\ref{fq:maxwell_3}) erf"ullt wird, da $\nabla \cdot ( \nabla\times V ) 
 \begin{equation*}
 \nabla \cdot B = \nabla \cdot ( \nabla\times A ) = 0
 \end{equation*}
+
 Wir definieren $E$ als:
 \begin{equation}
 E = -\dfrac{\partial A}{\partial t} - \nabla \varphi
@@ -54,7 +55,7 @@ wobei $\varphi$ ist das skalare Potential des Feldes ist. Durch Einsetzen von $E
  \label{fq:a_coupled_b}
  \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} - \nabla \left( \nabla \cdot A + \frac{1}{c^2} \frac{\partial \varphi }{\partial t} \right) &= - \frac{1}{c} j
 \end{align}
-Die vier Maxwell-Gleichungen k"onnen also auch als zwei Gleichungen dargestellt werden.
+Die vier Maxwell-Gleichungen k"onnen also auch als zwei Gleichungen in $A$ und $\varphi$ dargestellt werden.
 Mittels der Lorenz-Eichung (Siehe Kapitel \ref{section:eichtransformation}) kann $\varphi$ so gew"ahlt werden, dass:
 \begin{equation} \label{fq:lorenz_eq}
 \nabla \cdot A + \frac{1}{c^2} \frac{\partial \varphi }{\partial t} = 0
@@ -66,7 +67,7 @@ Dadurch werden die zwei gekoppelten Gleichungen (\ref{fq:a_coupled_a}) und (\ref
 \end{align*}
 
 F"ur die Feldquantisierung wollen wir ein freies Feld im Vakuum betrachten. Hierf"ur gilt $j = 0$ sowie $\rho = 0$.
-Dadurch vereinfachen sich die gekoppelten Differentialgleichungen zu einer Differentialgleichung in A:
+Die Gleichung f"ur $\varphi$ wird nicht ben"otigt und die Gleichung f"ur $A$ wird zu:
 \begin{equation} \label{fq:wave_dgl}
 \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} = 0
 \end{equation}
@@ -82,7 +83,7 @@ $k$ ist der Ausbreitungsvektor der Welle und zeigt in die Ausbreitungsrichtung u
 \omega_k=|k|c \\
 \lambda = \frac{2 \pi}{|k|}
 \end{align*}
-Durch setzen von $c_{k,\alpha}(t) = c_{k,\alpha} e^{-i \omega_k t}$ sowie $u_{k,\alpha}(x) = \varepsilon^{(\alpha)} e^{ik \cdot x}$ kann die Gleichung auch in einen Zeit- und einen Ortsabh"angigen Teil aufgeteilt werden:
+Durch setzen von $c_{k,\alpha}(t) = c_{k,\alpha} e^{-i \omega_k t}$ sowie $u_{k,\alpha}(x) = \varepsilon^{(\alpha)} e^{ik \cdot x}$ kann die Gleichung auch in Zeit- und Ortsabh"angige Faktoren aufgeteilt werden:
 \begin{equation*}
 A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c_{k,\alpha}(t)u_{k,\alpha}(x) + \bar{c}_{k,\alpha}(t) \bar{u}_{k,\alpha}(x) \right)
 \end{equation*}
@@ -93,7 +94,7 @@ $A(x,t)$ wird durch die konjugiert komplexe Wahl der Koeffizienten f"ur alle $c_
 \end{equation*}
 %=a \cos k \cdot x + ib \cos k \cdot x + ia \sin k \cdot x - b \sin k \cdot x + a \cos k \cdot x - ib \cos k \cdot x - ia \sin k \cdot x - b \sin k \cdot x
 
-Es stellt sich nun die Frage, wie die Vektoren $k$ und $\varepsilon^{(\alpha)}$ gew"ahlt werden m"ussen. Damit die Orthogonalit"at der Fourier-Reihe gew"ahrleistet ist, m"ussen $(\varepsilon^{(1)}, \varepsilon^{(2)} \text{ und } \varepsilon^{(3)})$ orthogonal sein. Wir w"ahlen die L"ange $1$. Durch Linearkombinationen k"onnen somit beliebige Polarisation gew"ahlt werden. Zudem setzen wir fest, dass $\varepsilon^{(3)}$ sowie $k$ parallel sind.
+Es stellt sich nun die Frage, wie die Vektoren $k$ und $\varepsilon^{(\alpha)}$ gew"ahlt werden m"ussen. Damit die Orthogonalit"at der Fourier-Reihe gew"ahrleistet ist, m"ussen $(\varepsilon^{(1)}, \varepsilon^{(2)} \text{ und } \varepsilon^{(3)})$ orthogonal sein. Wir w"ahlen die L"ange $1$. Durch Linearkombinationen k"onnen somit beliebige Polarisationen gew"ahlt werden. Zudem setzen wir fest, dass $\varepsilon^{(3)}$ sowie $k$ parallel sind.
 
 Die Berechnung von $B$ und $E$ liefert:
 \begin{equation*}
@@ -103,11 +104,11 @@ B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2}  \sum_k i \underbrac
 \begin{equation*}
 E = - \frac{\partial A}{\partial t} = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \omega_k \varepsilon^{(\alpha)} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right)
 \end{equation*}
-Hier darf der Term $k \times \varepsilon^{(\alpha)}$ nicht verschwinden, damit sich eine Welle bilden kann. Somit f"allt $\varepsilon^{(3)}$ weg, da das Vektorprodukt von parallelen Vektoren null ist. Wir definieren somit, dass $(\varepsilon^{(1)}, \varepsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
+Hier darf der Term $k \times \varepsilon^{(\alpha)}$ nicht verschwinden, damit sich eine Welle bilden kann. $\varepsilon^{(3)}$ f"allt weg, da das Vektorprodukt von parallelen Vektoren null ist. Wir definieren somit, dass $(\varepsilon^{(1)}, \varepsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
 
 Da $\varepsilon^{(\alpha)}$ und $k$ orthogonal sind, gilt:
 \begin{equation*}
-\nabla \cdot A = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(i c_{k,\alpha} \underbrace{\varepsilon^{(\alpha)} \cdot k}_{=0} e^{i (k \cdot x - \omega_k t)} - i \bar{c}_{k,\alpha} \underbrace{\varepsilon^{(\alpha)} \cdot k}_{=0} e^{-i(k \cdot x - \omega_k t)}\right) = 0
+\nabla \cdot A = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} i \underbrace{k \cdot \varepsilon^{(\alpha)}}_{=0} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)}\right) = 0
 \end{equation*}
 Aufgrund der Lorenz-Eichung (\ref{fq:lorenz_eq}) gilt dadurch:
 \begin{equation*}
@@ -125,23 +126,23 @@ Die Hamilton-Funktion einer elektromagnetischen Welle ist gegeben durch:
 \begin{equation*}
 \begin{split}
 H &= \frac{1}{2} \int \left(\frac{1}{\mu_0}|B|^2 + \varepsilon_0|E|^2\right) d^3 x \\
-	&= \frac{1}{2} \int \left(\frac{1}{\mu_0} | \nabla\times A |^2 + \frac{1}{c^2 \mu_0} \left| \dfrac{\partial A}{\partial t} \right|^2 \right) d^3 x 
+	&= \frac{1}{2} \int \left(c^2 \varepsilon_0 | \nabla\times A |^2 + \varepsilon_0 \left| \dfrac{\partial A}{\partial t} \right|^2 \right) d^3 x 
 \end{split}
 \end{equation*}
 Es kann gezeigt werden, dass die L"osung dieses Integrals gegeben ist durch:
 \begin{equation*}
-H = \sum_k \sum_{\alpha=1,2} \frac{2}{\mu_0} \left(\frac{\omega_k}{c}\right)^2 \bar{c}_{k,\alpha}(t) c_{k,\alpha}(t)
+H = \sum_k \sum_{\alpha=1,2} 2 \varepsilon_0 \omega_k^2 \bar{c}_{k,\alpha}(t) c_{k,\alpha}(t)
 \end{equation*}
 Durch folgende Definition:
 \begin{equation*}
-Q_{k,\alpha} = \frac{1}{\sqrt{\mu_0} c}\left(c_{k,\alpha}(t) + \bar{c}_{k,\alpha}(t)\right) \quad P_{k,\alpha} = -\frac{i\omega_k}{\sqrt{\mu_0} c}\left(c_{k,\alpha}(t) - \bar{c}_{k,\alpha}(t)\right) 
+Q_{k,\alpha} = \sqrt{\varepsilon_0} \left(c_{k,\alpha}(t) + \bar{c}_{k,\alpha}(t)\right) \quad P_{k,\alpha} = -i \omega_k \sqrt{\varepsilon_0} \left(c_{k,\alpha}(t) - \bar{c}_{k,\alpha}(t)\right) 
 \end{equation*}
 wird die Hamilton-Funktion zu:
 \begin{equation} \label{fq:hamilton}
 \begin{split}
-H &= \sum_k \sum_{\alpha=1,2} 2 \left(\frac{\omega_k}{c}\right)^2 
-	\underbrace{\left[ \frac{c(\omega_k Q_{k,\alpha} - i P_{k,\alpha})}{2 \omega_k} \right]}_{\frac{1}{\sqrt{\mu_0}} \bar{c}_{k,\alpha}(t)}
-	\underbrace{\left[ \frac{c(\omega_k Q_{k,\alpha} + i P_{k,\alpha})}{2 \omega_k} \right]}_{\frac{1}{\sqrt{\mu_0}} c_{k,\alpha}(t)} \\
+H &= \sum_k \sum_{\alpha=1,2} 2 \omega_k^2 
+	\underbrace{\left[ \frac{\omega_k Q_{k,\alpha} - i P_{k,\alpha}}{2 \omega_k} \right]}_{\sqrt{\varepsilon_0} \bar{c}_{k,\alpha}(t)}
+	\underbrace{\left[ \frac{\omega_k Q_{k,\alpha} + i P_{k,\alpha}}{2 \omega_k} \right]}_{\sqrt{\varepsilon_0} c_{k,\alpha}(t)} \\
 &= \sum_k \sum_{\alpha=1,2} \frac{1}{2} \left(P_{k,\alpha}^2 + \omega_k^2 Q_{k,\alpha}^2\right)
 \end{split}
 \end{equation}
@@ -175,7 +176,7 @@ N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha} = \frac{1}{2 \hbar \omega_k} \left(P
  &= \frac{1}{ \hbar \omega_k } H - \frac{1}{2} = {\cal H} - \frac{1}{2}
 \end{split}
 \end{align*}
-Ein Vergleich mit (\ref{fq:hamilton}) sowie $c\sqrt{\mu_0}=1/\sqrt{\varepsilon_0}$ liefert:
+Ein Vergleich mit (\ref{fq:hamilton}) liefert:
 \begin{equation} \label{fq:opp_fourier}
  c_{k,\alpha} \rightarrow \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} a_{k,\alpha} \qquad 
  \bar{c}_{k,\alpha} \rightarrow \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} \, a^+_{k,\alpha}
@@ -211,7 +212,7 @@ Na^+|n\rangle &= (a^+N + a^+)|n\rangle = (e_n + 1)a^+|n\rangle \\
 Na|n\rangle &= (aN - a)|n\rangle = (e_n - 1)a|n\rangle
 \end{align*}
 
-Die Auf- und Absteige Operatoren f"ugen dem quantisierten Feld Energiequanten hinzu oder entfernen solche.
+Die Auf- und Absteige Operatoren f"ugen also dem quantisierten Feld Energiequanten hinzu oder entfernen solche.
 
 Wiederum m"ussen die neuen Eigenvektoren normalisiert werden. Daf"ur werden die Konstanten $c_+$ und $c_-$ eingef"uhrt.
 \begin{align*}
@@ -248,9 +249,9 @@ Hier ist der kleinst m"ogliche Eigenwert $e_n = 0$. Dem aufmerksamen Beobachter 
 
 \subsection{Photonen}
 
-Die mit den Auf- und Absteige-Operatoren hinzugef"ugten Energiequanten entsprechen den von Einstein in einer Publikation zum photoelektrischen Effekt vorausgesagten Energiequanten und werden Photonen genannt. Da das Verhalten von Elektronen und Photonen quantenmechanisch betrachtet sehr "ahnlich ist, k"onnen Photonen auch als Teilchen betrachtet werden.
+Die mit den Auf- und Absteige-Operatoren hinzugef"ugten und entfernten Energiequanten entsprechen den von Einstein in einer Publikation zum photoelektrischen Effekt vorausgesagten Energiequanten und werden Photonen genannt. Da das Verhalten von Elektronen und Photonen quantenmechanisch betrachtet sehr "ahnlich ist, k"onnen Photonen auch als Teilchen betrachtet werden.
 
-Die im vorigen Kapitel hergeleitete Algebra kann nun auf ein Feld von Photonen, in dem die Anzahl Photonen mit bestimmter Polarisation ($\alpha$) und Impuls (Wellenl"ange $|k|$ sowie Ausbreitungsrichtung $k$) vergr"ossert oder verkleinert wird, angewendet werden.
+Die hergeleitete Algebra kann nun auf ein Feld von Photonen, in dem die Anzahl Photonen mit bestimmter Polarisation ($\alpha$) und Impuls (Wellenl"ange $|k|$ sowie Ausbreitungsrichtung $k$) vergr"ossert oder verkleinert wird, angewendet werden.
 
 Der Eigenvektor von $N_{k,\alpha}$ ist der Zustandsvektor f"ur einen Zustand mit einer bestimmten Anzahl Photonen im Zustand $(k,\alpha)$. $n_{k,\alpha}$ ist dabei die Besetzungszahl f"ur den Zustand $(k,\alpha)$. Der Vakuum-Zustand ist $|0\rangle$. Mit dem Aufsteige-Operator k"onnen nun Photonen hinzugef"ugt werden:
 
@@ -272,16 +273,16 @@ Die Fourier-Koeffizienten im Strahlungsfeld werden mittels den Korrespondenzen (
 A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} \left[a_{k,\alpha} \varepsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + a^+_{k,\alpha} \varepsilon^{(\alpha)} e^{-i (k \cdot x - \omega_k t)}\right]
 \end{equation*}
 
-Durch die Definition zeitabh"angiger Operatoren
+Durch die Definition zeitabh"angiger Operatoren:
 \begin{align*}
 a_{k,\alpha}(t) &= a_{k,\alpha} e^{-i \omega_k t} &
 u_{k,\alpha}(x) &= \varepsilon^{(\alpha)} e^{ik \cdot x} \\
 a^+_{k,\alpha}(t) &= a^+_{k,\alpha} e^{i \omega_k t} &
-u^+_{k,\alpha}(x) &= \varepsilon^{(\alpha)} e^{-ik \cdot x}
+\bar{u}_{k,\alpha}(x) &= \varepsilon^{(\alpha)} e^{-ik \cdot x}
 \end{align*}
-kann die Gleichung wiederum in einen Zeit- und einen Ortsabh"angigen Teil aufgeteilt werden:
+kann die Gleichung wiederum in Zeit- und Ortsabh"angige Faktoren aufgeteilt werden:
 \begin{equation*}
-A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}}\left[a_{k,\alpha}(t) u_{k,\alpha}(x) + a^+_{k,\alpha}(t) u^+_{k,\alpha}(x) \right]
+A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}}\left[a_{k,\alpha}(t) u_{k,\alpha}(x) + a^+_{k,\alpha}(t) \bar{u}_{k,\alpha}(x) \right]
 \end{equation*}
 
 Auch wenn diese Gleichung mit (\ref{fq:wave_eq}) verwandt ist, ist die Bedeutung sehr verschieden. Erstere ist eine klassische Funktion in $x$ und $t$. Diese Gleichung ist nun ein Operator aus Linearkombinationen von Auf- und Absteigeoperatoren f"ur jeden Punkt im Raum. Ein solcher Operator heisst {\em Feldoperator} oder {\em quantisiertes Feld}.
@@ -318,7 +319,7 @@ In diesem Kapitel wird das Ziel erreicht, die Wechselwirkung zwischen Photonen u
 
 Zwischen Photonen und den Neutronen und Protonen eines Atomkerns gibt es zwar auch eine Wechselwirkung. Da die Kernzust"ande sehr viel h"ohere Energien beinhalten, w"aren f"ur eine Zustands"anderung Photonen weit "uber der Gammastrahlung n"otig. Zudem befinden sich viele Elektronen um den Kern, die den Kern praktisch abschirmen und somit viel eher mit den Photonen wechselwirken als der Kern.
 
-Der Spin von Photonen und Elektronen wird vernachl"assigt, da diese Einfluss zwar vorhanden, aber sehr klein ist.
+Der Spin von Photonen und Elektronen wird vernachl"assigt, da dieser Einfluss zwar vorhanden, aber sehr klein ist.
 
 \subsection{Hamiltonoperator}
 
@@ -351,11 +352,11 @@ $H_0$ ist der Hamilton-Opperator f"ur das Elektron ohne das elektromagnetische F
 
 Da $X$ und $Y$ verschiedene Eigenzust"ande des Elektrons, und somit von $H_0$, sind gilt $\langle Y| \, H_0 \, |X \rangle=0$. Wir nur m"ussen also nur $\langle Y| \, H_{\text{int}} \, |X \rangle$ betrachten.
 
-\subsection{Wechselwirkung zwischen Photonen und Atomen}
+\subsection{Wechselwirkung zwischen Photonen und Elektronen}
 
-Wir wollen nun die Wechselwirkung zwischen Atomelektronen und Photonen herleiten. Dieser Hamiltonoperator wirkt nun nicht nur auf dem Zustand des Elektrons sondern auch auf den Zust"anden der Photonen und beschreibt die Wechselwirkung von Photonen und Elektronen.
+Wir wollen nun die Wechselwirkung zwischen Elektronen und Photonen herleiten. Dieser Hamiltonoperator wirkt nun nicht nur auf dem Zustand des Elektrons sondern auch auf den Zust"anden der Photonen und beschreibt die Wechselwirkung von Photonen und Elektronen.
 
-Nehmen wir an, ein Elektron absorbiert ein Photon vom Zustand $(k,\alpha)$ und wechselt dabei vom Zustand $X$ in den Zustand $Y$. Der Einfachheit halber ber"ucksichtigen wir nur Photonen im Zustand $(k,\alpha)$. Der quadratische Term $A \cdot A$ spielt hier keine Rolle, da dieser Term nur Zustands"anderungen von $0$ oder $\pm 2$ Photonen erzeugt. Die Beschreibung der Zustands"anderung ist:
+Nehmen wir an, ein Elektron absorbiert ein Photon vom Zustand $(k,\alpha)$ und wechselt dabei vom Zustand $X$ in den Zustand $Y$. Der Einfachheit halber ber"ucksichtigen wir nur Photonen im Zustand $(k,\alpha)$. Der quadratische Term $A \cdot A$ spielt hier keine Rolle, da dieser Term nur Zustands"anderungen von $0$ oder $\pm 2$ Photonen erzeugt. Die Beschreibung der Zustands"anderung des Absorptionsprozesses ist:
 
 \begin{equation} \label{fq:absorbtion}
 \begin{split}
@@ -386,17 +387,17 @@ Der Emissionsprozess wird beschrieben durch:
 \subsubsection{Emission und Absorption}
 Beim Betrachten von (\ref{fq:emission}) f"allt auf, dass die Wahrscheinlichkeit f"ur die Emission bei nicht vorhandener elektromagnetischer Strahlung ($n_{k,\alpha} = 0$) gr"osser als null ist, da $\sqrt{n_{k,\alpha}+1} > 0$. Dieses Ph"anomen wird spontane Emission genannt.
 
-Bei st"arkerer Strahlung ist die Wahrscheinlichkeit der Emission ungef"ahr proportional zu Wurzel der Anzahl Photonen und wird stimulierte Emission genannt.
+Bei st"arkerer Strahlung ist die Wahrscheinlichkeit der Emission ungef"ahr proportional zur Wurzel der Anzahl Photonen und wird stimulierte Emission genannt.
 
 Die Absorption ist proportional zu Wurzel der Anzahl Photonen. Wenn das Feld gen"ugend stark ist ($n_{k,\alpha} \gg 1$) ist die Absorptions- sowie Emissionswahrscheinlichkeit praktisch gleich, da $\sqrt{n_{k,\alpha}+1} \approx \sqrt{n_{k,\alpha}}$. 
 
 \subsubsection{Einsteinkoeffizienten}
-Die Einsteinkoeffizienten \cite{fq:einstein_koeff} werden zur Berechnung der spontanen und stimulierten Emission sowie der Absorption verwendet. Es befinden sich $N_1$ Atome im Grundzustand $1$ sowie $N_2$ Atome im angeregten Zustand $N_2$. Zudem existiert ein Feld mit der Strahldichte $u$. Einstein definierte die Koeffizienten $B_{12}$, $B_{21}$ sowie $A_{21}$ so dass:
+Die Einsteinkoeffizienten \cite{fq:einstein_koeff} werden zur Berechnung der spontanen und stimulierten Emission sowie der Absorption verwendet. Es befinden sich $n_1$ Atome im Grundzustand $1$ sowie $n_2$ Atome im angeregten Zustand $2$. Das Feld hat die spektrale Strahldichte $\rho(\lambda)$. Einstein definierte die Koeffizienten $B_{12}$, $B_{21}$ sowie $A_{21}$ so dass:
 \begin{itemize}
-	\item die Wahrscheinlichkeit der stimulierten Absorption $B_{12} N_1 u$
-	\item die Wahrscheinlichkeit der stimulierten Emission $B_{21} N_2 u$ und
-	\item die Wahrscheinlichkeit der spontanen Emission $A_{21} N_2$ (F"ur $u=0$)
+	\item die Rate der stimulierten Absorption durch $\dfrac{dn_2}{dt} = B_{12} n_1 \rho(\lambda)$
+	\item die Rate der stimulierten Emission durch $\dfrac{dn_1}{dt} = B_{21} n_2 \rho(\lambda)$ und
+	\item die Rate der spontanen Emission durch $\dfrac{dn_1}{dt} = A_{21} n_2$ (f"ur $\rho(\lambda)=0$)
 \end{itemize}
 gegeben ist.
 
-Mit den Ausf"uhrungen in diesem Kapitel ist auf einfache Art bewiesen, dass $B_{12} = B_{21}$ gilt sowie dass eine spontane Emission ($A_{21} > 0$) existiert.
+Mit den Ausf"uhrungen in diesem Kapitel ist auf einfache Art gezeigt, dass $B_{12} = B_{21}$ f"ur $\rho(\lambda) \gg 0$ gilt sowie dass eine spontane Emission ($A_{21} > 0$) existiert.
