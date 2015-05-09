@@ -234,16 +234,24 @@ f\"ur das Positron, sowie $-z$ f\"ur das Elektron und $+z$ f\"ur das Positron.
 Zur Notation dieser kombinierten Zust\"ande wird das Tensorprodukt verwendet.
 
 \begin{definition}\label{def:bell:tensorprodukt}
-    Das Tensorprodukt eines Ket $|\phi\rangle$ mit einem Bra $\langle\psi|$
-    wird geschrieben als
+    Das Tensorprodukt von zwei Vektoren $A,B \in \mathbb{C}^2$  wird geschrieben als
     \[
-        \phi \otimes \psi \equiv |\phi\rangle\langle\psi|.
+        A \otimes B
     \]
-    Sind $\phi$ und $\psi$ Vektoren in $\mathbb{C}^2$, so entspricht das
-    Tensorprodukt $\mathbb{C}^2 \otimes \mathbb{C}^2 \to \mathbb{C}^4$ 
-    der Abbildung 
+    und entspricht der Abbildung $(\mathbb{C}^2,\mathbb{C}^2)\to\mathbb{C}^4$, 
+    bei welcher jedes Element von $A$ mit jedem Element von $B$ multipliziert
+    wird.
+    Seien
+    \begin{align*}
+        A = \begin{pmatrix} a_{1} \\ a_{2} \end{pmatrix}
+        &&
+        B = \begin{pmatrix} b_{1} \\ b_{2} \end{pmatrix}
+    \end{align*}
+    so entspricht das Tensorprodukt
     \[
-        \psi \otimes \phi = \sum_{i}\sum_{j} \phi_i \psi_j.
+        A \otimes B = \begin{pmatrix} 
+        a_1 b_1 \\ a_1 b_2 \\ a_2 b_1 \\ a_2 b_2
+        \end{pmatrix}
     \]
 \end{definition}
 
