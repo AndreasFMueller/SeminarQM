@@ -659,16 +659,18 @@ drawarrow (0, -n * u)--(0, n * u);
 label.urt(btex $k_x$ etex, (n * u, 0));
 label.ulft(btex $k_y$ etex, (0, n * u));
 
-%for x = (-10 * u) step u until (10 * u):
-%	for y = (-10 * u) step u until (10 * u):
-%		if EF > r(x, y):
-%			fill (x-0.5*u, y-0.5*u)--(x+0.5*u, y-0.5*u)
-%				--(x+0.5*u, y+0.5*u)--(x-0.5*u, y+0.5*u)--cycle
-%			withcolor (0.9,0.9,0.9);
-%			label(btex $\downarrow\uparrow$ etex, (x,y));
-%		fi;
-%	endfor;
-%endfor;
+def fillfield(expr x, y) =
+	fill ((x-0.5)*u, (y-0.5)*u)
+		--((x+0.5)*u, (y-0.5)*u)
+		--((x+0.5)*u, (y+0.5)*u)
+		--((x-0.5)*u, (y+0.5)*u)--cycle
+		withcolor (1,0.9,0.9);
+enddef;
+fillfield(0, 2);
+fillfield(0,-2);
+fillfield(3, 0);
+fillfield(3, 7);
+fillfield(5,-5);
 
 pickup pencircle scaled 0.2pt;
 for x = -(n-0.5) * u step u until n * u:
@@ -713,9 +715,9 @@ w := (wave(n * u, 3, 0)) shifted (z0 shifted (n * u, 1.3 * n * u));
 pickup pencircle scaled 1pt;
 drawarrow w withcolor red;
 pickup pencircle scaled 0.5pt;
-drawarrow (point 6 of w)..(-5*u,-u)..(3 * u, 0) withcolor blue;
+drawarrow (point 7 of w)..(-5*u,-u)..(3 * u, 0) withcolor blue;
 pickup pencircle scaled 3pt;
-draw point 6 of w withcolor red;
+draw point 7 of w withcolor red;
 draw (3 * u, 0) withcolor red;
 
 %label.top(btex $k_3$ etex, point 6 of w) withcolor red;
