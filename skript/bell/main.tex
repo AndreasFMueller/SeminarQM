@@ -45,7 +45,7 @@ ein und kommen auf die darauf basierende Bellsche Ungleichung, welche
 \section{Definitionen\label{section:bell:definitionen}}
 Zuerst stellt sich die Frage der Anforderungen an die Theorie der
 Quantenmechanik.
-In diesem Abschnitt werden diese Begriffe Anforderungen kurz definiert und
+In diesem Abschnitt werden diese Anforderungen kurz definiert und
 besprochen, sodass diesbez\"uglich keine Unklarheiten entstehen.
 Albert Einstein stellte dabei die folgenden beiden Anforderungen an eine
 Theorie:
@@ -55,8 +55,8 @@ Theorie:
     \item Realismus
 \end{enumerate}
 
-Die zentrale Eigenschaft ist dabei die Lokalit\"at.
-Dies bedeutet, dass jegliche Vorg\"ange nur einen Einfluss
+Die zentrale Eigenschaft ist die Lokalit\"at.
+Diese besagt, dass jegliche Vorg\"ange nur einen Einfluss
 auf ihre direkte Umgebung haben k\"onnen.
 
 \begin{definition}\label{def:bell:lokalitaet}
@@ -124,7 +124,7 @@ Diese Frage kann einfach gepr\"uft werden, indem die Resultate von
 Experimenten mit den Vorhersagen der Theorie verglichen werden. 
 Die Quantenmechanik konnte dabei, wie wir in diesem Buch in zahlreichen
 Anwendungen nachvollziehen konnten, die Wirklichkeit korrekt vorhersagen. 
-Um die zweite Frage zu diskutieren, definieren die Vollst\"andigkeit einer
+Um die zweite Frage zu diskutieren, definieren wir die Vollst\"andigkeit einer
 Theorie wie folgt:
 
 \begin{definition}\label{def:bell:Vollstaendigkeit}
@@ -247,7 +247,7 @@ Zur Notation dieser kombinierten Zust\"ande wird das Tensorprodukt verwendet.
         &&
         B = \begin{pmatrix} b_{1} \\ b_{2} \end{pmatrix}
     \end{align*}
-    so entspricht das Tensorprodukt
+    so ist das Tensorprodukt
     \[
         A \otimes B = \begin{pmatrix} 
         a_1 b_1 \\ a_1 b_2 \\ a_2 b_1 \\ a_2 b_2
@@ -307,7 +307,7 @@ und somit
            \Big)\label{equ:bell:psix}
 \end{align}
 
-Wir haben also gezeigt, dass mit der Spin-Zustand $|\psi\rangle$ des
+Wir haben also gezeigt, dass der Spin-Zustand $|\psi\rangle$ des
 Elektron-Positron Paares \"aquivalent in Abh\"angigkeit des $z$-, sowie
 des $x$-Spin Zustands geschrieben werden kann.
 Wird nun bei Detektor $A$ der Spin des Elektrons in $z$-Richtung gemessen, 
@@ -452,8 +452,9 @@ Variablen bzw. Teilchen zu suchen, sondern gleich deren Nicht-Existenz
 zu beweisen.
 
 \subsection{Vorhersage der Quantenmechanik}
-Der Spin eines Teilchens in einer Richtung $\vec{a}$ wird durch die Projektion
-der Spin-Matrix des Teilchens $A$ auf die Richtung $\vec{a}$ gemessen.
+Der Spin eines Teilchens in einer beliebigen Richtung $\vec{a}$ wird durch die
+Projektion der Spin-Matrix des Teilchens $A$ auf die 
+Richtung $\vec{a}$ gemessen.
 \begin{equation}\label{equ:bell:meas_a}
     \vec{\hat{\sigma}}_A \cdot \vec{a}
 \end{equation}
@@ -471,8 +472,8 @@ werden als
     \end{pmatrix} \label{equ:bell:proj_a_s}
 \end{align}
 Der Spin-Zustand $|\psi\rangle$ des Elektron-Positron Paares kann mit
-\eqref{equ:bell:meas_a} und gleich f\"ur das Teilchen $B$: 
-$\vec{\hat{\sigma}}_B \cdot \vec{b}$ als Superposition der beiden
+\eqref{equ:bell:meas_a} und $\vec{\hat{\sigma}}_B \cdot \vec{b}$ 
+f\"ur das Teilchen $B$ als Superposition der beiden
 Spin-Zust\"ande bei $A$ und $B$ geschrieben werden:
 \begin{equation}
     |\psi\rangle = \left( \vec{\hat{\sigma}}_A \cdot \vec{a} \right)
@@ -534,7 +535,7 @@ und eine Variable $\lambda \in \Lambda$ existiert.
 Annahme gemacht.
 Die Wahrscheinlichkeitsverteilung dieser Variable sei $\rho(\lambda)$, womit gilt
 \begin{equation}\label{equ:bell:lambdaverteilung}
-    \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda
+    \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda = 1
 \end{equation}
 Damit diese Theorie die Quantenmechanik erweitern kann, muss sie die Vorhersage
 der Quantenmechanik mit dem Erwartungswert 
@@ -595,27 +596,8 @@ $E(\vec{a},\vec{b}) - E(\vec{a},\vec{c})$:
 \end{split}
 \end{equation}
 
-\begin{hilfssatz}\label{hilfssatz:bell:dreiecksungleichung}
-    Die Dreiecksungleichung f\"ur reelle Zahlen besagt, dass
-    \[
-        |a + b| \leq |a| + |b|
-    \]
-\end{hilfssatz}
-\begin{proof}
-    Werden beide Seiten der Ungleichung quadriert, so wird diese zu
-    \[
-        a^2 + 2ab + b^2 \leq a^2 + 2|ab| + b^2
-    \]
-    und somit zu
-    \[
-        2ab \leq 2|ab|
-    \]
-    welche gilt, da $x \leq |x|$ f\"ur beliebige $x\in\mathbb{R}$.
-\end{proof}
 \begin{hilfssatz}\label{hilfssatz:bell:dreiecksungleichung_integral}
-    Die Dreiecksungleichung aus 
-    Hilfssatz~\ref{hilfssatz:bell:dreiecksungleichung}
-    kann auf Integrale adaptiert werden, sodass
+    Die Dreiecksungleichung kann auf Integrale adaptiert werden, sodass
     \[
         \left|\int_{\Omega} Z\, d\mu\,\right| 
         \leq \int_{\Omega} |\,Z\,|\, d\mu
@@ -666,7 +648,7 @@ weiter vereinfacht zu
     \left| A(\vec{a},\lambda) \right| \cdot 
     \left| A(\vec{c},\lambda) - A(\vec{b},\lambda) \right| d\lambda \\
     &= \int_{\lambda\in\Lambda} \rho(\lambda)
-    \left| A(\vec{b},\lambda) A(\vec{c},\lambda) - 1 \right| d\lambda \\
+    \left|\left[ A(\vec{b},\lambda) A(\vec{c},\lambda) - 1 \right]\right| d\lambda \\
     &= \int_{\lambda\in\Lambda} \rho(\lambda) 
     \left[1 - A(\vec{b},\lambda)A(\vec{c},\lambda) \right] d\lambda \\
     &= \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda
@@ -809,35 +791,35 @@ womit die Quantenmechanik die BCHSH Ungleichung ebenfalls verletzt.
 Zur experimentellen \"Uberpr\"ufung der Bellschen Ungleichung werden meist
 nicht, wie hier besprochen, Elektron-Positron-Paare verwendet, sondern
 Photonen mit identischer Polarisation.
-Dabei k\"onnen die Photon entweder vertikal ($V$ bzw. $+$) oder horizontal
-($H$ bzw. $-$) polarisiert sein. 
+Dabei k\"onnen die Photon entweder vertikal ($+$) oder horizontal
+($-$) polarisiert sein. 
 Es ergibt sich der folgende Polarisationszustand:
 \begin{equation}\label{equ:bell:photonstate}
     |\psi\rangle = \frac{1}{\sqrt{2}} \Big(
-        |V\rangle \otimes |V\rangle + |H\rangle \otimes |H\rangle
+        |{+}\rangle \otimes |{+}\rangle + |{-}\rangle \otimes |{-}\rangle
     \Big)
 \end{equation}
 Wird nun die Polarisation der beiden Elektronen in der gleichen Richtung 
 gemessen, sind die Messergebnisse perfekt korreliert.
-Bei Richtungen mit einem Winekl von \SI{45}{\degree} wird das Resultat
+Bei Richtungen mit einem Winkel von \SI{45}{\degree} wird das Resultat
 unkorreliert sein, also komplett zuf\"allig.
-Wird in einem \SI{90}{\degree} gemessen, sind die Messergebnisse
+Wird in einem Winkel von \SI{90}{\degree} gemessen, sind die Messergebnisse
 anti-korreliert.
 
 Die Erwartungswerte werden nun gesch\"atzt indem gez\"ahlt
 wird, wie h\"aufig die m\"oglichen Resultat $++$, $+-$, $-+$ und $--$
 vorkommen ($N_{++}, N_{+-}, N_{-+}, N_{--}$).
-Der Erwartungswert $E_(a,b)$ einer Detektor-Einstellung $(a,b)$ wird
-nun berechnet durch
+Der Erwartungswert $E_(\vec{a},\vec{b})$ einer Detektor-Einstellung 
+$(\vec{a},\vec{b})$ wird nun berechnet durch
 \begin{equation}
     E = \frac{N_{++} + N_{--} - N_{+-} - N_{-+}}{N_{++} + N_{--} + N_{+-} + N_{-+}}
 \end{equation}
 Die Bellsche Ungleichung wird \"uberpr\"uft, indem die vier Einstellungen
-$(a,b)$, $(a,b')$, $(a',b)$ und $(a',b')$ gemessen und deren Erwartungswerte
-berechnet werden. 
+$(\vec{a},\vec{b})$, $(\vec{a},\vec{b}')$, $(\vec{a}',\vec{b})$
+und $(\vec{a}',\vec{b}')$ gemessen und deren Erwartungswerte berechnet werden. 
 Diese Werte werden in die Bellsche Ungleichung eingesetzt:
 \begin{equation}
-    S = E(a,b) + E(a,b') + E(a',b) - E(a',b')
+    S = E(\vec{a},\vec{b}) - E(\vec{a},\vec{b'}) + E(\vec{a'},\vec{b}) + E(\vec{a'},\vec{b'})
 \end{equation}
 Wenn das gemessene $S$ die Ungleichung \eqref{equ:bell:bchsh-ungleichung} 
 $-2 \leq S \leq +2$
@@ -884,8 +866,7 @@ sein. Dies wird in Abbildung~\ref{fig:bell:raum_korr} illustriert.
 \subsection{1. Generation -- Freedman Clauser (1972)}
 Das erste Experiment, welches die Bellsche Ungleichung \"uberpr\"ufte
 wurde 1972 von Stuart Freedman und John Clauser an der UC~Berkeley
-in Kalifornien durchgef\"uhrt.
-\cite{Bell:Freedman1972}
+in Kalifornien durchgef\"uhrt \cite{Bell:Freedman1972}.
 Dazu wurden Calcium-40 Atome in den Zustand $\text{3d}\,\text{4p}\,^1\text{P}_1$
 angeregt. 
 Wie in Abbildung~\ref{fig:bell:freedman} dargestellt wird ein Teil der
@@ -897,9 +878,6 @@ Dabei werden zwei Photonen mit einer Wellenl\"ange von \SI{551.3}{\nano\meter}
 bzw. \SI{442.7}{\nano\meter} freigesetzt. 
 Da der Drehimpuls des Calcium Atoms $J=0$ betr\"agt, m\"ussen die Photonen
 eine entgegengesetzte Polarisation haben.
-Da, im Vergleich zu \eqref{equ:bell:photonstate}, die Photonen eine
-entgegengesetzte, nicht eine gleiche, Polarisation aufweisen, sind die 
-Zust\"ande nat\"urlich anders, das Verfahren bleibt jedoch gleich.
 
 \begin{figure}
     \centering
