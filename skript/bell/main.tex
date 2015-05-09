@@ -523,7 +523,7 @@ Da $\vec{a}$ und $\vec{b}$ Einheitsvektoren sind, gilt
 \end{equation}
 mit dem Winkel $\theta_{ab}$ zwischen $\vec{a}$ und $\vec{b}$.
 Somit wird der quantenmechanische Erwartungswert zu
-\begin{equation}
+\begin{equation}\label{equ:bell:res_qm}
     E_{QM}(\vec{a},\vec{b}) = -\vec{a}\cdot\vec{b} = -\cos(\theta_{ab})
 \end{equation}
 
@@ -536,31 +536,150 @@ Die Wahrscheinlichkeitsverteilung dieser Variable sei $\rho(\lambda)$, womit gil
 \begin{equation}\label{equ:bell:lambdaverteilung}
     \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda
 \end{equation}
-
 Damit diese Theorie die Quantenmechanik erweitern kann, muss sie die Vorhersage
 der Quantenmechanik mit dem Erwartungswert 
 $E_{QM}(\vec{a},\vec{b}) = -\vec{a}\cdot\vec{b}$
 ebenfalls f\"ur alle Richtungen $\vec{a}$ und $\vec{b}$ produzieren.
-
 Die Messungen $A(\vec{a})$ und $B(\vec{b})$ h\"angen nun also von einer
 vorbestimmten Variable $\lambda$ ab.
 \begin{equation}\label{equ:bell:messungen_ab}
     A(\vec{a}) \cdot B(\vec{b})(\lambda) = A(\vec{a},\lambda) \cdot B(\vec{b},\lambda)
 \end{equation}
 mit
-\[
+\begin{equation}\label{equ:bell:werte_ab}
     A(\vec{a},\lambda) = \pm 1 \qquad \text{und} \qquad B(\vec{b},\lambda) = \pm 1
-\]
+\end{equation}
 Aus \eqref{equ:bell:lambdaverteilung} und \eqref{equ:bell:messungen_ab}
 l\"asst sich der Erwartungswert des Produkts der beiden Spin-Messungen
 bestimmen als
-\begin{equation}
+\begin{equation}\label{equ:bell:e_lambda}
     E(\vec{a},\vec{b}) = \int_{\lambda\in\Lambda} 
-    \rho(\lambda) A(\vec{a},\lambda) B(\vec{b},\lambda) d\lambda
+        \rho(\lambda) A(\vec{a},\lambda) B(\vec{b},\lambda) d\lambda
+\end{equation}
+Aufgrund des Messaufbaus und \eqref{equ:bell:res_qm} gilt f\"ur 
+$\vec{a} = \vec{b}$:
+\[
+    -1 = \int_{\lambda\in\Lambda} 
+        \rho(\lambda) A(\vec{a},\lambda) B(\vec{a},\lambda) d\lambda
+\]
+Diese perfekte Antikorrelation ist nur bei
+\begin{equation}
+    A(\vec{a},\lambda) = -B(\vec{a},\lambda)
+\end{equation}
+erf\"ullt.
+Damit wird \eqref{equ:bell:e_lambda} zu
+\begin{equation}\label{equ:bell:e_lambda_vereinf}
+    E(\vec{a},\vec{b}) = -\int_{\lambda\in\Lambda} 
+        \rho(\lambda) A(\vec{a},\lambda) A(\vec{b},\lambda) d\lambda
 \end{equation}
 
+Aus dieser vereinfachten Gleichung l\"asst sich nun die Bellsche Ungleichung
+herleiten.
+Dazu wird neben den beiden Richtungen $\vec{a}$ und $\vec{b}$ eine dritte,
+unabh\"angige Richtung $\vec{c}$ betrachtet. 
+$\vec{c}$ ist ebenfalls ein Einheitsvektor.
+Aufgrund von \eqref{equ:bell:werte_ab} gilt, dass
+$|A(\vec{b},\lambda)|^2 = 1$ ist.
+Wir betrachten nun die Differenz zweier Erwartungswerte
+$E(\vec{a},\vec{b}) - E(\vec{a},\vec{c})$:
+\begin{equation}\label{equ:bell:diff_e}
+\begin{split}
+    E(\vec{a},\vec{b}) - E(\vec{a},\vec{c}) =
+    - \int_{\lambda\in\Lambda} \rho(\lambda) \left[ 
+        A(\vec{a},\lambda) A(\vec{b},\lambda) - 
+        A(\vec{a},\lambda) A(\vec{c},\lambda)
+    \right] d\lambda \\
+    = \int_{\lambda\in\Lambda} \rho(\lambda)A(\vec{a},\lambda)A(\vec{b},\lambda)
+        \left[ A(\vec{b},\lambda)A(\vec{c},\lambda) - 1 \right] d\lambda
+\end{split}
+\end{equation}
 
+\begin{hilfssatz}\label{hilfssatz:bell:dreiecksungleichung}
+    Die Dreiecksungleichung f\"ur reelle Zahlen besagt, dass
+    \[
+        |a + b| \leq |a| + |b|
+    \]
+\end{hilfssatz}
+\begin{proof}
+    Werden beide Seiten der Ungleichung quadriert, so wird diese zu
+    \[
+        a^2 + 2ab + b^2 \leq a^2 + 2|ab| + b^2
+    \]
+    und somit zu
+    \[
+        2ab \leq 2|ab|
+    \]
+    welche gilt, da $x \leq |x|$ f\"ur beliebige $x\in\mathbb{R}$.
+\end{proof}
+\begin{hilfssatz}\label{hilfssatz:bell:dreiecksungleichung_integral}
+    Die Dreiecksungleichung aus 
+    Hilfssatz~\ref{hilfssatz:bell:dreiecksungleichung}
+    kann auf Integrale adaptiert werden, sodass
+    \[
+        \left|\int_{\Omega} Z\, d\mu\,\right| 
+        \leq \int_{\Omega} |\,Z\,|\, d\mu
+    \]
+\end{hilfssatz}
+\begin{proof}
+    Beweis nach \cite{Bell:HilfssatzTriangle}.
+    Es wird $\alpha\in\mathbb{C}$ mit $|\alpha| = 1$ gew\"ahlt, sodass
+    \[
+        \alpha \cdot \int_{\Omega} Z\, d\mu = 
+        \left|\int_{\Omega} Z\, d\mu\,\right|
+    \]
+    Damit ist
+    \[
+        \left|\int_{\Omega} Z\, d\mu\,\right| = 
+        \operatorname{Re}\left( \int_{\Omega}\alpha Z \,d\mu \right) = 
+        \int_{\Omega}\operatorname{Re}(\alpha Z)\,d\mu
+        \leq
+        \int_{\Omega} |\,\alpha Z\,|\, d\mu = 
+        \int_{\Omega} |\,Z\,|\, d\mu
+    \]
+\end{proof}
 
+Die Differenz \eqref{equ:bell:diff_e} wird nun mithilfe von
+Hilfssatz~\ref{hilfssatz:bell:dreiecksungleichung_integral} geschrieben als
+\begin{equation}
+\begin{split}
+    |E(\vec{a},\vec{b}) - E(\vec{a},\vec{c})| =
+    \left| \int_{\lambda\in\Lambda} \rho(\lambda)
+        A(\vec{a},\lambda)A(\vec{b},\lambda)
+        \left[ A(\vec{b},\lambda)A(\vec{c},\lambda) - 1 \right]
+        d\lambda
+    \right| \\
+    \leq 
+    \int_{\lambda\in\Lambda} \left|  
+        \rho(\lambda)A(\vec{A},\lambda)A(\vec{b},\lambda)
+        \left[ A(\vec{b},\lambda)A(\vec{c},\lambda) - 1 \right]
+    \right| d\lambda
+\end{split}
+\end{equation}
+Der Term auf der rechten Seite wird nun mithilfe von $|A(\cdot,\lambda)|=1$
+weiter vereinfacht zu
+\begin{align*}
+    &= \int_{\lambda\in\Lambda} \rho(\lambda) \left|
+    A(\vec{a},\lambda)A(\vec{c},\lambda) - A(\vec{a},\lambda)A(\vec{b},\lambda)
+    \right| d\lambda \\
+    &= \int_{\lambda\in\Lambda} \rho(\lambda)
+    \left| A(\vec{a},\lambda) \right| \cdot 
+    \left| A(\vec{c},\lambda) - A(\vec{b},\lambda) \right| d\lambda \\
+    &= \int_{\lambda\in\Lambda} \rho(\lambda)
+    \left| A(\vec{b},\lambda) A(\vec{c},\lambda) - 1 \right| d\lambda \\
+    &= \int_{\lambda\in\Lambda} \rho(\lambda) 
+    \left[1 - A(\vec{b},\lambda)A(\vec{c},\lambda) \right] d\lambda \\
+    &= \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda
+    - \int_{\lambda\in\Lambda} \rho(\lambda) 
+    (\vec{b},\lambda)A(\vec{c},\lambda) d\lambda
+\end{align*}
+Damit sind wir wieder bei einem Erwartungswert der Form von
+\eqref{equ:bell:e_lambda_vereinf} und k\"onnen die erste Form der Bellschen
+Ungleichung \cite[(15)]{Bell:Bell1964} aufstellen:
+\begin{equation}\label{equ:bell:bellsche_ungleichung}
+    \left| E(\vec{a},\vec{b}) - E(\vec{a},\vec{c}) \right| 
+    \leq
+    1 + E(\vec{b},\vec{c})
+\end{equation}
 
 \subsection{Herleitung der CHSH Ungleichung}
 Wir bezeichnen das Resultat der Messung $a$ als $s$ und das Resultat
