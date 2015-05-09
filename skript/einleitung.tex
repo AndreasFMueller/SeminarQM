@@ -149,7 +149,9 @@ Ein Darstellung des beschwerlichen historischen Weges ist enthalten
 in \cite{skript:viascience}.
 Diese Folge von Videos zeigt im "Ubrigen einen "ahnlichen Zugang,
 wie wir ihn in diesem Skript verfolgen.
-Wir werden dabei in folgenden Schritten vorgehen:
+Wir werden dabei in folgenden Schritten vorgehen,
+die Abh"angigkeiten der einzelnen Kapitel untereinander sind in
+Abbildung~\ref{skript:dependencies} dargestellt:
 \begin{enumerate}
 \item Kapitel~\ref{chapter:einfache-quantensysteme}:
 Aufbau eines Formalismus f"ur Quantensysteme, vorl"aufig ohne einen
@@ -190,7 +192,7 @@ die Eigenschaften eines Wasserstoffatoms zu berechnen gestatten.
 Viele Quantensysteme sind zu kompliziert, um ihre Schr"odingergleichung
 direkt l"osen zu k"onnen.
 St"orungstheorie erm"oglicht, Energieniveaus und Wellenfunktionen
-n"aherungsweise zu berechnen, wenn ein ein bereits gel"ostes System
+n"aherungsweise zu berechnen, wenn ein bereits gel"ostes System
 nur leicht modifiziert wird.
 \item Kapitel~\ref{chapter:magnetfeld}:
 Ein Elektron wird in von einem Magnetfeld abgelenkt, aber die daf"ur
@@ -199,18 +201,20 @@ Der Hamilton-Formalismus von Kapitel~\ref{chapter:mechanik} muss
 daher erweitert werden.
 \item Kapitel~\ref{chapter:drehimpuls}:
 Die Quantisierungsregeln diktieren, wie Drehimpuls quantenmechanisch
-zu behandeln ist. Es stellt sich heraus, dass 
+zu behandeln ist.
+Es stellt sich heraus, dass ein "ahnlicher algebraischer Formalismus 
+wie beim harmonischen Oszillator die m"oglichen Drehimpulswerte
+zu bestimmen erlaubt.
 \item Kapitel~\ref{chapter:spin}:
 Obwohl Elektronen in der Quantenmechanik als punktf"ormig betrachtet
-werden, haben sie Zust"ande, die sich wie eine Eigendrehung verhalten:
+werden, und sich daher keine Eigenrotation haben k"onnen,
+haben sie Zust"ande, die sich wie eine Eigendrehung verhalten:
 der Elektron-Spin.
 \item Kapitel~\ref{chapter:festkoerper}:
 Aus der elementaren Quantenmechanik lassen sich bereits einige
 einfache Eigenschaften von Festk"orpern ableiten.
 \end{enumerate}
 
-Die Abh"angigkeiten der einzelnen Kapitel untereinander sind in
-Abbildung~\ref{skript:dependencies} dargestellt.
 \begin{figure}
 \centering
 \includegraphics{graphics/dependencies-1.pdf}
@@ -220,5 +224,24 @@ und numerischen Werten der Naturkonstanten.
 \label{skript:dependencies}}
 \end{figure}
 
-
+Dieses Skript wurde vor allem im zweiten Kapitel von Heinrich Mitters
+Lehrbuch \cite{skript:mitter} stark beeinflusst. 
+Im allgemeinen bevorzugen wir eine algebraische Darstellung, die
+m"oglichst ohne Differentialgleichungen auskommt.
+Eine elegante Realisierung dieses Ansatzes ist \cite{skript:green}.
+Nat"urlich lassen sich Differentialgleichungen nicht vermeiden,
+wir verwenden daher meistens eindimensionale Modelle, die sich mit
+gew"ohnlichen Differentialgleichungen behandeln lassen, und trotzdem
+die interessierenden quantenmechanischen Ph"anomene illustrieren.
+Bei der Berechnung des Wasserstoffatoms ist jedoch das L"osen einer partiellen
+Differentialgleichungen unvermeidlich, wir tun dies mit ad hoc entwickelten
+Methoden, und verweisen den Leser auf spezialisierte Literatur wie 
+\cite{skript:evans} f"ur eine vollst"andige Theorie.
+Da die physikalische Plausibilit"at gegen"uber der mathematischen Strenge
+im Vordergrund steht, scheint dies das ad"aquate Vorgehen zu sein.
+Das Kapitel "uber Quantencomputer verwendet die von
+\cite{skript:kaye-et-al} und vor allem von
+\cite{skript:arorabarak} etablierte Darstellungsweise.
+Weitere Literaturhinweise im Literaturverzeichnis auf
+Seite~\pageref{skript:literatur}.
 

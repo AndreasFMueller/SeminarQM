@@ -1,0 +1,203 @@
+Ein System mit zwei Zust"anden $|1\rangle$ und $|2\rangle$
+hat den Hamilton-Operator
+\[
+H_0=\begin{pmatrix}
+E_1&  0\\
+  0&E_2
+\end{pmatrix},
+\]
+mit $E_1=1$ und $E_2=2$.
+Zus"atzlich wird jetzt eine Wechselwirkung eingeschaltet, die den
+Hamilton-Operator
+\[
+\varepsilon H_1=
+\varepsilon \begin{pmatrix}
+     -1&\frac12\\
+\frac12&      1\\
+\end{pmatrix}
+\]
+hat.
+\begin{teilaufgaben}
+\item 
+Berechnen Sie in erster N"aherung die Energieniveaus $E_k(\varepsilon)$
+und die Zust"ande $|k(\varepsilon)\rangle$ des gest"orten Systems.
+\item
+Setzen Sie die gefundenen N"aherungen in die Schr"odingergleichung ein
+und pr"ufen Sie damit nach, dass die N"aherung in erster Ordnung
+korrekt ist.
+\item 
+Stellen sie durch geeignete Wahl von $\gamma$ in $|1(\varepsilon)\rangle$ 
+sicher, dass der Zustandsvektor in erster N"aherung normiert ist.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Nach Voraussetzung sind die Zust"ande nicht entartet, da ihre Energien
+alle verschieden sind.
+Wir k"onnen also die Formeln der St"orungstheorie f"ur ein nicht
+entartetes System verwenden.
+
+Die Formeln verwenden die
+Matrixelemente $\langle k|\,H_1\,|l\rangle$,
+die wir zun"achst berechnen wollen.
+Die Zustandsvektoren $|k\rangle$ sind die Standardbasisvektoren
+des zweidimensionalen Zustandsraumes, in dem die Operatoren $H_0$
+und $H_1$ wirken.
+Daher sind die Matrixelemente $\langle k|\,H_1\,|l\rangle$ gerade
+die Elemente der Matrix $H_1$.
+
+Diese liefern f"ur die
+Energien
+\[
+E_k^{(1)}=\langle k|\, H_1\,|k\rangle,
+\]
+also 
+\begin{align*}
+E_1(\varepsilon)&=E_1-\varepsilon=1-\varepsilon,\\
+E_2(\varepsilon)&=E_2+\varepsilon=2+\varepsilon.
+\end{align*}
+F"ur die Zustandsvektoren m"ussen die Koeffizienten 
+$\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle$ bestimmt werden:
+\[
+\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+=
+\frac{\langle\psi_l^{(0)}|\,H_1\,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+=
+\frac{\langle l|\,H_1\,|k\rangle}{E_k-E_l}
+\]
+Als Matrix angeordnet sind diese Koeffizienten
+\[
+\langle\psi_k^{(1)}|\psi_l^{(0)}\rangle
+=
+\begin{pmatrix}
+*
+	&\displaystyle\frac{\frac12}{E_1-E_2}\\
+\displaystyle\frac{\frac12}{E_2-E_1}
+	&*
+\end{pmatrix}
+=
+\begin{pmatrix}
+*
+	&\displaystyle-\frac12\\
+\displaystyle\frac12
+	&*
+\end{pmatrix}.
+\]
+Daraus kann man jetzt die gest"orten Zustandsvektoren konstruieren:
+\begin{align*}
+|\psi_k^{(1)}\rangle
+&=
+i\gamma|\psi_k^{(0)}\rangle
++\sum_{k\ne l}\frac{\langle\psi_l^{(0)}|\,H_1\,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\\
+\Rightarrow\qquad
+|1(\varepsilon)\rangle
+&=
+(1+i\varepsilon\gamma)\,|1\rangle
+	+ \frac{\varepsilon}{2(E_1-E_2)}\,|2\rangle 
+=
+(1+i\varepsilon\gamma)\,|1\rangle
+	- \frac{\varepsilon}{2}\,|2\rangle 
+=
+\begin{pmatrix}
+1+i\varepsilon\gamma \\ \displaystyle-\frac{\varepsilon}2
+\end{pmatrix},
+\\
+|2(\varepsilon)\rangle
+&=
+(1+i\varepsilon\gamma)\,|2\rangle
+	+ \frac{\varepsilon}{2(E_2-E_1)}\,|1\rangle
+=
+(1+i\varepsilon\gamma)\,|2\rangle
+	+ \frac{\varepsilon}{2}\,|1\rangle
+=
+\begin{pmatrix}
+\displaystyle\frac{\varepsilon}2
+\\
+1+i\varepsilon\gamma
+\end{pmatrix}.
+\end{align*}
+\item
+Diese L"osung setzen wir jetzt in die Schr"odingergleichung ein.
+F"ur den ersten Zustand m"ussen wir "uberpr"ufen, ob die Gleichung
+$H(\varepsilon)\, |1(\varepsilon)\rangle
+=E_1(\varepsilon)\,|1(\varepsilon)\rangle$
+bis auf Terme mindestens zweiter Ordnung in $\varepsilon$ erf"ullt ist.
+Setzen alles ein und erhalten
+\begin{align*}
+H(\varepsilon)\, |1(\varepsilon)\rangle -E_1(\varepsilon)\,|1(\varepsilon)\rangle
+&=
+\begin{pmatrix}
+1-\varepsilon-(1-\varepsilon)&\frac{\varepsilon}2\\
+\frac{\varepsilon}2&2+\varepsilon-(1-\varepsilon)
+\end{pmatrix}
+\begin{pmatrix}
+1+i\gamma\varepsilon\\-\frac{\varepsilon}2
+\end{pmatrix}
+\\
+&=
+\begin{pmatrix}
+0&\frac{\varepsilon}2\\
+\frac{\varepsilon}2&1+2\varepsilon
+\end{pmatrix}
+\begin{pmatrix}
+1+i\gamma\varepsilon\\-\frac{\varepsilon}2
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\frac{\varepsilon^2}{4}
+\\
+-i\gamma\frac{\varepsilon^2}2-\varepsilon^2
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\frac14
+\\
+-i\frac{\gamma}2-1
+\end{pmatrix}
+\varepsilon^2,
+\\
+H(\varepsilon)\, |2(\varepsilon)\rangle -E_2(\varepsilon)\,|2(\varepsilon)\rangle
+&=
+\begin{pmatrix}
+1-\varepsilon - (2+\varepsilon) & \frac{\varepsilon}2\\
+\frac{\varepsilon}2&2+\varepsilon -(2+\varepsilon)
+\end{pmatrix}
+\begin{pmatrix}
+\frac{\varepsilon}2\\1+i\gamma\varepsilon
+\end{pmatrix}
+\\
+&=
+\begin{pmatrix}
+-1-2\varepsilon & \frac{\varepsilon}2\\
+\frac{\varepsilon}2&0
+\end{pmatrix}
+\begin{pmatrix}
+\frac{\varepsilon}2\\1+i\gamma\varepsilon
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\varepsilon^2+i\gamma\frac{\varepsilon^2}{2}
+\\
+\frac{\varepsilon^2}{4}
+\end{pmatrix}
+=\begin{pmatrix}
+-1+i\frac{\gamma}2\\\frac14
+\end{pmatrix}\varepsilon^2.
+\end{align*}
+In beiden F"allen ist der Fehler der St"orungsn"aherung ein Vielfaches
+von $\varepsilon^2$ und damit insbesondere von zweiter Ordnung in $\varepsilon$.
+\item Die Norm des Zustandsvektors ist
+\[
+\langle 1(\varepsilon)|1(\varepsilon)\rangle
+=
+\frac{\varepsilon^2}4+1+\gamma^2 \varepsilon^2
+=
+1+\varepsilon^2\biggl(\frac14+\gamma^2\biggr),
+\]
+Offenbar ist der Vektor in erster Ordnung immer normiert, unabh"angig von
+der Wahl von $\gamma$.
+\end{teilaufgaben}
+\end{loesung}
+

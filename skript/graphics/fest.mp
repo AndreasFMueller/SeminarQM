@@ -14,7 +14,7 @@ verbatimtex
 etex;
 
 %
-% Festkoerper
+% Fermi-Kugel
 %
 beginfig(1)
 
@@ -633,6 +633,131 @@ drawarrow (-5,0)--(205,0);
 drawarrow (0,-5)--(0,145);
 label.lft(btex $Z$ etex, (0,145));
 label.top(btex $E$ etex, (205,0));
+
+endfig;
+
+%
+% Wellenfunktionen im Orts- und k-Raum, nach einer Idee von 
+% Nicola Ochsenbein und Simon Kuster
+%
+beginfig(12)
+
+numeric u;
+u := 10pt;
+numeric n;
+n := 8;
+
+pickup pencircle scaled 0.2pt;
+
+def r(expr x, y) =
+	u * sqrt((x / u) * (x / u) + (y / u) * (y / u))
+enddef;
+
+pickup pencircle scaled 1pt;
+drawarrow (-n * u, 0)--(n * u, 0);
+drawarrow (0, -n * u)--(0, n * u);
+label.urt(btex $k_x$ etex, (n * u, 0));
+label.ulft(btex $k_y$ etex, (0, n * u));
+
+def fillfield(expr x, y) =
+	fill ((x-0.5)*u, (y-0.5)*u)
+		--((x+0.5)*u, (y-0.5)*u)
+		--((x+0.5)*u, (y+0.5)*u)
+		--((x-0.5)*u, (y+0.5)*u)--cycle
+		withcolor (1,0.9,0.9);
+enddef;
+fillfield(0, 2);
+fillfield(0,-2);
+fillfield(3, 0);
+fillfield(3, 7);
+fillfield(5,-5);
+
+pickup pencircle scaled 0.2pt;
+for x = -(n-0.5) * u step u until n * u:
+	draw (x,-(n-0.5) * u - 5)--(x,(n-0.5) * u + 5);
+endfor;
+
+for y = -(n-0.5) * u step u until n * u:
+	draw (-(n-0.5) * u - 5,y)--((n-0.5) * u + 5,y);
+endfor;
+
+pickup pencircle scaled 3pt;
+draw (0,0);
+
+pickup pencircle scaled 1pt;
+
+z0 = (-n * u, -n * u) shifted (-(2*n+1) * u,0);
+z1 = ( n * u, -n * u) shifted (-(2*n+1) * u,0);
+z2 = ( n * u,  n * u) shifted (-(2*n+1) * u,0);
+z3 = (-n * u,  n * u) shifted (-(2*n+1) * u,0);
+
+fill z0--z1--z2--z3--cycle withcolor (0.95,0.95,0.95);
+draw z0--z1--z2--z3--cycle;
+
+label.bot(btex $-l$ etex, z0);
+label.bot(btex $+l$ etex, z1);
+label.lft(btex $-l$ etex, z0);
+label.lft(btex $+l$ etex, z3);
+
+def wave(expr l, m, a) =
+	(((0,0){dir 60}
+	for s = 1 step 2 until 2 * m:
+		..         ((s-0.5) * u,  0.5 * u)
+		..{dir -60}((s    ) * u,  0){dir -60}
+		..         ((s+0.5) * u, -0.5 * u)
+		..{dir  60}((s+1  ) * u,  0)
+	endfor
+	) xscaled (l/(u * m)) shifted (-u * l/u,0) rotated a)
+enddef;
+
+path	w;
+w := (wave(n * u, 3, 0)) shifted (z0 shifted (n * u, 1.3 * n * u));
+pickup pencircle scaled 1pt;
+drawarrow w withcolor red;
+pickup pencircle scaled 0.5pt;
+drawarrow (point 7 of w)..(-5*u,-u)..(3 * u, 0) withcolor blue;
+pickup pencircle scaled 3pt;
+draw point 7 of w withcolor red;
+draw (3 * u, 0) withcolor red;
+
+%label.top(btex $k_3$ etex, point 6 of w) withcolor red;
+
+w := (wave(sqrt(2) * n * u, 5, -45)) shifted (z0 shifted (n * u, n * u));
+pickup pencircle scaled 1pt;
+drawarrow w withcolor red;
+pickup pencircle scaled 0.5pt;
+drawarrow (point 17 of w)--(5 * u,  -5 * u) withcolor blue;
+pickup pencircle scaled 3pt;
+draw point 17 of w withcolor red;
+draw (5 * u,  -5 * u) withcolor red;
+
+w := (wave(n * u, 2,  90)) shifted (z0 shifted (0.3 * n * u, n * u));
+pickup pencircle scaled 1pt;
+drawarrow w withcolor red;
+pickup pencircle scaled 0.5pt;
+drawarrow (point 7 of w)--(0,  2 * u) withcolor blue;
+pickup pencircle scaled 3pt;
+draw point 7 of w withcolor red;
+draw (0,  2 * u) withcolor red;
+
+w := (wave(n * u, 2, -90)) shifted (z0 shifted (0.6 * n * u, n * u));
+pickup pencircle scaled 1pt;
+drawarrow w withcolor red;
+pickup pencircle scaled 0.5pt;
+drawarrow (point 6 of w)--(0, -2 * u) withcolor blue;
+pickup pencircle scaled 3pt;
+draw point 6 of w withcolor red;
+draw (0, -2 * u) withcolor red;
+
+w := (wave(1.08797 * n * u, 7, 180-113.199))
+	shifted (z0 shifted (1.3 * n * u, n * u));
+pickup pencircle scaled 1pt;
+drawarrow w withcolor red;
+pickup pencircle scaled 0.5pt;
+drawarrow (point 24 of w)--(3 * u, 7 * u) withcolor blue;
+pickup pencircle scaled 3pt;
+draw point 24 of w withcolor red;
+draw (3 * u, 7 * u) withcolor red;
 
 endfig;
 

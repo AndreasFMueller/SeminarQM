@@ -11,14 +11,18 @@ Es braucht daher eine grundlegend andere Beschreibung des Magnetfeldes
 und der Hamilton-Funktion, um Magentfelder in den Formalismus
 integrieren zu k"onnen.
 
-\section{Vektorpotential\label{section:vektorpotential}}
-\rhead{Vektorpotential}
-\index{Vektorpotential}
+In diesem Kapitel werden die Differential-Operatoren der Vektoranalysis
+intensiv gebraucht, eine m"ogliche Referenz vor allem f"ur die
+dabei verwendeten Identit"aten ist \cite{skript:vektoranalysis}.
+
+\section{Potentiale\label{section:vektorpotential}}
+\rhead{Potentiale}
+\index{Potentiale}
 F"ur die quantenmechanische Beschreibung eines Teilchens in einem
-elektrischen Feld konnten wir das Potential verwenden, welches
+statischen elektrischen Feld konnten wir das Potential verwenden, welches
 direkt die Energie eines Teilchens aus der Position zu bestimmen
-erlaubt. 
-Das elektrische Feld $\vec E$ kann aus dem Potential mittels
+erlaubt. In diesem speziellen Fall kann das
+elektrische Feld $\vec E$ aus dem Potential mittels
 \[
 \vec E=\operatorname{grad}\varphi
 =
@@ -29,13 +33,21 @@ Das elektrische Feld $\vec E$ kann aus dem Potential mittels
 \end{pmatrix}
 \]
 rekonstruiert werden.
-Das Magnetfeld hat kein Potential, aus dem es als Gradient wiedergewonnen
-werden k"onnte, und die Lorentz-Kraft, die das Magnetfeld
-\index{Lorentz-Kraft}
-auf ein Teilchen aus"ubt, sind nicht vom Ort, sondern von der Geschwindigkeit
-abh"angig.
 
-Zum Magnetfeld gibt es trotzdem eine "ahnliche Konstruktion.
+Das Magnetfeld hat kein Potential, aus dem es als Gradient wiedergewonnen
+werden k"onnte.
+Die Lorentz-Kraft, die das Magnetfeld
+\index{Lorentz-Kraft}
+auf ein Teilchen aus"ubt, ist nicht vom Ort, sondern von der Geschwindigkeit
+abh"angig, auch dies widerspricht einer Beschreibung durch ein Potential.
+Ausserdem erwarten wir bei einem zeitlich ver"anderlichen Magnetfeld
+zus"atzliche elektrische Felder, die f"ur die Induktionswirkung verantwortlich
+sind,
+elektrisches Feld und Magnetfeld m"ussen miteinander verbunden sein.
+
+\subsection{Vektorpotential}
+Zum Magnetfeld gibt es trotzdem eine dem elektrischen Potential
+"ahnliche Konstruktion.
 Das Magnetfeld $\vec B$ hat keine Quellen, es gibt keine magnetischen
 Monopole.
 Mathematisch kann man dies dadurch ausdr"ucken, dass 
@@ -93,14 +105,14 @@ Dieses Vektorfeld $\vec A$ geh"ort zum homogenen Magnetfeld $\vec B_0$.
 
 Das Vektorpotential $\vec A$ kann sich mit der Zeit "andern, so wie sich
 ja auch $\vec B$ "andern kann.
-Da ein sich "anderndes $\vec B$-Feld nach dem Induktionsgesetz einen
+Da ein sich "anderndes $\vec B$-Feld nach dem Induktionsgesetz eine
 Spannung induziert, muss etwas "ahnliches f"ur das Vektorpotential gelten.
 Das Induktionsgesetz ist
 \[
-\operatorname{rot}\vec E +\frac{\partial\vec B}{\partial t}=0,
+\operatorname{rot}\vec E +\frac{\partial\vec B}{\partial t}=0.
 \]
 Wendet man den Rotations-Operator auf
-$\vec E = -\operatorname{grad}\varphi$, ergibt sich
+$\vec E = -\operatorname{grad}\varphi$ an, ergibt sich
 \[
 \operatorname{rot}\vec E=\operatorname{rot}(-\operatorname{grad}\varphi)=0,
 \]
@@ -110,9 +122,11 @@ es fehlt also der Induktionsterm
 =
 \operatorname{rot}\frac{\partial\vec A}{\partial t}.
 \]
-Die richtige Definition ist also die folgende.
+Die richtige Definition ist daher die folgende.
+
 
 \begin{definition}
+\index{Vektorpotential}%
 Sei ein elektrisches Feld $\vec E$ und ein magnetisches Feld $\vec B$
 gegeben.
 Das elektrische Potential $\varphi$ und das Vektorpotential $\vec A$ 
@@ -134,6 +148,99 @@ nach den Formeln
 ausdr"ucken l"asst.
 \end{definition}
 
+\subsection{Maxwell-Gleichungen}
+Die Maxwell-Gleichungen beschreiben die gegenseitige Abh"angikeit 
+des elektrischen und magnetischen Feldes. 
+Sie beinhalten die homogenen Gleichungen, die die innere Konsistenz
+der Felder ausdr"ucken, und die inhomogenen Felder, die die Erzeugung
+der Felder durch Ladungen und Str"ome beschreiben.
+Wir schreiben die homogenen Gleichungen links, und die inhomogenen
+rechtes:
+\begin{equation}
+\begin{aligned}
+\operatorname{rot}\vec E+\frac{\partial\vec B}{\partial t}&=0,
+&\qquad&&
+\operatorname{div}\vec E&=\frac{\varrho}{\varepsilon_0},
+\\
+\operatorname{div}\vec B&=0,
+&\qquad&&
+\operatorname{rot}\vec B&=\mu_0\vec j+\mu_0\varepsilon_0\frac{\partial\vec E}{\partial t}.
+\end{aligned}
+\label{skript:maxwell}
+\end{equation}
+Setzt man jetzt (\ref{skript:potentiale}) in die homogenen
+Maxwell-Gleichungen (\ref{skript:maxwell}, links) ein, erh"alt man
+\begin{align*}
+\operatorname{rot}\vec E+\frac{\partial\vec B}{\partial t}
+&=
+\operatorname{rot}\biggl(
+-\operatorname{grad}\varphi-\frac{\partial\vec A}{\partial t}
+\biggr)
++\frac{\partial}{\partial t}\operatorname{rot}\vec A
+=
+-\underbrace{\operatorname{rot}\operatorname{grad}\varphi}_{=0}
+-\operatorname{rot}\frac{\partial\vec A}{\partial t}
++\operatorname{rot}\frac{\partial\vec A}{\partial t}
+=0
+\\
+\text{und}\qquad
+\operatorname{div}\vec B&=\operatorname{div}\operatorname{rot}\vec A=0,
+\end{align*}
+die homogenen Maxwell-Gleichungen sind nach Definition
+(\ref{skript:potentiale}) der Potentiale also automatisch erf"ullt.
+
+Die gleiche Substitution in den inhomogenen Gleichungen ergibt Gleichungen
+f"ur $\varphi$ und $\vec A$, welche die Erzeugung der Potentiale durch
+Ladungen und Str"ome beschreiben.
+F"ur das Feld erzeugt von den Ladungen finden wir:
+\begin{align}
+\operatorname{div}\vec E
+&=
+-\Delta\varphi -\frac{\partial}{\partial t}\operatorname{div}\vec A
+=\frac{\varrho}{\varepsilon_0}
+\label{skript:maxwell-ladungsdichte}
+\end{align}
+Die Rechnung f"ur das Feld erzeugt von den Str"omen ist etwas komplizierter:
+\begin{align}
+\operatorname{rot}\vec B-\frac1{c^2}\frac{\partial \vec E}{\partial t}
+&=
+\operatorname{rot}\operatorname{rot}\vec A
+-\frac1{c^2}\frac{\partial}{\partial t}\biggl(
+-\operatorname{grad}\varphi-\frac{\partial\vec A}{\partial t}
+\biggr)
+\notag
+\\
+&=
+\operatorname{grad}\operatorname{div}\vec A
+-\Delta \vec A+\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\vec A
++\frac1{c^2}\frac{\partial}{\partial t}\operatorname{grad}\varphi
+\notag
+\\
+&=
+\biggl(-\Delta + \frac1{c^2}\frac{\partial^2}{\partial t^2}\biggr)\vec A
++\operatorname{grad}\biggl(\operatorname{div}\vec A +\frac1{c^2}\frac{\partial\varphi}{\partial t}\biggr)
+=\mu_0\vec j
+\label{skript:maxwell-stroeme}
+\end{align}
+Der Term
+\[
+\biggl(-\Delta + \frac1{c^2}\frac{\partial^2}{\partial t^2}\biggr)\vec A
+\]
+ist die linke Seite einer Wellengleichung f"ur $\vec A$.
+
+Die Maxwell-Gleichungen sind Differentialgleichungen erster Ordnung,
+so wie die Hamilton-Gleichungen Differentialgleichungen erster Ordnung
+sind f"ur Ort und Impuls.
+Der Impuls ist aber durch die Zeitableitung des Ortes bereits bestimmt,
+der Ort alleine ist also die fundamentalere physikalische Gr"osse.
+Die Differentialgleichung f"ur den Ort ist zweiter Ordnung.
+Die Potentiale $\varphi$ und $\vec A$ sind die fundamentalere
+Beschreibung des elektromagnetischen Feldes, und die zugeh"origen
+Bewegungsgleichungen 
+(\ref{skript:maxwell-ladungsdichte})
+und
+(\ref{skript:maxwell-stroeme})
+sind zweiter Ordnung.
 
 \section{Hamilton-Funktion f"ur ein Teilchen im Magnetfeld\label{section:hamilton-funktion-im-magnetfeld}}
 \rhead{Hamilton-Funktion im Magnetfeld}
@@ -438,11 +545,18 @@ ganz bestimmte Phasenfrequenzen erlaubt.
 %
 \section{Eichtransformationen\label{section:eichtransformation}}
 \rhead{Eichtransformationen}
-Das Vektorpotential ist die physikalisch entscheidende Gr"osse.
-Im Bohm-Aharonov-Experiment
+Das Vektorpotential ist die physikalisch entscheidende Gr"osse,
+denn im Bohm-Aharonov-Experiment
 werden Elektronen durch ein Gebiet geleitet, in dem sich $\vec A$,
 aber nicht $\vec B$ "andert, trotzdem stellt das Experiment eine
 Beeinflussung fest.
+Andererseits sind die Potentiale nicht eindeutig festgelegt, schon
+beim elektrischen Potential ist die Wahl des Nullpunktes mehr oder
+weniger frei, ohne dass dadurch das physikalische Ph"anomen ver"andert
+wird.
+Es muss daher gekl"art werden, welche Freiheit man bei der Wahl
+der Potentiale hat, und wie sich die Wahlfreiheit auf die quantenmechanischen
+Wellenfunktionen auswirkt.
 
 \subsection{Eichtransformationen der Potentiale}
 \index{Eichtransformation!der Potentiale}
@@ -482,13 +596,13 @@ die Ersetzung
 \end{definition}
 
 \begin{satz}
-Eine Eichtransformation (\ref{skript:eichtransformation}) "andert nichts an den
-Feldern $\vec E$ und $\vec B$.
+Eine Eichtransformation (\ref{skript:eichtransformation}) "andert die
+Felder $\vec E$ und $\vec B$ nicht.
 \end{satz}
 
 \begin{proof}[Beweis]
-Wir berechnen aus den eichtransformierten Feldern das elektrische 
- $\vec E'$ und das magnetische Feld $\vec B'$:
+Wir berechnen aus den eichtransformierten Potentialen das elektrische Feld
+$\vec E'$ und das magnetische Feld $\vec B'$:
 \begin{align*}
 \vec B'
 &=
@@ -519,11 +633,16 @@ und $\vec B'$ stimmen also mit den urspr"unglichen Feldern $\vec E$
 und $\vec B$ "uberein.
 \end{proof}
 
+\subsection{Spezielle Wahl der Eichung}
+Das Vektorpotential und elektrische Potential sind nicht eindeutig bestimmt.
+Durch geeignete Wahl von $\chi$ k"onnen die Potentiale so gew"ahlt
+werden, dass eine zus"atzliche Bedingung erf"ullt ist, was Berechnungen
+vereinfachen kann.
+
 \subsubsection{Transversale Eichung}
 \index{Transversale Eichung}
 \index{Coulomb-Eichung}
-Das Vektorpotential und elektrische Potential sind nicht eindeutig bestimmt.
-Mit eine Eichtransformation kann 
+
 Die Transversale Eichung oder auch Coulomb-Eichung verlangt zus"atzlich,
 dass das Vektorpotential quellenfrei sein soll,
 also $\operatorname{div}\vec A=0$ erf"ullen soll.
@@ -542,7 +661,7 @@ Die Funktion $\chi$ ist also L"osung der Differentialgleichung
 \Delta \chi = -\operatorname{div}\vec A.
 \]
 Diese partialle Differentialgleichung kann zum Beispiel mit der
-Greenschen Funktion gel"ost werden.
+Greenschen Funktion (siehe \cite[p.~33]{skript:evans}) gel"ost werden.
 Es l"asst sich also immer transversale Eichung erreichen.
 
 \subsubsection{Lorentz-Eichung}
@@ -579,9 +698,38 @@ Die Funktion $\chi$ der Eichtransformation muss dazu der Gleichung
 \end{aligned}
 \end{equation*}
 gen"ugen, wobei $\square$ der d'Alembert-Operator ist.
-Diese Wellengleichung kann zum Beispiel durch retarierte Potentiale 
-gefunden werden, insbesondere kann man also Lorentz-Eichung immer
-erreichen.
+Diese Wellengleichung kann zum Beispiel durch retardierte Potentiale 
+gefunden werden \cite[p.~82]{skript:evans}, insbesondere kann man also
+Lorentz-Eichung immer erreichen.
+
+In Lorentz-Eichung werden die inhomogenen Maxwell-Gleichungen
+besonders einfach.
+In der Gleichung (\ref{skript:maxwell-stroeme})
+f"ur die Stromdichte $\vec j$ f"allt der zweite Term ganz weg:
+\[
+\biggl(-\Delta + \frac1{c^2}\frac{\partial^2}{\partial t^2}\biggr)\vec A
++\operatorname{grad}\biggl(\underbrace{\operatorname{div}\vec A +\frac1{c^2}\frac{\partial\varphi}{\partial t}}_{=0}\biggr)
+=
+\biggl(-\Delta + \frac1{c^2}\frac{\partial^2}{\partial t^2}\biggr)\vec A
+=\mu_0\vec j,
+\]
+es bleibt eine Wellengleichung f"ur $\vec A$. Die Lorenzt-Eichung
+besagt, dass man $\operatorname{div}\vec A$ durch die Zeitableitung
+von $\varphi$ ersetzen kann.
+In der Gleichung (\ref{skript:maxwell-ladungsdichte}) f"ur die Ladungen
+f"uhrt dies auf
+\[
+-\Delta\varphi -\frac{\partial}{\partial t}\underbrace{\operatorname{div}\vec A}_{-\frac1{c^2}\frac{\partial\varphi}{\partial t}}
+=
+-\Delta\varphi +\frac1{c^2}\frac{\partial^2\varphi}{\partial t^2}
+=\frac{\varrho}{\varepsilon_0},
+\]
+eine Wellengleichung f"ur das Potential.
+In Lorentz-Eichung erf"ullen beide Potentiale voneinander
+unabh"angige Wellengleichungen.
+Die Lorentz-Eichung d"urfe also besonders gut f"ur die Untersuchung
+elektromagnetischer Wellen geeignet sein, siehe auch
+Kapitel~\ref{chapter:feldquantisierung}.
 
 \subsection{Eichtransformation der Schr"odingergleichung}
 Wenn man eine Eichtransformation auf die Potentiale in der

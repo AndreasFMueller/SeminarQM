@@ -49,11 +49,28 @@ end
 
 %-----Verarbeitung gestört-----
 gamma = 0;
-%epsilon = 4*10^-3;
-epsilon = 10^-3;
+epsilon = 4*10^-3;
 E1_k = zeros(1, length(n));
 H1 = x;
 PsiG = zeros(length(n), length(x));
+
+% for ln = n
+% 	psi1_l = zeros(1, length(x));
+% 
+% 	E1_k(ln) = sum(~Psi(ln, :).*H1.*Psi(ln, :).*delta);
+% 
+% 	loopCount = 0;
+% 	k = ln;
+% 	if k > 1
+% 		for l = 1 : ln - 1
+% 			psi1_l = psi1_l + Psi(l, :).*H1.*Psi(k, :) ./ (E(k)-E(l));
+% 				loopCount = loopCount + 1;
+% 		end
+% 	else
+% 		psi1_l = psi1_l + Psi(k, :).*H1.*Psi(k, :) ./ (E(k));
+% 			loopCount = loopCount + 1;
+% 	end
+% end
 
 loopCount = 0;
 for ln = n
@@ -80,7 +97,7 @@ clf('reset')			% clear figure
 hold on;
 
 s = zeros(1, length(n));
-for ln = nPlot		% ungestoerter Plot
+for ln = 1:5		% ungestoerter Plot
 	plot(x, Psi(ln, :) + (ln-1)*2e05, 'Color', 'black')		% Psi
 
 	s(ln) = sum(Psi(ln, :).^2.*delta);
