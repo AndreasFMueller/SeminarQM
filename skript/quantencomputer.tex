@@ -241,7 +241,9 @@ Wenn man eine RSA Schl"usselpaar f"ur ein X.509-Zertifikat erzeugen will,
 muss testen, ob eine mehrere Tausend Bit lange Zahl $n$ eine Primzahl ist.
 Es w"urde viel zu lange dauern, die Primzahleigenschaft durch Testdivision 
 zu ermitteln.
-Daher verwendet man einen probabilistischen Test, der nur mit einer
+Zwar ist inzwischen ein Algorithmus mit polynomieller Laufzeit
+bekannt \cite{skript:aks}, trotzdem
+verwendet man meistens einen probabilistischen Test, der nur mit einer
 gewissen Wahrscheinlichkeit erkennt, wenn eine Zahl nicht Primzahl ist
 \cite{skript:miller-rabin}.
 
