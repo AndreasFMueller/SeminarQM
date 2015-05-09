@@ -1,4 +1,5 @@
 *.backup
+*.bm
 *.bbl
 *.blg
 *.dvi
