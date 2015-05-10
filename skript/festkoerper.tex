@@ -8,7 +8,7 @@ Bei elektrischen Leitern ist ein Teil der Elektronen weitgehend frei
 beweglich.
 Nat"urlich ist die Gitterstruktur ebenfalls die Folge der Interaktionen
 zwischen den Elektronen, doch f"ur unsere Untersuchungen k"onnen wir
-die Entstehung der Gitterstruktur vernachl"assigen, es einfach als
+die Entstehung der Gitterstruktur vernachl"assigen, das Gitter einfach als
 gegeben ansehen, und nur noch die Eigenschaften der frei beweglichen
 Elektronen studieren.
 Diese Elektronen bewegen sich in dem periodischen Potential, das von
@@ -44,7 +44,8 @@ doe Modellierung von Leitungsph"anomenen nur diejenigen Elektronen
 zu ber"ucksichtigen, die beweglich genug sind, sich im ganzen
 Festk"orper bewegen zu k"onnen.
 Weiter nehmen wir an, dass sich die Elektronen gegenseitig 
-nicht beeinflussen.
+nicht beeinflussen\footnote{Auf diese Annahme kommen wir im
+Abschnitt~\ref{section:hartree-fock} zur"uck.}.
 Jedes Elektron bewegt sich im Potential, welches von den Atomkernen
 und allen anderen Elektronen erzeugt wird.
 Jedes Elektron sieht also im wesentlichen den gleichen Potentialkasten.
@@ -74,6 +75,11 @@ n_z^2
 E_F
 \]
 gen"ugen.
+Zum Zustand mit den Wellenzahlen $(n_x,n_y,n_z)$ geh"ort ein Punkt
+im $k$-Raum, je k"urzer die Wellenl"ange der Wellenfunktion eines
+Elektrons, desto h"oher sein Impuls und desto l"anger der zugeh"orige
+Vektor im $k$-Raum (Abbildung~\ref{skript:kraum}).
+
 Die tats"achlich besetzten Elektronenzust"ande bilden also eine Kugel
 im Raum der m"oglichen Elektronenzust"ande, die Fermi-Kugel.
 Je gr"osser die Dichte der frei beweglichen Elektronen ist, desto
@@ -91,7 +97,7 @@ zu den Atomabst"anden klein wird, werden die Randeffekte "uberhand nehmen,
 dies ist zum Beispiel bei Quantum-Dots der Fall. 
 
 Ein besonders einfaches Modell ist, sich den Festk"orper unendlich 
-ausgedehnt vorzustellen. Diese Modell kann aber nicht zutreffen, denn
+ausgedehnt vorzustellen. Dieses Modell kann aber nicht zutreffen, denn
 es f"uhrt dazu, dass wir mit unendlich vielen Elektronen arbeiten m"ussen.
 Die m"oglichen Wellenzahlen $k_x$, $k_y$ und $k_z$ w"urden stetig, die
 diskrete Natur der Quantenmechanik geht in diesem Modell verloren.
@@ -152,14 +158,15 @@ gebundenen Niveaus frei beweglich.
 \end{figure}
 Das Modell der Fermi-Kugel ist nur anwendbar auf Elektronen, die sich
 innerhalb des Festk"orpers im Wesentlichen frei bewegen k"onnen.
-Im Allgemeinen wird nur ein Teil der Elektronen diese Bedingung erf"ullen,ischer Leiter ist.
-die meisten Elektronen werden sich auf tiefen Energieniveaus in unmittelbarerischer Leiter ist.
+Im Allgemeinen wird nur ein Teil der Elektronen diese Bedingung erf"ullen,
+und auch nur dann, wenn der Festk"orper ein elektrischer Leiter ist.
+Die meisten Elektronen werden sich auf tiefen Energieniveaus in unmittelbarer
 N"ahe der Atomkerne aufhalten, wie in Abbildung~\ref{skript:gebundene-niveaus}
 dargestellt.
 
 Erst wenn gen"ugend Elektronen vorhanden sind, dass alle diese gebundenen
-Niveaus zu besetzt sind, k"onnen weitere Elektronen sich Elektronen mit
-noch h"oherer Energie freier bewegen.
+Niveaus zu besetzt sind, k"onnen sich weitere Elektronen mit noch h"oherer
+Energie freier bewegen.
 Erst f"ur diese Elektronen ist es sinnvoll, von der Fermi-Kugel zu sprechen,
 und erst wenn solche Elektronen vorhanden sind, k"onnen wir erwarten,
 dass der Festk"orper ein elektrischer Leiter ist.
@@ -1044,7 +1051,7 @@ Eigenzust"ande des Hamilton-Operators liegen k"onnen.
 Das vormals stetige Energiespektrum zerf"allt jetzt in ein Reihe von
 B"andern.
 
-\section{Hartree-Fock-N"aherung}
+\section{Hartree-Fock-N"aherung\label{section:hartree-fock}}
 \rhead{Hartree-Fock-N"aherung}
 Bisher wurden immer nur einzelne Elektronen betrachtet, in einem 
 Festk"orper wirkt jedoch eine grosse Zahl von Elektronen zusammen.
@@ -1510,7 +1517,7 @@ umformen, diese Notation vermeidet das Problem der Zuordnung der Variablen.
 
 \subsection{Hartree-Fock-Gleichung}
 \index{Hartree-Fock-Gleichung}%
-\subsubsection{Minimalproblem}
+\subsubsection{Hartree-Fock Minimalproblem}
 In der Herleitung der Hartree-Gleichung m"ussen wir jetzt
 $\langle\Psi|\,H\,|\Psi\rangle$ 
 durch
@@ -1529,27 +1536,14 @@ ersetzen:
 \end{align*}
 In $\Phi$ kommt jedes m"ogliche Produkt von Funktionen $\varphi_k$,
 insbesondere kommen Produkte
-%\[
-%\varphi_k^*(q_1)
-%\varphi_{k'}^*(q_2)
-%\varphi_k(q_1)
-%\varphi_{k'}(q_2)
-%=
-%|\varphi_k(q_1)|^2\,|\varphi_{k'}(q_2)|^2
-%\qquad\text{und}\qquad
-%\varphi_k^*(q_1)
-%\varphi_{k'}^*(q_2)
-%\varphi_k(q_2)
-%\varphi_{k'}(q_1)
-%\]
 \[
-\biggl\langle\varphi_k\varphi_{k'}\biggr|
+\biggl\langle\varphi_k\varphi_{k'}\biggr|\,
 \frac{1}{|\Delta x|}
-\biggl|\varphi_k\varphi_{k'}\biggr\rangle
+\,\biggl|\varphi_k\varphi_{k'}\biggr\rangle
 \qquad\text{und}\qquad
-\biggl\langle\varphi_k\varphi_{k'}\biggr|
+\biggl\langle\varphi_k\varphi_{k'}\biggr|\,
 \frac{1}{|\Delta x|}
-\biggl|\varphi_{k'}\varphi_k\biggr\rangle
+\,\biggl|\varphi_{k'}\varphi_k\biggr\rangle
 \]
 vor.
 Das zweite Produkt enth"alt die Funktionen in umgekehrter Reihenfolge,
@@ -1563,16 +1557,16 @@ Der Erwartungswert der Energie erh"alt damit einen zus"atzlichen Term:
 \frac12
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne k'}
-\biggl\langle\varphi_k\varphi_{k'}\biggr|
+\biggl\langle\varphi_k\varphi_{k'}\biggr|\,
 \frac{1}{|\Delta x|}
-\biggl|\varphi_k\varphi_{k'}\biggr\rangle
+\,\biggl|\varphi_k\varphi_{k'}\biggr\rangle
 -
 \frac12
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne k'}
-\biggl\langle\varphi_k\varphi_{k'}\biggr|
+\biggl\langle\varphi_k\varphi_{k'}\biggr|\,
 \frac{1}{|\Delta x|}
-\biggl|\varphi_{k'}\varphi_k\biggr\rangle
+\,\biggl|\varphi_{k'}\varphi_k\biggr\rangle
 \end{align*}
 Wie bei der Hartree-Gleichung m"ochten wir
 $\langle\Phi|\,H\,|\Phi\rangle$ 
@@ -1612,15 +1606,15 @@ Die Variationen von $F=\langle\Phi|\,H\,|\Phi\rangle$
 +
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
-\biggl\langle\delta\varphi_j\varphi_k\biggr|
+\biggl\langle\delta\varphi_j\varphi_k\biggr|\,
 \frac{1}{|\Delta x|}
-\biggl|\varphi_j \varphi_k\biggr\rangle
+\,\biggl|\varphi_j \varphi_k\biggr\rangle
 -
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
-\biggl\langle\delta\varphi_j\varphi_k\biggr|
+\biggl\langle\delta\varphi_j\varphi_k\biggr|\,
 \frac{1}{|\Delta x|}
-\biggl|\varphi_k \varphi_j\biggr\rangle.
+\,\biggl|\varphi_k \varphi_j\biggr\rangle.
 \end{align*}
 
 Die Gleichungen der Methode der Lagrange-Multiplikatoren werden 
@@ -1637,24 +1631,24 @@ jetzt zu
 \]
 oder ausgeschrieben
 \begin{align}
-\bigg\langle\delta\varphi_j\bigg|
+\bigg\langle\delta\varphi_j\bigg|\,
 \bigg(
 H_1|\varphi_j\rangle
 &+
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
-\biggl\langle\varphi_k\biggr|
+\biggl\langle\varphi_k\biggr|\,
 \frac{1}{|x_j-\tilde x_1|}
-\biggl|\varphi_k\biggr\rangle
-\biggl|\varphi_j\biggr\rangle
+\,\biggl|\varphi_k\biggr\rangle
+\,\biggl|\varphi_j\biggr\rangle
 \notag
 -
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
-\biggl\langle\varphi_k\biggr|
+\biggl\langle\varphi_k\biggr|\,
 \frac{1}{|\tilde x_1-x_j|}
-\biggl|\varphi_j\biggr\rangle
-\biggl|\varphi_k\biggr\rangle
+\,\biggl|\varphi_j\biggr\rangle
+\,\biggl|\varphi_k\biggr\rangle
 \biggr)
 \\
 \qquad\qquad
@@ -1708,20 +1702,20 @@ H_1\,|\varphi_j\rangle
 +
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
-\biggl\langle\varphi_k\biggl|
+\biggl\langle\varphi_k\biggl|\,
 \frac{1}{|\Delta x|}
-\biggr|\varphi_k\biggr\rangle
+\,\biggr|\varphi_k\biggr\rangle
 |\varphi_j\rangle
 -
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
-\biggl\langle\varphi_k\biggl|
+\biggl\langle\varphi_k\biggl|\,
 \frac{1}{|\Delta x|}
-\biggr|\varphi_j\biggr\rangle
+\,\biggr|\varphi_j\biggr\rangle
 |\varphi_k\rangle
 =
 E_j
-| \varphi_j\rangle
+| \varphi_j\rangle.
 \label{skript:hf3}
 \end{align}
 
@@ -1730,9 +1724,9 @@ Die Terme
 \[
 c_{kj}
 =
-\biggl\langle\varphi_k\biggl|
+\biggl\langle\varphi_k\biggl|\,
 \frac{1}{|\Delta x|}
-\biggr|\varphi_j\biggr\rangle
+\,\biggr|\varphi_j\biggr\rangle
 \]
 in (\ref{skript:hf3})  k"onnen weiter ausgerechnet werden.
 Die Funktionen $\varphi_k$ h"angen ja nicht nur von der Position, sondern
@@ -1769,9 +1763,9 @@ Da es nur zwei Spin-Zust"ande gibt, kann das Skalarprodukt der Spinfunktion
 nur $1$ sein, bei parallelem Spin, oder $0$, bei antimparallelem Spin.
 Das gleiche gilt dann f"ur  $c_{kj}$
 \[
-\biggl\langle\varphi_k\biggl|
+\biggl\langle\varphi_k\biggl|\,
 \frac{1}{|\Delta x|}
-\biggr|\varphi_j\biggr\rangle
+\,\biggr|\varphi_j\biggr\rangle
 =
 \begin{cases}
 \langle\varphi_{x,k}|\, 1/|\Delta x|\,|\varphi_{x,j}\rangle
