@@ -1673,20 +1673,18 @@ H_1|\varphi_j\rangle
 \biggl(
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
-\biggl\langle\varphi_k\biggr|
+\biggl\langle\varphi_k\biggl|\,
 \frac{1}{|\Delta x|}
-\biggl|\varphi_k\biggr\rangle
+\,\biggr|\varphi_k\biggr\rangle
 \biggr)
 |\varphi_j\rangle
-\notag
 -
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
-\biggl\langle\varphi_k\biggr|
+\biggl\langle\varphi_k\biggl|\,
 \frac{1}{|\Delta x|}
-\biggl|\varphi_j\biggr\rangle
-\biggl|\varphi_k\biggr\rangle
-\biggr)
+\,\biggr|\varphi_j\biggr\rangle
+|\varphi_k\rangle
 =
 \sum_k\lambda_{jk}
 |\varphi_k\rangle.
@@ -1776,8 +1774,9 @@ Das gleiche gilt dann f"ur  $c_{kj}$
 \biggr|\varphi_j\biggr\rangle
 =
 \begin{cases}
-\displaystyle
-\int\varphi_{x,k}^*(x_1)\frac1{|\Delta x|}\varphi_{x,k'}(x_1)\,dx_1
+\langle\varphi_{x,k}|\, 1/|\Delta x|\,|\varphi_{x,j}\rangle
+%\displaystyle
+%\int\varphi_{x,k}^*(x_1)\frac1{|\Delta x|}\varphi_{x,k'}(x_1)\,dx_1
 &\qquad\text{Spin parallel}
 \\
 0&\qquad\text{Spin antiparallel}.
