@@ -1330,6 +1330,22 @@ Sind zwei der Funktionen $\varphi_k$ gleich, dann verschwindet die
 Slater-Determinante, weil zwei Spalten identisch sind.
 Die Slater-Determinante realisiert also das Pauli-Prinzip.
 
+Wir d"urfen ausserdem annehmen, dass die $\varphi_k$ orthonormiert sind. 
+Sind sie es nicht, wenden wir das Orthonormalisierungsverfahren von 
+Gram-Schmidt auf sie an. Dadurch wird jede Funktion $\varphi_k$
+durch eine Linearkombination der Funktion $\varphi_{k'}$ mit $k'\le k$
+ersetzt, die Determinante, also $\Phi$ "andert dabei nicht.
+
+Ist $U$ eine unit"are $N\times N$-Matrix mit Matrixelementen
+$u_{kk'}$, dann k"onnen statt der Funktionen $\varphi_k$
+auch die Funktionen 
+\[
+\varphi'_k = \sum_{k'}u_{kk'}\varphi_{k'}
+\]
+f"ur die Bildung der Slater-Determinante verwendet werden.
+Daduch werden die Zeilen von $\Phi$ einer unit"aren Abbildung
+unterworfen, was die Determinante nicht "andert.
+
 \subsection{Hartree-Fock-Gleichung}
 \index{Hartree-Fock-Gleichung}%
 In der Herleitung der Hartree-Gleichung m"ussen wir jetzt
