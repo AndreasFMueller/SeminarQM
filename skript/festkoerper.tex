@@ -1178,9 +1178,10 @@ $\langle\Psi|\,H\,|\Psi\rangle$ minimiert:
 \langle\Psi|\,H\,|\Psi\rangle
 &=
 \sum_{k}\biggl\langle \varphi_k\biggl|\,
-\frac{p_k^2}{2m_e}+V(x)
+\frac{p_k^2}{2m_e}+V(x_k)
 \,\biggr|\varphi_k\biggr\rangle
 +
+\frac12
 \sum_{k\ne k'}\biggl\langle \varphi_k\varphi_{k'}\biggl|\,
 \frac{e^2}{4\pi\varepsilon_0}\frac{1}{|x_k-x_{k'}|}
 \,\biggr|\varphi_k\varphi_{k'} \biggl\rangle
@@ -1188,67 +1189,170 @@ $\langle\Psi|\,H\,|\Psi\rangle$ minimiert:
 \\
 &=\sum_k\langle\varphi_k|\,H_k\,|\varphi_k\rangle
 +
+\frac12
 \sum_{k\ne k'}\biggl\langle \varphi_k\varphi_{k'}\biggl|\,
 \frac{e^2}{4\pi\varepsilon_0}\frac{1}{|x_k-x_{k'}|}
 \,\biggr|\varphi_k\varphi_{k'} \biggl\rangle
 \label{skript:hffunktional}
 \end{align}
+Man beachte, dass diese Notation nicht ganz eindeutig ist. Die Schreibweise
+der Bra- und Ket-Vektoren macht keine Voraussetzungen dar"uber, wie die
+zugeh"origen Variablen heissen sollen. Das Symbol $x_k$ in
+(\ref{skript:hffunktional}) ist also zu lesen als ``diejenige Variable,
+die als Argument der Funktion $\varphi_k$ verwendet wird''.
+
 Ausserdem m"ussen die Funktionen $\varphi_k$ normiert sein, es muss
 also $\langle\varphi_k|\varphi_k\rangle=1$ gelten f"ur alle $k$.
+Wir k"onnen dies auch als $\langle\varphi_k|\varphi_k\rangle-1=0$
+schreiben.
 
+\subsubsection{Minimalproblem}
 Wir haben also ein Minimalproblem f"ur die Funktion
 \[
 F(\varphi_1,\dots,\varphi_N)=\langle\Psi|\,H\,|\Psi\rangle
 \]
 mit Nebenbedingungen
 \[
-G_j(\varphi_1,\dots,\varphi_N)=\langle\varphi_j|\varphi_j\rangle-1
+G_k(\varphi_1,\dots,\varphi_N)=\langle\varphi_k|\varphi_k\rangle-1
 \]
 zu l"osen.
 Es handelt sich zwar wieder um ein unendlichdimensionales Problem,
 doch wir werden es behandeln, also ob es ein endlichdimensionales Problem
 w"are, mit der gleichen heuristischen Argumentation wie in fr"uheren F"allen.
 
+\subsubsection{Variation}
 Die Methode der Wahl f"ur die L"osung solcher Probleme ist die Methode
 der Lagrange-Multiplikatoren. 
 Variabel sind die Funktionen $\varphi_k$, wir m"ussen also zun"achst 
 kl"aren, wie die Ableitungen nach $\varphi_k$ zu interpretieren sind.
-Ist eine $\delta\phi_k$ eine Funktion von $x_k$, und $f$ eine Funktion von
-$\varphi_k$, dann schreiben wir $\delta f(\varphi_k)$ f"ur die
+
+Ist eine $\delta\varphi_j$ eine Funktion von $x_j$, und $f$ eine Funktion von
+$\varphi_j$, dann schreiben wir $\delta f(\varphi_j)$ f"ur die
 Ableitung
 \[
 \delta f(\varphi_k)
 =
 \frac{d}{dt}f(\varphi_k+t\delta\varphi_k)\bigg|_{t=0}.
 \]
-Damit k"onnen wir jetzt die Ableitungen von $\langle\Psi|\,H\,|\Psi\rangle$
-und von allen Nebenbedingungen $\langle\varphi_k|\varphi_k\rangle-1=0$
-berechnen:
-\begin{align}
-\delta G_j
+Diese Notation ist jedoch wenig geeignet f"ur den Fall einer Funktion
+$f(\varphi_1,\dots,\varphi_N)$, die von mehreren der Funktion $\varphi$
+abh"angt.
+Die Notation zeigt weder, welche der Funktion abgeleitet wird,
+noch in welche Richtung die Ableitung erfolgt.
+
+Wir schreiben daher $\delta_j$ f"ur die Ableitung nach der Funktion $\varphi_j$,
+\[
+\delta_j f(\varphi_,\dots,\varphi_N)
+=
+\frac{d}{dt}f(\varphi_1,\dots,\varphi_j+\delta\varphi_j,\dots,\varphi_N)\bigg|_{t=0},
+\]
+so wird wenigstens die Funktion angezeigt, nach der abgeleitet wird.
+Wir nennen $\delta_j f$ die Variation von $f$ nach der Funktion $\varphi_j$.
+
+Im Folgenden werden wir ausschliesslich Funktionen $f$ treffen, die 
+linear oder sesquilinear in $\varphi_j$ sind. Solche Funktionen
+kann man als Skalarprodukte schreiben:
+\begin{align*}
+\delta_j\langle\psi|\varphi_j\rangle
 &=
-\delta(\langle\varphi_j|\varphi_j\rangle-1)
+\frac{d}{dt}
+\langle\psi|\varphi_j+t\delta\varphi_j\rangle\bigg|_{t=0}
+=
+\langle\psi|\delta\varphi_j\rangle
+\\
+\delta_j\langle\varphi_j|\psi\rangle
+&=
+\langle\delta\varphi_j|\psi\rangle.
+\end{align*}
+F"ur einen selbstadjungierten Operator $A$ k"onnen wir den Erwartungswert
+$\langle\varphi_j|\,A\,|\varphi_j\rangle$ bilden.
+Seine Variation ist
+\[
+\delta_j\langle\varphi_j|\,A\,|\varphi_j\rangle
+=
+\langle\delta\varphi_j|\,A\,|\varphi_j\rangle
++
+\langle\varphi_j|\,A\,|\delta\varphi_j\rangle
+=
+2\operatorname{Re}\langle\delta\varphi_j|\,A\,|\varphi_j\rangle.
+\]
+Da wir $\varphi_j$ beliebig w"ahlen k"onnen, k"onnen wir $\varphi_j$
+auch mit einem beliebigen Faktor multiplizieren, so dass das
+Produkt $\langle\delta\varphi_j|\,A\,|\varphi_j\rangle$ reell ist.
+Die Forderung, dass die Variation
+$\delta_j\langle\varphi_j|\,A\,|\varphi_j\rangle$
+f"ur jede Wahl von $\delta\varphi_j$
+verschwinden soll ist also gleichbedeutend damit, dass
+$\langle\delta\varphi_j|\,A\,|\varphi_j\rangle=0$
+f"ur jede Wahl von $\delta\varphi_j$ verschwindet, oder dass
+$A\,|\varphi_j\rangle=0$ sein muss.
+
+Die Funktionen $G_k$ und $F$ sind genau von dieser Art.
+
+\subsubsection{L"osung des Minimalproblems}
+Damit k"onnen wir jetzt die Variationen $\delta_j$
+von $\langle\Psi|\,H\,|\Psi\rangle$
+und von allen Nebenbedingungen $\langle\varphi_k|\varphi_k\rangle-1=0$
+berechnen.
+Der zweite Term in (\ref{skript:hffunktional}) enth"alt die Funktion
+zweimal, einmal f"ur $k=j$ und einmal f"ur $k'=j$, seine Variation
+ist daher
+\begin{equation*}
+\frac12\sum_{j\ne k'}
+\biggl\langle\delta\varphi_j\varphi_{k'}\biggl|\,
+\frac{e^2}{4\pi\varepsilon_0}
+\frac{1}{|x_j-x_{k'}|}
+\,\biggr|\varphi_j\varphi_{k'}\biggr\rangle
++
+\frac12\sum_{k\ne j}
+\biggl\langle\varphi_k\delta\varphi_j\biggl|\,
+\frac{e^2}{4\pi\varepsilon_0}
+\frac{1}{|x_k-x_j|}
+\,\biggr|\varphi_k\varphi_j\biggr\rangle.
+\end{equation*}
+Bis auf den Namen des Summationsindex stimmen die beiden
+Summen "uberein, wir k"onnen sie also in die eine Summe
+\begin{equation*}
+\sum_{k\ne j}
+\biggl\langle\delta\varphi_j\varphi_k\biggl|\,
+\frac{e^2}{4\pi\varepsilon_0}
+\frac{1}{|x_k-x_j|}
+\,\biggr|\varphi_j\varphi_k\biggr\rangle
+\end{equation*}
+zusammenfassen.
+\begin{align}
+\delta_j G_j
+&=
+\delta_j(\langle\varphi_j|\varphi_j\rangle-1)
 =
 2\langle\delta\varphi_j|\varphi_j\rangle
 \label{skript:variationGj}
 \\
-\delta F
+\delta_j F
 &=
-\delta\langle\Psi|\,H\,|\Psi\rangle
+\delta_j\langle\Psi|\,H\,|\Psi\rangle
 =
-2\sum_k\langle\delta\varphi_k|\,H_k\,|\varphi_k\rangle
+2 \langle\delta\varphi_j|\,H_j\,|\varphi_j\rangle
 +
-\frac{e^2}{4\pi\varepsilon_0}\sum_{k\ne k'}
-\biggl\langle\delta\varphi_k\varphi_{k'}\biggl|\,
-\frac{1}{|x_k-x_{k'}|}
-\,\biggr|\varphi_k\varphi_{k'} \biggr\rangle
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+2
+\biggl\langle\delta\varphi_j\varphi_k\biggl|\,
+\frac{1}{|x_j-x_k|}
+\,\biggr|\varphi_j\varphi_k \biggr\rangle
 \label{skript:variationF}
 \end{align}
 \index{Lagrange-Multiplikatoren}
+Da $\delta_jG_k=0$ f"ur $j\ne k$ ist, werden in den Lagrange-Gleichungen
+nur $\delta_jG_j$ auftreten.
 Die Methode der Lagrange-Multiplikatoren besagt, dass im Minimum
-die Ableitungen Gleichungen
+die Variationen die Gleichungen
 \begin{equation}
-\delta F - \sum_{j} E_j\, \delta G_j =0
+\delta_j F - \sum_{k} E_k\, \delta_j G_k
+=
+\delta_j F -  E_j\, \delta_j G_j
+=
+0
 \label{skript:lagrangeequation}
 \end{equation}
 erf"ullen, die ebenfalls zu bestimmenden Konstanten $E_j$ heissen 
@@ -1259,34 +1363,49 @@ in (\ref{skript:lagrangeequation}) ein, erhalten wir die Gleichungen
 \[
 \biggl\langle
 \delta\varphi_j\biggl|\,
-H_j + \sum_{k\ne j}\biggl\langle\varphi_k\biggl|\,
-\frac1{|x_k-x_{k'}|}
+H_j
++
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}\biggl\langle\varphi_k\biggl|\,
+\frac1{|x_k-x_j|}
 \,\biggr|\varphi_k\biggr\rangle-E_j
 \,\biggl|\varphi_j \biggr\rangle=0.
 \]
 Da dies f"ur jede beliebige Richtung $\delta\varphi_j$ gelten muss,
 folgt
-\[
+\begin{equation}
 \biggl(
-H_j + \sum_{k\ne j}\biggl\langle\varphi_k\biggl|\,
-\frac1{|x_k-x_{k'}|}
+H_j
++
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}\biggl\langle\varphi_k\biggl|\,
+\frac1{|x_k-x_j|}
 \,\biggr|\varphi_k\biggr\rangle\biggr)
 \,|\varphi_j \rangle
 =
 E_j\,|\varphi_j\rangle.
-\]
+\label{skript:hglsystem}
+\end{equation}
+Das Minimalproblem ist also "aquivalent mit dem Gleichungssystem
+(\ref{skript:hglsystem}) f"ur $j=1,\dots,N$.
+
+\subsubsection{Hartree-Gleichung}
 Der Zustand $|\varphi_j\rangle$ ist also eine Eigenzustand des
 Hamilton-Operators
 \[
-H_j + \sum_{k\ne j}\int \frac{|\varphi_k(x_k)|^2}{|x_k-x_j|}\,d^3x_k
+H_j
++
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}\int \frac{|\varphi_k(x_k)|^2}{|x_k-x_j|}\,d^3x_k
 \]
-mit Energie $E_j$. Die Funktioen $\varphi_j(x_j)$ erf"ullen also
+mit Energie $E_j$. Die Funktionen $\varphi_j(x_j)$ erf"ullen also
 die Eigenwertgleichungen
 \[
 \biggl(
--\frac{\hbar^2}{2m_e}\Delta
+-\frac{\hbar^2}{2m_e}\Delta_j
 +V(x_j)
-+\frac{1}{4\pi\varepsilon_0}\sum_{k\ne j}\int\frac{|\varphi_k(x_k)|^2}{|x_k-x_j|}\,d^3x_k\biggr)\varphi_j(x_j) = E_j\varphi_j(x_j).
++\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}\int\frac{|\varphi_k(x_k)|^2}{|x_k-x_j|}\,d^3x_k\biggr)\varphi_j(x_j) = E_j\varphi_j(x_j).
 \]
 Sie heissen die Hartree-Gleichungen.
 \index{Hartree-Gleichung}
@@ -1296,7 +1415,8 @@ im mittleren Coulomb-Potential
 \[
 V_{H,j}(x_j)
 =
-\frac{1}{4\pi\varepsilon_0}\sum_{k\ne j}\int\frac{|\varphi_k(x_k)|^2}{|x_k-x_j|}\,d^3x_k
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}\int\frac{|\varphi_k(x_k)|^2}{|x_k-x_j|}\,d^3x_k
 \]
 aller anderen Elektronen.
 
@@ -1327,7 +1447,7 @@ Faktor vor der Determinante stellt sicher, dass $\Phi$ normiert ist.
 $\Phi$ heisst die Slater-Determinante.
 \index{Slater-Determinante}%
 Sind zwei der Funktionen $\varphi_k$ gleich, dann verschwindet die 
-Slater-Determinante, weil zwei Spalten identisch sind.
+{\em Slater-Determinante}, weil zwei Spalten identisch sind.
 Die Slater-Determinante realisiert also das Pauli-Prinzip.
 
 Wir d"urfen ausserdem annehmen, dass die $\varphi_k$ orthonormiert sind. 
@@ -1339,15 +1459,58 @@ ersetzt, die Determinante, also $\Phi$ "andert dabei nicht.
 Ist $U$ eine unit"are $N\times N$-Matrix mit Matrixelementen
 $u_{kk'}$, dann k"onnen statt der Funktionen $\varphi_k$
 auch die Funktionen 
-\[
+\begin{equation}
 \varphi'_k = \sum_{k'}u_{kk'}\varphi_{k'}
-\]
+\label{skript:hfunitaer}
+\end{equation}
 f"ur die Bildung der Slater-Determinante verwendet werden.
 Daduch werden die Zeilen von $\Phi$ einer unit"aren Abbildung
 unterworfen, was die Determinante nicht "andert.
 
+Bei der Berechnung von $\langle\Psi|\,H\,|\Psi\rangle$ konnten wir
+davon ausgehen, dass die Funktion $\varphi_k$ von den Koordinaten
+$x_k$ abh"angt. Eine solche Zuordnung ist jetzt nicht mehr m"oglich,
+jede Funktion kommt mit jeder Koordinate als Argument vor.
+Problematisch wird dies vor allem f"ur Ausdr"ucke der Form
+\begin{equation}
+\biggl\langle\varphi_k\varphi_{k'}\biggl|\,
+\frac{1}{|x_k-x_{k'}|}
+\,\biggr|\varphi_{k'}\varphi_k\biggr\rangle
+\label{skript:hfnotation}
+\end{equation}
+die wir eigentlich als
+\begin{equation}
+\int \varphi_k^*(q_1)\varphi_{k'}^*(q_2)
+\frac{1}{|x_1-x_2|}
+\varphi_{k'}(q_1)\varphi_k(q_2)\,dq_1\,dq_2
+\label{skript:integrationsvariablen}
+\end{equation}
+lesen m"ochten. In diesem Beispiel haben die beiden auftretenden $\varphi_k$ 
+verschiedene Koordinaten als Argumente.
+Wir verwenden daher die folgende Konvention.
+Bei der Berechnung eines Skalarproduktes in der Ortsdarstellung 
+werden den Funktionen in einem Bra- oder Ket-Vektor Integrationsvariablen
+der Reihe nach zugeteilt, so wie wir das in (\ref{skript:integrationsvariablen})
+gemacht haben. 
+Wir ersetzen ausserdem den inversen Abstand 
+\[
+\frac{1}{|x_1-x_2|}
+\qquad
+\text{durch}
+\qquad
+\frac{1}{|\Delta x|}.
+\]
+Damit k"onnen wir (\ref{skript:hfnotation}) in
+\[
+\biggl\langle \varphi_k\varphi_{k'}\biggl|\,
+\frac1{|\Delta x|}
+\,\biggr|\varphi_{k'}\varphi_k\biggl\rangle
+\]
+umformen, diese Notation vermeidet das Problem der Zuordnung der Variablen.
+
 \subsection{Hartree-Fock-Gleichung}
 \index{Hartree-Fock-Gleichung}%
+\subsubsection{Minimalproblem}
 In der Herleitung der Hartree-Gleichung m"ussen wir jetzt
 $\langle\Psi|\,H\,|\Psi\rangle$ 
 durch
@@ -1358,8 +1521,9 @@ ersetzen:
 &=
 \sum_k\langle\varphi_k|\,H_k\,|\varphi_k\rangle
 +
+\frac12
 \sum_{k\ne k'}\biggl\langle\Phi\biggl|\,
-\frac{1}{4\pi\varepsilon_0}
+\frac{e^2}{4\pi\varepsilon_0}
 \frac{1}{|x_k-x_{k'}|}
 \,\biggr|\Phi\biggr\rangle
 \end{align*}
@@ -1380,11 +1544,11 @@ insbesondere kommen Produkte
 %\]
 \[
 \biggl\langle\varphi_k\varphi_{k'}\biggr|
-\frac{1}{|x_k-x_{k'}|}
+\frac{1}{|\Delta x|}
 \biggl|\varphi_k\varphi_{k'}\biggr\rangle
 \qquad\text{und}\qquad
 \biggl\langle\varphi_k\varphi_{k'}\biggr|
-\frac{1}{|x_k-x_{k'}|}
+\frac{1}{|\Delta x|}
 \biggl|\varphi_{k'}\varphi_k\biggr\rangle
 \]
 vor.
@@ -1393,28 +1557,22 @@ in der Slater-Deter\-minante hat es also das entgegengesetze Vorzeichen.
 Der Erwartungswert der Energie erh"alt damit einen zus"atzlichen Term:
 \begin{align*}
 \langle\Phi|\,H\,|\Phi\rangle
-&=
+=
 \sum_k\langle\varphi_k|\,H_k\,|\varphi_k\rangle
 +
 \frac12
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne k'}
 \biggl\langle\varphi_k\varphi_{k'}\biggr|
-\frac{1}{|x_k-x_{k'}|}
+\frac{1}{|\Delta x|}
 \biggl|\varphi_k\varphi_{k'}\biggr\rangle
-%\int\frac{|\varphi_k(q_1)|^2\,|\varphi_{k'}(q_2)|^2}{|x_k-x_{k'}|}\,dq_1\,dq_2
-\\
-&\qquad
 -
 \frac12
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne k'}
 \biggl\langle\varphi_k\varphi_{k'}\biggr|
-\frac{1}{|x_k-x_{k'}|}
+\frac{1}{|\Delta x|}
 \biggl|\varphi_{k'}\varphi_k\biggr\rangle
-%\int\frac{
-%\varphi_k^*(q_1)\varphi_{k'}^*(q_2)\varphi_k(q_2)\varphi_{k'}(q_1)
-%}{|x_k-x_{k'}|}\,dq_1\,dq_2.
 \end{align*}
 Wie bei der Hartree-Gleichung m"ochten wir
 $\langle\Phi|\,H\,|\Phi\rangle$ 
@@ -1422,119 +1580,232 @@ minimieren, unter geeigneten Nebenbedingungen.
 
 Wir erwarten wieder, das die Funktionen $\varphi_k$ als Zustandsvektoren
 einzelner Elektronen betrachtet werden k"onnen.
-Wegen des Pauli-Prinzips verlangen wir daher zus"atzlich, dass die
-Funktionen $\varphi_k$ orthonormiert sind.
+Wir d"urfen die Funktionen $\varphi_k$ als orthonormiert voraussetzen,
+und k"onnen als physikalischen Grund daf"ur anf"uhren, dass
+nach dem Pauli-Prinzip Eigenzust"ande
+von verschiedenen Elektronen sich in mindestens einer Quantenzahl
+unterscheiden m"ussen, und die Wellenfunktionen daher orthogonal
+sein m"ussen.
+
 Wir erhalten damit zus"atzliche Nebenbedingungen in der Form
 \[
 G_{kk'}=\langle\varphi_k|\varphi_{k'}\rangle-\delta_{kk'}.
 \]
-Die Ableitungen davon sind
+Die Variationen davon sind
 \[
-\delta G_{kk'}
+\delta_k G_{kk'}
 =
-2\langle\delta\varphi_k |\varphi_{k'}\rangle
+\langle\delta\varphi_k |\varphi_{k'}\rangle
 \]
+\subsubsection{L"osung des Minimalproblems}
 Die zus"atzlichen Nebenbedingungen liefern uns zus"atzliche
 Lagrage-Multiplikatoren, wir bezeicnen den Lagrange-Multiplikator
 zur Nebenbedingung $G_{kk'}$ mit $\lambda_{kk'}$.
 
-Die Ableitung von $F=\langle\Phi|\,H\,|\Phi\rangle$
+Wie fr"uher argumentiert, behalten wir in den Variationen der
+bilinearen Terme immer nur die Variation des ersten Faktors.
+Die Variationen von $F=\langle\Phi|\,H\,|\Phi\rangle$
 \begin{align*}
-\delta F
+\delta_j F
 &=
-\langle\delta\varphi_j|\,H_j\,|\varphi_j\rangle
+2\langle\delta\varphi_j|\,H_j\,|\varphi_j\rangle
 +
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
 \biggl\langle\delta\varphi_j\varphi_k\biggr|
-\frac{1}{|x_j-x_k|}
-\biggl|\varphi_j\bigg\rangle\bigg|\varphi_k\biggr\rangle
+\frac{1}{|\Delta x|}
+\biggl|\varphi_j \varphi_k\biggr\rangle
 -
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
 \biggl\langle\delta\varphi_j\varphi_k\biggr|
-\frac{1}{|x_j-x_k|}
-\biggl|\varphi_k\bigg\rangle\bigg|\varphi_j\biggr\rangle.
+\frac{1}{|\Delta x|}
+\biggl|\varphi_k \varphi_j\biggr\rangle.
 \end{align*}
+
 Die Gleichungen der Methode der Lagrange-Multiplikatoren werden 
 jetzt zu
 \[
-\delta F - \sum_{k,k'}\lambda_{kk'}\delta G_{kk'}=0,
+\delta_j F - \sum_{k,k'}\lambda_{kk'}\delta_j G_{kk'}
+=
+\delta_j F
+-
+\sum_{k}\lambda_{jk}\delta_j G_{jk}
+=\delta_jF
+-\sum_k\lambda_{jk}\langle\delta\varphi_j|\varphi_k\rangle
+=0,
 \]
 oder ausgeschrieben
 \begin{align}
 \bigg\langle\delta\varphi_j\bigg|
 \bigg(
-H_j|\varphi_j\rangle
+H_1|\varphi_j\rangle
 &+
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
 \biggl\langle\varphi_k\biggr|
-\frac{1}{|x_j-x_k|}
-\biggl|\varphi_j\varphi_k\biggr\rangle
+\frac{1}{|x_j-\tilde x_1|}
+\biggl|\varphi_k\biggr\rangle
+\biggl|\varphi_j\biggr\rangle
 \notag
 -
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
 \biggl\langle\varphi_k\biggr|
-\frac{1}{|x_j-x_k|}
-\biggl|\varphi_k\varphi_j\biggr\rangle
+\frac{1}{|\tilde x_1-x_j|}
+\biggl|\varphi_j\biggr\rangle
+\biggl|\varphi_k\biggr\rangle
 \biggr)
 \\
 \qquad\qquad
 &=
-\sum_{k'}\lambda_{jk'}\langle\delta\varphi_j|\varphi_{k'}\rangle
-+
-\sum_{k}\lambda_{kj}\langle\varphi_k|\delta\varphi_j\rangle.
+\sum_k\lambda_{jk}\langle\delta\varphi_j|\varphi_k\rangle
+=
+\langle\delta\varphi_j|
+\sum_k\lambda_{jk}
+|\varphi_k\rangle.
 \label{skript:hf1}
 \end{align}
-Die rechte Seite k"onnen wir umformen zu
-\[
-\sum_{k'}\lambda_{jk'}\langle\delta\varphi_j|\varphi_{k'}\rangle
+Die L"osung des Minimalproblems erf"ullt also die Gleichungen
+\begin{equation}
+H_1|\varphi_j\rangle
 +
-\sum_{k}\lambda_{kj}\langle\varphi_k|\delta\varphi_j\rangle
+\biggl(
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+\biggl\langle\varphi_k\biggr|
+\frac{1}{|\Delta x|}
+\biggl|\varphi_k\biggr\rangle
+\biggr)
+|\varphi_j\rangle
+\notag
+-
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+\biggl\langle\varphi_k\biggr|
+\frac{1}{|\Delta x|}
+\biggl|\varphi_j\biggr\rangle
+\biggl|\varphi_k\biggr\rangle
+\biggr)
 =
-\sum_{k}\lambda_{jk}\langle\delta\varphi_j|\varphi_k\rangle
-+
-\sum_{k}\lambda_{kj}\langle\varphi_k|\delta\varphi_j\rangle
-\]
+\sum_k\lambda_{jk}
+|\varphi_k\rangle.
+\label{skript:hf2}
+\end{equation}
 Diese Vektor-Gleichung ist von der Form
 \[
 A\varphi = \Lambda \varphi.
 \]
-Man kann zeigen, dass $A$ selbstadjungiert ist, es folgt dann, dass
-man die Vektoren $\varphi_k$ mit Hilfe einer unit"aren Matrix durch
-neue Vektoren $\tilde\varphi_k$ ersetzt werden, so dass die
+Man kann zeigen, dass $A$ selbstadjungiert ist.
+Es folgt dann, dass auch die Matrix $\Lambda$ selbstadjungiert sein muss,
+und dass man die Vektoren $\varphi_k$ mit Hilfe einer unit"aren Matrix durch
+neue Vektoren $\varphi'_k$ ersetzt werden, so dass die
 Matrix $\Lambda$ diagonal wird.
-Verwenden wir wieder diese Vektoren, dann wird die Gleichung
-(\ref{skript:hf1}) 
+Eine solche Transformation "andert nach (\ref{skript:hfunitaer})
+an der Slater-Determinante nichts.
+Wir nennen die transformierten Vektoren $\varphi'_k$ wieder mit $\varphi_k$,
+und erhalten aus (\ref{skript:hf2}) die Gleichungen
 \begin{align}
-H_j\,|\varphi_j\rangle
-&+
+H_1\,|\varphi_j\rangle
++
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
-\biggl\langle\varphi_k\biggr|
-\frac{1}{|x_j-x_k|}
-\biggl|\varphi_k\bigg\rangle
+\biggl\langle\varphi_k\biggl|
+\frac{1}{|\Delta x|}
+\biggr|\varphi_k\biggr\rangle
 |\varphi_j\rangle
-\notag
-\\
-&-
+-
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}
-\biggl\langle\varphi_k\biggr|
-\frac{1}{|x_j-x_k|}
-\biggl|\varphi_j\bigg\rangle
+\biggl\langle\varphi_k\biggl|
+\frac{1}{|\Delta x|}
+\biggr|\varphi_j\biggr\rangle
 |\varphi_k\rangle
 =
 E_j
 | \varphi_j\rangle
-\label{skript:hf2}
+\label{skript:hf3}
 \end{align}
 
+\subsubsection{Spin}
+Die Terme
+\[
+c_{kj}
+=
+\biggl\langle\varphi_k\biggl|
+\frac{1}{|\Delta x|}
+\biggr|\varphi_j\biggr\rangle
+\]
+in (\ref{skript:hf3})  k"onnen weiter ausgerechnet werden.
+Die Funktionen $\varphi_k$ h"angen ja nicht nur von der Position, sondern
+auch von den Spin-Koordinaten ab.
+Da es in unserem Modell keine Kopplung zwischen den Spin- und
+den Raumkoordinaten gibt (keine Spin-Bahn-Kopplung), lassen sich die
+Funktionen als Produkt
+\[
+\varphi_k(q_1)=\varphi_{x,1}(x_1)\cdot\varphi_{s,1}(s_1)
+\]
+schreiben.
 
+Das Skalarprodukt zweier solcher Funktionen zerf"allt in ein Integral
+"uber die Raumkoordinaten und eine Summe "uber die Spin-Koordinaten:
+\[
+\langle\varphi_k|\varphi_{k'}\rangle
+=
+\langle\varphi_{x,k}|\varphi_{x,k'}\rangle
+\langle\varphi_{s,k}|\varphi_{s,k'}\rangle
+=
+\underbrace{
+\int\varphi_{x,k}^*(x_1)\varphi_{x,k'}(x_1)\,dx_1
+}_{=\langle\varphi_{x,k}|\varphi_{x,k'}\rangle}
+\cdot
+\big(
+\underbrace{
+\varphi_{s,k}^*(\textstyle \frac12) \varphi_{s,k'}(\textstyle \frac12)
++
+\varphi_{s,k}^*(\textstyle-\frac12) \varphi_{s,k'}(\textstyle-\frac12)
+}_{=\langle\varphi_{s,k}|\varphi_{s,k'}\rangle}
+\big)
+\]
+Da es nur zwei Spin-Zust"ande gibt, kann das Skalarprodukt der Spinfunktion
+nur $1$ sein, bei parallelem Spin, oder $0$, bei antimparallelem Spin.
+Das gleiche gilt dann f"ur  $c_{kj}$
+\[
+\biggl\langle\varphi_k\biggl|
+\frac{1}{|\Delta x|}
+\biggr|\varphi_j\biggr\rangle
+=
+\begin{cases}
+\displaystyle
+\int\varphi_{x,k}^*(x_1)\frac1{|\Delta x|}\varphi_{x,k'}(x_1)\,dx_1
+&\qquad\text{Spin parallel}
+\\
+0&\qquad\text{Spin antiparallel}.
+\end{cases}
+\]
 
-
+\subsubsection{Hartree-Fock-Gleichung}
+Damit haben wir jetzt die Hartree-Fock-Gleichung hergeleitet:
+\begin{align}
+H_1\,|\varphi_j\rangle
++
+V_{H,j}
+|\varphi_j\rangle
+-
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{{k\ne j}\atop{\text{Spin parallel}}}
+\biggl\langle\varphi_k\biggl|\,
+\frac{1}{|\Delta x|}
+\,\biggr|\varphi_j\biggr\rangle
+|\varphi_k\rangle
+=
+E_j
+| \varphi_j\rangle
+\label{skript:hf4}
+\end{align}
+Sie beschreibt Elektronen im Hartree-Potential und zus"atzlich unter
+dem Einfluss einer Wechselwirkung mit allen anderen Elektronen
+gleichen Spins.
 
 
 
