@@ -19,12 +19,12 @@ TODO
 %----------------------------Elektron-Elektron Wechselwirkung------------------------
 \section{Elektron-Elektron Wechselwirkung}
 \rhead{Elektron-Elektron Wechselwirkung}
-Es gibt neben der coulombschen Wechselwirkung zwischen den Elektronen noch mehr Wechselwirkungen. Zum einen gibt es eine Elektronen-Gitter Wechselwirkung. Diese ist f"ur die Betrachung der Cooper-Paare aber nicht relevant. Sie wird deshalb nachfolgend nicht ber"ucksichtigt. Zum anderen gibt es eine Elektron-Elektron Wechselwirkung "uber die sogenannten Phononen. Wie diese Wechselwirkung im Allgemeinen funktioniert und was diese Phononen sind wird nachfolgend erl"autert.\\
-
+Es gibt neben der coulombschen Wechselwirkung zwischen den Elektronen noch mehr Wechselwirkungen. Zum einen gibt es eine Elektronen-Gitter Wechselwirkung. Diese ist f"ur die Betrachung der Cooper-Paare aber nicht relevant. Sie wird deshalb nachfolgend nicht ber"ucksichtigt. Zum anderen gibt es eine Elektron-Elektron Wechselwirkung "uber die sogenannten Phononen. Wie diese Wechselwirkung im Allgemeinen funktioniert und was diese Phononen sind wird nachfolgend erl"autert.
+\\
 In Abbildung \ref{supraleitung:Gitter1} sieht man einen Ausschnitt der Gitterstruktur eines K"orpers. Fliegt nun ein Elektron durch dieses Gitter, so wird das Gitter durch die Felder des Elektrons deformiert. Das Elektron ver"andert seine Flugbahn. Dargestellt ist dies in Abbildung \ref{supraleitung:Gitter2}. Das deformierte Gitter bewegt sich nun weiter als Schwingung. In Abbildung \ref{supraleitung:Gitter3} ist diese Schwingung dargestellt und mit $q$ bezeichnet. Wenn nun ein weiteres Elektron ins Gitter fliegt, so wird dieses von der Schwingung im Gitter beeinflusst, ersichtlich in Abbilung \ref{supraleitung:Gitter4}. Die Schwingung im Gitter wird wieder vernichtet und das Elektron ver"andert seine Flugbahn.
 \\
 Die Schwingng $q$ welche vom Elektron $k'$ zum Elektron $k$ transportiert wurde entspricht einem harmonischen Oszillator. Das Bedeuted, dass die m"oglichen Frequenzen, und die damit die enthaltene Energie, quantisiert sind. Wenn diese Energie quantisiert ist, kann man die Energie auch als Teilchen betrachten. Eine Darstellung der Wechselwirkung mit der Gitterschwinung als Teilchen vereinfacht die Darstellung stark. Diese neu eingef"uhrten Teilchen werden Phononen genannt.
-Diese Betrachtung der Gitterschwingung als Phonon ist nach Feynman in Abbildung \ref{supraleitung:FeynmanDiagram1} ersichtlich.%hier sollte auf das Feynmandiagramm verwiesen werden. (wie?)
+Diese Betrachtung der Gitterschwingung als Phonon ist nach Feynman in Abbildung \ref{supraleitung:FeynmanDiagram1} ersichtlich.%TODO hier sollte auf das Feynmandiagramm verwiesen werden. (wie?)
 %Kann das verhalten der Bilder so beeinflusst werden, dass sie wenigstens im gleichen unterkapitel angezeigt werden? (momentan ist die Darstellung der Bilder über so viele Seiten nicht geeignet.
 \begin{figure}[h]	
 \centering
@@ -50,7 +50,6 @@ Diese Betrachtung der Gitterschwingung als Phonon ist nach Feynman in Abbildung 
 \caption{Elektron fliegt ins Gitter und wird beeinflusst
 \label{supraleitung:Gitter4}}
 \end{figure}
-
 Diese Wechselwirkung zwischen den Elektronen kann auch mathematisch beschrieben werden. F"ur die mathematische Betrachtung beginnen wir da wo wir einen Anhaltspunkt haben, also beim Phonon.
 \\
 Wir haben gesehen, dass das Phonon quantisiert ist. F"ur dieses gibt es also Auf- und Absteigeoperatoren. Wir nennen das Phonon $a$ mit der Energie $q$. Wir haben also den Aufsteigoperator $a^+_q$ und den Absteigeoperator $a_q$. Wenn die an das Phonon abgegebe Energie quantisiert ist, so muss das Elektron ebenfalls Auf- und Absteigeoperatoren haben. Wir nennen die Elektronen nun $c$ mit dem Wellenzahl $k$. Daraus folgt, dass der Aufsteigoperator f"ur das Elektron $c^+_k$ und der Absteigeoperator $c_k$ sind.
@@ -60,8 +59,37 @@ Wir f"uhren nun noch einen Anfangszustand $|a\rangle$, einen Endzustand $\langle
 \]
 Zu beachten ist nun, dass die Leserichtung von rechts nach links ist. Es wird also vom Anfangszustand aus ein Phonon $a$ mit der Energie $q$ erzeugt, ein Elektron $c$ mit der Wellenzahl $k'$ vernichtet und ein Elektron $c$ mit der Wellenzahl $k'+q$ erzeugt, um zum Zwischenzustand $z_1$ zu gelangen.
 Von diesem Zwischenzustand aus geht es weiter, indem man das Phonon $a_q$ wieder vernichtet, das Elektron $c_k$ vernichtet und ein Elektron $c^+_{k+q}$ erzeugt.
-%nun muss die Formel 81.2 eingefuehrt werden -> Nenner noch nachvollziehbar beschreiben.
+%TODO nun muss die Formel 81.2 eingefuehrt werden -> Nenner noch nachvollziehbar beschreiben.
 %danach richtung 81.4 weiterziehen
+\\
+Weitere Formeln:
+\[
+\frac{1}{2}
+\sum \limits_{kk'q} |M_q|^2
+\left\{
+\frac
+{\langle e|c^+_{k+q} c_k a_q |z_1\rangle\langle z_1| c^+_{k'-q} c_{k'} a^+_q |a\rangle }
+{E(k')-E(k'-q)-\hbar\omega_q}
++
+\frac
+{\langle e|c^+_{k'-q} c_{k'} a_{-q}|z_1\rangle\langle z_1| c^+_{k+q} c_k a^+_{-q} |a\rangle }
+{E(k')-E(k'-q)-\hbar\omega_q}
+\right\}
+\]
+\[
+\frac{1}{2}
+\sum \limits_{kk'q} 
+\langle e|V_{kk'q}c^+_{k+q}c^+_{k'-q}c_{k'}c_k|a \rangle
+\]
+\[
+V_{kk'q} = - |M_q|^2 \left\{\frac{1}{\hbar\omega_q+(E(k+q)-E(k))}
++
+\frac{1}{\hbar\omega_q-(E(k+q)-E(k))}
+\right\}
+= \frac
+{2|M_q|^2\hbar\omega_q}
+{(E(k+q)-E(k))^2-(\hbar\omega_q)^2)}
+\]
 %----------------------------Hinzufuegen von Elektronen zu der Fermikugel------------------------
 \section{Hinzuf"ugen von Elektronen zu der Fermikugel}
 \rhead{Hinzuf"ugen von Elektronen zu der Fermikugel}
