@@ -1,0 +1,178 @@
+\documentclass{beamer}
+
+\usepackage{amsmath,amssymb}
+\usepackage[ngerman]{babel}
+
+\author[Badertscher]{Hannes Badertscher}
+\title{Bellsche Ungleichung}
+\date{\today}
+
+\AtBeginSection[]
+{
+    \begin{frame}<beamer>
+        \frametitle{\contentsname}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+    \tableofcontents
+\end{frame}
+
+\section{Das EPR Gedankenexperiment}
+\begin{frame}{Das EPR Gedankenexperiment}
+    \centering
+    \includegraphics{../../skript/bell/images/experiment_setup.pdf}
+\end{frame}
+\begin{frame}{Forderungen}
+    \begin{itemize}
+        \item Lokalit\"at
+        \item Realismus
+        \item Korrektheit
+        \item Vollst\"andigkeit
+    \end{itemize}
+\end{frame}
+\begin{frame}{Herleitung}
+    \begin{itemize}
+        \item Pauli-Matrizen:
+            \begin{align*}
+                S_x &= \frac{\hbar}{2} \begin{pmatrix}
+                0 & 1 \\ 1 & 0
+                \end{pmatrix}
+                &
+                S_y &= \frac{\hbar}{2} \begin{pmatrix}
+                0 & -i \\ i & 0
+                \end{pmatrix}
+                &
+                S_z &= \frac{\hbar}{2} \begin{pmatrix}
+                1 & 0 \\ 0 & -1
+                \end{pmatrix}\label{equ:bell:paulimatrizen}
+            \end{align*}
+        \item Eigenwerte:
+            \begin{align*}
+                |{+}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\1 \end{pmatrix} &
+                |{-}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\-1 \end{pmatrix} &
+                |{+}z\rangle &= \begin{pmatrix} 1\\0 \end{pmatrix} &
+                |{-}z\rangle &= \begin{pmatrix} 0\\1 \end{pmatrix} &
+            \end{align*}
+        % Tafel: 
+        %  - Erklärung Tensor-Produkt (Def 29.5)
+        %  - Herleitung Zustand (29.3)
+        \item<2-> Zustand des Systems:
+            \[
+                |\psi\rangle = \frac{1}{\sqrt{2}} \Big( 
+                    |{+}z\rangle \otimes |{-}z\rangle - |{-}z\rangle \otimes |{+}z\rangle
+                 \Big)
+            \]
+        % Tafel: Überleitung zu (29.4)
+        \item<3-> \"Aquivalenter Zustand:
+            \[
+                |\psi\rangle = -\frac{1}{\sqrt{2}} \Big( 
+                              |{+}x\rangle \otimes |{-}x\rangle - |{-}x\rangle \otimes |{+}x\rangle
+                           \Big)
+            \]
+    \end{itemize}
+
+
+\end{frame}
+\begin{frame}{Widerspruch}
+    \begin{itemize}
+        \item Zustand nach Messung $A$
+            \begin{align*}
+                |\psi_{1}\rangle &= |{+}z\rangle \otimes |{-}z\rangle
+                & \text{bzw.} && 
+                |\psi_{2}\rangle &= |{-}z\rangle \otimes |{+}z\rangle
+            \end{align*}
+        \item Zustand nach Messung $B$
+            \begin{align*}
+                |\psi_{a}\rangle &= |{+}x\rangle \otimes |{-}x\rangle
+                & \text{bzw.} && 
+                |\psi_{b}\rangle &= |{-}x\rangle \otimes |{+}x\rangle
+            \end{align*}
+        \item<2-> Durch
+            \begin{equation*}
+                [S_x, S_z] =  -i \hbar S_y \neq 0
+            \end{equation*}
+            unm\"oglich!
+    \end{itemize}
+\end{frame}
+\begin{frame}{Die L\"osung: Verborgene Variablen}
+    \centering
+    \includegraphics[scale=1.5]{../../skript/bell/images/hidden_vars.pdf}
+\end{frame}
+
+\section{Die Bellsche Ungleichung}
+\begin{frame}{Grundlagen}
+    \begin{itemize}
+        \item Verborgene Variable $\lambda \in \Lambda$ mit Verteilung $\rho(\lambda)$
+        \item Beliebige Messrichtungen $\vec{a}$, $\vec{b}$
+        \item Messresultate: $A(\vec{a},\lambda)$, $B(\vec{b},\lambda)$ mit
+            \[
+                A(\vec{a},\lambda) = \pm 1 
+                \qquad \text{und}\qquad 
+                B(\vec{b},\lambda) = \pm 1
+            \]
+        \item Perfekte Antikorrelation der Messungen:
+            \[
+                A(\vec{a},\lambda) = -B(\vec{a},\lambda)
+            \]
+    \end{itemize}
+\end{frame}
+\begin{frame}{Herleitung}
+    \begin{itemize}
+        %Tafel: Herleitung (29.20) - E(a,b)
+        \item Erwartungswert $E$ der Messung von $\vec{a}$ und $\vec{b}$:
+            \[
+                E(\vec{a},\vec{b}) = -\int_{\lambda\in\Lambda} 
+                    \rho(\lambda) A(\vec{a},\lambda) A(\vec{b},\lambda) d\lambda
+            \]
+        %Tafel: Komplette Herleitung der Bellschen Ungleichung
+        \item<2-> Bellsche Ungleichung:
+            \[
+                \left| E(\vec{a},\vec{b}) - E(\vec{a},\vec{c}) \right| 
+                \leq
+                1 + E(\vec{b},\vec{c})
+            \]
+        %Tafel: 4 Richtungen, Differenz für CHSH Ungleichung (29.27)
+        \item<3-> CHSH Ungleichung:
+            \[
+                -2 \leq 
+                E(\vec{a},\vec{b}) - E(\vec{a},\vec{b'}) + E(\vec{a'},\vec{b}) + E(\vec{a'},\vec{b'})
+                \leq 2
+            \]
+    \end{itemize}
+\end{frame}
+
+\section{Experimente}
+\begin{frame}{Herausforderungen}
+    \begin{itemize}[<+->]
+        \item Effizienz der Detektoren
+        \item Sicherstellen der Lokalit\"at
+        \item R\"aumliche Korrelation
+    \end{itemize}
+\end{frame}
+\begin{frame}{1. Generation -- Freedman Clauser (1972)}
+    \begin{itemize}
+        \item Generieren der Photonen: \\
+            {
+                \centering
+                \includegraphics{../../skript/bell/images/freedman.pdf}
+            }
+        \item Resultat
+    \end{itemize}
+
+\end{frame}
+\begin{frame}{2. Generation -- Alain Aspect (1980 -- 1985)}
+\end{frame}
+\begin{frame}{3. Generation (ab 1990)}
+\end{frame}
+
+\begin{frame}{Bibliography}
+    
+\end{frame}
+
+\end{document}
