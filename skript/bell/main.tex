@@ -363,19 +363,26 @@ werden kann.
 Damit stellt sich die Frage, um welches Element die Theorie der Quantenmechanik
 erweitert werden muss, sodass die Beschreibung vollst\"andig wird.
 
-Ein Ansatz, welcher dabei auf der Hand liegt, wurde in
-Abschnitt~\ref{subsection:bell:epr:herleitung} bereits angeschnitten: 
-Es muss ein verborgener Mechanismus existieren, welcher das Resultat unseres
+Eine m\"ogliche L\"osung des Paradoxons wurde bereits in
+Abschnitt~\ref{subsection:bell:epr:herleitung} kurz beschrieben:
+Es k\"onnte ein verborgener Mechanismus existieren, welcher das Resultat unseres
 Experiments, also den Spin von Elektron und Positron, vorausbestimmt.
-Dazu wird eine verborgene Variable $\lambda$ eingef\"uhrt.
-$\lambda$ wird als \emph{verborgene} Variable bezeichnet, da diese nicht
+Dazu wird eine verborgene, \emph{lokale} Variablen eingef\"uhrt, welche das
+Resultat der Spin-Messung bestimmt. 
+Diese wird als \emph{verborgene} Variable bezeichnet, da sie nicht
 messbar ist, sondern nur die Auswirkungen der Variable, also der jeweilige
 Spin, gemessen werden kann.
 Um das durch Einstein, Rosen und Podolski eingef\"uhrte Paradoxon zu l\"osen
-reicht eine 2-dimensionale Variable aus, welche den Zusammenhang zwischen
-dem Spin in $x$- und $z$-Richtung beschreibt.
+reicht eine 2-dimensionale Variable $\lambda\in\mathbb{C}^2$ aus, 
+welche den Zusammenhang zwischen dem Spin in $x$- und $z$-Richtung beschreibt.
+
 Eine Visualisierung der m\"oglichen Werte von $\lambda$ ist in 
 Abbildung~\ref{fig:bell:hidden_var} dargestellt.
+Liegt die Variable $\lambda$ im ersten Quadranten des Diagramms, so ist 
+unabh\"angig von der Messung $A$ eindeutig bestimmt, dass der Spin des Elektrons
+sowohl in $x$-, wie in $z$-Richtung positiv sein wird.
+Damit ist auch klar, dass der Spin des Positrons in $x$- und in $z$-Richtung
+negativ sein wird.
 
 \begin{figure}
     \centering
@@ -384,72 +391,63 @@ Abbildung~\ref{fig:bell:hidden_var} dargestellt.
     \label{fig:bell:hidden_var}
 \end{figure}
 
-Liegt die Variable $\lambda$ des Positrons im ersten Quadranten des Diagramms,
-so ist unabh\"angig von der Messung des Elektrons bei Detektor $A$ eindeutig
-bestimmt, dass der Spin in $x$- und in $z$-Richtung positiv sein wird. 
-$\lambda$ ist jedoch nicht direkt messbar, es muss also trotzdem der Spin
-in $z$-Richtung bei Detektor $A$ und in $x$-Richtung bei Detektor $B$ gemessen
-werden, um den Wert von $\lambda$ bestimmen zu k\"onnen.
-Da der Wert von $\lambda$ in der Quelle, beim Generieren des Elektron-Positron
-Paares gesetzt wird und danach nicht ver\"andert wird, wird sich $\lambda$
-an die Forderung der Lokalit\"at halten.
-\enquote{Spukhafte Fernwirkungen}, wie Einstein die Beobachtungen seines
-Gedankenexperiments nannte, werden damit ausgeschlossen und die Theorie
-der Quantenmechanik wird so erweitert, dass sie \emph{vollst\"andig} ist.
-Die Herausforderung eine solche lokale, verborgene Variable $\lambda$ wirklich 
+Die Variable $\lambda$ ist lokal, da sie in der Quelle auf einen Wert gesetzt
+wird, und alle m\"oglichen Spin-Messungen an den beiden Teilchen von da an
+definitiv bestimmt sind.
+Sie ist verborgen, da $\lambda$ nicht direkt messbar ist, sondern nur
+anhand von zwei Spin-Messungen bei den Detektoren $A$ und $B$ bestimmt werden 
+kann.
+Mit dieser Theorie lassen sich die beiden Forderungen Einsteins, die Lokalit\"at
+und der Realismus, erf\"ullen und die um verborgene lokale Variablen erweiterte
+Quantenmechanik w\"are vollst\"andig.
+Die Herausforderung eine solche Variable $\lambda$ wirklich 
 in Form eines existierenden Teilchens zu finden bleibt jedoch bestehen.
 
-\section{Die Bell'sche Ungleichung\label{section:bell:bell}}
-%http://arxiv.org/pdf/quant-ph/0509061.pdf
+\section{Die Bellsche Ungleichung\label{section:bell:bell}}
 Nach der Ver\"offentlichung des EPR Paradoxons gingen verschiedene bekannte
 Physiker auf das Paradoxon ein.
-Der gr\"osste Verfechter der Quantenmechanik, Niels Bohr, antwortete bereits
-1935 mit einer eher schwammigen Widerlegung Einsteins, welche weitere 
-Anh\"anger der Quantenmechanik zu jener Zeit bereits zufriedenstellte
-\textsuperscript{[Citation needed]}.
+Niels Bohr, Mitbegr\"under der Kopenhagen Interpretation der Quantenmechanik,
+antwortete bereits 1935 mit einer eher schwammigen Widerlegung Einsteins
+\cite{Bell:Bohr1935}.
+Bohr ging dabei gar nicht auf die Unvollst\"andigkeit der Quantenmechanik ein,
+sondern argumentierte dass die Quantenmechanik konsistent sein muss -- was
+Einstein zu diesem Zeitpunkt gar nicht infrage stellte.
 Im Nachhinein betrachtet musste 1949 sogar Bohr selbst zugeben, dass seine
 Reaktionen auf Einstein \enquote{ineffizient} waren und 
 \enquote{es schwierig machten darauf zu antworten}. 
+
 Erwin Schr\"odinger hingegen zweifelte nicht am EPR Paradoxon selbst, sondern
-daran, dass sich die Erkenntnisse der Quantenmechanik auf die makroskopische
-Welt \"ubertragen lassen, und somit ob der Effekt auch messbar sei.
-Dies \"ausserte er insbesondere im ber\"uhmten Paradoxon von 
-Schr\"odingers Katze, welches in Abbildung~\ref{fig:bell:xkcd_schroedinger}
-verdeutlicht wird \textsuperscript{[Citation needed]}.
+\"ausserte Zweifel daran, dass diese Beschreibung f\"ur \"ortlich getrennte
+quantenmechanische Systeme ebenfalls gilt und damit ob der Effekt auch
+messbar ist \cite{Bell:Schroedinger1936}.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{bell/images/xkcd_schroedinger.jpg}
-    \caption{xkcd Comic zum Paradoxon Schr\"odingers Katze, welches daran
-    zweifelt, dass sich Quantenmechanische Effekte auf die makroskopische
-    Welt \"ubertragen lassen. \cite{Bell:XkcdSchroedinger}}
-    \label{fig:bell:xkcd_schroedinger}
-\end{figure}
-
-David Bohm hingegen versuchte das Gedankenexperiment Einsteins zu verteidigen
-\textsuperscript{[Citation needed]}.
-Er entwickelte dazu eine dem EPR-Experiment sehr \"ahnliche Idee, indem er
-nicht Position und Drehmoment, sondern den Spin zweier Partikel betrachtete.
+David Bohm entwickelte in \cite{Bell:Bohm1952} eine Theorie auf Basis
+lokaler verborgener Variablen in Anlehnung an Einsteins Gedankenexperiment.
+Dabei betrachtete er nicht  Position und Drehmoment, wie im Paper von EPR,
+sondern den Spin zweier Partikel.
 Dieses Gedankenexperiment ist einfacher zu analysieren (weshalb wir im
 Abschnitt~\ref{section:bell:epr} das Experiment von Bohm, und nicht das
-originale von Einstein betrachtet haben), und ist experimentell einfacher
-zu pr\"ufen.
+originale von Einstein betrachtet haben).
 
 Als sich John Bell, noch als Student, mit dem EPR Paradoxon und insbesondere
-der Arbeit von David Bohm zu besch\"aftigen begann, war er \"uberzeugt von
-der Theorie der verborgenen lokalen Variablen zur L\"osung des EPR Paradoxons
-\textsuperscript{[Citation needed]}.
-Er besch\"aftigte sich insbesondere mit der Frage, ob eine solche Theorie
-\"uberhaupt eine Lokalit\"at zul\"asst, oder ob die Annahme Bohms,
-dass eine lokale Quantenmechanik nicht m\"oglich ist, zutrifft.
-Obwohl \"uberzeugt von verborgenen lokalen Variablen, gelang es Bell 1964
-in seinem Paper 
+der Arbeit von David Bohm zu besch\"aftigen begann, kamen ihm insbesondere
+Zweifel an der Lokalit\"at dieser verborgenen Variablen.
+In seinem ber\"uhmten Paper
 \enquote{On the Einstein Podolsky Rosen Paradox} \cite{Bell:Bell1964}
-zu beweisen, dass eine Theorie der verborgenen Variablen -- sollte eine
-solche existieren -- \emph{nicht} lokal sein kann.
+gelang es ihm zu beweisen, dass eine Theorie der verborgenen Variablen -- sollte
+eine solche existieren -- \emph{nicht} lokal sein kann.
 Als erstem Physiker gelang es die Frage umzudrehen, und nicht nach solchen
 Variablen bzw. Teilchen zu suchen, sondern gleich deren Nicht-Existenz
 zu beweisen.
+
+Wir betrachten das Paper von Bell indem wir erneut das Gedankenexperiment nach
+Abbildung~\ref{fig:bell:EPR_Messaufbau} betrachten.
+Dazu verallgemeinern wir das Experiment etwas und betrachten zuerst die
+Vorhersage mittels der Quantenmechanik.
+Da diese ja korrekt, aber noch nicht vollst\"andig ist, f\"uhren wir darauf
+eine lokale, verborgene Variable $\lambda$ ein und berechnen deren Vorhersage.
+Auf Basis dieser beider Resultate leiten wir die Bellsche Ungleichung, und
+darauf eine verallgemeinerte Version, die BCHSH-Ungleichung her.
 
 \subsection{Vorhersage der Quantenmechanik}
 Der Spin eines Teilchens in einer beliebigen Richtung $\vec{a}$ wird durch die
@@ -597,7 +595,7 @@ $E(\vec{a},\vec{b}) - E(\vec{a},\vec{c})$:
 \end{equation}
 
 \begin{hilfssatz}\label{hilfssatz:bell:dreiecksungleichung_integral}
-    Die Dreiecksungleichung kann auf Integrale adaptiert werden, sodass
+    Sei $Z$ eine auf dem Intervall $\Omega$ integrierbare Funktion, so gilt
     \[
         \left|\int_{\Omega} Z\, d\mu\,\right| 
         \leq \int_{\Omega} |\,Z\,|\, d\mu
@@ -786,8 +784,6 @@ Das Einsetzen der Werte ergibt
 womit die Quantenmechanik die BCHSH Ungleichung ebenfalls verletzt.
 
 \section{Experimente}
-%TODO: einleitung
-
 Zur experimentellen \"Uberpr\"ufung der Bellschen Ungleichung werden meist
 nicht, wie hier besprochen, Elektron-Positron-Paare verwendet, sondern
 Photonen mit identischer Polarisation.
@@ -898,7 +894,8 @@ mit Sicherheit ausgeschlossen werden.
 \subsection{2. Generation -- Alain Aspect (1980--1985)}
 Anfang der 1980er Jahre wurde an der Universit\'e Paris-Sud in Orsay von Alain
 Aspect im Rahmen seiner Dissertation eine Serie neuer Experimente zur Pr\"ufung
-der Bellschen Ungleichung entwickelt und durchgef\"uhrt. 
+der Bellschen Ungleichung entwickelt und durchgef\"uhrt
+\cite{Bell:Aspect1981,Bell:Aspect1982:1,Bell:Aspect1982:2}. 
 Aspect verwendete dazu dieselbe atomare Kaskade wie Freedman Clauser, jedoch
 wurden die Calcium Atome anders angeregt. 
 Das Problem der Lokalit\"at wurde mittels eines optischen Schalters, welcher 
@@ -915,12 +912,6 @@ sowie die geringe Distanz zwischen Detektoren Zweifel, ob die Bellsche
 Ungleichung damit tats\"achlich best\"atigt werden kann.
 \textsuperscript{[Citation needed]}
 
-\begin{figure}[ht!]
-    \centering
-    \includegraphics{bell/images/what_if.pdf}
-    \caption{Adaptiert von \cite{Bell:XkcdWhatIf}}
-\end{figure}
-    
 \subsection{3. Generation}
 Die Experimente der dritten Generation basieren auf einem neuen Verfahren
 zur Erzeugung von Photonenpaaren, der \emph{parametrischen Fluoreszenz}.
@@ -996,7 +987,6 @@ Es wird erwartet, dass in den n\"achsten Jahren ein Experiment durchgef\"uhrt
 werden kann, welche jegliche Zweifel beseitigt und endg\"ultig nachweisen
 kann, dass die Intuition von Einstein falsch war und keine verborgenen
 lokalen Variablen existieren k\"onnen.
-
 
 \section{Zusammenfassung}
 
