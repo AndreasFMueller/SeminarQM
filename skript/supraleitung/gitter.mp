@@ -67,7 +67,7 @@ def gitterverschoben(expr wox, woy, wieviel,col,colversch) =
 		for y = 0 step 1 until 8:
 			pickup pencircle scaled 0.5pt;
 			if (x = wox) and ((y = woy) or (y = woy + 1)):
-				pickup pencircle scaled 1.5pt; %FIXME				
+				pickup pencircle scaled 1.5pt;				
 				c := colversch;
 			else:
 				c := col;
@@ -77,7 +77,7 @@ def gitterverschoben(expr wox, woy, wieviel,col,colversch) =
 					withcolor c;
 			pickup pencircle scaled 0.5pt;
 			if (y = woy) and ((x = wox) or (x = wox + 1)):
-				pickup pencircle scaled 1.5pt; %FIXME
+				pickup pencircle scaled 1.5pt;
 				c := colversch;
 			else:
 				c := col;
@@ -95,7 +95,7 @@ def gitterverschoben(expr wox, woy, wieviel,col,colversch) =
 			if (x < wox) or (x > wox+1) or (y < woy) or (y > woy+1):
 				c := col;
 			else:
-				pickup pencircle scaled 4pt; %FIXME
+				pickup pencircle scaled 4pt;
 				c := colversch; 
 			fi;
 			draw gitterpunkt(x,y,wox,woy,wieviel) withcolor c;
