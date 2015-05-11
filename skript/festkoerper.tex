@@ -8,7 +8,7 @@ Bei elektrischen Leitern ist ein Teil der Elektronen weitgehend frei
 beweglich.
 Nat"urlich ist die Gitterstruktur ebenfalls die Folge der Interaktionen
 zwischen den Elektronen, doch f"ur unsere Untersuchungen k"onnen wir
-die Entstehung der Gitterstruktur vernachl"assigen, es einfach als
+die Entstehung der Gitterstruktur vernachl"assigen, das Gitter einfach als
 gegeben ansehen, und nur noch die Eigenschaften der frei beweglichen
 Elektronen studieren.
 Diese Elektronen bewegen sich in dem periodischen Potential, das von
@@ -24,6 +24,16 @@ in einen ausgedehnten Zustand versetzt werden k"onnen, interessieren
 uns in diesem Kapitel.
 
 \section{Fermikugel}
+\rhead{Fermikugel}
+\begin{figure}
+\centering
+\includegraphics{graphics/fest-12.pdf}
+\caption{Zust"ande mit vorgegebener Wellenzahl im Ortsraum (links) und
+die zugeh"origen Punkte im $k$-Raum.
+(Nach einer Idee von Nicola Ochsenbein und Simon Kuster, siehe auch
+Kapitel~\ref{chapter:supraleitung}).
+\label{skript:kraum}}
+\end{figure}
 In erster N"aherung betrachen wir den Festk"orper als einen
 sehr grossen Potentialkasten, aus dem die Elektronen nicht austreten
 k"onnen.
@@ -34,7 +44,8 @@ doe Modellierung von Leitungsph"anomenen nur diejenigen Elektronen
 zu ber"ucksichtigen, die beweglich genug sind, sich im ganzen
 Festk"orper bewegen zu k"onnen.
 Weiter nehmen wir an, dass sich die Elektronen gegenseitig 
-nicht beeinflussen.
+nicht beeinflussen\footnote{Auf diese Annahme kommen wir im
+Abschnitt~\ref{section:hartree-fock} zur"uck.}.
 Jedes Elektron bewegt sich im Potential, welches von den Atomkernen
 und allen anderen Elektronen erzeugt wird.
 Jedes Elektron sieht also im wesentlichen den gleichen Potentialkasten.
@@ -64,6 +75,11 @@ n_z^2
 E_F
 \]
 gen"ugen.
+Zum Zustand mit den Wellenzahlen $(n_x,n_y,n_z)$ geh"ort ein Punkt
+im $k$-Raum, je k"urzer die Wellenl"ange der Wellenfunktion eines
+Elektrons, desto h"oher sein Impuls und desto l"anger der zugeh"orige
+Vektor im $k$-Raum (Abbildung~\ref{skript:kraum}).
+
 Die tats"achlich besetzten Elektronenzust"ande bilden also eine Kugel
 im Raum der m"oglichen Elektronenzust"ande, die Fermi-Kugel.
 Je gr"osser die Dichte der frei beweglichen Elektronen ist, desto
@@ -81,7 +97,7 @@ zu den Atomabst"anden klein wird, werden die Randeffekte "uberhand nehmen,
 dies ist zum Beispiel bei Quantum-Dots der Fall. 
 
 Ein besonders einfaches Modell ist, sich den Festk"orper unendlich 
-ausgedehnt vorzustellen. Diese Modell kann aber nicht zutreffen, denn
+ausgedehnt vorzustellen. Dieses Modell kann aber nicht zutreffen, denn
 es f"uhrt dazu, dass wir mit unendlich vielen Elektronen arbeiten m"ussen.
 Die m"oglichen Wellenzahlen $k_x$, $k_y$ und $k_z$ w"urden stetig, die
 diskrete Natur der Quantenmechanik geht in diesem Modell verloren.
@@ -142,14 +158,15 @@ gebundenen Niveaus frei beweglich.
 \end{figure}
 Das Modell der Fermi-Kugel ist nur anwendbar auf Elektronen, die sich
 innerhalb des Festk"orpers im Wesentlichen frei bewegen k"onnen.
-Im Allgemeinen wird nur ein Teil der Elektronen diese Bedingung erf"ullen,ischer Leiter ist.
-die meisten Elektronen werden sich auf tiefen Energieniveaus in unmittelbarerischer Leiter ist.
+Im Allgemeinen wird nur ein Teil der Elektronen diese Bedingung erf"ullen,
+und auch nur dann, wenn der Festk"orper ein elektrischer Leiter ist.
+Die meisten Elektronen werden sich auf tiefen Energieniveaus in unmittelbarer
 N"ahe der Atomkerne aufhalten, wie in Abbildung~\ref{skript:gebundene-niveaus}
 dargestellt.
 
 Erst wenn gen"ugend Elektronen vorhanden sind, dass alle diese gebundenen
-Niveaus zu besetzt sind, k"onnen weitere Elektronen sich Elektronen mit
-noch h"oherer Energie freier bewegen.
+Niveaus zu besetzt sind, k"onnen sich weitere Elektronen mit noch h"oherer
+Energie freier bewegen.
 Erst f"ur diese Elektronen ist es sinnvoll, von der Fermi-Kugel zu sprechen,
 und erst wenn solche Elektronen vorhanden sind, k"onnen wir erwarten,
 dass der Festk"orper ein elektrischer Leiter ist.
@@ -167,6 +184,7 @@ man vermutet dass man solchen metallischen Wasserstoff im Inneren
 von Jupiter und anderen Gas-Riesen finden kann.
 
 \section{Elektronen in einem periodischen Potential}
+\rhead{Elektronen im periodischen Potential}
 Das im letzten Abschnitt verwendete Modell eines Festk"orpers ging davon aus,
 dass sich die Elektronen innerhalb des Festk"orpers im wesentlichen
 ungehindert bewegen k"onnen.
@@ -1033,9 +1051,754 @@ Eigenzust"ande des Hamilton-Operators liegen k"onnen.
 Das vormals stetige Energiespektrum zerf"allt jetzt in ein Reihe von
 B"andern.
 
-\section{Hartree-Fock-N"aherung}
+\section{Hartree-Fock-N"aherung\label{section:hartree-fock}}
+\rhead{Hartree-Fock-N"aherung}
 Bisher wurden immer nur einzelne Elektronen betrachtet, in einem 
 Festk"orper wirkt jedoch eine grosse Zahl von Elektronen zusammen.
 Ein realistischeres Modell muss alle Elektronen modellieren, und
 insbesondere deren Wechselwirkung ber"ucksichtigen.
+
+\subsection{Elektronen-Wechselwirkung}
+Wir suchen Hamilton-Operator und Wellenfunktionen eines Systems mit einer
+grossen Zahl $N$ von Elektronen, die sich in einem periodischen Gitter mit dem
+Potential $V(x)$ bewegen k"onnen.
+Wir bezeichnen die Koordinaten der einzelnen Elektronen mit $x_k$, jedes
+$x_k$ ist eine 3-dimensionale Vektor.
+Die gemeinsame Wellenfunktion aller Elektronen h"angt von allen
+Elektronen-Koordinaten ab, wir schreiben sie
+\[
+\Psi(x_1,x_2,\dots,x_N).
+\]
+Der zugeh"orige Hamilton-Operator beschreibt einerseits die Bewegung
+jedes einzelnen Elektrons im Gitter, jedes hat seinen eigenen
+Hamilton-Operator
+\[
+H_k=\frac{p_k^2}{2m_e}+V(x_k).
+\]
+Die Energie aller Elektronen ist
+\[
+H_0= \sum_{k=1}^N H_k
+\]
+Andererseits muss er die Wechselwirkung aller Elektronen beschreiben.
+Wir nehmen dabei an, dass sich die Elektronen so langsam bewegen, dass
+es gen"ugt, die Coulomb-Wechselwirkung zu betrachten, also die den
+Operator
+\[
+H_{\text{int}}
+=
+\frac12\sum_{k\ne k'}\frac{1}{4\pi\varepsilon_0}\frac{e^2}{|x_k-x_{k'}|}.
+\]
+Der Faktor $\frac12$ vor der Summe kommt daher, dass wir jedes Paar
+$k,k'$ zweimal in der Summe gez"ahlt haben.
+Der Grunzustand des Kristalls ist eine Wellenfunktion $\Psi(x_1,\dots,x_N)$
+minimaler Energie.
+Es scheint allerdings ziemlich aussichtslos, das Eigenwertproblem
+\begin{equation}
+H=H_0+H_{\text{int}}
+\qquad \Rightarrow\qquad
+H\,|\Psi\rangle = E\,|\Psi\rangle
+\label{skript:multielektronewproblem}
+\end{equation}
+direkt zu l"osen. Wir werden uns daher mit einer N"aherungsl"osung 
+begn"ugen m"ussen.
+
+\subsection{Grundzustand als Minimalproblem}
+Sei $A$ eine beliebige selbstadjungierte Matrix mit ausschliesslich
+positiven Eigenwerten.
+Zur Vereinfachung nehmen weiter an, dass der kleinste Eigenwert nicht 
+entwartet ist.
+
+\begin{satz}
+Der Einheitsvektor $v$, der das Skalarprodukt $v^*Av$ minimiert,
+ist ein Eigenvektor zum kleinsten Eigenwert von $A$.
+\label{skript:ewminimalprinzip}
+\end{satz}
+
+\begin{proof}[Beweis]
+Sei $v_0$ der Eigenvektor der L"ange $1$ zum minimalen Eigenwert $\lambda_0$,
+dann gilt
+\[
+v_0^*Av_0=v_0^*\lambda_0 v_0=\lambda_0 v_0^*v_0=\lambda_0 \|v_0\|^2=\lambda_0,
+\]
+das Minimum von $v^*Av$ ist also h"ochstens so gross wie der kleinste
+Eigenwert von $A$.
+
+Sei jetzt $v$ ein Einheitsvektor, f"ur den $v^*Av$ den minimalen Wert 
+$\lambda$ annimmt.
+Wir m"ussen zeigen, dass $Av=\lambda v$ ist. 
+Dazu berechnen wir
+\begin{align*}
+f(t)
+&=
+\frac{(v+ty)^*A(v+ty)}{(v+ty)^*(v+ty)}
+\\
+&=
+\frac{v^*Av+t(y^*Av+v^*Ay)+t^2y^*Ay}{v^*v+t(y^*v+v^*y)+t^2v^*v}.
+\end{align*}
+Das Minimum von $f$ muss f"ur $t=0$ angenommen werden, also muss
+die Ableitung $f'(t)$ f"ur $t=0$ verschwinden:
+\begin{align*}
+f'(0)
+&=
+\frac{(y^*Av+v^*Ay)v^*v + v^*Av(y^*v+v^*y)}{(v^*v)^2}
+\\
+&=
+\frac{y^*Av+v^*Ay + \lambda(y^*v+v^*y)}{v^*v}
+\\
+&=
+2\frac{v^*Ay-\lambda v^*y}{v^*v}
+\\
+&=
+2\frac{(Av-\lambda v)^*y}{v^*v}=0.
+\end{align*}
+Da dies f"ur jeden Vektor $y$ gilt, folgt $Av-\lambda v$, also $Av=\lambda v$.
+Damit ist gezeigt, dass $v$ ein Eigenvektor sein muss.
+\end{proof}
+
+Im allgemeinen sind quantenmechanische Zustandsr"aume unendlichdimensionale
+Hilbertr"aume, wir k"onnen aber argumentieren dass die Zust"ande mit grosser
+Energie ohnehin nicht physikalisch realsierbar sind, und dass wir daher
+jedes Problem durch ein endlichedimensionales Problem approximieren k"onnen.
+Allerdings n"utzt uns das nichts, denn wir m"ochten gerne in der
+Ortsdarstellung arbeiten, also im Hilbertraum $L^2({\mathbb R}^3)$,
+der zweifellos unendlich dimensional ist.
+
+Wir werden daher im folgenden einfach annehmen, dass ein Minimalprinzip
+wie Satz~\ref{skript:ewminimalprinzip} f"ur unsere Hamilton-Operatoren gilt.
+
+\subsection{Hartree-Gleichung}
+Wir versuchen jetzt den Grundzustand des Hamilton-Operators $H$ in
+(\ref{skript:multielektronewproblem}) zu approximieren.
+Dies allein vereinfacht das Eigenwertproblem noch nicht. 
+Zus"atzlich m"ochten wir eine L"osung, die uns gestattet,
+die Wahrscheinlichkeitsverteilung eines Elektrons als unabh"angig von 
+der aktuellen Position der anderen Elektronen zu betrachten.
+Dazu muss die Eigenfunktion $\Psi$ von der Form
+\[
+\Psi(x_1,x_2,\dots,x_N)=\varphi_1(x_1)\varphi_2(x_2)\dots\varphi_N(x_N)
+\]
+sein.
+
+Wir suchen jetzt eine Wellenfunktion dieser Form, die ausserdem 
+$\langle\Psi|\,H\,|\Psi\rangle$ minimiert:
+\begin{align}
+\langle\Psi|\,H\,|\Psi\rangle
+&=
+\sum_{k}\biggl\langle \varphi_k\biggl|\,
+\frac{p_k^2}{2m_e}+V(x_k)
+\,\biggr|\varphi_k\biggr\rangle
++
+\frac12
+\sum_{k\ne k'}\biggl\langle \varphi_k\varphi_{k'}\biggl|\,
+\frac{e^2}{4\pi\varepsilon_0}\frac{1}{|x_k-x_{k'}|}
+\,\biggr|\varphi_k\varphi_{k'} \biggl\rangle
+\notag
+\\
+&=\sum_k\langle\varphi_k|\,H_k\,|\varphi_k\rangle
++
+\frac12
+\sum_{k\ne k'}\biggl\langle \varphi_k\varphi_{k'}\biggl|\,
+\frac{e^2}{4\pi\varepsilon_0}\frac{1}{|x_k-x_{k'}|}
+\,\biggr|\varphi_k\varphi_{k'} \biggl\rangle
+\label{skript:hffunktional}
+\end{align}
+Man beachte, dass diese Notation nicht ganz eindeutig ist. Die Schreibweise
+der Bra- und Ket-Vektoren macht keine Voraussetzungen dar"uber, wie die
+zugeh"origen Variablen heissen sollen. Das Symbol $x_k$ in
+(\ref{skript:hffunktional}) ist also zu lesen als ``diejenige Variable,
+die als Argument der Funktion $\varphi_k$ verwendet wird''.
+
+Ausserdem m"ussen die Funktionen $\varphi_k$ normiert sein, es muss
+also $\langle\varphi_k|\varphi_k\rangle=1$ gelten f"ur alle $k$.
+Wir k"onnen dies auch als $\langle\varphi_k|\varphi_k\rangle-1=0$
+schreiben.
+
+\subsubsection{Minimalproblem}
+Wir haben also ein Minimalproblem f"ur die Funktion
+\[
+F(\varphi_1,\dots,\varphi_N)=\langle\Psi|\,H\,|\Psi\rangle
+\]
+mit Nebenbedingungen
+\[
+G_k(\varphi_1,\dots,\varphi_N)=\langle\varphi_k|\varphi_k\rangle-1
+\]
+zu l"osen.
+Es handelt sich zwar wieder um ein unendlichdimensionales Problem,
+doch wir werden es behandeln, also ob es ein endlichdimensionales Problem
+w"are, mit der gleichen heuristischen Argumentation wie in fr"uheren F"allen.
+
+\subsubsection{Variation}
+Die Methode der Wahl f"ur die L"osung solcher Probleme ist die Methode
+der Lagrange-Multiplikatoren. 
+Variabel sind die Funktionen $\varphi_k$, wir m"ussen also zun"achst 
+kl"aren, wie die Ableitungen nach $\varphi_k$ zu interpretieren sind.
+
+Ist eine $\delta\varphi_j$ eine Funktion von $x_j$, und $f$ eine Funktion von
+$\varphi_j$, dann schreiben wir $\delta f(\varphi_j)$ f"ur die
+Ableitung
+\[
+\delta f(\varphi_k)
+=
+\frac{d}{dt}f(\varphi_k+t\delta\varphi_k)\bigg|_{t=0}.
+\]
+Diese Notation ist jedoch wenig geeignet f"ur den Fall einer Funktion
+$f(\varphi_1,\dots,\varphi_N)$, die von mehreren der Funktion $\varphi$
+abh"angt.
+Die Notation zeigt weder, welche der Funktion abgeleitet wird,
+noch in welche Richtung die Ableitung erfolgt.
+
+Wir schreiben daher $\delta_j$ f"ur die Ableitung nach der Funktion $\varphi_j$,
+\[
+\delta_j f(\varphi_,\dots,\varphi_N)
+=
+\frac{d}{dt}f(\varphi_1,\dots,\varphi_j+\delta\varphi_j,\dots,\varphi_N)\bigg|_{t=0},
+\]
+so wird wenigstens die Funktion angezeigt, nach der abgeleitet wird.
+Wir nennen $\delta_j f$ die Variation von $f$ nach der Funktion $\varphi_j$.
+
+Im Folgenden werden wir ausschliesslich Funktionen $f$ treffen, die 
+linear oder sesquilinear in $\varphi_j$ sind. Solche Funktionen
+kann man als Skalarprodukte schreiben:
+\begin{align*}
+\delta_j\langle\psi|\varphi_j\rangle
+&=
+\frac{d}{dt}
+\langle\psi|\varphi_j+t\delta\varphi_j\rangle\bigg|_{t=0}
+=
+\langle\psi|\delta\varphi_j\rangle
+\\
+\delta_j\langle\varphi_j|\psi\rangle
+&=
+\langle\delta\varphi_j|\psi\rangle.
+\end{align*}
+F"ur einen selbstadjungierten Operator $A$ k"onnen wir den Erwartungswert
+$\langle\varphi_j|\,A\,|\varphi_j\rangle$ bilden.
+Seine Variation ist
+\[
+\delta_j\langle\varphi_j|\,A\,|\varphi_j\rangle
+=
+\langle\delta\varphi_j|\,A\,|\varphi_j\rangle
++
+\langle\varphi_j|\,A\,|\delta\varphi_j\rangle
+=
+2\operatorname{Re}\langle\delta\varphi_j|\,A\,|\varphi_j\rangle.
+\]
+Da wir $\varphi_j$ beliebig w"ahlen k"onnen, k"onnen wir $\varphi_j$
+auch mit einem beliebigen Faktor multiplizieren, so dass das
+Produkt $\langle\delta\varphi_j|\,A\,|\varphi_j\rangle$ reell ist.
+Die Forderung, dass die Variation
+$\delta_j\langle\varphi_j|\,A\,|\varphi_j\rangle$
+f"ur jede Wahl von $\delta\varphi_j$
+verschwinden soll ist also gleichbedeutend damit, dass
+$\langle\delta\varphi_j|\,A\,|\varphi_j\rangle=0$
+f"ur jede Wahl von $\delta\varphi_j$ verschwindet, oder dass
+$A\,|\varphi_j\rangle=0$ sein muss.
+
+Die Funktionen $G_k$ und $F$ sind genau von dieser Art.
+
+\subsubsection{L"osung des Minimalproblems}
+Damit k"onnen wir jetzt die Variationen $\delta_j$
+von $\langle\Psi|\,H\,|\Psi\rangle$
+und von allen Nebenbedingungen $\langle\varphi_k|\varphi_k\rangle-1=0$
+berechnen.
+Der zweite Term in (\ref{skript:hffunktional}) enth"alt die Funktion
+zweimal, einmal f"ur $k=j$ und einmal f"ur $k'=j$, seine Variation
+ist daher
+\begin{equation*}
+\frac12\sum_{j\ne k'}
+\biggl\langle\delta\varphi_j\varphi_{k'}\biggl|\,
+\frac{e^2}{4\pi\varepsilon_0}
+\frac{1}{|x_j-x_{k'}|}
+\,\biggr|\varphi_j\varphi_{k'}\biggr\rangle
++
+\frac12\sum_{k\ne j}
+\biggl\langle\varphi_k\delta\varphi_j\biggl|\,
+\frac{e^2}{4\pi\varepsilon_0}
+\frac{1}{|x_k-x_j|}
+\,\biggr|\varphi_k\varphi_j\biggr\rangle.
+\end{equation*}
+Bis auf den Namen des Summationsindex stimmen die beiden
+Summen "uberein, wir k"onnen sie also in die eine Summe
+\begin{equation*}
+\sum_{k\ne j}
+\biggl\langle\delta\varphi_j\varphi_k\biggl|\,
+\frac{e^2}{4\pi\varepsilon_0}
+\frac{1}{|x_k-x_j|}
+\,\biggr|\varphi_j\varphi_k\biggr\rangle
+\end{equation*}
+zusammenfassen.
+\begin{align}
+\delta_j G_j
+&=
+\delta_j(\langle\varphi_j|\varphi_j\rangle-1)
+=
+2\langle\delta\varphi_j|\varphi_j\rangle
+\label{skript:variationGj}
+\\
+\delta_j F
+&=
+\delta_j\langle\Psi|\,H\,|\Psi\rangle
+=
+2 \langle\delta\varphi_j|\,H_j\,|\varphi_j\rangle
++
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+2
+\biggl\langle\delta\varphi_j\varphi_k\biggl|\,
+\frac{1}{|x_j-x_k|}
+\,\biggr|\varphi_j\varphi_k \biggr\rangle
+\label{skript:variationF}
+\end{align}
+\index{Lagrange-Multiplikatoren}
+Da $\delta_jG_k=0$ f"ur $j\ne k$ ist, werden in den Lagrange-Gleichungen
+nur $\delta_jG_j$ auftreten.
+Die Methode der Lagrange-Multiplikatoren besagt, dass im Minimum
+die Variationen die Gleichungen
+\begin{equation}
+\delta_j F - \sum_{k} E_k\, \delta_j G_k
+=
+\delta_j F -  E_j\, \delta_j G_j
+=
+0
+\label{skript:lagrangeequation}
+\end{equation}
+erf"ullen, die ebenfalls zu bestimmenden Konstanten $E_j$ heissen 
+die Lagrange-Multiplikatoren.
+
+Setzen wir jetzt (\ref{skript:variationF}) und (\ref{skript:variationGj})
+in (\ref{skript:lagrangeequation}) ein, erhalten wir die Gleichungen
+\[
+\biggl\langle
+\delta\varphi_j\biggl|\,
+H_j
++
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}\biggl\langle\varphi_k\biggl|\,
+\frac1{|x_k-x_j|}
+\,\biggr|\varphi_k\biggr\rangle-E_j
+\,\biggl|\varphi_j \biggr\rangle=0.
+\]
+Da dies f"ur jede beliebige Richtung $\delta\varphi_j$ gelten muss,
+folgt
+\begin{equation}
+\biggl(
+H_j
++
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}\biggl\langle\varphi_k\biggl|\,
+\frac1{|x_k-x_j|}
+\,\biggr|\varphi_k\biggr\rangle\biggr)
+\,|\varphi_j \rangle
+=
+E_j\,|\varphi_j\rangle.
+\label{skript:hglsystem}
+\end{equation}
+Das Minimalproblem ist also "aquivalent mit dem Gleichungssystem
+(\ref{skript:hglsystem}) f"ur $j=1,\dots,N$.
+
+\subsubsection{Hartree-Gleichung}
+Der Zustand $|\varphi_j\rangle$ ist also eine Eigenzustand des
+Hamilton-Operators
+\[
+H_j
++
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}\int \frac{|\varphi_k(x_k)|^2}{|x_k-x_j|}\,d^3x_k
+\]
+mit Energie $E_j$. Die Funktionen $\varphi_j(x_j)$ erf"ullen also
+die Eigenwertgleichungen
+\[
+\biggl(
+-\frac{\hbar^2}{2m_e}\Delta_j
++V(x_j)
++\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}\int\frac{|\varphi_k(x_k)|^2}{|x_k-x_j|}\,d^3x_k\biggr)\varphi_j(x_j) = E_j\varphi_j(x_j).
+\]
+Sie heissen die Hartree-Gleichungen.
+\index{Hartree-Gleichung}
+Jedes Elektron kann also betrachtet
+werden als ein Elektron, welches sich zus"atzlich zum Potential der Gitterionen
+im mittleren Coulomb-Potential
+\[
+V_{H,j}(x_j)
+=
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}\int\frac{|\varphi_k(x_k)|^2}{|x_k-x_j|}\,d^3x_k
+\]
+aller anderen Elektronen.
+
+\subsection{Slater-Determinante}
+Bisher haben wir den Spin nicht ber"ucksichtigt.
+Jedes Elektron hat ausser seinen Ortskoordinaten $x_k$ eine Spin-Koordinate,
+wir bezeichnen die Gesamtheit der Koordinaten des Elektrons $k$ mit $q_k$.
+Die Funktionen $\varphi_k$, die wir f"ur die Hartree-Gleichung verwendet
+haben, h"angen jetzt von $q_k$ ab, wir schreiben sie wieder $\varphi_k$ 
+oder $\varphi_k(q_k)$.
+
+In Abschnitt~\ref{skript:austauschoperator} haben wir gesehen, dass eine
+Wellenfunktion f"ur Fermionen total antisymmetrisch sein muss.
+Das Produkt, welches wir als Ansatz $\Psi$ verwendet haben, erf"ullt
+diese Bedingung nicht.
+Eine Determinante wie
+\[
+\Phi(q_1,\dots,q_N)=\frac{1}{\sqrt{N!}}
+\left|\begin{matrix}
+\varphi_1(q_1)&\dots &\varphi_N(q_1)\\
+\vdots        &\ddots&\vdots        \\
+\varphi_1(q_N)&\dots &\varphi_N(q_N)
+\end{matrix}\right|
+\]
+erf"ullt die Bedingung. In ihr kommt jede m"ogliche Permutation von
+Funktionen und Koordinaten mit den richtigen Vorzeichen vor, und der
+Faktor vor der Determinante stellt sicher, dass $\Phi$ normiert ist.
+$\Phi$ heisst die Slater-Determinante.
+\index{Slater-Determinante}%
+Sind zwei der Funktionen $\varphi_k$ gleich, dann verschwindet die 
+{\em Slater-Determinante}, weil zwei Spalten identisch sind.
+Die Slater-Determinante realisiert also das Pauli-Prinzip.
+
+Wir d"urfen ausserdem annehmen, dass die $\varphi_k$ orthonormiert sind. 
+Sind sie es nicht, wenden wir das Orthonormalisierungsverfahren von 
+Gram-Schmidt auf sie an. Dadurch wird jede Funktion $\varphi_k$
+durch eine Linearkombination der Funktion $\varphi_{k'}$ mit $k'\le k$
+ersetzt, die Determinante, also $\Phi$ "andert dabei nicht.
+
+Ist $U$ eine unit"are $N\times N$-Matrix mit Matrixelementen
+$u_{kk'}$, dann k"onnen statt der Funktionen $\varphi_k$
+auch die Funktionen 
+\begin{equation}
+\varphi'_k = \sum_{k'}u_{kk'}\varphi_{k'}
+\label{skript:hfunitaer}
+\end{equation}
+f"ur die Bildung der Slater-Determinante verwendet werden.
+Daduch werden die Zeilen von $\Phi$ einer unit"aren Abbildung
+unterworfen, was die Determinante nicht "andert.
+
+Bei der Berechnung von $\langle\Psi|\,H\,|\Psi\rangle$ konnten wir
+davon ausgehen, dass die Funktion $\varphi_k$ von den Koordinaten
+$x_k$ abh"angt. Eine solche Zuordnung ist jetzt nicht mehr m"oglich,
+jede Funktion kommt mit jeder Koordinate als Argument vor.
+Problematisch wird dies vor allem f"ur Ausdr"ucke der Form
+\begin{equation}
+\biggl\langle\varphi_k\varphi_{k'}\biggl|\,
+\frac{1}{|x_k-x_{k'}|}
+\,\biggr|\varphi_{k'}\varphi_k\biggr\rangle
+\label{skript:hfnotation}
+\end{equation}
+die wir eigentlich als
+\begin{equation}
+\int \varphi_k^*(q_1)\varphi_{k'}^*(q_2)
+\frac{1}{|x_1-x_2|}
+\varphi_{k'}(q_1)\varphi_k(q_2)\,dq_1\,dq_2
+\label{skript:integrationsvariablen}
+\end{equation}
+lesen m"ochten. In diesem Beispiel haben die beiden auftretenden $\varphi_k$ 
+verschiedene Koordinaten als Argumente.
+Wir verwenden daher die folgende Konvention.
+Bei der Berechnung eines Skalarproduktes in der Ortsdarstellung 
+werden den Funktionen in einem Bra- oder Ket-Vektor Integrationsvariablen
+der Reihe nach zugeteilt, so wie wir das in (\ref{skript:integrationsvariablen})
+gemacht haben. 
+Wir ersetzen ausserdem den inversen Abstand 
+\[
+\frac{1}{|x_1-x_2|}
+\qquad
+\text{durch}
+\qquad
+\frac{1}{|\Delta x|}.
+\]
+Damit k"onnen wir (\ref{skript:hfnotation}) in
+\[
+\biggl\langle \varphi_k\varphi_{k'}\biggl|\,
+\frac1{|\Delta x|}
+\,\biggr|\varphi_{k'}\varphi_k\biggl\rangle
+\]
+umformen, diese Notation vermeidet das Problem der Zuordnung der Variablen.
+
+\subsection{Hartree-Fock-Gleichung}
+\index{Hartree-Fock-Gleichung}%
+\subsubsection{Hartree-Fock Minimalproblem}
+In der Herleitung der Hartree-Gleichung m"ussen wir jetzt
+$\langle\Psi|\,H\,|\Psi\rangle$ 
+durch
+$\langle\Phi|\,H\,|\Phi\rangle$ 
+ersetzen:
+\begin{align*}
+\langle\Phi|\,H\,|\Phi\rangle
+&=
+\sum_k\langle\varphi_k|\,H_k\,|\varphi_k\rangle
++
+\frac12
+\sum_{k\ne k'}\biggl\langle\Phi\biggl|\,
+\frac{e^2}{4\pi\varepsilon_0}
+\frac{1}{|x_k-x_{k'}|}
+\,\biggr|\Phi\biggr\rangle
+\end{align*}
+In $\Phi$ kommt jedes m"ogliche Produkt von Funktionen $\varphi_k$,
+insbesondere kommen Produkte
+\[
+\biggl\langle\varphi_k\varphi_{k'}\biggr|\,
+\frac{1}{|\Delta x|}
+\,\biggl|\varphi_k\varphi_{k'}\biggr\rangle
+\qquad\text{und}\qquad
+\biggl\langle\varphi_k\varphi_{k'}\biggr|\,
+\frac{1}{|\Delta x|}
+\,\biggl|\varphi_{k'}\varphi_k\biggr\rangle
+\]
+vor.
+Das zweite Produkt enth"alt die Funktionen in umgekehrter Reihenfolge,
+in der Slater-Deter\-minante hat es also das entgegengesetze Vorzeichen.
+Der Erwartungswert der Energie erh"alt damit einen zus"atzlichen Term:
+\begin{align*}
+\langle\Phi|\,H\,|\Phi\rangle
+=
+\sum_k\langle\varphi_k|\,H_k\,|\varphi_k\rangle
++
+\frac12
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne k'}
+\biggl\langle\varphi_k\varphi_{k'}\biggr|\,
+\frac{1}{|\Delta x|}
+\,\biggl|\varphi_k\varphi_{k'}\biggr\rangle
+-
+\frac12
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne k'}
+\biggl\langle\varphi_k\varphi_{k'}\biggr|\,
+\frac{1}{|\Delta x|}
+\,\biggl|\varphi_{k'}\varphi_k\biggr\rangle
+\end{align*}
+Wie bei der Hartree-Gleichung m"ochten wir
+$\langle\Phi|\,H\,|\Phi\rangle$ 
+minimieren, unter geeigneten Nebenbedingungen.
+
+Wir erwarten wieder, das die Funktionen $\varphi_k$ als Zustandsvektoren
+einzelner Elektronen betrachtet werden k"onnen.
+Wir d"urfen die Funktionen $\varphi_k$ als orthonormiert voraussetzen,
+und k"onnen als physikalischen Grund daf"ur anf"uhren, dass
+nach dem Pauli-Prinzip Eigenzust"ande
+von verschiedenen Elektronen sich in mindestens einer Quantenzahl
+unterscheiden m"ussen, und die Wellenfunktionen daher orthogonal
+sein m"ussen.
+
+Wir erhalten damit zus"atzliche Nebenbedingungen in der Form
+\[
+G_{kk'}=\langle\varphi_k|\varphi_{k'}\rangle-\delta_{kk'}.
+\]
+Die Variationen davon sind
+\[
+\delta_k G_{kk'}
+=
+\langle\delta\varphi_k |\varphi_{k'}\rangle
+\]
+\subsubsection{L"osung des Minimalproblems}
+Die zus"atzlichen Nebenbedingungen liefern uns zus"atzliche
+Lagrage-Multiplikatoren, wir bezeicnen den Lagrange-Multiplikator
+zur Nebenbedingung $G_{kk'}$ mit $\lambda_{kk'}$.
+
+Wie fr"uher argumentiert, behalten wir in den Variationen der
+bilinearen Terme immer nur die Variation des ersten Faktors.
+Die Variationen von $F=\langle\Phi|\,H\,|\Phi\rangle$
+\begin{align*}
+\delta_j F
+&=
+2\langle\delta\varphi_j|\,H_j\,|\varphi_j\rangle
++
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+\biggl\langle\delta\varphi_j\varphi_k\biggr|\,
+\frac{1}{|\Delta x|}
+\,\biggl|\varphi_j \varphi_k\biggr\rangle
+-
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+\biggl\langle\delta\varphi_j\varphi_k\biggr|\,
+\frac{1}{|\Delta x|}
+\,\biggl|\varphi_k \varphi_j\biggr\rangle.
+\end{align*}
+
+Die Gleichungen der Methode der Lagrange-Multiplikatoren werden 
+jetzt zu
+\[
+\delta_j F - \sum_{k,k'}\lambda_{kk'}\delta_j G_{kk'}
+=
+\delta_j F
+-
+\sum_{k}\lambda_{jk}\delta_j G_{jk}
+=\delta_jF
+-\sum_k\lambda_{jk}\langle\delta\varphi_j|\varphi_k\rangle
+=0,
+\]
+oder ausgeschrieben
+\begin{align}
+\bigg\langle\delta\varphi_j\bigg|\,
+\bigg(
+H_1|\varphi_j\rangle
+&+
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+\biggl\langle\varphi_k\biggr|\,
+\frac{1}{|x_j-\tilde x_1|}
+\,\biggl|\varphi_k\biggr\rangle
+\,\biggl|\varphi_j\biggr\rangle
+\notag
+-
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+\biggl\langle\varphi_k\biggr|\,
+\frac{1}{|\tilde x_1-x_j|}
+\,\biggl|\varphi_j\biggr\rangle
+\,\biggl|\varphi_k\biggr\rangle
+\biggr)
+\\
+\qquad\qquad
+&=
+\sum_k\lambda_{jk}\langle\delta\varphi_j|\varphi_k\rangle
+=
+\langle\delta\varphi_j|
+\sum_k\lambda_{jk}
+|\varphi_k\rangle.
+\label{skript:hf1}
+\end{align}
+Die L"osung des Minimalproblems erf"ullt also die Gleichungen
+\begin{equation}
+H_1|\varphi_j\rangle
++
+\biggl(
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+\biggl\langle\varphi_k\biggl|\,
+\frac{1}{|\Delta x|}
+\,\biggr|\varphi_k\biggr\rangle
+\biggr)
+|\varphi_j\rangle
+-
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+\biggl\langle\varphi_k\biggl|\,
+\frac{1}{|\Delta x|}
+\,\biggr|\varphi_j\biggr\rangle
+|\varphi_k\rangle
+=
+\sum_k\lambda_{jk}
+|\varphi_k\rangle.
+\label{skript:hf2}
+\end{equation}
+Diese Vektor-Gleichung ist von der Form
+\[
+A\varphi = \Lambda \varphi.
+\]
+Man kann zeigen, dass $A$ selbstadjungiert ist.
+Es folgt dann, dass auch die Matrix $\Lambda$ selbstadjungiert sein muss,
+und dass man die Vektoren $\varphi_k$ mit Hilfe einer unit"aren Matrix durch
+neue Vektoren $\varphi'_k$ ersetzt werden, so dass die
+Matrix $\Lambda$ diagonal wird.
+Eine solche Transformation "andert nach (\ref{skript:hfunitaer})
+an der Slater-Determinante nichts.
+Wir nennen die transformierten Vektoren $\varphi'_k$ wieder mit $\varphi_k$,
+und erhalten aus (\ref{skript:hf2}) die Gleichungen
+\begin{align}
+H_1\,|\varphi_j\rangle
++
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+\biggl\langle\varphi_k\biggl|\,
+\frac{1}{|\Delta x|}
+\,\biggr|\varphi_k\biggr\rangle
+|\varphi_j\rangle
+-
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{k\ne j}
+\biggl\langle\varphi_k\biggl|\,
+\frac{1}{|\Delta x|}
+\,\biggr|\varphi_j\biggr\rangle
+|\varphi_k\rangle
+=
+E_j
+| \varphi_j\rangle.
+\label{skript:hf3}
+\end{align}
+
+\subsubsection{Spin}
+Die Terme
+\[
+c_{kj}
+=
+\biggl\langle\varphi_k\biggl|\,
+\frac{1}{|\Delta x|}
+\,\biggr|\varphi_j\biggr\rangle
+\]
+in (\ref{skript:hf3})  k"onnen weiter ausgerechnet werden.
+Die Funktionen $\varphi_k$ h"angen ja nicht nur von der Position, sondern
+auch von den Spin-Koordinaten ab.
+Da es in unserem Modell keine Kopplung zwischen den Spin- und
+den Raumkoordinaten gibt (keine Spin-Bahn-Kopplung), lassen sich die
+Funktionen als Produkt
+\[
+\varphi_k(q_1)=\varphi_{x,1}(x_1)\cdot\varphi_{s,1}(s_1)
+\]
+schreiben.
+
+Das Skalarprodukt zweier solcher Funktionen zerf"allt in ein Integral
+"uber die Raumkoordinaten und eine Summe "uber die Spin-Koordinaten:
+\[
+\langle\varphi_k|\varphi_{k'}\rangle
+=
+\langle\varphi_{x,k}|\varphi_{x,k'}\rangle
+\langle\varphi_{s,k}|\varphi_{s,k'}\rangle
+=
+\underbrace{
+\int\varphi_{x,k}^*(x_1)\varphi_{x,k'}(x_1)\,dx_1
+}_{=\langle\varphi_{x,k}|\varphi_{x,k'}\rangle}
+\cdot
+\big(
+\underbrace{
+\varphi_{s,k}^*(\textstyle \frac12) \varphi_{s,k'}(\textstyle \frac12)
++
+\varphi_{s,k}^*(\textstyle-\frac12) \varphi_{s,k'}(\textstyle-\frac12)
+}_{=\langle\varphi_{s,k}|\varphi_{s,k'}\rangle}
+\big)
+\]
+Da es nur zwei Spin-Zust"ande gibt, kann das Skalarprodukt der Spinfunktion
+nur $1$ sein, bei parallelem Spin, oder $0$, bei antimparallelem Spin.
+Das gleiche gilt dann f"ur  $c_{kj}$
+\[
+\biggl\langle\varphi_k\biggl|\,
+\frac{1}{|\Delta x|}
+\,\biggr|\varphi_j\biggr\rangle
+=
+\begin{cases}
+\langle\varphi_{x,k}|\, 1/|\Delta x|\,|\varphi_{x,j}\rangle
+%\displaystyle
+%\int\varphi_{x,k}^*(x_1)\frac1{|\Delta x|}\varphi_{x,k'}(x_1)\,dx_1
+&\qquad\text{Spin parallel}
+\\
+0&\qquad\text{Spin antiparallel}.
+\end{cases}
+\]
+
+\subsubsection{Hartree-Fock-Gleichung}
+Damit haben wir jetzt die Hartree-Fock-Gleichung hergeleitet:
+\begin{align}
+H_1\,|\varphi_j\rangle
++
+V_{H,j}
+|\varphi_j\rangle
+-
+\frac{e^2}{4\pi\varepsilon_0}
+\sum_{{k\ne j}\atop{\text{Spin parallel}}}
+\biggl\langle\varphi_k\biggl|\,
+\frac{1}{|\Delta x|}
+\,\biggr|\varphi_j\biggr\rangle
+|\varphi_k\rangle
+=
+E_j
+| \varphi_j\rangle
+\label{skript:hf4}
+\end{align}
+Sie beschreibt Elektronen im Hartree-Potential und zus"atzlich unter
+dem Einfluss einer Wechselwirkung mit allen anderen Elektronen
+gleichen Spins.
+
+
 
