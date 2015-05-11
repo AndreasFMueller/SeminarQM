@@ -654,8 +654,8 @@ def r(expr x, y) =
 enddef;
 
 pickup pencircle scaled 1pt;
-drawarrow (-n * u, 0)--(n * u, 0);
-drawarrow (0, -n * u)--(0, n * u);
+drawarrow (-n * u, 0)--((n+0.5) * u, 0);
+drawarrow (0, -n * u)--(0, (n+0.5) * u);
 label.urt(btex $k_x$ etex, (n * u, 0));
 label.ulft(btex $k_y$ etex, (0, n * u));
 
@@ -666,11 +666,23 @@ def fillfield(expr x, y) =
 		--((x-0.5)*u, (y+0.5)*u)--cycle
 		withcolor (1,0.9,0.9);
 enddef;
+
 fillfield(0, 2);
 fillfield(0,-2);
 fillfield(3, 0);
 fillfield(3, 7);
 fillfield(5,-5);
+
+def kvector(expr x, y) =
+	pickup pencircle scaled 1pt;
+	drawarrow (0,0)--(x * u, y * u) withcolor red;
+enddef;
+
+kvector(0, 2);
+kvector(0,-2);
+kvector(3, 0);
+kvector(3, 7);
+kvector(5,-5);
 
 pickup pencircle scaled 0.2pt;
 for x = -(n-0.5) * u step u until n * u:
@@ -712,52 +724,59 @@ enddef;
 
 path	w;
 w := (wave(n * u, 3, 0)) shifted (z0 shifted (n * u, 1.3 * n * u));
+z10 = point 11 of w;
+z11 = (3 * u, 0);
+
 pickup pencircle scaled 1pt;
 drawarrow w withcolor red;
-pickup pencircle scaled 0.5pt;
-drawarrow (point 7 of w)..(-5*u,-u)..(3 * u, 0) withcolor blue;
-pickup pencircle scaled 3pt;
-draw point 7 of w withcolor red;
-draw (3 * u, 0) withcolor red;
 
-%label.top(btex $k_3$ etex, point 6 of w) withcolor red;
+w := (wave((1.4/sqrt(2)) * n * u, 7, -45)) shifted (z0 shifted (n * u, n * u));
+z20 = point 25 of w;
+z21 = (5 * u, -5 * u);
 
-w := (wave(sqrt(2) * n * u, 5, -45)) shifted (z0 shifted (n * u, n * u));
 pickup pencircle scaled 1pt;
 drawarrow w withcolor red;
-pickup pencircle scaled 0.5pt;
-drawarrow (point 17 of w)--(5 * u,  -5 * u) withcolor blue;
-pickup pencircle scaled 3pt;
-draw point 17 of w withcolor red;
-draw (5 * u,  -5 * u) withcolor red;
 
 w := (wave(n * u, 2,  90)) shifted (z0 shifted (0.3 * n * u, n * u));
+z30 = point 7 of w;
+z31 = (0, 2 * u);
+
 pickup pencircle scaled 1pt;
 drawarrow w withcolor red;
-pickup pencircle scaled 0.5pt;
-drawarrow (point 7 of w)--(0,  2 * u) withcolor blue;
-pickup pencircle scaled 3pt;
-draw point 7 of w withcolor red;
-draw (0,  2 * u) withcolor red;
 
 w := (wave(n * u, 2, -90)) shifted (z0 shifted (0.6 * n * u, n * u));
-pickup pencircle scaled 1pt;
-drawarrow w withcolor red;
-pickup pencircle scaled 0.5pt;
-drawarrow (point 6 of w)--(0, -2 * u) withcolor blue;
-pickup pencircle scaled 3pt;
-draw point 6 of w withcolor red;
-draw (0, -2 * u) withcolor red;
+z40 = point 6 of w;
+z41 = (0, -2 * u);
 
-w := (wave(1.08797 * n * u, 7, 180-113.199))
-	shifted (z0 shifted (1.3 * n * u, n * u));
 pickup pencircle scaled 1pt;
 drawarrow w withcolor red;
+
+w := (wave(n * u / 1.08797, 7, 180-113.199))
+	shifted (z0 shifted (1.3 * n * u, n * u));
+z50 = point 24 of w;
+z51 = (3 * u, 7 * u);
+
+pickup pencircle scaled 1pt;
+drawarrow w withcolor red;
+
 pickup pencircle scaled 0.5pt;
-drawarrow (point 24 of w)--(3 * u, 7 * u) withcolor blue;
+drawarrow z10..z11 withcolor blue;
+drawarrow z20--z21 withcolor blue;
+drawarrow z30--z31 withcolor blue;
+drawarrow z40--z41 withcolor blue;
+drawarrow z50--z51 withcolor blue;
+
 pickup pencircle scaled 3pt;
-draw point 24 of w withcolor red;
-draw (3 * u, 7 * u) withcolor red;
+draw z10 withcolor red;
+draw z11 withcolor red;
+draw z20 withcolor red;
+draw z21 withcolor red;
+draw z30 withcolor red;
+draw z31 withcolor red;
+draw z40 withcolor red;
+draw z41 withcolor red;
+draw z50 withcolor red;
+draw z51 withcolor red;
 
 endfig;
 
