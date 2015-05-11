@@ -8,20 +8,76 @@
 \newpage
 \section{Einleitung}
 \rhead{Einleitung}
-Die Tunneldiode ist ein nicht sehr h"aufig verwendetes, aktives und dynamisches Halbleiterelement. Die beiden Seiten des p-n-"Ubergangs sind stark dotiert. Durch den besonderen Aufbau und die starke Dotierung k"onnen Elektronen die Sperrschicht passieren bevor die Diode leitet.
 
-Sie hat eine spezielle Kennlinie, welche im mittleren Bereich einen negativen Widerstand aufweist.
+Die Tunneldiode ist ein nicht sehr h"aufig verwendetes, aktives und dynamisches Halbleiterelement. Als Halbleitermaterial wird f"ur ihren  Aufbau Germanium verwendet. Um die Tunneldiode und ihren Aufbau besser erkl"aren zu k"onnen, ziehen wir zum Vergleich eine normale Germaniumdiode heran. 
+Der Aufbau einer Diode besteht im wesentlichen aus einer positiv und einer negativ dotierten Seite, dem sogenannten p-n-"Ubergang. Dazwischen befindet sich die Sperrzone, welche man auch als Potentialbarriere betrachten kann.
 
-\begin{figure}[h]	%Bild Kennlinie der Tunneldiode
+\begin{figure}	%Bild Bändermodell Germaniumdiode Vf = 0
 \centering
-\includegraphics[width=0.7\textwidth]{tunneldiode/images/Tunneldiode.png}
+\includegraphics[width=0.5\textwidth]{tunneldiode/tunnel-9.pdf}
+\caption{B"andermodell der Germaniumdiode mit $V_F = 0$
+\label{skript:BaendermodellG0}}
+\end{figure}
+
+Ohne Vorw"artsspannung sind die Energieniveaus \index{Germaniumdiode}wie in Abbildung~\ref{skript:BaendermodellG0} verteilt. Das Ferminivau $E_F$ ist in p und n auf derselben H"ohe. Das Leitungsband $E_C$ ist "uber dem Ferminiveau  und das Valenzband $E_V$ unter dem Ferminiveau. Solange die Energie der Elektronen kleiner als das Potential der Barriere ist, leitet die Diode nicht. 
+
+\begin{figure}	%Bild Bändermodell Germaniumdiode Vf > 0
+\centering
+\includegraphics[width=0.5\textwidth]{tunneldiode/tunnel-11.pdf}
+\caption{B"andermodell der Germaniumdiode mit $V_F > 0$
+\label{skript:BaendermodellG}}
+\end{figure}
+
+Legt man eine positive Spannung in Vorw"artsrichtung an, hebt man damit die Energie der Elektronen an. Wie in \index{Germaniumdiode} Abbildung~\ref{skript:BaendermodellG} ersichtlich, wird auch das Ferminiveau auf der n-Seite gr"osser als auf der p-Seite. Bei etwa 200mV Vorw"artsspannung beginnt die Germaniumdiode zu leiten. Zum Vergleich wurden zwei verschiedene Typen Germaniumdioden vermessen. \index{Germaniumdiode}In Abbildung~\ref{skript:Germaniumdioden} ist der Vorw"artsstrom durch die Diode in Abh"angigkeit zur Vorw"artsspannung aufgetragen.
+
+\begin{figure}	%Bild Kennlinie der Germaniumdioden
+\centering
+\includegraphics[width=0.7\textwidth]{tunneldiode/tunnel-6.pdf}
+\caption{Kennlinien von zwei verschiedenen Germaniumdiodentypen
+\label{skript:Germaniumdioden}}
+\end{figure}
+
+Die Tunneldiode unterscheidet sich im Vergleich zur Germaniumdiode in zwei Punkten. Zum einen ist die Dotierung des p-n-"Ubergangs gr"osser, zum anderen die Sperrschicht viel d"unner. Diese beiden Unterschiede erm"oglichen den Tunneleffekt.
+
+
+\section{Der Tunneleffekt}
+\rhead{Tunneleffekt}
+Das B"andermodell der Tunneldiode ist fast identisch mit dem der Germaniumdiode. Auch hier ist das Ferminiveau ohne Vorw"artsspannung auf derselben H"ohe. Auf der p-Seite ist sowohl das Valenzband als auch das Leitungsband "uber dem Ferminiveau. Auf der n-Seite ist es genau umgekehrt, da sind beide B"ander unter dem Ferminiveau. \index{Tunneldiode}(Abbildung~\ref{skript:Baendermodell0})
+Bei der Tunneldiode tritt der Tunneleffekt bereits dann ein, wenn eine positive Vorw"artsspannung angelegt wird. Die Diode beginnt zu leiten, obwohl die Elektronen nicht "uber die Potentialbarriere r"uber k"onnen. Sie tunneln durch die Barriere hindurch. Der Tunnelstrom erreicht das Maximum, wenn die "Uberlappung am gr"ossten ist. \index{Tunneldiode}(Abbildung~\ref{skript:Baendermodellmax}) Danach nimmt der Tunnelstrom wieder ab, da die "Uberlappung kleiner wird. \index{Tunneldiode}(Abbildung~\ref{skript:Baendermodellmax})
+
+\begin{figure}	%Bild Bändermodell Tunneldiode Vf = 0
+\centering
+\includegraphics[width=0.5\textwidth]{tunneldiode/tunnel-10.pdf}
+\caption{B"andermodell der Tunneldiode mit $V_F = 0$
+\label{skript:Baendermodell0}}
+\end{figure}
+
+\begin{figure}	%Bild Bändermodell Tunneldiode IT = max
+\centering
+\includegraphics[width=0.5\textwidth]{tunneldiode/tunnel-12.pdf}
+\caption{B"andermodell der Tunneldiode mit maximalem Tunnelstrom
+\label{skript:Baendermodellmax}}
+\end{figure}
+
+\begin{figure}	%Bild Bändermodell Tunneldiode IT abnehmend
+\centering
+\includegraphics[width=0.5\textwidth]{tunneldiode/tunnel-13.pdf}
+\caption{B"andermodell der Tunneldiode mit $V_F > 0$, kein Tunnelstrom
+\label{skript:Baendermodellmin}}
+\end{figure}
+
+Die spezielle Kennlinie der Tunneldiode ist in der \index{Tunneldiode}Abbildung~\ref{skript:Tunneldiode} ersichtlich.
+
+\begin{figure}	%Bild Kennlinie der Tunneldiode
+\centering
+\includegraphics[width=0.7\textwidth]{tunneldiode/tunnel-7.pdf}
 \caption{Die spezielle Kennlinie der Tunneldiode
 \label{skript:Tunneldiode}}
 \end{figure}
 
-\section{Tunneleffekt}
+\section{Berechnung des Tunneleffekts}
 \rhead{Tunneleffekt}
-Die Vorg"ange in der Tunneldiode werden mit dem Tunneleffekt beschrieben. Zum besseren Verst"andnis betrachten wir das Potential 
+Als erstes betrachten wir das Potential 
 \[
 V(x)=\begin{cases}
 V_0& \qquad \text{wenn } x \in [-a,a]\\
@@ -34,11 +90,11 @@ Ein Teilchen kommt von links und m"ochte nach rechts. Die Energie vom einfallend
 \[
 0 < E < V_0.
 \]
-In der Mitte ist aber eine Barriere, welche ein h"oheres Potential als das Teilchen selber aufweist. In der normalen Mechanik ist klar, dass dieses Teilchen nicht von links nach rechts kommt sondern an der Barriere bei -a reflektiert wird. In der Quantenmechanik k"onnen Teilchen jedoch durch die Barriere durchtunneln.
+In der Mitte ist aber eine Barriere, welche ein h"oheres Potential als das Teilchen selber aufweist. In der normalen Mechanik ist klar, dass dieses Teilchen nicht von links nach rechts kommt sondern an der Barriere bei -a reflektiert wird. In der Quantenmechanik k"onnen Teilchen jedoch durch die Barriere durchtunneln. \index{Tunneldiode}(Abbildung~\ref{skript:Kastenpotential})
 
-\begin{figure}[h]	%Bild Kastenpotential
+\begin{figure}	%Bild Kastenpotential
 \centering
-\includegraphics[width=0.7\textwidth]{tunneldiode/images/Kastenpotential.png}
+\includegraphics[width=0.7\textwidth]{tunneldiode/tunnel-4.pdf}
 \caption{Kastenpotential
 \label{skript:Kastenpotential}}
 \end{figure}
@@ -55,23 +111,8 @@ F"ur $k$ gilt dabei
 \[
 k = \sqrt{\frac{2mE}{\hbar^2}}.
 \]
-Abgeleitet vom allgemeinen Ansatz m"ussen jetzt nur noch $A$ und $B$ bestimmt werden. Im Bereich \RM{1} ist
-\[
-A = 1 \text{ und } B = R
-\]
-da $A$ der Koeffizient der einlaufenden Welle ist und dieser Betragsm"assig als 1 angenommen wird. Diese Annahme ist notwendig, da sich die genaue Anzahl der Teilchen nicht ermitteln l"asst. $B$ ist der Koeffizient der auslaufende Welle. Das $R$ steht somit f"ur die Anzahl reflektierter Teilchen. Somit vereinfacht sich die Gleichung im Bereich \RM{1} zu
-\[
-\Phi_\RM{1}(x) = e^{ikx} + Re^{-ikx}.
-\]
+Der Koeffizient $A$ steht in beiden Bereichen f"ur die einlaufende Welle, $B$ f"ur die reflektierte Welle.
 
-Im Bereich \RM{3} gilt
-\[
-A = T \text{ und } B = 0.
-\]
-Auch hier ist $A$ der Koeffizient der einlaufenden Welle und damit der transmittierten Teilchen, also $T$. Die m"oglicherweise in diesem Bereich reflektierten Teilchen interessieren uns nicht. Deshalb setzen wir $B$ auf 0. Somit erhalten wir f"ur den Bereich \RM{3} die Gleichung
-\[
-\Phi_\RM{3}(x) = Te^{ikx}.
-\]
 F"ur die Wellenfunktion im Bereich \RM{2} lautet die Gleichung
 \[
 \Phi_\RM{2}(x) = \alpha e^{\kappa x} + \beta e^{-\kappa x}
@@ -80,7 +121,8 @@ da wir in der Potentialbarriere einen exponentiellen Abfall oder Anstieg erwarte
 \[
 \kappa = \sqrt{\frac{2m}{\hbar^2}(V_0 - E)}.
 \]
-Damit wir die vier Unbekannten $\alpha$, $\beta$, $R$ und $T$ bestimmen k"onnen, m"ussen wir Gemeinsamkeiten der Wellenfunktionen an den "Ubergangsstellen zwischen den Bereichen ausnutzen. Damit die Wellenfunktion ohne Spr"unge zusammengesetzt werden kann muss
+Insgesamt haben wir nun sechs Unbekannte. Im Bereich $\RM{1}$ die Koeffizienten $A_1$ und $B_1$, im Bereich $\RM{2}$ $\alpha$ und $\beta$ und im Bereich $\RM{3}$ $A_2$ und $B_2$. 
+Damit die Wellenfunktion ohne Spr"unge zusammengesetzt werden kann muss
 \[
 \Phi_\RM{1}(-a) = \Phi_\RM{2}(-a)
 \]
@@ -93,22 +135,158 @@ Damit wir die vier Unbekannten $\alpha$, $\beta$, $R$ und $T$ bestimmen k"onnen,
 \[
 \Phi_\RM{2}'(a) = \Phi_\RM{3}'(a)
 \]
-gelten. Somit haben wir ein Gleichungssystem mit vier Gleichungen f"ur vier Unbekannte. Wir brauchen also die Ableitungen der Wellenfunktionen in den drei Bereichen.
+gelten. Somit haben wir ein Gleichungssystem mit vier Gleichungen f"ur sechs Unbekannte. Wir brauchen also die Ableitungen der allgemeinen Wellenfunktionen .
 \[
-\Phi_\RM{1}'(x) = ike^{ikx} - Rike^{-ikx}
+\Phi_\RM{1}'(x) = Aike^{ikx} - Bike^{-ikx}
 \]
 \[
 \Phi_\RM{2}'(x) = \alpha \kappa e^{\kappa x} - \beta \kappa e^{-\kappa x}
 \]
+Wir rechnen ab hier mit Matrizen weiter. Dies hat den Vorteil, dass sich gewisse Terme vereinfachen lassen. Auch mit der Matizenrechnung ist es nicht m"oglich alle sechs Unbekannten zu bestimmen. Es ist aber m"oglich das Verh"altnis zwischen den einfallenden und transmittierten Teilchen zu berechnen. Die Matrix 
 \[
-\Phi_\RM{3}'(x) = Tike^{ikx}
+\underbrace{
+\begin{pmatrix}
+e^{-ika}
+&
+e^{ika}
+\\
+ike^{-ika}
+&
+-ike^{ika}
+\end{pmatrix}
+}_{T_1(-a)}
+\begin{pmatrix}
+A_1
+\\
+B_1
+\end{pmatrix}
+ = 
+\underbrace{
+\begin{pmatrix}
+e^{-\kappa a}
+&
+e^{\kappa a}
+\\
+\kappa e^{-\kappa a}
+&
+-\kappa e^{\kappa a}
+\end{pmatrix}
+}_{T_2(-a)}
+\begin{pmatrix}
+\alpha
+\\
+\beta
+\end{pmatrix}
+\]
+gilt an der Stelle $-a$.
+An der Stelle $a$ gilt
+\[
+\underbrace{
+\begin{pmatrix}
+e^{\kappa a}
+&
+e^{-\kappa a}
+\\
+\kappa e^{\kappa a}
+&
+-\kappa e^{-\kappa a}
+\end{pmatrix}
+}_{T_2(a)}
+\begin{pmatrix}
+\alpha
+\\
+\beta
+\end{pmatrix}
+ = 
+\underbrace{
+\begin{pmatrix}
+e^{ika}
+&
+e^{-ika}
+\\
+ike^{ika}
+&
+-ike^{-ika}
+\end{pmatrix}
+}_{T_1(a)}
+\begin{pmatrix}
+A_2
+\\
+B_2
+\end{pmatrix}
+\].
+In der ersten Zeile der Matrizen stehen die Funktionswerte und in der zweiten Zeile die Ableitungen an den entsprechenden Stellen.
+
+Mit den Matrizen rechnen wir nun wie folgt weiter:
+\[
+\underbrace{
+T_1(-a)^{-1}
+\underbrace{
+T_2(-a)T_2(a)^{-1}
+}
+T_1(a)
+}
 \]
 
+Zuerst multiplizieren wir die inneren Matrizen miteinander. Anschliessen rechnen wir von links nach rechts. Die Berechnung von diesem Matizenprodukt hat f"ur uns Maxima erledigt. Die resultierende Matrix lautet:
+\[
+\begin{pmatrix}
+\frac{i\,e^{2\,i\,a\,k}\,\left(\kappa-k\right)\,\left(\kappa+k
+ \right)\,\sinh \left(2\,a\,\kappa\right)+2\,k\,e^{2\,i\,a\,k}\,
+ \kappa\,\cosh \left(2\,a\,\kappa\right)}{2\,k\,\kappa}
+&
+\frac{i\,
+ \left(\kappa^2+k^2\right)\,\sinh \left(2\,a\,\kappa\right)}{2\,
+ k\,\kappa}
+\\
+-\frac{i\,\left(\kappa^2+k^2\right)\,\sinh \left(2\,a\,
+ \kappa\right)}{2\,k\,\kappa}
+&
+\frac{2\,k\,e^ {- 2\,i\,a\,k }\,
+ \kappa\,\cosh \left(2\,a\,\kappa\right)-i\,e^ {- 2\,i\,a\,k }\,
+ \left(\kappa-k\right)\,\left(\kappa+k\right)\,\sinh \left(2\,a\,
+ \kappa\right)}{2\,k\,\kappa}
+\end{pmatrix}
+\]
 
-%TODO: Überleitung zur Berechnung mit Matrizen
-%      geometrischer Aufbau der Tunneldiode vs. Siliziumdiode
-%	   Rückkehr zur Tunneldiode -> Wie der Tunneleffekt da auftritt
-\input{tunneldiode/t.tex}
+Die Matrix wird jetzt mit dem Vektor im Bereich \RM{3} multipliziert. Wir normieren die einfallende Welle in diesem Bereich auf 1. Weiter nehmen wir an, dass die reflektierte Welle 0 ist.
+\[
+\begin{pmatrix}
+A_2
+\\
+B_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+1
+\\
+0
+\end{pmatrix}
+\]
+
+In der von Maxima berechneten Matrix ersetzen wir alle $2a$ durch $l$. Als Resultat erhalten wir den Vektor
+\[
+\begin{pmatrix}
+\displaystyle
+e^{ilk}\biggl(\cosh(l\kappa)
++\frac{i}{2}\biggl(\frac{\kappa}{k}-\frac{k}{\kappa}\biggr)\sinh(l\kappa)
+\biggr)
+\\
+\displaystyle
+- \frac{i}{2}
+\biggl(\frac{\kappa}{k}+\frac{k}{\kappa}\biggr)
+\sinh(l\kappa)
+\end{pmatrix}.
+\]
+In diesem Vektor steht nun, wie viel wahrscheinlicher ein einfallendes
+Teilchen im Vergleich zu einem durchgelassenen Teilchen ist.
+
+\section{Vermessen der Tunneldiode}
+\rhead{Vermessen Tunneldiode}
+
+%TODO: 
+
+%\input{tunneldiode/t.tex}
 
 \input{tunneldiode/tosc.tex}
 
