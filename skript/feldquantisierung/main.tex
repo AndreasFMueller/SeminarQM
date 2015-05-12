@@ -20,7 +20,7 @@ Hilfreich dazu ist auch die Beschreibung von Magnetfeldern in Kapitel \ref{chapt
 
 Die in der Elektrotechnik wohl bekannten Maxwell-Gleichungen in SI Einheiten lauten:
 \begin{align}
-\nabla\cdot E &= \frac{\rho}{\varepsilon_0} \label{fq:maxwell_1},\\
+\nabla\cdot E &= \frac{\varrho}{\varepsilon_0} \label{fq:maxwell_1},\\
 \nabla\times B &= \mu_0 j  + \mu_0 \varepsilon_0\frac{\partial E}{\partial t} \label{fq:maxwell_2},\\
 \nabla\cdot B &=0 \label{fq:maxwell_3},\\
 \nabla\times E &= -\frac{\partial B }{\partial t} \label{fq:maxwell_4}.
@@ -45,15 +45,15 @@ E = -\dfrac{\partial A}{\partial t} - \nabla \varphi.
 \end{equation}
 wobei $\varphi$ ist das skalare Potential des Feldes ist. Durch Einsetzen von $E$ in (\ref{fq:maxwell_4}) wird ersichtlich, dass die Gleichung damit erf"ullt ist:
 \begin{equation*}
-\nabla\times (-\dfrac{\partial A}{\partial t} - \nabla \varphi) + \frac{\partial \nabla\times A }{\partial t} = 
+\nabla\times E + \frac{\partial B }{\partial t} = \nabla\times (-\dfrac{\partial A}{\partial t} - \nabla \varphi) + \frac{\partial \nabla\times A }{\partial t} = 
 - \frac{\partial \nabla\times A }{\partial t} - \underbrace{\nabla\times \nabla \varphi}_{=0\text{ f"ur jedes Potential } \varphi} + \frac{\partial \nabla\times A }{\partial t} = 0.\\
 \end{equation*}
 (\ref{fq:maxwell_3}) und (\ref{fq:maxwell_4}) wurden bereits erf"ullt. Durch Einsetzen von $E$ und $B$ wird aus (\ref{fq:maxwell_1}) und (\ref{fq:maxwell_2}):
 \begin{align} 
  \label{fq:a_coupled_a}
- \nabla^2 \varphi + \dfrac{\partial \nabla A}{\partial t} &= -\rho, \\
+ \nabla^2 \varphi + \dfrac{\partial \nabla A}{\partial t} &= -\frac{\varrho}{\varepsilon_0}, \\
  \label{fq:a_coupled_b}
- \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} - \nabla \left( \nabla \cdot A + \frac{1}{c^2} \frac{\partial \varphi }{\partial t} \right) &= - \frac{1}{c} j.
+ \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} - \nabla \left( \nabla \cdot A + \frac{1}{c^2} \frac{\partial \varphi }{\partial t} \right) &= - \mu_0 j.
 \end{align}
 Die vier Maxwell-Gleichungen k"onnen also auch als zwei Gleichungen in $A$ und $\varphi$ dargestellt werden.
 Mittels der Lorenz-Eichung (Siehe Kapitel \ref{section:eichtransformation}) kann $\varphi$ so gew"ahlt werden, dass
@@ -62,11 +62,11 @@ Mittels der Lorenz-Eichung (Siehe Kapitel \ref{section:eichtransformation}) kann
 \end{equation}
 Dadurch werden die zwei gekoppelten Gleichungen (\ref{fq:a_coupled_a}) und (\ref{fq:a_coupled_b}) entkoppelt und es gilt
 \begin{align*}
-\nabla^2 \varphi - \frac{1}{c^2} \dfrac{\partial^2 \varphi}{\partial t^2} &= -\rho, \\
-\nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} &= - \frac{1}{c} j.
+\nabla^2 \varphi - \frac{1}{c^2} \dfrac{\partial^2 \varphi}{\partial t^2} &= -\frac{\varrho}{\varepsilon_0}, \\
+\nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} &= - \mu_0 j.
 \end{align*}
 
-F"ur die Feldquantisierung wollen wir ein freies Feld im Vakuum betrachten. Hierf"ur gilt $j = 0$ sowie $\rho = 0$.
+F"ur die Feldquantisierung wollen wir ein freies Feld im Vakuum betrachten. Hierf"ur gilt $j = 0$ sowie $\varrho = 0$.
 Die Gleichung f"ur $\varphi$ wird nicht ben"otigt und die Gleichung f"ur $A$ wird zu
 \begin{equation} \label{fq:wave_dgl}
 \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} = 0.
@@ -180,8 +180,8 @@ N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha} = \frac{1}{2 \hbar \omega_k} \left(P
 \end{align*}
 Ein Vergleich mit (\ref{fq:hamilton}) liefert
 \begin{equation} \label{fq:opp_fourier}
- c_{k,\alpha} \rightarrow \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} a_{k,\alpha}, \qquad 
- \bar{c}_{k,\alpha} \rightarrow \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} \, a^+_{k,\alpha}.
+ c_{k,\alpha} \Rightarrow \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} a_{k,\alpha}, \qquad 
+ \bar{c}_{k,\alpha} \Rightarrow \sqrt{\frac{\hbar}{2 \varepsilon_0 \omega_k}} \, a^+_{k,\alpha}.
 \end{equation}
 Somit entsprechen diese Operatoren den Fourier-Koeffizienten.
 
