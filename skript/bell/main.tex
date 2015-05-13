@@ -11,8 +11,9 @@ konnten die Theorien von Einstein bisher selten widerlegt werden.
 Als einziges Beispiel, Einstein zu widerlegen, wird eine m\"oglicherweise
 falsche Entscheidung Einsteins aufgef\"uhrt, als er bei seiner Arbeit im
 Patentamt ein umstrittenes Patent zur Annahme empfahl.
-Obwohl scheinbar unm\"oglich, befassen wir uns in diesem Kapitel mit der Arbeit
-von Albert Einstein und versuchen diese kritisch zu beleuchten.
+Nat\"urlich entspricht dies nicht ganz der Wahrheit.
+Wir uns in diesem Kapitel mit der Arbeit von Albert Einstein und versuchen
+diese kritisch zu beleuchten.
 
 \begin{figure}[b]
     \centering
@@ -34,7 +35,7 @@ In vielen Bereichen der Quantenmechanik wurden tats\"achlich
 kleinere Teilchen, Quantenzahlen und Variablen entdeckt, welche das
 Verst\"andnis der heutigen Quantenphysik pr\"agten.
 Zur L\"osung des Gedankenexperiments von Einstein, Rosen und Podolsky konnten
-jedoch bisher keine verborgenen Variablen gefunden werden.
+jedoch bisher keine zus\"atzlichen Variablen gefunden werden.
 
 Wir betrachten das Gedankenexperiment von Einstein, indem wir zuerst die
 grundlegenden Annahmen der Lokalit\"at und des Realismus betrachten. Danach
@@ -162,8 +163,9 @@ Der Messaufbau ist in \figurename~\ref{fig:bell:EPR_Messaufbau} abgebildet.
 
 Diese zwei Partikel werden so generiert, dass sie einen komplement\"aren
 Spin-Zustand besitzen. 
-Durch das Gesetz der Drehimpulserhaltung \textsuperscript{[Citation needed]}
-ist dies einfach m\"oglich, da der Gesamtdrehimpuls eines Elektron-Positron Paares $+\frac12 - \frac12 = 0$ betr\"agt.
+Durch das Gesetz der Drehimpulserhaltung
+ist dies einfach m\"oglich, da der Gesamtdrehimpuls eines Elektron-Positron 
+Paares $+\frac12 - \frac12 = 0$ betr\"agt.
 
 Wenn also bei Detektor $A$ der Spin des Elektrons entlang der $z$-Achse
 gemessen wird und das Messresultat $+z$ ist, so ist sofort klar, dass
@@ -222,6 +224,7 @@ Die Eigenwerte der entsprechenden Pauli-Matrizen betragen:
 \begin{align}
     |{+}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\1 \end{pmatrix} &
     |{-}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\-1 \end{pmatrix} &
+    & \text{und} & 
     |{+}z\rangle &= \begin{pmatrix} 1\\0 \end{pmatrix} &
     |{-}z\rangle &= \begin{pmatrix} 0\\1 \end{pmatrix} &
 \end{align}
@@ -250,7 +253,7 @@ Zur Notation dieser kombinierten Zust\"ande wird das Tensorprodukt verwendet.
     so ist das Tensorprodukt
     \[
         A \otimes B = \begin{pmatrix} 
-        a_1 b_1 \\ a_1 b_2 \\ a_2 b_1 \\ a_2 b_2
+        a_1 b_1 & a_2 b_1 \\ a_1 b_2 & a_2 b_2
         \end{pmatrix}
     \]
 \end{definition}
@@ -279,17 +282,17 @@ und somit
      \right)
      =
      \frac{1}{\sqrt{2}}\left(
-         \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}
+         \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}
          -
-         \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix}
+         \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}
      \right)
      \stackrel{!}{=}
      \frac{1}{\sqrt{2}}\left(
          \frac{1}{2}
-         \begin{pmatrix} \phantom{-}1 \\ \phantom{-}1 \\ -1 \\ -1 \end{pmatrix}
+         \begin{pmatrix} \phantom{-}1 & \phantom{-}1 \\ -1 & -1 \end{pmatrix}
          -
          \frac{1}{2}
-         \begin{pmatrix} \phantom{-}1 \\ -1 \\ \phantom{-}1 \\ -1 \end{pmatrix}
+         \begin{pmatrix} \phantom{-}1 & -1 \\ \phantom{-}1 & -1 \end{pmatrix}
      \right)  \notag \\
      &=
     -\frac{1}{\sqrt{2}} \left( 
@@ -340,7 +343,7 @@ Der Kommutator $[S_x,S_z]$ ist
     [S_x, S_z] =  -i \hbar S_y \neq 0
 \end{equation}
 Da die Operatoren $S_x$ und $S_z$ also nicht vertauschen, ist nach der Theorie
-der Quantenmechanik die gleichzeitige Kenntnis der beiden Messungen nicht
+der Quantenmechanik die gleichzeitige Kenntnis der beiden Messungen \emph{nicht}
 m\"oglich.
 Dass dies jedoch hier der Fall ist, haben wir in Abschnitt~\ref{subsection:bell:epr:idee}
 hergeleitet und mathematisch in diesem Abschnitt beweisen k\"onnen.
@@ -367,7 +370,7 @@ Eine m\"ogliche L\"osung des Paradoxons wurde bereits in
 Abschnitt~\ref{subsection:bell:epr:herleitung} kurz beschrieben:
 Es k\"onnte ein verborgener Mechanismus existieren, welcher das Resultat unseres
 Experiments, also den Spin von Elektron und Positron, vorausbestimmt.
-Dazu wird eine verborgene, \emph{lokale} Variablen eingef\"uhrt, welche das
+Dazu wird eine verborgene Variable eingef\"uhrt, welche das
 Resultat der Spin-Messung bestimmt. 
 Diese wird als \emph{verborgene} Variable bezeichnet, da sie nicht
 messbar ist, sondern nur die Auswirkungen der Variable, also der jeweilige
@@ -440,8 +443,8 @@ Als erstem Physiker gelang es die Frage umzudrehen, und nicht nach solchen
 Variablen bzw. Teilchen zu suchen, sondern gleich deren Nicht-Existenz
 zu beweisen.
 
-Wir betrachten das Paper von Bell indem wir erneut das Gedankenexperiment nach
-Abbildung~\ref{fig:bell:EPR_Messaufbau} betrachten.
+Wir betrachten das Paper von Bell indem wir uns erneut das Gedankenexperiment 
+nach Abbildung~\ref{fig:bell:EPR_Messaufbau} befassen.
 Dazu verallgemeinern wir das Experiment etwas und betrachten zuerst die
 Vorhersage mittels der Quantenmechanik.
 Da diese ja korrekt, aber noch nicht vollst\"andig ist, f\"uhren wir darauf
@@ -450,7 +453,8 @@ Auf Basis dieser beider Resultate leiten wir die Bellsche Ungleichung, und
 darauf eine verallgemeinerte Version, die BCHSH-Ungleichung her.
 
 \subsection{Vorhersage der Quantenmechanik}
-Der Spin eines Teilchens in einer beliebigen Richtung $\vec{a}$ wird durch die
+Der Spin eines Teilchens in einer beliebigen Richtung $\vec{a}$, wobei $\vec{a}$
+ein Einheitsvektor ist, wird durch die
 Projektion der Spin-Matrix des Teilchens $A$ auf die 
 Richtung $\vec{a}$ gemessen.
 \begin{equation}\label{equ:bell:meas_a}
@@ -593,7 +597,9 @@ $E(\vec{a},\vec{b}) - E(\vec{a},\vec{c})$:
         \left[ A(\vec{b},\lambda)A(\vec{c},\lambda) - 1 \right] d\lambda
 \end{split}
 \end{equation}
-
+Um die Bellsche Ungleichung herleiten zu k\"onnen, wird 
+Hilfssatz~\ref{hilfssatz:bell:dreiecksungleichung_integral}
+eingef\"uhrt.
 \begin{hilfssatz}\label{hilfssatz:bell:dreiecksungleichung_integral}
     Sei $Z$ eine auf dem Intervall $\Omega$ integrierbare Funktion, so gilt
     \[
@@ -692,7 +698,7 @@ Die Quantenmechanik verletzt die Bellsche Ungleichung, welche f\"ur jede Theorie
 mit lokalen verborgenen Variablen gelten muss.
 Daraus kann geschlossen werden, dass das EPR Gedankenexperiment von keiner
 Theorie lokaler verborgener Variablen erkl\"art werden kann, und sich Albert
-Einstein damit also get\"auscht hat.
+Einstein damit get\"auscht hat.
 
 Die Bellsche Ungleichung \eqref{equ:bell:bellsche_ungleichung} l\"asst sich
 experimentell jedoch nur schwer \"uberpr\"ufen, da unter anderem in
@@ -704,7 +710,7 @@ Um reale experimentelle Bedingungen nachbilden zu k\"onnen, passten
 John Clauser, Michael Horne, Abner Shimony und Richard Holt 
 \cite{Bell:Clauser1969} die Bellsche Ungleichung so an, dass die perfekte
 Korrelation nicht notwendig ist.
-Ihr Resultat wird als CHSH-Ungleichung bezeichnet, war ebenfalls noch nicht
+Ihr Resultat wird als CHSH-Ungleichung bezeichnet, war aber ebenfalls noch nicht
 f\"ur reale Experimente geeignet.
 Erst John Bell, der sich von den Fortschritten von Clauser \textit{et al.}
 anspornen liess und nach 7 Jahren sich wieder mit dem Thema besch\"aftigte,
@@ -762,7 +768,6 @@ was wir mit einem letzten Schritt zur BCHSH-Ungleichung umformen k\"onnen
     E(\vec{a},\vec{b}) - E(\vec{a},\vec{b'}) + E(\vec{a'},\vec{b}) + E(\vec{a'},\vec{b'})
     \leq 2
 \end{equation}
-
 Betrachten wir nun die in Abbildung~\ref{fig:bell:orientierung_2}
 abgebildeten Messrichtungen
 \begin{align*}
@@ -860,7 +865,7 @@ sein. Dies wird in Abbildung~\ref{fig:bell:raum_korr} illustriert.
 \end{figure}
 
 \subsection{1. Generation -- Freedman Clauser (1972)}
-Das erste Experiment, welches die Bellsche Ungleichung \"uberpr\"ufte
+Das erste Experiment, welches die Bellsche Ungleichung \"uberpr\"ufte,
 wurde 1972 von Stuart Freedman und John Clauser an der UC~Berkeley
 in Kalifornien durchgef\"uhrt \cite{Bell:Freedman1972}.
 Dazu wurden Calcium-40 Atome in den Zustand $\text{3d}\,\text{4p}\,^1\text{P}_1$
@@ -913,18 +918,18 @@ Ungleichung damit tats\"achlich best\"atigt werden kann.
 
 \subsection{3. Generation}
 Die Experimente der dritten Generation basieren auf einem neuen Verfahren
-zur Erzeugung von Photonenpaaren, der \emph{parametrischen Fluoreszenz}.
+zur Erzeugung von Photonenpaaren, der parametrischen Fluoreszenz.
 Dabei wird mittels eines Pumpstrahls mit Frequenz $\omega_p$ ein
 nichtlinearer optischer Kristall angeregt.
 Es entstehen durch den Satz der Energieerhaltung und $E_{ph}=\hbar \omega$
 zwei Photonen mit Frequenzen $\omega_1$ und $\omega_2$, sodass 
-$\omega_1 + \omega_2 = \omega_p$. \textsuperscript{[Citation needed]}
+$\omega_1 + \omega_2 = \omega_p$.
 Damit lassen sich zwei Photonen mit derselben Polarisation erzeugen.
 Mithilfe der Methode der parametrischer Fluoreszenz werden r\"aumlich
 stark korrelierte Photonen erzeugt, was ein deutlicher Vorteil
 gegen\"uber der Methode mit atomaren Kaskaden darstellt.
 Dank der Einkopplung der Photonen in Glasfaserkabel konnten diverse neue
-Experimente entwickelt werden. \textsuperscript{[Citation needed]}
+Experimente entwickelt werden.
 
 \paragraph{Weihs, Innsbruck 1998}
 Das Problem der Lokalit\"at konnte zum ersten Mal 1998 von einem Team
@@ -935,7 +940,7 @@ Damit bleibt eine Zeit von
     t_c = \frac{s}{c} = \frac{\SI{400}{\meter}}{\SI{2.998e8}{\meter\per\second}} \approx \SI{1.3}{\micro\second}
 \]
 zur Messung.
-Weihs entwickelte einen elektro-optischen Modulatoren, welcher die 
+Weihs entwickelte einen elektro-optischen Modulator, welcher die 
 Polarisationsrichtung eines Photons um \SI{45}{\degree} drehen konnte und
 mittels eines Zufallsgenerators gesteuert wurde.
 Damit konnte sichergestellt werden, dass die Messrichtung wirklich zuf\"allig
