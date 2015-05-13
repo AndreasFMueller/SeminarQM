@@ -1,0 +1,59 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{fontspec}
+
+\usepackage[ngerman]{babel}
+\usepackage{times}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\usepackage{textcomp}
+\usepackage[all]{xy}
+\usepackage{txfonts}
+\usepackage{alltt}
+\usepackage{verbatim}
+\usepackage{paralist}
+\usepackage{makeidx}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{placeins}
+\usepackage{subfigure}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{wasysym}
+\usepackage{pifont}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+
+\usetikzlibrary{calc,intersections,through,backgrounds,graphs,positioning,shapes,arrows}
+\usetikzlibrary{patterns,decorations.pathreplacing}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{siunitx}
+\usepackage{tabularx}
+\usetikzlibrary{arrows}
+
+\setmainfont[Path=../humor_sans/]{Humor-Sans-1.0.ttf}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{document}
+
+    \begin{tikzpicture}[
+        pen/.style={decoration={random steps,segment length=4pt,amplitude=0.4pt},decorate}
+    ]
+    
+    \draw[->,pen] (0,0) to (2,0) node[anchor=west] {a};
+    \draw[->,pen] (0,0) to (0,2) node[anchor=south]{a'};
+    
+    \draw[->,pen] (0,0) to (1.41,1.41) node[anchor=south west]{b};
+    \draw[->,pen] (0,0) to (-1.41,1.41) node[anchor=south west]{b'};
+
+    
+    \end{tikzpicture}
+
+\end{document}
