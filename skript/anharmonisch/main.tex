@@ -76,7 +76,7 @@ e^{-\frac12\alpha^2x^2}
 =
 (4\alpha^2x^2-2)e^{-\frac12\alpha^2x^2}
 \]
-Man erh"alt die charakteristischen Hermitpolynome $H_k$,welche wir mit folgender Gleichung erhalten werden k"onnen.
+Man erh"alt die charakteristischen Hermitpolynome $H_k$, welche wir mit folgender Gleichung erhalten werden k"onnen. Dabei ist $z=ax$.
 \[
 H_k(z)
 =
@@ -85,34 +85,44 @@ e^{-\frac{z^2}2}.
 \]
 Dadurch wird die Gleichung gek"urzt zu
 \[
-Phi_k(z)
+\Phi_k(z)
 =
 \biggl(\frac{m\omega}{\pi\hbar}\biggr)^\frac14
 \frac1{\sqrt{2^k k!}}H_k(z)
 e^{-\frac12 z^2}
 \]
-Das Hamilton Polynom lässt sich mit folgender Differeintialgleichung berechnen.
-\[
-H_k(x)
-=
-(-1)^k e^{x^2}\frac{\mathrm d^n}{\mathrm d x^n}
-e^{-x^2},
-\]
-Der Vorteil dieser Notation ist die sehr einfache Implementierung in den g"angigen Berechunugstools\\
-\\
-Beispiele Retourwerte\\
-TODO
+%Das Hamilton Polynom lässt sich mit folgender Differeintialgleichung berechnen.
+%\[
+%H_k(x)
+%=
+%(-1)^k e^{x^2}\frac{\mathrm d^n}{\mathrm d x^n}
+%e^{-x^2},
+%\]
+Der Vorteil dieser Notation ist die sehr einfache Implementierung in den g"angigen Berechunugstools
 
-\subsection{Energielevel}
+\begin{figure}[h]	%Bild Wellenfunkton.pdf
+\centering
+\includegraphics[width=0.7\textwidth]{anharmonisch/images/Wellenfunktion.pdf}
+\caption{10. Wellenfunktion des harmonischen Oszillators
+\label{skript:Wellenfunktion}}
+\end{figure}
+
+\subsection{Energieniveaus}
 \[
 E_n
 =
 \hbar\omega\biggl(n+\frac12\biggr)
 \]
-Funktion\\
-Beispiele Retourwerte TODO
 
-\subsection{Störungstheorie}
+\begin{figure}[h]	%Bild Energie.pdf
+\centering
+\includegraphics[width=0.7\textwidth]{anharmonisch/images/Energie.pdf}
+\caption{Energieniveaus des harmonischen Oszillators
+\label{skript:Energie}}
+\end{figure}
+
+\section{St"orungstheorie}
+\rhead{St"orungstheorie}
 Schr"odingergleichung in der St"orungstheorie
 \[
 (H_0+\varepsilon H_1)|\Psi_k(\varepsilon)\rangle
@@ -157,13 +167,13 @@ Das Skalarprodukt beschreibt die Abh"angigkeit zweier Vektoren. Um sich eine bes
 \[
 \langle\Psi_l^{(0)}|\Psi_k^{(p)}\rangle^2
 =
-P\langle\Psi_l^{(0)}|\Psi_l^{(p)}\rangle
+P(\Psi_l^{(0)}|\Psi_l^{(p)})
 \]
 Wie Wahrscheinlich ist es, dass die ungest"orte Wellenfunktion $|\Psi_l^{(0)}\rangle$ in der Zustandskorrektur $|\Psi_k^{(p)}\rangle$ vorkommt. In Abbildung~\ref{skript:PLK12} werden die Skalare der Wellenfunktionen 0 bis 50 dargestellt.
 
 \begin{figure}[h]	%Bild PLK12.pdf
 \centering
-\includegraphics[width=0.7\textwidth]{anharmonisch/images/PLK12.pdf}
+\includegraphics[width=0.7\textwidth]{anharmonisch/images/x3/PLK12.pdf}
 \caption{Skalare der Wellenfunktionen
 \label{skript:PLK12}}
 \end{figure}
@@ -176,11 +186,12 @@ Wie Wahrscheinlich ist es, dass die ungest"orte Wellenfunktion $|\Psi_l^{(0)}\ra
 |\Psi_l^{(0)}\rangle
 \]
 
-\subsection{Auswertung}
+\section{Auswertung}
+\rhead{Auswertung}
 
-\section{Infrarotspektroskopie}
-\rhead{Infrarotspektroskopie}
-TODO
+\subsection{Erstes Beispiel}
+
+\subsection{Zweites Beispiel}
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
