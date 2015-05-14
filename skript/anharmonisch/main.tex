@@ -85,7 +85,7 @@ e^{-\frac{z^2}2}.
 \]
 Dadurch wird die Gleichung gek"urzt zu
 \[
-\Phi_k(z)
+\Psi_k(z)
 =
 \biggl(\frac{m\omega}{\pi\hbar}\biggr)^\frac14
 \frac1{\sqrt{2^k k!}}H_k(z)
@@ -171,13 +171,6 @@ P(\Psi_l^{(0)}|\Psi_l^{(p)})
 \]
 Wie Wahrscheinlich ist es, dass die ungest"orte Wellenfunktion $|\Psi_l^{(0)}\rangle$ in der Zustandskorrektur $|\Psi_k^{(p)}\rangle$ vorkommt. In Abbildung~\ref{skript:PLK12} werden die Skalare der Wellenfunktionen 0 bis 50 dargestellt.
 
-\begin{figure}[h]	%Bild PLK12.pdf
-\centering
-\includegraphics[width=0.7\textwidth]{anharmonisch/images/x3/PLK12.pdf}
-\caption{Skalare der Wellenfunktionen
-\label{skript:PLK12}}
-\end{figure}
-
 \[
 \Psi_k^{(p)}
 =
@@ -191,7 +184,223 @@ Wie Wahrscheinlich ist es, dass die ungest"orte Wellenfunktion $|\Psi_l^{(0)}\ra
 
 \subsection{Erstes Beispiel}
 
+\begin{figure}[h]	%Bild EK1.pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/EK1.pdf}
+\caption{St"orung der Energieniveaus erster N"aherung
+\label{skript:x3_EK1}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_EK1} sieht man die "Anderung der Energieniveaus in erster N"aherung. Da die "Anderungen so klein sind k"onnen sie auf die numerische Berechnug mit Matlab zur"uckgeführt werden. Wenn man die Rechnung genau betrachtet sieht man auch, dass die "Anderung Null sein muss.
+
+\begin{figure}[h]	%Bild EK2.pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/EK2.pdf}
+\caption{St"orung der Energieniveaus zweiter N"aherung
+\label{skript:x3_EK2}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_EK2} sieht man die "Anderung der Energieniveaus in zweiter N"aherung. Man kann klar Erkennen, dass die Abweichungen zum harmonischen Fall, bei h"oheren Energieniveaus immer gr"osser wird. Die Unstetigkeit bei den letzten drei Energieniveaus ist darauf zur"uckzuf"uhren, dass f"ur die Berechnung dieser Terme, Daten von noch h"oheren Energieniveaus benötig werden, welche nicht mehr berechnet wurden. 
+
+\begin{figure}[h]	%Bild Energie(1Stoerung_0135).pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/Energie(1Stoerung_0135).pdf}
+\caption{Energieniveaus und 10. Wellenfunktion in erster N"aherung
+\label{skript:x3_Energie(1Stoerung_0135)}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_Energie(1Stoerung_0135)} sieht man die Energieniveaus in erster N"aherung. Wie schon auf Abbildung~\ref{skript:x3_EK1} zu sehen ist, "ändern sich die Energieniveaus nicht. Die rote Linie zeigt das 10. ungest"orte Energieniveau zum Vergleich.
+
+\begin{figure}[h]	%Bild Energie(2Stoerung_0135).pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/Energie(2Stoerung_0135).pdf}
+\caption{Energieniveaus und 10. Wellenfunktion in zweiter N"aherung
+\label{skript:x3_Energie(2Stoerung_0135)}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_Energie(2Stoerung_0135)} sieht man die Energieniveaus in zweiter N"aherung. Die gr"une Linie zeigt das 10. Energieniveau des ungest"orten Oszillators. Die rote Linie zeigt das selbe Energieniveau des gest"orten Oszillators. Die niedrigen Energieniveaus bleiben fast unverändert, aber je h"oher die Energieniveaus sind, desto gr"osser wird auch die Abweichung zum ungest"orten Oszillator. 
+
+\begin{figure}[h]	%Bild PLK11.pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/PLK11.pdf}
+\caption{Skalare der Wellenfunktionen erster N"aherung
+\label{skript:x3_PLK11}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_PLK11} sieht man welche ungest"orten Wellenfunktionen $\Psi_l^{(0)}$ den gr"ossten Anteil an der gest"orten Wellenfunktion $\Psi_k^{(1)}$ in erster N"aherung haben. Interressant ist, dass die Energieniveaus welche zwei h"oher oder tiefer sind keinen Beitrag an die gest"orte Wellenfunktion liefern.
+
+\begin{figure}[h]	%Bild PLK12.pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/PLK12.pdf}
+\caption{Skalare der Wellenfunktionen erster N"aherung
+\label{skript:x3_PLK12}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_PLK12} sieht man die man zus"atzlich zu Abbildung~\ref{skript:x3_PLK11} noch wie stark die Wellenfunktionen in erster N"aherung vertreten sind. Gut zu sehen ist, dass die Wellenfunktionen eins h"oher oder tiefer sind Betragsm"assig den mit Abstand gr"ossten Beitrag zur gest"orten Wellenfunktion liefern.
+
+\begin{figure}[h]	%Bild PLK21.pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/PLK21.pdf}
+\caption{Skalare der Wellenfunktionen zweiter N"aherung
+\label{skript:x3_PLK21}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_PLK21} sieht man welche ungest"orten Wellenfunktionen $\Psi_l^{(0)}$ den gr"ossten Anteil an der gest"orten Wellenfunktion $\Psi_k^{(1)}$ in zweiter N"aherung haben. Interressant ist, dass die Energieniveaus welche eins, drei oder fünf h"oher oder tiefer sind keinen Beitrag an die gest"orte Wellenfunktion liefern.
+
+\begin{figure}[h]	%Bild PLK22.pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/PLK22.pdf}
+\caption{Skalare der Wellenfunktionen zweiter N"aherung
+\label{skript:x3_PLK22}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_PLK22} sieht man die man zus"atzlich zu Abbildung~\ref{skript:x3_PLK21} noch wie stark die Wellenfunktionen in zweiter N"aherung vertreten sind. Gut zu sehen ist, dass die Wellenfunktionen welche am n"achsten bei der gest"orten Wellenfunktion sind Betragsm"assig den mit Abstand gr"ossten Beitrag  liefern. Auch hier sind wieder die Randefekte zu erkennen, welche mit den fehlenden Termen von Wellenfunktonen $> 50$ zu tun hat.
+
+\begin{figure}[h]	%Bild PLK(1)log(abs)(1Stoerung).pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/PLK(1)log(abs)(1Stoerung).pdf}
+\caption{Logarithmische Darstellung der Skalarprodukte erster N"aherung
+\label{skript:x3_PLK(1)log(abs)(1Stoerung)}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_PLK(1)log(abs)(1Stoerung)} sieht man die Beitr"age aller ungestörten Wellenfunktionen in logarithmischer Darstellung und erster N"aherung. Man sieht, dass auch Wellenfunktionen, welche weiter weg sind einen Beitrag haben. Dieser kann aber venachl"assigt werden, da er $10^20$ mal kleiner ist. Grunds"atzlich ist aber auch dort eine Zuhnahme bei den gr"osseren Wellenfunktionen zu erkennen.
+
+\begin{figure}[h]	%Bild PLK(2)log(abs)(2Stoerung).pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/PLK(2)log(abs)(2Stoerung).pdf}
+\caption{Logarithmische Darstellung der Skalarprodukte zweiter N"aherung
+\label{skript:x3_PLK(2)log(abs)(2Stoerung)}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_PLK(2)log(abs)(2Stoerung)} sieht man die Beitr"age aller ungestörten Wellenfunktionen in logarithmischer Darstellung und zweiter N"aherung. Man sieht, dass auch Wellenfunktionen, welche weiter weg sind einen Beitrag haben. Dieser kann aber venachl"assigt werden, da er $10^20$ mal kleiner ist. Grunds"atzlich ist aber auch dort eine Zuhnahme bei den gr"osseren Wellenfunktionen zu erkennen.
+
+\begin{figure}[h]	%Bild PLK(1)Single30(1Stoerung).pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/PLK(1)Single30(1Stoerung).pdf}
+\caption{Anteile der anderen Wellenfunktione an der 30. erste N"aherung
+\label{skript:x3_PLK(1)Single30(1Stoerung)}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_PLK(1)Single30(1Stoerung)} sieht man die Anteile der ungest"orten Wellenfunktionen 30. gest"orten Wellenfunktion erster Ordnung. 
+
+\begin{figure}[h]	%Bild PLK(1)Single30(2Stoerung).pdf
+\centering
+\includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/PLK(1)Single30(2Stoerung).pdf}
+\caption{Anteile der anderen Wellenfunktionen an der 30. zweite N"aherung
+\label{skript:x3_PLK(1)Single30(2Stoerung)}}
+\end{figure}
+
+Auf der Abbildung~\ref{skript:x3_PLK(1)Single30(2Stoerung)} sieht man die Anteile der ungest"orten Wellenfunktionen 30. gest"orten Wellenfunktion zweiter Ordnung.
+
 \subsection{Zweites Beispiel}
+
+%\begin{figure}%[h]	%Bild EK1.pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/EK1.pdf}
+%\caption{St"orung der Energieniveaus erster N"aherung
+%\label{skript:x4_EK1}}
+%\end{figure}
+
+%test
+
+%\begin{figure}%[h]	%Bild EK2.pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/EK2.pdf}
+%\caption{St"orung der Energieniveaus zweiter N"aherung
+%\label{skript:x4_EK2}}
+%\end{figure}
+
+%test
+
+%\begin{figure}%[h]	%Bild Energie(1Stoerung_045e10).pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/Energie(1Stoerung_045e10).pdf}
+%\caption{Energieniveaus und 10. Wellenfunktion in erster N"aherung
+%\label{skript:x4_Energie(1Stoerung_045e10)}}
+%\end{figure}
+
+%test
+
+%\begin{figure}%[h]	%Bild Energie(2Stoerung_045e10).pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/Energie(2Stoerung_045e10).pdf}
+%\caption{Energieniveaus und 10. Wellenfunktion in zweiter N"aherung
+%\label{skript:Energie(2Stoerung_045e10)}}
+%\end{figure}
+
+%test
+
+%\begin{figure}%[h]	%Bild PLK11.pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/PLK11.pdf}
+%\caption{Skalare der Wellenfunktionen erster N"aherung
+%\label{skript:x4_PLK11}}
+%\end{figure}
+
+%test
+
+%\begin{figure}%[h]	%Bild PLK12.pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/PLK12.pdf}
+%\caption{Skalare der Wellenfunktionen erster N"aherung
+%\label{skript:x4_PLK12}}
+%\end{figure}
+
+%test
+
+%\begin{figure}%[h]	%Bild PLK21.pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/PLK21.pdf}
+%\caption{Skalare der Wellenfunktionen zweiter N"aherung
+%\label{skript:x4_PLK21}}
+%\end{figure}
+
+%test
+
+%\begin{figure}%[h]	%Bild PLK22.pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/PLK22.pdf}
+%\caption{Skalare der Wellenfunktionen zweiter N"aherung
+%\label{skript:x4_PLK22}}
+%\end{figure}
+
+%test
+
+%\begin{figure}%[h]	%Bild PLK(1)log(abs)(1Stoerung).pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/PLK(1)log(abs)(1Stoerung).pdf}
+%\caption{Logarithmische Darstellung der Skalarprodukte erster N"aherung
+%\label{skript:x4_PLK(1)log(abs)(1Stoerung)}}
+%\end{figure}
+
+%test
+
+%\begin{figure}%[h]	%Bild PLK(2)log(abs)(2Stoerung).pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/PLK(2)log(abs)(2Stoerung).pdf}
+%\caption{Logarithmische Darstellung der Skalarprodukte zweiter N"aherung
+%\label{skript:x4_PLK(2)log(abs)(2Stoerung)}}
+%\end{figure}
+
+%test
+
+%\begin{figure}%[h]	%Bild PLK(1)Single30(1Stoerung).pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/PLK(1)Single30(1Stoerung).pdf}
+%\caption{Anteile der anderen Wellenfunktione an der 30. erste N"aherung
+%\label{skript:x4_PLK(1)Single30(1Stoerung)}}
+%\end{figure}
+
+%test
+
+%\begin{figure}%[h]	%Bild PLK(1)Single30(2Stoerung).pdf
+%\centering
+%\includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/PLK(1)Single30(2Stoerung).pdf}
+%\caption{Anteile der anderen Wellenfunktionen an der 30. zweite N"aherung
+%\label{skript:x4_PLK(1)Single30(2Stoerung)}}
+%\end{figure}
+
+%test
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
