@@ -1,12 +1,12 @@
 #
-# Makefile zum Skript ueber High Performance Computing
+# Makefile zum Skript ueber Quantenmechanik
 #
 # (c) 2013 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
 all:	subdirs skript.pdf
 
 subdirs:
-	for d in graphics uebungsaufgaben bell; \
+	for d in graphics uebungsaufgaben bell supraleitung; \
 	do \
 		cd $${d}; make; cd ..; \
 	done
