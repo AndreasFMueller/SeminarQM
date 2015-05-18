@@ -43,23 +43,34 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \begin{document}
 
-    \begin{tikzpicture}[
+  \begin{tikzpicture}[
         scale = 0.7,
         pen/.style={decoration={random steps,segment length=4pt,amplitude=0.4pt},decorate}
     ]
 
-    % Grid
+    % Fill pattern
+    \foreach \i in {0,...,4}
+    {
+        \draw[pen](0,\i*0.5)--++(-1.5,-1.5);
+    }
+    \draw[pen](0,-1*0.5)--++(-1,-1);
+    \draw[pen](0,-2*0.5)--++(-0.5,-0.5);
+
+    \foreach \i in {-4,...,1}
+    {
+        \draw[pen](\i*0.5,0)--++(1.5,-1.5);
+    }
+    \draw[pen](2*0.5,0)--++(1,-1);
+
+    % Remove everything outside of circle
+    \draw[fill,white](0,-1.6)--(0,-1.52)arc(270:-90:1.52)--(0,-1.6)--++(2.2,0)--++(0,3.7)--++(-4.3,0)--++(0,-3.7)--++(2.2,0);    
+ 
+    % Axes
     \draw[->,pen] (-2,0) to (2,0) node[anchor=west] {x};
     \draw[->,pen] (0,-2) to (0,2) node[anchor=south]{z};
     
     % Circle
     \draw[pen] (0,0) circle(1.5);
-    
-    % Fill
-    \fill[pen,fill=none] (0,0) to (1.5,0) arc(0:90:1.5);
-    \fill[pen,pattern=north east lines] (0,0) to (0,1.5) arc(90:180:1.5);
-    \fill[pen,pattern=crosshatch] (0,0) to (0,-1.5) arc(-90:-180:1.5);
-    \fill[pen,pattern=north west lines] (0,0) to (1.5,0) arc(0:-90:1.5);
 
     % Text
     \node at (1.4,1.4)   {\Large ++};
