@@ -198,7 +198,7 @@ logischen Schlussfolgerung Einsteins kommen:
 Dass EPR Paradoxon kann mithilfe der Notation des Spins aus 
 Kapitel~\ref{chapter:spin}  einfach mathematisch formuliert werden.
 Wie in den Gleichungen~\ref{spin:paulimatrizen}--\ref{spin:vektoroperator}
-hergeleitet wird der Spin-Operator durch die Pauli-Matrizen beschrieben.
+hergeleitet wird der Spin-Operator durch die Pauli-Matrizen
 
 \begin{align}
     S_x &= \frac{\hbar}{2} \begin{pmatrix}
@@ -213,7 +213,7 @@ hergeleitet wird der Spin-Operator durch die Pauli-Matrizen beschrieben.
     1 & 0 \\ 0 & -1
     \end{pmatrix}\label{equ:bell:paulimatrizen}
 \end{align}
-
+beschrieben.
 Wie in Abschnitt~\ref{subsection:bell:epr:idee} erkl\"art, betrachten wir
 den Spin in $x$- und $z$-Richtung.
 Die Eigenvektoren der entsprechenden Pauli-Matrizen betragen
@@ -246,14 +246,14 @@ Zur Notation dieser kombinierten Zust\"ande wird das Tensorprodukt verwendet.
     Seien
     \begin{align*}
         A = \begin{pmatrix} a_{1} \\ a_{2} \end{pmatrix}
-        &&
-        B = \begin{pmatrix} b_{1} \\ b_{2} \end{pmatrix}
+        && \text{und} &&
+        B = \begin{pmatrix} b_{1} \\ b_{2} \end{pmatrix},
     \end{align*}
     so ist das Tensorprodukt
     \[
         A \otimes B = \begin{pmatrix} 
         a_1 b_1 & a_2 b_1 \\ a_1 b_2 & a_2 b_2
-        \end{pmatrix}
+        \end{pmatrix}.
     \]
 \end{definition}
 
@@ -303,7 +303,7 @@ und somit
       &= 
       -\frac{1}{\sqrt{2}} \Big( 
               |{+}x\rangle \otimes |{-}x\rangle - |{-}x\rangle \otimes |{+}x\rangle
-           \Big)\label{equ:bell:psix}
+           \Big)\label{equ:bell:psix}.
 \end{align}
 Wir haben also gezeigt, dass der Spin-Zustand $|\psi\rangle$ des
 Elektron-Positron Paares gleichermassen in Abh\"angigkeit des $z$-, sowie
@@ -315,7 +315,7 @@ Der Zustand reduziert sich auf
 \begin{align*}
     |\psi_{1}\rangle &= |{+}z\rangle \otimes |{-}z\rangle
     & \text{bzw.} && 
-    |\psi_{2}\rangle &= |{-}z\rangle \otimes |{+}z\rangle
+    |\psi_{2}\rangle &= |{-}z\rangle \otimes |{+}z\rangle.
 \end{align*}
 Damit ist der Spin in $z$-Richtung f\"ur das Positron bei Detektor $B$ ohne
 eine Messung vorbestimmt, n\"amlich als $-z$ im ersten Fall bzw. $+z$ im
@@ -326,7 +326,7 @@ ebenfalls reduziert auf
 \begin{align*}
     |\psi_{a}\rangle &= |{+}x\rangle \otimes |{-}x\rangle
     & \text{bzw.} && 
-    |\psi_{b}\rangle &= |{-}x\rangle \otimes |{+}x\rangle
+    |\psi_{b}\rangle &= |{-}x\rangle \otimes |{+}x\rangle.
 \end{align*}
 Wir erhalten damit zwei Wellenfunktionen, z.B. $|\psi_{1}\rangle$ und 
 $|\psi_{a}\rangle$, welche \emph{gleichzeitig} die gleiche 
@@ -335,7 +335,7 @@ Um zu pr\"ufen ob dies im Fall des Spin-Zustands \"uberhaupt m\"oglich
 ist, wenden wir Hilfssatz~\ref{skript:kommutatorannihliertev} an.
 Der Kommutator $[S_x,S_z]$ ist
 \begin{equation}
-    [S_x, S_z] =  -i \hbar S_y \neq 0
+    [S_x, S_z] =  -i \hbar S_y \neq 0.
 \end{equation}
 Da die Operatoren $S_x$ und $S_z$ also nicht vertauschen, ist nach der Theorie
 der Quantenmechanik die gleichzeitige Kenntnis der beiden Messungen \emph{nicht}
@@ -470,7 +470,7 @@ werden als
     & = \begin{pmatrix}
        a_3 & a_1 - i a_2 \\
        a_1 - i a_2 & -a_3
-    \end{pmatrix} \label{equ:bell:proj_a_s}
+    \end{pmatrix}. \label{equ:bell:proj_a_s}
 \end{align}
 Der Spin-Zustand $|\psi\rangle$ des Elektron-Positron Paares kann mit
 \eqref{equ:bell:meas_a} und $\vec{\hat{\sigma}}_B \cdot \vec{b}$ 
@@ -486,10 +486,10 @@ ist daher
     E_{QM} = \left\langle \phi \left| 
     \left( \vec{\hat{\sigma}}_A \cdot \vec{a} \right)
             \otimes \left( \vec{\hat{\sigma}}_B \cdot \vec{b} \right)
-    \right| \phi \right\rangle
+    \right| \phi \right\rangle.
 \end{equation}
 Da die Messung jeweils entweder $|+\rangle$ oder $|-\rangle$ ergibt, kann
-dies analog zu \eqref{equ:bell:spinstate} umgeformt werden.
+dies analog zu \eqref{equ:bell:spinstate} umgeformt werden zu
 \begin{equation} 
 \begin{split}
    E_{QM }=&\left\langle \phi \left| 
@@ -509,14 +509,14 @@ dies analog zu \eqref{equ:bell:spinstate} umgeformt werden.
         +
         \left\langle{-}\left| \vec{\hat{\sigma}}_A \cdot \vec{a} \right|{-}\right\rangle_A
         \left\langle{+}\left| \vec{\hat{\sigma}}_B \cdot \vec{b} \right|{+}\right\rangle_B
-    \Bigg]
+    \Bigg],
 \end{split}
 \end{equation}
-Was mit \eqref{equ:bell:proj_a_s} vereinfacht werden kann zu
+was mit \eqref{equ:bell:proj_a_s} vereinfacht werden kann zu
 \begin{equation}\label{equ:bell:e_qm}
 \begin{split}
     E_{QM} &= \frac{1}{2} \big[ -a_3b_3 - (a_1-ia_2)(b_1+ib_2) - (a_1+ia_2)(b_1-ib_2) - a_3b_3 \big] \\
-    &= -\big[ a_1b_1 + a_2b_2 + a_3b_3 \big] = -\vec{a} \cdot \vec{b}
+    &= -\big[ a_1b_1 + a_2b_2 + a_3b_3 \big] = -\vec{a} \cdot \vec{b}.
 \end{split}
 \end{equation}
 Da $\vec{a}$ und $\vec{b}$ Einheitsvektoren sind, gilt
@@ -526,7 +526,7 @@ Da $\vec{a}$ und $\vec{b}$ Einheitsvektoren sind, gilt
 mit dem Winkel $\theta_{ab}$ zwischen $\vec{a}$ und $\vec{b}$.
 Somit wird der quantenmechanische Erwartungswert zu
 \begin{equation}\label{equ:bell:res_qm}
-    E_{QM}(\vec{a},\vec{b}) = -\vec{a}\cdot\vec{b} = -\cos(\theta_{ab})
+    E_{QM}(\vec{a},\vec{b}) = -\vec{a}\cdot\vec{b} = -\cos(\theta_{ab}).
 \end{equation}
 
 \subsection{Vorhersage mittels verborgener Variablen}
@@ -534,7 +534,7 @@ Nehmen wir nun an, dass eine Theorie der verborgenen Variablen vorliegt
 und eine Variable $\lambda \in \Lambda$ existiert.
 Die Wahrscheinlichkeitsverteilung dieser Variable sei $\rho(\lambda)$, womit gilt
 \begin{equation}\label{equ:bell:lambdaverteilung}
-    \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda = 1
+    \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda = 1.
 \end{equation}
 Damit diese Theorie die Quantenmechanik erweitern kann, muss sie die Vorhersage
 der Quantenmechanik mit dem Erwartungswert 
@@ -556,7 +556,7 @@ l\"asst sich nun der Erwartungswert des Produkts der beiden Spin-Messungen
 bestimmen als
 \begin{equation}\label{equ:bell:e_lambda}
     E(\vec{a},\vec{b}) = \int_{\lambda\in\Lambda} 
-        \rho(\lambda) A(\vec{a},\lambda) B(\vec{b},\lambda) d\lambda
+        \rho(\lambda) A(\vec{a},\lambda) B(\vec{b},\lambda) d\lambda.
 \end{equation}
 Durch \eqref{equ:bell:res_qm} ist f\"ur $\vec{a} = \vec{b}$ der 
 quantenmechanische Erwartungswert $E_{QM} = -1$.
@@ -574,7 +574,7 @@ zutreffen, falls
 Damit wird \eqref{equ:bell:e_lambda} vereinfacht zu
 \begin{equation}\label{equ:bell:e_lambda_vereinf}
     E(\vec{a},\vec{b}) = -\int_{\lambda\in\Lambda} 
-        \rho(\lambda) A(\vec{a},\lambda) A(\vec{b},\lambda) d\lambda
+        \rho(\lambda) A(\vec{a},\lambda) A(\vec{b},\lambda) d\lambda.
 \end{equation}
 
 \subsection{Herleitung der Bellschen Ungleichung}
@@ -613,7 +613,7 @@ eingef\"uhrt.
     Es wird $\alpha\in\mathbb{C}$ mit $|\alpha| = 1$ gew\"ahlt, sodass
     \[
         \alpha \cdot \int_{\Omega} Z\, d\mu = 
-        \left|\int_{\Omega} Z\, d\mu\,\right|
+        \left|\int_{\Omega} Z\, d\mu\,\right|.
     \]
     Damit ist
     \[
@@ -622,7 +622,7 @@ eingef\"uhrt.
         \int_{\Omega}\operatorname{Re}(\alpha Z)\,d\mu
         \leq
         \int_{\Omega} |\,\alpha Z\,|\, d\mu = 
-        \int_{\Omega} |\,Z\,|\, d\mu
+        \int_{\Omega} |\,Z\,|\, d\mu.
     \]
 \end{proof}
 
@@ -640,7 +640,7 @@ Hilfssatz~\ref{hilfssatz:bell:dreiecksungleichung_integral} geschrieben als
     \int_{\lambda\in\Lambda} \left|  
         \rho(\lambda)A(\vec{a},\lambda)A(\vec{b},\lambda)
         \left[ A(\vec{b},\lambda)A(\vec{c},\lambda) - 1 \right]
-    \right| d\lambda
+    \right| d\lambda.
 \end{split}
 \end{equation}
 Der Term auf der rechten Seite wird nun mithilfe von $|A(\cdot,\lambda)|=1$
@@ -658,7 +658,7 @@ weiter vereinfacht zu
     \left[1 - A(\vec{b},\lambda)A(\vec{c},\lambda) \right] d\lambda \\
     &= \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda
     - \int_{\lambda\in\Lambda} \rho(\lambda) 
-    (\vec{b},\lambda)A(\vec{c},\lambda) d\lambda
+    (\vec{b},\lambda)A(\vec{c},\lambda) d\lambda.
 \end{align*}
 Damit sind wir wieder bei einem Erwartungswert der Form von
 \eqref{equ:bell:e_lambda_vereinf} und k\"onnen die erste Form der Bellschen
@@ -673,9 +673,10 @@ Diese Ungleichung muss, wenn eine Theorie lokaler, verborgener Variablen
 vorliegt, f\"ur alle Richtungen $\vec{a}$, $\vec{b}$ und $\vec{c}$ gelten.
 Betrachten wir als Beispiel die Messrichtungen
 \begin{align*}
-    \varangle\vec{a}\vec{b} = \frac{\pi}{4} &&
+    \varangle\vec{a}\vec{b} = \frac{\pi}{4}, &&
     \varangle\vec{b}\vec{c} = \frac{\pi}{4} &&
-    \varangle\vec{a}\vec{c} = 0
+    \text{und} &&
+    \varangle\vec{a}\vec{c} = 0,
 \end{align*}
 welche in Abbildung~\ref{fig:bell:orientierung_pi4} dargestellt sind.
 Werden die Erwartungswerte der Quantenmechanik nach 
@@ -691,7 +692,7 @@ eingesetzt, folgt
 \end{figure}
 
 \[
-    \frac{1}{\sqrt{2}} \nleqslant 1 - \frac{1}{\sqrt{2}}
+    \frac{1}{\sqrt{2}} \nleqslant 1 - \frac{1}{\sqrt{2}}.
 \]
 
 Mit den gew\"ahlten Orientierungen ergibt sich also ein Widerspruch. 
@@ -741,7 +742,7 @@ Damit wird \eqref{equ:bell:werte_ab} zu
 \begin{equation*}
     \left| \bar{A}(\vec{a},\lambda) \right| \leq 1
     \qquad \text{und} \qquad 
-    \left| \bar{B}(\vec{b},\lambda) \right| \leq 1
+    \left| \bar{B}(\vec{b},\lambda) \right| \leq 1.
 \end{equation*}
 
 Nun werden statt die 3 Messrichtungen $\vec{a}$, $\vec{b}$ und $\vec{c}$
@@ -761,7 +762,7 @@ erhalten schlussendlich
     \left| E(\vec{a},\vec{b}) - E(\vec{a},\vec{b}') \right| \leq \pm \left[
         E(\vec{a}',\vec{b}') + E(\vec{a}',\vec{b})
     \right]
-    + 2 \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda
+    + 2 \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda,
 \]
 was wir mit einem letzten Schritt zur BCHSH-Ungleichung
 \begin{equation}\label{equ:bell:bchsh-ungleichung}
@@ -769,13 +770,14 @@ was wir mit einem letzten Schritt zur BCHSH-Ungleichung
     E(\vec{a},\vec{b}) - E(\vec{a},\vec{b'}) + E(\vec{a'},\vec{b}) + E(\vec{a'},\vec{b'})
     \leq 2
 \end{equation}
-umformen k\"onnen
+umformen k\"onnen.
 Betrachten wir nun die in Abbildung~\ref{fig:bell:orientierung_2}
 abgebildeten Messrichtungen
 \begin{align*}
-    \varangle\vec{a}\vec{b} = \frac{\pi}{4} && 
+    \varangle\vec{a}\vec{b} = \frac{\pi}{4}, && 
     \varangle\vec{b}\vec{a}' = \frac{\pi}{4} && 
-    \varangle\vec{a}'\vec{b}' = \frac{\pi}{4} 
+    \text{und} &&
+    \varangle\vec{a}'\vec{b}' = \frac{\pi}{4}.
 \end{align*}
 \begin{figure}
     \centering
@@ -786,7 +788,7 @@ abgebildeten Messrichtungen
 \end{figure}
 Das Einsetzen der Werte ergibt
 \[
-    2 \sqrt{2} \nleqslant 2
+    2 \sqrt{2} \nleqslant 2,
 \]
 womit die Quantenmechanik die BCHSH Ungleichung ebenfalls verletzt.
 
@@ -796,11 +798,11 @@ nicht, wie hier besprochen, Elektron-Positron-Paare verwendet, sondern
 Photonen mit identischer Polarisation.
 Dabei k\"onnen die Photon entweder vertikal ($+$) oder horizontal
 ($-$) polarisiert sein. 
-Es ergibt sich der folgende Polarisationszustand:
+Es ergibt sich der folgende Polarisationszustand
 \begin{equation}\label{equ:bell:photonstate}
     |\psi\rangle = \frac{1}{\sqrt{2}} \Big(
         |{+}\rangle \otimes |{+}\rangle + |{-}\rangle \otimes |{-}\rangle
-    \Big)
+    \Big).
 \end{equation}
 Wird nun die Polarisation der beiden Photonen in der gleichen Richtung 
 gemessen, sind die Messergebnisse perfekt korreliert.
@@ -815,7 +817,7 @@ vorkommen ($N_{++}, N_{+-}, N_{-+}, N_{--}$).
 Der Erwartungswert $E(\vec{a},\vec{b})$ einer Detektor-Einstellung 
 $(\vec{a},\vec{b})$ wird nun berechnet durch
 \begin{equation}
-    E = \frac{N_{++} + N_{--} - N_{+-} - N_{-+}}{N_{++} + N_{--} + N_{+-} + N_{-+}}
+    E = \frac{N_{++} + N_{--} - N_{+-} - N_{-+}}{N_{++} + N_{--} + N_{+-} + N_{-+}}.
 \end{equation}
 Die Bellsche Ungleichung wird \"uberpr\"uft, indem die vier Einstellungen
 $(\vec{a},\vec{b})$, $(\vec{a},\vec{b}')$, $(\vec{a}',\vec{b})$
@@ -954,7 +956,7 @@ beheben konnte.
 Ihr Ergebnis,
 \[
     S(\SI{0}{\degree},\SI{45}{\degree},\SI{22.5}{\degree},\SI{67.5}{\degree})
-    = 2.73 \pm 0.02 \nleqslant 2
+    = 2.73 \pm 0.02 \nleqslant 2,
 \]
 konnte die Existenz einer Theorie der lokalen verborgenen Variablen klar 
 ausschliessen.
