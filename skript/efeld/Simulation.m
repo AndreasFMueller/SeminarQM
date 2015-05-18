@@ -17,12 +17,13 @@
 
 %-----Variabeln-----
 l = 10^-9;
-xSteps = 100;
+xSteps = 225;
 delta = (l/xSteps);
 %x = -l*1.5 : delta : +l*1.5;
 x = -l : delta : +l;
-n = 1 : 20;
+n = 1 : 200;
 nPlot = 1 : 5;
+kurvenVersatz = 1e5
 %n = [1, 2];
 
 %-----Verarbeitung-----
@@ -32,22 +33,22 @@ hQuer = h/2*pi;
 E = zeros(1, length(n));
 Psi = zeros(length(n), length(x));
 for ln = n
-E(ln) = h^2*ln^2 / (32*m*l^2);
-%k = sqrt(2*m*E/(hQuer^2));
-%k = ln*pi*x / (2*l);
-k = pi/l * (n+1/2);
-LamdaP = 1i*k;
-LamdaN = -LamdaP;
-%y = (exp(LamdaP(ln)*x) + (-1)^(ln+1).*exp(LamdaN(ln)*x)) ./ (2*1i^(ln+1));
-if mod(ln, 2) == 0
-	y = sin(ln*pi*x/(2*l));
-else
-	y = cos(ln*pi*x/(2*l));
-end
-Psi(ln,1:length(x)) = 1/sqrt(l) .* y;
+    E(ln) = h^2*ln^2 / (32*m*l^2);
+    %k = sqrt(2*m*E/(hQuer^2));
+    %k = ln*pi*x / (2*l);
+    k = pi/l * (n+1/2);
+    LamdaP = 1i*k;
+    LamdaN = -LamdaP;
+    %y = (exp(LamdaP(ln)*x) + (-1)^(ln+1).*exp(LamdaN(ln)*x)) ./ (2*1i^(ln+1));
+    if mod(ln, 2) == 0
+        y = sin(ln*pi*x/(2*l));
+    else
+        y = cos(ln*pi*x/(2*l));
+    end
+    Psi(ln,1:length(x)) = 1/sqrt(l) .* y;
 end
 
-%-----Verarbeitung gestört-----
+%-----Verarbeitung gestï¿½rt-----
 gamma = 0;
 %epsilon = 4*10^-3;
 epsilon = 10^-3;
@@ -81,7 +82,8 @@ hold on;
 
 s = zeros(1, length(n));
 for ln = nPlot		% ungestoerter Plot
-	plot(x, Psi(ln, :) + (ln-1)*2e05, 'Color', 'black')		% Psi
+	%plot(x, Psi(ln, :) + (ln-1)*2e05, 'Color', 'black')		% Psi
+    plot(x, Psi(ln, :) +(ln-1)*kurvenVersatz, 'Color', 'black')		% Psi
 
 	s(ln) = sum(Psi(ln, :).^2.*delta);
 end
@@ -94,7 +96,8 @@ end
 
 sG = zeros(1, length(n));
 for ln = nPlot		% gestoerter Plot
-	plot(x, PsiG(ln, 1:length(x)) + (ln-1)*2e05, 'Color', 'red')		% Psi
+	%plot(x, PsiG(ln, 1:length(x)) + (ln-1)*2e05, 'Color', 'red')		% Psi
+    plot(x, PsiG(ln, 1:length(x)) + (ln-1)*kurvenVersatz, 'Color', 'red')		% Psi
 
 	sG(ln) = sum(PsiG(ln, :).^2.*delta);
 end
