@@ -48,7 +48,7 @@ wobei $\varphi$ ist das skalare Potential des Feldes ist. Durch Einsetzen von $E
 (\ref{fq:maxwell_3}) und (\ref{fq:maxwell_4}) wurden bereits erf"ullt. Durch Einsetzen von $E$ und $B$ wird aus (\ref{fq:maxwell_1}) und (\ref{fq:maxwell_2}):
 \begin{align} 
  \label{fq:a_coupled_a}
- \nabla^2 \varphi + \dfrac{\partial \nabla A}{\partial t} &= -\frac{\varrho}{\varepsilon_0}, \\
+ \nabla^2 \varphi + \dfrac{\partial \nabla \cdot A}{\partial t} &= -\frac{\varrho}{\varepsilon_0}, \\
  \label{fq:a_coupled_b}
  \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A }{\partial t^2} - \nabla \left( \nabla \cdot A + \frac{1}{c^2} \frac{\partial \varphi }{\partial t} \right) &= - \mu_0 j.
 \end{align}
@@ -77,7 +77,7 @@ A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c_{k,\alpha} \varepsi
 $k$ ist der Ausbreitungsvektor der Welle und zeigt in die Ausbreitungsrichtung. $\varepsilon^{(\alpha)}$ ist die Polarisation. Dabei ist:
 \begin{align*}
 \omega_k=|k|c, \\
-\lambda = \frac{2 \pi}{|k|}.
+\lambda_k = \frac{2 \pi}{|k|}.
 \end{align*}
 Durch setzen von $c_{k,\alpha}(t) = c_{k,\alpha} e^{-i \omega_k t}$ sowie $u_{k,\alpha}(x) = \varepsilon^{(\alpha)} e^{ik \cdot x}$ kann die Gleichung auch in zeit- und ortsabh"angige Faktoren aufgeteilt werden:
 \begin{equation*}
@@ -172,7 +172,7 @@ a_{k,\alpha} &= \frac{1}{\sqrt{2 \hbar \omega_k}} (\omega_k Q_{k,\alpha} + iP_{k
 a^+_{k,\alpha} &= \frac{1}{\sqrt{2 \hbar \omega_k}} (\omega_k Q_{k,\alpha} - iP_{k,\alpha}),\\
 \begin{split}
 N_{k,\alpha} &= a^+_{k,\alpha} a_{k,\alpha} = \frac{1}{2 \hbar \omega_k} \left(P_{k,\alpha}^2 + \omega_k^2 Q_{k,\alpha}^2 + i\omega_k [Q_{k,\alpha},P_{k,\alpha}] \right) \\
- &= \frac{1}{ \hbar \omega_k } H - \frac{1}{2} = {\cal H} - \frac{1}{2}.
+ &= \frac{1}{ \hbar \omega_k } H_{k,\alpha} - \frac{1}{2} = {\cal H}_{k,\alpha} - \frac{1}{2}.
 \end{split}
 \end{align*}
 Ein Vergleich mit (\ref{fq:hamilton}) liefert
@@ -242,7 +242,7 @@ Hier muss $n$ eine ganze Zahl sein, damit die absteigende Folge bei null stehen 
 a\,|n\rangle = \sqrt{e_n}\,|n-1\rangle  \;, \quad \hdots \; , \quad a\,|2\rangle = \sqrt{2}\,|1\rangle \; , \quad a\,|1\rangle = 0\,|0\rangle \;, \quad a\,|0\rangle = 0\,|0\rangle.
 \end{equation*}
 
-Hier ist der kleinst m"ogliche Eigenwert $e_n = 0$. Dem aufmerksamen Beobachter ist aufgefallen, dass der kleinste Eigenwert bei harmonischen Oszillator $e_n = \frac{1}{2}$ ist. Dies r"uhrt daher, dass wir hier f"ur $N$ Eigenwerte gesucht haben, im Kapitel \ref{chapter:harmonischeroszillator} aber f"ur ${\cal H}$. Die Korrektheit der Formeln gilt f"ur beide Operatoren. Der Grund liegt darin, dass der Nullpunkt der Energieskala nicht festgelegt ist und f"ur die Feldquantisierung keine Rolle spielt. Es gibt Anwendungen, wie bei der Gravitation, wo der Nullpunkt nicht frei w"ahlbar ist. Wo dieser genau liegt, ist Gegenstand der aktuellen Forschung.
+Hier ist der kleinst m"ogliche Eigenwert $e_n = 0$. Dem aufmerksamen Beobachter ist aufgefallen, dass der kleinste Eigenwert beim harmonischen Oszillator $e_n = \frac{1}{2}$ ist. Dies r"uhrt daher, dass wir hier f"ur $N$ Eigenwerte gesucht haben, im Kapitel \ref{chapter:harmonischeroszillator} aber f"ur ${\cal H}$. Die Korrektheit der Formeln gilt f"ur beide Operatoren. Der Grund liegt darin, dass der Nullpunkt der Energieskala nicht festgelegt ist und f"ur die Feldquantisierung keine Rolle spielt. Es gibt Anwendungen, wie bei der Gravitation, wo der Nullpunkt nicht frei w"ahlbar ist. Wo dieser genau liegt, ist Gegenstand der aktuellen Forschung.
 
 \subsection{Photonen}
 
@@ -340,7 +340,7 @@ $H_0$ ist der Hamilton-Opperator f"ur das Elektron ohne das elektromagnetische F
 \langle Y| \, H \, |X \rangle = \langle Y| \, H_0 + H_{\text{int}} \, |X \rangle = \langle Y| \, H_0 \, |X \rangle + \langle Y| \, H_{\text{int}} \, |X \rangle.
 \end{equation*}
 
-Da $X$ und $Y$ verschiedene Eigenzust"ande des Elektrons, und somit von $H_0$, sind gilt $\langle Y| \, H_0 \, |X \rangle=0$. Wir nur m"ussen also nur $\langle Y| \, H_{\text{int}} \, |X \rangle$ betrachten.
+Da $X$ und $Y$ verschiedene Eigenzust"ande des Elektrons und somit von $H_0$ sind, gilt $\langle Y| \, H_0 \, |X \rangle=0$. Wir nur m"ussen also nur $\langle Y| \, H_{\text{int}} \, |X \rangle$ betrachten.
 
 \subsection{Wechselwirkung zwischen Photonen und Elektronen}
 
@@ -379,7 +379,7 @@ Somit ist die Wahrscheinlichkeit einer Absorption proportional zu $n_{k,\alpha}$
 \subsubsection{Emission und Absorption}
 Beim Betrachten von (\ref{fq:emission}) f"allt auf, dass die Wahrscheinlichkeit f"ur die Emission bei nicht vorhandener elektromagnetischer Strahlung ($n_{k,\alpha} = 0$) gr"osser als null ist, da $n_{k,\alpha}+1 > 0$. Dieses Ph"anomen wird spontane Emission genannt.
 
-Bei st"arkerer Strahlung ist die Wahrscheinlichkeit der Emission ungef"ahr proportional zur Anzahl Photonen und wird stimulierte Emission genannt. Da die emittierten Photonen exakt den selben Zustand haben wie Stimulierenden, kann dieses Ph"anomen dazu verwendet werden, einen Laser zu bauen, bei dem alle ausgesendeten Photonen den selben Zustand haben. Dies wird in Kapitel \ref{chapter:laser} beschrieben.
+Bei st"arkerer Strahlung ist die Wahrscheinlichkeit der Emission ungef"ahr proportional zur Anzahl Photonen und wird stimulierte Emission genannt. Da die emittierten Photonen exakt den selben Zustand haben wie stimulierenden, kann dieses Ph"anomen dazu verwendet werden, einen Laser zu bauen, bei dem alle ausgesendeten Photonen den selben Zustand haben. Dies wird in Kapitel \ref{chapter:laser} beschrieben.
 
 Die Absorption ist proportional zur Anzahl Photonen. Wenn das Feld gen"ugend stark ist ($n_{k,\alpha} \gg 1$) ist die Absorptions- sowie Emissionswahrscheinlichkeit praktisch gleich, da $n_{k,\alpha}+1 \approx n_{k,\alpha}$. 
 
