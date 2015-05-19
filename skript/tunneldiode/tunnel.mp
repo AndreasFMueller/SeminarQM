@@ -1000,9 +1000,12 @@ def ckurve(expr omega) =
 	draw omegapoint(omega);
 enddef;
 
-for iomega = 20 step 20 until 190:
+for iomega = 20 step 20 until 200:
 	ckurve(1. / iomega);
 endfor;
+
+pickup pencircle scaled 4pt;
+draw omegapoint(1 / 160);
 
 pickup pencircle scaled 1pt;
 
