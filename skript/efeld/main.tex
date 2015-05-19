@@ -9,15 +9,20 @@ In diesem Kapitel erweitern wir das Beispiel des Potentialkastens
 um eine St\"orung.
 
 \section{ St"orungstheorie }
-Grundsätzlich wir mit der St\"orungstheorie ein einfaches Modell-System um eine St\"orung
-erg"antzt, statt von Anfang an mit einem komplexen Modell zu rechnen.
-
-Wir erg\"anzen das Modell des einfachen Systems $\hat H_0$
-(Siehe Abbildung \ref{skript:potentialkasten})
-um $\hat H_1$, welches das angelegte Feld darstellt.
+Grundsätzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell mit einer St\"orung erg"anzen, anstatt von Anfang an mit einem komplexen Modell zu rechnen.
+Allgemein gilt
 \[
-\hat{H} = \varepsilon^0 \hat H_0 + \varepsilon^1 \hat H_1
+$f(x, \varepsilon) = f_0(x) + \varepsilon*f_1(x) + \varepsilon^2*f_2(x) + ...$
 \]
+Dabei ist $f_0(x)$ die original Funktion und $f_n(x)$ die n-te  N"aherung der Störung.
+Mit $\varepsilon$ wird die Störung gesteuert. Dabei sollte $\varepsilon = 0$ nicht zu gross gew"ahlt werden, weil sonst die N"aherung nicht mehr stimmt. $\varepsilon = 0$ bedeutet keine Störung.
+
+In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den Hamilton-Operator erg"anzen:
+\[
+H = \varepsilon^0*H_0 + \varepsilon^1*H_1 + \varepsilon^2*H_2 + ...
+\]
+Daraus kann die N"aherung der St"orung berechnet werden.
+
 
 
 
@@ -26,11 +31,19 @@ um $\hat H_1$, welches das angelegte Feld darstellt.
 \section{ Beispiele }
 
 \subsection{ Potentialkasten mit eFeld }
-Als $\hat H_0$ nehmen wir
+
+Wir berechnen in diesem Beispie die erste N"aherung von einem Potentialskasten mit elektrischem Feld.
+Dazu erweitern wir das einfache System  $\hat H_0$
+(Siehe Abbildung \ref{skript:potentialkasten})
+um $\hat H_1$, welcher die Störung darstellt.
+\[
+\hat{H} = \hat H_0 + \varepsilon \hat H_1
+\]
+F"ur $\hat H_0$ nehmen wir die Funktion aus dem Skript
 \[
   \hat H_0 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x)
 \]
-f\"ur das Potential $V_0(x)$ gilt
+wobei f\"ur das Potential $V_0(x)$ gilt
 \[
   V_0(x)=\begin{cases}
     0       & \qquad |x|<l\\
@@ -38,20 +51,15 @@ f\"ur das Potential $V_0(x)$ gilt
   \end{cases}
 \]
 
-F\"ur $\hat H_1$ gilt
+$\hat H_1$ gibt unser elektrisches Feld an
 \[
-  \hat H_1 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_1(x)
+  \hat H_1 = a*x + b
 \]
-
-f\"ur das Potential $V_1(x)$ gilt
-\[
-  V_1(x) = a*x +b ; b = 0 \text{ weil es dann symetisch ist }
-\]
-
-Die Ausgangsgleichung f\"ur $\hat{H}$ lautet
+wobei wir $a = 1$ und $b = 0$ setzen k"onnen.
+Die Ausgangsgleichung f\"ur $\hat{H}$ lautet somit
 \[
   \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
-            + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + a*x )
+            + \varepsilon^1*x
 \]
 
 \subsubsection{ Modell der St\"orung }
@@ -59,7 +67,7 @@ In diesem Modell wollen wir den Grundzustand mit einem elektrischen Feld st\"ore
 
 Diese St\"orung heisst in der 1. N\"aherung $\hat H_1$
 
-Die gesammte St\"orung wird \"uber den Parameter $\varepsilon$ gesteuert.
+Die gesamte St\"orung wird \"uber den Parameter $\varepsilon$ gesteuert.
 
 $V_1$ wird als lineares Feld definiert:
 \[
@@ -67,7 +75,7 @@ $V_1$ wird als lineares Feld definiert:
 \]
 
 Der Parameter $a$ steht f\"ur die Feldst\"arke. Da diese jedoch bereits durch 
-$\varepsilon$ beschriben wird, k\"onnen wir die Formel f\"ur $V_1$ mit $a = 1$ vereinfachen:
+$\varepsilon$ beschrieben wird, k\"onnen wir die Formel f\"ur $V_1$ mit $a = 1$ vereinfachen:
 \[
   \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
             + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + x )
