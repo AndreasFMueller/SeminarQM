@@ -191,4 +191,88 @@ label.llft(btex $x_-(\varepsilon) = 1-\sqrt{\varepsilon}$ etex,
 
 endfig;
 
+%
+% Stoerungsloesung der Keplergleichung
+%
+beginfig(4)
+
+numeric	xunit, yunit;
+xunit := 28;
+yunit := 60;
+
+pickup pencircle scaled 1.5pt;
+draw ( 0.000 * xunit,  30.000 * yunit)..
+	( 0.500 * xunit,  30.148 * yunit)..
+	( 1.000 * xunit,  30.298 * yunit)..
+	( 1.500 * xunit,  30.450 * yunit)..
+	( 2.000 * xunit,  30.603 * yunit)..
+	( 2.500 * xunit,  30.757 * yunit)..
+	( 3.000 * xunit,  30.913 * yunit)..
+	( 3.500 * xunit,  31.070 * yunit)..
+	( 4.000 * xunit,  31.229 * yunit)..
+	( 4.500 * xunit,  31.389 * yunit)..
+	( 5.000 * xunit,  31.552 * yunit)..
+	( 5.500 * xunit,  31.715 * yunit)..
+	( 6.000 * xunit,  31.881 * yunit)..
+	( 6.500 * xunit,  32.048 * yunit)..
+	( 7.000 * xunit,  32.216 * yunit)..
+	( 7.500 * xunit,  32.387 * yunit)..
+	( 8.000 * xunit,  32.559 * yunit)..
+	( 8.500 * xunit,  32.733 * yunit)..
+	( 9.000 * xunit,  32.909 * yunit)..
+	( 9.500 * xunit,  33.086 * yunit)..
+	(10.000 * xunit,  33.266 * yunit) withcolor red;
+
+pickup pencircle scaled 1pt;
+drawarrow (0.000 * xunit, 30.000 * yunit)--(10.500 * xunit, 30.000 * yunit);
+label.top(btex $e$ etex, (10.5 * xunit, 30 * yunit + 2));
+for x = 1 step 1 until 10:
+	draw (x * xunit, 30 * yunit + 2)--(x * xunit, 30 * yunit - 2);
+endfor;
+label.bot(btex $0.01$ etex, ( 1 * xunit, 30 * yunit - 2));
+label.bot(btex $0.02$ etex, ( 2 * xunit, 30 * yunit - 2));
+label.bot(btex $0.03$ etex, ( 3 * xunit, 30 * yunit - 2));
+label.bot(btex $0.04$ etex, ( 4 * xunit, 30 * yunit - 2));
+label.bot(btex $0.05$ etex, ( 5 * xunit, 30 * yunit - 2));
+label.bot(btex $0.06$ etex, ( 6 * xunit, 30 * yunit - 2));
+label.bot(btex $0.07$ etex, ( 7 * xunit, 30 * yunit - 2));
+label.bot(btex $0.08$ etex, ( 8 * xunit, 30 * yunit - 2));
+label.bot(btex $0.09$ etex, ( 9 * xunit, 30 * yunit - 2));
+label.bot(btex $0.10$ etex, (10 * xunit, 30 * yunit - 2));
+
+drawarrow (0,30 * yunit -2)--(0,33.5 * yunit);
+label.lft(btex $E$ etex, (-2, 33.5 * yunit));
+for y = 30 step 1 until 33:
+	draw (-2, y * yunit)--(2, y * yunit);
+endfor
+label.lft(btex $0.30$ etex, (-2, 30 * yunit));
+label.lft(btex $0.31$ etex, (-2, 31 * yunit));
+label.lft(btex $0.32$ etex, (-2, 32 * yunit));
+label.lft(btex $0.33$ etex, (-2, 33 * yunit));
+
+pickup pencircle scaled 3pt;
+	draw ( 0.000 * xunit, 30.000 * yunit) withcolor blue;
+	draw ( 0.500 * xunit, 30.151 * yunit) withcolor blue;
+	draw ( 1.000 * xunit, 30.303 * yunit) withcolor blue;
+	draw ( 1.500 * xunit, 30.457 * yunit) withcolor blue;
+	draw ( 2.000 * xunit, 30.612 * yunit) withcolor blue;
+	draw ( 2.500 * xunit, 30.769 * yunit) withcolor blue;
+	draw ( 3.000 * xunit, 30.928 * yunit) withcolor blue;
+	draw ( 3.500 * xunit, 31.088 * yunit) withcolor blue;
+	draw ( 4.000 * xunit, 31.250 * yunit) withcolor blue;
+	draw ( 4.500 * xunit, 31.414 * yunit) withcolor blue;
+	draw ( 5.000 * xunit, 31.579 * yunit) withcolor blue;
+	draw ( 5.500 * xunit, 31.746 * yunit) withcolor blue;
+	draw ( 6.000 * xunit, 31.915 * yunit) withcolor blue;
+	draw ( 6.500 * xunit, 32.085 * yunit) withcolor blue;
+	draw ( 7.000 * xunit, 32.258 * yunit) withcolor blue;
+	draw ( 7.500 * xunit, 32.432 * yunit) withcolor blue;
+	draw ( 8.000 * xunit, 32.608 * yunit) withcolor blue;
+	draw ( 8.500 * xunit, 32.787 * yunit) withcolor blue;
+	draw ( 9.000 * xunit, 32.967 * yunit) withcolor blue;
+	draw ( 9.500 * xunit, 33.149 * yunit) withcolor blue;
+	draw (10.000 * xunit, 33.333 * yunit) withcolor blue;
+
+endfig;
+
 end
