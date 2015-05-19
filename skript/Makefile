@@ -6,7 +6,7 @@
 all:	subdirs skript.pdf
 
 subdirs:
-	for d in graphics uebungsaufgaben bell supraleitung; \
+	for d in graphics uebungsaufgaben bell supraleitung flash; \
 	do \
 		cd $${d}; make; cd ..; \
 	done

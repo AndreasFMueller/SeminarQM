@@ -619,6 +619,27 @@ koordinatensystem(vunit, iunit);
 
 endfig;
 
+
+def omega(expr Omega) =
+	sqrt(2 * Omega)
+enddef;
+
+def hyp(expr x, Omega) =
+	Omega / x
+enddef;
+
+def hyperbola(expr Omega, c, m) =
+	numeric x;
+	x := 3;
+	path p;
+	p := (x, hyp(x,Omega));
+	for x = 4 step 1 until m:
+		p := p..(x, hyp(x,Omega));
+	endfor;
+	draw p withcolor c;
+enddef;
+
+
 beginfig(8)
 
 numeric width;
@@ -630,26 +651,8 @@ numeric A;
 A := 0.25;
 numeric a;
 a := 2 * sqrt(A);
-def omega(expr Omega) =
-	sqrt(2 * Omega)
-enddef;
 
 pickup pencircle scaled 1.5pt;
-
-def hyp(expr x, Omega) =
-	Omega / x
-enddef;
-
-def hyperbola(expr Omega) =
-	numeric x;
-	x := 3;
-	path p;
-	p := (x, hyp(x,Omega));
-	for x = 4 step 1 until width:
-		p := p..(x, hyp(x,Omega));
-	endfor;
-	draw p;
-enddef;
 
 fill (0.6 * width,0)--(width,0)--(width,height)--(0.6*width,height)--cycle
 	withcolor (0.7,0.7,0.7);
@@ -659,13 +662,13 @@ fill ((z2 shifted(-20,-13))--(z2 shifted(20,-13))--(z2 shifted(20,13))
 	--(z2 shifted(-20,13))--cycle) withcolor white;
 label(btex $\displaystyle L \ge \frac1{a\omega}$ etex, z2);
 
-hyperbola(500 *  1);
-hyperbola(500 *  4);
-hyperbola(500 *  9);
-hyperbola(500 * 16);
-hyperbola(500 * 25);
-hyperbola(500 * 36);
-hyperbola(500 * 49);
+hyperbola(500 *  1, black, width);
+hyperbola(500 *  4, black, width);
+hyperbola(500 *  9, black, width);
+hyperbola(500 * 16, black, width);
+hyperbola(500 * 25, black, width);
+hyperbola(500 * 36, black, width);
+hyperbola(500 * 49, black, width);
 
 pickup pencircle scaled 1pt;
 
@@ -926,6 +929,97 @@ label(btex $\oplus$ etex, (-19,-27)) withcolor red;
 label(btex $\oplus$ etex, (-14,-35)) withcolor red;
 label(btex $\oplus$ etex, (- 9,-27)) withcolor red;
 label(btex $\oplus$ etex, (- 4,-35)) withcolor red;
+
+endfig;
+
+%
+% L in Abhaengigkeit von C
+%
+beginfig(15)
+
+numeric width;
+numeric height;
+width := 200;
+height := 140;
+
+numeric A;
+A := 0.25; % A = a^2/4
+numeric a;
+a := 2 * sqrt(A);
+
+def omegapoint(expr omega) =
+	(1 / (omega * a), a / (2 * omega))
+enddef;
+
+pickup pencircle scaled 0.5pt;
+
+draw omegapoint(1. / 20)--( 20, 2 * 225 *  1 / 20) withcolor (0.8,0.8,0.8);
+draw omegapoint(1. / 40)--( 40, 2 * 225 *  4 / 40) withcolor (0.8,0.8,0.8);
+draw omegapoint(1. / 60)--( 60, 2 * 225 *  9 / 60) withcolor (0.8,0.8,0.8);
+draw omegapoint(1. / 80)--( 80, 2 * 225 * 16 / 80) withcolor (0.8,0.8,0.8);
+draw omegapoint(1. /100)--(100, 2 * 225 * 25 /100) withcolor (0.8,0.8,0.8);
+
+pickup pencircle scaled 1pt;
+
+hyperbola(2 * 225 *  1, (0.7,0.7,0.7),  20);
+hyperbola(2 * 225 *  4, (0.7,0.7,0.7),  40);
+hyperbola(2 * 225 *  9, (0.7,0.7,0.7),  60);
+hyperbola(2 * 225 * 16, (0.7,0.7,0.7),  80);
+hyperbola(2 * 225 * 25, (0.7,0.7,0.7), 100);
+
+z2 = (0.8 * width, 0.67 * height);
+
+pickup pencircle scaled 1pt;
+
+fill (0.6 * width,0)--(width,0)--(width,height)--(0.6*width,height)--cycle
+	withcolor (0.7,0.7,0.7);
+
+z2 = (0.8 * width, 0.67 * height);
+%fill ((z2 shifted(-20,-13))--(z2 shifted(20,-13))--(z2 shifted(20,13))
+%	--(z2 shifted(-20,13))--cycle) withcolor white;
+%label(btex $\displaystyle L \ge \frac1{a\omega}$ etex, z2);
+
+fill (0,0)--(width + 5,0)--(width + 5,0.25 * (width + 5))--cycle
+	withcolor (0.9,0.9,0.9);
+
+draw (0,0)--(omegapoint(1. / 200)) withcolor (0.8,0.8,0.8);
+
+def ckurvepunkt(expr omega, C) =
+	(C / (C * omega * C * omega + A), C)
+enddef;
+
+def ckurve(expr omega) =
+	path	p;
+	p := (0,0);
+	for C = 1 step 1 until height:
+		p := p..(ckurvepunkt(omega, C));
+	endfor;
+	pickup pencircle scaled 1pt;
+	draw p;
+	pickup pencircle scaled 3pt;
+	draw omegapoint(omega);
+enddef;
+
+for iomega = 20 step 20 until 190:
+	ckurve(1. / iomega);
+endfor;
+
+pickup pencircle scaled 1pt;
+
+clip currentpicture to (0,0)--(width,0)--(width,height)--(0,height)--cycle;
+
+drawarrow (-5, 0)--(width + 5,         0);
+drawarrow ( 0,-5)--(        0,height + 5);
+
+label.top(btex $L$ etex, (width + 5,         0));
+label.lft(btex $C$ etex, (        0,height + 5));
+
+z0 = (0.5 * width, hyp(0.5 * width, 9 * 500));
+z1 = z0 shifted (10,0);
+
+fill ((3,-6)--(37,-6)--(37,6)--(3,6)--cycle) shifted omegapoint(1./160) withcolor white;
+label.rt(btex $(L_\omega,C_\omega)$ etex, omegapoint(1./160));
+label.top(btex $\omega$ etex, ckurvepunkt(1./160, height));
 
 endfig;
 
