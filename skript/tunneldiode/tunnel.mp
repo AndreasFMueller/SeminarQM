@@ -929,4 +929,73 @@ label(btex $\oplus$ etex, (- 4,-35)) withcolor red;
 
 endfig;
 
+%
+% L in Abhaengigkeit von C
+%
+beginfig(15)
+
+numeric width;
+numeric height;
+width := 200;
+height := 140;
+
+numeric A;
+A := 0.25; % A = a^2/4
+numeric a;
+a := 2 * sqrt(A);
+
+pickup pencircle scaled 1.5pt;
+
+z2 = (0.8 * width, 0.67 * height);
+
+pickup pencircle scaled 1pt;
+
+fill (0.6 * width,0)--(width,0)--(width,height)--(0.6*width,height)--cycle
+	withcolor (0.7,0.7,0.7);
+
+z2 = (0.8 * width, 0.67 * height);
+%fill ((z2 shifted(-20,-13))--(z2 shifted(20,-13))--(z2 shifted(20,13))
+%	--(z2 shifted(-20,13))--cycle) withcolor white;
+%label(btex $\displaystyle L \ge \frac1{a\omega}$ etex, z2);
+
+fill (0,0)--(width + 5,0)--(width + 5,0.25 * (width + 5))--cycle
+	withcolor (0.9,0.9,0.9);
+
+def omegapoint(expr omega) =
+	(1 / (omega * a), a / (2 * omega))
+enddef;
+
+draw (0,0)--(omegapoint(1. / 200)) withcolor (0.8,0.8,0.8);
+
+def ckurve(expr omega) =
+	path	p;
+	p := (0,0);
+	for C = 1 step 1 until height:
+		p := p..(C / (C * omega * C * omega + A), C);
+	endfor;
+	pickup pencircle scaled 1pt;
+	draw p;
+	pickup pencircle scaled 3pt;
+	draw omegapoint(omega);
+enddef;
+
+for iomega = 20 step 20 until 190:
+	ckurve(1. / iomega);
+endfor;
+
+pickup pencircle scaled 1pt;
+
+clip currentpicture to (0,0)--(width,0)--(width,height)--(0,height)--cycle;
+
+drawarrow (-5, 0)--(width + 5,         0);
+drawarrow ( 0,-5)--(        0,height + 5);
+
+label.top(btex $L$ etex, (width + 5,         0));
+label.lft(btex $C$ etex, (        0,height + 5));
+
+z0 = (0.5 * width, hyp(0.5 * width, 9 * 500));
+z1 = z0 shifted (10,0);
+
+endfig;
+
 end
