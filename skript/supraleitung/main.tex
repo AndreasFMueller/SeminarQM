@@ -22,9 +22,12 @@ In diesem Kapitel m"ochten wir die Grundlagen f"ur die Supraleitung erarbeiten. 
 \rhead{Elektron-Elektron Wechselwirkung}
 Es gibt neben der coulombschen Wechselwirkung zwischen den Elektronen noch mehr Wechselwirkungen. Zum einen gibt es eine Elektronen-Gitter Wechselwirkung. Diese ist f"ur die Betrachung der Cooper-Paare aber nicht relevant. Sie wird deshalb nachfolgend nicht ber"ucksichtigt. Zum anderen gibt es eine Elektron-Elektron Wechselwirkung "uber die sogenannten Phononen. Wie diese Wechselwirkung im Allgemeinen funktioniert und was diese Phononen sind wird nachfolgend erl"autert.
 \\
+\\
 In Abbildung \ref{supraleitung:Gitter1} betrachten wir einen Ausschnitt der Gitterstruktur eines K"orpers. Fliegt nun ein Elektron in dieses Gitter hinein, so wird das Gitter durch das elektrische Feld des Elektrons deformiert. Das Elektron "andert seine Flugbahn. Dargestellt ist dies in Abbildung \ref{supraleitung:Gitter2}. Das deformierte Gitter bewegt sich nun weiter als Schwingung. In Abbildung \ref{supraleitung:Gitter3} ist diese Schwingung dargestellt und mit $q$ bezeichnet. Wenn nun ein weiteres Elektron ins Gitter fliegt, so wird dieses von der Schwingung im Gitter beeinflusst, ersichtlich in Abbilung \ref{supraleitung:Gitter4}. Die Schwingung im Gitter wird wieder vernichtet und das zweite Elektron ver"andert ebenfalls seine Flugbahn. Es wurde also ein Impuls vom Elektron $k'$ zum Elektron $k$ "uber das Gitter transportiert. 
 \\
-Die Schwingng $q$ welche vom Elektron $k'$ zum Elektron $k$ transportiert wurde entspricht einem harmonischen Oszillator. Das Bedeuted, dass die m"oglichen Frequenzen, und die damit die enthaltenen Energieniveaus, quantisiert sind. Wenn diese Energie quantisiert ist, kann man die Energie auch als Teilchen betrachten. Diese neu eingef"uhrten Teilchen werden Phononen genannt.
+\\
+Die Schwingng $q$ welche vom Elektron $k'$ zum Elektron $k$ transportiert wurde entspricht einem harmonischen Oszillator. Das Bedeuted, dass die m"oglichen Frequenzen, und die damit die enthaltenen Energieniveaus, quantisiert sind. Wenn diese Energie quantisiert ist, kann man die Energie auch als Teilchen betrachten. Diese neu eingef"uhrten Teilchen werden Phononen genannt.\\
+\\
 Um die Darstellung der Wechselwirkung zu vereifachen, zeichnen wir nun die Gitterschwingung als zickzack Vektor zwischen Elektron $k'$ und $k$. Diese Darstellung Feynman ist in Abbildung \ref{supraleitung:FeynmanDiagram1} ersichtlich.%TODO hier sollte auf das Feynmandiagramm verwiesen werden. (wie?)
 %Kann das verhalten der Bilder so beeinflusst werden, dass sie wenigstens im gleichen unterkapitel angezeigt werden? (momentan ist die Darstellung der Bilder "uber so viele Seiten nicht geeignet.
 \begin{figure}
@@ -63,6 +66,7 @@ Wir f"uhren nun noch einen Anfangszustand $|a\rangle$, einen Endzustand $\langle
 Zu beachten ist nun, dass die Leserichtung von rechts nach links ist. Es wird also vom Anfangszustand aus ein Phonon $a$ mit der Energie $q$ erzeugt, ein Elektron $c$ mit der Wellenzahl $k'$ vernichtet und ein Elektron $c$ mit der Wellenzahl $k'+q$ erzeugt, um zum Zwischenzustand $z_1$ zu gelangen.
 Von diesem Zwischenzustand aus geht es weiter, indem man das Phonon $a_q$ wieder vernichtet, das Elektron $c_k$ vernichtet und ein Elektron $c^+_{k+q}$ erzeugt.
 \\
+\\
 Als n"achstes m"ussen wir die Energiebetrachtung einf"ugen. Daf"ur F"uhren wir eine materialabh"angige Konstante $M_q$ ein und erg"anzen die Wechselwirkung mit dem Nenner aus der St"orungstheorie.
 Um die gesammte Wechselwirkung zu erhalten summieren wir "uber alle $k$,$k'$ und $q$. Die Wechselwirkung erg"anzen wir zudem um einen zweiten Term der die umgekehrte Reihenfolge enth"alt. Dieer f"uhrt dazu, dass wir sp"ater weitere vereifachungen durchf"uhren k"onnen. Da wir aber nun die Wechselwirkung doppelt z"ahlen (wir summieren ja bereits "uber alles) teilen wir noch durch $2$.
 \\
@@ -98,30 +102,19 @@ V_{kk'q} = - |M_q|^2 \left\{\frac{1}{\hbar\omega_q+(E(k+q)-E(k))}
 \right\}
 \label{supraleitung:WechelwirkungVkk'q}
 \end{equation}
-Das Vorzeichn von $V_{kk'q}$ entscheidet nun dar"uber, ob die Wechselwirkung anziehend oder abstossend ist.
-\begin{equation}
-\frac
-{2|M_q|^2\hbar\omega_q}
-{(E(k+q)-E(k))^2-(\hbar\omega_q)^2}
-\label{supraleitung:Wechelwirkung_Vkk'q_Kurz}
-\end{equation}
-%TODO nun muss die Formel 81.2 eingefuehrt werden -> Nenner noch nachvollziehbar beschreiben.
-%danach richtung 81.4 weiterziehen
-\\
-\\
-\\
-Weitere Formeln:
-\\
+Wir vereinfachen weiter mit $a^2-b^2 = (a+b)\cdot(a-b)$.
+
 \begin{equation}
 V_{kk'q} =
 \frac
 {2|M_q|^2\hbar\omega_q}
 {(E(k+q)-E(k))^2-(\hbar\omega_q)^2}
-\label{supraleitung:WechelwirkungEnd}
+\label{supraleitung:Wechelwirkung_Vkk'q_Kurz}
 \end{equation}
-\\
-\\
-TODO: Formeln noch einbauen und erkl"aren
+Das Vorzeichen von $V_{kk'q}$ entscheidet nun dar"uber, ob die Wechselwirkung anziehend oder abstossend ist.\\
+
+%TODO nun muss die Formel 81.2 eingefuehrt werden -> Nenner noch nachvollziehbar beschreiben.
+%danach richtung 81.4 weiterziehen
 
 %----------------------------Hinzufuegen von Elektronen zu der Fermikugel------------------------
 \section{Hinzuf"ugen von Elektronen zu der Fermikugel}
