@@ -3,13 +3,12 @@
 \begin{refsection}
 \chapterauthor{Joel Brunner und Christian Cavegn}
 
-\newpage
 			%Einleitung
 \section{Einleitung}
 \rhead{Einleitung}
 In diesem Kapitel erweitern wir den harmonischen Oszillator aus Kapitel~\ref{chapter:harmonischeroszillator} mit Hilfe der St"orungstheorie aus Kapitel~\ref{chapter:stoerungstheorie}. Der harmonische Oszillator ist eine gute Approximation f"ur viele Quantenmechanische Systeme. Will man die Approximation verbessern, kann man die Kr"afte im Oszillator nicht mehr linear modellieren. Das Potential ist also nicht mehr nur $Q^2$, sondern es kommen noch Terme h"oherer Ordnung hinzu. Diese Terme k"onnen als St"orungen betrachtet werden. In diesem Kapitel sprechen wir oft von ungest"ort und gest"ort sowie von harmonisch und anharmonisch. Diese bedeuten in unserem Kontext das selbe.
 
-\begin{figure}[h]	%Bild Titelbild.png
+\begin{figure}	%Bild Titelbild.png
 \centering
 \includegraphics[width=0.7\textwidth]{anharmonisch/images/Titelbild.png}
 \caption{Kohlendioxid Molek"ul
@@ -20,7 +19,7 @@ In diesem Kapitel erweitern wir den harmonischen Oszillator aus Kapitel~\ref{cha
 \section{Anharmonizit"at}
 \rhead{Anharmonizit"at}
 
-\begin{figure}[h]	%Bild Potentiale
+\begin{figure}	%Bild Potentiale
 \centering
 \includegraphics[width=0.7\textwidth]{anharmonisch/images/Potential.png}
 \caption{Potentiale eines harmonischen und anharmonischen Oszillators
@@ -33,7 +32,7 @@ Auf der Abbildung~\ref{skript:Potentiale} sieht man links das Potential des harm
 \section{Harmonische Gr"ossen}
 \rhead{Harmonische Gr"ossen}
 
-\begin{figure}[h]	%Bild Harmonisch.pdf
+\begin{figure}	%Bild Harmonisch.pdf
 \centering
 \includegraphics[width=0.7\textwidth]{anharmonisch/images/Harmonisch.pdf}
 \caption{10. Wellenfunktion und Energieniveaus des harmonischen Oszillators
@@ -151,7 +150,7 @@ Durch geeignetes ausmultiplizieren wie in \ref{section:nichtentartetezustaende} 
 \begin{align*}
 \langle\Psi_l^{(0)}|\Psi_k^{(p)}\rangle
 &=
-\frac{C_{lk}^{p}-\langle\Psi_l^{(0)}|H_1|\Psi_k^{(k)}\rangle}
+\frac{C_{lk}^{(p)}-\langle\Psi_l^{(0)}|H_1|\Psi_k^{(k)}\rangle}
 {E_l^{(0)}-E_k^{(0)}}
 \\
 E_k^{(p)}
@@ -179,7 +178,7 @@ Wie Wahrscheinlich ist es, dass die ungest"orte Wellenfunktion $|\Psi_l^{(0)}\ra
 \[
 \Psi_k^{(p)}
 =
-\imath\gamma|\Psi_l^{(0)}\rangle+
+i\gamma|\Psi_l^{(0)}\rangle+
 \displaystyle\sum_{l\neq k} \langle\Psi_l^{(0)}|\Psi_k^{(p)}\rangle
 |\Psi_l^{(0)}\rangle
 \]
@@ -192,7 +191,7 @@ Wir haben den Fall $aQ^3$ und $bQ^4$ mit Matlab durchgerechnet und sind auf ein 
 			%Erstes Beispiel
 \subsection{Erstes Beispiel $aQ^3$}
 
-\begin{figure}[h]	%Bild EK1.pdf
+\begin{figure}	%Bild EK1.pdf
 \centering
 \includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/EK1.pdf}
 \caption{St"orung der Energieniveaus erster N"aherung
@@ -201,7 +200,7 @@ Wir haben den Fall $aQ^3$ und $bQ^4$ mit Matlab durchgerechnet und sind auf ein 
 
 Auf der Abbildung~\ref{skript:x3_EK1} sieht man die "Anderung der Energieniveaus in erster N"aherung. Da die "Anderungen so klein sind k"onnen sie auf die numerische Berechnug mit Matlab zur"uckgef"uhrt werden. Wenn man die Gleichung~\ref{skript:stoerungsloesung1ordnung} genau betrachtet sieht man auch, dass die "Anderungen Null sein m"ussen.
 
-\begin{figure}[h]	%Bild Stoerung1Wellenfunktion.pdf
+\begin{figure}	%Bild Stoerung1Wellenfunktion.pdf
 \centering
 \includegraphics[width=0.8\textwidth]{anharmonisch/images/x3/Stoerung1Wellenfunktion.pdf}
 \caption{10. Wellenfunktion und Energieniveaus in erster N"aherung
@@ -210,7 +209,7 @@ Auf der Abbildung~\ref{skript:x3_EK1} sieht man die "Anderung der Energieniveaus
 
 Auf der Abbildung~\ref{skript:x3_Stoerung1Wellenfunktion} sieht man die 10. Wellenfunktion und die Energieniveaus in erster N"aherung. Man kann gut erkennen, dass sich die Energieniveaus nicht verschoben haben.
 
-\begin{figure}[h]	%Bild Stoerung1Skalare.pdf
+\begin{figure}	%Bild Stoerung1Skalare.pdf
 \centering
 \includegraphics[width=1.0\textwidth]{anharmonisch/images/x3/Stoerung1Skalare.pdf}
 \caption{Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(1)}\rangle$ in erster N"aherung
@@ -220,7 +219,7 @@ Auf der Abbildung~\ref{skript:x3_Stoerung1Wellenfunktion} sieht man die 10. Well
 Auf der Abbildung~\ref{skript:x3_Stoerung1Skalare} sieht man welche ungest"orten Wellenfunktionen $\Psi_l^{(0)}$ den gr"ossten Anteil an der gest"orten Wellenfunktion $\Psi_k^{(1)}$ haben. Das heisst, aus welchen bekannten Wellenfunktionen sich die neue Wellenfunktion zusammensetzt. In erster N"aherung k"onnen diese Anteile positiv oder negativ sein. Der Fall $k=l$ wird auf diesen Abbildungen nicht dargestellt. Den gr"ossten Anteil ergibt sich durch die Wellenfunktionen, welche am n"achsten bei der urspr"unglichen Wellenfunktion sind. Dies war zu erwarten, da der Nenner von der Gleichung~\ref{skript:stoerungsloesung1ordnung} am kleinsten ist. Wellenfunktionen, bei welchen $l=k\pm 2,k\pm 4,\dots$ ist, geben keinen Anteil an die gest"orte Wellenfunktion, da sie orthogonal dazu stehen. Ausserdem kann man sehen, dass bei gr"osseren $k$ auch die Anteile anderen Wellenfuntionen $l\neq k$ linear gr"osser werden. In der logarithmischen darstellung sieht man das die Wellenfuntionen, welche weiter weg sind nur noch einen vernachl"assigbar kleinen Beitrag liefern. Grunds"atzlich ist aber auch dort eine Zuhnahme bei den gr"osseren Wellenfunktionen zu erkennen.
 
 
-\begin{figure}[h]	%Bild EK2.pdf
+\begin{figure}	%Bild EK2.pdf
 \centering
 \includegraphics[width=0.6\textwidth]{anharmonisch/images/x3/EK2.pdf}
 \caption{St"orung der Energieniveaus zweiter N"aherung
@@ -229,7 +228,7 @@ Auf der Abbildung~\ref{skript:x3_Stoerung1Skalare} sieht man welche ungest"orten
 
 Auf der Abbildung~\ref{skript:x3_EK2} sieht man die "Anderung der Energieniveaus in zweiter N"aherung. Man kann klar Erkennen, dass die Abweichungen zum harmonischen Fall, bei h"oheren Energieniveaus immer gr"osser wird. Die Unstetigkeit bei den letzten drei Energieniveaus ist darauf zur"uckzuf"uhren, dass f"ur die Berechnung dieser Terme, Daten von noch h"oheren Energieniveaus ben"otig werden, welche nicht mehr berechnet wurden.
 
-\begin{figure}[h]	%Bild Stoerung2Wellenfunktion.pdf
+\begin{figure}	%Bild Stoerung2Wellenfunktion.pdf
 \centering
 \includegraphics[width=0.8\textwidth]{anharmonisch/images/x3/Stoerung2Wellenfunktion.pdf}
 \caption{10. Wellenfunktion und Energieniveaus in zweiter N"aherung
@@ -238,7 +237,7 @@ Auf der Abbildung~\ref{skript:x3_EK2} sieht man die "Anderung der Energieniveaus
 
 Auf der Abbildung~\ref{skript:x3_Stoerung1Wellenfunktion} sieht man die 10. Wellenfunktion und die Energieniveaus in zweiter N"aherung. Die Aufenthaltswarscheinlichkeit hat sich nach links verschoben. Bei den h"oheren Energieniveaus sieht man, dass es nicht mehr nur linear ansteigt sondern auch der quadratische Term zum Tragen kommt.
 
-\begin{figure}[h]	%Bild Stoerung2Skalare.pdf
+\begin{figure}	%Bild Stoerung2Skalare.pdf
 \centering
 \includegraphics[width=1.0\textwidth]{anharmonisch/images/x3/Stoerung2Skalare.pdf}
 \caption{Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(2)}\rangle$ in zweiter N"aherung
@@ -250,7 +249,7 @@ Auf der Abbildung~\ref{skript:x3_Stoerung1Skalare} sieht man welche ungest"orten
 			%Zweites Beispiel
 \subsection{Zweites Beispiel $bQ^4$}
 
-\begin{figure}[h]	%Bild EK1.pdf
+\begin{figure}	%Bild EK1.pdf
 \centering
 \includegraphics[width=0.6\textwidth]{anharmonisch/images/x4/EK1.pdf}
 \caption{St"orung der Energieniveaus erster N"aherung
@@ -259,7 +258,7 @@ Auf der Abbildung~\ref{skript:x3_Stoerung1Skalare} sieht man welche ungest"orten
 
 Auf der Abbildung~\ref{skript:x4_EK1} sieht man die "Anderung der Energieniveaus in erster N"aherung. 
 
-\begin{figure}[h]	%Bild Stoerung1Wellenfunktion.pdf
+\begin{figure}	%Bild Stoerung1Wellenfunktion.pdf
 \centering
 \includegraphics[width=0.8\textwidth]{anharmonisch/images/x4/Stoerung1Wellenfunktion.pdf}
 \caption{10. Wellenfunktion und Energieniveaus in erster N"aherung
@@ -268,7 +267,7 @@ Auf der Abbildung~\ref{skript:x4_EK1} sieht man die "Anderung der Energieniveaus
 
 Auf der Abbildung~\ref{skript:x4_Stoerung1Wellenfunktion} sieht man die 10. Wellenfunktion und die Energieniveaus in erster N"aherung. Die Aufenthaltswahrscheinlichkeit wird ein wenig zusammengedr"uckt und ist aussen noch deutlich h"oher als in der mitte. Die Energieniveaus verschieben sich bei gr"osseren $\varepsilon$ nach oben. Bei tiefen Energieniveaus ist die Verschibung noch sehr gering. Je h"oheren Energieniveau, desto gr"osser ist die Verschiebung.
 
-\begin{figure}[h]	%Bild Stoerung1Skalare.pdf
+\begin{figure}	%Bild Stoerung1Skalare.pdf
 \centering
 \includegraphics[width=1.0\textwidth]{anharmonisch/images/x4/Stoerung1Skalare.pdf}
 \caption{Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(1)}\rangle$ in erster N"aherung
@@ -278,7 +277,7 @@ Auf der Abbildung~\ref{skript:x4_Stoerung1Wellenfunktion} sieht man die 10. Well
 Auf der Abbildung~\ref{skript:x4_Stoerung1Skalare} sieht man welche ungest"orten Wellenfunktionen $\Psi_l^{(0)}$ den gr"ossten Anteil an der gest"orten Wellenfunktion $\Psi_k^{(1)}$ haben. Wellenfunktionen, bei welchen $l=k\pm 1,k\pm 3,\dots$ ist, geben keinen Anteil an die gest"orte Wellenfunktion, da sie orthogonal dazu stehen. Ausserdem kann man sehen, dass bei gr"osseren $k$ auch die Anteile anderen Wellenfuntionen $l\neq k$ gr"osser werden. In der logarithmischen darstellung sieht man, dass die Wellenfuntionen, welche weiter weg sind nur noch einen vernachl"assigbar kleinen Beitrag liefern. Grunds"atzlich ist aber auch dort eine Zuhnahme bei den gr"osseren Wellenfunktionen zu erkennen.
 
 
-\begin{figure}[h]	%Bild EK2.pdf
+\begin{figure}	%Bild EK2.pdf
 \centering
 \includegraphics[width=0.6\textwidth]{anharmonisch/images/x4/EK2.pdf}
 \caption{St"orung der Energieniveaus zweiter N"aherung
@@ -287,7 +286,7 @@ Auf der Abbildung~\ref{skript:x4_Stoerung1Skalare} sieht man welche ungest"orten
 
 Auf der Abbildung~\ref{skript:x4_EK2} sieht man die "Anderung der Energieniveaus in zweiter N"aherung. Man kann klar Erkennen, dass die Abweichungen zum harmonischen Fall, bei h"oheren Energieniveaus immer gr"osser wird. Die Unstetigkeit bei den letzten drei Energieniveaus ist darauf zur"uckzuf"uhren, dass f"ur die Berechnung dieser Terme, Terme von Energieniveaus gr"osser 50 ben"otig werden, welche nicht mehr berechnet wurden.
 
-\begin{figure}[h]	%Bild Stoerung2Wellenfunktion.pdf
+\begin{figure}	%Bild Stoerung2Wellenfunktion.pdf
 \centering
 \includegraphics[width=0.8\textwidth]{anharmonisch/images/x4/Stoerung2Wellenfunktion.pdf}
 \caption{10. Wellenfunktion und Energieniveaus in zweiter N"aherung
@@ -296,7 +295,7 @@ Auf der Abbildung~\ref{skript:x4_EK2} sieht man die "Anderung der Energieniveaus
 
 Auf der Abbildung~\ref{skript:x4_Stoerung1Wellenfunktion} sieht man die 10. Wellenfunktion und die Energieniveaus in erster N"aherung. Man kann gut erkennen, dass sich die Energieniveaus nicht verschoben haben.
 
-\begin{figure}[h]	%Bild Stoerung2Skalare.pdf
+\begin{figure}	%Bild Stoerung2Skalare.pdf
 \centering
 \includegraphics[width=1.0\textwidth]{anharmonisch/images/x4/Stoerung2Skalare.pdf}
 \caption{Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(2)}\rangle$ in zweiter N"aherung
