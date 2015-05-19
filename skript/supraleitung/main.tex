@@ -26,25 +26,25 @@ In Abbildung \ref{supraleitung:Gitter1} betrachten wir einen Ausschnitt der Gitt
 Die Schwingng $q$ welche vom Elektron $k'$ zum Elektron $k$ transportiert wurde entspricht einem harmonischen Oszillator. Das Bedeuted, dass die m"oglichen Frequenzen, und die damit die enthaltenen Energieniveaus, quantisiert sind. Wenn diese Energie quantisiert ist, kann man die Energie auch als Teilchen betrachten. Diese neu eingef"uhrten Teilchen werden Phononen genannt.
 Um die Darstellung der Wechselwirkung zu vereifachen, zeichnen wir nun die Gitterschwingung als zickzack Vektor zwischen Elektron $k'$ und $k$. Diese Darstellung Feynman ist in Abbildung \ref{supraleitung:FeynmanDiagram1} ersichtlich.%TODO hier sollte auf das Feynmandiagramm verwiesen werden. (wie?)
 %Kann das verhalten der Bilder so beeinflusst werden, dass sie wenigstens im gleichen unterkapitel angezeigt werden? (momentan ist die Darstellung der Bilder "uber so viele Seiten nicht geeignet.
-\begin{figure}[h]	
+\begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{supraleitung/gitter-1.pdf} %Bild Ungestoertes Gitter
 \caption{Ungest"ortes Gitter
 \label{supraleitung:Gitter1}}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{supraleitung/gitter-2.pdf} %Bild Gitter mit Elektron1
 \caption{Elektron fliegt ins Gitter und st"ort dieses
 \label{supraleitung:Gitter2}}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{supraleitung/gitter-3.pdf} %Bild Gitter mit Stoerung
 \caption{Gitter mit Schwingung q
 \label{supraleitung:Gitter3}}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{supraleitung/gitter-4.pdf} %Bild Gitter mit Elektron2
 \caption{Elektron fliegt ins Gitter und wird beeinflusst
@@ -78,37 +78,33 @@ Um die gesammte Wechselwirkung zu erhalten summieren wir "uber alle $k$,$k'$ und
 \right\}
 \]
 \\
-Da $E(k')-E(k'-q)-\hbar\omega_q = E(k)-E(k+q)-\hbar\omega_q$ ist, ersetzen wir den ersten mit dem zweiten.
+Da $E(k')-E(k'-q)-\hbar\omega_q = E(k)-E(k+q)-\hbar\omega_q$ ist, ersetzen wir in der Formel den ersten mit dem zweiten.
+\\
+Zusätzlich k"urzen wir die Phononen heraus und packen alles ausser der reinen Wechselwirkung in einen Koeffitienten $V_{kk'q}$. Somit erhalten wir zwei Formeln:
+\[
+\frac{1}{2}
+\sum \limits_{kk'q} 
+\langle e|V_{kk'q}c^+_{k+q}c^+_{k'-q}c_{k'}c_k|a \rangle
+\]
+und
+\[
+V_{kk'q} = - |M_q|^2 \left\{\frac{1}{\hbar\omega_q+(E(k+q)-E(k))}
++
+\frac{1}{\hbar\omega_q-(E(k+q)-E(k))}
+\right\}
+\]
+Das Vorzeichn von $V_{kk'q}$ entscheidet nun dar"uber, ob die Wechselwirkung anziehend oder abstossend ist.
+\[
+\frac
+{2|M_q|^2\hbar\omega_q}
+{(E(k+q)-E(k))^2-(\hbar\omega_q)^2}
+\]
 %TODO nun muss die Formel 81.2 eingefuehrt werden -> Nenner noch nachvollziehbar beschreiben.
 %danach richtung 81.4 weiterziehen
 \\
 \\
 \\
 Weitere Formeln:
-\\
-\\
-\\
-\\
-
-\\
-\\
-\[
-\frac{1}{2}
-\sum \limits_{kk'q} 
-\langle e|V_{kk'q}c^+_{k+q}c^+_{k'-q}c_{k'}c_k|a \rangle
-\]
-\\
-\\
-\[
-V_{kk'q} = - |M_q|^2 \left\{\frac{1}{\hbar\omega_q+(E(k+q)-E(k))}
-+
-\frac{1}{\hbar\omega_q-(E(k+q)-E(k))}
-\right\}
-= \frac
-{2|M_q|^2\hbar\omega_q}
-{(E(k+q)-E(k))^2-(\hbar\omega_q)^2}
-\]
-\\
 \\
 \[
 V_{kk'q} =
