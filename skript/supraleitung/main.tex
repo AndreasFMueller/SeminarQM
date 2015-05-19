@@ -21,11 +21,11 @@ TODO
 \rhead{Elektron-Elektron Wechselwirkung}
 Es gibt neben der coulombschen Wechselwirkung zwischen den Elektronen noch mehr Wechselwirkungen. Zum einen gibt es eine Elektronen-Gitter Wechselwirkung. Diese ist f"ur die Betrachung der Cooper-Paare aber nicht relevant. Sie wird deshalb nachfolgend nicht ber"ucksichtigt. Zum anderen gibt es eine Elektron-Elektron Wechselwirkung "uber die sogenannten Phononen. Wie diese Wechselwirkung im Allgemeinen funktioniert und was diese Phononen sind wird nachfolgend erl"autert.
 \\
-In Abbildung \ref{supraleitung:Gitter1} sieht man einen Ausschnitt der Gitterstruktur eines K"orpers. Fliegt nun ein Elektron durch dieses Gitter, so wird das Gitter durch das elektrische Feld des Elektrons deformiert. Das Elektron "andert seine Flugbahn. Dargestellt ist dies in Abbildung \ref{supraleitung:Gitter2}. Das deformierte Gitter bewegt sich nun weiter als Schwingung. In Abbildung \ref{supraleitung:Gitter3} ist diese Schwingung dargestellt und mit $q$ bezeichnet. Wenn nun ein weiteres Elektron ins Gitter fliegt, so wird dieses von der Schwingung im Gitter beeinflusst, ersichtlich in Abbilung \ref{supraleitung:Gitter4}. Die Schwingung im Gitter wird wieder vernichtet und das Elektron ver"andert seine Flugbahn.
+In Abbildung \ref{supraleitung:Gitter1} betrachten wir einen Ausschnitt der Gitterstruktur eines K"orpers. Fliegt nun ein Elektron in dieses Gitter hinein, so wird das Gitter durch das elektrische Feld des Elektrons deformiert. Das Elektron "andert seine Flugbahn. Dargestellt ist dies in Abbildung \ref{supraleitung:Gitter2}. Das deformierte Gitter bewegt sich nun weiter als Schwingung. In Abbildung \ref{supraleitung:Gitter3} ist diese Schwingung dargestellt und mit $q$ bezeichnet. Wenn nun ein weiteres Elektron ins Gitter fliegt, so wird dieses von der Schwingung im Gitter beeinflusst, ersichtlich in Abbilung \ref{supraleitung:Gitter4}. Die Schwingung im Gitter wird wieder vernichtet und das zweite Elektron ver"andert ebenfalls seine Flugbahn. Es wurde also ein Impuls vom Elektron $k'$ zum Elektron $k$ "uber das Gitter transportiert. 
 \\
-Die Schwingng $q$ welche vom Elektron $k'$ zum Elektron $k$ transportiert wurde entspricht einem harmonischen Oszillator. Das Bedeuted, dass die m"oglichen Frequenzen, und die damit die enthaltene Energie, quantisiert sind. Wenn diese Energie quantisiert ist, kann man die Energie auch als Teilchen betrachten. Eine Darstellung der Wechselwirkung mit der Gitterschwinung als Teilchen vereinfacht die Darstellung stark. Diese neu eingef"uhrten Teilchen werden Phononen genannt.
-Diese Betrachtung der Gitterschwingung als Phonon ist nach Feynman in Abbildung \ref{supraleitung:FeynmanDiagram1} ersichtlich.%TODO hier sollte auf das Feynmandiagramm verwiesen werden. (wie?)
-%Kann das verhalten der Bilder so beeinflusst werden, dass sie wenigstens im gleichen unterkapitel angezeigt werden? (momentan ist die Darstellung der Bilder über so viele Seiten nicht geeignet.
+Die Schwingng $q$ welche vom Elektron $k'$ zum Elektron $k$ transportiert wurde entspricht einem harmonischen Oszillator. Das Bedeuted, dass die m"oglichen Frequenzen, und die damit die enthaltenen Energieniveaus, quantisiert sind. Wenn diese Energie quantisiert ist, kann man die Energie auch als Teilchen betrachten. Diese neu eingef"uhrten Teilchen werden Phononen genannt.
+Um die Darstellung der Wechselwirkung zu vereifachen, zeichnen wir nun die Gitterschwingung als zickzack Vektor zwischen Elektron $k'$ und $k$. Diese Darstellung Feynman ist in Abbildung \ref{supraleitung:FeynmanDiagram1} ersichtlich.%TODO hier sollte auf das Feynmandiagramm verwiesen werden. (wie?)
+%Kann das verhalten der Bilder so beeinflusst werden, dass sie wenigstens im gleichen unterkapitel angezeigt werden? (momentan ist die Darstellung der Bilder "uber so viele Seiten nicht geeignet.
 \begin{figure}[h]	
 \centering
 \includegraphics[width=0.4\textwidth]{supraleitung/gitter-1.pdf} %Bild Ungestoertes Gitter
@@ -50,22 +50,19 @@ Diese Betrachtung der Gitterschwingung als Phonon ist nach Feynman in Abbildung 
 \caption{Elektron fliegt ins Gitter und wird beeinflusst
 \label{supraleitung:Gitter4}}
 \end{figure}
+\\
 Diese Wechselwirkung zwischen den Elektronen kann mathematisch beschrieben werden. F"ur die mathematische Betrachtung beginnen wir da wo wir einen Anhaltspunkt haben, also beim Phonon.
 \\
-Wir haben gesehen, dass das Phonon quantisiert ist. F"ur dieses gibt es also Auf- und Absteigeoperatoren. Wir nennen das Phonon $a$ mit der Energie $q$. Wir haben also den Aufsteigoperator $a^+_q$ und den Absteigeoperator $a_q$. Wenn die an das Phonon abgegebe Energie quantisiert ist, so muss das Elektron ebenfalls Auf- und Absteigeoperatoren haben. Wir nennen die Elektronen nun $c$ mit dem Wellenzahl $k$. Daraus folgt, dass der Aufsteigoperator f"ur das Elektron $c^+_k$ und der Absteigeoperator $c_k$ sind.
-Wir f"uhren nun noch einen Anfangszustand $|a\rangle$, einen Endzustand $\langle e|$ und einen Zwischenzustand $|z_1\rangle$ ein. Der Vorgang kann nun so beschrieben werden (ohne Energiebetrachtung):
+Wir haben gesehen, dass das Phonon quantisiert ist. F"ur dieses gibt es also Auf- und Absteigeoperatoren. Wenn wir das Phonon $a$ nennen und die Energie $q$ haben, ergibt sich der Aufsteigoperator $a^+_q$ und den Absteigeoperator $a_q$. Da die vom Phonon aufgenommene Energie quantisiert ist, so muss das Elektron qunatisierte Energie aufnehmen und abgeben. Dies bedeuted, dass das Elektron Auf- und Absteigeoperatoren haben. Wir nennen die Elektronen nun $c$ mit der Wellenzahl $k$. Daraus folgt, dass der Aufsteigoperator f"ur das Elektron $c^+_k$ und der Absteigeoperator $c_k$ sind.
+Wir f"uhren nun noch einen Anfangszustand $|a\rangle$, einen Endzustand $\langle e|$ und einen Zwischenzustand $|z_1\rangle$ ein. Der Vorgang der Wechselwirkung zwischen den Elektronen kann nun so beschrieben werden (ohne Energiebetrachtung):
 \[
 \langle e|c^+_{k+q} c_k a_q |z_1\rangle\langle z_1| c^+_{k'-q} c_{k'} a^+_q |a\rangle
 \]
 Zu beachten ist nun, dass die Leserichtung von rechts nach links ist. Es wird also vom Anfangszustand aus ein Phonon $a$ mit der Energie $q$ erzeugt, ein Elektron $c$ mit der Wellenzahl $k'$ vernichtet und ein Elektron $c$ mit der Wellenzahl $k'+q$ erzeugt, um zum Zwischenzustand $z_1$ zu gelangen.
 Von diesem Zwischenzustand aus geht es weiter, indem man das Phonon $a_q$ wieder vernichtet, das Elektron $c_k$ vernichtet und ein Elektron $c^+_{k+q}$ erzeugt.
-%TODO nun muss die Formel 81.2 eingefuehrt werden -> Nenner noch nachvollziehbar beschreiben.
-%danach richtung 81.4 weiterziehen
 \\
-Weitere Formeln:
-\\
-\\
-\\
+Als n"achstes m"ussen wir die Energiebetrachtung einf"ugen. Daf"ur F"uhren wir eine materialabh"angige Konstante $M_q$ ein und erg"anzen die Wechselwirkung mit dem Nenner aus der St"orungstheorie.
+Um die gesammte Wechselwirkung zu erhalten summieren wir "uber alle $k$,$k'$ und $q$. Die Wechselwirkung erg"anzen wir zudem um einen zweiten Term der die umgekehrte Reihenfolge enth"alt. Dieer f"uhrt dazu, dass wir sp"ater weitere vereifachungen durchf"uhren k"onnen. Da wir aber nun die Wechselwirkung doppelt z"ahlen (wir summieren ja bereits "uber alles) teilen wir noch durch $2$.
 \\
 \[
 \frac{1}{2}
@@ -77,9 +74,22 @@ Weitere Formeln:
 +
 \frac
 {\langle e|c^+_{k'-q} c_{k'} a_{-q}|z_1\rangle\langle z_1| c^+_{k+q} c_k a^+_{-q} |a\rangle }
-{E(k')-E(k'-q)-\hbar\omega_q}
+{E(k)-E(k+q)-\hbar\omega_q}
 \right\}
 \]
+\\
+Da $E(k')-E(k'-q)-\hbar\omega_q = E(k)-E(k+q)-\hbar\omega_q$ ist, ersetzen wir den ersten mit dem zweiten.
+%TODO nun muss die Formel 81.2 eingefuehrt werden -> Nenner noch nachvollziehbar beschreiben.
+%danach richtung 81.4 weiterziehen
+\\
+\\
+\\
+Weitere Formeln:
+\\
+\\
+\\
+\\
+
 \\
 \\
 \[
