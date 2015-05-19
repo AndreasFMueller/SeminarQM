@@ -200,6 +200,15 @@ numeric	xunit, yunit;
 xunit := 28;
 yunit := 60;
 
+pickup pencircle scaled 0.5pt;
+for x = 0 step 1 until 10:
+	draw (x * xunit, 30 * yunit)--(x * xunit, 33.4 * yunit)
+		withcolor (0.9,0.9,0.9);
+endfor
+for y = 30 step 1 until 33:
+	draw (0, y * yunit)--(10.25 * xunit, y * yunit) withcolor (0.9,0.9,0.9);
+endfor
+
 pickup pencircle scaled 1.5pt;
 draw ( 0.000 * xunit,  30.000 * yunit)..
 	( 0.500 * xunit,  30.148 * yunit)..
