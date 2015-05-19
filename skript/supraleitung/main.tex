@@ -56,16 +56,17 @@ Diese Wechselwirkung zwischen den Elektronen kann mathematisch beschrieben werde
 \\
 Wir haben gesehen, dass das Phonon quantisiert ist. F"ur dieses gibt es also Auf- und Absteigeoperatoren. Wenn wir das Phonon $a$ nennen und die Energie $q$ haben, ergibt sich der Aufsteigoperator $a^+_q$ und den Absteigeoperator $a_q$. Da die vom Phonon aufgenommene Energie quantisiert ist, so muss das Elektron qunatisierte Energie aufnehmen und abgeben. Dies bedeuted, dass das Elektron Auf- und Absteigeoperatoren haben. Wir nennen die Elektronen nun $c$ mit der Wellenzahl $k$. Daraus folgt, dass der Aufsteigoperator f"ur das Elektron $c^+_k$ und der Absteigeoperator $c_k$ sind.
 Wir f"uhren nun noch einen Anfangszustand $|a\rangle$, einen Endzustand $\langle e|$ und einen Zwischenzustand $|z_1\rangle$ ein. Der Vorgang der Wechselwirkung zwischen den Elektronen kann nun so beschrieben werden (ohne Energiebetrachtung):
-\[
+\begin{equation}
 \langle e|c^+_{k+q} c_k a_q |z_1\rangle\langle z_1| c^+_{k'-q} c_{k'} a^+_q |a\rangle
-\]
+\label{supraleitung:WechelwirkungOE}
+\end{equation}
 Zu beachten ist nun, dass die Leserichtung von rechts nach links ist. Es wird also vom Anfangszustand aus ein Phonon $a$ mit der Energie $q$ erzeugt, ein Elektron $c$ mit der Wellenzahl $k'$ vernichtet und ein Elektron $c$ mit der Wellenzahl $k'+q$ erzeugt, um zum Zwischenzustand $z_1$ zu gelangen.
 Von diesem Zwischenzustand aus geht es weiter, indem man das Phonon $a_q$ wieder vernichtet, das Elektron $c_k$ vernichtet und ein Elektron $c^+_{k+q}$ erzeugt.
 \\
 Als n"achstes m"ussen wir die Energiebetrachtung einf"ugen. Daf"ur F"uhren wir eine materialabh"angige Konstante $M_q$ ein und erg"anzen die Wechselwirkung mit dem Nenner aus der St"orungstheorie.
 Um die gesammte Wechselwirkung zu erhalten summieren wir "uber alle $k$,$k'$ und $q$. Die Wechselwirkung erg"anzen wir zudem um einen zweiten Term der die umgekehrte Reihenfolge enth"alt. Dieer f"uhrt dazu, dass wir sp"ater weitere vereifachungen durchf"uhren k"onnen. Da wir aber nun die Wechselwirkung doppelt z"ahlen (wir summieren ja bereits "uber alles) teilen wir noch durch $2$.
 \\
-\[
+\begin{equation}
 \frac{1}{2}
 \sum \limits_{kk'q} |M_q|^2
 \left\{
@@ -77,29 +78,33 @@ Um die gesammte Wechselwirkung zu erhalten summieren wir "uber alle $k$,$k'$ und
 {\langle e|c^+_{k'-q} c_{k'} a_{-q}|z_1\rangle\langle z_1| c^+_{k+q} c_k a^+_{-q} |a\rangle }
 {E(k)-E(k+q)-\hbar\omega_q}
 \right\}
-\]
+\label{supraleitung:WechelwirkungME}
+\end{equation}
 \\
 Da $E(k')-E(k'-q)-\hbar\omega_q = E(k)-E(k+q)-\hbar\omega_q$ ist, ersetzen wir in der Formel den ersten mit dem zweiten.
 \\
 Zus"atzlich k"urzen wir die Phononen heraus und packen alles ausser der reinen Wechselwirkung in einen Koeffitienten $V_{kk'q}$. Somit erhalten wir zwei Formeln:
-\[
+\begin{equation}
 \frac{1}{2}
 \sum \limits_{kk'q} 
 \langle e|V_{kk'q}c^+_{k+q}c^+_{k'-q}c_{k'}c_k|a \rangle
-\]
+\label{supraleitung:WechelwirkungKurz}
+\end{equation}
 und
-\[
+\begin{equation}
 V_{kk'q} = - |M_q|^2 \left\{\frac{1}{\hbar\omega_q+(E(k+q)-E(k))}
 +
 \frac{1}{\hbar\omega_q-(E(k+q)-E(k))}
 \right\}
-\]
+\label{supraleitung:WechelwirkungVkk'q}
+\end{equation}
 Das Vorzeichn von $V_{kk'q}$ entscheidet nun dar"uber, ob die Wechselwirkung anziehend oder abstossend ist.
-\[
+\begin{equation}
 \frac
 {2|M_q|^2\hbar\omega_q}
 {(E(k+q)-E(k))^2-(\hbar\omega_q)^2}
-\]
+\label{supraleitung:Wechelwirkung_Vkk'q_Kurz}
+\end{equation}
 %TODO nun muss die Formel 81.2 eingefuehrt werden -> Nenner noch nachvollziehbar beschreiben.
 %danach richtung 81.4 weiterziehen
 \\
@@ -107,12 +112,13 @@ Das Vorzeichn von $V_{kk'q}$ entscheidet nun dar"uber, ob die Wechselwirkung anz
 \\
 Weitere Formeln:
 \\
-\[
+\begin{equation}
 V_{kk'q} =
 \frac
 {2|M_q|^2\hbar\omega_q}
 {(E(k+q)-E(k))^2-(\hbar\omega_q)^2}
-\]
+\label{supraleitung:WechelwirkungEnd}
+\end{equation}
 \\
 \\
 TODO: Formeln noch einbauen und erkl"aren
