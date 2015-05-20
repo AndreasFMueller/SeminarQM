@@ -38,7 +38,7 @@ potential:	$(potential_FILES)
 dependencies_FILES = dependencies-1.pdf
 dependencies: $(dependencies_FILES)
 
-pert_FILES = pert-1.pdf pert-2.pdf pert-3.pdf
+pert_FILES = pert-1.pdf pert-2.pdf pert-3.pdf pert-4.pdf
 pert:	$(pert_FILES)
 
 analysator_FILES = analysator-1.pdf analysator-2.pdf analysator-3.pdf \
@@ -72,7 +72,7 @@ spin:	$(spin_FILES)
 
 $(pert_FILES):	pert.mp
 	TEX=latex mpost pert.mp
-	for i in 1 2 3; \
+	for i in 1 2 3 4; \
 	do \
 		mptopdf pert.$${i}; \
 	done

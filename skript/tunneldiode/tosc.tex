@@ -102,7 +102,7 @@ $C$ und $L$.
 
 Eine grosse Kapazit"at $C$ bewirkt aber auch, dass der Koeffizient
 $-a/C$ des $\dot U(t)$-Terms kleiner wird. Mit zunehmender Kapazit"at
-wird als die Entd"ampfung geringer, und je nach parasit"arer D"ampfung
+wird also die Entd"ampfung geringer, und je nach parasit"arer D"ampfung
 kann es schwierig werden, dass die Schaltung "uberhaupt anschwingt.
 
 Die Schwingungsfrequenz wird f"ur $a\ne 0$ modifiziert zu
@@ -119,26 +119,67 @@ Die Schwingungsfrequenz wird f"ur $a\ne 0$ modifiziert zu
 Bei vorgegebener Schwingungsfrequenz und Induktivit"at ist dies eine
 quadratische Gleichung f"ur $C$, wir schreiben sie in der gebr"auchlicheren
 Form
-\[
+\begin{equation}
 \omega^2 C^2 -\frac1{L}C+\frac{a^2}{4}=0.
-\]
+\label{tunnel:qgleichung}
+\end{equation}
 Diese Gleichung hat nur dann reelle L"osungen f"ur $C$, wenn die Diskriminante
 positiv ist, also
 \begin{equation}
 \begin{aligned}
-\frac1{L^2}-4\omega^2\frac{a^2}4&>0
+\Delta=
+\frac1{L^2}-4\omega^2\frac{a^2}4&
+=\frac1{L^2}-a^2\omega^2
+>0
 &
 &\Rightarrow&
 \frac1{L^2}&>\omega^2a^2
 &
 &\Rightarrow&
-L<&\frac1{a\omega}
+L<&\frac1{a\omega}.
 \end{aligned}
 \end{equation}
 Wenn also die Kreisfrequenz $\omega$ angestrebt werden soll, dann darf die
 Induktivit"at nicht zu gross sein.
-Dies wird in Abbildung~\ref{tunnel:designparameter} durch das dunkelgraue
-Gebiet dargestellt.
+
+\begin{figure}
+\centering
+\includegraphics{tunneldiode/tunnel-15.pdf}
+\caption{Kurven gleicher Kreisfrequenz in der $L$-$C$-Ebene.
+Die Gerade der Punkte $(L_\omega,C_\omega)$ ist grau dargestellt,
+die Kurven gleicher Kreisfrequenz schneiden sie vertikal.
+\label{tunnel:lcabhaengigkeit}}
+\end{figure}
+
+Die zugeh"orige Kapazit"at $C$ kann gefunden werden, indem man die quadratische
+Gleichung (\ref{tunnel:qgleichung}) l"ost f"ur den Fall, wo die
+Diskriminante verschwindet:
+\[
+C=\frac{1}{2L\omega^2}
+\pm
+\sqrt{\frac{1}{4L^2\omega^4}-\frac{a^2}{4\omega^2}}.
+\]
+Da bei verschwindender Diskriminante ausserdem $L_\omega=1/a\omega$ gilt, ist 
+\[
+C_\omega=\frac{a}{2\omega}.
+\]
+Die Bedeutung von $L_\omega$ und $C_\omega$ kann man besser verstehen,
+wenn man $L$ bei festem $\omega$ in Abh"angigkeit von $C$ ausdr"uckt.
+Dazu kann die Gleichung (\ref{tunnel:qgleichung}) nach $L$ aufgel"ost werden:
+\[
+L=\frac{C}{\displaystyle\omega^2C^2+\frac{a^2}4}
+\]
+Die Abbildung~\ref{tunnel:lcabhaengigkeit} zeigt die Kurven gleicher
+Kreisfrequenz, zusammen mit Teilen der Hyperbeln der gleichen Frequenz f"ur
+einen nicht entd"ampften Schwingkreis.
+Sie haben jeweils im Punkt $(L_\omega,C_\omega)$ eine vertikale Tangente.
+F"ur $C\simeq C_\omega$ ist die Frequenz nur schwach von der Kapazit"at
+abh"angig.
+Da f"ur $C\gg C_\omega$ die Entd"ampfung immer kleiner wird, muss
+man davon ausgehen, dass der Oszillator vor allem f"ur $C_\omega$
+und gut schwingen wird.
+Dies ist gleichbedeutend mit der Forderung, $L=L_\omega$ und damit
+so gross wie m"oglich zu w"ahlen.
 
 \begin{beispiel}
 Die in diesem Kapitel genauer untersuchte Tunneldiode 1N3721 hat einen
