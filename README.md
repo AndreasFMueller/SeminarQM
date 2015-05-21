@@ -85,6 +85,7 @@ gebracht haben, das Skript zu kompilieren:
 	texlive-science
 	texlive-bibtex-extra
 	texlive-latex-extra
+	texlive-xetex
 
 Alle diese Packages kann man mit dem Befehl 
 
