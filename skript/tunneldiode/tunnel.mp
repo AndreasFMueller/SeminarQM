@@ -332,6 +332,10 @@ clip currentpicture to
 
 endfig;
 
+%
+% Darstellung der Potentialbarriere
+%
+
 beginfig(4)
 
 fill (-200,-10)--(-30,-10)--(-30,200)--(-200,200)--cycle
@@ -344,6 +348,9 @@ fill (-30,-10)--(30,-10)--(30,200)--(-30,200)--cycle
 label(btex   I etex, (-115,180)) withcolor blue;
 label(btex  II etex, ( -10,180)) withcolor red;
 label(btex III etex, ( 115,180)) withcolor green;
+
+label.bot(btex $-a\mathstrut$ etex, (-30,0));
+label.bot(btex $a\mathstrut$ etex, ( 30,0));
 
 pickup pencircle scaled 1pt;
 
