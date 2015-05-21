@@ -12,88 +12,132 @@ einem Flashspeicher}
 
 \section{Einleitung}
 \rhead{Einleitung}
-Der Flash-Speicher ist ein elektrisches Speicherelement, welches weit verbreitet ist. Grunds"atzlich wird zwischen zwei Vorg"angen unterschieden, dem Schreib- und dem L"oschvorgang. Der L"oschvorgang beruht auf dem Tunneleffekt, welcher im Kapitel Tunneldiode ausf"uhrlich erkl"art wird. F"ur den Speichervorgang m"ussen Elektronen mittels 'hot electron injection' in das Floating-Gate gebracht werden. 
+Der Flash-Speicher ist ein elektrisches Speicherelement, welches
+weit verbreitet ist. Grunds"atzlich wird zwischen zwei Vorg"angen
+unterschieden, dem Schreib- und dem L"oschvorgang. Der L"oschvorgang
+beruht auf dem Tunneleffekt, welcher im Kapitel Tunneldiode ausf"uhrlich
+erkl"art wird. F"ur den Speichervorgang m"ussen Elektronen mittels
+'hot electron injection' in das Floating-Gate gebracht werden.
 
 \section{Flash-Typen}
 \rhead{Flash-Typen}
-Bei den Flash-Speichern wird zwischen zwei Typen unterschieden, den NAND und den NOR Typen. Diese unterscheiden sich in der Zusammenschaltung der einzelnen Transistoren. 
+Bei den Flash-Speichern wird zwischen zwei Typen unterschieden, den NAND
+und den NOR Typen. Diese unterscheiden sich in der Zusammenschaltung
+der einzelnen Transistoren.
 
 \subsection{NAND Typ}
 \rhead{NAND Typ}
-Bei den NAND Flash-Speicher werden die einzelnen Transistoren zu einer NAND Speicherzelle zusammen geschaltet. Die Speicherzellen werden in Gruppen in Serie geschaltet. Die Speicherzellengruppe teilt sich eine Datenleitung, daher muss das Lesen und Schreiben immer in der ganzen Gruppe sequentiell erfolgen. Dadurch wird die Anzahl Datenleitungen reduziert und der Flash-Speicher ben"otigt weniger Platz. NAND Flash-Speicher haben ihre Verwendung vor allem in Bereichen, wo viel Speicher m"oglichst wenig Platz brauchen darf und die Zugriffszeit keine grosse Rolle spielt.
+Bei den NAND Flash-Speicher werden die einzelnen Transistoren zu einer
+NAND Speicherzelle zusammen geschaltet. Die Speicherzellen werden in
+Gruppen in Serie geschaltet. Die Speicherzellengruppe teilt sich eine
+Datenleitung, daher muss das Lesen und Schreiben immer in der ganzen
+Gruppe sequentiell erfolgen. Dadurch wird die Anzahl Datenleitungen
+reduziert und der Flash-Speicher ben"otigt weniger Platz. NAND
+Flash-Speicher haben ihre Verwendung vor allem in Bereichen, wo viel
+Speicher m"oglichst wenig Platz brauchen darf und die Zugriffszeit keine
+grosse Rolle spielt.
 \subsection{NOR Typ}
 \rhead{NOR Typ}
-Bei den NOR Flash-Speicher werden die Transistoren zu einer NOR Speicherzelle zusammen geschaltet.
-Die Speicherzellen werden "uber die Datenleitungen parallel geschaltet, dadurch kann auf jede Speicherzelle direkt zugegriffen werden. Die Parallelleitungen brauchen mehr Platz, es lassen sich jedoch k"urzere Zugriffszeiten realisieren.
+Bei den NOR Flash-Speicher werden die Transistoren zu einer NOR
+Speicherzelle zusammen geschaltet.
+Die Speicherzellen werden "uber die Datenleitungen parallel geschaltet,
+dadurch kann auf jede Speicherzelle direkt zugegriffen werden. Die
+Parallelleitungen brauchen mehr Platz, es lassen sich jedoch k"urzere
+Zugriffszeiten realisieren.
 
 \section{Floating Gate Transistor}
 \rhead{Floating Gate}
-Floating Gate Transistoren z"ahlen zu den Feldeffekttransistoren (Siehe Abbildung \ref{skript:Floatinggatetransistor}). Die Absicht ist es den Zustand des Floating Gates zu erh"ohen. Dies kann man erreichen, indem im Floating Gate eine gewisse Ladung gespeichert wird. Diese kann erh"oht werden, indem das Potential am Control Gate erh"oht wird. Nun fliessen die Elektronen in Richtung Source. 
+Floating Gate Transistoren z"ahlen zu den Feldeffekttransistoren
+(Siehe Abbildung \ref{skript:Floatinggatetransistor}). Die Absicht ist
+es den Zustand des Floating Gates zu erh"ohen. Dies kann man erreichen,
+indem im Floating Gate eine gewisse Ladung gespeichert wird. Diese kann
+erh"oht werden, indem das Potential am Control Gate erh"oht wird. Nun
+fliessen die Elektronen in Richtung Source.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{flash/graphics/Floatinggate.png}
-\caption{Abbildung eines Floating Gate Transistors: Quelle: $http://upload.wikimedia.org/wikipedia/commons/a/ae/Floating_gate_transistor-en.svg$
+\caption{Abbildung eines Floating Gate Transistors: Quelle:
+\url{http://upload.wikimedia.org/wikipedia/commons/a/ae/Floating_gate_transistor-en.svg}
 \label{skript:Floatinggatetransistor}}
 \end{figure}
 
-Je nachdem was es f"ur ein Potential am Control Gate hat, k"onnen mehrere Zust"ande gespeichert werden. In einem Floating Gate Transistor kann man auch mehrere Bits speichern, "ublicherweise werden 2 Bits gespeichert. 
-Der Source Anschluss wird meistens mit GND verbunden und Drain wird beim Leseprozess auf 0V gehängt und beim Schreibeprozess "ublicherweise auf "uber 10V. 
+Je nachdem was es f"ur ein Potential am Control Gate hat, k"onnen mehrere
+Zust"ande gespeichert werden. In einem Floating Gate Transistor kann
+man auch mehrere Bits speichern, "ublicherweise werden 2 Bits gespeichert.
+Der Source Anschluss wird meistens mit GND verbunden und Drain wird beim
+Leseprozess auf 0V gehängt und beim Schreibeprozess "ublicherweise auf
+"uber 10V.
 
 
 \section{Zyklenzahlen}
 \rhead{Zyklenzahlen}
-Ein grosses Problem bei Flashspeichern ist die begrenzte schreib-und Leseanzahl. Wegem dem Tunneleffekt fliessen die Elektronen durch die Oxidschicht, dadurch wird diese Oxidschicht, um das Floating Gate herum, immer ein kleines bisschen besch"adigt. Dies bewirkt, dass immer mehr der Ladung abfliessen kann. Bei den NOR-Flashs hat man etwa 10'000 bis 100'000 Zyklen. Hingegen bei den NAND-Flashs sind es doch gegen 2 Millionen Zyklen. Dieses Problem ist jedoch nicht so problematisch, da der Speicher mit einzelnen Bl"ocken aufgebaut ist. Wenn einer ausf"allt hat man immer noch einige andere Speicherzellen.
-<<<<<<< Updated upstream
+Ein grosses Problem bei Flashspeichern ist die begrenzte schreib-und
+Leseanzahl. Wegem dem Tunneleffekt fliessen die Elektronen durch die
+Oxidschicht, dadurch wird diese Oxidschicht, um das Floating Gate herum,
+immer ein kleines bisschen besch"adigt. Dies bewirkt, dass immer mehr
+der Ladung abfliessen kann. Bei den NOR-Flashs hat man etwa 10'000
+bis 100'000 Zyklen. Hingegen bei den NAND-Flashs sind es doch gegen 2
+Millionen Zyklen. Dieses Problem ist jedoch nicht so problematisch, da
+der Speicher mit einzelnen Bl"ocken aufgebaut ist. Wenn einer ausf"allt
+hat man immer noch einige andere Speicherzellen.
+
 
 \section{L"oschvorgang}
 \rhead{Lo"schvorgang}
-Der L"oschvorgang kann erreicht werden, indem das Potential am Gate heruntergesetzt wird. So wird erreicht, dass es zum Tunneleffekt kommt. Dies kann im Kapitel \ref{chapter:Tunneleffekt} nachgelesen werden.
+Der L"oschvorgang kann erreicht werden, indem das Potential am Gate
+heruntergesetzt wird. So wird erreicht, dass es zum Tunneleffekt
+kommt. Dies kann im Kapitel \ref{chapter:Tunneleffekt} nachgelesen werden.
 
 
 \section{Schreibvorgang}
 
 \subsection{Modell des Potentialtopf}
 \rhead{Modell des Potentialtopf}
-Als Modell f"ur das Floating-Gate wird ein Potentialtopf verwendet, in dem die Elektronen gespeichert werden.
-Als Vereinfachung des Schreibvorgangs kann man sich das Putten beim Golf vorstellen. Das Elektron ist der Golfball und der Potentialtopf das Loch. Das Elektron landet jedoch nicht wegen der Schwerkraft im Potentialtopf, sondern es gibt Energie ab an den Potentialtopf und wird dadurch abgebremst. Wird das Elektron stark genug abgebremst, landet es im Potentialtopf.
-=======
+Als Modell f"ur das Floating-Gate wird ein Potentialtopf verwendet,
+in dem die Elektronen gespeichert werden.
+Als Vereinfachung des Schreibvorgangs kann man sich das Putten beim
+Golf vorstellen. Das Elektron ist der Golfball und der Potentialtopf
+das Loch. Das Elektron landet jedoch nicht wegen der Schwerkraft im
+Potentialtopf, sondern es gibt Energie ab an den Potentialtopf und wird
+dadurch abgebremst. Wird das Elektron stark genug abgebremst, landet es
+im Potentialtopf.
 
-\section{Modell des Potentialtopf}
-\rhead{Modell des Potentialtopf}
-Als Modell f"ur das Floating-Gate wird ein Potentialtopf verwendet, in dem die Elektronen gespeichert werden.
-Als Vereinfachung des Schreibvorgangs kann man sich das Putten beim Golf vorstellen. Das Elektron ist der Golfball und der Potentialtopf das Loch. Das Elektron landet jedoch nicht wegen der Schwerkraft im Potentialtopf, sondern es gibt Energie ab an den Potentialtopf und wird dadurch abgebremst. Wird das Elektron stark genug abgebremst, landet es im Potentialtopf.
-
-Am Anfang befindet sich im Potentialtopf ein Grundpotential $E_{0}$ das Ziel ist es dieses Potential auf ein h"oheres Potential $E_{1}$ zu bringen. Da die L"osung der urspr"unglichen Gleichung auf ein partielles Differential-Gleichungssystem f"uhrt und da das L"osen partieller Differentialgleichungen nicht Stoff des Bachelorstudiums ist, werden die Gleichungen mittels Skalarpordukt auf ein normales Differential-Gleichungssystem vereinfacht. Schlussendlich wird die Wahrscheinlichkeit eines Zustandes im Potentialtopf errechnet. Diese Wahrscheinlichkeit ist abh"angig von der Energie des Elektrons, vom Abstand des Elektrons zum Potentialtopf und der Geschwindigkeit respektive der Zeit mit der das Elektron auf den Potentialtopf wirkt 
-%(Bild Potentialtopf).
->>>>>>> Stashed changes
-
-Am Anfang befindet sich im Potentialtopf ein Grundpotential $E_{0}$ das Ziel ist es dieses Potential auf ein h"oheres Potential $E_{1}$ zu bringen. Da die L"osung der urspr"unglichen Gleichung auf ein partielles Differential-Gleichungssystem f"uhrt und da das L"osen partieller Differentialgleichungen nicht Stoff des Bachelorstudiums ist, werden die Gleichungen mittels Skalarpordukt auf ein normales Differential-Gleichungssystem vereinfacht. Schlussendlich wird die Wahrscheinlichkeit eines Zustandes im Potentialtopf errechnet. Diese Wahrscheinlichkeit ist abh"angig von der Energie des Elektrons, vom Abstand des Elektrons zum Potentialtopf und der Geschwindigkeit respektive der Zeit mit der das Elektron auf den Potentialtopf wirkt 
+Am Anfang befindet sich im Potentialtopf ein Grundpotential $E_{0}$
+das Ziel ist es dieses Potential auf ein h"oheres Potential $E_{1}$
+zu bringen. Da die L"osung der urspr"unglichen Gleichung auf ein
+partielles Differential-Gleichungssystem f"uhrt und da das L"osen
+partieller Differentialgleichungen nicht Stoff des Bachelorstudiums
+ist, werden die Gleichungen mittels Skalarpordukt auf ein normales
+Differential-Gleichungssystem vereinfacht. Schlussendlich wird die
+Wahrscheinlichkeit eines Zustandes im Potentialtopf errechnet. Diese
+Wahrscheinlichkeit ist abh"angig von der Energie des Elektrons, vom
+Abstand des Elektrons zum Potentialtopf und der Geschwindigkeit respektive
+der Zeit mit der das Elektron auf den Potentialtopf wirkt
 %(Bild Potentialtopf).
 
 \subsection{Anregung}
 \rhead{Anregung}
-Der Potentialtopf mit dem Grundenergie $E_{0}$ hat eine Grundschwingung $\cos(x)$.
-Als Vereinfachung dieser Grundschwingung dient die Vorstellung eines Wackelpuddings, welcher durch das vorbei fliegende Elektron zus"atzlich in Schwingung versetzt wird. 
-Das Grundenergie wird asymmetrisch angeregt. Wenn man das auf das Modell des Wackelpudding "ubertr"agt, erkennt man, dass wenn man einen Wackelpudding gleichm"assig zusammendrückt, wird dieser nicht zus"atzlich in Schwingung versetzt. Wird der Wackelpudding jedoch auf der einen Seite angestossen, wird der Wackelpudding zus"atzlich in Schwingung versetzt und erreicht ein h"oheres Energieniveau.
-F"ur die Berechnung wird der Potentialtopf "uber die h"alfe mit einem Rechteckimpuls angeregt. Dies vereinfacht das L"osen der Differentialgleichungen.
+Der Potentialtopf mit dem Grundenergie $E_{0}$ hat eine Grundschwingung
+$\cos(x)$.  Als Vereinfachung dieser Grundschwingung dient die
+Vorstellung eines Wackelpuddings, welcher durch das vorbei fliegende
+Elektron zus"atzlich in Schwingung versetzt wird.  Das Grundenergie
+wird asymmetrisch angeregt. Wenn man das auf das Modell des
+Wackelpudding "ubertr"agt, erkennt man, dass wenn man einen Wackelpudding
+gleichm"assig zusammendrückt, wird dieser nicht zus"atzlich in Schwingung
+versetzt. Wird der Wackelpudding jedoch auf der einen Seite angestossen,
+wird der Wackelpudding zus"atzlich in Schwingung versetzt und erreicht
+ein h"oheres Energieniveau.  F"ur die Berechnung wird der Potentialtopf
+"uber die h"alfe mit einem Rechteckimpuls angeregt. Dies vereinfacht
+das L"osen der Differentialgleichungen.
 %(Bild Anregung)
 
-<<<<<<< Updated upstream
 \subsection{Berechnung}
 \subsubsection{Schr"odingergleichung}
-=======
-\section{L"oschvorgang}
-\rhead{Lo"schvorgang}
-Der L"oschvorgang kann erreicht werden, indem das Potential am Gate heruntergesetzt wird. So wird erreicht, dass es zum Tunneleffekt kommt. Dies kann im Kapitel \ref{chapter:Tunneleffekt} nachgelesen werden.
 
-
-\section{Schreibvorgang}
-
-\subsection{Schr"odingergleichung}
->>>>>>> Stashed changes
 \rhead{Schr"odingergleichung}
-Die Schr"odingergleichung ergibt sich aus der kinetischen Energie des Potentialtopfes und der potentiellen Energie der Anregung.
+Die Schr"odingergleichung ergibt sich aus der kinetischen Energie des
+Potentialtopfes und der potentiellen Energie der Anregung.
 \[
 \ i\hbar\frac{d}{dt}|\psi(t)\rangle = H|\psi(t)\rangle = (-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}+V(x)+V_{e}(x,t))|\psi(t)\rangle
 \]
@@ -103,28 +147,36 @@ Wenn man den Zustand nun von 0 auf 1 erh"oht sieht dies folgendermassen aus:
 \ i\hbar\frac{d}{dt}\langle1|\psi(t)\rangle = \langle1|-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}+V(x)+V_{e}(x,t)|\psi(t)\rangle
 \]
 
-Was nun genauer ausgerechnet wird ist $\langle1|\psi(t)\rangle$, denn dies entspricht der Wahrscheinlichkeit, dass der $|1\rangle$ erreicht ist.
+Was nun genauer ausgerechnet wird ist $\langle1|\psi(t)\rangle$, denn
+dies entspricht der Wahrscheinlichkeit, dass der $|1\rangle$ erreicht ist.
 
-Wenn man die Gleichung nun noch vereinfacht, sieht man, dass diese Wahrscheinlichkeit mehrfach vorkommt.
+Wenn man die Gleichung nun noch vereinfacht, sieht man, dass diese
+Wahrscheinlichkeit mehrfach vorkommt.
 \[
 \ i\hbar\frac{d}{dt}\langle1|\psi(t)\rangle = E_{1}\langle1|\psi(t)\rangle+\langle1|\psi(t)\rangle V(t)
 \]
 
-Das Ganze kann man nun auch mit dem Zustand $|0\rangle$ machen. Diese Gleichung sieht sehr "ahnlich aus.
+Das Ganze kann man nun auch mit dem Zustand $|0\rangle$ machen. Diese
+Gleichung sieht sehr "ahnlich aus.
 \[
 \ i\hbar\frac{d}{dt}\langle0|\psi(t)\rangle = E_{0}\langle0|\psi(t)\rangle+\langle0|\psi(t)\rangle V(t)
 \]
 
-<<<<<<< Updated upstream
 \subsubsection{Skalarprodukt}
 \rhead{Skalarprodukt}
-Mittels Skalarprodukt kann das Differentialgleichungssystem weiter vereinfacht werden.
-Denn wie man weiss ergibt das Skalarprodukt von $\langle0|0\rangle$ und $\langle1|1\rangle = 1$. Genauso wie das Skalarprodukt von $\langle0|1\rangle$ und $\langle1|0\rangle = 0$.
-Ausserdem kann  $\langle0|V(t)|0\rangle$ als $V_{0}v_{00}$ geschrieben werden, $\langle1|V(t)|0\rangle$ als $V_{0}v_{01}$,$\langle0|V(t)|0\rangle$ als $V_{0}v_{11}$ und $\langle1|V(t)|0\rangle$ als $V_{0}v_{10}$.
+Mittels Skalarprodukt kann das Differentialgleichungssystem weiter
+vereinfacht werden.
+Denn wie man weiss ergibt das Skalarprodukt von $\langle0|0\rangle$
+und $\langle1|1\rangle = 1$. Genauso wie das Skalarprodukt von
+$\langle0|1\rangle$ und $\langle1|0\rangle = 0$.
+Ausserdem kann  $\langle0|V(t)|0\rangle$ als $V_{0}v_{00}$
+geschrieben werden, $\langle1|V(t)|0\rangle$ als
+$V_{0}v_{01}$,$\langle0|V(t)|0\rangle$ als $V_{0}v_{11}$ und
+$\langle1|V(t)|0\rangle$ als $V_{0}v_{10}$.
 
-=======
->>>>>>> Stashed changes
-Einfachheitshalber schreibt man anstatt $\langle1|\psi(t)\rangle$ $a_1$ entsprechend f"ur $\langle0|\psi(t)\rangle$ $a_0$. Somit ergibt sich dann folgendes Diefferentialgleichungssystem:
+Einfachheitshalber schreibt man anstatt $\langle1|\psi(t)\rangle$ $a_1$
+entsprechend f"ur $\langle0|\psi(t)\rangle$ $a_0$. Somit ergibt sich
+dann folgendes Diefferentialgleichungssystem:
 \[
 \ i\hbar\frac{d}{dt}a_{0}(t)\langle0|0\rangle +i\hbar\frac{d}{dt}a_{1}(t)\langle0|1\rangle = a_{0}(t)E_{1}\langle0|0\rangle + a_{1}(t)E_{1}\langle0|1\rangle + a_{0}(t)\langle0|V(t)|0\rangle+ a_{1}(t)\langle1|V(t)|0\rangle
 \]
@@ -140,13 +192,13 @@ Daraus folgt:
 \ i\hbar\dot{a_{1}}_dot = V_{0} v_{10} a_{0} + (E_{1} V_{0} v_{11}) a_{1}
 \]
 
-<<<<<<< Updated upstream
 \subsubsection{Variation der Konstanten}
-=======
-\subsection{Variation der Konstanten}
->>>>>>> Stashed changes
 \rhead{Variation der Konstanten}
-Aufgrund der $\cos$schwingung oszilliert die Differtialgleichunug schnell. Diese Oszillation kann jedoch heraus gefiltert werden, indem man die Konstanten variiert. Das Prinzip der Variation der Konstanten wird an folgendem Beispiel illustriert. Die Konstanten entsprechen der Energien und der Potentiale, welche nun Zeitabh"angig gemacht werden.
+Aufgrund der $\cos$schwingung oszilliert die Differtialgleichunug
+schnell. Diese Oszillation kann jedoch heraus gefiltert werden, indem
+man die Konstanten variiert. Das Prinzip der Variation der Konstanten
+wird an folgendem Beispiel illustriert. Die Konstanten entsprechen der
+Energien und der Potentiale, welche nun Zeitabh"angig gemacht werden.
 
 \[
 \ \dot{a} = C a(t) + D(t) \Rightarrow a(t) = k(t) e^{C t}
@@ -232,17 +284,23 @@ Die $ \lambda $ der zweite Gleichung lauten:
 \ \lambda_{3,4} = \frac{(C_{00}-C_{11})\pm \sqrt{(C_{00}-C_{11})^2-4(C_{01}C_{10})}}{2}
 \]
 
-<<<<<<< Updated upstream
 \subsubsection{Numerische Berechnung}
 \rhead{Numerische Berechnung}
-Nun kann man alles wieder einsetzen und nummerisch berechnen, dazu kann zum Beispiel Matlab verwendet werden.
-In den Abbildungen \ref{skript:StandardZ0} und \ref{skript:StandardZ1}, sieht man, dass man nach ca. 0.02s sagen kann das der Zustand $|0\rangle$ respektive der Zustand $|1\rangle$ eintrifft. Wenn man das Potential um das 50-Fache erh"oht, sieht man in der Abbildung \ref{skript:PotentialgrossZ0}, dass die Wahrscheinlichkeit, dass der Zustand $|0\rangle$ eintrifft viel schneller kleiner wird und die Wahrscheinlichkeit f"ur den Zustand $|1\rangle$ viel schneller ansteigt, wie in Abbildung \ref{skript:PotentialgrossZ1} zu sehen ist. Verkleinert man jedoch das Potential um das ca. 30-Fache, dauert es um einiges l"anger bis die Wahrscheinlichkeit, dass der Zustand $|0\rangle$, wie in Abbildung \ref{skript:PotentialkleinZ0} eintrifft respektive, bis die Wahrscheinlichkeit, dass der Zustand $|1\rangle$, wie in Abbildung \ref{skript:PotentialkleinZ1} zu sehen ist, eintrifft. 
-=======
-\subsection{Numerische Berechnung}
-\rhead{Numerische Berechnung}
-Nun kann man alles wieder zurückeinsetzen und mit zum Beispiel Matlab berechnen.
-
->>>>>>> Stashed changes
+Nun kann man alles wieder einsetzen und nummerisch berechnen, dazu kann
+zum Beispiel Matlab verwendet werden.
+In den Abbildungen \ref{skript:StandardZ0} und \ref{skript:StandardZ1},
+sieht man, dass man nach ca. 0.02s sagen kann das der Zustand
+$|0\rangle$ respektive der Zustand $|1\rangle$ eintrifft. Wenn man
+das Potential um das 50-Fache erh"oht, sieht man in der Abbildung
+\ref{skript:PotentialgrossZ0}, dass die Wahrscheinlichkeit, dass
+der Zustand $|0\rangle$ eintrifft viel schneller kleiner wird und die
+Wahrscheinlichkeit f"ur den Zustand $|1\rangle$ viel schneller ansteigt,
+wie in Abbildung \ref{skript:PotentialgrossZ1} zu sehen ist. Verkleinert
+man jedoch das Potential um das ca. 30-Fache, dauert es um einiges
+l"anger bis die Wahrscheinlichkeit, dass der Zustand $|0\rangle$, wie
+in Abbildung \ref{skript:PotentialkleinZ0} eintrifft respektive, bis
+die Wahrscheinlichkeit, dass der Zustand $|1\rangle$, wie in Abbildung
+\ref{skript:PotentialkleinZ1} zu sehen ist, eintrifft.
 
 \begin{figure}
 \centering
