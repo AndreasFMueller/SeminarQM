@@ -43,30 +43,36 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \begin{document}
 
-    \begin{tikzpicture}[
+  \begin{tikzpicture}[
         scale = 0.7,
         pen/.style={decoration={random steps,segment length=4pt,amplitude=0.4pt},decorate}
     ]
-
-    % Grid
-    \draw[->,pen] (-2,0) to (2,0) node[anchor=west] {x};
-    \draw[->,pen] (0,-2) to (0,2) node[anchor=south]{z};
+        
+    \begin{scope}
     
-    % Circle
-    \draw[pen] (0,0) circle(1.5);
+        % Circle
+        \clip[pen,draw] (0,0) circle(1.5);
     
-    % Fill
-    \fill[pen,fill=none] (0,0) to (1.5,0) arc(0:90:1.5);
-    \fill[pen,pattern=north east lines] (0,0) to (0,1.5) arc(90:180:1.5);
-    \fill[pen,pattern=crosshatch] (0,0) to (0,-1.5) arc(-90:-180:1.5);
-    \fill[pen,pattern=north west lines] (0,0) to (1.5,0) arc(0:-90:1.5);
+        % Fill pattern
+        \foreach \i in {-2,-1.6,...,2}
+        {
+            \draw[pen](0,\i)--++(-1.5,-1.5);
+            \draw[pen](\i,0)--++(1.5,-1.5);
+        }     
+    \end{scope}
 
-    % Text
-    \node at (1.4,1.4)   {\Large ++};
-    \node at (-1.4,1.4)  {\Large -+};
-    \node at (1.4,-1.4)  {\Large +-};
-    \node at (-1.4,-1.4) {\Large {-}{-}};
-
+    \begin{scope}
+    
+        % Axes
+        \draw[->,pen] (-2,0) to (2,0) node[anchor=west] {x};
+        \draw[->,pen] (0,-2) to (0,2) node[anchor=south]{z};
+        
+        % Text
+        \node at (1.4,1.4)   {\Large ++};
+        \node at (-1.4,1.4)  {\Large -+};
+        \node at (1.4,-1.4)  {\Large +-};
+        \node at (-1.4,-1.4) {\Large {-}{-}};
+    \end{scope}
     
     \end{tikzpicture}
 

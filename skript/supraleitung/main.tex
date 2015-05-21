@@ -16,15 +16,15 @@ In diesem Kapitel m"ochten wir die Grundlagen f"ur die Supraleitung erarbeiten. 
 %----------------------------Elektron-Elektron Wechselwirkung------------------------
 \section{Elektron-Elektron Wechselwirkung\label{supraleitung:elektronelektronwecheslwirkung}}
 \rhead{Elektron-Elektron Wechselwirkung}
-Damit sich Elektronen zu Paaren bilden, m"ussen sie sich anziehen. Die bekannte coulombsche Wechselwirkung ist jedoch abstossend, da die Vorzeichen von zwei Elektronen gleich sind.
+Damit sich Elektronen zu Paaren bilden, m"ussen sie sich anziehen. Die bekannte coulombsche Wechselwirkung ist jedoch abstossend. Dies liegt daran, dass die Ladungen der Elektronen die selben Vorzeichen aufweisen.
 \begin{equation}
 F = \frac{Q_1\cdot Q_2}{4\pi \varepsilon r^2}
 \label{supraleitung:Coulomb}
 \end{equation}
-Wir sind also auf der Suche nach einer anziehenden, negativen Kraft.
+Wir sind also auf der Suche nach einer anziehenden Kraft. Um der Vorzeichenkonvention zu entsprechen muss die Kraft negativ sein.
 \\
 Zwischen den Elektronen und dem Gitter ist eine Wechselwirkung vorhanden. Diese reine Wechselwirkung zwischen Gitter und Elektron hat jedoch keinen Einfluss auf die Elektron-Elektron Wechselwirkung. Sie wird deshalb nachfolgend nicht ber"ucksichtigt.
-Die f"ur uns interessante Elektron-Elektron Wechselwirkung funktioniert "uber die sogenannten Phononen. Wie diese Wechselwirkung im Allgemeinen funktioniert und was diese Phononen sind wird nachfolgend erl"autert.
+Die f"ur uns interessante Elektron-Elektron Wechselwirkung funktioniert "uber die sogenannten Phononen. Wie diese Wechselwirkung im Allgemeinen funktioniert und was Phononen sind wird nachfolgend erl"autert.
 \\
 \\
 In Abbildung \ref{supraleitung:Gitter1} betrachten wir einen Ausschnitt der Gitterstruktur eines K"orpers. Fliegt nun ein Elektron in dieses Gitter hinein, so wird das Gitter durch das elektrische Feld des Elektrons deformiert. Das Elektron "andert seine Flugbahn. Dargestellt ist dies in Abbildung \ref{supraleitung:Gitter2}. Das deformierte Gitter bewegt sich nun weiter als Schwingung. In Abbildung \ref{supraleitung:Gitter3} ist diese Schwingung dargestellt und mit $q$ bezeichnet. Wenn nun ein weiteres Elektron ins Gitter fliegt und auf die Schwingung trifft, so wird dieses von der Schwingung im Gitter beeinflusst, ersichtlich in Abbilung \ref{supraleitung:Gitter4}. Die Schwingung im Gitter wird wieder vernichtet und das zweite Elektron ver"andert ebenfalls seine Flugbahn. Es wurde also ein Impuls vom Elektron $k'$ zum Elektron $k$ "uber das Gitter transportiert. 
@@ -68,7 +68,7 @@ Entstehung von Cooper-Paaren und Supraleitung nach Feynman
 \\
 Diese Wechselwirkung zwischen den Elektronen nur Grafisch zu betrachten reicht nicht um eine Aussage "uber die Anziehung oder Abstossung zu machen. Wir werden also nachfolgend diese Wechselwirkung mathematisch entwickeln. F"ur die mathematische Betrachtung beginnen wir da wo wir einen Anhaltspunkt haben, also beim Phonon.
 \\
-Wir haben gesehen, dass das Phonon einem harmonischem Oszillatorentspricht und quantisiert ist. F"ur dieses gibt es also Auf- und Absteigeoperatoren. Wenn wir das Phonon $a$ nennen und die Energie $q$ haben, ergibt sich der Aufsteigoperator $a^+_q$ und der Absteigeoperator $a_q$. Da die vom Phonon aufgenommene Energie quantisiert ist, so muss das Elektron qunatisierte Energie aufnehmen und abgeben. Dies bedeuted, dass auch die Elektrone Auf- und Absteigeoperatoren haben. Wir nennen die Elektronen nun $c$ mit der Wellenzahl $k$. Daraus folgt, dass der Aufsteigoperator f"ur das Elektron $c^+_k$ und der Absteigeoperator $c_k$ sind.
+Wir haben gesehen, dass das Phonon einem harmonischem Oszillator entspricht und quantisiert ist. F"ur das Phonon gibt es also Auf- und Absteigeoperatoren. Wenn wir das Phonon $a$ nennen und die Energie $q$ haben, ergibt sich der Aufsteigoperator $a^+_q$ und der Absteigeoperator $a_q$. Da die vom Phonon aufgenommene Energie quantisiert ist, so muss das Elektron qunatisierte Energie aufnehmen und abgeben. Dies bedeuted, dass auch die Elektronen Auf- und Absteigeoperatoren haben. Wir nennen die Elektronen nun $c$ mit der Wellenzahl $k$. Daraus folgt, dass der Aufsteigoperator f"ur das Elektron $c^+_k$ und der Absteigeoperator $c_k$ sind.
 Wir f"uhren nun noch einen Anfangszustand $|a\rangle$ (vlg. Abb. \ref{supraleitung:Gitter1}), einen Endzustand $\langle e|$ (vgl. Abb. \ref{supraleitung:Gitter4}) und einen Zwischenzustand $|z_1\rangle$ (vgl. Abb. \ref{supraleitung:Gitter3}) ein. Der Vorgang der Wechselwirkung zwischen den Elektronen kann nun so beschrieben werden (ohne Energiebetrachtung):
 \begin{equation}
 \langle e|c^+_{k+q} c_k a_q |z_1\rangle\langle z_1| c^+_{k'-q} c_{k'} a^+_q |a\rangle
@@ -78,8 +78,8 @@ Zu beachten ist nun, dass die Leserichtung von rechts nach links ist. Es wird al
 Von diesem Zwischenzustand aus geht es weiter, indem man das Phonon $a_q$ wieder vernichtet, das Elektron $c_k$ vernichtet und ein Elektron $c^+_{k+q}$ erzeugt.
 \\
 \\
-Als n"achstes m"ussen wir die Energiebetrachtung einf"ugen. Daf"ur F"uhren wir eine materialabh"angige Konstante $M_q$ ein und erg"anzen die Wechselwirkung mit dem Nenner aus der St"orungstheorie.
-Um die gesammte Wechselwirkung zu erhalten summieren wir "uber alle $k$,$k'$ und $q$. Die Wechselwirkung erg"anzen wir zudem um einen zweiten Term der die umgekehrte Reihenfolge enth"alt. Dieer f"uhrt dazu, dass wir sp"ater weitere vereifachungen durchf"uhren k"onnen. Da wir aber nun die Wechselwirkung doppelt z"ahlen (wir summieren ja bereits "uber alles) teilen wir noch durch $2$.
+Als n"achstes m"ussen wir die Energiebetrachtung einf"ugen. Daf"ur f"uhren wir eine materialabh"angige Konstante $M_q$ ein und erg"anzen die Wechselwirkung mit dem Nenner aus der St"orungstheorie.
+Um die gesammte Wechselwirkung zu erhalten summieren wir "uber alle $k$, $k'$ und $q$. Die Wechselwirkung erg"anzen wir zudem um einen zweiten Term der die umgekehrte Wechselwirkungs-Reihenfolge enth"alt. Dies f"uhrt dazu, dass wir sp"ater weitere Vereifachungen durchf"uhren k"onnen. Da wir aber nun die Wechselwirkung doppelt z"ahlen (wir summieren ja bereits "uber alles) teilen wir noch durch $2$.
 \\
 \begin{equation}
 \frac{1}{2}
@@ -96,24 +96,25 @@ Um die gesammte Wechselwirkung zu erhalten summieren wir "uber alle $k$,$k'$ und
 \label{supraleitung:WechelwirkungME}
 \end{equation}
 \\
-Da $E(k')-E(k'-q)-\hbar\omega_q = E(k)-E(k+q)-\hbar\omega_q$ ist, ersetzen wir in der Formel den ersten mit dem zweiten.
+Da $E(k')-E(k'-q) = E(k+q)-E(k)$ ist, ersetzen wir diesen Teil im Nenner des ersten Bruches.
 \\
-Zus"atzlich k"urzen wir die Phononen heraus und packen alles ausser der reinen Wechselwirkung in einen Koeffitienten $V_{kk'q}$. Somit erhalten wir zwei Formeln:
+Zus"atzlich k"urzen wir die Phononen und den Zwischenzustand und packen alles ausser der reinen Wechselwirkung in einen Koeffitienten $V_{kk'q}$. Somit erhalten wir die Formel
 \begin{equation}
 \frac{1}{2}
 \sum \limits_{kk'q} 
 \langle e|V_{kk'q}c^+_{k+q}c^+_{k'-q}c_{k'}c_k|a \rangle
 \label{supraleitung:WechelwirkungKurz}
 \end{equation}
-und
+mit
 \begin{equation}
-V_{kk'q} = - |M_q|^2 \left\{\frac{1}{\hbar\omega_q+(E(k+q)-E(k))}
-+
+V_{kk'q} = - |M_q|^2 \left\{
 \frac{1}{\hbar\omega_q-(E(k+q)-E(k))}
++
+\frac{1}{\hbar\omega_q+(E(k+q)-E(k))}
 \right\}
 \label{supraleitung:WechelwirkungVkk'q}
 \end{equation}
-Wir vereinfachen weiter mit $a^2-b^2 = (a+b)\cdot(a-b)$.
+Wir vereinfachen weiter mit $(a-b)\cdot (a+b) = a^2-b^2$.
 
 \begin{equation}
 V_{kk'q} =
@@ -123,6 +124,7 @@ V_{kk'q} =
 \label{supraleitung:Wechelwirkung_Vkk'q_Kurz}
 \end{equation}
 Das Vorzeichen von $V_{kk'q}$ entscheidet nun dar"uber, ob die Wechselwirkung anziehend oder abstossend ist.\\
+Da der Z"ahler Positiv ist, wird das Vorzeichen von $(E(k+q)-E(k))^2-(\hbar\omega_q)^2$ bestimmt.
 
 %TODO nun muss die Formel 81.2 eingefuehrt werden -> Nenner noch nachvollziehbar beschreiben.
 %danach richtung 81.4 weiterziehen
@@ -217,6 +219,14 @@ Um eine kompakte Schreibweise zu erhalten ordnen wir $k$ zugleich „Spin aufw"a
 %\section{Elektronenverhalten in einem Festk"orper}
 %\rhead{Elektronenverhalten in einem Festk"orper}
 \\
+
+\section{Ausblick}
+\rhead{Ausblick}
+Wir haben also gesehen, dass es eine Elektron-Elektron Wechselwirkung gibt und wie diese zustande kommt. Das Vorzeichen und somit die Paarbildung sind aber noch nicht gekl"art. Um das Vorzeichen zu berechnen sind weiter Vereinfachungen zu treffen. Man erh"alt dann eine Gleichung mit einer zu minimierenden Nebenbedingung. Durch weitere Approximationen findet man heraus, dass 2 Elektronen als Paar weniger Energie alls alleine ben"otigen. Für die Bereichnung und als weiterführende Literatur verweisen wir auf O.Madelung Festk"orper II (\cite{skript:madelung1}).
+
+
 \printbibliography[heading=subbibliography]
 \end{refsection}
+
+
 
