@@ -1,4 +1,5 @@
 % !TeX spellcheck = de_CH
+% !TeX root = ../skript.tex
 \chapter{Bellsche Ungleichung\label{chapter:bell}}
 \lhead{Bellsche Ungleichung}
 \begin{refsection}
@@ -604,8 +605,10 @@ $E(\vec{a},\vec{b}) - E(\vec{a},\vec{c})$:
         A(\vec{a},\lambda) A(\vec{b},\lambda) - 
         A(\vec{a},\lambda) A(\vec{c},\lambda)
     \right] d\lambda \\
-    = \int_{\lambda\in\Lambda} \rho(\lambda)A(\vec{a},\lambda)A(\vec{b},\lambda)
-        \left[ A(\vec{b},\lambda)A(\vec{c},\lambda) - 1 \right] d\lambda
+    = \int_{\lambda\in\Lambda} \rho(\lambda) \left[
+         A(\vec{a},\lambda)A(\vec{c},\lambda) - 
+         A(\vec{a},\lambda)A(\vec{b},\lambda)
+    \right] d\lambda
 \end{split}
 \end{equation}
 Um die Bellsche Ungleichung herleiten zu k\"onnen, wird 
@@ -641,15 +644,17 @@ Hilfssatz~\ref{hilfssatz:bell:dreiecksungleichung_integral} geschrieben als
 \begin{equation}
 \begin{split}
     |E(\vec{a},\vec{b}) - E(\vec{a},\vec{c})| =
-    \left| \int_{\lambda\in\Lambda} \rho(\lambda)
-        A(\vec{a},\lambda)A(\vec{b},\lambda)
-        \left[ A(\vec{b},\lambda)A(\vec{c},\lambda) - 1 \right]
+    \left| \int_{\lambda\in\Lambda} \rho(\lambda) \left[
+         A(\vec{a},\lambda)A(\vec{c},\lambda) - 
+         A(\vec{a},\lambda)A(\vec{b},\lambda) \right]
         d\lambda
     \right| \\
     \leq 
     \int_{\lambda\in\Lambda} \left|  
-        \rho(\lambda)A(\vec{a},\lambda)A(\vec{b},\lambda)
-        \left[ A(\vec{b},\lambda)A(\vec{c},\lambda) - 1 \right]
+        \rho(\lambda)\left[
+         A(\vec{a},\lambda)A(\vec{c},\lambda) - 
+         A(\vec{a},\lambda)A(\vec{b},\lambda)
+    \right]
     \right| d\lambda.
 \end{split}
 \end{equation}
@@ -661,9 +666,11 @@ weiter vereinfacht zu
     \right| d\lambda \\
     &= \int_{\lambda\in\Lambda} \rho(\lambda)
     \left| A(\vec{a},\lambda) \right| \cdot 
-    \left| A(\vec{c},\lambda) - A(\vec{b},\lambda) \right| d\lambda \\
+    \left| A(\vec{c},\lambda) - A(\vec{b},\lambda) \right| d\lambda, \\
+    \intertext{durch Multiplikation mit $|A(\vec{b},\lambda)|=1$ zu}
     &= \int_{\lambda\in\Lambda} \rho(\lambda)
     \left|\left[ A(\vec{b},\lambda) A(\vec{c},\lambda) - 1 \right]\right| d\lambda \\
+    \intertext{und da $A(\vec{b},\lambda)A(\vec{c},\lambda) = \pm 1$ zu}
     &= \int_{\lambda\in\Lambda} \rho(\lambda) 
     \left[1 - A(\vec{b},\lambda)A(\vec{c},\lambda) \right] d\lambda \\
     &= \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda
@@ -683,10 +690,10 @@ Diese Ungleichung muss, wenn eine Theorie lokaler, verborgener Variablen
 vorliegt, f\"ur alle Richtungen $\vec{a}$, $\vec{b}$ und $\vec{c}$ gelten.
 Betrachten wir als Beispiel die Messrichtungen
 \begin{align*}
-    \varangle\vec{a}\vec{b} = \frac{\pi}{4}, &&
-    \varangle\vec{b}\vec{c} = \frac{\pi}{4} &&
+    \vec{a}\cdot\vec{b} = \frac{\pi}{4}, &&
+    \vec{b}\cdot\vec{c} = \frac{\pi}{4} &&
     \text{und} &&
-    \varangle\vec{a}\vec{c} = 0,
+    \vec{a}\cdot\vec{c} = 0,
 \end{align*}
 welche in Abbildung~\ref{fig:bell:orientierung_pi4} dargestellt sind.
 Werden die Erwartungswerte der Quantenmechanik nach 
@@ -785,10 +792,10 @@ umformen k\"onnen.
 Betrachten wir nun die in Abbildung~\ref{fig:bell:orientierung_2}
 abgebildeten Messrichtungen
 \begin{align*}
-    \varangle\vec{a}\vec{b} = \frac{\pi}{4}, && 
-    \varangle\vec{b}\vec{a}' = \frac{\pi}{4} && 
+    \vec{a}\cdot\vec{b} = \frac{\pi}{4}, && 
+    \vec{b}\cdot\vec{a}' = \frac{\pi}{4} && 
     \text{und} &&
-    \varangle\vec{a}'\vec{b}' = \frac{\pi}{4}.
+    \vec{a}'\cdot\vec{b}' = \frac{\pi}{4}.
 \end{align*}
 \begin{figure}
     \centering
