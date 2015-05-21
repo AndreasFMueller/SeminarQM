@@ -332,6 +332,10 @@ clip currentpicture to
 
 endfig;
 
+%
+% Darstellung der Potentialbarriere
+%
+
 beginfig(4)
 
 fill (-200,-10)--(-30,-10)--(-30,200)--(-200,200)--cycle
@@ -344,6 +348,9 @@ fill (-30,-10)--(30,-10)--(30,200)--(-30,200)--cycle
 label(btex   I etex, (-115,180)) withcolor blue;
 label(btex  II etex, ( -10,180)) withcolor red;
 label(btex III etex, ( 115,180)) withcolor green;
+
+label.bot(btex $-a\mathstrut$ etex, (-30,0));
+label.bot(btex $a\mathstrut$ etex, ( 30,0));
 
 pickup pencircle scaled 1pt;
 
@@ -971,7 +978,7 @@ z2 = (0.8 * width, 0.67 * height);
 
 pickup pencircle scaled 1pt;
 
-fill (0.6 * width,0)--(width,0)--(width,height)--(0.6*width,height)--cycle
+fill (0.6 * width,0)--(width + 2,0)--(width + 2,height)--(0.6*width,height)--cycle
 	withcolor (0.7,0.7,0.7);
 
 z2 = (0.8 * width, 0.67 * height);
@@ -982,7 +989,7 @@ z2 = (0.8 * width, 0.67 * height);
 fill (0,0)--(width + 5,0)--(width + 5,0.25 * (width + 5))--cycle
 	withcolor (0.9,0.9,0.9);
 
-draw (0,0)--(omegapoint(1. / 200)) withcolor (0.8,0.8,0.8);
+draw (0,0)--(omegapoint(1. / 210)) withcolor (0.8,0.8,0.8);
 
 def ckurvepunkt(expr omega, C) =
 	(C / (C * omega * C * omega + A), C)
@@ -994,7 +1001,11 @@ def ckurve(expr omega) =
 	for C = 1 step 1 until height:
 		p := p..(ckurvepunkt(omega, C));
 	endfor;
-	pickup pencircle scaled 1pt;
+	if omega = (1 / 160):
+		pickup pencircle scaled 1.5pt;
+	else:
+		pickup pencircle scaled 1pt;
+	fi;
 	draw p;
 	pickup pencircle scaled 3pt;
 	draw omegapoint(omega);
@@ -1009,12 +1020,12 @@ draw omegapoint(1 / 160);
 
 pickup pencircle scaled 1pt;
 
-clip currentpicture to (0,0)--(width,0)--(width,height)--(0,height)--cycle;
+clip currentpicture to (0,0)--(width + 2,0)--(width + 2,height)--(0,height)--cycle;
 
-drawarrow (-5, 0)--(width + 5,         0);
+drawarrow (-5, 0)--(width + 7,         0);
 drawarrow ( 0,-5)--(        0,height + 5);
 
-label.top(btex $L$ etex, (width + 5,         0));
+label.top(btex $L$ etex, (width + 7,         0));
 label.lft(btex $C$ etex, (        0,height + 5));
 
 z0 = (0.5 * width, hyp(0.5 * width, 9 * 500));
