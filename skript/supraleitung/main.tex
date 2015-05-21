@@ -137,8 +137,8 @@ Unser Ziel wird nun sein, zwei Elektronen energetisch m"oglichst g"unstig zur Fe
 \\
 Die Wechselwirkung zwischen den Elektronen besteht einerseits aus der altbekannten Coulombsche Wechselwirkung (\ref{supraleitung:Coulomb}) und der neu eingef"uhrten Elektronen-Elektronen Wechselwirkung. Welcher dieser Kr"afte "uberwiegt, entscheidet die St"arke der Elektron-Phononen-Kopplung.
 \\
-Um diese neue Wechselwirkung zu betrachten gehen wir von einem idealisierten Falls aus. Dazu kann das Modell des Elektronengases verwendet werden. Dabei sind die Valenzelektronen nicht an die einzelnen Atome gebunden sondern können sich, wie in einem klassischen Gas, frei bewegen. Diese freien Elektronen können als Leitfähigkeit intepretiert werden. Der Widerstand entspricht der Wechelwirkung zwischen Elektron-Gitter und Elektron-Phonon.
-%TODO Klären ob Leitfähigkeit und Widerstand so korrekt ist. Noch genauer recherchieren.
+Um diese neue Wechselwirkung zu betrachten gehen wir von einem idealisierten Falls aus. Dazu kann das Modell des Elektronengases verwendet werden. Dabei sind die Valenzelektronen nicht an die einzelnen Atome gebunden sondern k"onnen sich, wie in einem klassischen Gas, frei bewegen. Diese freien Elektronen k"onnen als Leitf"ahigkeit intepretiert werden. Der Widerstand entspricht der Wechelwirkung zwischen Elektron-Gitter und Elektron-Phonon.
+%TODO Klaeren ob Leitfaehigkeit und Widerstand so korrekt ist. Noch genauer recherchieren.
 \\
 \\
 Wir betrachten die Fermikugel in der $k$-Ebene, in welcher alle inneren Zust"ande besetzt sind, alle "ausseren Zust"ande seien frei. Zu diesem System werden nun zwei Elektronen $(k_1,E(k_1))$ und $(k_2,E(k_2))$ hinzugef"ugt. Wir beschr"anken uns auf die Wechselwirkungen in welchen keine Energie an das Atomgitter abgegeben wird. Zudem beschr"anken wird die zul"assige Wechselwirkung zwischen den Elektronen auf die Energie eines Phonons.
@@ -168,14 +168,14 @@ E_F\le|\overrightarrow{k_1}|\le E_F+\hbar\omega_q
 \[
 E_F\le|\overrightarrow{k_2}|\le E_F+\hbar\omega_q
 \]
-%TODO Mit Titelgebung noch nicht glücklich
+%TODO Mit Titelgebung noch nicht gluecklich
 \subsubsection{Optimaler Gesamtimpuls von $k_1$ und $k_2$ finden}
 \rhead{Optimaler Gesamtimpuls von k_1 und k_2 finden}
-%TODO löschen?
-%Das n"achste Ziel wird nun sein, die Elektron-Elektron Wechelwirkungsenergie zu maximieren und die dafür notwendigen Bedingungen zu erarbeiten.
+%TODO loeschen?
+%Das n"achste Ziel wird nun sein, die Elektron-Elektron Wechelwirkungsenergie zu maximieren und die dafuer notwendigen Bedingungen zu erarbeiten.
 Die Wechselwirkungsenergie wird umso gr"osser, je mehr Summationsglieder zur Wellenfunktion (\ref{supraleitung:WellenfktAllg}) beitragen. Der Gesamtimpuls $K$ soll nun also so bestimmen werden, dass die Wechselwirkungsenergie maximal wird.
 \\
-Zur Bestimmung des optimalen $K$ kann die Fermikugel mit einer Schale der Dicke $\hbar\omega_q$ im $k$-Raum aufgezeichnet werden. In der Abbildung \ref{supraleitung:kRaum_05} wurde ein beliebiges $K$ gew"ahlt und durch geometrische Konstruktion gezeigt, in welchen Bereichen (grau markiert) m"ogliche $k_1$ und $k_2$ gew"ahlt werden können. Die graue Fl"ache entspricht der Wahrscheindlichkeit, denn je weniger Energie benötigt wird desto grösser ist die Wahrscheindlichkeit und entsprechend die graue Fl"ache. Ist $K$ gr"osser als $2\cdot(E_F+\hbar\omega_q)$ k"onnen keine g"ultigen Lösungen mehr f"ur $k_1$ und $k_2$ gefunden werden (Abbildung \ref{supraleitung:kRaum_06}). W"ahlt man hingegen $K$ kleiner und im Extremfall $K=0$ erzielt man die gr"osst m"ogliche Fl"ache und entsprechend die gr"osste Wahrscheindlichkeit (Abbildung \ref{supraleitung:kRaum_09}).
+Zur Bestimmung des optimalen $K$ kann die Fermikugel mit einer Schale der Dicke $\hbar\omega_q$ im $k$-Raum aufgezeichnet werden. In der Abbildung \ref{supraleitung:kRaum_05} wurde ein beliebiges $K$ gew"ahlt und durch geometrische Konstruktion gezeigt, in welchen Bereichen (grau markiert) m"ogliche $k_1$ und $k_2$ gew"ahlt werden k"onnen. Die graue Fl"ache entspricht der Wahrscheindlichkeit, denn je weniger Energie ben"otigt wird desto gr"osser ist die Wahrscheindlichkeit und entsprechend die graue Fl"ache. Ist $K$ gr"osser als $2\cdot(E_F+\hbar\omega_q)$ k"onnen keine g"ultigen L"osungen mehr f"ur $k_1$ und $k_2$ gefunden werden (Abbildung \ref{supraleitung:kRaum_06}). W"ahlt man hingegen $K$ kleiner und im Extremfall $K=0$ erzielt man die gr"osst m"ogliche Fl"ache und entsprechend die gr"osste Wahrscheindlichkeit (Abbildung \ref{supraleitung:kRaum_09}). Man findet also heraus, dass die Wellenzahlvektoren $k_1$ und $k_2$ entgegengesetzt sind.
 \\
 % Visualisierung der besten K-Vektors
 % Visualisierung 1
@@ -206,14 +206,13 @@ Bekanntlich besitzen Elektronen einen Spin. Da wir auf der Suche nach der maxima
 
 \subsubsection{Neue Wellenfunktion}
 \rhead{Neue Wellenfunktion}
-Somit ergibt sich die neue Wellenfunktion
+Mit den gewonnenen Erkenntnissen, dass $K=0$ ist und die Elektronenspins antiparallel, ergibt sich die vereinfachte Wellenfunktion
 
 \[
-\Psi_{12}=\sum \limits_{k} a(k)c^+_{k}c^+_{-k}|G\rangle
+\Psi_{12}=\sum \limits_{k} a(k)c^+_{k}c^+_{-k}|G\rangle.
 \]
 
-$k$ ordnen wir zugleich „Spin aufw"arts“ und $–k$ f"ur „Spin abw"arts“ zu.
-Der g"unstigste Prozess ist also wenn die Elektronen entgegengesetzte Wellenzahlvektoren $(k_1 = -k_2)$ und entgegengesetzten Spin $(\sigma_1 = -\sigma_2)$ aufweisen.
+Um eine kompakte Schreibweise zu erhalten ordnen wir $k$ zugleich „Spin aufw"arts“ und $–k$ „Spin abw"arts“ zu. Der g"unstigste Prozess ist also wenn die Elektronen entgegengesetzte Wellenzahlvektoren $(k_1 = -k_2)$ und entgegengesetzten Spin $(\sigma_1 = -\sigma_2)$ aufweisen.
 \\
 %\section{Elektronenverhalten in einem Festk"orper}
 %\rhead{Elektronenverhalten in einem Festk"orper}
