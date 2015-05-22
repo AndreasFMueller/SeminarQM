@@ -15,8 +15,11 @@ Allgemein gilt:
 \[
   f(x, \varepsilon) = f_0(x) + \varepsilon*f_1(x) + \varepsilon^2*f_2(x) + \ldots + \varepsilon^\infty*f_\infty(x)
 \]
-Dabei ist $f_0(x)$ die original Funktion und $f_n(x)$ die n-te  N"aherung der St"orung.
-Mit $\varepsilon$ wird die St"orung gesteuert. Dabei sollte $\varepsilon = 0$ nicht zu gross gew"ahlt werden, weil sonst die N"aherung ungenau wird. $\varepsilon = 0$ bedeutet keine St"orung.
+Dabei ist $f_0(x)$ die urspr\"ungliche Funktion und $f_n(x)$ die $n$-te  N"aherung der St"orung.
+Mit $\varepsilon$ wird die St"orung gesteuert. Dabei sollte $\varepsilon$ nicht zu gross gew"ahlt werden, 
+da die N"aherung sonst ungenau wird. 
+
+Setzen wir $\varepsilon = 0$, k\"onnen wir die St"orung dynamisch abschalten.
 
 In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den Hamilton-Operator der urspr"unglichen Funktion $H_0$ um zus"atzliche $\varepsilon^n*H_n$ erg"anzen:
 \[
@@ -46,12 +49,21 @@ In diesem Modell wollen wir den Grundzustand mit einem elektrischen Feld st\"ore
 Diese St\"orung heisst in der 1. N\"aherung $\hat H_1$ \& wird wie die gesamte St"orung \"uber den Parameter $\varepsilon$ gesteuert.
 
 $V_1$ wird als lineares Feld definiert:
+\begin{equation}
+  V_1(x) = a*x + b
+\end{equation}
+
+Der Parameter $a$ steht f\"ur die Feldst\"arke, der Parameter $b$ f\"ur die Grundspannung.
+
+Da wir $a$ jedoch bereits durch $\varepsilon$ beschreiben, k\"onnen wir mit $a = 1$ vereinfachen.
+
+F\"ur die Berechnung ist es einfacher das Feld symetrisch anzulegen. Darum setzen wir $b = 0$ \& reduzieren $V_1$
 \[
-  V_1 = a*x + b
+  V_1(x) = x
 \]
 
-Der Parameter $a$ steht f\"ur die Feldst\"arke. Da diese jedoch bereits durch 
-$\varepsilon$ beschrieben wird, k\"onnen wir die Formel f\"ur $V_1$ mit $a = 1$ vereinfachen:
+Eingesetzt wird daraus:
+
 \[
   \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
             + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + x )
@@ -67,6 +79,12 @@ $\varepsilon$ beschrieben wird, k\"onnen wir die Formel f\"ur $V_1$ mit $a = 1$ 
 
 
 
+
+
+
+
+
+\subsection{ Berechnung 1. N"aherung }
 
 
 Wir berechnen in diesem Beispie die erste N"aherung von einem Potentialskasten mit elektrischem Feld.
@@ -99,8 +117,6 @@ Die Ausgangsgleichung f\"ur $\hat{H}$ lautet somit
             + \varepsilon^1*x
 \]
 
-
-\subsection{ 1. N"aherung }
 
 
 \begin{equation}
