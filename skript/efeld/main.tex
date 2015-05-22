@@ -9,30 +9,41 @@ In diesem Kapitel erweitern wir das Beispiel des Potentialkastens
 um eine St\"orung.
 
 \section{ St"orungstheorie }
-Grundsätzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell mit einer St\"orung erg"anzen, anstatt von Anfang an mit einem komplexen Modell zu rechnen.
-Allgemein gilt
+Grundsätzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell (Abb \ref{abb:efeld_psi_ungestoert}) mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
+
+Allgemein gilt:
 \[
-f(x, \varepsilon) = f_0(x) + \varepsilon*f_1(x) + \varepsilon^2*f_2(x) + ...
+  f(x, \varepsilon) = f_0(x) + \varepsilon*f_1(x) + \varepsilon^2*f_2(x) + \ldots + \varepsilon^\infty*f_\infty(x)
 \]
-Dabei ist $f_0(x)$ die original Funktion und $f_n(x)$ die n-te  N"aherung der Störung.
-Mit $\varepsilon$ wird die Störung gesteuert. Dabei sollte $\varepsilon = 0$ nicht zu gross gew"ahlt werden, weil sonst die N"aherung ungenau wird. $\varepsilon = 0$ bedeutet keine Störung.
+Dabei ist $f_0(x)$ die original Funktion und $f_n(x)$ die n-te  N"aherung der St"orung.
+Mit $\varepsilon$ wird die St"orung gesteuert. Dabei sollte $\varepsilon = 0$ nicht zu gross gew"ahlt werden, weil sonst die N"aherung ungenau wird. $\varepsilon = 0$ bedeutet keine St"orung.
 
-In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den Hamilton-Operator erg"anzen:
+In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den Hamilton-Operator der urspr"unglichen Funktion $H_0$ um zus"atzliche $\varepsilon^n*H_n$ erg"anzen:
 \[
-H = \varepsilon^0*H_0 + \varepsilon^1*H_1 + \varepsilon^2*H_2 + ...
+  H = \varepsilon^0*H_0 + \varepsilon^1*H_1 + \varepsilon^2*H_2 + \ldots + \varepsilon^\infty \hat H_\infty
 \]
-Daraus kann die N"aherung der St"orung berechnet werden.
 
 
 
-\subsubsection{ Modell der St\"orung }
-% TODO
+
+
+
+
+
+
+
+
+
+\section{ Anwendungen }
+
+\subsection{ Potentialkasten mit eFeld }
+
+
+\subsubsection{ Modell der St\"orung elektrisches Feld }
 
 In diesem Modell wollen wir den Grundzustand mit einem elektrischen Feld st\"oren.
 
-Diese St\"orung heisst in der 1. N\"aherung $\hat H_1$
-
-Die gesamte St\"orung wird \"uber den Parameter $\varepsilon$ gesteuert.
+Diese St\"orung heisst in der 1. N\"aherung $\hat H_1$ \& wird wie die gesamte St"orung \"uber den Parameter $\varepsilon$ gesteuert.
 
 $V_1$ wird als lineares Feld definiert:
 \[
@@ -57,9 +68,6 @@ $\varepsilon$ beschrieben wird, k\"onnen wir die Formel f\"ur $V_1$ mit $a = 1$ 
 
 
 
-\section{ Beispiele }
-
-\subsection{ Potentialkasten mit eFeld }
 
 Wir berechnen in diesem Beispie die erste N"aherung von einem Potentialskasten mit elektrischem Feld.
 Dazu erweitern wir das einfache System  $\hat H_0$
@@ -162,7 +170,7 @@ Die einzelnen Werte in y-Richtung sind die jeweiligen N"aherungen. Alle Kurven p
 
 Was passiert?
 
-\section{ 3. Anwendung Potentialtopf }
+\subsection{ Potentialtopf }
 
 \[
   V_1 = \text{ innen \& aussen am Topf ... }
