@@ -94,7 +94,34 @@ Die Ausgangsgleichung f\"ur $\hat{H}$ lautet somit
 
 \subsection{ 1. N"aherung }
 
-Wie kamen wir darauf?
+
+\begin{equation}
+\begin{aligned}
+k&\ne l
+&&\Rightarrow&
+\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+&=
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\\
+k&=l
+&&\Rightarrow&
+E_k^{(1)}
+&=
+\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+\end{aligned}
+\end{equation}
+\begin{equation}
+|\psi_k(\varepsilon)\rangle
+=
+(1+i\varepsilon \gamma)
+\,|\psi_k^{(0)}\rangle
++
+\varepsilon
+\sum_{k\ne l}
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\,
+|\psi_l^{(0)}\rangle
+\end{equation}
 
 \begin{enumerate}
 \item Gegeben ist eine Gleichung $F_\varepsilon(x)=0$, gesucht
