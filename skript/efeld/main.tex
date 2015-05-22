@@ -9,7 +9,9 @@ In diesem Kapitel erweitern wir das Beispiel des Potentialkastens
 um eine St\"orung.
 
 \section{ St"orungstheorie }
-Grundsätzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell (Abb \ref{abb:efeld_psi_ungestoert}) mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
+Grundsätzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell 
+(Abb \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
+mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
 
 Allgemein gilt:
 \[
@@ -21,7 +23,8 @@ da die N"aherung sonst ungenau wird.
 
 Setzen wir $\varepsilon = 0$, k\"onnen wir die St"orung dynamisch abschalten.
 
-In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den Hamilton-Operator der urspr"unglichen Funktion $H_0$ um zus"atzliche $\varepsilon^n*H_n$ erg"anzen:
+In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den Hamilton-Operator der 
+urspr"unglichen Funktion $H_0$ um zus"atzliche $\varepsilon^n*H_n$ erg"anzen:
 \[
   H = \varepsilon^0*H_0 + \varepsilon^1*H_1 + \varepsilon^2*H_2 + \ldots + \varepsilon^\infty \hat H_\infty
 \]
@@ -46,7 +49,8 @@ In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den H
 
 In diesem Modell wollen wir den Grundzustand mit einem elektrischen Feld st\"oren.
 
-Diese St\"orung heisst in der 1. N\"aherung $\hat H_1$ \& wird wie die gesamte St"orung \"uber den Parameter $\varepsilon$ gesteuert.
+Diese St\"orung heisst in der 1. N\"aherung $\hat H_1$ \& wird wie die gesamte St"orung \"uber den 
+Parameter $\varepsilon$ gesteuert.
 
 $V_1$ wird als lineares Feld definiert:
 \begin{equation}
@@ -57,7 +61,7 @@ Der Parameter $a$ steht f\"ur die Feldst\"arke, der Parameter $b$ f\"ur die Grun
 
 Da wir $a$ jedoch bereits durch $\varepsilon$ beschreiben, k\"onnen wir mit $a = 1$ vereinfachen.
 
-F\"ur die Berechnung ist es einfacher das Feld symetrisch anzulegen. Darum setzen wir $b = 0$ \& reduzieren $V_1$
+F\"ur die Berechnung ist es einfacher das Feld symetrisch anzulegen. Darum setzen wir $b = 0$ \& reduzieren:
 \[
   V_1(x) = x
 \]
@@ -110,8 +114,9 @@ $\hat H_1$ gibt unser elektrisches Feld an
 \[
   \hat H_1 = a*x + b
 \]
-wir k"onnen $b = 0$ setzen da die Potenzials-Barriere unendlich gross ist und $a = 1$ weil wir die St"orung mit $\varepsilon$ steuern.
-Die Ausgangsgleichung f\"ur $\hat{H}$ lautet somit
+wir k"onnen $b = 0$ setzen da die Potenzials-Barriere unendlich gross ist und $a = 1$ weil wir die 
+St"orung mit $\varepsilon$ steuern.
+Die Ausgangsgleichung f\"ur $\hat{H}$ lautet somit:
 \[
   \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
             + \varepsilon^1*x
