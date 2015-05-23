@@ -103,12 +103,13 @@ F"ur $\hat H_0$ nehmen wir die Funktion aus dem Skript
   \hat H_0 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x)
 \]
 wobei f\"ur das Potential $V_0(x)$ gilt
-\[
+\begin{equation}
+  \label{eq:efeld_v0_kasten}
   V_0(x)=\begin{cases}
     0       & \qquad |x|<l\\
     \infty  & \qquad\text{sonst.}
   \end{cases}
-\]
+\end{equation}
 
 $\hat H_1$ gibt unser elektrisches Feld an
 \[
@@ -193,10 +194,20 @@ Was passiert?
 
 \subsection{Potentialtopf}
 
+In dieser Anwendung definieren wir das Potential ausserhalb von $l$ nicht mehr mit $\infty$, das Elektron kann mit genügend Energie aus dem Topf gehoben werden.
+
+Wir definieren den Potentialtopf basierend auf der Formel \ref{eq:efeld_v0_kasten}:
+\begin{equation}
+  V_0(x)=\begin{cases}
+    0       & \qquad |x|<l\\
+    1  & \qquad\text{sonst.}
+  \end{cases}
+\end{equation}
+
+Wir "ubernehmen die St"orung aus der ersten Anwendung.
 \[
-  V_1 = \text{ innen \& aussen am Topf ... }
+  V_1 = x
 \]
-]
 
 
 \printbibliography[heading=subbibliography]
