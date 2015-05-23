@@ -98,6 +98,7 @@ um $\hat H_1$, welcher die Störung darstellt.
 \[
   \hat{H} = \hat H_0 + \varepsilon \hat H_1
 \]
+
 F"ur $\hat H_0$ nehmen wir die Funktion aus dem Skript
 \[
   \hat H_0 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x)
@@ -116,27 +117,29 @@ $\hat H_1$ gibt unser elektrisches Feld an
 \]
 wir k"onnen $b = 0$ setzen da die Potenzials-Barriere unendlich gross ist und $a = 1$ weil wir die 
 St"orung mit $\varepsilon$ steuern.
+
 Die Ausgangsgleichung f\"ur $\hat{H}$ lautet somit:
 \[
   \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
             + \varepsilon^1*x
 \]
 
-Ausserdem ist das urspr"unglich $Psi_k^(0)$ gegeben.
+Ausserdem ist das urspr"unglich $Psi_k^{(0)}$ gegeben.
 
+Um jetzt das gest"orte System zu berechnen brauchen grunds"atzlich nur drei Formeln:
 \begin{equation}
 \begin{aligned}
-k&\ne l
-&&\Rightarrow&
-\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
-&=
-\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
-\\
 k&=l
 &&\Rightarrow&
 E_k^{(1)}
 &=
 \langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+\\
+k&\ne l
+&&\Rightarrow&
+\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+&=
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
 \end{aligned}
 \end{equation}
 \begin{equation}
@@ -152,11 +155,76 @@ E_k^{(1)}
 |\psi_l^{(0)}\rangle
 \end{equation}
 
+Mit der ersten Gleichung k"onnen wir direkt die Energie der St"orung berechnen.
 
+Man berechnet also das Skalarprodukt aus $\psi_k^{(0)}$ und $x*\psi_k^{(0)}$ "uber die gesamte L"ange vom Potenzialkasten und erh"alt so $E_k^{(1)}$.
 
-In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschide zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
+Um jetzt die endg"ultige Energie zu bekommen rechnet man $E_k^{(0)} + \varepsilon*E_k^{(1)}$
 
-In diesem Beispiel haben wir die Unterschiede mit sehr starken Parmetern gewählt.
+Das kann in Matlab einfach geplottet mit
+\begin{lstlisting}[style=Matlab]
+...
+H1 = x;
+for k = 1 : 5
+  E1_k(ln) = dot(Psi(k, :), H1.*Psi(k, :));
+  plot(Epsilon, E(k) + Epsilon*E1_k(k))
+end
+\end{lstlisting}
+Das Resultat sehen wir in \ref{abb:efeld_E_gestoert}.
+
+Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger, weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
+
+Daher setzen wir eine St"orung $\psi_k(1)$ aus mehreren $\psi_k(0)$ zusammen.
+Mit der zweiten und dritten Formel k"onnen wir diesen Anteil berechnen.
+
+Die Formel
+$\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+=
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}$
+gibt uns einen Skalarwert wie viel Anteil die Welle $l$ an der St"orung $k$ hat.
+
+Um beispielsweise den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
+$\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle*|\psi_l^{(0)}$
+ von 1 bis $\infty$ ausser 5.
+\begin{equation}
+\sum_{l\ne 5}
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\,
+|\psi_l^{(0)}\rangle
+\end{equation}
+In Matlab kann man das berechnen mit
+\begin{lstlisting}[style=Matlab]
+...
+x = -10^-9 : delta : 10^-9;
+H1 = x;
+n = 1000;
+k = 5;
+sum = 0;
+for l = 1 : n
+  if l ~= k
+    Psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l)) .* Psi(l, :);
+    sum = psi1_l + psi0_l;
+  end
+end
+\end{lstlisting}
+
+Man muss $n$ zum Gl"uck nicht auf unendlich setzen, da der Anteil wegen $1/E(k)-E(l)$ immer weiter abnimmt.
+In diesem Fall haben wir bei $l=90$ einen Anteil von etwa 1\%, bei $l=280$ nur noch 0.1\%.
+
+Wir k"onnen jetzt die Störung in 
+\begin{equation}
+|\psi_k(\varepsilon)\rangle
+=
+(1+i\varepsilon \gamma)
+\,|\psi_k^{(0)}\rangle
++
+\varepsilon*|\psi_k^(1)\rangle
+\end{equation}
+einsetzen und bekommen so die neue Wellenfunktion die man in \ref{abb:efeld_psi_gestoert} sehen kann.
+
+In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
+
+In diesem Beispiel haben wir die Unterschiede mit sehr starken Parametern gewählt.
 
 Die einzelnen Werte in y-Richtung sind die jeweiligen N"aherungen. Alle Kurven pendeln um die 0-Achse.
 
