@@ -6,7 +6,7 @@
 \chapterauthor{Hannes Badertscher}
 
 In diesem Kapitel betrachten wir ein Gedankenexperiment von Albert Einstein
-genauer.
+genauer.\index{Einstein!Albert}
 Wie Randall Munroe von xkcd in Abbildung~\ref{fig:bell:xkcd_einstein} illustriert,
 hat sich die Intuition von Einstein als sehr zuverl\"assig herausgestellt.
 Theorien wie die allgemeine Relativit\"atstheorie zeugen von der Genialit\"at
@@ -48,6 +48,7 @@ Zuletzt betrachten wir die Experimente, mit welchen die Bellsche Ungleichung
 \"uberpr\"uft wurde.
 
 \section{Definitionen\label{section:bell:definitionen}}
+\rhead{Definitionen}
 Zuerst stellt sich die Frage der Anforderungen an die Theorie der
 Quantenmechanik.
 In diesem Abschnitt werden diese Anforderungen kurz definiert und
@@ -64,7 +65,7 @@ Die zentrale Eigenschaft ist die Lokalit\"at.
 Diese besagt, dass jegliche Vorg\"ange nur einen Einfluss
 auf ihre direkte Umgebung haben k\"onnen.
 
-\begin{definition}\label{def:bell:lokalitaet}
+\begin{definition}\label{def:bell:lokalitaet}\index{Lokalit\"at}
     Eine physikalische Theorie ist \emph{lokal}, wenn zwei \"ortlich getrennte
     Systeme keinen sofortigen Einfluss aufeinander haben k\"onnen.
 \end{definition}
@@ -87,7 +88,7 @@ physikalische \emph{Realit\"at} beschreibt.
 Das heisst dass eine Messung immer einen vorbestimmten Wert hat, und dieser
 g\"ultig ist und existiert, ob die Messung durchgef\"uhrt wird oder nicht.
 
-\begin{definition}\label{def:bell:}
+\begin{definition}\label{def:bell:realismus}\index{Realismus}
     Eine physikalische Theorie ist \emph{realistisch}, wenn das Ergebnis
     jeglicher Messungen vorbestimmt ist.
 \end{definition}
@@ -97,6 +98,8 @@ Forderung mit dem bekannten Spruch
 \foreignquote{english}{Do you really believe that the moon exists only when you look at it?}\cite{Bell:Pais1979}
 
 \section{Das Einstein-Podolsky-Rosen Paradoxon\label{section:bell:epr}}
+\rhead{Das Einstein-Podolsky-Rosen Paradoxon}
+\index{Einstein-Podolsky-Rosen Experiment}
 Das Einstein-Podolsky-Rosen Paradoxon (EPR Paradoxon) ist ein 
 Gedankenexperiment, welches 1935 im Paper \cite{Bell:Einstein1935}
 \enquote{Can quantum-mechanical description of physical reality be considered complete?}
@@ -197,6 +200,7 @@ Dass EPR Paradoxon kann mithilfe der Notation des Spins aus
 Kapitel~\ref{chapter:spin}  einfach mathematisch formuliert werden.
 Wie in den Gleichungen~(\ref{spin:paulimatrizen})--(\ref{spin:vektoroperator})
 hergeleitet wird der Spin-Operator durch die Pauli-Matrizen
+\index{Pauli-Matrizen}\index{Spin-Operator}
 
 \begin{align}
     S_x &= \frac{\hbar}{2} \begin{pmatrix}
@@ -232,7 +236,7 @@ Diese umfassen $+z$ f\"ur das Elektron und $-z$
 f\"ur das Positron, sowie $-z$ f\"ur das Elektron und $+z$ f\"ur das Positron.
 Zur Notation dieser kombinierten Zust\"ande wird das Tensorprodukt verwendet.
 
-\begin{definition}\label{def:bell:tensorprodukt}
+\begin{definition}\label{def:bell:tensorprodukt}\index{Tensorprodukt}
     Das Tensorprodukt von zwei Vektoren $A,B \in \mathbb{C}^2$  wird geschrieben als
     \[
         A \otimes B
@@ -351,6 +355,7 @@ nicht  vollst\"andig ist und ein fundamentaler, nicht messbarer, Mechanismus
 bestimmt welches Ergebnis eine Messung des Spins ergeben wird.
 
 \subsection{Die Theorie der verborgenen lokalen Variablen\label{subsection:bell:epr:hiddenvars}}
+\index{Variablen!verborgene}
 Besinnen wir uns zur\"uck auf die beiden initialen Fragen: 
 (1) \enquote{Ist die Theorie korrekt?} und 
 (2) \enquote{Ist die Beschreibung durch die Theorie vollst\"andig?}
@@ -406,6 +411,8 @@ Die Herausforderung, eine solche Variable $\lambda$ wirklich zu entdecken und
 messen zu k\"onnen, bleibt jedoch bestehen.
 
 \section{Die Bellsche Ungleichung\label{section:bell:bell}}
+\rhead{Die Bellsche Ungleichung}
+\index{Bellsche Ungleichung}
 Nach der Ver\"offentlichung des EPR Paradoxons gingen verschiedene bekannte
 Physiker auf das Paradoxon ein.
 Niels Bohr, Mitbegr\"under der Kopenhagen Interpretation der Quantenmechanik,
@@ -443,7 +450,7 @@ Variablen bzw.~Teilchen zu suchen, sondern gleich deren Nicht-Existenz
 zu beweisen.
 
 Wir betrachten das Paper von Bell, indem wir uns erneut das Gedankenexperiment 
-nach Abbildung~\ref{fig:bell:EPR_Messaufbau} befassen.
+nach Abbildung~\ref{fig:bell:EPR_Messaufbau} befassen.\index{Bell!John}
 Dazu verallgemeinern wir das Experiment etwas und betrachten zuerst die
 Vorhersage mittels der Quantenmechanik.
 Da diese ja korrekt, aber noch nicht vollst\"andig ist, f\"uhren wir darauf
@@ -535,6 +542,7 @@ Um dies zu pr\"ufen leiten wir den Erwartungswert mithilfe einer verborgener
 Variable her.
 
 \subsection{Vorhersage mittels verborgener Variablen}
+\index{Variablen!verborgene}
 Wir nehmen nun also an, dass eine Theorie der verborgenen Variablen vorliegt
 und eine Variable $\lambda \in \Lambda$ existiert.
 Die Wahrscheinlichkeitsverteilung dieser Variable sei $\rho(\lambda)$, womit gilt
@@ -679,6 +687,7 @@ Ungleichung \cite[(15)]{Bell:Bell1964} aufstellen:
     \leq
     1 + E(\vec{b},\vec{c})
 \end{equation}
+\index{Bellsche Ungleichung}
 
 Diese Ungleichung muss, wenn eine Theorie lokaler, verborgener Variablen 
 vorliegt, f\"ur alle Richtungen $\vec{a}$, $\vec{b}$ und $\vec{c}$ gelten.
@@ -805,6 +814,7 @@ Das Einsetzen der Werte ergibt
 womit die Quantenmechanik die BCHSH Ungleichung ebenfalls verletzt.
 
 \section{Experimente}
+\rhead{Experimente}
 Zur experimentellen \"Uberpr\"ufung der Bellschen Ungleichung werden meist
 nicht Elektron-Positron Paare verwendet, sondern
 Photonen mit identischer Polarisation.
@@ -1013,6 +1023,7 @@ kann, dass die Intuition von Einstein falsch war und keine verborgenen
 lokalen Variablen existieren k\"onnen.
 
 \section{Fazit}
+\rhead{Fazit}
 In diesem Kapitel haben wir das Gedankenexperiment Einsteins genauer betrachtet
 und feststellen m\"ussen, dass Einstein mit seiner Intuition zur Quantenmechanik
 falsch lag.
