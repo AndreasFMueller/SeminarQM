@@ -4,8 +4,8 @@
 \begin{refsection}
 \chapterauthor{Stefan Hedinger}
 
-\section{Einleitung}
-\rhead{Einleitung}
+\section{Leitmechanismen von Halbleiterdioden}
+\rhead{Leitmechanismen von Halbleiterdioden}
 
 Die Tunneldiode ist ein nicht sehr h"aufig verwendetes, aktives und dynamisches Halbleiterelement.
 Als Halbleitermaterial wird f"ur ihren  Aufbau Germanium verwendet. 
@@ -20,7 +20,12 @@ Dazwischen befindet sich die Sperrzone, welche man auch als Potentialbarriere be
 \label{tunnel:BaendermodellG0}}
 \end{figure}
 
-Ohne Vorw"artsspannung sind die Energieniveaus wie in Abbildung~\ref{tunnel:BaendermodellG0} verteilt. Das Ferminivau $E_F$ ist in p und n auf derselben H"ohe. Das Leitungsband $E_C$ ist "uber dem Ferminiveau  und das Valenzband $E_V$ unter dem Ferminiveau. Solange die Energie der Elektronen kleiner als das Potential der Barriere ist, leitet die Diode nicht. 
+Ohne Vorw"artsspannung sind die Energieniveaus wie in Abbildung~\ref{tunnel:BaendermodellG0} verteilt. 
+Das Ferminivau $E_F$ ist in p und n auf derselben H"ohe.
+Oberhalb des Ferminiveaus sind fast keine bewegliche Elektronen vorhanden.
+Das Leitungsband $E_C$ ist "uber dem Ferminiveau  und das Valenzband $E_V$ unter dem Ferminiveau. 
+Solange die Energie der Elektronen kleiner als das Potential der Barriere ist, leitet die Diode nicht.
+Den Elektronen kann mit der Vorw"artsspannung Energie von aussen zugef"uhrt werden.
 
 \begin{figure}	%Bild Bändermodell Germaniumdiode Vf > 0
 \centering
@@ -42,22 +47,30 @@ In Abbildung~\ref{tunnel:Germaniumdioden} ist der Vorw"artsstrom durch die Diode
 \label{tunnel:Germaniumdioden}}
 \end{figure}
 
-Die Tunneldiode unterscheidet sich im Vergleich zur Germaniumdiode in zwei Punkten. Zum einen ist die Dotierung des p-n-"Ubergangs gr"osser, zum anderen die Sperrschicht viel d"unner. Diese beiden Unterschiede erm"oglichen den Tunneleffekt.
+Die Tunneldiode unterscheidet sich im Vergleich zur Germaniumdiode in zwei Punkten. 
+Zum einen ist die Dotierung des p-n-"Ubergangs gr"osser, zum anderen die Sperrschicht viel d"unner. 
+Diese beiden Unterschiede erm"oglichen den Tunneleffekt.
 
-
-\section{Der Tunneleffekt}
-\rhead{Tunneleffekt}
 Das B"andermodell der Tunneldiode ist fast identisch mit dem der Germaniumdiode. 
 Auch hier ist das Ferminiveau ohne Vorw"artsspannung auf derselben H"ohe. 
 Wie in Abbildung~\ref{tunnel:Baendermodell0} ersichtlich, ist auf der p-Seite sowohl das Valenzband als auch das Leitungsband "uber dem Ferminiveau. 
 Auf der n-Seite ist es genau umgekehrt, da sind beide B"ander unter dem Ferminiveau.
-Bei der Tunneldiode tritt der Tunneleffekt bereits dann ein, wenn eine kleine positive Vorw"artsspannung angelegt wird. 
+Der Grund daf"ur ist folgender.
+Durch die starke Dotierung werden zus"atzliche Elektronen eingebracht.
+Diese Elektronen sind "uberz"ahlig und stehen somit als Leitungselektronen zur Verf"ugung.
+Darum reicht jetzt das Leitungsband unter das Ferminiveau.
+Liegt keine Vorw"artsspannung an, tunneln etwa gleich viele Elektronen von den zwei Richtungen durch die Barriere.
+Somit haben wir keinen Strom der fliesst, da sich die St"ome genau aufheben.
+Sobald wir eine kleine positive Vorw"artsspannung anlegen, "uberwiegen die in Durchlassrichtung tunnelnden Elektronen.
+Es fliesst also ein Strom.
 Die Diode beginnt zu leiten, obwohl die Elektronen nicht "uber die Potentialbarriere r"uber k"onnen. 
-Sie tunneln durch die Barriere hindurch. 
+Sie tunneln durch die Barriere hindurch.
+Erh"ohen wir die Vorw"artsspannung weiter, verschieben sich die Energieniveaus 
 Die Abbildung ~\ref{tunnel:Baendermodellmax} zeigt die gr"osste "Uberlappung. 
 In diesem Fall wird auch der Tunnelstrom maximal. 
 In Abbildung ~\ref{tunnel:Baendermodellmin} wird die "Uberlappung wieder kleiner. 
 Die Folge davon ist, dass der Tunnelstrom ebenfalls wieder abnimmt.
+Sobald aber die Vorw"artsspannung gen"ugend hoch ist, und somit auch das Potential der Elektronen, setzt die normale Diodenleitung ein.
 
 \begin{figure}	%Bild Bändermodell Tunneldiode Vf = 0
 \centering
@@ -82,16 +95,16 @@ Die Folge davon ist, dass der Tunnelstrom ebenfalls wieder abnimmt.
 
 Die spezielle Kennlinie der Tunneldiode ist in der Abbildung~\ref{tunnel:Tunneldiode} ersichtlich.
 
-\begin{figure}	%Bild Kennlinie der Tunneldiode
+\begin{figure}	%Bild Kennlinien der Tunneldiode und GE-Dioden
 \centering
-\includegraphics[width=0.7\textwidth]{tunneldiode/tunnel-7.pdf}
-\caption{Die spezielle Kennlinie der Tunneldiode
+\includegraphics[width=0.7\textwidth]{tunneldiode/tunnel-5.pdf}
+\caption{Blau: spezielle Kennlinie der Tunneldioden. Rot: Kennlinien von normalen Germaniumdioden.
 \label{tunnel:Tunneldiode}}
 \end{figure}
 
-\section{Berechnung des Tunneleffekts}
-\rhead{Tunneleffekt}
-Als erstes betrachten wir das Potential 
+\section{Quantenmechanische Berechnung des Tunneleffektes}
+\rhead{Quantenmechanische Berechnung des Tunneleffektes}
+Als Modell f"ur die bei der Tunneldiode beobachtete Leitung bei geringer Spannung betrachten wir das Potential
 \[
 V(x)=\begin{cases}
 V_0& \qquad \text{wenn } x \in [-a,a]\\
@@ -107,13 +120,13 @@ Die Energie des einfallenden Teilchens ist $E$ und es gilt
 \]
 In der Mitte ist aber eine Barriere, welche ein h"oheres Potential als das Teilchen selber aufweist. 
 In der klassischen Mechanik ist klar, dass dieses Teilchen nicht von links nach rechts kommt sondern an der Barriere bei $-a$ reflektiert wird. 
-In der Quantenmechanik k"onnen Teilchen jedoch durch die Barriere durchtunneln. (Abbildung~\ref{tunnel:Kastenpotential})
+In der Quantenmechanik k"onnen Teilchen jedoch durch die Barriere durchtunneln. (Abbildung~\ref{tunnel:Potentialbarriere})
 
 \begin{figure}	%Bild Kastenpotential
 \centering
 \includegraphics[width=0.7\textwidth]{tunneldiode/tunnel-4.pdf}
-\caption{Kastenpotential
-\label{tunnel:Kastenpotential}}
+\caption{Visualisierung der Potentialbarriere
+\label{tunnel:Potentialbarriere}}
 \end{figure}
 
 Die nachfolgenden Berechnungen sollen helfen, den Tunneleffekt zu verstehen.  
@@ -144,20 +157,24 @@ $\kappa$ ist
 Insgesamt haben wir nun sechs Unbekannte. 
 Im Bereich \textrm{I} die Koeffizienten $A_1$ und $B_1$, im Bereich \textrm{II} $\alpha$ und $\beta$ und im Bereich \textrm{III} $A_2$ und $B_2$. 
 Damit die Wellenfunktion ohne Spr"unge zusammengesetzt werden kann, muss
-\[
+\begin{equation}
 \Phi_\text{I}(-a) = \Phi_\text{II}(-a)
-\]
-\[
+\label{tunnel:fktwert-a}
+\end{equation}
+\begin{equation}
 \Phi_\text{II}(a) = \Phi_\text{III}(a)
-\]
-\[
+\label{tunnel:fktwerta}
+\end{equation}
+\begin{equation}
 \Phi_\text{I}'(-a) = \Phi_\text{II}'(-a)
-\]
-\[
+\label{tunnel:steigung-a}
+\end{equation}
+\begin{equation}
 \Phi_\text{II}'(a) = \Phi_\text{III}'(a)
-\]
-gelten. 
-Somit haben wir ein Gleichungssystem mit vier Gleichungen f"ur sechs Unbekannte. 
+\label{tunnel:steigunga}
+\end{equation}
+gelten.
+Somit haben wir ein Gleichungssystem mit vier Gleichungen f"ur sechs Unbekannte.
 Wir brauchen also die Ableitungen der allgemeinen Wellenfunktionen.
 \[
 \Phi_\text{I}'(x) = Aike^{ikx} - Bike^{-ikx}
@@ -167,10 +184,37 @@ Wir brauchen also die Ableitungen der allgemeinen Wellenfunktionen.
 \]
 Wir rechnen ab hier mit Matrizen weiter. 
 Dies hat den Vorteil, dass sich gewisse Terme vereinfachen lassen. 
-Auch mit der Matizenrechnung ist es nicht m"oglich alle sechs Unbekannten zu bestimmen. 
+Auch mit der Matrizenrechnung ist es nicht m"oglich alle sechs Unbekannten zu bestimmen. 
 Es ist aber m"oglich das Verh"altnis zwischen den einfallenden und transmittierten Teilchen zu berechnen. 
-In der ersten Zeile der Matrizen stehen die Funktionswerte und in der zweiten Zeile die Ableitungen an den entsprechenden Stellen. 
-Die Matrix 
+Die dazu verwendeten Matrizen setzen sich folgendermassen zusammen.
+In der ersten Zeile der Matrizen stehen die Funktionswerte und in der zweiten Zeile die Ableitungen in den entsprechenden Bereichen.
+\[
+T_1(x) =
+\begin{pmatrix}
+A e^{ikx}
+&
+B e^{-ikx}
+\\
+A ike^{ikx}
+&
+-B ike^{-ikx}
+\end{pmatrix}
+\]
+
+\[
+T_2(x) =
+\begin{pmatrix}
+\alpha e^{\kappa x}
+&
+\beta e^{-\kappa x}
+\\
+\alpha \kappa e^{\kappa x}
+&
+-\beta \kappa e^{-\kappa x}
+\end{pmatrix}
+\]
+Aus den allgemeinen Matrizen $T_1(x)$ und $T_2(x)$ k"onnen wir eine Vektorgleichung f"ur die beiden Stellen $-a$ und $a$ aufschreiben.
+Die Vektorgleichung an der Stelle $-a$ beinhaltet die beiden Gleichungen ~\ref{tunnel:fktwert-a} und ~\ref{tunnel:steigung-a}.
 \[
 \underbrace{
 \begin{pmatrix}
@@ -206,8 +250,7 @@ e^{\kappa a}
 \beta
 \end{pmatrix}
 \]
-gilt an der Stelle $-a$.
-An der Stelle $a$ gilt
+In der Vektrogleichung an der Stelle $a$ werden die beiden Kompatiblit"atsbedingungen ~\ref{tunnel:fktwerta} und ~\ref{tunnel:steigunga} ausgewertet.
 \[
 \underbrace{
 \begin{pmatrix}
@@ -243,7 +286,7 @@ A_2
 B_2
 \end{pmatrix}.
 \]
-Wir l"osen die beiden Matrizen nach dem Vektor
+Wir l"osen die beiden Vektorgleichungen nach dem Vektor
 \[
 \begin{pmatrix}
 \alpha
@@ -253,7 +296,7 @@ Wir l"osen die beiden Matrizen nach dem Vektor
 \]
 auf und setzen sie gleich.
 \[
-T_1(-a)T_2(-a)^{-1}
+T_2(-a)^{-1}T_1(-a)
 \begin{pmatrix}
 A_1
 \\
@@ -339,8 +382,7 @@ result: facsum(expand(c), sinh(2 * a * kappa), cosh(2 * a * kappa));
 
 \end{lstlisting}
 
-
-Die resultierende Matrix lautet
+Mit der resultierenden Matrix lassen sich die Amplitude der einfallenden und reflektierten Welle links von der Barriere aus den Amplituden rechts der Barriere berechnen.
 \[
 \begin{pmatrix}
 \frac{i\,e^{2\,i\,a\,k}\,\left(\kappa-k\right)\,\left(\kappa+k
@@ -360,7 +402,7 @@ Die resultierende Matrix lautet
  \kappa\right)}{2\,k\,\kappa}
 \end{pmatrix}.
 \]
-Mit dieser Matrix lassen sich die Amplitude der einfallenden und reflektierten Wellen links von der Barriere berechnen.
+
 Die Matrix wird jetzt mit den Amplituden rechts von der Barriere multipliziert. 
 Wir legen die Amplitude der einfallenden Welle in diesem Bereich auf 1 fest. 
 Weiter nehmen wir an, dass die Amplitude der reflektierten Welle 0 ist.
@@ -397,11 +439,20 @@ e^{ilk}\biggl(\cosh(l\kappa)
 \]
 In diesem Vektor steht nun, wie viel wahrscheinlicher ein einfallendes Teilchen im Vergleich zu einem durchgelassenen Teilchen ist.
 In der Abbildung~\ref{tunnel:Tunneleffekt} kann man sehen, dass der Tunneleffekt in der Potentialbarriere exponentiell mit der St"arke der Barriere abnimmt.
+Der Tunneleffekt ist proportional zu
+\[
+\frac{1}{\displaystyle
+e^{ilk}\biggl(\cosh(l\kappa)
++\frac{i}{2}\biggl(\frac{\kappa}{k}-\frac{k}{\kappa}\biggr)\sinh(l\kappa)
+\biggr)}.
+\]
+Die Funktionen sinh und cosh k"onnen mit Exponetialfunktionen zusammengesetzt werden und wachsen somit exponentiell.
+Deshalb nimmt der Tunneleffekt exponentiell ab.
 
 \begin{figure}	%Bild Tunneleffekt
 \centering
 \includegraphics[width=0.7\textwidth]{tunneldiode/tunnel-1.pdf}
-\caption{Vorgang des Tunneleffekts in den drei Zonen
+\caption{Vor der Potentialbarriere bildet sich eine stehende Welle wegen den reflektierten Teilchen. In der Potentialbarriere nimmt die Amplitude exponentiell ab.
 \label{tunnel:Tunneleffekt}}
 \end{figure}
 
@@ -417,7 +468,7 @@ In Abbildung~\ref{tunnel:KennlinieDSO} ist das DSO Bild sichtbar.
 
 \begin{figure}	%Bild Kennlinie DSO
 \centering
-\includegraphics[width=0.7\textwidth]{tunneldiode/images/Kennlinie_DSO.jpg}
+\includegraphics[width=\hsize]{tunneldiode/images/Kennlinie_DSO.jpg}
 \caption{Tunneldiodenkennlinie gemessen mit dem digitalen Speicheroszilloskop
 \label{tunnel:KennlinieDSO}}
 \end{figure}
@@ -454,28 +505,32 @@ Die gr"osste Amplitude der Schwingung wird mit einem Tunnelstrom von etwa $I_T =
 
 \begin{figure}	%Bild Oszillator 1
 \centering
-\includegraphics[width=0.7\textwidth]{tunneldiode/images/Oszi_1.jpg}
+\includegraphics[width=\hsize]{tunneldiode/images/Oszi_1.jpg}
 \caption{Der Tunneldioden-Oszillator schwingt mit $L = 100\text{nH}$ und $C=100\text{nF}$ bei $1.08\text{MHz}$
 \label{tunnel:oszi1}}
 \end{figure}
 
-Berechnet man mit der Formel ~\ref{tunnel:oszillatorfrequenz} und den verwendeten Bauteilwerten die Kreisfrequenz $\omega$, erh"alt man eine Frequenz von $1.5909\,\text{MHz}$.
+Berechnet man mit der Formel ~\ref{tunnel:oszillatorfrequenz} und den verwendeten Bauteilwerten die Kreisfrequenz $\omega$, erh"alt man eine Frequenz von $1.5909\text{MHz}$.
 Die Abweichung zwischen dem gemessenen und dem berechneten Wert ist hier offensichtlich.
 Ein kleiner Teil wird durch die Bauteiltoleranzen beigetragen.
 Der restliche Teil wird durch das verwendete Berechnungsmodell der Tunneldiode hervorgerufen.
 F"ur die Berechnung nehmen wir einfach an, dass die Tunneldiode im Bereich zwischen dem maximalen Tunnelstrom und der normalen Diodenleitung eine lineare Kennlinie hat.
 Schauen wir uns nochmals die Abbildung~\ref{tunnel:Tunneldiode} an.
 Da sehen wir, dass die Kennlinie alles andere als linear ist in diesem Bereich.
-
+Wenn wir jetzt die Formel ~\ref{tunnel:oszillatorfrequenz} nach $a$ umstellen und ausrechnen, erhalten wir den Wert $a = 1.55591\text{A/V}$.
+Die Steigung bei diesem Arbeitspunkt ist also sehr viel gr"osser als die gemittelte Steigung "uber den gesamten abfallenden Teil.
 
 Versuchsweise wird die Spule durch eine um Faktor 10 gr"ossere ersetzt. 
 Die Induktivit"at ist somit $L=1\mu\text{H}$. 
 Die Frequenz muss mit der gr"osseren Spule kleiner werden. 
 In der Abbildung~\ref{tunnel:oszi2} kann man sehen, dass sich die Frequenz etwa halbiert.
+Rechnet man jetzt hier ebenfalls mit der Formel ~\ref{tunnel:oszillatorfrequenz} die Kreisfrequenz $\omega$, erh"alt man eine Frequenz von $501.351\text{kHz}$.
+Die Berechnung stimmt ziemlich genau mit der Messung "uberein.
+Je nachdem wo der DC-Arbeitspunkt liegt, kann das lineare Modell f"ur die Tunneldiode verwendet werden.
 
 \begin{figure}	%Bild Oszillator 2
 \centering
-\includegraphics[width=0.7\textwidth]{tunneldiode/images/Oszi_2.jpg}
+\includegraphics[width=\hsize]{tunneldiode/images/Oszi_2.jpg}
 \caption{Der Tunneldioden-Oszillator schwingt mit $L = 1\mu\text{H}$ und $C=100\text{nF}$ bei $507\text{kHz}$
 \label{tunnel:oszi2}}
 \end{figure}
