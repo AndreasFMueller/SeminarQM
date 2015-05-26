@@ -175,20 +175,19 @@ Damit die Wellenfunktion ohne Spr"unge zusammengesetzt werden kann, muss
 gelten.
 Somit haben wir ein Gleichungssystem mit vier Gleichungen f"ur sechs Unbekannte.
 
-Wir brauchen also die Ableitungen der allgemeinen Wellenfunktionen.
-\[
-\Phi_\text{I}'(x) = Aike^{ikx} - Bike^{-ikx}
-\]
-\[
-\Phi_\text{II}'(x) = \alpha \kappa e^{\kappa x} - \beta \kappa e^{-\kappa x}
-\]
+Wir brauchen also die Ableitungen der allgemeinen Wellenfunktionen:
+\begin{align*}
+\Phi_\text{I}'(x) &= Aike^{ikx} - Bike^{-ikx},
+\\
+\Phi_\text{II}'(x) &= \alpha \kappa e^{\kappa x} - \beta \kappa e^{-\kappa x}.
+\end{align*}
 
 Wir rechnen ab hier mit Matrizen weiter. 
 Dies hat den Vorteil, dass sich Terme in welchen die Exponentialfunktion vorkommt vereinfachen lassen. 
 Auch mit der Matrizenrechnung ist es nicht m"oglich alle sechs Unbekannten zu bestimmen. 
 Es ist aber m"oglich das Verh"altnis zwischen den einfallenden und transmittierten Teilchen zu berechnen. 
 Die dazu verwendeten Matrizen setzen sich folgendermassen zusammen.
-In der ersten Zeile der Matrizen stehen die Funktionswerte und in der zweiten Zeile die Ableitungen in den entsprechenden Bereichen.
+In der ersten Zeile der Matrizen stehen die Funktionswerte und in der zweiten Zeile die Ableitungen in den entsprechenden Bereichen:
 \[
 T_1(x) =
 \begin{pmatrix}
@@ -199,10 +198,10 @@ e^{-ikx}
 ike^{ikx}
 &
 -ike^{-ikx}
-\end{pmatrix}
-\]
-
-\[
+\end{pmatrix},
+\qquad
+\text{und}
+\qquad
 T_2(x) =
 \begin{pmatrix}
 e^{\kappa x}
@@ -212,7 +211,7 @@ e^{-\kappa x}
 \kappa e^{\kappa x}
 &
 -\kappa e^{-\kappa x}
-\end{pmatrix}
+\end{pmatrix}.
 \]
 Aus den allgemeinen Matrizen $T_1(x)$ und $T_2(x)$ k"onnen wir eine Vektorgleichung f"ur die beiden Stellen $-a$ und $a$ aufschreiben.
 Die Vektorgleichung an der Stelle $-a$ beinhaltet die beiden Gleichungen~(\ref{tunnel:fktwert-a}) und~(\ref{tunnel:steigung-a}).
@@ -485,7 +484,7 @@ Die gesamte Messschaltung ist in Abbildung~\ref{tunnel:Messschaltung} ersichtlic
 
 \begin{figure}	%Bild Messschaltung
 \centering
-\includegraphics[width=0.7\textwidth]{tunneldiode/images/Messschaltung.pdf}
+\includegraphics[width=0.8\textwidth]{tunneldiode/images/Messschaltung.pdf}
 \caption{Messschaltung um die Kennlinie auszumessen
 \label{tunnel:Messschaltung}}
 \end{figure}
@@ -510,6 +509,12 @@ Die gr"osste Amplitude der Schwingung wird mit einem Tunnelstrom von etwa $I_T =
 \includegraphics[width=\hsize]{tunneldiode/images/Oszi_1.jpg}
 \caption{Der Tunneldioden-Oszillator schwingt mit $L = 100\text{nH}$ und $C=100\text{nF}$ bei $1.08\text{MHz}$
 \label{tunnel:oszi1}}
+%\end{figure}
+%\begin{figure}	%Bild Oszillator 2
+%\centering
+\includegraphics[width=\hsize]{tunneldiode/images/Oszi_2.jpg}
+\caption{Der Tunneldioden-Oszillator schwingt mit $L = 1\mu\text{H}$ und $C=100\text{nF}$ bei $507\text{kHz}$
+\label{tunnel:oszi2}}
 \end{figure}
 
 Berechnet man mit der Formel~(\ref{tunnel:oszillatorfrequenz}) und den verwendeten Bauteilwerten die Kreisfrequenz $\omega$, erh"alt man eine Frequenz von $1.5909\text{MHz}$.
@@ -530,12 +535,6 @@ Rechnet man jetzt hier ebenfalls mit der Formel~(\ref{tunnel:oszillatorfrequenz}
 Die Berechnung stimmt ziemlich genau mit der Messung "uberein.
 Je nachdem wo der DC-Arbeitspunkt liegt, kann das lineare Modell f"ur die Tunneldiode verwendet werden.
 
-\begin{figure}	%Bild Oszillator 2
-\centering
-\includegraphics[width=\hsize]{tunneldiode/images/Oszi_2.jpg}
-\caption{Der Tunneldioden-Oszillator schwingt mit $L = 1\mu\text{H}$ und $C=100\text{nF}$ bei $507\text{kHz}$
-\label{tunnel:oszi2}}
-\end{figure}
 
 \section{Fazit}
 \rhead{Fazit}
