@@ -6,9 +6,15 @@
 \newpage
 \section{Einleitung}
 \rhead{Einleitung}
+In diesem Kapitel erkl\"aren wir die grundlegenden Mechanismen hinter der Quantenkryptographie.
+Doch um diese zu verstehen machen wir zun\"achst einen Exkurs zur traditionellen Kryptographie.
+So wir deutlich in wie fern die Quantenmechanik die Kryptographie beeinflusst und wo ihre St\"arken und Schw\"achen.
 
-
-
+\section{Quantenkryptographie}
+\rhead{Quantenkryptographie}
+Die Quantenkryptographie ist nicht die L\o"sung aller kryptografischen Probleme. Sie bietet aber dank Eigenschaften wie des No-Cloning Theorems zus\"atzliche Sicherheit.
+Der Grundgedanke hierbei ist, dass Pakete nicht unbemekrt abgeh\o"rt werden k\"onnen. Bob und Alice \"ubertragen polarisierte Photonen um daraus einen Schl\"ussel zu erstellen. Stellen die beiden Kommunikationsparteien, fortan Bob und Alice genannt, fest, dass sie abgeh\"ort werden
+k\"onnen sie den Kommunikationskanal \"andern und das Verfahren beginnt von vorne. Dieses Verhalten wurde im BB84 Protokoll spezifiziert.
 %\begin{figure}
 %\centering
 %\includegraphics[width=0.5\textwidth]{crypto/blabla.pdf}
@@ -19,7 +25,19 @@
 
 \section{BB84}
 \rhead{BB84}
+1. Alice besitzt zwei Verfahren rectilinear/diagnoal um Photonen zu polarisieren (qubit)
+2. Die qubits repräsentieren Bits (Null und Eins), je nach dem auf welche Seite sie schräg stehen (rectilinear: Horizontal = 1, diagonal: linksoben nach rechtsunten = 1)
+3. Alice wählt für jedes qubit zufällig aus mit welchem Verfahren die Photonen polarisiert werden und merkt sich die Reihenfolge. Nach dem Bit-Austausch sendet Alice diese Information über den unsicheren Kanal zu Bob
+4. Bob nimmt die polarisierten Photonen entgegen und wählt zufällig eines der beiden Verfahren aus mit welchem er die qubits versucht zu lesen. Die Wahrscheinlichkeit beträgt 50% dass Bob die korrekte Basis wählt.
+5. Wählt Bob die falsche Basis erhält er mit P=0.5 das richtige Resultat, bei P=1 für das richtige Resultat bei der richtigen Basis ergibt das ein P=0.75, dass ein Photon richtig gemessen wurde.
+6. Bob sendet Alice über den unsicheren Kanal die Information, mit welcher Basis er welches Photon gemessen hat, Alice sendet Bob mit welcher Basis sie welches Photon polarisiert hat.
+7. Zur überprüfung ob die Verbindung belauscht wurde wählen Bob und Alice einige ihrer korrekt gemessenen Bits aus und überprüfen die Fehlerrate, oft werden dazu sogenannte Decoypulses eingebaut, welche im Schlüssel nicht mehr verwendet werden.
+8. Wurden Alice und Bob belauscht kann man davon ausgehen, dass 25 Prozent aller Bits Fehlerhaft sind. Doch warum? Was ändert sich wenn Eve lauscht?
 
+9. Eve fängt die von Alice polarisierten Photonen ab und misst sie mit 50% Wahrscheinlichkeit korrekt (da zwei Verfahren zum messen).
+10. Falsch gemessene Bits werden zu 50% richtig entschlüsselt (bei einer Messung mit falscher Basis entsteht ein zufälliger wert, was bei einem Wertebereich von 0 und 1 zu 50% korrekt ist)
+11. Eve kann Aufgrund des No-Cloning-Theorems die Bits von Alice nicht einfach kopieren und an Bob schicken und ist somit gezwungen anhand der Bits (von denen höchstens 75% korrekt sind) selbst Photonen zu polarisieren und an Bob zu schicken, was bei Bob zu einer Trefferrate von weniger als 0.75 führt. Wenn man also Eve mit P=0.999999999 aufspüren will, folgt aus dieser Formel P_d = 1 - \left(\frac{3}{4}\right)^n, dass 72 Keybits ausgetauscht werden müssen.
+Die einzige mögliche Art von eaves-dropping ist, wenn Eve bei der Quelle die Möglichkeit hat, überzählige Photonen abzuzweigen, sie zu lagern und nachdem Alice und Bob die Basen ausgetauscht haben, mit dem der richtigen Basis zu messen und dadurch einzelne gültige Keybits zu erhalten.
 \section{Schl"usselaustausch mittels Verschr"ankung}
 \rhead{Schl"usselaustausch mittels Verschr"ankung}
 
