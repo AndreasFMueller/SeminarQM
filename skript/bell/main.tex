@@ -1,25 +1,27 @@
 % !TeX spellcheck = de_CH
+% !TeX root = ../skript.tex
 \chapter{Bellsche Ungleichung\label{chapter:bell}}
 \lhead{Bellsche Ungleichung}
 \begin{refsection}
 \chapterauthor{Hannes Badertscher}
 
 In diesem Kapitel betrachten wir ein Gedankenexperiment von Albert Einstein
-genauer.
-Wie Randall Munroe von xkcd im Comic~\ref{fig:bell:xkcd_einstein} illustriert,
-konnten die Theorien von Einstein bisher selten widerlegt werden.
-Als einziges Beispiel, Einstein zu widerlegen, wird eine m\"oglicherweise
-falsche Entscheidung Einsteins aufgef\"uhrt, als er bei seiner Arbeit im
-Patentamt ein umstrittenes Patent zur Annahme empfahl.
-Nat\"urlich entspricht dies nicht ganz der Wahrheit.
-Wir uns in diesem Kapitel mit der Arbeit von Albert Einstein und versuchen
-diese kritisch zu beleuchten.
+genauer.\index{Einstein!Albert}
+Wie Randall Munroe von xkcd in Abbildung~\ref{fig:bell:xkcd_einstein} illustriert,
+hat sich die Intuition von Einstein als sehr zuverl\"assig herausgestellt.
+Theorien wie die allgemeine Relativit\"atstheorie zeugen von der Genialit\"at
+Einsteins.
+Nat\"urlich ist das etwas \"uberspitzt formuliert und auch Einstein war nicht
+unfehlbar.
+In diesem Kapitel gehen wir auf ein Paper von Albert Einstein ein und versuchen
+seine Intuition bez\"uglich der Quantenmechanik kritisch zu beleuchten.
 
 \begin{figure}[b]
     \centering
     \includegraphics[width=0.5\linewidth]{bell/images/xkcd_einstein.png}
-    \caption{XKCD Comic, welches darauf anspielt, dass sich kaum Fehler 
-    in den Arbeiten von Albert Einstein finden lassen \cite{Bell:XkcdEinstein}}
+    \caption{xkcd Comic, welches darauf anspielt, dass sich sich die
+    physikalische Intuition von Albert Einstein in den meisten F\"allen als
+    korrekt erwiesen hat \cite{Bell:XkcdEinstein}.}
     \label{fig:bell:xkcd_einstein}
 \end{figure}
 
@@ -29,12 +31,12 @@ die Quantenmechanik nicht vollst\"andig sein kann. Als Alternative
 sollten zus\"atzliche, verborgene Variablen eingef\"ugt werden, welche
 das zugrunde liegende Verhalten logisch erkl\"aren k\"onnen.
 W\"ahrend Niels Bohr die bisherige (Kopenhagen-) Interpretation der 
-Quantenmechanik verteidigte, befassten sich diverse Physiker mit die Suche
+Quantenmechanik verteidigte, befassten sich diverse Physiker mit der Suche
 nach solchen verborgenen Variablen.
 In vielen Bereichen der Quantenmechanik wurden tats\"achlich
-kleinere Teilchen, Quantenzahlen und Variablen entdeckt, welche das
-Verst\"andnis der heutigen Quantenphysik pr\"agten.
-Zur L\"osung des Gedankenexperiments von Einstein, Rosen und Podolsky konnten
+Teilchen, zus\"atzliche Quantenzahlen und Variablen entdeckt, welche
+das Verst\"andnis der heutigen Quantenphysik pr\"agten.
+Zur L\"osung des Paradoxons von Einstein, Rosen und Podolsky konnten
 jedoch bisher keine zus\"atzlichen Variablen gefunden werden.
 
 Wir betrachten das Gedankenexperiment von Einstein, indem wir zuerst die
@@ -42,8 +44,11 @@ grundlegenden Annahmen der Lokalit\"at und des Realismus betrachten. Danach
 gehen wir auf das von Einstein, Rosen und Podolski ver\"offentlichte Paradoxon
 ein und kommen auf die darauf basierende Bellsche Ungleichung, welche
 1961 von John Bell ver\"offentlicht wurde.
+Zuletzt betrachten wir die Experimente, mit welchen die Bellsche Ungleichung
+\"uberpr\"uft wurde.
 
 \section{Definitionen\label{section:bell:definitionen}}
+\rhead{Definitionen}
 Zuerst stellt sich die Frage der Anforderungen an die Theorie der
 Quantenmechanik.
 In diesem Abschnitt werden diese Anforderungen kurz definiert und
@@ -60,7 +65,7 @@ Die zentrale Eigenschaft ist die Lokalit\"at.
 Diese besagt, dass jegliche Vorg\"ange nur einen Einfluss
 auf ihre direkte Umgebung haben k\"onnen.
 
-\begin{definition}\label{def:bell:lokalitaet}
+\begin{definition}\label{def:bell:lokalitaet}\index{Lokalit\"at}
     Eine physikalische Theorie ist \emph{lokal}, wenn zwei \"ortlich getrennte
     Systeme keinen sofortigen Einfluss aufeinander haben k\"onnen.
 \end{definition}
@@ -72,13 +77,9 @@ eine \emph{nicht}-lokale Theorie.
 Eine Masse hat in der Gravitation sofort, ohne zeitliche 
 Verz\"ogerung, einen Einfluss auf andere Massen -- unabh\"angig von der
 r\"aumlichen Distanz zwischen den beiden Massen. 
-In der speziellen Relativit\"atstheorie wurden die Begriffe von Raum und Zeit
-so definiert, dass sich alle Materie und Energie h\"ochstens mit
-Lichtgeschwindigkeit fortbewegen kann. 
-Die allgemeine Relativit\"atstheorie ist eine alternative Formulierung
-der Newtonschen Gravitationstheorie, welche die in der speziellen
-Relativit\"atstheorie geforderte Lokalit\"at erf\"ullt.
-Einstein war sich deshalb sicher, dass auf f\"ur die Quantenmechanik eine
+Die Gravitationstheorie konnte jedoch so erweitert werden, dass sie die in der
+speziellen Relativit\"atstheorie geforderte Lokalit\"at erf\"ullt.
+Einstein war sich deshalb sicher, dass sich auch f\"ur die Quantenmechanik eine
 Theorie herleiten l\"asst, in welcher sich jegliche Ereignisse h\"ochstens mit
 Lichtgeschwindigkeit ausbreiten k\"onnen.
 
@@ -87,7 +88,7 @@ physikalische \emph{Realit\"at} beschreibt.
 Das heisst dass eine Messung immer einen vorbestimmten Wert hat, und dieser
 g\"ultig ist und existiert, ob die Messung durchgef\"uhrt wird oder nicht.
 
-\begin{definition}\label{def:bell:}
+\begin{definition}\label{def:bell:realismus}\index{Realismus}
     Eine physikalische Theorie ist \emph{realistisch}, wenn das Ergebnis
     jeglicher Messungen vorbestimmt ist.
 \end{definition}
@@ -96,9 +97,9 @@ In einem Gespr\"ach mit Abraham Pais verdeutlichte Albert Einstein diese
 Forderung mit dem bekannten Spruch
 \foreignquote{english}{Do you really believe that the moon exists only when you look at it?}\cite{Bell:Pais1979}
 
-
-
 \section{Das Einstein-Podolsky-Rosen Paradoxon\label{section:bell:epr}}
+\rhead{Das Einstein-Podolsky-Rosen Paradoxon}
+\index{Einstein-Podolsky-Rosen Experiment}
 Das Einstein-Podolsky-Rosen Paradoxon (EPR Paradoxon) ist ein 
 Gedankenexperiment, welches 1935 im Paper \cite{Bell:Einstein1935}
 \enquote{Can quantum-mechanical description of physical reality be considered complete?}
@@ -113,12 +114,12 @@ Quantenmechanik:
 
 Nur wenn beide diese Fragen mit \enquote{ja} beantwortet werden k\"onnen, 
 ist die Theorie eine zufriedenstellende Beschreibung der Realit\"at.
-Ob eine Theorie als korrekt bezeichnet werden kann wird definiert mit:
+Ob eine Theorie als korrekt bezeichnet werden kann, wird definiert mit:
 
 \begin{definition}\label{def:bell:Korrektheit}
     Die Korrektheit einer Theorie wird anhand des Grades der \"Ubereinstimmung
     zwischen den Vorhersagen einer Theorie und den entsprechenden praktischen
-    Messungen und Experimenten.
+    Messungen und Experimenten \"uberpr\"uft.
 \end{definition}
 
 Diese Frage kann einfach gepr\"uft werden, indem die Resultate von
@@ -143,13 +144,13 @@ allgemein hielten, diskutieren wir hier ein anschaulicheres Beispiel, welches
 wurde.
 
 \subsection{Das Gedankenexperiment\label{subsection:bell:epr:idee}}
-Wir betrachten zwei quantenmechanische Systeme, $I$ und $II$,
+Wir betrachten zwei quantenmechanische Systeme, \textit{I} und \textit{II},
 welche von $t=0$ bis zu einem Zeitpunkt $t=T$ miteinander 
 interagieren k\"onnen. Darauf ist keine Interaktion mehr m\"oglich.
-Visualisiert wird das Gedankenexperiment durch eine Quelle, welche
+Realisiert wird das Gedankenexperiment durch eine Quelle, welche
 Elektron-Positron Paare emittiert. 
-Dabei wird das Elektron (System $I$) zu einem Detektoren $A$ und das 
-Positron (System $II$) zu einem Detektoren $B$ gesandt.
+Dabei wird das Elektron (System \textit{I}) zu einem Detektoren $A$ und das 
+Positron (System \textit{II}) zu einem Detektoren $B$ gesandt.
 Diese sind physikalisch getrennt, sodass kein Informationsaustausch
 zwischen den Detektoren m\"oglich ist.
 Der Messaufbau ist in \figurename~\ref{fig:bell:EPR_Messaufbau} abgebildet.
@@ -157,7 +158,7 @@ Der Messaufbau ist in \figurename~\ref{fig:bell:EPR_Messaufbau} abgebildet.
 \begin{figure}
     \centering
     \includegraphics{bell/images/experiment_setup.pdf}
-    \caption{Messaufbau im Gedankenexperiment von EPR}
+    \caption{Messaufbau des Gedankenexperiments von EPR}
     \label{fig:bell:EPR_Messaufbau}
 \end{figure}
 
@@ -169,7 +170,7 @@ Paares $+\frac12 - \frac12 = 0$ betr\"agt.
 
 Wenn also bei Detektor $A$ der Spin des Elektrons entlang der $z$-Achse
 gemessen wird und das Messresultat $+z$ ist, so ist sofort klar, dass
-das das Positron bei Detektor $B$ den Spin $-z$ besitzen muss. 
+das Positron bei Detektor $B$ den Spin $-z$ besitzen muss. 
 Ebenso wird, falls bei Detektor $A$ der Spin entlang der $x$-Achse als $+x$
 gemessen wird, das Positron bei Detektor $B$ den Spin $-x$ besitzen.
 
@@ -195,38 +196,37 @@ logischen Schlussfolgerung Einsteins kommen:
 \end{satz}
 
 \subsection{Mathematische Herleitung\label{subsection:bell:epr:herleitung}}
-Anhand des Spins kann das EPR Paradoxon einfach mathematisch formuliert werden.
-Dabei wird die Notation aus Kapitel~\ref{chapter:spin} (\nameref{chapter:spin})
-verwendet.
-
-Wie in den Gleichungen~\ref{spin:paulimatrizen}--\ref{spin:vektoroperator}
-hergeleitet wird der Spin-Operator durch die hermiteschen Pauli-Matrizen
-beschrieben.
+Dass EPR Paradoxon kann mithilfe der Notation des Spins aus 
+Kapitel~\ref{chapter:spin}  einfach mathematisch formuliert werden.
+Wie in den Gleichungen~(\ref{spin:paulimatrizen})--(\ref{spin:vektoroperator})
+hergeleitet wird der Spin-Operator durch die Pauli-Matrizen
+\index{Pauli-Matrizen}\index{Spin-Operator}
 
 \begin{align}
     S_x &= \frac{\hbar}{2} \begin{pmatrix}
     0 & 1 \\ 1 & 0
-    \end{pmatrix}
+    \end{pmatrix},
     &
     S_y &= \frac{\hbar}{2} \begin{pmatrix}
     0 & -i \\ i & 0
     \end{pmatrix}
+    &&\text{und}
     &
     S_z &= \frac{\hbar}{2} \begin{pmatrix}
     1 & 0 \\ 0 & -1
     \end{pmatrix}\label{equ:bell:paulimatrizen}
 \end{align}
-
-Wie in Abschnitt~\ref{subsection:bell:epr:idee} erkl\"art, betrachten wir
-den Spin in $x$- und $z$-Richtung.
-Die Eigenwerte der entsprechenden Pauli-Matrizen betragen:
+beschrieben.
+Wie bereits in Abschnitt~\ref{subsection:bell:epr:idee} betrachten 
+wir den Spin in $x$- und $z$-Richtung.
+Die Eigenvektoren der entsprechenden Pauli-Matrizen sind
 
 \begin{align}
-    |{+}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\1 \end{pmatrix} &
+    |{+}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\1 \end{pmatrix}, &
     |{-}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\-1 \end{pmatrix} &
     & \text{und} & 
-    |{+}z\rangle &= \begin{pmatrix} 1\\0 \end{pmatrix} &
-    |{-}z\rangle &= \begin{pmatrix} 0\\1 \end{pmatrix} &
+    |{+}z\rangle &= \begin{pmatrix} 1\\0 \end{pmatrix}, &
+    |{-}z\rangle &= \begin{pmatrix} 0\\1 \end{pmatrix}. &
 \end{align}
 
 Der Spin-Zustand $|\psi\rangle$ entlang der $z$-Achse eines 
@@ -236,39 +236,39 @@ Diese umfassen $+z$ f\"ur das Elektron und $-z$
 f\"ur das Positron, sowie $-z$ f\"ur das Elektron und $+z$ f\"ur das Positron.
 Zur Notation dieser kombinierten Zust\"ande wird das Tensorprodukt verwendet.
 
-\begin{definition}\label{def:bell:tensorprodukt}
+\begin{definition}\label{def:bell:tensorprodukt}\index{Tensorprodukt}
     Das Tensorprodukt von zwei Vektoren $A,B \in \mathbb{C}^2$  wird geschrieben als
     \[
         A \otimes B
     \]
-    und entspricht der Abbildung $(\mathbb{C}^2,\mathbb{C}^2)\to\mathbb{C}^4$, 
+    und entspricht der Abbildung $\mathbb{C}^2\times\mathbb{C}^2\to\mathbb{C}^4$, 
     bei welcher jedes Element von $A$ mit jedem Element von $B$ multipliziert
     wird.
     Seien
     \begin{align*}
         A = \begin{pmatrix} a_{1} \\ a_{2} \end{pmatrix}
-        &&
-        B = \begin{pmatrix} b_{1} \\ b_{2} \end{pmatrix}
+        && \text{und} &&
+        B = \begin{pmatrix} b_{1} \\ b_{2} \end{pmatrix},
     \end{align*}
-    so ist das Tensorprodukt
+    so ist das Tensorprodukt 
+    \footnote{Diese Definition des Tensorprodukts ist nur f\"ur Vektoren
+        $A,B \in \mathbb{C}^2$ g\"ultig. Auf eine allgemein g\"ultige Definition
+        des Tensorprodukts wird an dieser Stelle verzichtet.}
     \[
         A \otimes B = \begin{pmatrix} 
-        a_1 b_1 & a_2 b_1 \\ a_1 b_2 & a_2 b_2
-        \end{pmatrix}
+        a_1 b_1 & a_1 b_2 \\ a_2 b_1 & a_2 b_2
+        \end{pmatrix}.
     \]
 \end{definition}
 
 Damit ist der Zustand des Systems $|\psi\rangle$ definiert als
-
 \begin{equation}
     |\psi\rangle = \frac{1}{\sqrt{2}} \Big( 
         |{+}z\rangle \otimes |{-}z\rangle - |{-}z\rangle \otimes |{+}z\rangle
      \Big)
      \label{equ:bell:spinstate}
 \end{equation}
-
 und somit
-
 \begin{align}
     |\psi\rangle &= \frac{1}{\sqrt{2}} 
     \left( 
@@ -286,7 +286,7 @@ und somit
          -
          \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}
      \right)
-     \stackrel{!}{=}
+     =
      \frac{1}{\sqrt{2}}\left(
          \frac{1}{2}
          \begin{pmatrix} \phantom{-}1 & \phantom{-}1 \\ -1 & -1 \end{pmatrix}
@@ -307,20 +307,20 @@ und somit
       &= 
       -\frac{1}{\sqrt{2}} \Big( 
               |{+}x\rangle \otimes |{-}x\rangle - |{-}x\rangle \otimes |{+}x\rangle
-           \Big)\label{equ:bell:psix}
+           \Big)\label{equ:bell:psix}.
 \end{align}
-
 Wir haben also gezeigt, dass der Spin-Zustand $|\psi\rangle$ des
-Elektron-Positron Paares \"aquivalent in Abh\"angigkeit des $z$-, sowie
+Elektron-Positron Paares gleichermassen in Abh\"angigkeit des $z$-, sowie
 des $x$-Spin Zustands geschrieben werden kann.
 Wird nun bei Detektor $A$ der Spin des Elektrons in $z$-Richtung gemessen, 
 so findet eine Projektion des Zustands $|\psi\rangle$ auf entweder
 $|{+}z\rangle$ oder $|{-}z\rangle$ statt.
-Der Zustand reduziert sich auf
+Da $|{+}z\rangle$ und $|{-}z\rangle$ orthogonal sind, reduziert sich der Zustand
+auf
 \begin{align*}
     |\psi_{1}\rangle &= |{+}z\rangle \otimes |{-}z\rangle
     & \text{bzw.} && 
-    |\psi_{2}\rangle &= |{-}z\rangle \otimes |{+}z\rangle
+    |\psi_{2}\rangle &= |{-}z\rangle \otimes |{+}z\rangle.
 \end{align*}
 Damit ist der Spin in $z$-Richtung f\"ur das Positron bei Detektor $B$ ohne
 eine Messung vorbestimmt, n\"amlich als $-z$ im ersten Fall bzw. $+z$ im
@@ -331,7 +331,7 @@ ebenfalls reduziert auf
 \begin{align*}
     |\psi_{a}\rangle &= |{+}x\rangle \otimes |{-}x\rangle
     & \text{bzw.} && 
-    |\psi_{b}\rangle &= |{-}x\rangle \otimes |{+}x\rangle
+    |\psi_{b}\rangle &= |{-}x\rangle \otimes |{+}x\rangle.
 \end{align*}
 Wir erhalten damit zwei Wellenfunktionen, z.B. $|\psi_{1}\rangle$ und 
 $|\psi_{a}\rangle$, welche \emph{gleichzeitig} die gleiche 
@@ -340,7 +340,7 @@ Um zu pr\"ufen ob dies im Fall des Spin-Zustands \"uberhaupt m\"oglich
 ist, wenden wir Hilfssatz~\ref{skript:kommutatorannihliertev} an.
 Der Kommutator $[S_x,S_z]$ ist
 \begin{equation}
-    [S_x, S_z] =  -i \hbar S_y \neq 0
+    [S_x, S_z] =  -i \hbar S_y \neq 0.
 \end{equation}
 Da die Operatoren $S_x$ und $S_z$ also nicht vertauschen, ist nach der Theorie
 der Quantenmechanik die gleichzeitige Kenntnis der beiden Messungen \emph{nicht}
@@ -354,8 +354,8 @@ oder (2) dass die Beschreibung der Quantenmechanik mittels der Wellenfunktion
 nicht  vollst\"andig ist und ein fundamentaler, nicht messbarer, Mechanismus
 bestimmt welches Ergebnis eine Messung des Spins ergeben wird.
 
-
-\subsection{Die Theorie der verborgenen lokalen Variablen}
+\subsection{Die Theorie der verborgenen lokalen Variablen\label{subsection:bell:epr:hiddenvars}}
+\index{Variablen!verborgene}
 Besinnen wir uns zur\"uck auf die beiden initialen Fragen: 
 (1) \enquote{Ist die Theorie korrekt?} und 
 (2) \enquote{Ist die Beschreibung durch die Theorie vollst\"andig?}
@@ -370,17 +370,21 @@ Eine m\"ogliche L\"osung des Paradoxons wurde bereits in
 Abschnitt~\ref{subsection:bell:epr:herleitung} kurz beschrieben:
 Es k\"onnte ein verborgener Mechanismus existieren, welcher das Resultat unseres
 Experiments, also den Spin von Elektron und Positron, vorausbestimmt.
-Dazu wird eine verborgene Variable eingef\"uhrt, welche das
-Resultat der Spin-Messung bestimmt. 
-Diese wird als \emph{verborgene} Variable bezeichnet, da sie nicht
-messbar ist, sondern nur die Auswirkungen der Variable, also der jeweilige
-Spin, gemessen werden kann.
-Um das durch Einstein, Rosen und Podolski eingef\"uhrte Paradoxon zu l\"osen
-reicht eine 2-dimensionale Variable $\lambda\in\mathbb{C}^2$ aus, 
-welche den Zusammenhang zwischen dem Spin in $x$- und $z$-Richtung beschreibt.
+Um einen solchen Mechanismus mathematisch zu beschreiben wird eine Variable
+$\lambda$ eingef\"uhrt.
+Da diese nicht direkt messbar ist, wird sie als \emph{verborgene} Variable
+bezeichnet.
+Um keine unn\"otigen Einschr\"ankungen einzuf\"uhren, wird keine Annahme
+\"uber $\lambda$ gemacht - weder in der Anzahl Dimensionen, noch ob sie diskret
+oder kontinuierlich ist.
+Wir definieren lediglich, dass die Variable zuf\"allig aus dem Raum $\Lambda$ 
+aller m\"oglicher Werte von $\lambda$ gezogen wird.
 
-Eine Visualisierung der m\"oglichen Werte von $\lambda$ ist in 
-Abbildung~\ref{fig:bell:hidden_var} dargestellt.
+Zur Visualisierung betrachten wir eine 2-dimensionale Variable 
+$\lambda\in\mathbb{R}^2$, welche den Zusammenhang zwischen dem Spin in $x$- 
+und $z$-Richtung beschreibt.
+Die damit m\"oglichen Werte sind in Abbildung~\ref{fig:bell:hidden_var}
+dargestellt.
 Liegt die Variable $\lambda$ im ersten Quadranten des Diagramms, so ist 
 unabh\"angig von der Messung $A$ eindeutig bestimmt, dass der Spin des Elektrons
 sowohl in $x$-, wie in $z$-Richtung positiv sein wird.
@@ -403,10 +407,12 @@ kann.
 Mit dieser Theorie lassen sich die beiden Forderungen Einsteins, die Lokalit\"at
 und der Realismus, erf\"ullen und die um verborgene lokale Variablen erweiterte
 Quantenmechanik w\"are vollst\"andig.
-Die Herausforderung eine solche Variable $\lambda$ wirklich 
-in Form eines existierenden Teilchens zu finden bleibt jedoch bestehen.
+Die Herausforderung, eine solche Variable $\lambda$ wirklich zu entdecken und
+messen zu k\"onnen, bleibt jedoch bestehen.
 
 \section{Die Bellsche Ungleichung\label{section:bell:bell}}
+\rhead{Die Bellsche Ungleichung}
+\index{Bellsche Ungleichung}
 Nach der Ver\"offentlichung des EPR Paradoxons gingen verschiedene bekannte
 Physiker auf das Paradoxon ein.
 Niels Bohr, Mitbegr\"under der Kopenhagen Interpretation der Quantenmechanik,
@@ -415,7 +421,7 @@ antwortete bereits 1935 mit einer eher schwammigen Widerlegung Einsteins
 Bohr ging dabei gar nicht auf die Unvollst\"andigkeit der Quantenmechanik ein,
 sondern argumentierte dass die Quantenmechanik konsistent sein muss -- was
 Einstein zu diesem Zeitpunkt gar nicht infrage stellte.
-Im Nachhinein betrachtet musste 1949 sogar Bohr selbst zugeben, dass seine
+Im Nachhinein betrachtet musste Bohr 1949 sogar selbst zugeben, dass seine
 Reaktionen auf Einstein \enquote{ineffizient} waren und 
 \enquote{es schwierig machten darauf zu antworten}. 
 
@@ -432,19 +438,19 @@ Dieses Gedankenexperiment ist einfacher zu analysieren (weshalb wir im
 Abschnitt~\ref{section:bell:epr} das Experiment von Bohm, und nicht das
 originale von Einstein betrachtet haben).
 
-Als sich John Bell, noch als Student, mit dem EPR Paradoxon und insbesondere
+Als sich John Bell noch als Student mit dem EPR Paradoxon und insbesondere
 der Arbeit von David Bohm zu besch\"aftigen begann, kamen ihm insbesondere
 Zweifel an der Lokalit\"at dieser verborgenen Variablen.
 In seinem ber\"uhmten Paper
 \enquote{On the Einstein Podolsky Rosen Paradox} \cite{Bell:Bell1964}
 gelang es ihm zu beweisen, dass eine Theorie der verborgenen Variablen -- sollte
 eine solche existieren -- \emph{nicht} lokal sein kann.
-Als erstem Physiker gelang es die Frage umzudrehen, und nicht nach solchen
-Variablen bzw. Teilchen zu suchen, sondern gleich deren Nicht-Existenz
+Als erstem Physiker gelang es ihm, die Frage umzudrehen, und nicht nach solchen
+Variablen bzw.~Teilchen zu suchen, sondern gleich deren Nicht-Existenz
 zu beweisen.
 
-Wir betrachten das Paper von Bell indem wir uns erneut das Gedankenexperiment 
-nach Abbildung~\ref{fig:bell:EPR_Messaufbau} befassen.
+Wir betrachten das Paper von Bell, indem wir uns erneut das Gedankenexperiment 
+nach Abbildung~\ref{fig:bell:EPR_Messaufbau} befassen.\index{Bell!John}
 Dazu verallgemeinern wir das Experiment etwas und betrachten zuerst die
 Vorhersage mittels der Quantenmechanik.
 Da diese ja korrekt, aber noch nicht vollst\"andig ist, f\"uhren wir darauf
@@ -471,7 +477,7 @@ werden als
     & = \begin{pmatrix}
        a_3 & a_1 - i a_2 \\
        a_1 - i a_2 & -a_3
-    \end{pmatrix} \label{equ:bell:proj_a_s}
+    \end{pmatrix}. \label{equ:bell:proj_a_s}
 \end{align}
 Der Spin-Zustand $|\psi\rangle$ des Elektron-Positron Paares kann mit
 \eqref{equ:bell:meas_a} und $\vec{\hat{\sigma}}_B \cdot \vec{b}$ 
@@ -481,16 +487,16 @@ Spin-Zust\"ande bei $A$ und $B$ geschrieben werden:
     |\psi\rangle = \left( \vec{\hat{\sigma}}_A \cdot \vec{a} \right)
         \otimes \left( \vec{\hat{\sigma}}_B \cdot \vec{b} \right)
 \end{equation}
-Der Erwartungswert $E_{QM}$ des Produkts der zwei Spin-Messungen
-ist daher
+Der Erwartungswert der Quantenmechanik $E_{QM}$ des Produkts der zwei 
+Spin-Messungen ist daher
 \begin{equation}\
     E_{QM} = \left\langle \phi \left| 
     \left( \vec{\hat{\sigma}}_A \cdot \vec{a} \right)
             \otimes \left( \vec{\hat{\sigma}}_B \cdot \vec{b} \right)
-    \right| \phi \right\rangle
+    \right| \phi \right\rangle.
 \end{equation}
 Da die Messung jeweils entweder $|+\rangle$ oder $|-\rangle$ ergibt, kann
-dies analog zu \eqref{equ:bell:spinstate} umgeformt werden.
+dies analog zu \eqref{equ:bell:spinstate} umgeformt werden zu
 \begin{equation} 
 \begin{split}
    E_{QM }=&\left\langle \phi \left| 
@@ -510,14 +516,14 @@ dies analog zu \eqref{equ:bell:spinstate} umgeformt werden.
         +
         \left\langle{-}\left| \vec{\hat{\sigma}}_A \cdot \vec{a} \right|{-}\right\rangle_A
         \left\langle{+}\left| \vec{\hat{\sigma}}_B \cdot \vec{b} \right|{+}\right\rangle_B
-    \Bigg]
+    \Bigg],
 \end{split}
 \end{equation}
-Was mit \eqref{equ:bell:proj_a_s} vereinfacht werden kann zu
+was mit \eqref{equ:bell:proj_a_s} vereinfacht werden kann zu
 \begin{equation}\label{equ:bell:e_qm}
 \begin{split}
     E_{QM} &= \frac{1}{2} \big[ -a_3b_3 - (a_1-ia_2)(b_1+ib_2) - (a_1+ia_2)(b_1-ib_2) - a_3b_3 \big] \\
-    &= -\big[ a_1b_1 + a_2b_2 + a_3b_3 \big] \stackrel{!}{=} -\vec{a} \cdot \vec{b}
+    &= -\big[ a_1b_1 + a_2b_2 + a_3b_3 \big] = -\vec{a} \cdot \vec{b}.
 \end{split}
 \end{equation}
 Da $\vec{a}$ und $\vec{b}$ Einheitsvektoren sind, gilt
@@ -527,63 +533,71 @@ Da $\vec{a}$ und $\vec{b}$ Einheitsvektoren sind, gilt
 mit dem Winkel $\theta_{ab}$ zwischen $\vec{a}$ und $\vec{b}$.
 Somit wird der quantenmechanische Erwartungswert zu
 \begin{equation}\label{equ:bell:res_qm}
-    E_{QM}(\vec{a},\vec{b}) = -\vec{a}\cdot\vec{b} = -\cos(\theta_{ab})
+    E_{QM}(\vec{a},\vec{b}) = -\vec{a}\cdot\vec{b} = -\cos(\theta_{ab}).
 \end{equation}
+Da angenommen werden kann, dass die Quantenmechanik korrekt ist, muss eine
+Theorie verborgener Variablen den Erwartungswert $E_{QM}$ reproduzieren 
+k\"onnen.
+Um dies zu pr\"ufen leiten wir den Erwartungswert mithilfe einer verborgener
+Variable her.
 
 \subsection{Vorhersage mittels verborgener Variablen}
-Nehmen wir nun an, dass eine Theorie der verborgenen Variablen vorliegt
+\index{Variablen!verborgene}
+Wir nehmen nun also an, dass eine Theorie der verborgenen Variablen vorliegt
 und eine Variable $\lambda \in \Lambda$ existiert.
-\"Uber die Art dieser Variable, ob kontinuierlich oder diskret, wird hier keine
-Annahme gemacht.
 Die Wahrscheinlichkeitsverteilung dieser Variable sei $\rho(\lambda)$, womit gilt
 \begin{equation}\label{equ:bell:lambdaverteilung}
-    \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda = 1
+    \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda = 1.
 \end{equation}
 Damit diese Theorie die Quantenmechanik erweitern kann, muss sie die Vorhersage
 der Quantenmechanik mit dem Erwartungswert 
 $E_{QM}(\vec{a},\vec{b}) = -\vec{a}\cdot\vec{b}$
 ebenfalls f\"ur alle Richtungen $\vec{a}$ und $\vec{b}$ produzieren.
-Die Messungen $A(\vec{a})$ und $B(\vec{b})$ h\"angen nun also von einer
-vorbestimmten Variable $\lambda$ ab.
-\begin{equation}\label{equ:bell:messungen_ab}
-    A(\vec{a}) \cdot B(\vec{b})(\lambda) = A(\vec{a},\lambda) \cdot B(\vec{b},\lambda)
-\end{equation}
-mit
+Wir definieren nun die Messung bei Detektor $A$ als $A(\vec{a})$ mit
 \begin{equation}\label{equ:bell:werte_ab}
-    A(\vec{a},\lambda) = \pm 1 \qquad \text{und} \qquad B(\vec{b},\lambda) = \pm 1
+    A(\vec{a}) = \begin{cases}
+        +1 & \text{Spin Up} \\
+        -1 & \text{Spin Down.} \\
+    \end{cases}
 \end{equation}
-Aus \eqref{equ:bell:lambdaverteilung} und \eqref{equ:bell:messungen_ab}
-l\"asst sich der Erwartungswert des Produkts der beiden Spin-Messungen
+Die Messung bei Detektor $B$ wird gleichermassen als $B(\vec{b})$ geschrieben.
+Da der Spin, wie in \ref{subsection:bell:epr:hiddenvars} beschrieben, von der
+verborgenen Variablen $\lambda$ abh\"angt, sind $A$ und $B$ ebenfalls von
+$\lambda$ abh\"angig: $A(\vec{a},\lambda)$ und $B(\vec{b},\lambda)$.
+Aus \eqref{equ:bell:lambdaverteilung} und \eqref{equ:bell:werte_ab}
+l\"asst sich nun der Erwartungswert des Produkts der beiden Spin-Messungen
 bestimmen als
 \begin{equation}\label{equ:bell:e_lambda}
     E(\vec{a},\vec{b}) = \int_{\lambda\in\Lambda} 
-        \rho(\lambda) A(\vec{a},\lambda) B(\vec{b},\lambda) d\lambda
+        \rho(\lambda) A(\vec{a},\lambda) B(\vec{b},\lambda) d\lambda.
 \end{equation}
-Aufgrund des Messaufbaus und \eqref{equ:bell:res_qm} gilt f\"ur 
-$\vec{a} = \vec{b}$:
+Durch \eqref{equ:bell:res_qm} ist f\"ur $\vec{a} = \vec{b}$ der 
+quantenmechanische Erwartungswert $E_{QM} = -1$.
+Somit muss, damit die Theorie der verborgenen Variablen zutrifft, auch
 \[
     -1 = \int_{\lambda\in\Lambda} 
         \rho(\lambda) A(\vec{a},\lambda) B(\vec{a},\lambda) d\lambda
 \]
-Diese perfekte Antikorrelation ist nur bei
+gelten.
+Da $\rho(\lambda)$ eine Wahrscheinlichkeitsverteilung ist, kann dies nur
+zutreffen, falls
 \begin{equation}\label{equ:bell:antikorrelation}
-    A(\vec{a},\lambda) = -B(\vec{a},\lambda)
+    A(\vec{a},\lambda) = -B(\vec{a},\lambda).
 \end{equation}
-erf\"ullt.
-Damit wird \eqref{equ:bell:e_lambda} zu
+Damit wird \eqref{equ:bell:e_lambda} vereinfacht zu
 \begin{equation}\label{equ:bell:e_lambda_vereinf}
     E(\vec{a},\vec{b}) = -\int_{\lambda\in\Lambda} 
-        \rho(\lambda) A(\vec{a},\lambda) A(\vec{b},\lambda) d\lambda
+        \rho(\lambda) A(\vec{a},\lambda) A(\vec{b},\lambda) d\lambda.
 \end{equation}
-
-\subsection{Herleitung der Bellschen Ungleichung}
 Aus dieser vereinfachten Gleichung l\"asst sich nun die Bellsche Ungleichung
 herleiten.
-Dazu wird neben den beiden Richtungen $\vec{a}$ und $\vec{b}$ eine dritte,
-unabh\"angige Richtung $\vec{c}$ betrachtet. 
-$\vec{c}$ ist ebenfalls ein Einheitsvektor.
+
+\subsection{Herleitung der Bellschen Ungleichung}
+Zur Herleitung der Bellschen Ungleichung wird neben den beiden Richtungen 
+$\vec{a}$ und $\vec{b}$ eine dritte, unabh\"angige Richtung $\vec{c}$ 
+betrachtet. 
 Aufgrund von \eqref{equ:bell:werte_ab} gilt, dass
-$|A(\vec{b},\lambda)|^2 = 1$ ist.
+$|A(\vec{b},\lambda)| = 1$ ist.
 Wir betrachten nun die Differenz zweier Erwartungswerte
 $E(\vec{a},\vec{b}) - E(\vec{a},\vec{c})$:
 \begin{equation}\label{equ:bell:diff_e}
@@ -593,13 +607,15 @@ $E(\vec{a},\vec{b}) - E(\vec{a},\vec{c})$:
         A(\vec{a},\lambda) A(\vec{b},\lambda) - 
         A(\vec{a},\lambda) A(\vec{c},\lambda)
     \right] d\lambda \\
-    = \int_{\lambda\in\Lambda} \rho(\lambda)A(\vec{a},\lambda)A(\vec{b},\lambda)
-        \left[ A(\vec{b},\lambda)A(\vec{c},\lambda) - 1 \right] d\lambda
+    = \int_{\lambda\in\Lambda} \rho(\lambda) \left[
+         A(\vec{a},\lambda)A(\vec{c},\lambda) - 
+         A(\vec{a},\lambda)A(\vec{b},\lambda)
+    \right] d\lambda
 \end{split}
 \end{equation}
 Um die Bellsche Ungleichung herleiten zu k\"onnen, wird 
-Hilfssatz~\ref{hilfssatz:bell:dreiecksungleichung_integral}
-eingef\"uhrt.
+der folgende Hilfssatz~\ref{hilfssatz:bell:dreiecksungleichung_integral}
+ben"otigt.
 \begin{hilfssatz}\label{hilfssatz:bell:dreiecksungleichung_integral}
     Sei $Z$ eine auf dem Intervall $\Omega$ integrierbare Funktion, so gilt
     \[
@@ -612,7 +628,7 @@ eingef\"uhrt.
     Es wird $\alpha\in\mathbb{C}$ mit $|\alpha| = 1$ gew\"ahlt, sodass
     \[
         \alpha \cdot \int_{\Omega} Z\, d\mu = 
-        \left|\int_{\Omega} Z\, d\mu\,\right|
+        \left|\int_{\Omega} Z\, d\mu\,\right|.
     \]
     Damit ist
     \[
@@ -621,7 +637,7 @@ eingef\"uhrt.
         \int_{\Omega}\operatorname{Re}(\alpha Z)\,d\mu
         \leq
         \int_{\Omega} |\,\alpha Z\,|\, d\mu = 
-        \int_{\Omega} |\,Z\,|\, d\mu
+        \int_{\Omega} |\,Z\,|\, d\mu.
     \]
 \end{proof}
 
@@ -630,16 +646,18 @@ Hilfssatz~\ref{hilfssatz:bell:dreiecksungleichung_integral} geschrieben als
 \begin{equation}
 \begin{split}
     |E(\vec{a},\vec{b}) - E(\vec{a},\vec{c})| =
-    \left| \int_{\lambda\in\Lambda} \rho(\lambda)
-        A(\vec{a},\lambda)A(\vec{b},\lambda)
-        \left[ A(\vec{b},\lambda)A(\vec{c},\lambda) - 1 \right]
+    \left| \int_{\lambda\in\Lambda} \rho(\lambda) \left[
+         A(\vec{a},\lambda)A(\vec{c},\lambda) - 
+         A(\vec{a},\lambda)A(\vec{b},\lambda) \right]
         d\lambda
     \right| \\
     \leq 
     \int_{\lambda\in\Lambda} \left|  
-        \rho(\lambda)A(\vec{A},\lambda)A(\vec{b},\lambda)
-        \left[ A(\vec{b},\lambda)A(\vec{c},\lambda) - 1 \right]
-    \right| d\lambda
+        \rho(\lambda)\left[
+         A(\vec{a},\lambda)A(\vec{c},\lambda) - 
+         A(\vec{a},\lambda)A(\vec{b},\lambda)
+    \right]
+    \right| d\lambda.
 \end{split}
 \end{equation}
 Der Term auf der rechten Seite wird nun mithilfe von $|A(\cdot,\lambda)|=1$
@@ -650,14 +668,16 @@ weiter vereinfacht zu
     \right| d\lambda \\
     &= \int_{\lambda\in\Lambda} \rho(\lambda)
     \left| A(\vec{a},\lambda) \right| \cdot 
-    \left| A(\vec{c},\lambda) - A(\vec{b},\lambda) \right| d\lambda \\
+    \left| A(\vec{c},\lambda) - A(\vec{b},\lambda) \right| d\lambda, \\
+    \intertext{durch Multiplikation mit $|A(\vec{b},\lambda)|=1$ zu}
     &= \int_{\lambda\in\Lambda} \rho(\lambda)
     \left|\left[ A(\vec{b},\lambda) A(\vec{c},\lambda) - 1 \right]\right| d\lambda \\
+    \intertext{und da $A(\vec{b},\lambda)A(\vec{c},\lambda) = \pm 1$ zu}
     &= \int_{\lambda\in\Lambda} \rho(\lambda) 
     \left[1 - A(\vec{b},\lambda)A(\vec{c},\lambda) \right] d\lambda \\
     &= \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda
     - \int_{\lambda\in\Lambda} \rho(\lambda) 
-    (\vec{b},\lambda)A(\vec{c},\lambda) d\lambda
+    A(\vec{b},\lambda)A(\vec{c},\lambda) d\lambda.
 \end{align*}
 Damit sind wir wieder bei einem Erwartungswert der Form von
 \eqref{equ:bell:e_lambda_vereinf} und k\"onnen die erste Form der Bellschen
@@ -667,14 +687,16 @@ Ungleichung \cite[(15)]{Bell:Bell1964} aufstellen:
     \leq
     1 + E(\vec{b},\vec{c})
 \end{equation}
+\index{Bellsche Ungleichung}
 
 Diese Ungleichung muss, wenn eine Theorie lokaler, verborgener Variablen 
 vorliegt, f\"ur alle Richtungen $\vec{a}$, $\vec{b}$ und $\vec{c}$ gelten.
 Betrachten wir als Beispiel die Messrichtungen
 \begin{align*}
-    \vec{a}\cdot\vec{b} = \frac{\pi}{4} &&
-    \vec{b}\cdot\vec{c} = \frac{\pi}{4} &&
-    \vec{a}\cdot\vec{c} = 0
+    \measuredangle(\vec{a},\vec{b}) = \SI{45}{\degree}, &&
+    \measuredangle(\vec{b},\vec{c}) = \SI{45}{\degree} &&
+    \text{und} &&
+    \measuredangle(\vec{a},\vec{c}) = \SI{90}{\degree},
 \end{align*}
 welche in Abbildung~\ref{fig:bell:orientierung_pi4} dargestellt sind.
 Werden die Erwartungswerte der Quantenmechanik nach 
@@ -690,7 +712,7 @@ eingesetzt, folgt
 \end{figure}
 
 \[
-    \frac{1}{\sqrt{2}} \nleqslant 1 - \frac{1}{\sqrt{2}}
+    \frac{1}{\sqrt{2}} \nleqslant 1 - \frac{1}{\sqrt{2}}.
 \]
 
 Mit den gew\"ahlten Orientierungen ergibt sich also ein Widerspruch. 
@@ -705,7 +727,7 @@ experimentell jedoch nur schwer \"uberpr\"ufen, da unter anderem in
 \eqref{equ:bell:antikorrelation} eine perfekte Antikorrelation der Messungen
 gefordert wird, was in der Praxis nur schwer realisiert werden kann.
 
-\subsection{Herleitung der CHSH Ungleichung}
+\subsection{Herleitung der BCHSH Ungleichung}
 Um reale experimentelle Bedingungen nachbilden zu k\"onnen, passten
 John Clauser, Michael Horne, Abner Shimony und Richard Holt 
 \cite{Bell:Clauser1969} die Bellsche Ungleichung so an, dass die perfekte
@@ -713,9 +735,10 @@ Korrelation nicht notwendig ist.
 Ihr Resultat wird als CHSH-Ungleichung bezeichnet, war aber ebenfalls noch nicht
 f\"ur reale Experimente geeignet.
 Erst John Bell, der sich von den Fortschritten von Clauser \textit{et al.}
-anspornen liess und nach 7 Jahren sich wieder mit dem Thema besch\"aftigte,
+anspornen liess und nach sieben Jahren sich wieder mit dem Thema besch\"aftigte,
 konnte eine pr\"ufbare Version der Bellschen Ungleichung herleiten, die so
-genannte \enquote{Bell-Clauser-Horne-Shimony-Holt (BCHSH) Ungleichung}. 
+genannte \enquote{Bell-Clauser-Horne-Shimony-Holt (BCHSH) Ungleichung}
+\cite{Bell:Bell1971}. 
 
 Dabei wird ber\"ucksichtigt, dass die Korrelation nicht perfekt ist, sondern
 um ein $\delta$ von $-1$ abweichen kann:
@@ -737,13 +760,13 @@ Als weiteres Zugest\"andnis an reale Messbedingungen werden nicht mehr einzelne
 Messungen $A(\vec{a},\lambda)$ betrachtet, sondern mehrere Messungen zu
 $\bar{A}(\vec{a},\lambda)$ gemittelt.
 Damit wird \eqref{equ:bell:werte_ab} zu
-\begin{equation}
+\begin{equation*}
     \left| \bar{A}(\vec{a},\lambda) \right| \leq 1
     \qquad \text{und} \qquad 
-    \left| \bar{B}(\vec{b},\lambda) \right| \leq 1
-\end{equation}
+    \left| \bar{B}(\vec{b},\lambda) \right| \leq 1.
+\end{equation*}
 
-Nun werden statt die 3 Messrichtungen $\vec{a}$, $\vec{b}$ und $\vec{c}$
+Nun werden statt der 3 Messrichtungen $\vec{a}$, $\vec{b}$ und $\vec{c}$
 insgesamt 4 Richtungen eingef\"uhrt: $\vec{a}, \vec{a'}, \vec{b}, \vec{b'}$
 und die Differenz $E(\vec{a},\vec{b}) - E(\vec{a},\vec{b}')$ betrachtet:
 \begin{equation}
@@ -760,20 +783,22 @@ erhalten schlussendlich
     \left| E(\vec{a},\vec{b}) - E(\vec{a},\vec{b}') \right| \leq \pm \left[
         E(\vec{a}',\vec{b}') + E(\vec{a}',\vec{b})
     \right]
-    + 2 \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda
+    + 2 \int_{\lambda\in\Lambda} \rho(\lambda) d\lambda,
 \]
-was wir mit einem letzten Schritt zur BCHSH-Ungleichung umformen k\"onnen
+was wir mit einem letzten Schritt zur BCHSH-Ungleichung
 \begin{equation}\label{equ:bell:bchsh-ungleichung}
     -2 \leq 
     E(\vec{a},\vec{b}) - E(\vec{a},\vec{b'}) + E(\vec{a'},\vec{b}) + E(\vec{a'},\vec{b'})
     \leq 2
 \end{equation}
+umformen k\"onnen.
 Betrachten wir nun die in Abbildung~\ref{fig:bell:orientierung_2}
 abgebildeten Messrichtungen
 \begin{align*}
-    \vec{a}\cdot\vec{b} = \frac{\pi}{4} && 
-    \vec{b}\cdot\vec{a}' = \frac{\pi}{4} && 
-    \vec{a}'\cdot\vec{b}' = \frac{\pi}{4} 
+    \measuredangle(\vec{a},\vec{b}) = \SI{45}{\degree}, && 
+    \measuredangle(\vec{b},\vec{a}') = \SI{45}{\degree} && 
+    \text{und} &&
+    \measuredangle(\vec{a}',\vec{b}') = \SI{45}{\degree}.
 \end{align*}
 \begin{figure}
     \centering
@@ -784,36 +809,37 @@ abgebildeten Messrichtungen
 \end{figure}
 Das Einsetzen der Werte ergibt
 \[
-    2 \sqrt{2} \nleqslant 2
+    2 \sqrt{2} \nleqslant 2,
 \]
 womit die Quantenmechanik die BCHSH Ungleichung ebenfalls verletzt.
 
 \section{Experimente}
+\rhead{Experimente}
 Zur experimentellen \"Uberpr\"ufung der Bellschen Ungleichung werden meist
-nicht, wie hier besprochen, Elektron-Positron-Paare verwendet, sondern
+nicht Elektron-Positron Paare verwendet, sondern
 Photonen mit identischer Polarisation.
 Dabei k\"onnen die Photon entweder vertikal ($+$) oder horizontal
 ($-$) polarisiert sein. 
-Es ergibt sich der folgende Polarisationszustand:
+Es ergibt sich der folgende Polarisationszustand
 \begin{equation}\label{equ:bell:photonstate}
     |\psi\rangle = \frac{1}{\sqrt{2}} \Big(
         |{+}\rangle \otimes |{+}\rangle + |{-}\rangle \otimes |{-}\rangle
-    \Big)
+    \Big).
 \end{equation}
-Wird nun die Polarisation der beiden Elektronen in der gleichen Richtung 
+Wird nun die Polarisation der beiden Photonen in der gleichen Richtung 
 gemessen, sind die Messergebnisse perfekt korreliert.
 Bei Richtungen mit einem Winkel von \SI{45}{\degree} wird das Resultat
-unkorreliert sein, also komplett zuf\"allig.
+unkorreliert, also komplett zuf\"allig, sein.
 Wird in einem Winkel von \SI{90}{\degree} gemessen, sind die Messergebnisse
 anti-korreliert.
 
 Die Erwartungswerte werden nun gesch\"atzt indem gez\"ahlt
-wird, wie h\"aufig die m\"oglichen Resultat $++$, $+-$, $-+$ und $--$
+wird, wie h\"aufig die m\"oglichen Resultate $++$, $+-$, $-+$ und $--$
 vorkommen ($N_{++}, N_{+-}, N_{-+}, N_{--}$).
-Der Erwartungswert $E_(\vec{a},\vec{b})$ einer Detektor-Einstellung 
+Der Erwartungswert $E(\vec{a},\vec{b})$ einer Detektor-Einstellung 
 $(\vec{a},\vec{b})$ wird nun berechnet durch
 \begin{equation}
-    E = \frac{N_{++} + N_{--} - N_{+-} - N_{-+}}{N_{++} + N_{--} + N_{+-} + N_{-+}}
+    E = \frac{N_{++} + N_{--} - N_{+-} - N_{-+}}{N_{++} + N_{--} + N_{+-} + N_{-+}}.
 \end{equation}
 Die Bellsche Ungleichung wird \"uberpr\"uft, indem die vier Einstellungen
 $(\vec{a},\vec{b})$, $(\vec{a},\vec{b}')$, $(\vec{a}',\vec{b})$
@@ -828,28 +854,32 @@ verletzt, so st\"utzt das Experiment die Ergebnisse der Quantenmechanik.
 Kann nicht mit ausreichender statistischer Signifikanz belegt werden, dass
 die Bellsche Ungleichung verletzt wird, so kann die Existenz verborgener
 lokaler Variablen nicht ausgeschlossen werden.
+Aus dem Gedankenexperiment von EPR konnte also nach \"uber 35 Jahren eine
+messbare Zahl $S$ entwickelt werden, anhand welcher die Bellsche Ungleichung und
+damit die Intuition Einsteins bez\"uglich der Quantenmechanik getestet werden
+konnte.
 
 \subsection{M\"ogliche Probleme}
 Es gibt zahlreiche Herausforderungen bei der Entwicklung und der Durchf\"uhrung
 solcher Experimente.
 Die wichtigsten Probleme sind
 
-\paragraph{Effizienz der Detektoren}
+\paragraph{Effizienz der Detektoren:}
 Die Entwicklung eines Detektoren, welcher einzelne Photonen detektieren muss,
 gestaltet sich nicht als einfach, und die optimale Effizienz von $\eta = 1$ wird
 nicht erreicht.
 Je h\"oher die Effizienz der verwendeten Detektoren ist, desto gr\"osser ist die
 Konfidenz in das Resultat der Messung. 
 
-\paragraph{Sicherstellen der Lokalit\"at}
+\paragraph{Sicherstellen der Lokalit\"at:}
 Im Experiment muss sichergestellt sein, dass die beiden Teilchen keine
-keine Informationen \"uber die Messung austauschen k\"onnen.
+Informationen \"uber die Messung austauschen k\"onnen.
 Dazu m\"ussen die Detektoren so r\"aumlich getrennt werden, dass
 der gesamte Messprozess bei beiden Detektoren beendet ist, bevor Informationen,
 welche sich mit Lichtgeschwindigkeit ausbreiten, beim anderen Teilchen
 ankommen k\"onnen. 
 
-\paragraph{R\"aumliche Korrelation}
+\paragraph{R\"aumliche Korrelation:}
 Neben der Anforderung, dass ein Photonenpaar mit gleicher Polarisation erzeugt
 werden muss, m\"ussen die Photonen ebenfalls r\"aumlich so korreliert sein,
 dass diese wirklich zum Detektor gelangen.
@@ -868,7 +898,7 @@ sein. Dies wird in Abbildung~\ref{fig:bell:raum_korr} illustriert.
 Das erste Experiment, welches die Bellsche Ungleichung \"uberpr\"ufte,
 wurde 1972 von Stuart Freedman und John Clauser an der UC~Berkeley
 in Kalifornien durchgef\"uhrt \cite{Bell:Freedman1972}.
-Dazu wurden Calcium-40 Atome in den Zustand $\text{3d}\,\text{4p}\,^1\text{P}_1$
+Dazu wurden Kalzium-40 Atome in den Zustand $\text{3d}\,\text{4p}\,^1\text{P}_1$
 angeregt. 
 Wie in Abbildung~\ref{fig:bell:freedman} dargestellt wird ein Teil der
 angeregten Atome direkt in den Grundzustand $\text{4s}^2\,^1\text{S}_0$
@@ -877,13 +907,13 @@ via $\text{4p}^2\,^1\text{S}_0$ und $\text{4p}\,\text{4s}\,^1\text{P}_1$
 in den Grundzustand \"ubergehen.
 Dabei werden zwei Photonen mit einer Wellenl\"ange von \SI{551.3}{\nano\meter}
 bzw. \SI{442.7}{\nano\meter} freigesetzt. 
-Da der Drehimpuls des Calcium Atoms $J=0$ betr\"agt, m\"ussen die Photonen
+Da der Drehimpuls des Kalzium Atoms $J=0$ betr\"agt, m\"ussen die Photonen
 eine entgegengesetzte Polarisation haben.
 
 \begin{figure}
     \centering
     \includegraphics{bell/images/freedman.pdf}
-    \caption{Atomare Kaskade im Calcium Atom, welche zwei Photonen mit
+    \caption{Atomare Kaskade im Kalzium-Atom, welche zwei Photonen mit
     gegens\"atzlicher Polarisation erzeugt. \cite{Bell:Freedman1972}}
     \label{fig:bell:freedman}
 \end{figure}
@@ -902,7 +932,7 @@ Aspect im Rahmen seiner Dissertation eine Serie neuer Experimente zur Pr\"ufung
 der Bellschen Ungleichung entwickelt und durchgef\"uhrt
 \cite{Bell:Aspect1981,Bell:Aspect1982:1,Bell:Aspect1982:2}. 
 Aspect verwendete dazu dieselbe atomare Kaskade wie Freedman Clauser, jedoch
-wurden die Calcium Atome anders angeregt. 
+wurden die Kalzium-Atome anders angeregt. 
 Das Problem der Lokalit\"at wurde mittels eines optischen Schalters, welcher 
 innerhalb von \SI{10}{\nano\second} zwischen den zu messenden 
 Polarisationsrichtungen umschalten konnte, behandelt.
@@ -952,7 +982,7 @@ beheben konnte.
 Ihr Ergebnis,
 \[
     S(\SI{0}{\degree},\SI{45}{\degree},\SI{22.5}{\degree},\SI{67.5}{\degree})
-    = 2.73 \pm 0.02 \nleqslant 2
+    = 2.73 \pm 0.02 \nleqslant 2,
 \]
 konnte die Existenz einer Theorie der lokalen verborgenen Variablen klar 
 ausschliessen.
@@ -962,7 +992,7 @@ womit nicht alle Zweifel am Resultat des Experiment behoben werden konnten.
 \paragraph{Rowe, Boulder 2001}
 Das erste Experiment, in welchem die Detektoreffizienz gen\"ugend hoch war um
 alle Teilchen korrekt erkennen zu k\"onnen, wurde von Rowe \textit{et al.}
-in Boulder, Colordo durchgef\"uhrt \cite{Bell:Rowe2001}. 
+in Boulder, Colorado durchgef\"uhrt \cite{Bell:Rowe2001}. 
 Durch die Verwendung von Beryllium-Ionen anstatt von Photonen konnte die
 Detektoreffizienz auf \"uber \SI{90}{\percent} erh\"oht werden.
 Auch Rowe kam in seinem Experiment mit
@@ -972,7 +1002,7 @@ Auch Rowe kam in seinem Experiment mit
 \]
 auf eine klare Verletzung der Bellschen Ungleichung.
 Da die Beryllium-Ionen im Experiment jedoch nur \SI{3}{\micro\meter}
-auseinander platziert werden konnten, wurden bereits behobene Probleme in
+entfernt platziert werden konnten, wurden bereits behobene Probleme in
 diesem Experiment wieder eingef\"uhrt.
 
 \paragraph{Aktuelle Forschung}
@@ -986,13 +1016,14 @@ Aktuell wird daran geforscht, alle diese Probleme mit einem einzigen Experiment
 beheben zu k\"onnen. 
 Marissa Giustina (Wien, 2013) \cite{Bell:Giustina2013} konnte mit demselben 
 Aufbau jegliche Zweifel ausr\"aumen -- jedoch nicht gleichzeitig, sondern in 
-mehreren Messungen.
+mehreren Experimenten.
 Es wird erwartet, dass in den n\"achsten Jahren ein Experiment durchgef\"uhrt
-werden kann, welche jegliche Zweifel beseitigt und endg\"ultig nachweisen
+werden kann, welches jegliche Zweifel beseitigt und endg\"ultig nachweisen
 kann, dass die Intuition von Einstein falsch war und keine verborgenen
 lokalen Variablen existieren k\"onnen.
 
 \section{Fazit}
+\rhead{Fazit}
 In diesem Kapitel haben wir das Gedankenexperiment Einsteins genauer betrachtet
 und feststellen m\"ussen, dass Einstein mit seiner Intuition zur Quantenmechanik
 falsch lag.

@@ -4,6 +4,7 @@
 
 \usepackage{amsmath,amssymb}
 \usepackage[ngerman]{babel}
+\usepackage{siunitx}
 
 \author{Hannes Badertscher}
 \title{Bellsche Ungleichung}
@@ -34,6 +35,7 @@
     \begin{itemize}
         \item Lokalit\"at
         \item Realismus
+        \vspace{1cm}
         \item Korrektheit
         \item Vollst\"andigkeit
     \end{itemize}
@@ -57,49 +59,10 @@
         \item Eigenwerte:
             \begin{align*}
                 |{+}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\1 \end{pmatrix} &
-                |{-}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\-1 \end{pmatrix} &
+                |{-}x\rangle &= \frac{1}{\sqrt{2}}\begin{pmatrix} 1\\-1 \end{pmatrix} \\
                 |{+}z\rangle &= \begin{pmatrix} 1\\0 \end{pmatrix} &
                 |{-}z\rangle &= \begin{pmatrix} 0\\1 \end{pmatrix} &
             \end{align*}
-        % Tafel: 
-        %  - Erklärung Tensor-Produkt (Def 29.5)
-        %  - Herleitung Zustand (29.3)
-        \item<2-> Zustand des Systems:
-            \[
-                |\psi\rangle = \frac{1}{\sqrt{2}} \Big( 
-                    |{+}z\rangle \otimes |{-}z\rangle - |{-}z\rangle \otimes |{+}z\rangle
-                 \Big)
-            \]
-        % Tafel: Überleitung zu (29.4)
-        \item<3-> \"Aquivalenter Zustand:
-            \[
-                |\psi\rangle = -\frac{1}{\sqrt{2}} \Big( 
-                              |{+}x\rangle \otimes |{-}x\rangle - |{-}x\rangle \otimes |{+}x\rangle
-                           \Big)
-            \]
-    \end{itemize}
-
-
-\end{frame}
-\begin{frame}{Widerspruch}
-    \begin{itemize}
-        \item Zustand nach Messung $A$
-            \begin{align*}
-                |\psi_{1}\rangle &= |{+}z\rangle \otimes |{-}z\rangle
-                & \text{bzw.} && 
-                |\psi_{2}\rangle &= |{-}z\rangle \otimes |{+}z\rangle
-            \end{align*}
-        \item Zustand nach Messung $B$
-            \begin{align*}
-                |\psi_{a}\rangle &= |{+}x\rangle \otimes |{-}x\rangle
-                & \text{bzw.} && 
-                |\psi_{b}\rangle &= |{-}x\rangle \otimes |{+}x\rangle
-            \end{align*}
-        \item<2-> Durch
-            \begin{equation*}
-                [S_x, S_z] =  -i \hbar S_y \neq 0
-            \end{equation*}
-            unm\"oglich!
     \end{itemize}
 \end{frame}
 \begin{frame}{Die L\"osung: Verborgene Variablen}
@@ -110,48 +73,110 @@
 \section{Die Bellsche Ungleichung}
 \begin{frame}{Grundlagen}
     \begin{itemize}
-        \item Verborgene Variable $\lambda \in \Lambda$ mit Verteilung $\rho(\lambda)$
-        \item Beliebige Messrichtungen $\vec{a}$, $\vec{b}$
-        \item Messresultate: $A(\vec{a},\lambda)$, $B(\vec{b},\lambda)$ mit
+        \item Verallgemeinerung auf beliebige Messrichtungen $\vec{a}$, $\vec{b}$
+        \item Messresultate: $A(\vec{a})$, $B(\vec{b})$ mit
+                \[
+                    A(\vec{a}) = \begin{cases}
+                        +1 & \text{Spin Up} \\
+                        -1 & \text{Spin Down} \\
+                    \end{cases}
+                \]
+        \item Erwartungswert beider Spin-Messungen:
+                \begin{align*}
+                    E_{QM}(\vec{a},\vec{b})
+                    &= \left\langle \phi \left| 
+                    \left( \vec{\hat{\sigma}}_A \cdot \vec{a} \right)
+                            \otimes \left( \vec{\hat{\sigma}}_B \cdot \vec{b} \right)
+                    \right| \phi \right\rangle
+                    = \dots \\
+                    &= - \vec{a} \cdot \vec{b} = - \cos(\theta_{ab})
+                \end{align*}
+    \end{itemize}
+\end{frame}
+\begin{frame}{Grundlagen}
+    \begin{itemize}
+        \item Verborgene Variable $\lambda \in \Lambda$ mit W'keitsdichte $\rho(\lambda)$
+        \item Erwartungswert:
             \[
-                A(\vec{a},\lambda) = \pm 1 
-                \qquad \text{und}\qquad 
-                B(\vec{b},\lambda) = \pm 1
+                E(\vec{a},\vec{b}) = \int_{\lambda\in\Lambda} 
+                    \rho(\lambda) A(\vec{a},\lambda) B(\vec{b},\lambda) d\lambda
             \]
-        \item Perfekte Antikorrelation der Messungen:
+        \item<2-> Anti-Korrelation der Messungen:
             \[
                 A(\vec{a},\lambda) = -B(\vec{a},\lambda)
             \]
-    \end{itemize}
-\end{frame}
-\begin{frame}{Herleitung}
-    \begin{itemize}
-        %Tafel: Herleitung (29.20) - E(a,b)
-        \item Erwartungswert $E$ der Messung von $\vec{a}$ und $\vec{b}$:
+        \only<3->{
             \[
                 E(\vec{a},\vec{b}) = -\int_{\lambda\in\Lambda} 
                     \rho(\lambda) A(\vec{a},\lambda) A(\vec{b},\lambda) d\lambda
             \]
-        %Tafel: Komplette Herleitung der Bellschen Ungleichung
-        \item<2-> Bellsche Ungleichung:
+        }
+    \end{itemize}
+\end{frame}
+\begin{frame}{Die Bellsche Ungleichung}
+    \begin{itemize}
+        \item Bellsche Ungleichung:
             \[
                 \left| E(\vec{a},\vec{b}) - E(\vec{a},\vec{c}) \right| 
                 \leq
                 1 + E(\vec{b},\vec{c})
             \]
-        %Tafel: 4 Richtungen, Differenz für CHSH Ungleichung (29.27)
-        \item<3-> CHSH Ungleichung:
+        \item Beispiel:
+            \begin{align*}
+                    \measuredangle(\vec{a},\vec{b}) = \SI{45}{\degree}, &&
+                    \measuredangle(\vec{b},\vec{c}) = \SI{45}{\degree} &&
+                    \text{und} &&
+                    \measuredangle(\vec{a},\vec{c}) = \SI{90}{\degree}.
+            \end{align*}
+        \item Eingesetzt in $E_{QM} = -\cos(\theta_{ab})$:
+            \[
+                \frac{1}{\sqrt{2}} \nleq 1 - \frac{1}{\sqrt{2}}
+            \]
+    \end{itemize}
+\end{frame}
+\begin{frame}{Bell-Clauser-Horne-Shimony-Holt Ungleichung}
+    \begin{itemize}[<+->]
+        \item Keine Perfekte Antikorrelation: 
+                $E(\vec{a},\vec{a}) = -1+\delta$
+        \item Mittelwert \"uber mehrere Messungen: 
+                $\left|\bar{A}(\vec{a},\lambda)\right| \leq 1$
+        \item 4 Messrichtungen:
+                $\vec{a},\vec{a}\,',\vec{b},\vec{b}'$
+        \item Differenz:
+                $\left| E(\vec{a},\vec{b}) - E(\vec{a},\vec{b}') \right|$
+        \item BCHSH-Ungleichung
+                \[
+                    -2 \leq 
+                    E(\vec{a},\vec{b}) - E(\vec{a},\vec{b'}) + E(\vec{a'},\vec{b}) + E(\vec{a'},\vec{b'})
+                    \leq 2
+                \]
+    \end{itemize}
+\end{frame}
+\begin{frame}{Bell-Clauser-Horne-Shimony-Holt Ungleichung}
+    \begin{itemize}
+        \item Bell-Clauser-Horne-Shimony-Holt Ungleichung:
             \[
                 -2 \leq 
                 E(\vec{a},\vec{b}) - E(\vec{a},\vec{b'}) + E(\vec{a'},\vec{b}) + E(\vec{a'},\vec{b'})
                 \leq 2
+            \]
+        \item Beispiel:
+            \begin{align*}
+                \measuredangle(\vec{a},\vec{b}) = \SI{45}{\degree}, && 
+                \measuredangle(\vec{b},\vec{a}') = \SI{45}{\degree} && 
+                \text{und} &&
+                \measuredangle(\vec{a}',\vec{b}') = \SI{45}{\degree}.
+            \end{align*}
+        \item Eingesetzt in $E_{QM} = -\cos(\theta_{ab})$:
+            \[
+                2\sqrt{2} \nleq 2
             \]
     \end{itemize}
 \end{frame}
 
 \section{Experimente}
 \begin{frame}{Herausforderungen}
-    \begin{itemize}[<+->]
+    \begin{itemize}
         \item Effizienz der Detektoren
         \item Sicherstellen der Lokalit\"at
         \item R\"aumliche Korrelation
@@ -164,17 +189,45 @@
                 \centering
                 \includegraphics{../../skript/bell/images/freedman.pdf}
             }
-        \item Resultat
+        \item Resultat: Verletzung der Bellschen Ungleichung!
     \end{itemize}
 
 \end{frame}
 \begin{frame}{2. Generation -- Alain Aspect (1980 -- 1985)}
+    \begin{itemize}
+        \item Dissertation Alain Aspect (Universit\'e Paris-Sud, Orsay)
+        \item R\"aumliche Trennung der Detektoren: \SI{13}{\meter}
+        \item Resultat: Verletzung der Bellschen Ungleichung!
+    \end{itemize}
 \end{frame}
 \begin{frame}{3. Generation (ab 1990)}
+    \begin{itemize}[<+->]
+        \item Weihs (Innsbruck, 1998):
+            \begin{itemize}[<.->]
+                \item Generieren der Photonen: Parametrische Fluoreszenz
+                \item R\"aumliche Trennung von \SI{400}{\meter} $\to$ Lokalit\"at sichergestellt
+                \item Ungen\"ugende Detektoreffizienz
+            \end{itemize}
+        \item Rowe (Boulder, 2001):
+            \begin{itemize}[<.->]
+                \item Beryllium-Ionen statt Photonen $\to$ hohe Detektoreffizienz
+                \item Abstand von \SI{3}{\micro\meter}
+            \end{itemize}
+            \item Resultate: Verletzung der Bellschen Ungleichung!
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Bibliography}
-    
+\section{Fazit}
+\begin{frame}{Fazit}
+    \begin{itemize}
+        \item Alle bisherigen Experimente unterst\"utzen Bellsche Ungleichung.
+        \item $\Rightarrow$ Intuition Einsteins war falsch!
+        \item<2-> Auswege:
+            \begin{itemize}
+                \item Die Welt ist nicht-lokal.
+                \item Es existiert keine objektive Realit\"at.
+            \end{itemize}
+    \end{itemize}
 \end{frame}
 
 \end{document}
