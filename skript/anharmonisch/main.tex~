@@ -16,9 +16,6 @@ Beziehungsweise Konstanten wie in Kapitel~\ref{chapter:efeld} zu sehen war.
 Diese Terme k"onnen als St"orungen betrachtet werden.
 Wir betrachten in diesem Kapitel nur Zeitinvariante und nicht Entartete
 St"orungen, da alles Andere den Rahmen sprengen w"urde.
-Ausserdem sprechen wir oft von ungest"ort und gest"ort
-sowie von harmonisch und anharmonisch.
-Diese bedeuten in unserem Kontext das selbe.
 
 \begin{figure}	%Bild Titelbild.png
 \centering
@@ -45,15 +42,14 @@ H(p,x)
 \underbrace{+a_3 x^3+a_4 X^4+a_5 x^5+\dotsb}_{\varepsilon H_1}
 \]
 
-Auf der Abbildung~\ref{skript:Potentiale} sieht man links
-das Potential des harmonischen Oszillators.
+Auf der Abbildung~\ref{skript:Potentiale} sieht man das Potential der mit
+$Q^3$ oder $Q^4$ gest"orten Oszillatoren im Vergleich zum harmonischen Oszillator.
 Das System ist linear und wurde in
 Kapitel~\ref{chapter:harmonischeroszillator} vollst"andig gel"ost.
 Rechts sieht man das Potential des gest"orten Oszillators.
 Es wird durch "aussere und innere Kraftfelder,
 wie zum Beispiel der Coulombkraft oder dem Gravitationsfeld.
 In diesem Fall sind zus"atzlich noch Terme wie $Q^3$ oder $Q^4$ im Potential enhalten.
-Der harmonische Term ist aber immer noch der dominierende.
 
 			%Harmonische Gr"ossen
 \section{Harmonische Gr"ossen}
@@ -98,21 +94,13 @@ Mit der geeigneten Normierung bekommen wir den Grundzustand
 \biggl(\frac{m\omega}{\pi\hbar}\biggr)^\frac14
 e^{-\frac12\frac{m\omega}{\hbar}x^2}.
 \]
-Aus den Gleichungen
-\begin{equation}
-|n\rangle
-=
-\frac{1}{\sqrt{N_n}}(a^+)^n\,|0\rangle
-=
-2^n \sqrt{\frac{n!}{2n!}} (a^+)^n\,|0\rangle,
-\end{equation}
+Aus der Gleichung
 \[
 |n\rangle
 =
 \frac{1}{\sqrt{N_n}}(a^+)^n\,|0\rangle
 \]
 wird eine einfache Iterationsfunktion Abgeleitet.
-Um mit den Wellenfunktionen rechnen zu k"onnen bedarf es noch
 \[
 \Psi_k(x)
 =
@@ -135,7 +123,8 @@ und formt sie ein wenig um.
 \biggl(\alpha x-\frac1{\alpha}\frac{\partial}{\partial x}\biggr)^k
 e^{-\frac12\alpha^2x^2}
 \]
-Durch Ausmultiplizieren erhaltet man die entsprechende Wellenfunktion
+Durch Ausmultiplizieren der Differentialgleichung erhalten wir ein Polynom,
+welches f"ur die numerische Berechnung sehr hilfreich sein wird.
 \begin{align*}
 \biggl(\alpha x-\frac1{\alpha}\frac{\partial}{\partial x}\biggr)^1
 e^{-\frac12\alpha^2x^2}
@@ -165,8 +154,7 @@ e^{-\frac12\alpha^2x^2}
 H_2(x)e^{-\frac12}
 \end{align*}
 Man erh"alt die charakteristischen Hermitpolynome $H_k$,
-welche wir mit folgender Gleichung erhalten werden k"onnen.
-Dabei ist
+welche sich mit geeigneter Substitution noch weiter vereinfachen lassen.
 \begin{align*}
 z
 &=
@@ -185,9 +173,10 @@ Dadurch wird die Gleichung gek"urzt zu
 \frac1{\sqrt{2^k k!}}H_k(z)
 e^{-\frac12 z^2}
 \]
-
 Der Vorteil dieser Notation ist die sehr einfache Implementierung
 in den g"angigsten Berechunugstools.
+Da die $e$-Funktion bereits Ausgeklammert wurde, verk"urzt sich die Rechenzeit
+signifikant.
 \begin{table}
 \centering
 \begin{tabular}{|l|l|}
@@ -248,7 +237,6 @@ C_{lk}^{(p)}
 Es ist eine rekursive Funktion.
 Das bedeutet, dass aus den vorherigen St"orkoeffizienten,
 die Nachfolgenden berechnet werden k"onnen.
-
 F"ur die noch fehlenden Skalarprodukte $\langle\Psi_k^{(0)}|\Psi_l^{(0)}\rangle$
 mit $k=l$ sehen wir und die Normierung nochmals genauer an.
 \[
@@ -264,14 +252,14 @@ erhalten wir die Werte f"ur die gesuchten Skalare.
 Denn die Koeffizienten der Epsilons m"ussen Null ergeben, damit die Normierung gilt.
 \begin{align*}
 1
-&=
-\underbrace{\langle\Psi_k^{(0)}|\Psi_k^{(0)}\rangle}_{=1}
+=
+&\underbrace{\langle\Psi_k^{(0)}|\Psi_k^{(0)}\rangle}_{=1}
 \\
 &+\varepsilon(\langle\Psi_k^{(0)}|\Psi_k^{(1)}\rangle
 +\langle\Psi_k^{(1)}|\Psi_k^{(0)}\rangle)
 \\
 &+\varepsilon^2(\langle\Psi_k^{(0)}|\Psi_k^{(2)}\rangle
-+\underbrace{\langle\Psi_k^{(1)}|\Psi_k^{(1)}\rangle}_{=1}
++\langle\Psi_k^{(1)}|\Psi_k^{(1)}\rangle
 +\langle\Psi_k^{(2)}|\Psi_k^{(0)}\rangle)
 \\
 &+\varepsilon^3(\langle\Psi_k^{(0)}|\Psi_k^{(3)}\rangle
@@ -281,25 +269,24 @@ Denn die Koeffizienten der Epsilons m"ussen Null ergeben, damit die Normierung g
 \\
 &+\varepsilon^4(\langle\Psi_k^{(0)}|\Psi_k^{(4)}\rangle
 +\langle\Psi_k^{(1)}|\Psi_k^{(3)}\rangle
-+\underbrace{\langle\Psi_k^{(2)}|\Psi_k^{(2)}\rangle}_{=1}
++\langle\Psi_k^{(2)}|\Psi_k^{(2)}\rangle
 +\langle\Psi_k^{(3)}|\Psi_k^{(1)}\rangle
 +\langle\Psi_k^{(4)}|\Psi_k^{(0)}\rangle)
 \end{align*}
-Dadurch erhalten wir:
+Dadurch erhalten wir
 \begin{equation}
 \langle\Psi_l^{(0)}|\Psi_k^{(p)}\rangle
 =
 i\gamma_p+
-\underbrace{\frac12 \displaystyle\sum_{j=2}^{p} 
-\langle\Psi_k^{(p-j+1)}|\Psi_k^{(j-1)}\rangle}_{\text{per Definition reell}}
+\frac12 \displaystyle\sum_{j=2}^{p} 
+\langle\Psi_k^{(p-j+1)}|\Psi_k^{(j-1)}\rangle
 \Rightarrow
 k=l
 \end{equation}
-$\gamma_p$ muss so gew"ahlt werden, dass
-\[
-\langle\Psi_k^{(p)}|\Psi_k^{(p)}\rangle=1
-\]
-
+$\gamma_p$ muss so gew"ahlt werden, dass die Wellenfunktion in p-ter N"aherung stimmt.
+%\[
+%\langle\Psi_k^{(p)}|\Psi_k^{(p)}\rangle=1
+%\]
 Das Skalarprodukt beschreibt die Abh"angigkeit zweier Vektoren.
 Um sich eine bessere Vorstellung zu verschaffen, dient die Gleichung
 \[
@@ -307,7 +294,7 @@ Um sich eine bessere Vorstellung zu verschaffen, dient die Gleichung
 =
 P(\Psi_l^{(0)}|\Psi_k^{(p)}),
 \]
-die ergibt, wie "wahrscheinlich" es ist,
+welche aussagt, wie 'wahrscheinlich' es ist,
 dass die ungest"orte Wellenfunktion $|\Psi_l^{(0)}\rangle$
 in der Zustandskorrektur $|\Psi_k^{(p)}\rangle$ vorkommt.
 \begin{equation}
@@ -327,7 +314,8 @@ in der Zustandskorrektur $|\Psi_k^{(p)}\rangle$ vorkommt.
 \Psi_k^{(0)}(x)	\\
 \end{pmatrix}
 \]
-Das Intervall f"ur x wurde auf diese Weise berechnet
+Damit die Integrale der Skalare endlich werden, haben wir ein Intervall f"ur $x$
+definiert:
 \begin{align*}
 \hbar\omega(\frac12+n)
 &=
@@ -338,6 +326,8 @@ x
 \pm\sqrt{\frac{2\hbar\omega(\frac12+k_{max})}k}
 \end{align*}
 $k_{max}:=$ gr"osste betrachtete Wellenfunktion (in unserem Fall 50).
+F"ur die Berechnung der Wellenfunktion $\Psi^{(p)}$, werden alle Wellenfunktionen
+$<p$ ben"otigt.
 
 			%Auswertung
 \section{Auswertung}
@@ -347,6 +337,8 @@ Wir haben den Fall $Q^3$ und $Q^4$ mit Matlab durchgerechnet und sind auf
 ein paar interessante Erkenntnisse gestossen.
 Auf den folgenden Abbildungen ist die stellen die Farbe gr"un
 immer den ungest"orten Fall dar und rot den gest"orten.
+Die Regenbogenfarben dienen in erster Linie dazu, den Verlauf von
+tiefen Wellenfunktionen (blau) zu hohen Wellenfunktionen (rot) besser darzustellen.
 Bei den Berechnungen haben wir die ersten 50 Wellenfunktionen und Energieniveaus
 betrachtet.
 
@@ -443,8 +435,8 @@ Bei der zweiten N"aherung ist sind die Skalarprodukte zum gr"ossten Teil positiv
 da der Nenner der Gleichung immer positiv ist.
 Wichtig ist auch zu beachten, dass f"ur die Berechnung dieser Werte die Werte von
 der ersten N"aherung gebraucht werden.
-Bei der Grafik oben rechts sieht man, dass Werte von Wellenfunktionen $>50$ f"ur
-die letzten acht Wellenfunktionen fehlen.
+Bei der Grafik oben rechts sieht man, dass Werte $>50$, welche von Wellenfunktionen
+aus erster N"aherung stammen, f"ur die letzten acht Wellenfunktionen fehlen.
 Dies "Aussert sich in Randeffekten. 
 
 
@@ -462,7 +454,7 @@ Die letzten vier Energieniveaus m"ussen deshalb nicht beachtet werden.
 \centering
 \includegraphics[width=0.8\textwidth]{anharmonisch/images/x4/Stoerung2Wellenfunktion.pdf}
 \caption{$Q^4$ zweite N"aherung: 10. Wellenfunktion und Energieniveaus  
-\label{skript:x4_Stoerung1Wellenfunktion}}
+\label{skript:x4_Stoerung2Wellenfunktion}}
 \end{figure}
 
 Auf der Abbildung~\ref{skript:x4_Stoerung2Wellenfunktion} sieht man, dass die
@@ -485,7 +477,7 @@ Die Abbildung~\ref{skript:x3_Stoerung1Skalare} zeigt die erste N"aherung f"ur $Q
 Dieses mal geben die Wellenfunktionen, bei welchen $l=k\pm 2,k\pm 4,\dots$ ist,
 keinen Anteil an die gest"orte Wellenfunktion.
 Ausserdem kann man sehen, dass die Anzahl an Wellenfunktionen $\Psi_l^{(0)}$,
-welche einen Einfluss auf $\Psi_k^{(1)}$ kleine ist als bei $Q^4$
+welche einen Einfluss auf $\Psi_k^{(1)}$ kleiner ist als bei $Q^4$
 
 \begin{figure}	%Bild EK1.pdf
 \centering
@@ -497,9 +489,9 @@ welche einen Einfluss auf $\Psi_k^{(1)}$ kleine ist als bei $Q^4$
 Auf der Abbildung~\ref{skript:x3_EK1} sieht man, dass die "Anderungen
 der Energieniveau gleich Null sind.
 Wenn man die Gleichung~\ref{skript:stoerungsloesung1ordnung} betrachtet,
-sieht man, weshalb die "Anderungen in erster N"aherung Null sind.
-Da eine gerade oder ungerade Wellenfunktion mit einem ungeraden St"orterm
-multipliziert wird, ergibt sich daraus wieder eine ungerade Funktion.
+sieht man, dass eine gerade oder ungerade Wellenfunktion mit einem ungeraden
+St"orterm multipliziert wird.
+Daraus ergibt sich daraus wieder eine ungerade Funktion.
 Wird diese Funktion aufsummiert,
 l"oschen sich die positiven und negativen Anteile auf.
 
@@ -513,7 +505,8 @@ l"oschen sich die positiven und negativen Anteile auf.
 Auf der Abbildung~\ref{skript:x3_Stoerung1Wellenfunktion} sieht man,
 dass die Wellenfunktion nach links verschoben wurde.
 Das heisst, das ein Kraftfeld von rechts nach links auf das System wirkt.
-Wie zu erwarten war, haben sich die Energieniveaus nicht ver"andert.
+Wie man auf Grund von Abbildung~\ref{skript:x3_EK1} erwarten konnte,
+haben sich die Energieniveaus nicht ver"andert.
 
 \begin{figure}	%Bild Stoerung2Skalare.pdf
 \centering
@@ -526,7 +519,7 @@ Die Abbildung~\ref{skript:x3_Stoerung2Skalare} zeigt die zweite N"aherung f"ur $
 Bei der zweiten N"aherung geben die Wellenfunktionen,
 bei welchen $l=k\pm 1,k\pm 3,\dots$ ist,
 keinen Anteil an die gest"orte Wellenfunktion.
-Hier sieht man auch sch"on, dass alle Skalarprodukte positiv sind.
+Hier sieht man auch, dass alle Skalarprodukte positiv sind.
 
 \begin{figure}	%Bild EK2.pdf
 \centering
@@ -571,7 +564,6 @@ Je nach Freiheitsgrad kann ein Teilchen, Strahlung mit spezifischer Wellenl"ange
 Wenn man die Theorie noch weiter vertiefen m"ochte, wird man verstehen,
 warum Materie W"arme abgeben und aufnehmen kann,
 oder warum Schwefel gelb und Kohle schwarz ist.
-Jedoch dies ist ein Thema f"ur ein anderes Buch.
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
