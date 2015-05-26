@@ -65,7 +65,7 @@ einpflegen:
 TeX-Installation
 ----------------
 
-Das Skript ist vollst"andig mit Werkzeugen gebaut, welche sich in einer
+Das Skript ist vollständig mit Werkzeugen gebaut, welche sich in einer
 TeX-Installation normalerweise leicht einfügen lassen. Zum Beispiel
 sind die Graphiken wenn immer möglich mit Metapost erzeugt, und wenn
 Metapost selbst nicht die nötigen mathematischen Fähigkeiten verfügt,
