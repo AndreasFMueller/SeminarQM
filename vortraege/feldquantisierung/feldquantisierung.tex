@@ -115,7 +115,7 @@
 					\node[color=green] at (0.4,0.8) {$\varepsilon^{(1)}$};
 					\draw[->,color=black,thick] (0, 0) -- +( -0.6, -0.6);
 					\node[color=green] at (0, -0.3) {$\varepsilon^{(2)}$};
-					\draw[color=blue]   plot[smooth,domain=0:3.141] (2/3.141*\x,{0.5*sin(4*\x r)});
+					\draw[color=blue]   plot[smooth,domain=0:3.141] (2/3.141*\x,{0.5*sin(2*\x r)});
 					\node[color=blue] at (1.2, 0.8) {$A$};
 				\end{tikzpicture}	
 		\end{minipage}
@@ -397,7 +397,7 @@
 			\end{align*}
 			\vspace*{-0.5cm}
 			\begin{align*}
-			& H|0\rangle = 0 \rightarrow \\
+			& H|0\rangle = 0|0\rangle \rightarrow \\
 			& H = \sum_k \sum_{\alpha=1,2} \hbar \omega_k N_{k,\alpha}
 			\end{align*}
 		\end{minipage}
@@ -436,7 +436,7 @@
 	\vspace*{-0.5cm}
 	\begin{center}
 		\begin{itemize}
-			\item Keine Wechselwirkung mit Protonen und Neutronen im Kern
+			\item Wechselwirkung mit Protonen und Neutronen im Kern vernachl"assigt
 			\item Spin vernachl"assigt da kaum Einfluss
 		\end{itemize}
 	\end{center}
@@ -467,30 +467,6 @@
 \end{frame}
 
 \begin{frame}[t]{Wechselwirkung zwischen Photonen und Elektronen}
-	\vspace*{-0.5cm}
-	\begin{center}
-		
-		\begin{minipage}{0.35\textwidth}
-			\begin{align*}
-			H_{\text{int}} = \frac{1}{2m}\left[- e p \cdot A(x, t) - e A(x, t) \cdot p + e^2 A(x, t) \cdot A(x, t) \right]
-			\end{align*}
-		\end{minipage}
-		
-		\vspace*{0.5cm}
-		
-		$\nabla \cdot A = 0$ $\rightarrow$ $p \cdot A(x, t)$ vertauschen
-				
-		$\Downarrow$
-		
-		\begin{minipage}{0.35\textwidth}
-			\begin{align*}
-				H_{\text{int}} = -\frac{e}{m} A(x, t) \cdot p + \frac{e^2}{2m}A(x, t) \cdot A(x, t)
-			\end{align*}
-		\end{minipage}
-	\end{center}
-\end{frame}
-
-\begin{frame}[t]{Wechselwirkung zwischen Photonen und Elektronen}
 	\begin{center}
 		
 		\begin{tikzpicture}
@@ -515,7 +491,9 @@
 		\end{minipage}
 		
 		\vspace*{0.5cm}
-		$\Rightarrow$ nur $H_{\text{int}}$ betrachten!
+		$\Rightarrow$ nur $H_{\text{int}}$ betrachten! 
+		
+		Wahrscheinlichkeit: $| \langle Y| \, H_{\text{int}} \, |X \rangle |^2$
 		
 	\end{center}
 \end{frame}
@@ -587,9 +565,6 @@
 
 \begin{frame}[t]{Einsteinkoeffizienten}
 	\begin{center}
-		\vspace*{-0.2cm}
-		$| \langle Y| \, H_{\text{int}} \, |X \rangle |^2$
-		\vspace*{0.2cm}
 		
 		Spontane Emission $X \rightarrow Y$ \quad Stimulierte Emission $X \rightarrow Y$\\
 		\begin{tikzpicture}
