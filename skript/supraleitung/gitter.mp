@@ -133,8 +133,10 @@ label(btex \textbf{\textit{q}} etex, (2.7,2.5)*unit) withcolor (1,0.55,0);
 endfig;
 
 beginfig(3)
+
 gitterverschoben(3,2,0.2*unit,red,(1,0.55,0));
 clip currentpicture to frame;
+
 label(btex \textbf{\textit{q}} etex, (3.7,2.5)*unit) withcolor (1,0.55,0);
 endfig;
 
