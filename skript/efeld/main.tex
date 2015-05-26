@@ -103,21 +103,7 @@ F"ur $\hat H_0$ nehmen wir die Funktion aus dem Skript
 \[
   \hat H_0 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x)
 \]
-wobei f\"ur das Potential $V_0(x)$ gilt
-\begin{equation}
-  \label{eq:efeld_v0_kasten}
-  V_0(x)=\begin{cases}
-    0       & \qquad |x|<l\\
-    \infty  & \qquad\text{sonst.}
-  \end{cases}
-\end{equation}
-
-$\hat H_1$ gibt unser elektrisches Feld an
-\[
-  \hat H_1 = a*x + b
-\]
-wir k"onnen $b = 0$ setzen da die Potenzials-Barriere unendlich gross ist und $a = 1$ weil wir die 
-St"orung mit $\varepsilon$ steuern.
+wobei wir f"ur das Potential $V_0(x)$ die Spannung von oben nehmen.
 
 Die Ausgangsgleichung f\"ur $\hat{H}$ lautet somit:
 \[
@@ -162,20 +148,22 @@ Man berechnet also das Skalarprodukt aus $\psi_k^{(0)}$ und $x*\psi_k^{(0)}$ "ub
 
 Um jetzt die endg"ultige Energie zu bekommen rechnet man $E_k^{(0)} + \varepsilon*E_k^{(1)}$
 
-Das kann in Matlab einfach geplottet mit
+Das kann in Matlab einfach geplottet werden mit
 \begin{lstlisting}[style=Matlab]
 ...
 H1 = x;
 for k = 1 : 5
-  E1_k(ln) = dot(Psi(k, :), H1.*Psi(k, :));
-  plot(Epsilon, E(k) + Epsilon*E1_k(k))
+  E1(k) = dot(Psi(k, :), H1.*Psi(k, :));
+  plot(Epsilon, E0(k) + Epsilon*E1_k(k))
 end
 \end{lstlisting}
+In Psi befinden $k$ Vektoren mit diskreten Abtastwerten von $\psi^{(0)}$, die mit Psi(k, :) ausgelesen werden
+
 Das Resultat sehen wir in \ref{abb:efeld_E_gestoert}.
 
 Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger, weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
 
-Daher setzen wir eine St"orung $\psi_k(1)$ aus mehreren $\psi_k(0)$ zusammen.
+Daher setzen wir eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
 Mit der zweiten und dritten Formel k"onnen wir diesen Anteil berechnen.
 
 Die Formel
@@ -185,7 +173,7 @@ $\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
 gibt uns einen Skalarwert wie viel Anteil die Welle $l$ an der St"orung $k$ hat.
 
 Um beispielsweise den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
-$\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle*|\psi_l^{(0)}$
+$\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle*|\psi_l^{(0)}\rangle$
  von 1 bis $\infty$ ausser 5.
 \begin{equation}
 \sum_{l\ne 5}
@@ -200,32 +188,32 @@ x = -10^-9 : delta : 10^-9;
 H1 = x;
 n = 1000;
 k = 5;
-sum = 0;
+summe = 0;
 for l = 1 : n
   if l ~= k
     Psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l)) .* Psi(l, :);
-    sum = psi1_l + psi0_l;
+    summe = psi1_l + psi0_l;
   end
 end
 \end{lstlisting}
 
-Man muss $n$ zum Gl"uck nicht auf unendlich setzen, da der Anteil wegen $1/E(k)-E(l)$ immer weiter abnimmt.
-In diesem Fall haben wir bei $l=90$ einen Anteil von etwa 1\%, bei $l=280$ nur noch 0.1\%.
+Man muss $n$ zum Gl"uck nicht auf unendlich setzen, da der Anteil wegen $\frac{1}{E(k)-E(l)}$ immer weiter abnimmt.
+In diesem Fall addieren wir bei $l=90$ nur 1\% der St"orung dazu, bei $l=280$ nur noch 0.1\%.
 
-Wir k"onnen jetzt die Störung in 
+Wir k"onnen jetzt die St"orung in 
 \begin{equation}
 |\psi_k(\varepsilon)\rangle
 =
 (1+i\varepsilon \gamma)
 \,|\psi_k^{(0)}\rangle
 +
-\varepsilon*|\psi_k^(1)\rangle
+\varepsilon*|\psi_k^{(1)}\rangle
 \end{equation}
 einsetzen und bekommen so die neue Wellenfunktion die man in \ref{abb:efeld_psi_gestoert} sehen kann.
 
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
 
-In diesem Beispiel haben wir die Unterschiede mit sehr starken Parmetern gew"ahlt.
+In diesem Beispiel haben wir die Unterschiede mit sehr starken Parametern gew"ahlt.
 
 Die einzelnen Werte in y-Richtung sind die jeweiligen N"aherungen. Alle Kurven pendeln um die 0-Achse.
 
