@@ -24,21 +24,21 @@ pickup pencircle scaled 0.1pt;
 numeric u;
 u = 6pt;
 
-fill (-140, 175)--(-140,-15)--(120,-15)--(120,175)--(100,175)
-	--(100,0)--(-100,0)--(-100,175)--cycle withcolor (0.95,0.95,0.95);
+fill (-140, 140)--(-140,-15)--(120,-15)--(120,140)--(100,140)
+	--(100,0)--(-100,0)--(-100,140)--cycle withcolor (0.95,0.95,0.95);
 
 pickup pencircle scaled 1.5pt;
-draw (-100,160)--(-100,0)--(100,0)--(100,160);
-draw (-100,160)--(-100,175) dashed withdots;
-draw (100,160)--(100,175) dashed withdots;
+draw (-100,100)--(-100,0)--(100,0)--(100,100);
+draw (-100,100)--(-100,115) dashed withdots;
+draw (100,100)--(100,115) dashed withdots;
 
 pickup pencircle scaled 0.71pt;
 
 drawarrow (-145, 0)--( 110,  0);
-drawarrow (   0,-5)--(   0,165);
-drawarrow (-120,-5)--(-120,165);
-%label.ulft(btex $\psi$ etex, (0,165));
-label.ulft(btex $E$ etex, (-120,165));
+drawarrow (   0,-5)--(   0,100);
+drawarrow (-120,-5)--(-120,100);
+%label.ulft(btex $\psi$ etex, (0,100));
+label.ulft(btex $E$ etex, (-120,100));
 label.urt(btex $x$ etex, (110,0));
 
 draw (-100,-2)--(-100,2);

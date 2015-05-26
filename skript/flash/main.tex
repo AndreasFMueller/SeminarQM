@@ -3,13 +3,6 @@
 \begin{refsection}
 \chapterauthor{Roger Billeter und Gabriel Looser}
 
-\begin{figure}
-\centering
-\includegraphics{flash/potential-1.pdf}
-\caption{St"orpotential f"ur das Modell f"ur den Schreibprozess bei
-einem Flashspeicher}
-\end{figure}
-
 \section{Einleitung}
 \rhead{Einleitung}
 Der Flash-Speicher ist ein elektrisches Speicherelement, welches
@@ -69,7 +62,6 @@ Der Source Anschluss wird meistens mit GND verbunden und Drain wird beim
 Leseprozess auf 0V gehängt und beim Schreibeprozess "ublicherweise auf
 "uber 10V.
 
-
 \section{Zyklenzahlen}
 \rhead{Zyklenzahlen}
 Ein grosses Problem bei Flashspeichern ist die begrenzte schreib-und
@@ -81,7 +73,6 @@ bis 100'000 Zyklen. Hingegen bei den NAND-Flashs sind es doch gegen 2
 Millionen Zyklen. Dieses Problem ist jedoch nicht so problematisch, da
 der Speicher mit einzelnen Bl"ocken aufgebaut ist. Wenn einer ausf"allt
 hat man immer noch einige andere Speicherzellen.
-
 
 \section{L"oschvorgang}
 \rhead{Lo"schvorgang}
@@ -98,10 +89,18 @@ Als Modell f"ur das Floating-Gate wird ein Potentialtopf verwendet,
 in dem die Elektronen gespeichert werden.
 Als Vereinfachung des Schreibvorgangs kann man sich das Putten beim
 Golf vorstellen. Das Elektron ist der Golfball und der Potentialtopf
-das Loch. Das Elektron landet jedoch nicht wegen der Schwerkraft im
-Potentialtopf, sondern es gibt Energie ab an den Potentialtopf und wird
-dadurch abgebremst. Wird das Elektron stark genug abgebremst, landet es
-im Potentialtopf.
+das Loch (Siehe Abbildung \ref{skript:Minigolf}. Das Elektron landet
+jedoch nicht wegen der Schwerkraft im Potentialtopf, sondern es gibt
+Energie ab an den Potentialtopf und wird dadurch abgebremst. Wird das
+Elektron stark genug abgebremst, landet es im Potentialtopf.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.2\textwidth]{flash/graphics/Minigolf.jpg}
+\caption{Abbildung Minigolf mit Loch: Quelle:
+\url{http://upload.wikimedia.org/wikipedia/commons/e/e3/Minigolf.jpg}
+\label{skript:Minigolf}}
+\end{figure}
 
 Am Anfang befindet sich im Potentialtopf ein Grundpotential $E_{0}$
 das Ziel ist es dieses Potential auf ein h"oheres Potential $E_{1}$
@@ -130,7 +129,13 @@ wird der Wackelpudding zus"atzlich in Schwingung versetzt und erreicht
 ein h"oheres Energieniveau.  F"ur die Berechnung wird der Potentialtopf
 "uber die h"alfe mit einem Rechteckimpuls angeregt. Dies vereinfacht
 das L"osen der Differentialgleichungen.
-%(Bild Anregung)
+
+\begin{figure}
+\centering
+\includegraphics{flash/potential-1.pdf}
+\caption{St"orpotential f"ur das Modell f"ur den Schreibprozess bei
+einem Flashspeicher}
+\end{figure}
 
 \subsection{Berechnung}
 \subsubsection{Schr"odingergleichung}
@@ -240,7 +245,7 @@ Wenn die Konstanten auch von der Zeit abh"angig sind, ist die L"osung:
 \[
 \ a_{1}(t) = \text{$konst_{1}(t)$} e^{C_{11} t} 
 \]
-Eingesetzt in das Differentialgleichungssystem folgt daraus
+Eingesetzt in das Differentialgleichungssystem folgt daraus:
 \[
 \ k'_{0}(t) e^{C_{00} t} + k_{0}(t) C_{00} e^{C_{00} t} = k_{0}(t) C_{00} e^{C_{00} t} + k_{1}(t)C_{01}e^{C_{11} t}
 \]
@@ -261,14 +266,15 @@ Diese Gleichungen nach $ k'_{0}(t)$ und $ k'_{1}(t)$ aufgel"ost ergibt:
 \[
 \ k'_{1}(t) = k_{0}(t) C_{10} e^{(C_{00}-C_{11}) t}
 \]
-Unsere inhomogene Differential-Gleichung erster Ordnung verwandelt sich dadurch in eine homogene Differential-Gleichung zweiter Ordnung.
+Unsere inhomogene Differential-Gleichung erster Ordnung verwandelt
+sich dadurch in eine homogene Differential-Gleichung zweiter Ordnung.
 \[ 
 \ k''_{0}(t) - (C_{11}-C_{00}) k'_{0}(t) - C_{10}C_{01}k(t) = 0
 \]
 \[
 \ k''_{1}(t) - (C_{00}-C_{11}) k'_{1}(t) - C_{01}C_{10}k(t) = 0
 \]
-Das charakteristische Polynom lautet
+Das charakteristische Polynom lautet:
 \[
 \ \lambda_{0}^{2} - (C_{11}-C_{00})\lambda_{0} - C_{10}C_{01} = 0
 \]
@@ -304,39 +310,39 @@ die Wahrscheinlichkeit, dass der Zustand $|1\rangle$, wie in Abbildung
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{flash/graphics/StandardZ0.png}
+\includegraphics[width=0.7\textwidth]{flash/graphics/StandardZ0.pdf}
 \caption{Abbildung mit mittlerem Potential, dass die Wahrscheinlichkeit 0 ist:
 \label{skript:StandardZ0}}
 \end{figure}
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{flash/graphics/StandardZ1.png}
+\includegraphics[width=0.7\textwidth]{flash/graphics/StandardZ1.pdf}
 \caption{Abbildung mit mittlerem Potential, dass die Wahrscheinlichkeit 1 ist:
 \label{skript:StandardZ1}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{flash/graphics/PotentialgrossZ0.png}
+\includegraphics[width=0.7\textwidth]{flash/graphics/PotentialgrossZ0.pdf}
 \caption{Abbildung mit grossem Potential, dass die Wahrscheinlichkeit 0 ist:
 \label{skript:PotentialgrossZ0}}
 \end{figure}
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{flash/graphics/PotentialgrossZ1.png}
+\includegraphics[width=0.7\textwidth]{flash/graphics/PotentialgrossZ1.pdf}
 \caption{Abbildung mit grossem Potential, dass die Wahrscheinlichkeit 1 ist:
 \label{skript:PotentialgrossZ1}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{flash/graphics/PotentialkleinZ0.png}
+\includegraphics[width=0.7\textwidth]{flash/graphics/PotentialkleinZ0.pdf}
 \caption{Abbildung mit kleinem Potential, dass die Wahrscheinlichkeit 0 ist:
 \label{skript:PotentialkleinZ0}}
 \end{figure}
 \begin{figure}
 \centering
-\includegraphics[width=0.7\textwidth]{flash/graphics/PotentialkleinZ1.png}
+\includegraphics[width=0.7\textwidth]{flash/graphics/PotentialkleinZ1.pdf}
 \caption{Abbildung mit kleinem Potential, dass die Wahrscheinlichkeit 1 ist:
 \label{skript:PotentialkleinZ1}}
 \end{figure}
