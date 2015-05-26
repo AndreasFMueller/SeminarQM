@@ -9,7 +9,7 @@ In diesem Kapitel erweitern wir das Beispiel des Potentialkastens
 um eine St\"orung.
 
 \section{St"orungstheorie}
-Grundsätzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell 
+Grunds"atzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell 
 (Abb \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
 mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
 
@@ -94,7 +94,7 @@ Eingesetzt wird daraus:
 Wir berechnen in diesem Beispie die erste N"aherung von einem Potentialskasten mit elektrischem Feld.
 Dazu erweitern wir das einfache System  $\hat H_0$
 (Siehe Abbildung \ref{skript:potentialkasten})
-um $\hat H_1$, welcher die Störung darstellt.
+um $\hat H_1$, welcher die St"orung darstellt.
 \[
   \hat{H} = \hat H_0 + \varepsilon \hat H_1
 \]
@@ -104,12 +104,13 @@ F"ur $\hat H_0$ nehmen wir die Funktion aus dem Skript
   \hat H_0 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x)
 \]
 wobei f\"ur das Potential $V_0(x)$ gilt
-\[
+\begin{equation}
+  \label{eq:efeld_v0_kasten}
   V_0(x)=\begin{cases}
     0       & \qquad |x|<l\\
     \infty  & \qquad\text{sonst.}
   \end{cases}
-\]
+\end{equation}
 
 $\hat H_1$ gibt unser elektrisches Feld an
 \[
@@ -224,7 +225,7 @@ einsetzen und bekommen so die neue Wellenfunktion die man in \ref{abb:efeld_psi_
 
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
 
-In diesem Beispiel haben wir die Unterschiede mit sehr starken Parametern gewählt.
+In diesem Beispiel haben wir die Unterschiede mit sehr starken Parmetern gew"ahlt.
 
 Die einzelnen Werte in y-Richtung sind die jeweiligen N"aherungen. Alle Kurven pendeln um die 0-Achse.
 
@@ -241,6 +242,13 @@ Die einzelnen Werte in y-Richtung sind die jeweiligen N"aherungen. Alle Kurven p
 \subsubsection{Energie "Anderung}
 
 Was passiert?
+
+In der Grafik \ref{abb:efeld_E_gestoert} lassen wir f"ur die jeweiligen stabilen Zust"ande 0..4 
+den Einfluss der St"orung wachsen.
+
+Da das elektrische Feld jedoch nur einen sehr kleinen Einfluss auf die gesammte Energie des 
+Elektrons hat, mussten wir um die Effekte der 1. N"aherung zu zeigen ein sehr grosses $\varepsilon$
+w"ahlen.
 
 \begin{figure}
  \centering
@@ -261,10 +269,22 @@ Was passiert?
 
 \subsection{Potentialtopf}
 
+In dieser Anwendung definieren wir das Potential ausserhalb von $l$ nicht mehr mit $\infty$, das Elektron kann mit gen"ugend Energie aus dem Topf gehoben werden.
+
+\subsubsection{Berechnung 1. N"aherung}
+
+Wir definieren den Potentialtopf basierend auf der Formel \ref{eq:efeld_v0_kasten}:
+\begin{equation}
+  V_0(x)=\begin{cases}
+    0       & \qquad |x|<l\\
+    1  & \qquad\text{sonst.}
+  \end{cases}
+\end{equation}
+
+Wir "ubernehmen die St"orung aus der ersten Anwendung.
 \[
-  V_1 = \text{ innen \& aussen am Topf ... }
+  V_1 = x
 \]
-]
 
 
 \printbibliography[heading=subbibliography]
