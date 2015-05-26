@@ -91,7 +91,7 @@ Eingesetzt wird daraus:
 \subsubsection{Berechnung 1. N"aherung}
 
 
-Wir berechnen in diesem Beispie die erste N"aherung von einem Potentialskasten mit elektrischem Feld.
+Wir berechnen in diesem Beispiel die erste N"aherung von einem Potentialskasten mit elektrischem Feld.
 Dazu erweitern wir das einfache System  $\hat H_0$
 (Siehe Abbildung \ref{skript:potentialkasten})
 um $\hat H_1$, welcher die St"orung darstellt.
@@ -166,22 +166,26 @@ Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger, weil sich in de
 Daher setzen wir eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
 Mit der zweiten und dritten Formel k"onnen wir diesen Anteil berechnen.
 
-Die Formel
-$\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
-=
-\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}$
-gibt uns einen Skalarwert wie viel Anteil die Welle $l$ an der St"orung $k$ hat.
+\begin{equation}
+  \label{eq:efeld_skalar_gleichung}
+  \langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+      =
+  \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\end{equation}
 
-Um beispielsweise den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
+Die Formel \ref{eq:efeld_skalar_gleichung} gibt uns einen Skalarwert, welcher uns zeigt wie viel Anteil die Welle $l$ an der St"orung $k$ hat.
+
+Um zum Beispiel den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
 $\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle*|\psi_l^{(0)}\rangle$
  von 1 bis $\infty$ ausser 5.
 \begin{equation}
-\sum_{l\ne 5}
-\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
-\,
-|\psi_l^{(0)}\rangle
+  \sum_{l=1 ; l\ne 5}^{\infty}
+    \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+        \,
+    |\psi_l^{(0)}\rangle
 \end{equation}
-In Matlab kann man das berechnen mit
+
+In Matlab kann man das mit folgendem Code berechnen:
 \begin{lstlisting}[style=Matlab]
 ...
 x = -10^-9 : delta : 10^-9;
