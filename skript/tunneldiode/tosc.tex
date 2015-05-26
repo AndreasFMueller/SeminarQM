@@ -208,39 +208,3 @@ ergibt $1.5909\,\text{MHz}$, also tats"achlich nur ein sehr kleiner
 Unterschied zur Eigenfrequenz.
 \end{beispiel}
 
-\begin{lstlisting}[style=Maxima]
-/* Definition der Matrizen */
-T1: matrix([exp(%i * k * x), exp(-%i * k * x)],
-        %i * k * [exp(%i * k * x), -exp(-%i * k * x)])                      $
-
-T2: matrix([exp(kappa * x), exp(-kappa * x)],
-        kappa * [exp(kappa * x), -exp(-kappa * x)])                         $
-
-/* Substitution von -a bzw. a in der Matrix
-subst(-a, x, T2);
-invert(subst(a, x, T2));
-*/
-
-/* Berechnung der mittleren Matrix, dies ist vorteilhaft, weil sich die
-   Terme zu sinh und cosh vereinfachen lassen */
-middle: subst(-a, x, T2) . invert(subst(a, x, T2))                          $
-
-/* Die eingebaute Funktion demoivre funktioniert nur fuer komplexe
-   Exponentialfunktionen, die folgende Version
-   (https://www.ma.utexas.edu/pipermail/maxima/2010/021070.html)
-   tut dasselbe fuer gewoehnliche Exponentialfunktionen und hyperbolische
-   Funktionen */
-hypdemoivre(e) :=
-subst("^" = lambda([a,b], if a = %e then cosh(b) + sinh(b) else a^b), e)    $
-
-middle2: expand(hypdemoivre(middle));
-
-/* Damit kann jetzt das vollstaendige Matrizenprodukt ausgerechnet werden: */
-demoivre: false;
-c: invert(subst(-a, x, T1)) . middle2 . subst(a, x, T1);
-expand(c);
-
-/* wir moechten den sinh-Faktor ausklammern */
-result: facsum(expand(c), sinh(2 * a * kappa), cosh(2 * a * kappa));
-
-\end{lstlisting}
