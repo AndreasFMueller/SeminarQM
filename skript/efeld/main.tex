@@ -66,6 +66,15 @@ F\"ur die Berechnung ist es einfacher das Feld symetrisch anzulegen. Darum setze
   V_1(x) = x
 \]
 
+f\"ur das Potential $V_0(x)$ gilt
+\begin{equation}
+  \label{eq:efeld_v0_kasten}
+  V_0(x)=\begin{cases}
+    0       & \qquad |x|<l\\
+    \infty  & \qquad\text{sonst.}
+  \end{cases}
+\end{equation}
+
 Eingesetzt wird daraus:
 
 \[
@@ -103,7 +112,7 @@ F"ur $\hat H_0$ nehmen wir die Funktion aus dem Skript
 \[
   \hat H_0 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x)
 \]
-wobei wir f"ur das Potential $V_0(x)$ die Spannung von oben nehmen.
+wobei wir f"ur das Potential $V_0(x)$ die Gleichung \ref{eq:efeld_v0_kasten} nehmen.
 
 Die Ausgangsgleichung f\"ur $\hat{H}$ lautet somit:
 \[
@@ -201,8 +210,8 @@ for l = 1 : n
 end
 \end{lstlisting}
 
-Man muss $n$ zum Gl"uck nicht auf unendlich setzen, da der Anteil wegen $\frac{1}{E(k)-E(l)}$ immer weiter abnimmt.
-In diesem Fall addieren wir bei $l=90$ nur 1\% der St"orung dazu, bei $l=280$ nur noch 0.1\%.
+Man muss $n$ zum Gl"uck nicht auf unendlich setzen, da der Anteil durch den Term $\frac{1}{E(k)-E(l)}$ immer weiter abnimmt.
+In diesem Fall addieren wir bei $l=90$ nur 1\% der St"orung dazu, bei $l=280$ nur noch $0.1\%$.
 
 Wir k"onnen jetzt die St"orung in 
 \begin{equation}
@@ -219,7 +228,7 @@ In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen d
 
 In diesem Beispiel haben wir die Unterschiede mit sehr starken Parametern gew"ahlt.
 
-Die einzelnen Werte in y-Richtung sind die jeweiligen N"aherungen. Alle Kurven pendeln um die 0-Achse.
+Die einzelnen Werte in y-Richtung sind die jeweiligen N"aherungen. Alle Kurven pendeln um die x-Achse.
 
 \begin{figure}
  \centering
