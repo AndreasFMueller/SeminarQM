@@ -1,0 +1,46 @@
+\section{BB84}
+  \rhead{BB84}
+
+  Alice besitzt zwei Verfahren rectilinear($\times$) / diagnoal($+$) um Photonen zu polarisieren.
+  Dazu werden die sogenannten Basen, welche in der Praxis mittels Polarisationsfiltern umgesetzt werden, verwendet.
+  Die polarisierten Photonen dienen als Qbits, also das Quanten\"aquivalent eines konventionellen Bits.
+  Je nach dem, mit welcher Basis sie polarisiert werden, nehmen sie den Wert 1 oder 0 an.\par
+  $(+): \rightarrow = 1, \uparrow = 0 $, $(\times): \searrow = 1, \nearrow = 0$
+  Alice w\"ahlt f\"ur jedes Photon zuf\"allig aus mit welcher Basis das Photon polarisiert wird und merkt sich f\"ur welches Photon welche Basis verwendet wurde.
+  Bob nimmt die polarisierten Photonen entgegen und w\"ahlt zuf\"allig eine der beiden Basen aus mit welcher er das Photon polarisiert.
+  Dabei w\"ahlt Bob mit $P(richtig)=0.5$ die richtige Basis.
+  W\"ahlt Bob die falsche Basis erh\"alt er mit $P(korrekt|falsch)=0.5$ das korrekte Resultat, bei $P(korrekt|richtig)=1$ f\"ur das korrekte Resultat bei der richtigen Basis ergibt das ein $P(korrekt)=0.75$, dass ein Photon korrekt gemessen wurde.
+  Nachdem gen\"ugend Photonen um ein ausreichend starken symmetrischen Schl\"ussel zu erzeugen gesendet wurden, findet zwischen Alice und Bob die sogenannte Basendiskusion statt.
+  Dazu sendet Alice die Information, welche Basis sie f\"ur welches Photon verwendete, \"uber den unsicheren Kanal zu Bob.
+  Bob sendet Alice \"uber den unsicheren Kanal die Information, mit welcher Basis er welches Photon gemessen hat, Alice sendet Bob mit welcher Basis sie welches Photon polarisiert hat.
+  Zur \"Uberpr\"ufung ob die Verbindung belauscht wurde w\"ahlen Bob und Alice einige ihrer korrekt gemessenen Bits aus und \"uberpr\"ufen die Fehlerrate.
+  Oft werden dazu sogenannte Decoypulses eingebaut, welche im Schl\"ussel nicht verwendet werden.
+
+  Wurden Alice und Bob belauscht kann man davon ausgehen, dass 25 Prozent aller Bits Fehlerhaft sind. Doch warum? Was \"andert sich wenn Eve lauscht?
+  Eve f\"angt die von Alice polarisierten Photonen ab und misst sie mit 50\% Wahrscheinlichkeit korrekt ($P(\times)=0.5, P(+)=0.5$).
+  Falsch gemessene Bits werden zu 50\% richtig entschl\"usselt (bei einer Messung mit falscher Basis entsteht ein zuf\"alliger Wert, was bei einem Wertebereich von 0 und 1 zu 50\% korrekt ist)
+  Eve kann aufgrund des No-Cloning-Theorems die Bits von Alice nicht einfach kopieren und an Bob schicken und ist somit gezwungen anhand der Bits (von denen h\"ochstens 75\% korrekt sind) selbst Photonen zu polarisieren und an Bob zu schicken, was bei Bob zu einer Trefferrate von weniger als 0.75 f\"uhrt. Wenn man also Eve mit $P=0.999999999$ aufsp\"uren will, folgt aus dieser Formel $P_d = 1 - \left(\frac{3}{4}\right)^n$, dass 72 Keybits ausgetauscht werden m\"ussen.
+  Die einzige m\"ogliche Art von eaves-dropping ist, wenn Eve bei der Quelle die M\"oglichkeit hat, \"uberz\"ahlige Photonen abzuzweigen, sie zu lagern und nachdem Alice und Bob die Basen ausgetauscht haben, mit dem der richtigen Basis zu messen und dadurch einzelne g\"ultige Keybits zu erhalten.\par
+
+  Beispiel:
+  \begin{center}
+    \begin{tabular}{ l || c | c | c | c | c | c | c | r }
+      \hline
+      A's Zufallsbits & 0 &  1 & 1 & 0 & 1 & 0 & 0 & 1 \\
+      \hline
+      A's Basen & $+$ & $+$ & $\times $ & $+$ & $\times $ & $\times $ & $\times $ & $+$ \\
+      \hline
+      A's Polarisation & $\uparrow$ & $\rightarrow$ & $\searrow$ & $\uparrow$ & $\searrow$ & $\nearrow$ & $\nearrow$ & $\rightarrow$ \\
+      \hline
+      B's Basen & $+$ & $\times $ & $\times $ & $\times $ & $+$ & $\times $ & $+$ & $+$ \\
+      \hline
+      B's Polarisation & $\uparrow$ & $\nearrow$ & $\searrow$ & $\nearrow$ & $\rightarrow$ & $\nearrow$ & $\rightarrow$ & $\rightarrow$ \\
+      \hline
+      B's gemessene Bits & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 \\
+      \hline
+      Basen Diskussion \\
+      \hline
+      Shared Key Bits& 0 & & 1 & & & 0 & & 1 \\
+      \hline
+    \end{tabular}
+  \end{center}
