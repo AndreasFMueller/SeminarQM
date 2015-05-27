@@ -110,13 +110,13 @@
 		\begin{minipage}{0.2\textwidth}
 				\begin{tikzpicture}
 					\draw[->,color=black,thick] (0, 0) -- +( 2, 0);
-					\node[color=green] at (1.7, 0.2) {$k$};
+					\node[color=green] at (1.2, 0.2) {$k$};
 					\draw[->,color=black,thick] (0, 0) -- +( 0, 1);
 					\node[color=green] at (0.4,0.8) {$\varepsilon^{(1)}$};
 					\draw[->,color=black,thick] (0, 0) -- +( -0.6, -0.6);
 					\node[color=green] at (0, -0.3) {$\varepsilon^{(2)}$};
-					\draw[color=blue]   plot[smooth,domain=0:3.141] (2/3.141*\x,{0.5*sin(2*\x r)});
-					\node[color=blue] at (1.2, 0.8) {$A$};
+					\draw[color=blue]   plot[smooth,domain=0:3.141] (2/3.141*\x,{0.5*cos(2*\x r)});
+					\node[color=blue] at (1.8, 0.8) {$A$};
 				\end{tikzpicture}	
 		\end{minipage}
 	\end{center}
