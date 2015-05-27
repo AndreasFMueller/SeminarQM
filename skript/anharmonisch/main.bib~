@@ -10,13 +10,3 @@
   
 
 }
-
-@Book{WikiHermitesch,
-  Title                    = {Hermitesches Polynom},
-  Author                   = {Wikipedia},
-  Year                     = {2015},
-  urldate                = {2015-05-24},
-  Url                      = {http://de.wikipedia.org/wiki/Hermitesches_Polynom},
-  
-
-}
