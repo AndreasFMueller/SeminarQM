@@ -10,8 +10,8 @@
 Die Tunneldiode ist ein nicht sehr h"aufig verwendetes, aktives und dynamisches Halbleiterelement.
 Als Halbleitermaterial wird f"ur ihren  Aufbau Germanium verwendet. 
 Um die Tunneldiode und ihren Aufbau besser erkl"aren zu k"onnen, ziehen wir zum Vergleich eine normale Germaniumdiode heran. 
-Der Aufbau einer Diode besteht im wesentlichen aus einer positiv und einer negativ dotierten Seite, dem sogenannten p-n-"Ubergang. 
-Dazwischen befindet sich die Sperrzone, welche man auch als Potentialbarriere betrachten kann.
+Die Diode besteht im wesentlichen aus einer positiv und einer negativ dotierten Seite, dem sogenannten p-n-"Ubergang. 
+Dazwischen befindet sich die Sperrzone, welche man modellhaft auch als Potentialbarriere betrachten kann.
 
 \begin{figure}	%Bild Bändermodell Germaniumdiode Vf = 0
 \centering
@@ -63,12 +63,12 @@ Liegt keine Vorw"artsspannung an, tunneln etwa gleich viele Elektronen von den z
 Somit haben wir keinen Strom der fliesst, da sich die St"ome genau aufheben.
 Sobald wir eine kleine positive Vorw"artsspannung anlegen, "uberwiegen die in Durchlassrichtung tunnelnden Elektronen.
 Es fliesst also ein Strom.
-Die Diode beginnt zu leiten, obwohl die Elektronen nicht "uber die Potentialbarriere r"uber k"onnen. 
+Die Diode beginnt zu leiten, obwohl die Elektronen nicht "uber die Potentialbarriere hin"uber k"onnen. 
 Sie tunneln durch die Barriere hindurch.
-Erh"ohen wir die Vorw"artsspannung weiter, verschieben sich die Energieniveaus 
-Die Abbildung ~\ref{tunnel:Baendermodellmax} zeigt die gr"osste "Uberlappung. 
+Erh"ohen wir die Vorw"artsspannung weiter, verschieben sich die Energieniveaus.
+Die Abbildung~\ref{tunnel:Baendermodellmax} zeigt die gr"osste "Uberlappung. 
 In diesem Fall wird auch der Tunnelstrom maximal. 
-In Abbildung ~\ref{tunnel:Baendermodellmin} wird die "Uberlappung wieder kleiner. 
+In Abbildung~\ref{tunnel:Baendermodellmin} wird die "Uberlappung wieder kleiner. 
 Die Folge davon ist, dass der Tunnelstrom ebenfalls wieder abnimmt.
 Sobald aber die Vorw"artsspannung gen"ugend hoch ist, und somit auch das Potential der Elektronen, setzt die normale Diodenleitung ein.
 
@@ -77,16 +77,14 @@ Sobald aber die Vorw"artsspannung gen"ugend hoch ist, und somit auch das Potenti
 \includegraphics[width=0.5\textwidth]{tunneldiode/tunnel-10.pdf}
 \caption{B"andermodell der Tunneldiode mit $V_F = 0$
 \label{tunnel:Baendermodell0}}
-\end{figure}
 
-\begin{figure}	%Bild Bändermodell Tunneldiode IT = max
+%Bild Bändermodell Tunneldiode IT = max
 \centering
 \includegraphics[width=0.5\textwidth]{tunneldiode/tunnel-12.pdf}
 \caption{B"andermodell der Tunneldiode mit maximalem Tunnelstrom
 \label{tunnel:Baendermodellmax}}
-\end{figure}
 
-\begin{figure}	%Bild Bändermodell Tunneldiode IT abnehmend
+%Bild Bändermodell Tunneldiode IT abnehmend
 \centering
 \includegraphics[width=0.5\textwidth]{tunneldiode/tunnel-13.pdf}
 \caption{B"andermodell der Tunneldiode mit $V_F > 0$, kein Tunnelstrom
@@ -104,6 +102,7 @@ Die spezielle Kennlinie der Tunneldiode ist in der Abbildung~\ref{tunnel:Tunneld
 
 \section{Quantenmechanische Berechnung des Tunneleffektes}
 \rhead{Quantenmechanische Berechnung des Tunneleffektes}
+\label{tunnel:tunneleffekt}
 Als Modell f"ur die bei der Tunneldiode beobachtete Leitung bei geringer Spannung betrachten wir das Potential
 \[
 V(x)=\begin{cases}
@@ -111,7 +110,7 @@ V_0& \qquad \text{wenn } x \in [-a,a]\\
 0&   \qquad \text{sonst}
 \end{cases}
 \]
-in den verschiedenen Bereichen.
+in den verschiedenen Bereichen. (Abbildung~\ref{tunnel:Potentialbarriere})
 
 Damit ein Strom fliessen kann, muss ein Ladungstr"ager, welcher von links kommt, nach rechts gelangen k"onnen. 
 Die Energie des einfallenden Teilchens ist $E$ und es gilt
@@ -120,9 +119,9 @@ Die Energie des einfallenden Teilchens ist $E$ und es gilt
 \]
 In der Mitte ist aber eine Barriere, welche ein h"oheres Potential als das Teilchen selber aufweist. 
 In der klassischen Mechanik ist klar, dass dieses Teilchen nicht von links nach rechts kommt sondern an der Barriere bei $-a$ reflektiert wird. 
-In der Quantenmechanik k"onnen Teilchen jedoch durch die Barriere durchtunneln. (Abbildung~\ref{tunnel:Potentialbarriere})
+In der Quantenmechanik k"onnen Teilchen jedoch durch die Barriere durchtunneln.
 
-\begin{figure}	%Bild Kastenpotential
+\begin{figure}	%Bild Potentialbarriere
 \centering
 \includegraphics[width=0.7\textwidth]{tunneldiode/tunnel-4.pdf}
 \caption{Visualisierung der Potentialbarriere
@@ -175,46 +174,47 @@ Damit die Wellenfunktion ohne Spr"unge zusammengesetzt werden kann, muss
 \end{equation}
 gelten.
 Somit haben wir ein Gleichungssystem mit vier Gleichungen f"ur sechs Unbekannte.
-Wir brauchen also die Ableitungen der allgemeinen Wellenfunktionen.
-\[
-\Phi_\text{I}'(x) = Aike^{ikx} - Bike^{-ikx}
-\]
-\[
-\Phi_\text{II}'(x) = \alpha \kappa e^{\kappa x} - \beta \kappa e^{-\kappa x}
-\]
+
+Wir brauchen also die Ableitungen der allgemeinen Wellenfunktionen:
+\begin{align*}
+\Phi_\text{I}'(x) &= Aike^{ikx} - Bike^{-ikx},
+\\
+\Phi_\text{II}'(x) &= \alpha \kappa e^{\kappa x} - \beta \kappa e^{-\kappa x}.
+\end{align*}
+
 Wir rechnen ab hier mit Matrizen weiter. 
-Dies hat den Vorteil, dass sich gewisse Terme vereinfachen lassen. 
+Dies hat den Vorteil, dass sich Terme in welchen die Exponentialfunktion vorkommt vereinfachen lassen. 
 Auch mit der Matrizenrechnung ist es nicht m"oglich alle sechs Unbekannten zu bestimmen. 
 Es ist aber m"oglich das Verh"altnis zwischen den einfallenden und transmittierten Teilchen zu berechnen. 
 Die dazu verwendeten Matrizen setzen sich folgendermassen zusammen.
-In der ersten Zeile der Matrizen stehen die Funktionswerte und in der zweiten Zeile die Ableitungen in den entsprechenden Bereichen.
+In der ersten Zeile der Matrizen stehen die Funktionswerte und in der zweiten Zeile die Ableitungen in den entsprechenden Bereichen:
 \[
 T_1(x) =
 \begin{pmatrix}
-A e^{ikx}
+e^{ikx}
 &
-B e^{-ikx}
+e^{-ikx}
 \\
-A ike^{ikx}
+ike^{ikx}
 &
--B ike^{-ikx}
-\end{pmatrix}
-\]
-
-\[
+-ike^{-ikx}
+\end{pmatrix},
+\qquad
+\text{und}
+\qquad
 T_2(x) =
 \begin{pmatrix}
-\alpha e^{\kappa x}
+e^{\kappa x}
 &
-\beta e^{-\kappa x}
+e^{-\kappa x}
 \\
-\alpha \kappa e^{\kappa x}
+\kappa e^{\kappa x}
 &
--\beta \kappa e^{-\kappa x}
-\end{pmatrix}
+-\kappa e^{-\kappa x}
+\end{pmatrix}.
 \]
 Aus den allgemeinen Matrizen $T_1(x)$ und $T_2(x)$ k"onnen wir eine Vektorgleichung f"ur die beiden Stellen $-a$ und $a$ aufschreiben.
-Die Vektorgleichung an der Stelle $-a$ beinhaltet die beiden Gleichungen ~\ref{tunnel:fktwert-a} und ~\ref{tunnel:steigung-a}.
+Die Vektorgleichung an der Stelle $-a$ beinhaltet die beiden Gleichungen~(\ref{tunnel:fktwert-a}) und~(\ref{tunnel:steigung-a}).
 \[
 \underbrace{
 \begin{pmatrix}
@@ -250,7 +250,7 @@ e^{\kappa a}
 \beta
 \end{pmatrix}
 \]
-In der Vektrogleichung an der Stelle $a$ werden die beiden Kompatiblit"atsbedingungen ~\ref{tunnel:fktwerta} und ~\ref{tunnel:steigunga} ausgewertet.
+In der Vektorgleichung an der Stelle $a$ werden die beiden Kompatiblit"atsbedingungen~(\ref{tunnel:fktwerta}) und~(\ref{tunnel:steigunga}) ausgewertet:
 \[
 \underbrace{
 \begin{pmatrix}
@@ -287,13 +287,13 @@ B_2
 \end{pmatrix}.
 \]
 Wir l"osen die beiden Vektorgleichungen nach dem Vektor
-\[
+$
 \begin{pmatrix}
 \alpha
 \\
 \beta
 \end{pmatrix}
-\]
+$
 auf und setzen sie gleich.
 \[
 T_2(-a)^{-1}T_1(-a)
@@ -311,13 +311,13 @@ B_2
 \end{pmatrix}
 \]
 Die so erhaltene Gleichung l"osen wir nun nach dem Vektor
-\[
+$
 \begin{pmatrix}
 A_1
 \\
 B_1
 \end{pmatrix}
-\]
+$
 auf.
 \[
 \begin{pmatrix}
@@ -336,13 +336,13 @@ B_2
 
 Wir berechnen das Matrizenprodukt. 
 Zuerst multiplizieren wir die inneren Matrizen miteinander. 
-Anschliessen rechnen wir von links nach rechts. 
+Anschliessen rechnen wir von links nach rechts:
 \[
-T_1(-a)^{-1}T_2(-a)T_2(a)^{-1}T_1(a)
+T = T_1(-a)^{-1}T_2(-a)T_2(a)^{-1}T_1(a)
 \]
 
 Die Berechnung von diesem Matrizenprdukt hat f"ur uns das Computer-Algebra System Maxima "ubernommen. 
-Durch das hinzuf"ugen einer speziellen Regel, k"onnen die Terme noch mit sinh und cosh vereinfacht werden.
+Durch das Hinzuf"ugen einer speziellen Regel (Zeile 17-23), k"onnen die Terme noch mit sinh und cosh vereinfacht werden.
 Nachfolgend ist der verwendete Maxima-Code ersichtlich.
 
 \begin{lstlisting}[style=Maxima]
@@ -382,8 +382,9 @@ result: facsum(expand(c), sinh(2 * a * kappa), cosh(2 * a * kappa));
 
 \end{lstlisting}
 
-Mit der resultierenden Matrix lassen sich die Amplitude der einfallenden und reflektierten Welle links von der Barriere aus den Amplituden rechts der Barriere berechnen.
+Mit der resultierenden Matrix lassen sich die Amplitude der einfallenden und reflektierten Welle links von der Barriere aus den Amplituden rechts der Barriere berechnen:
 \[
+T =
 \begin{pmatrix}
 \frac{i\,e^{2\,i\,a\,k}\,\left(\kappa-k\right)\,\left(\kappa+k
  \right)\,\sinh \left(2\,a\,\kappa\right)+2\,k\,e^{2\,i\,a\,k}\,
@@ -423,7 +424,7 @@ B_2
 \]
 
 In der von Maxima berechneten Matrix ersetzen wir alle $2a$ durch $l$. 
-Anschliessend als Resultat erhalten wir den Vektor
+Anschliessend erhalten wir als Resultat den Vektor
 \[
 \begin{pmatrix}
 \displaystyle
@@ -439,15 +440,15 @@ e^{ilk}\biggl(\cosh(l\kappa)
 \]
 In diesem Vektor steht nun, wie viel wahrscheinlicher ein einfallendes Teilchen im Vergleich zu einem durchgelassenen Teilchen ist.
 In der Abbildung~\ref{tunnel:Tunneleffekt} kann man sehen, dass der Tunneleffekt in der Potentialbarriere exponentiell mit der St"arke der Barriere abnimmt.
-Der Tunneleffekt ist proportional zu
+Der Tunneleffekt ist proportional zum Betragsquadrat von
 \[
 \frac{1}{\displaystyle
 e^{ilk}\biggl(\cosh(l\kappa)
 +\frac{i}{2}\biggl(\frac{\kappa}{k}-\frac{k}{\kappa}\biggr)\sinh(l\kappa)
 \biggr)}.
 \]
-Die Funktionen sinh und cosh k"onnen mit Exponetialfunktionen zusammengesetzt werden und wachsen somit exponentiell.
-Deshalb nimmt der Tunneleffekt exponentiell ab.
+Die Funktionen sinh und cosh k"onnen mit Exponetialfunktionen zusammengesetzt werden und wachsen somit exponentiell mit $l$.
+Deshalb nimmt der Tunneleffekt exponentiell mit $l$ ab.
 
 \begin{figure}	%Bild Tunneleffekt
 \centering
@@ -460,7 +461,7 @@ Deshalb nimmt der Tunneleffekt exponentiell ab.
 \rhead{Vermessen Tunneldiode}
 
 Bei der Vermessung der Tunneldiode geht es in erster Linie darum, die spezielle Charakteristik der Kennlinie darzustellen. 
-Dazu wird die XY-Anzeigefunktion von einem digitalen Speicheroszilloskop, kurz DSO, verwendet. 
+Dazu wird die XY-Anzeigefunktion eines digitalen Speicheroszilloskops, kurz DSO, verwendet. 
 Auf der X-Achse wird die Vorw"artsspannung $U_F$ dargestellt, auf der Y-Achse der Vorw"artsstrom $I_F$. 
 Die Nachleuchtzeit beim DSO wird auf unendlich gestellt. 
 Somit kann man die gesamte Kennlinie auf dem Bildschirm darstellen. 
@@ -469,7 +470,7 @@ In Abbildung~\ref{tunnel:KennlinieDSO} ist das DSO Bild sichtbar.
 \begin{figure}	%Bild Kennlinie DSO
 \centering
 \includegraphics[width=\hsize]{tunneldiode/images/Kennlinie_DSO.jpg}
-\caption{Tunneldiodenkennlinie gemessen mit dem digitalen Speicheroszilloskop
+\caption{Tunneldiodenkennlinie gemessen mit dem digitalen Speicheroszilloskop. Die Farbe der Kennlinie wurde nachtr"aglich mit dem Computer ver"andert, um sie besser sichtbar zu machen.
 \label{tunnel:KennlinieDSO}}
 \end{figure}
 
@@ -483,7 +484,7 @@ Die gesamte Messschaltung ist in Abbildung~\ref{tunnel:Messschaltung} ersichtlic
 
 \begin{figure}	%Bild Messschaltung
 \centering
-\includegraphics[width=0.7\textwidth]{tunneldiode/images/Messschaltung.pdf}
+\includegraphics[width=0.8\textwidth]{tunneldiode/images/Messschaltung.pdf}
 \caption{Messschaltung um die Kennlinie auszumessen
 \label{tunnel:Messschaltung}}
 \end{figure}
@@ -493,8 +494,8 @@ Die gesamte Messschaltung ist in Abbildung~\ref{tunnel:Messschaltung} ersichtlic
 \section{Vermessen des Tunneldioden-Oszillators}
 \rhead{Vermessen des Tunneldiode-Oszillators}
 
-Die Grundlagen zum Tunneldioden-Oszillator werden im Abschnitt ~\ref{tunnel:oszillator} behandelt. 
-Die Oszillatorschaltung wird gem"ass Abbildung ~\ref{tunnel:tunneldioden-oszillator} aufgebaut. 
+Die Grundlagen zum Tunneldioden-Oszillator werden im Abschnitt~\ref{tunnel:oszillator} behandelt. 
+Die Oszillatorschaltung wird gem"ass Abbildung~\ref{tunnel:tunneldioden-oszillator} aufgebaut. 
 F"ur den ersten Versuch wird eine Spule mit $L=100\text{nH}$ und ein Kondensator mit $C=100\text{nF}$ verwendet. 
 $U(t)$ wird mit dem DSO dargestellt. 
 Zus"azlich wird noch der Strom durch die Tunneldiode mit einem Multimeter gemessen. 
@@ -508,32 +509,32 @@ Die gr"osste Amplitude der Schwingung wird mit einem Tunnelstrom von etwa $I_T =
 \includegraphics[width=\hsize]{tunneldiode/images/Oszi_1.jpg}
 \caption{Der Tunneldioden-Oszillator schwingt mit $L = 100\text{nH}$ und $C=100\text{nF}$ bei $1.08\text{MHz}$
 \label{tunnel:oszi1}}
+%\end{figure}
+%\begin{figure}	%Bild Oszillator 2
+%\centering
+\includegraphics[width=\hsize]{tunneldiode/images/Oszi_2.jpg}
+\caption{Der Tunneldioden-Oszillator schwingt mit $L = 1\mu\text{H}$ und $C=100\text{nF}$ bei $507\text{kHz}$
+\label{tunnel:oszi2}}
 \end{figure}
 
-Berechnet man mit der Formel ~\ref{tunnel:oszillatorfrequenz} und den verwendeten Bauteilwerten die Kreisfrequenz $\omega$, erh"alt man eine Frequenz von $1.5909\text{MHz}$.
+Berechnet man mit der Formel~(\ref{tunnel:oszillatorfrequenz}) und den verwendeten Bauteilwerten die Kreisfrequenz $\omega$, erh"alt man eine Frequenz von $1.5909\text{MHz}$.
 Die Abweichung zwischen dem gemessenen und dem berechneten Wert ist hier offensichtlich.
 Ein kleiner Teil wird durch die Bauteiltoleranzen beigetragen.
 Der restliche Teil wird durch das verwendete Berechnungsmodell der Tunneldiode hervorgerufen.
 F"ur die Berechnung nehmen wir einfach an, dass die Tunneldiode im Bereich zwischen dem maximalen Tunnelstrom und der normalen Diodenleitung eine lineare Kennlinie hat.
 Schauen wir uns nochmals die Abbildung~\ref{tunnel:Tunneldiode} an.
-Da sehen wir, dass die Kennlinie alles andere als linear ist in diesem Bereich.
-Wenn wir jetzt die Formel ~\ref{tunnel:oszillatorfrequenz} nach $a$ umstellen und ausrechnen, erhalten wir den Wert $a = 1.55591\text{A/V}$.
+Da sehen wir, dass die Kennlinie in diesem Bereich alles andere als linear ist.
+Wenn wir jetzt die Formel~(\ref{tunnel:oszillatorfrequenz}) nach $a$ umstellen und ausrechnen, erhalten wir den Wert $a = 1.55591\text{A/V}$.
 Die Steigung bei diesem Arbeitspunkt ist also sehr viel gr"osser als die gemittelte Steigung "uber den gesamten abfallenden Teil.
 
 Versuchsweise wird die Spule durch eine um Faktor 10 gr"ossere ersetzt. 
 Die Induktivit"at ist somit $L=1\mu\text{H}$. 
 Die Frequenz muss mit der gr"osseren Spule kleiner werden. 
 In der Abbildung~\ref{tunnel:oszi2} kann man sehen, dass sich die Frequenz etwa halbiert.
-Rechnet man jetzt hier ebenfalls mit der Formel ~\ref{tunnel:oszillatorfrequenz} die Kreisfrequenz $\omega$, erh"alt man eine Frequenz von $501.351\text{kHz}$.
+Rechnet man jetzt hier ebenfalls mit der Formel~(\ref{tunnel:oszillatorfrequenz}) die Kreisfrequenz $\omega$, erh"alt man eine Frequenz von $501.351\text{kHz}$.
 Die Berechnung stimmt ziemlich genau mit der Messung "uberein.
 Je nachdem wo der DC-Arbeitspunkt liegt, kann das lineare Modell f"ur die Tunneldiode verwendet werden.
 
-\begin{figure}	%Bild Oszillator 2
-\centering
-\includegraphics[width=\hsize]{tunneldiode/images/Oszi_2.jpg}
-\caption{Der Tunneldioden-Oszillator schwingt mit $L = 1\mu\text{H}$ und $C=100\text{nF}$ bei $507\text{kHz}$
-\label{tunnel:oszi2}}
-\end{figure}
 
 \section{Fazit}
 \rhead{Fazit}
