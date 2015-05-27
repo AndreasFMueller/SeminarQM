@@ -48,10 +48,9 @@ for ln = n
     Psi(ln,1:length(x)) = 1/sqrt(l) .* y;
 end
 
-%-----Verarbeitung gest�rt-----
+%-----Verarbeitung gestört-----
 gamma = 0;
-%epsilon = 4*10^-3;
-epsilon = 10^-3;
+epsilon = 5* 10^-4;
 E1_k = zeros(1, length(n));
 H1 = x;
 PsiG = zeros(length(n), length(x));
@@ -108,7 +107,7 @@ print('Psi_gestoert', '-dpdf', '-noui')
 %-----Plot grafik 2: E(n, a)-----
 figure
 hold on;
-epsilon = 10^13
+epsilon = 3 *10^12
 xEpsilon = 0 : epsilon / xSteps : epsilon;
 for ln = nPlot		% Energie Plot
 	plot(xEpsilon, E(ln) + xEpsilon*E1_k(ln))		% Psis
