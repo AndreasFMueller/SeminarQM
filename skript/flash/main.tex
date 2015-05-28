@@ -10,13 +10,11 @@ weit verbreitet ist.
 Das Ziel ist ein einfaches Modell f"ur den Schreib- und Lesevorgang
 zu n"aherzubringen.
 
-BLALALALAMDLKHUFHKJF
-
 \subsection{Floating Gate Transistor}
 \rhead{Floating Gate Transistor}
 Floating Gate Transistoren z"ahlen zu den Feldeffekttransistoren
 (Siehe Abbildung \ref{skript:Floatinggatetransistor}).
-
+Im Floating Gate wird der Bin"are Zustand gespeichert.
 
 
 %Die Absicht ist es den Zustand des Floating Gates zu erh"ohen.
@@ -99,7 +97,7 @@ Als Modell f"ur das Floating-Gate wird ein Potentialtopf verwendet,
 in dem die Elektronen gespeichert werden.
 Als Vereinfachung des Schreibvorgangs kann man sich das Putten beim
 Golf vorstellen.
-Das Elektron ist der Golfball und der Potentialtopf das Loch (Siehe Abbildung \ref{skript:Minigolf}.
+Das Elektron ist der Golfball und der Potentialtopf das Loch (Siehe Abbildung \ref{skript:Minigolf}).
 Das Elektron landet jedoch nicht, wie der Golfball, wegen der Schwerkraft
 im Potentialtopf, sondern es gibt Energie ab an den Potentialtopf und
 wird dadurch abgebremst.
@@ -113,30 +111,26 @@ Wird das Elektron stark genug abgebremst, landet es im Potentialtopf.
 \label{skript:Minigolf}}
 \end{figure}
 
-Am Anfang befindet sich im Potentialtopf eine Grundenergie $E_{0}$ das
-Ziel ist es diese Energie auf ein h"oheres Energieniveau $E_{1}$ zu bringen.
+Am Anfang befindet sich im Potentialtopf Teilchen im Grundzustand $|0\rangle$
+mit der Grundenergie $E_{0}$.
+Das vorbeifliegende Elektron hat eine h"ohere Energie und st"ort mit
+einer Potentiellenenergie $V_{e}(x,t)$ (Siehe Abbildung \ref{flash:Anregung})
+den Potentialtopf.
+Die Teilchen bremsen das Elektron ab und nehmen Energie auf, dadurch
+wird die Energie $E_{0}$ gr"osser und es kommt zu einem "Ubergang 
+zwischen dem Zustand $|0\rangle$ und dem Zustand $|1\rangle$.
 Das Ganze k"onnte man auch auf ein noch h"oheres Energieniveau ($E_{2}$)
 bringen, jedoch ist dies nicht n"otig, da dass ganze nur ein Modell
 sein soll.
-Da die L"osung der urspr"unglichen Gleichung auf ein partielles
-Differential-Gleichungssystem f"uhrt und da das L"osen partieller
-Differentialgleichungen nicht Stoff des Bachelorstudiums ist, werden
-die Gleichungen mittels Skalarpordukt auf ein normales
-Differential-Gleichungssystem vereinfacht.
-Schlussendlich wird die Wahrscheinlichkeit eines Zustandes im
-Potentialtopf errechnet.
-Diese Wahrscheinlichkeit ist abh"angig von der Energie des Elektrons,
-vom Abstand des Elektrons zum Potentialtopf und der Geschwindigkeit
-respektive der Zeit mit der das Elektron auf den Potentialtopf wirkt.
-  
 
-Der Potentialtopf mit dem Grundenergie $E_{0}$ hat eine Grundschwingung
-$\cos(x)$.
+Die Teilchen im Potentialtopf haben Energien, welche den jeweiligen 
+Wellenfunktionen entsprechen.
 Als Vereinfachung dieser Grundschwingung dient die Vorstellung eines
 Wackelpuddings, welcher durch das vorbei fliegende Elektron zus"atzlich
-in Schwingung versetzt wird.
+in Schwingung versetzt wird, indem das Elektron einen Druck auf den
+Wackelpudding ausübt.
 Das Grundpotential wird asymmetrisch angeregt.
-Wenn man das auf das Modell des Wackelpudding "ubertr"agt, erkennt man,
+Wenn man dies auf das Modell des Wackelpudding "ubertr"agt, erkennt man,
 dass wenn man einen Wackelpudding gleichm"assig zusammendrückt, wird
 dieser nicht zus"atzlich in Schwingung versetzt.
 Wird der Wackelpudding jedoch auf der einen Seite angestossen, wird der
@@ -145,18 +139,36 @@ h"oheres Energieniveau.
 F"ur die Berechnung wird der Potentialtopf "uber die h"alfe mit einem
 Rechteckimpuls angeregt.
 Dies vereinfacht das L"osen der Differentialgleichungen.
+Da die L"osung der urspr"unglichen Gleichung auf ein partielles
+Differential-Gleichungssystem f"uhrt und da das L"osen partieller
+Differentialgleichungen nicht Stoff des Bachelorstudiums ist, werden
+die Gleichungen mittels Skalarpordukt auf ein normales
+Differential-Gleichungssystem vereinfacht.
+
+Schlussendlich wird die Wahrscheinlichkeit des Zustand $|0\rangle$ 
+respektive die Wahrscheinlichkeit des Zustand $|1\rangle$ errechnet.
+Steigt die Wahrscheinlichkeit des Zustand $|1\rangle$ sinkt gleichzeitig
+die Wahrscheinlichkeit des Zustand $|0\rangle$ und umgekehrt.
+Diese Wahrscheinlichkeit ist abh"angig von der Energie $V_{e}$ 
+des Elektrons, vom Abstand $(x)$ des Elektrons zum Potentialtopf und der 
+Geschwindigkeit respektive der Zeit $(t)$ mit der das Elektron auf den 
+Potentialtopf wirkt.
+
 
 \begin{figure}
 \centering
 \includegraphics{flash/potential-1.pdf}
 \caption{St"orpotential f"ur das Modell f"ur den Schreibprozess bei
-einem Flashspeicher}
+einem Flashspeicher
+\label{flash:Anregung}}
 \end{figure}
 
 \subsubsection{L"osung der Schr"odingergleichung}
 \rhead{L"osung der Schr"odingergleichung}
 Die Schr"odingergleichung ergibt sich aus der kinetischen Energie des
 Potentialtopfes und der potentiellen Energie der Anregung.
+Mit der Schr"odingergleichung wird nicht die Energie der Teilchen
+sondern die Energie der Elektronen berechnet.
 \[
 \ i\hbar\frac{d}{dt}|\psi(t)\rangle = H|\psi(t)\rangle = \Bigg{(}-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}+V(x)+V_{e}(x,t)\Bigg{)}|\psi(t)\rangle
 \]
