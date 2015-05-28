@@ -9,12 +9,12 @@
 \begin{fmfgraph*}(100,60)
 \fmfleftn{i}{2}
 \fmfrightn{o}{2}
-\fmflabel{$\vec k$}{i1}
-\fmflabel{$\vec k+\vec q$}{i2}
-\fmflabel{$\vec k'$}{o1}
-\fmflabel{$\vec k'-\vec q$}{o2}
-\fmf{fermion}{i1,v1,i2}
-\fmf{fermion}{o1,v2,o2}
+\fmflabel{$\vec k'-\vec q$}{i1}
+\fmflabel{$\vec k'$}{i2}
+\fmflabel{$\vec k+\vec q$}{o1}
+\fmflabel{$\vec k$}{o2}
+\fmf{fermion}{i2,v1,i1}
+\fmf{fermion}{o2,v2,o1}
 \fmf{zigzag,label=$\vec q$}{v1,v2}
 \fmfdot{v1,v2}
 \marrow{c}{up}{top}{}{v1,v2}
@@ -25,12 +25,12 @@
 \begin{fmfgraph*}(100,60)
 \fmfleftn{i}{2}
 \fmfrightn{o}{2}
-\fmflabel{$\vec k$}{i1}
-\fmflabel{$\vec k+\vec q$}{i2}
-\fmflabel{$\vec k'$}{o1}
-\fmflabel{$\vec k'-\vec q$}{o2}
-\fmf{fermion}{i1,v1,i2}
-\fmf{fermion}{o1,v2,o2}
+\fmflabel{$\vec k'+\vec q$}{i1}
+\fmflabel{$\vec k'$}{i2}
+\fmflabel{$\vec k-\vec q$}{o1}
+\fmflabel{$\vec k$}{o2}
+\fmf{fermion}{i2,v1,i1}
+\fmf{fermion}{o2,v2,o1}
 \fmf{zigzag,label=$-\vec q$}{v1,v2}
 \fmfdot{v1,v2}
 \marrow{c}{up}{top}{}{v2,v1}
