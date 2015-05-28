@@ -67,7 +67,9 @@ V^{(0)}(x)&=
 \end{equation}
 
 und erweitern sie mit der St"orung $V^{(1)}$, welche wir als lineares Feld definieren:
+% FIXME Link pr\"ufen
 \begin{equation}
+  \label{eq:efeld_v0_kasten}
   V^{(1)}(x) = a x + b
 \end{equation}
 
@@ -97,8 +99,7 @@ Entartung bedeutet, dass zwei Zust"ande die selbe Energie besitzen, wodurch der 
 Das w"are der Fall wenn das Elektron aus dem Kasten entkommen w"urde,
 dann h"atten zwei Wellen ausserhalb des Kastens die selbe Energie.
 
-Das ist bei uns nicht der Fall, weil die Barrieren unendlich hoch sind
-und deswegen nicht "uberschritten werden k"onnen.
+Diesen Fall schliessen wir mit den unendlich hohen Barrieren aus.
 
 Wir benutzen also folgende Funktion
 \begin{equation}
@@ -129,8 +130,8 @@ E_k^{(1)} &=
 \subsubsection{Berechnung des Modells mit MATLAB}
 
 
-Wir berechnen in diesem Beispiel die erste N"aherung von einem Potentialskasten mit elektrischem Feld.
-Dazu erweitern wir das einfache System  $\hat H_0$
+Wir berechnen in diesem Beispiel die erste N"aherung eines Potentialskastens mit angelegtem elektrischem Feld.
+Dazu erweitern wir das einfache System  $\hat H_0$ 
 (Siehe Abbildung \ref{skript:potentialkasten})
 um $\hat H_1$, welcher die St"orung darstellt.
 \[
