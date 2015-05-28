@@ -8,7 +8,7 @@ In diesem Kapitel erweitern wir das Beispiel des Potentialkastens
 (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten})
 um eine St\"orung.
 
-\section{St"orungstheorie}
+\section{Grundlagen St"orungstheorie}
 Grunds"atzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell 
 (Abb \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
 mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
@@ -42,10 +42,9 @@ urspr"unglichen Funktion $H_0$ um zus"atzliche $\varepsilon^n H_n$ erg"anzen:
 
 \section{Anwendungen}
 
-\subsection{Potentialkasten mit eFeld}
+\subsection{Potentialkasten mit elektrischem Feld}
 
-
-\subsubsection{Modell der St\"orung elektrisches Feld}
+\subsubsection{Ausgangslage}
 
 In diesem Modell wollen wir den Grundzustand mit einem elektrischen Feld st\"oren.
 
@@ -82,22 +81,9 @@ Eingesetzt wird daraus:
             + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + x )
 \]
 
+\subsubsection{Vorgehensweise}
 
-\begin{figure}
- \centering
- \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Psi_ungestoert.pdf}
- \caption{$\psi$ ungest\"ort}
- \label{abb:efeld_psi_ungestoert}
-\end{figure}
-
-
-
-
-
-
-
-
-\subsubsection{Berechnung 1. N"aherung}
+\subsubsection{Berechnung des Modells mit MATLAB}
 
 
 Wir berechnen in diesem Beispiel die erste N"aherung von einem Potentialskasten mit elektrischem Feld.
@@ -185,7 +171,7 @@ Mit der zweiten und dritten Formel k"onnen wir diesen Anteil berechnen.
 Die Formel \ref{eq:efeld_skalar_gleichung} gibt uns einen Skalarwert, welcher uns zeigt wie viel Anteil die Welle $l$ an der St"orung $k$ hat.
 
 Um zum Beispiel den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
-$\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle*|\psi_l^{(0)}\rangle$
+$\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle$
  von 1 bis n ausser 5.
 \begin{equation}
   \sum_{l=1 ; l\ne 5}^{\infty}
@@ -224,6 +210,8 @@ Wir k"onnen jetzt die St"orung in
 \end{equation}
 einsetzen und bekommen so die neue Wellenfunktion die man in \ref{abb:efeld_psi_gestoert} sehen kann.
 
+\subsubsection{Auswertung Psi}
+
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
 
 In diesem Beispiel haben wir die Unterschiede mit sehr starken Parametern gew"ahlt.
@@ -240,14 +228,14 @@ Die einzelnen Werte in y-Richtung sind die jeweiligen N"aherungen. Alle Kurven p
 
 
 
-\subsubsection{Energie "Anderung}
+\subsubsection{Auswertung E}
 
 Was passiert?
 
 In der Grafik \ref{abb:efeld_E_gestoert} lassen wir f"ur die jeweiligen stabilen Zust"ande 0..4 
 den Einfluss der St"orung wachsen.
 
-Da das elektrische Feld jedoch nur einen sehr kleinen Einfluss auf die gesammte Energie des 
+Da das elektrische Feld jedoch nur einen sehr kleinen Einfluss auf die gesamte Energie des 
 Elektrons hat, mussten wir um die Effekte der 1. N"aherung zu zeigen ein sehr grosses $\varepsilon$
 w"ahlen.
 
