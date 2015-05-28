@@ -183,20 +183,21 @@ k&\ne l
 
 Mit der ersten Gleichung k"onnen wir direkt die Energie der St"orung berechnen.
 
-Man berechnet also das Skalarprodukt aus $\psi_k^{(0)}$ und $x \psi_k^{(0)}$ "uber die gesamte L"ange vom Potenzialkasten und erh"alt so $E_k^{(1)}$.
+Man berechnet das Skalarprodukt $\psi_k^{(0)}$ und $x \psi_k^{(0)}$ "uber 
+die gesamte L"ange des Potenzialkastens und erh"alt so $E_k^{(1)}$.
 
-Um jetzt die endg"ultige Energie zu bekommen rechnet man $E_k^{(0)} + \varepsilon E_k^{(1)}$
+So k\"onnen wir die aufsummierte Energie mit $E_k^{(0)} + \varepsilon E_k^{(1)}$ berechnen.
 
-Das kann in Matlab einfach geplottet werden mit
 \begin{lstlisting}[style=Matlab]
 ...
 H1 = x;
 for k = 1 : 5
   E1(k) = dot(Psi(k, :), H1.*Psi(k, :));
-  plot(Epsilon, E0(k) + Epsilon*E1_k(k))
+  plot(epsilon, E0(k) + epsilon*E1_k(k))
 end
 \end{lstlisting}
-In Psi befinden $k$ Vektoren mit diskreten Abtastwerten von $\psi^{(0)}$, die mit Psi(k, :) ausgelesen werden.
+In Psi befinden $k$ Vektoren mit diskreten Abtastwerten von $\psi^{(0)}$ \"uber die die L\"ange $2l$
+\& mit $Psi(k, :)$ ausgelesen werden.
 
 Das Resultat sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
 
@@ -212,7 +213,7 @@ Mit der zweiten und dritten Formel k"onnen wir diesen Anteil berechnen.
   \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
 \end{equation}
 
-Die Formel \ref{eq:efeld_skalar_gleichung} gibt uns einen Skalarwert, welcher uns zeigt wie viel Anteil die Welle $l$ an der St"orung $k$ hat.
+Die Formel \ref{eq:efeld_skalar_gleichung} ergibt einen Skalarwert, welchen Anteil die Welle $l$ an der St"orung $k$ hat.
 
 Um zum Beispiel den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
 $\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle$
@@ -224,21 +225,22 @@ $\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle$
     |\psi_l^{(0)}\rangle
 \end{equation}
 
-In Matlab kann man das mit folgendem Code berechnen:
+In Matlab wird das wie folgt implementiert:
 \begin{lstlisting}[style=Matlab]
 ...
-x = -10^-9 : delta : 10^-9;
-H1 = x;
-n = 1000;
-k = 5;
+L = -10^-9;           # Breite des Potentialkastens
+x = -L : delta : L;   # Bereich definieren
+H1 = x;               
+n = 1000;             # Anzahl aufsummierte Zust\"ande
+k = 5;                # Anzahl geplotete Zust\"ande
 summe = 0;
 for l = 1 : n
-  if l ~= k
+  if l ~= k           # Vergleich l != k
     Psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l)) .* Psi(l, :);
     summe = psi1_l + psi0_l;
   end
 end
-\end{lstlisting}
+\end{lstlisting} % FIXME Summe
 
 Man muss zum Gl"uck nicht unendlich viele Zahlen addieren, da der Anteil wegen $\frac{1}{E(k)-E(l)}$ immer weiter abnimmt.
 In diesem Fall addieren wir bei $l=90$ nur $1\%$ der St"orung dazu, bei $l=280$ nur noch $0.1\%$.
