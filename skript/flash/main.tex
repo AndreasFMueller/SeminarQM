@@ -14,11 +14,14 @@ zu n"aherzubringen.
 \rhead{Floating Gate Transistor}
 Floating Gate Transistoren z"ahlen zu den Feldeffekttransistoren
 (Siehe Abbildung \ref{skript:Floatinggatetransistor}).
-Die Absicht ist es den Zustand des Floating Gates zu erh"ohen.
-Dies kann man erreichen, indem im Floating Gate eine gewisse Ladung
-gespeichert wird.
-Diese kann erh"oht werden, indem das Potential am Control Gate erh"oht wird.
-Nun fliessen die Elektronen in Richtung Source.
+
+
+
+%Die Absicht ist es den Zustand des Floating Gates zu erh"ohen.
+%Dies kann man erreichen, indem im Floating Gate eine gewisse Ladung
+%gespeichert wird.
+%Diese kann erh"oht werden, indem das Potential am Control Gate erh"oht wird.
+%Nun fliessen die Elektronen in Richtung Source.
 
 \begin{figure}
 \centering
@@ -153,12 +156,12 @@ einem Flashspeicher}
 Die Schr"odingergleichung ergibt sich aus der kinetischen Energie des
 Potentialtopfes und der potentiellen Energie der Anregung.
 \[
-\ i\hbar\frac{d}{dt}|\psi(t)\rangle = H|\psi(t)\rangle = (-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}+V(x)+V_{e}(x,t))|\psi(t)\rangle
+\ i\hbar\frac{d}{dt}|\psi(t)\rangle = H|\psi(t)\rangle = \Bigg{(}-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}+V(x)+V_{e}(x,t)\Bigg{)}|\psi(t)\rangle
 \]
 
 Wenn man den Zustand nun von 0 auf 1 erh"oht sieht dies folgendermassen aus:
 \[
-\ i\hbar\frac{d}{dt}\langle1|\psi(t)\rangle = \langle1|-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}+V(x)+V_{e}(x,t)|\psi(t)\rangle
+\ i\hbar\frac{d}{dt}\langle1|\psi(t)\rangle = \Bigg{\langle}1\Bigg{|}-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}+V(x)+V_{e}(x,t)\Bigg{|}\psi(t)\Bigg{\rangle}
 \]
 
 Was nun genauer ausgerechnet wird ist $\langle1|\psi(t)\rangle$, denn
@@ -191,7 +194,7 @@ als $V_{0}v_{11}$ und $\langle1|V(t)|0\rangle$ als $V_{0}v_{10}$.
 
 Einfachheitshalber schreibt man anstatt $\langle1|\psi(t)\rangle$ $a_1$
 entsprechend f"ur $\langle0|\psi(t)\rangle$ $a_0$.
-Somit ergibt sich dann folgendes Diefferentialgleichungssystem:
+Somit ergibt sich dann folgendes Differentialgleichungssystem:
 \[
 \ i\hbar\frac{d}{dt}a_{0}(t)\langle0|0\rangle +i\hbar\frac{d}{dt}a_{1}(t)\langle0|1\rangle = a_{0}(t)E_{1}\langle0|0\rangle + a_{1}(t)E_{1}\langle0|1\rangle + a_{0}(t)\langle0|V(t)|0\rangle+ a_{1}(t)\langle1|V(t)|0\rangle
 \]
@@ -201,10 +204,10 @@ Somit ergibt sich dann folgendes Diefferentialgleichungssystem:
 
 Daraus folgt:
 \[
-\ i\hbar\dot{a_{0}} = (E_{0} + V_{0} v_{00}) a_{0} + V_{0} v_{01} a_{1}
+\ i\hbar\dot{a}_0 = (E_{0} + V_{0} v_{00}) a_{0} + V_{0} v_{01} a_{1}
 \]
 \[
-\ i\hbar\dot{a_{1}}_dot = V_{0} v_{10} a_{0} + (E_{1} V_{0} v_{11}) a_{1}
+\ i\hbar\dot{a}_1 = V_{0} v_{10} a_{0} + (E_{1} V_{0} v_{11}) a_{1}
 \]
 
 \subsubsection{Variation der Konstanten}
@@ -247,17 +250,17 @@ entspricht, $C_{01}$ $V_{0} v_{01}$, $C_{10}$ $V_{0} v_{10}$ und $C_{11}$ $(E_{1
 
 Wenn $ C_{01}$ und $ C_{10}$ $ =0$ dann w"are die L"osung:
 \[
-\ a_{0}(t) = \text{$konst_{0}$} e^{C_{00} t} 
+\ a_{0}(t) = \operatorname{konst}_0 e^{C_{00} t} 
 \]
 \[
-\ a_{1}(t) = \text{$konst_{1}$} e^{C_{11} t}
+\ a_{1}(t) = \operatorname{konst}_1 e^{C_{11} t}
 \]
 Wenn die Konstanten auch von der Zeit abh"angig sind, ist die L"osung: 
 \[
-\ a_{0}(t) = \text{$konst_{0}(t)$} e^{C_{00} t} 
+\ a_{0}(t) = \operatorname{konst}_0(t) e^{C_{00} t} 
 \]
 \[
-\ a_{1}(t) = \text{$konst_{1}(t)$} e^{C_{11} t} 
+\ a_{1}(t) = \operatorname{konst}_1(t) e^{C_{11} t} 
 \]
 Eingesetzt in das Differentialgleichungssystem folgt daraus:
 \[
@@ -304,10 +307,12 @@ Die $ \lambda $ der zweite Gleichung lauten:
 \ \lambda_{3,4} = \frac{(C_{00}-C_{11})\pm \sqrt{(C_{00}-C_{11})^2-4(C_{01}C_{10})}}{2}
 \]
 
+Nun kann man die $\lambda$ wieder in das charakteristische Polynom
+einsetzen und numerisch berechnen lasen, dazu kann zum Beispiel Matlab
+verwendet werden.
+
 \subsubsection{Numerische Resultate}
 \rhead{Numerische Resultate}
-Nun kann man alles wieder einsetzen und nummerisch berechnen, dazu kann
-zum Beispiel Matlab verwendet werden.
 In der Abbildung \ref{skript:potentialmittel}, sieht man in der unteren
 Grafik, dass man nach ca. 0.02s sagen kann das der Zustand $|0\rangle$, 
 respektive in der oberen Grafik der Zustand $|1\rangle$ eintrifft.
