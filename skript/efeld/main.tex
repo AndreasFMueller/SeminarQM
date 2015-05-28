@@ -45,43 +45,45 @@ urspr"unglichen Funktion $H_0$ um zus"atzliche $\varepsilon^n H_n$ erg"anzen:
 \subsection{Potentialkasten mit elektrischem Feld}
 
 \subsubsection{Ausgangslage}
+Bei unserer Anwendung bauen wir auf dem Potentialkasten (   Kapeitel   ) aus dem Skript auf.
+Dabei geht es um ein Elektron welches zwischen zwei Barrieren mit unendlich hohem Potential gefangen ist.
+Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$ bewegen,
+ausserhalb kommt es hingegen nicht vor.
 
-In diesem Modell wollen wir den Grundzustand mit einem elektrischen Feld st\"oren.
+Wir erweitern jetzt das System mit einer St"orung, indem wir eine elektrische Spannung anlegen.
+Weil das Elektron eine negative Ladung besitzt ver"andert sich seine Wellenfunktion.
 
-Diese St\"orung heisst in der 1. N\"aherung $\hat H_1$ \& wird wie die gesamte St"orung \"uber den 
-Parameter $\varepsilon$ gesteuert.
-
-$V_1$ wird als lineares Feld definiert:
+Als Grundlage "ubernehmen wir zwei Funktionen aus dem Skript
 \begin{equation}
-  V_1(x) = a x + b
-\end{equation}
-
-Der Parameter $a$ steht f\"ur die Feldst\"arke, der Parameter $b$ f\"ur die Grundspannung.
-
-Da wir $a$ jedoch bereits durch $\varepsilon$ beschreiben, k\"onnen wir mit $a = 1$ vereinfachen.
-
-F\"ur die Berechnung ist es einfacher das Feld symetrisch anzulegen. Darum setzen wir $b = 0$ \& reduzieren:
-\[
-  V_1(x) = x
-\]
-
-f\"ur das Potential $V_0(x)$ gilt
-\begin{equation}
-  \label{eq:efeld_v0_kasten}
-  V_0(x)=\begin{cases}
+\begin{aligned}
+H^{(0)}&=\frac1{2m}p^2+V^{(0)}(x)
+\\
+V^{(0)}(x)&=
+  \begin{cases}
     0       & \qquad |x|<l\\
-    \infty  & \qquad\text{sonst.}
+    \infty  & \qquad\text{sonst}
   \end{cases}
+\end{aligned}
 \end{equation}
 
-Eingesetzt wird daraus:
+und erweitern sie mit der St"orung $V^{(1)}$, welche wir als lineares Feld definieren:
+\begin{equation}
+  V^{(1)}(x) = a x + b
+\end{equation}
 
+Die St"orung kann noch weiter vereinfacht werden:
+
+Da wir $a$ bereits durch $\varepsilon$ beschreiben, k\"onnen wir mit $a = 1$ vereinfachen,
+und weil die Barrieren unendlich hoch sind, k"onnen wir $b = 0$ setzen.
+
+Wenn wir jetzt die St"orung einsetzen, bekommen wir die neue Hamilton-Funktion
 \[
-  \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
-            + \varepsilon^1 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + x )
+  H=\frac1{2m}p^2+V^{(0)}(x)
+    + \varepsilon x.
 \]
 
 \subsubsection{Vorgehensweise}
+
 
 \subsubsection{Berechnung des Modells mit MATLAB}
 
