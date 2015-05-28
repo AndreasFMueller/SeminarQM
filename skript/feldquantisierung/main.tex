@@ -97,7 +97,23 @@ Die Berechnung von $B$ liefert
 B = \nabla \times A = \frac{1}{ \sqrt{V}} \sum_{\alpha=1,2,(3)}  \sum_k i \underbrace{k \times \varepsilon^{(\alpha)}}_{\neq 0} \left(c_{k,\alpha} e^{i (k \cdot x - \omega_k t)} - \bar{c}_{k,\alpha} e^{-i(k \cdot x - \omega_k t)} \right).
 \end{equation*}
 
-Hierf"ur darf der Term $k \times \varepsilon^{(\alpha)}$ nicht verschwinden, damit sich eine Welle bilden kann. $\varepsilon^{(3)}$ f"allt weg, da das Vektorprodukt von parallelen Vektoren null ist. Wir definieren somit, dass $(\varepsilon^{(1)}, \varepsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden.
+Hierf"ur darf der Term $k \times \varepsilon^{(\alpha)}$ nicht verschwinden, damit sich eine Welle bilden kann. $\varepsilon^{(3)}$ f"allt weg, da das Vektorprodukt von parallelen Vektoren null ist. Wir definieren somit, dass $(\varepsilon^{(1)}, \varepsilon^{(2)} , k/|k|)$ ein orthogonales Rechtssystem aus Einheitsvektoren bilden. Dies ist in Bild \ref{fq_img:field_vect} dargestellt.
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+	\draw[->,color=black,thick] (0, 0) -- +( 4, 0);
+	\node[color=black] at (2.6, 0.2) {$k$};
+	\draw[->,color=black,thick] (0, 0) -- +( 0, 2);
+	\node[color=black] at (0.4,1.6) {$\varepsilon^{(1)}$};
+	\draw[->,color=black,thick] (0, 0) -- +( -1.0, -1.0);
+	\node[color=black] at (-0.25, -0.7) {$\varepsilon^{(2)}$};
+	\draw[color=blue]   plot[smooth,domain=0:3.141] (4/3.141*\x,{1*cos(2*\x r)});
+	\node[color=blue] at (1.0, 0.8) {$A$};
+	\end{tikzpicture}
+	\caption{Ausbreitungs- und Polarisationsvektoren
+		\label{fq_img:field_vect}}
+\end{figure}
 
 Da $\varepsilon^{(\alpha)}$ und $k$ orthogonal sind, gilt
 \begin{equation*}
@@ -242,7 +258,7 @@ Hier muss $n$ eine ganze Zahl sein, damit die absteigende Folge bei null stehen 
 a\,|n\rangle = \sqrt{e_n}\,|n-1\rangle  \;, \quad \hdots \; , \quad a\,|2\rangle = \sqrt{2}\,|1\rangle \; , \quad a\,|1\rangle = 0\,|0\rangle \;, \quad a\,|0\rangle = 0\,|0\rangle.
 \end{equation*}
 
-Hier ist der kleinst m"ogliche Eigenwert $e_n = 0$. Dem aufmerksamen Beobachter ist aufgefallen, dass der kleinste Eigenwert beim harmonischen Oszillator $e_n = \frac{1}{2}$ ist. Dies r"uhrt daher, dass wir hier f"ur $N$ Eigenwerte gesucht haben, im Kapitel \ref{chapter:harmonischeroszillator} aber f"ur ${\cal H}$. Die Korrektheit der Formeln gilt f"ur beide Operatoren. Der Grund liegt darin, dass der Nullpunkt der Energieskala nicht festgelegt ist und f"ur die Feldquantisierung keine Rolle spielt. Es gibt Anwendungen, wie bei der Gravitation, wo der Nullpunkt nicht frei w"ahlbar ist. Wo dieser genau liegt, ist Gegenstand der aktuellen Forschung.
+Hier ist der kleinst m"ogliche Eigenwert $e_0 = 0$. Dem aufmerksamen Beobachter ist aufgefallen, dass der kleinste Eigenwert beim harmonischen Oszillator $e_0 = \frac{1}{2}$ ist. Dies r"uhrt daher, dass wir hier f"ur $N$ Eigenwerte gesucht haben, im Kapitel \ref{chapter:harmonischeroszillator} aber f"ur ${\cal H}$. Die Korrektheit der Formeln gilt f"ur beide Operatoren. Der Grund liegt darin, dass der Nullpunkt der Energieskala nicht festgelegt ist und f"ur die Feldquantisierung keine Rolle spielt. Es gibt Anwendungen, wie bei der Gravitation, wo der Nullpunkt nicht frei w"ahlbar ist. Wo dieser genau liegt, ist Gegenstand der aktuellen Forschung.
 
 \subsection{Photonen}
 
@@ -372,7 +388,7 @@ Der Emissionsprozess wird beschrieben durch
 \end{split}
 \end{equation}
 
-Die Wahrscheinlichkeit eines "Uberganges ist gegeben durch $| \langle Y| \, H_{\text{int}} \, |X \rangle |^2$.
+Die Wahrscheinlichkeit eines "Uberganges ist proportional zu $| \langle Y| \, H_{\text{int}} \, |X \rangle |^2$.
 Somit ist die Wahrscheinlichkeit einer Absorption proportional zu $n_{k,\alpha}$ und einer Emission zu $n_{k,\alpha}+1$.
 
 \subsection{Folgerungen}

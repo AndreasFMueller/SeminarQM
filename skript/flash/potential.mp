@@ -27,6 +27,11 @@ u = 6pt;
 fill (-140, 140)--(-140,-15)--(120,-15)--(120,140)--(100,140)
 	--(100,0)--(-100,0)--(-100,140)--cycle withcolor (0.95,0.95,0.95);
 
+%Elektron
+pickup pencircle scaled 0.7pt;
+drawarrow (-110,120)--(0,120);
+label.ulft(btex Elektron etex, (-30,120));
+
 pickup pencircle scaled 1.5pt;
 draw (-100,100)--(-100,0)--(100,0)--(100,100);
 draw (-100,100)--(-100,115) dashed withdots;
