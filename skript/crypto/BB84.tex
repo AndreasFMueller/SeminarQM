@@ -1,61 +1,83 @@
 \section{BB84}
+  \index{BB84}
   \rhead{BB84}
 
   \subsection{Ohne Lauscher}
-  Die Verschl\"usselte Kommunikation soll zwischen Alice und Bob stattfinden.
+  Die verschl\"usselte Kommunikation soll zwischen Alice und Bob stattfinden.
   F\"ur das BB84 Protokoll sind zwei Kommunikationskan\"ale n\"otig:
   Einen konventionellen, sowie ein optisches Medium.
   Alice beginnt polarisierte Photonen zu erstellen und \"uber das optische Medium an Bob zu senden.
   Dabei verwendet sie eine der zwei um $45^{\circ}$ verschobenen Basen,
-  welche jeweils zwei um $90^{\circ}$ verschobene Polarisierungen aufweisen und damit die Werte 1 und 0 repr\"asentieren:
+  welche jeweils zwei um $90^{\circ}$ verschobene Polarisierungen aufweisen und damit die Werte 1 und 0 repr\"asentieren. Siehe Abbildung \ref{crypto:poltab}
 
-  \begin{tabular}{l l || c c}
-    $(+)$ & rectilinear & $(\uparrow)$ & $(\rightarrow)$\\
-    $(\times)$ & diagonal & $(\nearrow)$ & $(\searrow)$\\
-    \hline
-    & & $0$ & $1$\\
-  \end{tabular}
+  \begin{figure}
+    \centering
+    \begin{tabular}{l l || c c}
+      \hline
+      $(+)$ & rectilinear & $(\uparrow)$ & $(\rightarrow)$\\
+      $(\times)$ & diagonal & $(\nearrow)$ & $(\searrow)$\\
+      \hline
+      & & $0$ & $1$\\
+      \hline
+    \end{tabular}
+    \caption{Die Polarisierungen der Photonen und ihre Bedeutung\label{crypto:poltab}}
+  \end{figure}
 
   Die polarisierten Photonen dienen also als Qubits, das Quanten\"aquivalent eines konventionellen Bits.
   Dabei muss sich Alice die Reihenfolge der verwendeten Basen merken,
   denn sie werden sp\"ater ben\"otigt um eine statistische Analyse der \"Ubertragungsfehler zu erstellen.
 
   Bob nimmt die polarisierten Photonen entgegen und w\"ahlt zuf\"allig eine der beiden Basen aus durch welche er das Photon analysiert.
-  Dabei w\"ahlt Bob mit $P(richtig)=0.5$ die richtige Basis.
-  W\"ahlt Bob die falsche Basis erh\"alt er mit $P(korrekt|falsch)=0.5$ das korrekte Resultat,
-  bei $P(korrekt|richtig)=1$ f\"ur das korrekte Resultat bei der richtigen Basis ergibt das ein $P(korrekt)=0.75$,
+  Dabei w\"ahlt Bob mit
+  $P(richtig)=0.5$
+  die richtige Basis.
+  W\"ahlt Bob die falsche Basis erh\"alt er mit
+  $P(korrekt|falsch)=0.5$
+  das korrekte Resultat, bei
+  $P(korrekt|richtig)=1$
+  f\"ur das korrekte Resultat bei der richtigen Basis ergibt das ein
+  $P(korrekt)=0.75$,
   dass ein Photon korrekt gemessen wurde.
+  Siehe Abbildung \ref{crypto:BB84KE}
 
   Nachdem gen\"ugend Photonen um ein ausreichend starken symmetrischen Schl\"ussel zu erzeugen gesendet wurden, findet zwischen Alice und Bob die sogenannte Basendiskussion statt.
   Dazu sendet Bob die Information, welche Basis er f\"ur welches Photon verwendete, \"uber den konventionellen Kanal zu Alice.
   Alice meldet ihm, bei bei welchen Photonen er die richtige Basis, also dieselbe, welche auch sie f\"ur die Polarisation verwandte, verwendet hat.
   Zur \"Uberpr\"ufung ob die Verbindung belauscht wurde f\"uhren Alice und Bob eine statistische Analyse der Verteilung der \"Ubertragungsfehler aus.
   Wenn die Verbindung nicht manipuliert wurde, ist mit $P(korrekt)=0.75$ zu rechnen.
+  F\"ur Detail siehe Abbildung \ref{crypto:bittab}
 
-  Beispiel:
-  \begin{center}
-    \begin{tabular}{ l || c | c | c | c | c | c | c | r }
-      \hline
-      A's Zufallsbits & 0 &  1 & 1 & 0 & 1 & 0 & 0 & 1 \\
-      \hline
-      A's Basen & $+$ & $+$ & $\times $ & $+$ & $\times $ & $\times $ & $\times $ & $+$ \\
-      \hline
-      A's Polarisation & $\uparrow$ & $\rightarrow$ & $\searrow$ & $\uparrow$ & $\searrow$ & $\nearrow$ & $\nearrow$ & $\rightarrow$ \\
-      \hline
-      B's Basen & $+$ & $\times $ & $\times $ & $\times $ & $+$ & $\times $ & $+$ & $+$ \\
-      \hline
-      B's Polarisation & $\uparrow$ & $\nearrow$ & $\searrow$ & $\nearrow$ & $\rightarrow$ & $\nearrow$ & $\rightarrow$ & $\rightarrow$ \\
-      \hline
-      B's gemessene Bits & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 \\
-      \hline
-      Basen Diskussion \\
-      \hline
-      Shared Key Bits& 0 & & 1 & & & 0 & & 1 \\
-      \hline
-    \end{tabular}
-  \end{center}
+  \begin{figure}
+    \centering
+      \begin{tabular}{ l || c | c | c | c | c | c | c | r }
+        \hline
+        A's Zufallsbits & 0 &  1 & 1 & 0 & 1 & 0 & 0 & 1 \\
+        \hline
+        A's Basen & $+$ & $+$ & $\times $ & $+$ & $\times $ & $\times $ & $\times $ & $+$ \\
+        \hline
+        A's Polarisation & $\uparrow$ & $\rightarrow$ & $\searrow$ & $\uparrow$ & $\searrow$ & $\nearrow$ & $\nearrow$ & $\rightarrow$ \\
+        \hline
+        B's Basen & $+$ & $+$ & $\times $ & $\times $ & $+$ & $\times $ & $+$ & $+$ \\
+        \hline
+        B's Polarisation & $\uparrow$ & $\rightarrow$ & $\searrow$ & $\nearrow$ & $\rightarrow$ & $\nearrow$ & $\rightarrow$ & $\rightarrow$ \\
+        \hline
+        B's gemessene Bits & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 \\
+        \hline
+        Decoypuls & & \checkmark & & & & & \checkmark & \\
+        \hline
+        Basen Diskussion \\
+        \hline
+        Shared Key Bits& 0 & & 1 & & & 0 & & 1 \\
+        \hline
+      \end{tabular}
+      \caption{Auswertung der Polarisation und der Status\label{crypto:bittab}}
+  \end{figure}
 
-  \includegraphics[width=\textwidth]{crypto/BB84.pdf}
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.35\textheight]{crypto/BB84.pdf}
+    \caption{Normalfall des Schl\"usselaustausches mit BB84\label{crypto:BB84KE}}
+  \end{figure}
 
   \subsection{Mit Lauscher}
   Das BB84 Protokoll erm\"oglicht es, einen Lauscher (Eavesdropper) zu bemerken.
@@ -65,20 +87,32 @@
   wenn er nur einen ausreichend leistungsf\"ahigen Rechner hat.
 
   Beim BB84 Protokoll kann ein Lauscher jedoch nicht lauschen, ohne die \"Ubertragung zu beinflussen.
-  Doch warum? Was \"andert sich wenn Eve lauscht?
+  Doch warum? Was \"andert sich wenn Eve lauscht? Siehe Abbildung \ref{crypto:BB84Eve}
   Eve f\"angt die von Alice polarisierten Photonen ab und misst sie mit 50\% Wahrscheinlichkeit korrekt.
   $P(\times)=0.5, P(+)=0.5$
   Danach generiert Eve ein neues Photon, mit derselben Polarisation,
   wie die, welche sie gemessen hat und sendet es weiter zu Bob.
-  Da Eve auch nur mit $P(korrekt)=0.75$ korrekt misst, kann sie auch nur in $75^{\circ}$ der F\"alle die richtige Polarisation erzeugen.
-  Bob kann also nur noch mit $P(korrekt|Eve-korrekt)=0.75*0.75=0.625$ die korrekte Polarisation messen.
-  Um dies festzustellen tauschen Alice und Bob einige Schl\"usselbits aus,
-  dazu werden sogenannte Decoypulses eingebaut, das sind Bits,
-  welche nur f\"ur die Statistik dienen und nicht im Schl\"ussel verwendung finden.
+  Da Eve auch nur mit
+  $P(korrekt)=0.75$
+  korrekt misst, kann sie auch nur in
+  $75^{\circ}$
+  der F\"alle die richtige Polarisation erzeugen.
+  Bob kann also nur noch mit
+  $P(korrekt|Eve-korrekt)=0.75*0.75=0.625$
+  die korrekte Polarisation messen.
+  Um dies festzustellen tauschen Alice und Bob einige Schl\"usselbits aus.
+  Dazu werden sogenannte Decoypulses eingebaut, das sind Bits,
+  welche nur f\"ur die Statistik dienen und nicht im Schl\"ussel Verwendung finden.
 
-  \includegraphics[width=\textwidth]{crypto/BB84Eve.pdf}
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.35\textheight]{crypto/BB84Eve.pdf}
+    \caption{Schl\"usselaustausch mit Eavesdropper\label{crypto:BB84Eve}}
+  \end{figure}
 
-  Die einzige m\"ogliche Art von Eavesdropping ist, wenn Eve bei der Quelle die M\"oglichkeit hat, \"uberz\"ahlige Photonen abzuzweigen, sie zu lagern und nachdem Alice und Bob die Basendiskussion gef\"uhrt haben, mit dem der richtigen Basis zu messen und dadurch einzelne g\"ultige Keybits zu erhalten.
+  Die einzige m\"ogliche Art von Eavesdropping ist, wenn Eve bei der Quelle die M\"oglichkeit hat, \"uberz\"ahlige Photonen abzuzweigen,
+  sie zu lagern und nachdem Alice und Bob die Basendiskussion gef\"uhrt haben,
+  mit dem der richtigen Basis zu messen und dadurch einzelne g\"ultige Keybits zu erhalten.
 
   \subsection{No-Cloning}
   Die Grundlage f\"ur das Funktionieren dieser Methode bietet die Tatsache, dass man nicht beliebige Zust\"ande auf einen anderen kopieren kann. Siehe No-Cloning-Theorem (NCT) \ref{skript:no-cloning-theorem}.
@@ -86,15 +120,29 @@
   sondern ist gezwungen anhand ihrer Messungen (von denen h\"ochstens 75\% korrekt sind) selbst Photonen zu polarisieren
   und Bob zu senden, was bei Bob zu einer Trefferrate von weniger als 0.75 f\"uhrt.
   $P(korrekt|Eavesdropper)<0.75$
+
   Wenn man also Eve mit $P=0.999999999$ aufsp\"uren will,
   folgt aus dieser Formel $P_d = 1 - \left(\frac{3}{4}\right)^n$,
   dass 72 Keybits ausgetauscht werden m\"ussen.
 
-  \includegraphics[width=\textwidth]{crypto/BB84Eve-Clone.pdf}
+  Da es so etwas wie einen Photonen-Kopierer nicht gibt, ist ein Scenario mit undetektierbarem Lauschen nicht m\"oglich. Siehe Abbildung \ref{crypto:BB84Clone}
 
-  \subsection{Mit Man-In-The-Middle}
-  Das BB84 Protokoll sch\"utzt jedoch nicht vor einer MitM Attacke,
-  jedoch kann dazu eine Authentisierung des Partners verwendet werden.\cite{qc:Authentisierung}
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.35\textheight]{crypto/BB84Eve-Clone.pdf}
+    \caption{Theoretischer Einsatz des Photonen-Kopierers\label{crypto:BB84Clone}}
+  \end{figure}
 
-  \includegraphics[width=\textwidth]{crypto/BB84Max.pdf}
+  \subsection{Schw\"achen}
+  Es gibt Angriffe welche mittels Blendung des Detektors die \"Ubertragung des Schl\"ussels belauschen
+  und dabei undetektierbar bleiben. \cite{qc:detector}
 
+  Zudem sch\"utzt das BB84 Protokoll nicht vor einer Man in the Middle Attacke (Siehe Abbildung \ref{crypto:BB84Max}),
+  jedoch kann diese vermieden werden, indem eine Authentisierung des Partners verwendet wird.
+  Dies ist auch mittels quantenmechanischer Effekten realisierbar. \cite{qc:Authentisierung}
+
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.35\textheight]{crypto/BB84Max.pdf}
+    \caption{Austausch mit Max als Man in the Middle\label{crypto:BB84Max}}
+  \end{figure}
