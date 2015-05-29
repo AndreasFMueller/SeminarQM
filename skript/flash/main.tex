@@ -14,14 +14,18 @@ zu n"aherzubringen.
 \rhead{Floating Gate Transistor}
 Floating Gate Transistoren z"ahlen zu den Feldeffekttransistoren
 (Siehe Abbildung \ref{skript:Floatinggatetransistor}).
-Im Floating Gate wird der Bin"are Zustand gespeichert.
-
-
-%Die Absicht ist es den Zustand des Floating Gates zu erh"ohen.
-%Dies kann man erreichen, indem im Floating Gate eine gewisse Ladung
-%gespeichert wird.
-%Diese kann erh"oht werden, indem das Potential am Control Gate erh"oht wird.
-%Nun fliessen die Elektronen in Richtung Source.
+Im Floating Gate wird die Ladung gespeichert, aus dem man einen Bin"aren
+Zustand bestimmen kann.
+Somit k"onnen in einem Floating Gate auch mehrere Bits gespeichert
+werden, "ublicherweise werden jedoch 2 Bits in einem Floating Gate
+Transistor gespeichert.
+Die Ladung im Floating Gate l"asst sich "uber das Control Gate steuern.
+Wird das Potential am Control Gate erh"oht, beginnt von Drain nach
+Source ein Strom zu fliessen.
+Somit fliesst nun in der n"ahe des Floating Gates Elektronen durch.
+"Ublicherweise wird der Source Anschluss meistens mit GND verbunden und
+Drain wird beim Leseprozess auf 0V gehängt und beim Schreibprozess
+"ublicherweise auf "uber 10V.
 
 \begin{figure}
 \centering
@@ -30,15 +34,6 @@ Im Floating Gate wird der Bin"are Zustand gespeichert.
 \url{http://upload.wikimedia.org/wikipedia/commons/a/ae/Floating_gate_transistor-en.svg}
 \label{skript:Floatinggatetransistor}}
 \end{figure}
-
- 
-Je nachdem was es f"ur ein Potential am Control Gate hat, k"onnen mehrere
-Zust"ande gespeichert werden.
-In einem Floating Gate Transistor kann man auch mehrere Bits speichern,
-"ublicherweise werden 2 Bits gespeichert.
-Der Source Anschluss wird meistens mit GND verbunden und Drain wird beim
-Leseprozess auf 0V gehängt und beim Schreibeprozess "ublicherweise auf
-"uber 10V.
 
 \subsection{Flash-Typen}
 \rhead{Flash-Typen}
@@ -80,13 +75,14 @@ Alles zum Tunneleffekt kann im Kapitel \ref{tunnel:tunneleffekt} nachgelesen wer
 F"ur den Speichervorgang m"ussen Elektronen mittels 'hot electron injection'
 in das Floating-Gate gebracht werden. Ein grosses Problem bei
 Flashspeichern ist die begrenzte schreib-und Leseanzahl.
-Wegem dem Tunneleffekt fliessen die Elektronen durch die Oxidschicht,
-dadurch wird diese Oxidschicht, um das Floating Gate herum, immer ein
-kleines bisschen besch"adigt.
-Dies bewirkt, dass immer mehr der Ladung abfliessen kann.
+Wegem dem Schreibvorgang mittels 'hot electron injection', wird die
+Oxidschicht (Isolation \ref{skript:Floatinggatetransistor}) um das Floating Gate herum
+besch"adigt, da bei der 'hot electron injection' eine grosse Leistung
+ben"otigt wird.
+Dies bewirkt, dass durch die Oxidschicht immer mehr Ladung abfliessen kann.
 Bei den NOR-Flashs hat man etwa 10'000 bis 100'000 Zyklen.
 Hingegen bei den NAND-Flashs sind es doch gegen 2 Millionen Zyklen.
-Dieses Problem ist jedoch nicht so problematisch, da der Speicher mit
+Dieses Problem ist jedoch nicht so problematisch, da der Speicher in
 einzelnen Bl"ocken aufgebaut ist.
 Wenn einer ausf"allt hat man immer noch einige andere Speicherzellen.
 
@@ -153,7 +149,6 @@ Diese Wahrscheinlichkeit ist abh"angig von der Energie $V_{e}$
 des Elektrons, vom Abstand $(x)$ des Elektrons zum Potentialtopf und der 
 Geschwindigkeit respektive der Zeit $(t)$ mit der das Elektron auf den 
 Potentialtopf wirkt.
-
 
 \begin{figure}
 \centering
