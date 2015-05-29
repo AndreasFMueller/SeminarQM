@@ -78,9 +78,7 @@ V^{(0)}(x)&=
 \end{equation}
 
 und erweitern sie mit der St"orung $V^{(1)}$, welche wir als lineares Feld definieren:
-% FIXME Link pr\"ufen
 \begin{equation}
-  \label{eq:efeld_v0_kasten}
   V^{(1)}(x) = a x + b
 \end{equation}
 
@@ -266,19 +264,24 @@ In Matlab wird das wie folgt implementiert:
 ...
 L = -10^-9;           # Breite des Potentialkastens
 x = -L : delta : L;   # Bereich definieren
-H1 = x;               
-n = 1000;             # Anzahl aufsummierte Zust\"ande
-k = 5;                # Anzahl geplotete Zust\"ande
-summe = 0;
+H1 = x;               # Die Stoerung des elektrische Feldes
+n = 1000;             # Anzahl aufsummierte Zustaende
+k = 5;                # Anzahl geplotete Zustaende
+summe = 0;            # Initialisierung des SummenVektors
+
 for l = 1 : n
   if l ~= k           # Vergleich l != k
     Psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l)) .* Psi(l, :);
-    summe = psi1_l + psi0_l;
+    summe = summe + psi0_l;
   end
 end
-\end{lstlisting} % FIXME Summe
 
-Man muss zum Gl"uck nicht unendlich viele Zahlen addieren, da der Anteil wegen $\frac{1}{E(k)-E(l)}$ immer weiter abnimmt.
+\end{lstlisting}
+wobei summe nun einen Vektor mit den diskreten Abtastwerten von $Psi_k^(1)$ ist.
+
+Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil bei am Gestammtzustand 
+mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms $E(k)-E(l)$ unter dem Bruchstrich.
+
 In diesem Fall addieren wir bei $l=90$ nur $1\%$ der St"orung dazu, bei $l=280$ nur noch $0.1\%$.
 
 Wir k"onnen jetzt die St"orung in 
@@ -325,9 +328,17 @@ $\psi^2$ entspricht der Wahrscheinlichkeitsdichte das sich das Elektron an diese
 
 Auf der Horizontalen sehen wir die x-Position vom Teilchen im zweidimensionalen Potentialkasten.
 
+<<<<<<< HEAD
 Subjektiv betrachtet sieht es aus als sei die Wellenfunktion nach links gedr"uckt.
 Das kommt daher dass das Elektron auf der gesamten L"ange die selbe Energie haben muss,
 denn sonst m"uste es sie ja auf dem Weg aufnehmen (die Gesamtenergie kann sich hingegen mit der St"orung ver"andern).
+=======
+%FIXME Satz
+Intuitiv nimmt man an, dass die Wellenfunktion nach links gedr"uckt werden wird.
+
+Dieser Eindruck ist dem Fakt geschuldet, dass das Elektron auf der gesamten L"ange die selbe Energie haben muss,
+denn sonst m"uste es sie auf dem Weg aufnehmen. Die Gesamtenergie kann sich aber mit der St"orung ver"andern.
+>>>>>>> 2475d5cb8fc70d4505477e060ba7db0e1322ded4
 
 Weil wir jetzt aber ein elektrisches Feld angelegt haben, hat das Elektron auf der rechten Seite ein h"oheres Potential.
 
