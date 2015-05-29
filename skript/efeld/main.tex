@@ -170,35 +170,32 @@ Die Formel \ref{eq:efeld_skalar_gleichung} ergibt einen Skalarwert, welchen Ante
 
 
 
+\subsubsection{Matlab Umgebung}
 
-\subsubsection{Berechnung des Modells mit Matlab}
-
-Wir wollen jetzt die Wellen $\psi_k(\varepsilon)$ und die Energie auch tats"achlich berechnen.
-Dazu verwenden wir das Programm Matlab.
-
-Matlab (MATrix LABoratory) ist ein Programm welches sich gut zum Plotten von Funktionen
+Matlab\footnote{MATrix LABoratory} ist ein Programm welches sich gut zum Plotten von Funktionen
 und zum Berechnen von Matrizen eignet.
 Besonders das berechnen von Matrixen und Vektoren wird durch den Syntax der eigenen Programmiersprache erleichtert.
 
-Hier ein paar Befehle welche zum Verst"andnis n"utzlich sind:
-\begin{itemize}
-\item Mit \\
-\begin{lstlisting}vektor = n : m\end{lstlisting} \\
-wird von $n$ bis $m$ gez"ahlt
-\item Mit
-%\begin{lstlisting}vektor = n : delta : m\end{lstlisting}
-wird ein Vektor mit Werten von $n$ bis $m$ definiert die den Abstand delta haben.
-\item Mit
-%\begin{lstlisting}vector(:)\end{lstlisting}
-k"onnen alle Werte aus einem Vektor ausgelesen werden.
-\item
-%\begin{lstlisting}vector*vector\end{lstlisting}
-entspricht einem Skalarprodukt.
-\item
-%\begin{lstlisting}vector.*vector\end{lstlisting}
-entspricht der Elementweisen Multiplikation.
-\end{itemize}
+Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 
+\begin{center}
+\index{Matlab!Syntax}
+\begin{tabular}{ll}
+\verb|vektor = n : m| & ein Vektor wird von $n$ bis $m$ gezählt.\\
+\verb|vektor = n : delta : m| & ein Vektor mit Werten von $n$ bis $m$ definiert die den Abstand $delta$ haben.\\
+\verb|vector(:)| & alle Werte aus einem Vektor ausgelesen werden. \\
+\verb|vector * vector| & entspricht einem Skalarprodukt \\
+\verb|vector .* vector| & multipliziere die Elemente der Vektoren
+\end{tabular}
+\end{center}
+
+
+
+
+\subsubsection{Berechnung des Modells mit Matlab}
+
+Wir wollen die Wellen $\psi_k(\varepsilon)$ und die Energie auch tats"achlich berechnen.
+Dazu verwenden wir das Programm Matlab.
 Wie beginnen damit das wir Konstanten und das ungest"orte System bestimmen.
 
 Wir definieren f"ur unseren Potenzialkasten eine Breite von $10^-9$ (1nm links und rechts)
