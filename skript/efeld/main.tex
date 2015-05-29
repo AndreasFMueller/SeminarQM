@@ -8,7 +8,7 @@ In diesem Kapitel erweitern wir das Beispiel des Potentialkastens
 (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten})
 um eine St\"orung.
 
-\section{Grundlagen St"orungstheorie}
+\section{Formeln der St"orungstheorie}
 Grunds"atzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell 
 (Abb \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
 mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
@@ -40,11 +40,10 @@ urspr"unglichen Funktion $H_0$ um zus"atzliche $\varepsilon^n H_n$ erg"anzen:
 
 
 
-\section{Anwendungen}
 
-\subsection{Potentialkasten mit elektrischem Feld}
+\section{Potentialkasten mit elektrischem Feld}
 
-\subsubsection{Ausgangslage}
+\subsection{Ausgangslage}
 
 \begin{figure}
  \centering
@@ -98,7 +97,7 @@ aus welcher wir den Hamilton-Operator berechnen k"onnen:
   \hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V^{(0)}(x) + \varepsilon x
 \]
 
-\subsubsection{Vorgehensweise}
+\subsection{Vorgehensweise}
 Wir berechnen in unserem Beispiel die erste N"aherung.
 
 Im Kapitel \ref{skript:stoerungsloesung1ordnung} wird beschrieben wie man von der Schr"odingergleichung 
@@ -137,7 +136,7 @@ E_k^{(1)} &=
 
 
 
-\subsubsection{Berechnung des Modells mit MATLAB}
+\subsection{Berechnung des Modells mit MATLAB}
 
 Ausserdem ist das urspr"unglich $Psi_k^{(0)}$ gegeben.
 
@@ -246,7 +245,7 @@ Wir k"onnen jetzt die St"orung in
 \end{equation}
 einsetzen und bekommen so die neue Wellenfunktion die man in \ref{abb:efeld_psi_gestoert} sehen kann.
 
-\subsubsection{Auswertung Psi}
+\subsection{Auswertung Psi}
 
 \begin{figure}
  \centering
@@ -296,7 +295,7 @@ In diesem Beispiel haben wir die Unterschiede mit sehr starken Parametern gew"ah
 
 
 
-\subsubsection{Auswertung E}
+\subsection{Auswertung E}
 
 In der Grafik \ref{abb:efeld_E_gestoert} lassen wir f"ur die jeweiligen stabilen Zust"ande 0..4 
 den Einfluss der St"orung wachsen.
@@ -308,7 +307,7 @@ w"ahlen.
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Energie_gestoert.pdf}
- \caption{$E$ gest\"ort, x-Achse ist $\varepsilon$, y-Achse ist die gesammte Energie des Systems}
+ \caption{$E$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesammte Energie des Systems}
  \label{abb:efeld_E_gestoert}
 \end{figure}
 
