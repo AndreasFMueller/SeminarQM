@@ -62,6 +62,8 @@ ausserhalb kommt es hingegen nicht vor.
 Wir erweitern jetzt das System mit einer St"orung, indem wir eine elektrische Spannung anlegen.
 Weil das Elektron eine negative Ladung besitzt ver"andert sich seine Wellenfunktion.
 
+%fixme: negatives Elektron
+
 Als Grundlage "ubernehmen wir zwei Funktionen aus dem Skript
 \begin{equation}
 \begin{aligned}
@@ -141,7 +143,7 @@ Mit der zweiten Formel k"onnen wir den Anteil der jeweiligen $\psi$ berechnen.
 Wir berechnen also die Summe aller $\langle\psi_l^{(0)}|\psi_k^{(0)}\rangle|\psi_l^{(0)}\rangle$
 und bekommen so $\psi_k^{(0)}$.
 Die Welle $\psi_k^{(0)}$ hat hierbei keinen Anteil in der St"orung $\psi_k^{(1)}$,
-denn $\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt die Energie der St"orung.
+denn $\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt ja die Energie der St"orung.
 
 
 
@@ -227,14 +229,9 @@ end
 Wir bekommen so einen Vektor mit den Werten f"ur $E_k^{(0)}$
 und eine Matrix 500 mal 1000 f"ur $\psi_k^{(0)}$.
 
+Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
 
-
-
-
-
-
-So k\"onnen wir die aufsummierte Energie mit $E_k^{(0)} + \varepsilon E_k^{(1)}$ berechnen.
-
+Wir k"onnen die Energie mit
 \begin{lstlisting}[style=Matlab]
 ...
 H1 = x;
@@ -243,10 +240,12 @@ for k = 1 : 5
   plot(epsilon, E0(k) + epsilon*E1_k(k))
 end
 \end{lstlisting}
-In Psi befinden $k$ Vektoren mit diskreten Abtastwerten von $\psi^{(0)}$ \"uber die die L\"ange $2l$
-\& mit $Psi(k, :)$ ausgelesen werden.
+berechnen und plotten, wobei dot(a, b) das Skalarprodukt bildet.
 
 Das Resultat sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
+
+
+
 
 Psi
 
@@ -274,17 +273,16 @@ summe = 0;            # Initialisierung des SummenVektors
 for l = 1 : n
   if l ~= k           # Vergleich l != k
     Psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l)) .* Psi(l, :);
-    summe = psi1_l + psi0_l;
+    summe = summe + psi0_l;
   end
 end
 
-summe                 # summe ist nun einen Vektor mit diskreten Abtastwerten
 \end{lstlisting}
+wobei summe nun einen Vektor mit den diskreten Abtastwerten von $Psi_k^(1)$ ist.
 
 Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil bei am Gestammtzustand 
 mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms $E(k)-E(l)$ unter dem Bruchstrich.
 
-% FIXME Satz nicht verstanden
 In diesem Fall addieren wir bei $l=90$ nur $1\%$ der St"orung dazu, bei $l=280$ nur noch $0.1\%$.
 
 Wir k"onnen jetzt die St"orung in 
@@ -296,7 +294,7 @@ Wir k"onnen jetzt die St"orung in
 +
 \varepsilon|\psi_k^{(1)}\rangle
 \end{equation}
-einsetzen und bekommen so die neue Wellenfunktion, welche in \ref{abb:efeld_psi_gestoert} abgebildet sind.
+einsetzen und bekommen so die neue Wellenfunktion die man in \ref{abb:efeld_psi_gestoert} sehen kann.
 
 
 
@@ -324,8 +322,7 @@ einsetzen und bekommen so die neue Wellenfunktion, welche in \ref{abb:efeld_psi_
  \label{abb:efeld_psi_gestoert}
 \end{figure}
 
-In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen 
-dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
+In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
 
 Auf der vertikalen Achse haben wir die Amplituden von $\psi_k$.
 $\psi^2$ entspricht der Wahrscheinlichkeitsdichte das sich das Elektron an dieser Stelle befindet.
