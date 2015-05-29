@@ -8,13 +8,12 @@ In diesem Kapitel erweitern wir das Beispiel des Potentialkastens
 (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten})
 um eine St\"orung.
 
-\section{Formeln der St"orungstheorie}
-Mit der St\"orungstheorie bauen wir ein einfaches Modell
+\section{Grundlagen St"orungstheorie}
+Grunds"atzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell 
 (Abb \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
-mit einer St\"orung aus. 
-Zur \"Ubersicht stellen wir hier nochmals die ben\"otigten Formeln aus den vorherigen Kapitel zusammen.
+mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
 
-% FIXME wichtigste Formeln einsetzen
+Allgemein gilt:
 \[
   f(x, \varepsilon) = f_0(x) + \varepsilon f_1(x) + \varepsilon^2 f_2(x) + \ldots + \varepsilon^n f_n(x)
 \]
@@ -179,6 +178,14 @@ und zum Berechnen von Matrizen eignet.
 Besonders das berechnen von Matrixen und Vektoren wird durch den Syntax der eigenen Programmiersprache erleichtert.
 
 Hier ein paar Befehle welche zum Verst"andnis n"utzlich sind:
+\begin{itemize}
+\item Mit vektor = [ n : delta : m ] wird ein Vektor mit Werten von $n$ bis $m$ definiert die den Abstand delta haben.
+\item Mit vector(:) k"onnen alle Werte aus einem Vektor ausgelesen werden.
+\item vector*vector entspricht einem Skalarprodukt.
+\item vector.*vector entspricht der Elementweisen Multiplikation.
+\end{itemize}
+
+Wie beginnen damit das wir Konstanten und das ungest"orte System bestimmen.
 
 
 
