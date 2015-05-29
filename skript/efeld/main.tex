@@ -101,7 +101,7 @@ dann h"atten zwei Wellen ausserhalb des Kastens die selbe Energie.
 
 Diesen Fall schliessen wir mit den unendlich hohen Barrieren aus.
 
-Wir benutzen also folgende Funktion
+Wir benutzen also folgende Funktionen
 \begin{equation}
 \begin{aligned}
 E_k^{(1)} &=
@@ -128,27 +128,6 @@ E_k^{(1)} &=
 
 
 \subsubsection{Berechnung des Modells mit MATLAB}
-
-
-Wir berechnen in diesem Beispiel die erste N"aherung eines Potentialskastens mit angelegtem elektrischem Feld.
-Dazu erweitern wir das einfache System  $\hat H_0$ 
-(Siehe Abbildung \ref{skript:potentialkasten})
-um $\hat H_1$, welcher die St"orung darstellt.
-\[
-  \hat{H} = \hat H_0 + \varepsilon \hat H_1
-\]
-
-F"ur $\hat H_0$ nehmen wir die Funktion aus dem Skript
-\[
-  \hat H_0 = \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x)
-\]
-wobei wir f"ur das Potential $V_0(x)$ die Gleichung \ref{eq:efeld_v0_kasten} nehmen.
-
-Die Ausgangsgleichung f\"ur $\hat{H}$ lautet somit:
-\[
-  \hat{H} = \varepsilon^0 ( \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) )
-            + \varepsilon^1 x
-\]
 
 Ausserdem ist das urspr"unglich $Psi_k^{(0)}$ gegeben.
 
@@ -259,6 +238,28 @@ einsetzen und bekommen so die neue Wellenfunktion die man in \ref{abb:efeld_psi_
 \subsubsection{Auswertung Psi}
 
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
+
+Subjektiv betrachtet sieht es aus als sei die Wellenfunktion nach links gedr"uckt.
+Das kommt daher dass das Elektron auf der gesamten L"ange die selbe Energie haben muss,
+denn sonst m"uste es sie ja aufnehmen.
+
+Weil wir jetzt aber ein elektrisches Feld angelegt haben, hat das Elektron auf der rechten Seite ein h"oheres Potential.
+
+Wie der Ausgleich funktioniert, kann man in der Schr"odinger gleichung sehen
+\[
+-\frac{\hbar^2}{2m}\Delta\Psi(x) + V(x)\Psi(x)
+=
+E\Psi(x)
+\]
+Weil $E\Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $-\frac{\hbar^2}{2m}\Delta\Psi(x)$.
+
+
+
+
+
+
+
+
 
 In diesem Beispiel haben wir die Unterschiede mit sehr starken Parametern gew"ahlt.
 
