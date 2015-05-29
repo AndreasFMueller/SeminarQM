@@ -1,0 +1,153 @@
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+\let\Tiny=\tiny
+
+\usepackage{xspace}
+\usepackage{xmpmulti}
+\usepackage{array}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{forloop}
+
+\usecolortheme{rose}
+
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamercolor*{title}{fg=white}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{institute}{fg=white}
+\setbeamercolor*{date}{fg=white}
+\setbeamerfont{title}{series=\bfseries,size=\huge}
+\setbeamerfont{author}{series=\bfseries}
+
+\useinnertheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+\title{Quantenkryptographie}
+\author{Tobias Stauber, Benny G\"achter}
+\institute{HSR Rapperswil - Mathematisches Seminar 2015}
+
+\begin{document}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{figures/bg}}
+\frame{
+	\begin{textblock*}{\paperwidth}[0,0](0cm,1cm)
+		\begin{center}
+			\usebeamercolor[fg]{title}
+			\textbf{\huge \inserttitle}
+		\end{center}
+		\usebeamercolor[fg]{normal text}
+	\end{textblock*}
+	\begin{textblock*}{\paperwidth}[0,0](-0.5cm,7.4cm)
+		\flushright
+		\color{white}
+		\itshape \insertauthor
+		\usebeamercolor[fg]{normal text}
+	\end{textblock*}
+	\begin{textblock*}{\paperwidth}[0,1](0.2cm,9.4cm)
+		\flushleft
+ 		\usebeamercolor[fg]{institute}
+		\tiny \itshape \insertinstitute
+		\usebeamercolor[fg]{normal text}
+	\end{textblock*}
+}
+}
+
+\section[Agenda]{}
+ 
+\frame{
+  \frametitle{Agenda}
+  \setcounter{tocdepth}{1}
+  \tableofcontents
+}
+
+\section{Traditionelle Verschl\"usselung}
+\frame{
+	\frametitle{Traditionelle Verschl\"usselung}
+	\begin{itemize}
+		\item Ist symmetrisch oder asymmetrisch
+		\item Gefahr sowohl durch Lauschangriffe als auch MitM
+		\item Sicherheit basiert auf Geheimhaltung der Schl\"uessel und/oder der mathematischen St\"arke des Algorithmus
+	\end{itemize}
+}
+
+\section{No-Cloning}
+\frame{
+	\frametitle{No-Cloning-Theorem}
+
+	% Man kann den Zustand eines Qbits nicht auf ein anderes Qbit kopieren, ohne den Zustand des Ersten zu verändern.\\
+	
+	Annahme: Man kann $ | \varphi \rangle $  und  $| \psi \rangle $ auf  $| k \rangle $ kopieren \\
+	\medskip
+	1. Schritt: Kopiervorgang durch unit\"are Abbildung $U$ beschreiben:\\
+	$ U ( | \varphi \rangle \otimes | k \rangle ) = | \varphi \rangle \otimes | \varphi \rangle $ \\
+	$ U ( | \psi \rangle \otimes | k \rangle ) = | \psi \rangle \otimes | \psi \rangle $ \\
+	\medskip
+	F\"ur $ \langle U ( \varphi \otimes k) |  U ( \psi \otimes k)  \rangle $ gibt es folgende Gleichungen\\
+	$ \langle U ( \varphi \otimes k) |  U ( \psi \otimes k)  \rangle =   \langle  \varphi \otimes \varphi) |   \psi \otimes \psi)  \rangle  $ \\
+	$ \langle U ( \varphi \otimes k) |  U ( \psi \otimes k)  \rangle =   \langle  \varphi \otimes k) |   \psi \otimes k)  \rangle  $ \\
+}
+\frame{
+	\frametitle{No-Cloning-Theorem}
+	Daraus folgt\\
+	$ \langle \varphi | \psi  \rangle \langle \varphi | \psi  \rangle =  \langle \varphi | \psi  \rangle \langle k | k  \rangle  $ \\
+	\medskip
+	Da $\langle k | k  \rangle= 1$ folgt \\
+	$\langle \varphi | \psi  \rangle^2 = \langle \varphi | \psi  \rangle$\\
+	$\langle \varphi|\psi\rangle =\begin{cases}0\\1\end{cases} $\\
+	\medskip
+	%Die beiden Anfangszust\"ande $\psi$ und $\phi$ waren aber zuf\"allig gew\"ahlt. Daraus folgt, dass es zwar m\"oglich ist, einen Zustand zu kopieren, allerdings nicht gezielt und auch nicht immer.
+	Es ist also möglich einen Zustand auf einen gleichen Zustand, oder auf einen Zustand, welcher orthogonal zum ersten Zustand ist zu kopieren.\\
+}
+
+\section{BB84}
+\frame{
+	\frametitle{BB84 Protokoll}
+	\begin{itemize}
+		\item Alice erzeugt ein, zuf\"allig zur Basis $\times$ oder $+$ polarisiertes, Photon.
+		\pause
+		\item Bob misst zuf\"allig mit einem Filter mit Basis $\times$ oder $+$
+		% Die Wahrscheinlichkeit, dass der Filter die richtige Basis hat ist 50 Prozent. W\"ahlt Bob den falschen Filter erh\"alt er ein zuf\"alliges Ergebnis. Das heisst Bob wird zu 75 Prozent das gleiche Ergebnis erhalten wie Alice
+		\pause
+		\item Bob teilt Alice mit, welche Photonen er mit welchem Filter gemessen hat.
+		\pause
+		\item Alice \"uberpr\"uft die \"Ubereinstimmung
+		% Ist sie ~= 62.5 Prozent so wurde das Gespr\"ach belauscht.
+		\pause
+		\item Alice teilt Bob mit, wie sie polarisiert hat.
+		\pause
+		\item So k\"onnen sie die g\"ultigen Keybits ermitteln.
+		% Die gültigen sind die, bei welchen beide diegleiche Basis angewandt haben.
+	\end{itemize}
+}
+\frame{
+	\frametitle{BB84}
+	\begin{center}
+		\begin{tabular}{ l || c | c | c | c | c | c | c | r }
+			\hline
+			A zufalls-Bits & 0 &	1 & 1 & 0 &	1 &	0 &	0 &	1 \\
+			\hline
+			A Basis & $+$ & $+$ & $\times $ & $+$ & $\times $ & $\times $ & $\times $ & $+$\\
+			\hline \pause
+			A Polarisation & $\uparrow$ & $\rightarrow$ & $\searrow$ & $\uparrow$ & $\searrow$ & $\nearrow$ & $\nearrow$ & $\rightarrow$\\
+			\hline \pause
+			B Basis& $+$ & $\times $ & $\times $ & $\times $ & $+$ & $\times $ & $+$ & $+$\\
+			\hline \pause
+			B Polarisation & $\uparrow$ & $\nearrow$ & $\searrow$ & $\nearrow$ & $\rightarrow$ & $\nearrow$ & $\rightarrow$ & $\rightarrow$\\
+			\hline
+			B gemessene Bits & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 \\
+			\hline \pause
+			Basen Diskussion \\
+			\hline
+			Shared Key Bits& 0 & & 1 & & & 0 & & 1\\
+			\hline
+		\end{tabular}
+	\end{center}
+	}
+
+
+\begin{frame}{Fragen?}
+  \pause
+		{\huge Vielen Dank! \pause \\ \medskip :wq}
+
+\end{frame}
+
+\end{document}
