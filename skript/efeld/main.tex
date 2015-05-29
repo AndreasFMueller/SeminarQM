@@ -265,7 +265,8 @@ In Matlab wird das wie folgt implementiert:
 ...
 L = -10^-9;           # Breite des Potentialkastens
 x = -L : delta : L;   # Bereich definieren
-H1 = x;               # Die Stoerung des elektrische Feldes
+H1 = x * -1;          # Die Stoerung des elektrische Feldes mit dem
+                      #   Faktor -1, da das Elekton negativ geladen ist
 n = 1000;             # Anzahl aufsummierte Zustaende
 k = 5;                # Anzahl geplotete Zustaende
 summe = 0;            # Initialisierung des SummenVektors
