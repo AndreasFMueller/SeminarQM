@@ -179,13 +179,57 @@ Besonders das berechnen von Matrixen und Vektoren wird durch den Syntax der eige
 
 Hier ein paar Befehle welche zum Verst"andnis n"utzlich sind:
 \begin{itemize}
-\item Mit vektor = [ n : delta : m ] wird ein Vektor mit Werten von $n$ bis $m$ definiert die den Abstand delta haben.
-\item Mit vector(:) k"onnen alle Werte aus einem Vektor ausgelesen werden.
-\item vector*vector entspricht einem Skalarprodukt.
-\item vector.*vector entspricht der Elementweisen Multiplikation.
+\item Mit
+%\begin{lstlisting}vektor = n : m\end{lstlisting}
+wird von $n$ bis $m$ gez"ahlt
+\item Mit
+%\begin{lstlisting}vektor = n : delta : m\end{lstlisting}
+wird ein Vektor mit Werten von $n$ bis $m$ definiert die den Abstand delta haben.
+\item Mit
+%\begin{lstlisting}vector(:)\end{lstlisting}
+k"onnen alle Werte aus einem Vektor ausgelesen werden.
+\item
+%\begin{lstlisting}vector*vector\end{lstlisting}
+entspricht einem Skalarprodukt.
+\item
+%\begin{lstlisting}vector.*vector\end{lstlisting}
+entspricht der Elementweisen Multiplikation.
 \end{itemize}
 
 Wie beginnen damit das wir Konstanten und das ungest"orte System bestimmen.
+
+Wir definieren f"ur unseren Potenzialkasten eine Breite von $10^-9$ (1nm links und rechts)
+\begin{lstlisting}[style=Matlab]
+L = 10^-9;
+xSteps = 250;
+x = -L : 2*l/xSteps : +L;
+\end{lstlisting}
+und bekommen so den Vektor x.
+
+Um die ungest"orten Zust"ande $\psi_k^{(0)}$ zu bekommen, k"onnen wir die Sinus- und Kosinus-Funktion diskret abtasten.
+
+Wir berechnen ausserdem die Energien $E_k^{(0)}$
+
+\begin{lstlisting}[style=Matlab]
+m = 9.10938291*10^-31;		% Elektronenmasse
+h = 6062606957*10^-34;		% Planck-Konstante
+
+for k = 1 : 1000
+    E(k) = h^2*k^2 / (32*m*L^2);
+    
+    if mod(k, 2) == 0
+        y = sin(k*pi*x/(2*L));
+    else
+        y = cos(k*pi*x/(2*L));
+    end
+    Psi(ln, x) = 1/sqrt(2*L) .* y;
+end
+\end{lstlisting}
+
+Wir bekommen so einen Vektor mit den Werten f"u $E_k^{(0)}$
+und eine Matrix 500 mal 1000 f"ur $\psi_k^{(0)}$.
+
+
 
 
 
