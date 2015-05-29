@@ -244,10 +244,10 @@ berechnen und plotten, wobei dot(a, b) das Skalarprodukt bildet.
 
 Das Resultat sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
 
+Die Implementierung von $\psi_k^{(0)}$ ist wegen $\sum$ etwas schwieriger.
 
-
-
-Psi
+Normaler Weise k"onnte man mit sum(vektor) alle Elemente zusammenz"ahlen.
+Wir wollen aber ja ein Element auslassen.
 
 Um zum Beispiel den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
 $\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle$
@@ -261,27 +261,25 @@ $\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle$
 
 In Matlab wird das wie folgt implementiert:
 \begin{lstlisting}[style=Matlab]
-...
-L = -10^-9;           # Breite des Potentialkastens
-x = -L : delta : L;   # Bereich definieren
 H1 = x;               # Die Stoerung des elektrische Feldes
 n = 1000;             # Anzahl aufsummierte Zustaende
-k = 5;                # Anzahl geplotete Zustaende
+k = 5;                # Der Zustand den wir plotten
 summe = 0;            # Initialisierung des SummenVektors
 
 for l = 1 : n
-  if l ~= k           # Vergleich l != k
-    Psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l)) .* Psi(l, :);
-    summe = summe + psi0_l;
+  if l ~= k           # Vergleich l ungleich k
+    Psi_lk = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l)) .* Psi(l, :);
+    summe = summe + Psi_lk;
   end
 end
 
 \end{lstlisting}
-wobei summe nun einen Vektor mit den diskreten Abtastwerten von $Psi_k^(1)$ ist.
+wobei summe nun ein Vektor mit den diskreten Abtastwerten von $Psi_k^(1)$ ist.
 
-Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil bei am Gestammtzustand 
+Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil am Gesammtzustand 
 mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms $E(k)-E(l)$ unter dem Bruchstrich.
 
+%fixme
 In diesem Fall addieren wir bei $l=90$ nur $1\%$ der St"orung dazu, bei $l=280$ nur noch $0.1\%$.
 
 Wir k"onnen jetzt die St"orung in 
