@@ -52,7 +52,7 @@ end
 gamma = 0;
 epsilon = 5* 10^-4;
 E1_k = zeros(1, length(n));
-H1 = x;
+H1 = x * -1;
 PsiG = zeros(length(n), length(x));
 
 loopCount = 0;
