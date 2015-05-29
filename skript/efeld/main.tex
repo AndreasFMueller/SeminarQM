@@ -261,7 +261,8 @@ $\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle$
 
 In Matlab wird das wie folgt implementiert:
 \begin{lstlisting}[style=Matlab]
-H1 = x;               # Die Stoerung des elektrische Feldes
+H1 = x * -1;          # Die Stoerung des elektrische Feldes mit dem
+                      #   Faktor -1, da das Elekton negativ geladen ist
 n = 1000;             # Anzahl aufsummierte Zustaende
 k = 5;                # Der Zustand den wir plotten
 summe = 0;            # Initialisierung des SummenVektors
@@ -326,27 +327,26 @@ $\psi^2$ entspricht der Wahrscheinlichkeitsdichte das sich das Elektron an diese
 
 Auf der Horizontalen sehen wir die x-Position vom Teilchen im zweidimensionalen Potentialkasten.
 
-<<<<<<< HEAD
-Subjektiv betrachtet sieht es aus als sei die Wellenfunktion nach links gedr"uckt.
-Das kommt daher dass das Elektron auf der gesamten L"ange die selbe Energie haben muss,
-denn sonst m"uste es sie ja auf dem Weg aufnehmen (die Gesamtenergie kann sich hingegen mit der St"orung ver"andern).
-=======
-%FIXME Satz
-Intuitiv nimmt man an, dass die Wellenfunktion nach links gedr"uckt werden wird.
+Intuitiv nimmt man an, dass die Wellenfunktion nach links gedr"uckt werden wird, da die monoton steigende St\"orung
+des elektrischen Felds $x$ im ersten Quadranten ein positives Potential bildet.
+% FIXME Satz korrekt?
+Dieser Eindruck ist dem Fakt geschuldet, dass das Elektron den Berg aus Wiederstand herunterrollen m\"ochte.
 
-Dieser Eindruck ist dem Fakt geschuldet, dass das Elektron auf der gesamten L"ange die selbe Energie haben muss,
-denn sonst m"uste es sie auf dem Weg aufnehmen. Die Gesamtenergie kann sich aber mit der St"orung ver"andern.
->>>>>>> 2475d5cb8fc70d4505477e060ba7db0e1322ded4
+Die Intuition ist tr\"ugerisch. Durch das positive Potential wird das Elektron angezogen \& die
+Wahrscheinlichkeit es weiter Rechts bei einem h\"oheren $l$ anzutreffen steigt.
 
-Weil wir jetzt aber ein elektrisches Feld angelegt haben, hat das Elektron auf der rechten Seite ein h"oheres Potential.
+Die Energie des Elektrons wird durch die St\"orung verschoben.
 
-Wie der Ausgleich funktioniert, kann man in der Schr"odingergleichung 
-$
+% FIXME Formulierung
+Wie der Ausgleich funktioniert, kann man in der Schr"odingergleichung sehen:
+\[
 -\frac{\hbar^2}{2m}\Delta\Psi(x) + V(x)\Psi(x)
 =
-E\Psi(x)
-$ sehen
-Weil $E\Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $-\frac{\hbar^2}{2m}\Delta\Psi(x)$,
+E \Psi(x)
+\]
+
+% FIXME was
+Weil $E \Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $-\frac{\hbar^2}{2m}\Delta\Psi(x)$,
 was einer Abnahme der Frequenz entspricht.
 
 Wir haben in dieser Abbildung das Epsilon sehr stark gew"ahlt,
