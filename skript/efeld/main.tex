@@ -128,6 +128,31 @@ E_k^{(1)} &=
 \end{aligned}
 \end{equation}
 
+Mit der ersten Gleichung k"onnen wir direkt die Energie der St"orung berechnen.
+
+Man berechnet das Skalarprodukt von $\psi_k^{(0)}$ und $x \psi_k^{(0)}$ "uber 
+die gesamte L"ange des Potenzialkastens und erh"alt so die Energie der St"orung $E_k^{(1)}$.
+
+Diese setzt man jetzt in $E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ ein und bekommt so die st"orungsabh"angige Energie.
+
+Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger, weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
+
+Wir setzen daher eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
+Mit der zweiten Formel k"onnen wir den Anteil der jeweiligen $\psi$ berechnen.
+
+
+
+
+
+\begin{equation}
+  \label{eq:efeld_skalar_gleichung}
+  \langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+      =
+  \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\end{equation}
+
+Die Formel \ref{eq:efeld_skalar_gleichung} ergibt einen Skalarwert, welchen Anteil die Welle $l$ an der St"orung $k$ hat.
+
 
 
 
@@ -137,43 +162,6 @@ E_k^{(1)} &=
 
 
 \subsubsection{Berechnung des Modells mit MATLAB}
-
-Ausserdem ist das urspr"unglich $Psi_k^{(0)}$ gegeben.
-
-Um jetzt das gest"orte System zu berechnen brauchen grunds"atzlich nur drei Formeln:
-\begin{equation}
-\begin{aligned}
-k&=l
-&&\Rightarrow&
-E_k^{(1)}
-&=
-\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
-\\
-k&\ne l
-&&\Rightarrow&
-\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
-&=
-\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
-\end{aligned}
-\end{equation}
-
-\begin{equation}
-|\psi_k(\varepsilon)\rangle
-=
-(1+i\varepsilon \gamma)
-\,|\psi_k^{(0)}\rangle
-+
-\varepsilon
-\sum_{k\ne l}
-\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
-\,
-|\psi_l^{(0)}\rangle
-\end{equation}
-
-Mit der ersten Gleichung k"onnen wir direkt die Energie der St"orung berechnen.
-
-Man berechnet das Skalarprodukt $\psi_k^{(0)}$ und $x \psi_k^{(0)}$ "uber 
-die gesamte L"ange des Potenzialkastens und erh"alt so $E_k^{(1)}$.
 
 So k\"onnen wir die aufsummierte Energie mit $E_k^{(0)} + \varepsilon E_k^{(1)}$ berechnen.
 
@@ -190,19 +178,7 @@ In Psi befinden $k$ Vektoren mit diskreten Abtastwerten von $\psi^{(0)}$ \"uber 
 
 Das Resultat sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
 
-Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger, weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
-
-Daher setzen wir eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
-Mit der zweiten und dritten Formel k"onnen wir diesen Anteil berechnen.
-
-\begin{equation}
-  \label{eq:efeld_skalar_gleichung}
-  \langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
-      =
-  \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
-\end{equation}
-
-Die Formel \ref{eq:efeld_skalar_gleichung} ergibt einen Skalarwert, welchen Anteil die Welle $l$ an der St"orung $k$ hat.
+Psi
 
 Um zum Beispiel den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
 $\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle$
@@ -244,6 +220,23 @@ Wir k"onnen jetzt die St"orung in
 \varepsilon|\psi_k^{(1)}\rangle
 \end{equation}
 einsetzen und bekommen so die neue Wellenfunktion die man in \ref{abb:efeld_psi_gestoert} sehen kann.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsubsection{Auswertung Psi}
 
