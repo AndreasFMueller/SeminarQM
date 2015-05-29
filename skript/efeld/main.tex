@@ -265,17 +265,20 @@ In Matlab wird das wie folgt implementiert:
 ...
 L = -10^-9;           # Breite des Potentialkastens
 x = -L : delta : L;   # Bereich definieren
-H1 = x;               
-n = 1000;             # Anzahl aufsummierte Zust\"ande
-k = 5;                # Anzahl geplotete Zust\"ande
-summe = 0;
+H1 = x;               # Die Stoerung des elektrische Feldes
+n = 1000;             # Anzahl aufsummierte Zustaende
+k = 5;                # Anzahl geplotete Zustaende
+summe = 0;            # Initialisierung des SummenVektors
+
 for l = 1 : n
   if l ~= k           # Vergleich l != k
     Psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l)) .* Psi(l, :);
     summe = psi1_l + psi0_l;
   end
 end
-\end{lstlisting} % FIXME Summe erkl\"aren
+
+summe                 # summe ist nun einen Vektor mit diskreten Abtastwerten
+\end{lstlisting}
 
 Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil bei am Gestammtzustand 
 mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms $E(k)-E(l)$ unter dem Bruchstrich.
