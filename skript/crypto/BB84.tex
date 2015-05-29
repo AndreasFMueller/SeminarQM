@@ -4,16 +4,16 @@
   \subsection{Das BB84 Protokoll}
   Das BB84 Protokoll, wurde 1984 von Charles H. Bennett and Gilles Brassard entwickelt,
   was auch den Namen des Protokolls gepr\"agt hat.
-  Es ist das erste Protokoll, welches es erm\"oglichte eine \"Ubertragung \"uber zwei unsichere Kan\"ale zu f\"uhren
+  Es war das erste Protokoll, welches es erm\"oglichte eine \"Ubertragung \"uber zwei unsichere Kan\"ale zu f\"uhren
   und dabei lauschende Dritte eindeutig zu erkennen und dennoch einen sicheren Schl\"ussel zu \"ubertragen.
 
   \subsection{Ohne Lauscher}
   Die verschl\"usselte Kommunikation soll zwischen Alice und Bob stattfinden.
   F\"ur das BB84 Protokoll sind zwei Kommunikationskan\"ale n\"otig:
-  Einen konventionellen, sowie ein optisches Medium.
+  Ein konventioneller, sowie ein Quantenkanal, oft wird daf\"ur ein optisches Medium verwendet.
   Alice beginnt polarisierte Photonen zu erstellen und \"uber das optische Medium an Bob zu senden.
-  Dabei verwendet sie eine der zwei um $45^{\circ}$ verschobenen Basen,
-  welche jeweils zwei um $90^{\circ}$ verschobene Polarisierungen aufweisen und damit die Werte 1 und 0 repr\"asentieren. Siehe Abbildung \ref{crypto:poltab}
+  Dabei verwendet sie eine der zwei um $45^{\circ}$ verdrehte Basen,
+  welche jeweils zwei um $90^{\circ}$ verdrehte Polarisierungen aufweisen und damit die Werte 1 und 0 repr\"asentieren. Siehe Abbildung \ref{crypto:poltab}
 
   \begin{figure}
     \centering
@@ -34,22 +34,22 @@
 
   Bob nimmt die polarisierten Photonen entgegen und w\"ahlt zuf\"allig eine der beiden Basen aus durch welche er das Photon analysiert.
   Dabei w\"ahlt Bob mit
-  $P(richtig)=0.5$
+  $P(\text{richtig})=0.5$
   die richtige Basis.
   W\"ahlt Bob die falsche Basis erh\"alt er mit
-  $P(korrekt|falsch)=0.5$
+  $P(\text{korrekt}|\text{falsch})=0.5$
   das korrekte Resultat, bei
-  $P(korrekt|richtig)=1$
+  $P(\text{korrekt}|\text{richtig})=1$
   f\"ur das korrekte Resultat bei der richtigen Basis ergibt das ein
-  $P(korrekt)=0.75$,
+  $P(\text{korrekt})=0.75$,
   dass ein Photon korrekt gemessen wurde.
   Siehe Abbildung \ref{crypto:BB84KE}
 
-  Nachdem gen\"ugend Photonen um ein ausreichend starken symmetrischen Schl\"ussel zu erzeugen gesendet wurden, findet zwischen Alice und Bob die sogenannte Basendiskussion statt.
-  Dazu sendet Bob die Information, welche Basis er f\"ur welches Photon verwendete, \"uber den konventionellen Kanal zu Alice.
+  Nachdem gen\"ugend Photonen gesendet wurden, um einen ausreichend starken symmetrischen Schl\"ussel zu erzeugen, findet zwischen Alice und Bob die sogenannte Basendiskussion statt.
+  Dazu sendet Bob die Information, welche Basis er f\"ur welches Photon verwendet hat, \"uber den konventionellen Kanal zu Alice.
   Alice meldet ihm, bei bei welchen Photonen er die richtige Basis, also dieselbe, welche auch sie f\"ur die Polarisation verwandte, verwendet hat.
-  Zur \"Uberpr\"ufung ob die Verbindung belauscht wurde f\"uhren Alice und Bob eine statistische Analyse der Verteilung der \"Ubertragungsfehler aus.
-  Wenn die Verbindung nicht manipuliert wurde, ist mit $P(korrekt)=0.75$ zu rechnen.
+  Zur \"Uberpr\"ufung ob die Verbindung belauscht wurde, f\"uhren Alice und Bob eine statistische Analyse der Verteilung der \"Ubertragungsfehler aus.
+  Wenn die Verbindung nicht manipuliert wurde, ist mit $P(\text{korrekt})=0.75$ zu rechnen.
   F\"ur Detail siehe Abbildung \ref{crypto:bittab}
 
   \begin{figure}
@@ -98,12 +98,12 @@
   Danach generiert Eve ein neues Photon, mit derselben Polarisation,
   wie die, welche sie gemessen hat und sendet es weiter zu Bob.
   Da Eve auch nur mit
-  $P(korrekt)=0.75$
+  $P(\text{korrekt})=0.75$
   korrekt misst, kann sie auch nur in
-  $75^{\circ}$
+  $75\%$
   der F\"alle die richtige Polarisation erzeugen.
   Bob kann also nur noch mit
-  $P(korrekt|Eve-korrekt)=0.75*0.75=0.625$
+  $P(\text{korrekt}|\text{Eavesdropper})=0.75\cdot 0.75=0.625$
   die korrekte Polarisation messen.
   Um dies festzustellen tauschen Alice und Bob einige Schl\"usselbits aus.
   Dazu werden sogenannte Decoypulses eingebaut, das sind Bits,
@@ -120,17 +120,17 @@
   mit dem der richtigen Basis zu messen und dadurch einzelne g\"ultige Keybits zu erhalten.
 
   \subsection{No-Cloning}
-  Die Grundlage f\"ur das Funktionieren dieser Methode bietet die Tatsache, dass man nicht beliebige Zust\"ande auf einen anderen kopieren kann. Siehe No-Cloning-Theorem (NCT) \ref{skript:no-cloning-theorem}.
+  Die Grundlage f\"ur das Funktionieren dieser Methode bietet die Tatsache, dass man nicht beliebige Zust\"ande auf einen anderen kopieren kann, siehe No-Cloning-Theorem (NCT \ref{skript:no-cloning-theorem}).
   Eve kann aufgrund des No-Cloning-Theorems die Photonen von Alice nicht einfach kopieren und die Kopie an Bob schicken,
   sondern ist gezwungen anhand ihrer Messungen (von denen h\"ochstens 75\% korrekt sind) selbst Photonen zu polarisieren
   und Bob zu senden, was bei Bob zu einer Trefferrate von weniger als 0.75 f\"uhrt.
-  $P(korrekt|Eavesdropper)<0.75$
+  $P(\text{korrekt}|\text{Eavesdropper})<0.75$
 
   Wenn man also Eve mit $P=0.999999999$ aufsp\"uren will,
-  folgt aus dieser Formel $P_d = 1 - \left(\frac{3}{4}\right)^n$,
+  folgt aus $P_d = 1 - \left(\frac{3}{4}\right)^n$,
   dass 72 Keybits ausgetauscht werden m\"ussen.
 
-  Da es so etwas wie einen Photonen-Kopierer nicht gibt, ist ein Scenario mit undetektierbarem Lauschen nicht m\"oglich. Siehe Abbildung \ref{crypto:BB84Clone}
+  Da es so etwas wie einen Photonen-Kopierer nicht gibt, ist ein Scenario mit undetektierbarem Lauschen nicht m\"oglich (Abbildung \ref{crypto:BB84Clone}).
 
   \begin{figure}
     \centering
