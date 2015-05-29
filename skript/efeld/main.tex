@@ -9,12 +9,12 @@ In diesem Kapitel erweitern wir das Beispiel des Potentialkastens
 um eine St\"orung.
 
 \section{Formeln der St"orungstheorie}
-Mit der St\"orungstheorie bauen ein einfaches Modell
+Mit der St\"orungstheorie bauen wir ein einfaches Modell
 (Abb \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
 mit einer St\"orung aus. 
 Zur \"Ubersicht stellen wir hier nochmals die ben\"otigten Formeln aus den vorherigen Kapitel zusammen.
 
-% FIXME wichtigste Formeln einsetzen
+Allgemein gilt:
 \[
   f(x, \varepsilon) = f_0(x) + \varepsilon f_1(x) + \varepsilon^2 f_2(x) + \ldots + \varepsilon^n f_n(x)
 \]
@@ -32,6 +32,21 @@ urspr"unglichen Funktion $H_0$ um zus"atzliche $\varepsilon^n H_n$ erg"anzen:
 
 
 
+
+
+
+
+
+
+
+
+
+\section{Anwendungen}
+
+\subsection{Potentialkasten mit elektrischem Feld}
+
+\subsubsection{Ausgangslage}
+
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Psi_ungestoert.pdf}
@@ -39,23 +54,7 @@ urspr"unglichen Funktion $H_0$ um zus"atzliche $\varepsilon^n H_n$ erg"anzen:
  \label{abb:efeld_psi_ungestoert}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
-
-
-\section{Potentialkasten mit elektrischem Feld}
-
-\subsection{Ausgangslage}
-
-Bei unserer Anwendung bauen wir auf dem Potentialkasten 
-(Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten}) auf.
+Bei unserer Anwendung bauen wir auf dem Potentialkasten (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten}).
 
 Dabei geht es um ein Elektron welches zwischen zwei Barrieren mit unendlich hohem Potential gefangen ist.
 Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$ bewegen,
@@ -99,7 +98,7 @@ aus welcher wir den Hamilton-Operator berechnen k"onnen:
   \hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V^{(0)}(x) + \varepsilon x
 \]
 
-\subsection{Vorgehensweise}
+\subsubsection{Vorgehensweise}
 Wir berechnen in unserem Beispiel die erste N"aherung.
 
 Im Kapitel \ref{skript:stoerungsloesung1ordnung} wird beschrieben wie man von der Schr"odingergleichung 
@@ -130,52 +129,39 @@ E_k^{(1)} &=
 \end{aligned}
 \end{equation}
 
-
-
-
-
-
-
-
-
-\subsection{Berechnung des Modells mit MATLAB}
-
-Ausserdem ist das urspr"unglich $Psi_k^{(0)}$ gegeben.
-
-Um jetzt das gest"orte System zu berechnen brauchen grunds"atzlich nur drei Formeln:
-\begin{equation}
-\begin{aligned}
-k&=l
-&&\Rightarrow&
-E_k^{(1)}
-&=
-\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
-\\
-k&\ne l
-&&\Rightarrow&
-\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
-&=
-\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
-\end{aligned}
-\end{equation}
-
-\begin{equation}
-|\psi_k(\varepsilon)\rangle
-=
-(1+i\varepsilon \gamma)
-\,|\psi_k^{(0)}\rangle
-+
-\varepsilon
-\sum_{k\ne l}
-\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
-\,
-|\psi_l^{(0)}\rangle
-\end{equation}
-
 Mit der ersten Gleichung k"onnen wir direkt die Energie der St"orung berechnen.
 
-Man berechnet das Skalarprodukt $\psi_k^{(0)}$ und $x \psi_k^{(0)}$ "uber 
-die gesamte L"ange des Potenzialkastens und erh"alt so $E_k^{(1)}$.
+Man berechnet das Skalarprodukt von $\psi_k^{(0)}$ und $x \psi_k^{(0)}$ "uber 
+die gesamte L"ange des Potenzialkastens und erh"alt so die Energie der St"orung $E_k^{(1)}$.
+
+Diese setzt man jetzt in $E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ ein und bekommt so die st"orungsabh"angige Energie.
+
+Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger, weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
+
+Wir setzen daher eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
+Mit der zweiten Formel k"onnen wir den Anteil der jeweiligen $\psi$ berechnen.
+
+
+
+
+\begin{equation}
+  \label{eq:efeld_skalar_gleichung}
+  \langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+      =
+  \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\end{equation}
+
+Die Formel \ref{eq:efeld_skalar_gleichung} ergibt einen Skalarwert, welchen Anteil die Welle $l$ an der St"orung $k$ hat.
+
+
+
+
+
+
+
+
+
+\subsubsection{Berechnung des Modells mit MATLAB}
 
 So k\"onnen wir die aufsummierte Energie mit $E_k^{(0)} + \varepsilon E_k^{(1)}$ berechnen.
 
@@ -192,19 +178,7 @@ In Psi befinden $k$ Vektoren mit diskreten Abtastwerten von $\psi^{(0)}$ \"uber 
 
 Das Resultat sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
 
-Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger, weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
-
-Daher setzen wir eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
-Mit der zweiten und dritten Formel k"onnen wir diesen Anteil berechnen.
-
-\begin{equation}
-  \label{eq:efeld_skalar_gleichung}
-  \langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
-      =
-  \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
-\end{equation}
-
-Die Formel \ref{eq:efeld_skalar_gleichung} ergibt einen Skalarwert, welchen Anteil die Welle $l$ an der St"orung $k$ hat.
+Psi
 
 Um zum Beispiel den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
 $\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle$
@@ -247,7 +221,24 @@ Wir k"onnen jetzt die St"orung in
 \end{equation}
 einsetzen und bekommen so die neue Wellenfunktion die man in \ref{abb:efeld_psi_gestoert} sehen kann.
 
-\subsection{Auswertung Psi}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Auswertung Psi}
 
 \begin{figure}
  \centering
@@ -256,13 +247,10 @@ einsetzen und bekommen so die neue Wellenfunktion die man in \ref{abb:efeld_psi_
  \label{abb:efeld_psi_gestoert}
 \end{figure}
 
-In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) 
-\& der ersten N"aherung (rot).
-
+In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
 
 Auf der vertikalen Achse haben wir die Amplituden von $\psi_k$.
 $\psi^2$ entspricht der Wahrscheinlichkeitsdichte das sich das Elektron an dieser Stelle befindet.
-Die Werte der Kurven pendeln um Null \& wurden nur der Lesbarkeit halber getrennt.
 
 Auf der Horizontalen sehen wir die x-Position vom Teilchen im zweidimensionalen Potentialkasten.
 
@@ -281,23 +269,12 @@ $ sehen
 Weil $E\Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $-\frac{\hbar^2}{2m}\Delta\Psi(x)$,
 was einer Abnahme der Frequenz entspricht.
 
-
-
 Wir haben in dieser Abbildung das Epsilon sehr stark gew"ahlt,
 weil bei einem schwachen Epsilon die "Anderungen nur schlecht sichtbar sind.
 
 
 
-
-
-
-
-In diesem Beispiel haben wir die Unterschiede mit sehr starken Parametern gew"ahlt.
-
-
-
-
-\subsection{Auswertung E}
+\subsubsection{Auswertung E}
 
 In der Grafik \ref{abb:efeld_E_gestoert} lassen wir f"ur die jeweiligen stabilen Zust"ande 0..4 
 den Einfluss der St"orung wachsen.
@@ -309,7 +286,7 @@ w"ahlen.
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Energie_gestoert.pdf}
- \caption{$E$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesammte Energie des Systems}
+ \caption{$E$ gest\"ort, x-Achse ist $\varepsilon$, y-Achse ist die gesammte Energie des Systems}
  \label{abb:efeld_E_gestoert}
 \end{figure}
 
