@@ -32,14 +32,6 @@ urspr"unglichen Funktion $H_0$ um zus"atzliche $\varepsilon^n H_n$ erg"anzen:
 
 
 
-
-
-
-
-
-
-
-
 \section{Anwendungen}
 
 \subsection{Potentialkasten mit elektrischem Feld}
@@ -61,8 +53,6 @@ ausserhalb kommt es hingegen nicht vor.
 
 Wir erweitern jetzt das System mit einer St"orung, indem wir eine elektrische Spannung anlegen.
 Weil das Elektron eine negative Ladung besitzt ver"andert sich seine Wellenfunktion.
-
-%fixme: negatives Elektron
 
 Als Grundlage "ubernehmen wir zwei Funktionen aus dem Skript
 \begin{equation}
@@ -163,10 +153,10 @@ Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 \begin{center}
 \index{Matlab!Syntax}
 \begin{tabular}{ll}
-\verb|vektor = n : m| & ein Vektor wird von $n$ bis $m$ gezählt.\\
-\verb|vektor = n : delta : m| & ein Vektor mit Werten von $n$ bis $m$ definiert die den Abstand $delta$ haben.\\
-\verb|vector(:)| & alle Werte aus einem Vektor ausgelesen werden. \\
-\verb|vector * vector| & entspricht einem Skalarprodukt \\
+\verb|vektor = n : m| & ein Vektor wird von $n$ bis $m$ gez"ahlt.\\
+\verb|vektor = n : delta : m| & ein Vektor mit Werten von $n$ bis $m$ die voneinander den Abstand $delta$ haben.\\
+\verb|vector(:)| & alle Werte aus einem Vektor werden ausgelesen. \\
+\verb|vector * vector| & entspricht einem Vektorprodukt \\
 \verb|vector .* vector| & multipliziere die Elemente der Vektoren
 \end{tabular}
 \end{center}
@@ -246,8 +236,8 @@ $\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle$
 In Matlab wird das wie folgt implementiert:
 \begin{lstlisting}[style=Matlab]
 H1 = x * -1;          # Die Stoerung des elektrische Feldes mit dem
-                      #   Faktor -1, da das Elekton negativ geladen ist
-n = 1000;             # Anzahl aufsummierte Zustaende
+                      #   Faktor -1, da das Elektron negativ geladen ist
+n = 1000;             # Anzahl aufsummierter Zustaende
 k = 5;                # Der Zustand den wir plotten
 summe = 0;            # Initialisierung des SummenVektors
 
@@ -280,19 +270,6 @@ einsetzen und bekommen so die neue Wellenfunktion in Abbildung \ref{abb:efeld_ps
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 \subsubsection{Auswertung Psi}
 
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
@@ -302,15 +279,17 @@ $\psi^2$ entspricht der Wahrscheinlichkeitsdichte das sich das Elektron an diese
 
 Auf der Horizontalen sehen wir die x-Position vom Teilchen im eindimensionalen Potentialkasten.
 
-Intuitiv nimmt man an, dass die Wellenfunktion nach links gedr"uckt werden wird, da die monoton steigende St\"orung
-des elektrischen Felds $x$ im ersten Quadranten ein positives Potential bildet.
-% FIXME Satz korrekt?
-Dieser Eindruck ist dem Fakt geschuldet, dass das Elektron den Berg aus Wiederstand herunterrollen m\"ochte.
+Intuitiv nimmt man an, dass die Wellenfunktion nach links gedr"uckt werden wird, da das
+elektrische Feld $x$ im ersten Quadranten ein positives Potential bildet
+und deshalb das Elektron herunterrollen m\"ochte.
 
-Die Intuition ist tr\"ugerisch. Durch die positive Spannung wird das Elektron angezogen \& die
-Wahrscheinlichkeit es weiter Rechts bei einem h\"oheren $l$ anzutreffen steigt.
+Allerdings wird durch die positive Spannung das Elektron angezogen \& die
+Wahrscheinlichkeit es weiter Rechts anzutreffen steigt.
 
-Die Energie des Elektrons wird durch die St\"orung verschoben.
+Da wir links eine negative Spannung haben, gibt es dort eine h"ohere Potentielle Energie.
+Das Elektron gleicht das aus indem es die Energie umwandelt,
+"ahnlich wie bei einem Pendel.
+
 Der Ausgleich wird in der Schr"odingergleichung beschrieben:
 \[
 -\frac{\hbar^2}{2m}\Delta\Psi(x) + V(x)\Psi(x)
@@ -320,10 +299,6 @@ E \Psi(x)
 
 Weil $E \Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $-\frac{\hbar^2}{2m}\Delta\Psi(x)$,
 was einer Abnahme der Frequenz entspricht.
-
-% FIXME evt. L\"oschen?
-Wir haben in dieser Abbildung das Epsilon sehr stark gew"ahlt,
-weil bei einem schwachen Epsilon die "Anderungen nur schlecht sichtbar sind.
 
 \begin{figure}
  \centering
