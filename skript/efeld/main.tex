@@ -211,15 +211,15 @@ Um die ungest"orten Zust"ande $\psi_k^{(0)}$ zu bekommen, k"onnen wir die Sinus-
 Wir berechnen ausserdem die Energien $E_k^{(0)}$
 
 \begin{lstlisting}[style=Matlab]
-m = 9.10938291*10^-31;		% Elektronenmasse
-h = 6062606957*10^-34;		% Planck-Konstante
+m = 9.10938291*10^-31;             # Elektronenmasse
+h = 6062606957*10^-34;             # Planck-Konstante
 
 for k = 1 : 1000
     E(k) = h^2*k^2 / (32*m*L^2);
     
-    if mod(k, 2) == 0
+    if mod(k, 2) == 0              # Gerade k
         y = sin(k*pi*x/(2*L));
-    else
+    else                           # Ungerade k
         y = cos(k*pi*x/(2*L));
     end
     Psi(ln, x) = 1/sqrt(2*L) .* y;
