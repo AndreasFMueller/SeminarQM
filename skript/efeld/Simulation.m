@@ -48,14 +48,18 @@ for ln = n
     Psi(ln,1:length(x)) = 1/sqrt(l) .* y;
 end
 
+
+
+
+
+
 %-----Verarbeitung gestört-----
 gamma = 0;
 epsilon = 5* 10^-4;
 E1_k = zeros(1, length(n));
-H1 = x;
+H1 = x * -1;
 PsiG = zeros(length(n), length(x));
 
-loopCount = 0;
 for ln = n
 	E1_k(ln) = dot(Psi(ln, :), H1.*Psi(ln, :));
 	
@@ -67,13 +71,17 @@ for ln = n
 %			psi0_l = sum(~Psi(l, :).*H1.*Psi(k, :).*delta) / (E(k)-E(l));
 			psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l));
 			psi1_l = psi1_l + psi0_l .* Psi(l, :);
-			loopCount = loopCount + 1;
 		end
 	end
 	
 	PsiG(ln, 1:length(x)) = (1+1i*epsilon*gamma).*Psi(ln, 1:length(x)) ...
 													+ epsilon.*psi1_l;
 end
+
+
+
+
+
 
 %-----Plot grafik 1: Psi(x)-----
 clf('reset')			% clear figure
