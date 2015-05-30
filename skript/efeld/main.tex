@@ -13,20 +13,22 @@ Grunds"atzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell
 (Abb \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
 mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
 
-Allgemein gilt:
+F"ur die erste N"aherung gilt:
 \[
-  f(x, \varepsilon) = f_0(x) + \varepsilon f_1(x) + \varepsilon^2 f_2(x) + \ldots + \varepsilon^n f_n(x)
+  f(x, \varepsilon) = f_0(x) + \varepsilon f_1(x)
 \]
-Dabei ist $f_0(x)$ die urspr\"ungliche Funktion und $f_n(x)$ die $n$-te  N"aherung der St"orung.
+Dabei ist $f_0(x)$ die urspr\"ungliche Funktion und $f_1(x)$ die erste  N"aherung der St"orung.
 Mit $\varepsilon$ wird die St"orung gesteuert. Dabei sollte $\varepsilon$ nicht zu gross gew"ahlt werden, 
 da die N"aherung sonst ungenau wird. 
-
 Setzen wir $\varepsilon = 0$, k\"onnen wir die St"orung dynamisch abschalten.
 
+Ein grosser Vorteil dabei ist dass wir f"ur die erste N"aherung der St"orung nur einen Term hinzuf"ugen m"ussen.
+Dieser kann ausserdem h"aufig aus dem Grundzustand abgeleitet werden.
+
 In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den Hamilton-Operator der 
-urspr"unglichen Funktion $H_0$ um zus"atzliche $\varepsilon^n H_n$ erg"anzen:
+urspr"unglichen Funktion $H_0$ um $\varepsilon H_n$ erg"anzen:
 \[
-  H = \varepsilon^0 H_0 + \varepsilon^1 H_1 + \varepsilon^2 H_2 + \ldots + \varepsilon^n \hat H_n
+  H = H_0 + \varepsilon H_1
 \]
 
 
@@ -57,9 +59,9 @@ Weil das Elektron eine negative Ladung besitzt ver"andert sich seine Wellenfunkt
 Als Grundlage "ubernehmen wir zwei Funktionen aus dem Skript
 \begin{equation}
 \begin{aligned}
-H^{(0)}&=\frac1{2m}p^2+V^{(0)}(x)
+H_0&=\frac1{2m}p^2+V_0(x)
 \\
-V^{(0)}(x)&=
+V_(x)&=
   \begin{cases}
     0       & \qquad |x|<l\\
     \infty  & \qquad\text{sonst}
@@ -67,9 +69,9 @@ V^{(0)}(x)&=
 \end{aligned}
 \end{equation}
 
-und erweitern sie mit der St"orung $V^{(1)}$, welche wir als lineares Feld definieren:
+und erweitern sie mit der St"orung $V_1$, welche wir als lineares Feld definieren:
 \begin{equation}
-  V^{(1)}(x) = a x + b
+  V_1(x) = a x + b
 \end{equation}
 
 Die St"orung kann noch weiter vereinfacht werden:
@@ -79,12 +81,12 @@ und weil die Barrieren unendlich hoch sind, k"onnen wir $b = 0$ setzen.
 
 Wenn wir jetzt die St"orung einsetzen, bekommen wir die neue Hamilton-Funktion
 \[
-  H=\frac1{2m}p^2+V^{(0)}(x)
+  H=\frac1{2m}p^2+V_0(x)
     + \varepsilon x.
 \]
 aus welcher wir den Hamilton-Operator berechnen k"onnen:
 \[
-  \hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V^{(0)}(x) + \varepsilon x
+  \hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) + \varepsilon x
 \]
 
 \subsubsection{Vorgehensweise}
@@ -282,7 +284,7 @@ der mit einem korrektem Wert verwechselt werden kann.
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
 
 Auf der vertikalen Achse haben wir die Amplituden von $\psi_k$.
-$\psi^2$ entspricht der Wahrscheinlichkeitsdichte dass sich das Elektron an dieser Stelle befindet.
+Die Funktion $\psi^2$ entspricht der Wahrscheinlichkeitsdichte dass sich das Elektron an dieser Stelle befindet.
 
 Auf der Horizontalen sehen wir die x-Position vom Teilchen im eindimensionalen Potentialkasten.
 
@@ -320,7 +322,7 @@ was einer Abnahme der Frequenz entspricht.
 
 Wie wir in der Berechnung festgestellt haben ver"andert sich der Energiezustand nicht.
 
-H"atten wir eine Energie in der St"orung w"urde sie gegen oben immer schw"acher werden, weil $E_k^(0)$ immer gr"osser wird.
+H"atten wir eine Energie in der St"orung w"urde sie gegen oben immer schw"acher werden, weil $E_k^{(0)}$ immer gr"osser wird.
 
 \begin{figure}
  \centering
