@@ -7,3 +7,48 @@
 
   \subsection{Der Schl\"usselaustausch mit E91}
   Das Protokoll beruht auf der Nutzung der Eigenschaften von Verschr\"ankten Quanten \cite{qc:verschraenkung}.
+  Die beiden ausschlaggebenden Eigenschaften sind dabei:
+
+  \begin{enumerate}
+      \item Bei ``Singulett'' verschr\"ankten Quanten ist der Zustand nach dem Messen des Ersten genau bestimmt.
+        Es nimmt den Komplement\"arzustand zum Gemessenen an.
+        Siehe Abbildung \ref{crypto:tangtab}
+      \item Jegliche Manipulation an einem der verschr\"ankten Quanten \"andert die Zust\"ande der anderen.
+        Dadurch kann eine Manipulation eines Eavesdropper festgestellt werden.
+        Dies gilt auch, wenn mehr als zwei Quanten verschr\"ankt wurden.
+  \end{enumerate}
+
+  \begin{figure}
+  \centering
+    \begin{tabular}{ l || c | c | c | c | c | c | c | r }
+      \hline
+      Erzeugen der versch\"ankten Photonen \\
+      \hline
+      A's gew\"ahlte Basen & $+$ & $+$ & $\times $ & $+$ & $\times $ & $\times $ & $\times $ & $+$ \\
+      \hline
+      A's gemessene Polarisation & $\uparrow$ & $\rightarrow$ & $\searrow$ & $\uparrow$ & $\searrow$ &     $\nearrow$ & $\nearrow$ & $\rightarrow$ \\
+      \hline
+      A's gemessene Bits & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 \\
+      \hline
+      B's gew\"ahlte Basen & $+$ & $+$ & $\times $ & $\times $ & $+$ & $\times $ & $+$ & $+$ \\
+      \hline
+      B's gemessene Polarisation & $\rightarrow$ & $\uparrow$ & $\nearrow$ & $\nearrow$ & $\rightarrow$     & $\searrow$ & $\rightarrow$ & $\uparrow$ \\
+      \hline
+      B's gemessene Bits & 1 & 0 & 0 & ? & ? & 1 & ? & 0 \\
+      \hline
+      Basen Diskussion \\
+      \hline
+      Alice's Key Bits & 0 & 1 & 1 & & & 0 & & 1 \\
+      Alternative Key Bits & 1 & 0 & 0 & & & 1 & & 0 \\
+      \hline
+    \end{tabular}
+    \caption{Die Emittlung des Schl\"ussels mit E91 \label{crypto:tangtab}}
+  \end{figure}
+
+  Dabei verwendet es ebenfalls einen konventionellen und einen Quantenkommunikationskanal.
+  Dabei k\"onnen ebenfalls beide unsicher sein, dabei darf der Konventionelle auch unauthentisiert sein.
+
+
+
+  Nach der Basendiskussion
+
