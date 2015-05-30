@@ -124,7 +124,12 @@ Mit der ersten Gleichung k"onnen wir direkt die Energie der St"orung berechnen.
 Man berechnet das Skalarprodukt von $\psi_k^{(0)}$ und $x \psi_k^{(0)}$ "uber 
 die gesamte L"ange des Potenzialkastens und erh"alt so die Energie der St"orung $E_k^{(1)}$.
 
-Diese setzt man jetzt in $E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ ein und bekommt so die st"orungsabh"angige Energie.
+In unserem Fall wird jedoch $E_k^{(0)}$ gleich null sein.
+Das kommt daher, dass die Funktion der St"orung gerade ist.
+Die Energie die dazu gegeben wird gleicht sich also im Mittel aus.
+
+Wir k"onnen die Energie nichtsdestotrotz in $E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ einsetzen
+und bekommen so die st"orungsabh"angige Energie.
 
 Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger, weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
 
@@ -267,7 +272,9 @@ Wir k"onnen jetzt die St"orung in
 \end{equation}
 einsetzen und bekommen so die neue Wellenfunktion in Abbildung \ref{abb:efeld_psi_gestoert}.
 
-
+Das Resultat ist in diesem Fall mit Vorsicht zu geniessen.
+Weil wir hier mit diskreten Werten arbeiten, entsteht beim Skalarprodukt ein Fehler von ca. $8\dot 10^-15$,
+der mit einem korrektem Wert verwechselt werden kann.
 
 
 \subsubsection{Auswertung Psi}
@@ -275,7 +282,7 @@ einsetzen und bekommen so die neue Wellenfunktion in Abbildung \ref{abb:efeld_ps
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
 
 Auf der vertikalen Achse haben wir die Amplituden von $\psi_k$.
-$\psi^2$ entspricht der Wahrscheinlichkeitsdichte das sich das Elektron an dieser Stelle befindet.
+$\psi^2$ entspricht der Wahrscheinlichkeitsdichte dass sich das Elektron an dieser Stelle befindet.
 
 Auf der Horizontalen sehen wir die x-Position vom Teilchen im eindimensionalen Potentialkasten.
 
@@ -311,18 +318,9 @@ was einer Abnahme der Frequenz entspricht.
 
 \subsubsection{Auswertung E}
 
-In der Grafik \ref{abb:efeld_E_gestoert} lassen wir f"ur die jeweiligen stabilen Zust"ande 1..5 
-den Einfluss der St"orung wachsen.
+Wie wir in der Berechnung festgestellt haben ver"andert sich der Energiezustand nicht.
 
-Wie man sehen kann, steigt oder sinkt die Energie je nach Zustand.
-Das kommt vom Skalarprodukt $\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ (Gleichung \ref{eq:efeld_ESkalarprodukt}),
-welche je nach $\psi$ gr"osser oder kleiner werden kann.
-
-Die St"orung wird ausserdem gegen oben immer schw"acher, weil $E_k^(0)$ immer gr"osser wird.
-
-Da das elektrische Feld jedoch nur einen sehr kleinen Einfluss auf die gesamte Energie des 
-Elektrons hat, mussten wir um die Effekte der 1. N"aherung zu zeigen ein sehr grosses $\varepsilon$
-w"ahlen.
+H"atten wir eine Energie in der St"orung w"urde sie gegen oben immer schw"acher werden, weil $E_k^(0)$ immer gr"osser wird.
 
 \begin{figure}
  \centering

@@ -115,7 +115,7 @@ print('Psi_gestoert', '-dpdf', '-noui')
 %-----Plot grafik 2: E(n, a)-----
 figure
 hold on;
-epsilon = 3 *10^12
+%epsilon = 3 *10^12
 xEpsilon = 0 : epsilon / xSteps : epsilon;
 for ln = nPlot		% Energie Plot
 	plot(xEpsilon, E(ln) + xEpsilon*E1_k(ln))		% Psis
