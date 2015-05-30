@@ -55,7 +55,7 @@ numeric V;
 V := 50;
 pickup pencircle scaled 1pt;
 draw (-100,V)--(0,V)--(0,0)--(100,0) withcolor red;
-label.top(btex $V_0$ etex, (-50,V)) withcolor red;
+label.top(btex $V_e(x,t)$ etex, (-50,V)) withcolor red;
 
 endfig;
 
