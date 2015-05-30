@@ -26,7 +26,7 @@ Ein grosser Vorteil dabei ist dass wir f"ur die erste N"aherung der St"orung nur
 Dieser kann ausserdem h"aufig aus dem Grundzustand abgeleitet werden.
 
 In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den Hamilton-Operator der 
-urspr"unglichen Funktion $H_0$ um $\varepsilon H_n$ erg"anzen:
+urspr"unglichen Funktion $H_0$ um $\varepsilon H_1$ erg"anzen:
 \[
   H = H_0 + \varepsilon H_1
 \]
@@ -47,7 +47,7 @@ urspr"unglichen Funktion $H_0$ um $\varepsilon H_n$ erg"anzen:
  \label{abb:efeld_psi_ungestoert}
 \end{figure}
 
-Bei unserer Anwendung bauen wir auf dem Potentialkasten (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten}).
+Bei unserer Anwendung bauen wir auf dem Potentialkasten (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten}) auf.
 
 Dabei geht es um ein Elektron welches zwischen zwei Barrieren mit unendlich hohem Potential gefangen ist.
 Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$ bewegen,
@@ -61,7 +61,7 @@ Als Grundlage "ubernehmen wir zwei Funktionen aus dem Skript
 \begin{aligned}
 H_0&=\frac1{2m}p^2+V_0(x)
 \\
-V_(x)&=
+V_0(x)&=
   \begin{cases}
     0       & \qquad |x|<l\\
     \infty  & \qquad\text{sonst}
@@ -73,11 +73,12 @@ und erweitern sie mit der St"orung $V_1$, welche wir als lineares Feld definiere
 \begin{equation}
   V_1(x) = a x + b
 \end{equation}
-
 Die St"orung kann noch weiter vereinfacht werden:
+Weil die Barrieren unendlich hoch sind, k"onnen wir $b = 0$ setzen,
+und da wir $a$ bereits durch $\varepsilon$ beschreiben, k\"onnen wir mit $a = 1$ vereinfachen.
+$\varepsilon$ entspricht somit dem Elektrischem Feld das wir anlegen.
 
-Da wir $a$ bereits durch $\varepsilon$ beschreiben, k\"onnen wir mit $a = 1$ vereinfachen,
-und weil die Barrieren unendlich hoch sind, k"onnen wir $b = 0$ setzen.
+%fixme: feld zu spannung
 
 Wenn wir jetzt die St"orung einsetzen, bekommen wir die neue Hamilton-Funktion
 \[
@@ -102,7 +103,7 @@ dann h"atten zwei Wellen ausserhalb des Kastens die selbe Energie.
 
 Diesen Fall schliessen wir mit den unendlich hohen Barrieren aus.
 
-Wir benutzen also folgende Funktionen
+Wir benutzen also folgende Gleichungen
 \begin{equation}
 \begin{aligned}
 E_k^{(1)} &=
