@@ -5,10 +5,10 @@
 
 \index{Supraleitung}
 %----------------------------Einleitung------------------------
-In diesem Kapitel m"ochten wir die Grundlagen f"ur das das Kapitel \ref{chapter:bose} und
+In diesem Kapitel m"ochten wir die Grundlagen f"ur das Kapitel \ref{chapter:bose} und
 die Supraleitung erarbeiten. Im Kapitel \ref{chapter:bose} werden Elektronen ben"otigt,
 die sich wie Bosonen verhalten. Bosonen haben im Gegensatz zu den Elektronen
-keinen Spin. Um bei den Elektronen den Spin zu verbergen, eignen sich zwei Elektronen als Paar mit
+geradzahligen Spin. Um bei den Elektronen den Spin zu verbergen, eignen sich zwei Elektronen als Paar mit
 antiparallelem Spin.
 
 Ausgehend von der bekannten abstossenden coulombschen Wechselwirkung zwischen Elektronen,
@@ -30,49 +30,14 @@ F = \frac{Q_1\cdot Q_2}{4\pi \varepsilon r^2}
 \label{supraleitung:Coulomb}
 \end{equation}
 Wir sind also auf der Suche nach einer anziehenden Kraft.
-Um der Vorzeichenkonvention zu entsprechen muss die Kraft negativ sein.
+Da die abstossende Kraft positiv ist, muss die anziehende Kraft negativ sein.
 
 Zwischen den Elektronen und dem Gitter ist eine Wechselwirkung vorhanden.
 Die coulombsche Wechselwirkung zwischen Elektronen und Gitter hat jedoch keinen Einfluss auf die
 Elektron-Elektron Wechselwirkung.
 Sie wird deshalb nachfolgend nicht ber"ucksichtigt.
 Die f"ur uns interessante Elektron-Elektron Wechselwirkung funktioniert "uber die sogenannten Phononen.
-Wie diese Wechselwirkung im Allgemeinen funktioniert und was Phononen sind wird nachfolgend erl"autert.
-
-In Abbildung \ref{supraleitung:Gitter} a) betrachten wir einen Ausschnitt der Gitterstruktur eines K"orpers.
-Fliegt nun ein Elektron in diesen Gitter-Ausschnitt hinein, so wird das Gitter durch das
-elektrische Feld des Elektrons deformiert.
-Das Elektron "andert seine Flugbahn.
-Dargestellt ist dies in Abbildung \ref{supraleitung:Gitter} b).
-Das deformierte Gitter bewegt sich nun weiter als Schwingung.
-In Abbildung \ref{supraleitung:Gitter} c) ist diese Schwingung dargestellt und mit $q$ bezeichnet.
-Wenn nun ein weiteres Elektron ins Gitter fliegt und auf die Schwingung trifft,
-wird dieses von der Schwingung im Gitter beeinflusst, ersichtlich in Abbildung \ref{supraleitung:Gitter} d).
-Die Schwingung im Gitter wird wieder vernichtet und das zweite Elektron ver"andert
-ebenfalls seine Flugbahn.
-Es wurde also ein Impuls $q$ vom Elektron $k'$ zum Elektron $k$ "uber das Gitter transportiert. 
-
-Die Schwingung $q$ welche vom Elektron $k'$ zum Elektron $k$ \glqq transportiert\grqq~wurde
-entspricht einem harmonischen Oszillator.
-Nach Kapitel \ref{chapter:harmonischeroszillator} bedeutet das, dass die m"oglichen Frequenzen,
-und die damit enthaltenen Energieniveaus, quantisiert sind.
-Wenn diese Energie quantisiert ist, kann man die Energie der Einfachheit halber als Teilchen betrachten.
-Diese neu eingef"uhrten Teilchen werden Phononen \index{Phonon} genannt.
-
-\index{Feynman Diagramm}
-Um die Darstellung der Wechselwirkung zu vereinfachen, zeichnen wir nun dieses Phonon
-als zickzack Vektor zwischen Elektron $k'$ und $k$. Diese Darstellung nach Feynman
-ist in Abbildung \ref{supraleitung:FeynmanDiagram1} auf der linken Seite ersichtlich.
-Dieser Prozess kann nat"urlich auch umgekehrt vonstattengehen.
-Zuerst wird ein Phonon aufgenommen, danach von einem zweiten Elektron, ein Phonon abgegeben.
-Dieser Vorgang ist auf der rechten Seite in Abbildung \ref{supraleitung:FeynmanDiagram1} ersichtlich.
-
-\begin{figure} %Feynman Diagram
-\centering
-\input{supraleitung/diagram.tex}
-\caption{Entstehung von Cooper-Paaren und Supraleitung nach Feynman \cite{supraleitung:feynman}
-\label{supraleitung:FeynmanDiagram1}}
-\end{figure}
+Wie diese Wechselwirkung im Allgemeinen funktioniert und was Phononen sind, wird nachfolgend erl"autert.
 
 \begin{figure}
 \centering
@@ -98,7 +63,7 @@ Dieser Vorgang ist auf der rechten Seite in Abbildung \ref{supraleitung:FeynmanD
 	\includegraphics[width=0.9\textwidth]{supraleitung/gitter-4.pdf}
     \end{minipage}
     \\
-    c)\quad Gitter mit Schwingung q
+    c)\quad Gitter mit Welle $q$
     &
     d)\quad Elektron fliegt ins Gitter und wird beeinflusst
     \\
@@ -107,13 +72,51 @@ Dieser Vorgang ist auf der rechten Seite in Abbildung \ref{supraleitung:FeynmanD
   \label{supraleitung:Gitter}}
 \end{figure}
 
+In Abbildung \ref{supraleitung:Gitter} a) betrachten wir einen Ausschnitt der Gitterstruktur eines K"orpers.
+Fliegt nun ein Elektron in diesen Gitter-Ausschnitt hinein, so wird das Gitter durch das
+elektrische Feld des Elektrons deformiert.
+Das Elektron "andert seine Flugbahn.
+Dargestellt ist dies in Abbildung \ref{supraleitung:Gitter} b).
+Das deformierte Gitter bewegt sich nun weiter als Welle.
+In Abbildung \ref{supraleitung:Gitter} c) ist diese Welle dargestellt und mit $q$ bezeichnet.
+Wenn nun ein weiteres Elektron in diesen Gitterausschnitt fliegt und auf die Welle trifft,
+wird das Elektron von der Welle im Gitter beeinflusst, ersichtlich in Abbildung \ref{supraleitung:Gitter} d).
+Die Welle im Gitter wird wieder vernichtet und das zweite Elektron ver"andert
+ebenfalls seine Flugbahn.
+Es wurde also ein Impuls $q$ vom Elektron $k'$ zum Elektron $k$ "uber das Gitter transportiert. 
+
+Die Welle $q$ welche vom Elektron $k'$ zum Elektron $k$ \glqq transportiert\grqq~wurde
+entspricht einem harmonischen Oszillator.
+Nach Kapitel \ref{chapter:harmonischeroszillator} bedeutet das, dass die m"oglichen Frequenzen
+und die damit enthaltenen Energieniveaus, quantisiert sind.
+Wenn diese Energieniveaus quantisiert sind, kann man die Energiequanten als Teilchen betrachten.
+Diese neu eingef"uhrten Teilchen werden Phononen \index{Phonon} genannt.
+
+\index{Feynman Diagramm}
+Um die Darstellung der Wechselwirkung zu vereinfachen, zeichnen wir nun dieses Phonon
+als zickzack Vektor zwischen Elektron $k'$ und $k$. Diese Darstellung nach Feynman
+ist in Abbildung \ref{supraleitung:FeynmanDiagram1} auf der linken Seite ersichtlich.
+Dieser Prozess kann nat"urlich auch umgekehrt vonstattengehen.
+Zuerst wird ein Phonon aufgenommen, danach von einem zweiten Elektron, ein Phonon abgegeben.
+Dieser Vorgang ist auf der rechten Seite in Abbildung \ref{supraleitung:FeynmanDiagram1} ersichtlich.
+
+\begin{figure} %Feynman Diagram
+\centering
+\input{supraleitung/diagram.tex}
+\caption{Schematische Darstellung der durch ein Phonon vermittelten
+Wechselwirkung zwischen zwei Elektronen durch ein Feynman Diagramm.
+\cite{supraleitung:feynman}
+(Zeitachse vertikal)
+\label{supraleitung:FeynmanDiagram1}}
+\end{figure}
+
 Diese Wechselwirkung zwischen den Elektronen nur grafisch zu betrachten reicht nicht,
 um eine Aussage "uber Anziehung oder Abstossung zu machen.
 Wir werden also nachfolgend diese Wechselwirkung mathematisch entwickeln.
 F"ur die mathematische Betrachtung beginnen wir da, wo wir einen Anhaltspunkt haben, also beim Phonon.
 
 Wir haben gesehen, dass das Phonon einem harmonischen Oszillator entspricht und quantisiert ist.
-F"ur das Phonon gibt es also Auf- und Absteigeoperatoren.
+F"ur das Phonon gibt es Auf- und Absteigeoperatoren.
 Wenn wir die zum Phonon geh"orenden Operatoren $a$ nennen und das Phonon die Energie $q$ hat,
 ergibt sich der Aufsteigeoperator
 $a^+_q$ und der Absteigeoperator $a_q$.
@@ -171,7 +174,7 @@ Zus"atzlich k"urzen wir die Phononen und den Zwischenzustand und packen
 alles ausser der reinen Wechselwirkung in einen Koeffizienten $V_{kk'q}$.
 Wir sehen nun zwar den inneren Ablauf des Prozesses nicht mehr, daf"ur kann die Formel
 weiter vereinfacht werden.
-Wir erhalten die Formel:
+Wir erhalten die Formel
 \begin{equation}
 H_{\text{pair}}=
 \frac{1}{2}
@@ -186,28 +189,27 @@ V_{kk'q} = - |M_q|^2 \left\{
 +
 \frac{1}{\hbar\omega_q+(E(k+q)-E(k))}
 \right\}
-\label{supraleitung:WechselwirkungVkk'q}
+\label{supraleitung:WechselwirkungVkk'q}.
 \end{equation}
-Wir vereinfachen weiter mit $(a-b)\cdot (a+b) = a^2-b^2$.
+Wir vereinfachen weiter mit $(a-b)\cdot (a+b) = a^2-b^2$ und erhalten
 
 \begin{equation}
 V_{kk'q} =
 \frac
 {2|M_q|^2\hbar\omega_q}
 {(E(k+q)-E(k))^2-(\hbar\omega_q)^2}
-\label{supraleitung:Wechselwirkung_Vkk'q_Kurz}
+\label{supraleitung:Wechselwirkung_Vkk'q_Kurz}.
 \end{equation}
 Das Vorzeichen von $V_{kk'q}$ entscheidet nun dar"uber, ob die Wechselwirkung
-anziehend oder abstossend ist.
-
-Da der Z"ahler positiv ist, wird das Vorzeichen von $(E(k+q)-E(k))^2-(\hbar\omega_q)^2$ bestimmt.
+anziehend oder abstossend ist. Da der Z"ahler positiv ist, wird das Vorzeichen von $(E(k+q)-E(k))^2-(\hbar\omega_q)^2$ bestimmt.
 
 %----------------------------Hinzufuegen von Elektronen zu der Fermikugel------------------------
 \section{Hinzuf"ugen von Elektronen zu der Fermikugel}
 \rhead{Hinzuf"ugen von Elektronen zu der Fermikugel}
 Angenommen, solch eine Elektron-Elektron Wechselwirkung, wie im Kapitel
 \ref{supraleitung:elektronelektronwechselwirkung} beschrieben, kommt zustande,
-wollen wir nachfolgend herausfinden, welche Bedingungen erf"ullt sein m"ussen.
+wollen wir nachfolgend herausfinden, welche Bedingungen erf"ullt sein m"ussen, damit die
+Elektron-Elektron Wechselwirkung maximal wird.
 
 Unser Ziel wird nun sein, zwei Elektronen energetisch m"oglichst g"unstig zur Fermikugel hinzuzuf"ugen.
 Dazu ben"otigen wir die theoretischen Grundlagen zur Fermikugel welche im Kapitel
@@ -222,8 +224,8 @@ Welche dieser Kr"afte "uberwiegt, entscheidet die St"arke der Elektronen-Phonone
 \index{Elektronengas}
 Um diese neue Wechselwirkung zu betrachten, gehen wir von einem idealisierten Falls aus.
 Dazu kann das Modell des Elektronengases verwendet werden.
-Dabei sind die Valenzelektronen nicht an die einzelnen Gitterpl"atze der Atome gebunden sondern k"onnen sich,
-wie in einem klassischen Gas, frei bewegen.
+Dabei sind die Valenzelektronen nicht an die einzelnen Gitterpl"atze der Atome gebunden,
+sondern k"onnen sich wie in einem klassischen Gas frei bewegen.
 Diese freien Elektronen sind verantwortlich f"ur die Leitf"ahigkeit von Metallen.
 Dieses Modell kann auch auf ein sehr stark gek"uhlter metallischer K"orper angewendet werden,
 was f"ur die Supraleitung von Bedeutung ist.
@@ -233,9 +235,9 @@ alle "ausseren Zust"ande seien frei.
 Zu diesem System werden nun zwei Elektronen $(k_1,E(k_1))$ und $(k_2,E(k_2))$ hinzugef"ugt.
 Wir beschr"anken uns auf die Wechselwirkungen in welchen keine Energie an das Atomgitter abgegeben wird.
 Zudem beschr"anken wird die maximal zul"assige Wechselwirkung zwischen den Elektronen auf die
-Energie eines Phonons.
+Energie eines Phonons
 \begin{equation}
-|E(k+q)-E(k)|\le\hbar\omega_q
+|E(k+q)-E(k)|\le\hbar\omega_q .
 \label{supraleitung:Phonon Energie}
 \end{equation}
 Ist diese Bedingung erf"ullt, wird das Vorzeichen in der Gleichung \ref{supraleitung:Wechselwirkung_Vkk'q_Kurz} negativ und die Elektron-Elektron Wechselwirkung wird anziehend.
@@ -255,13 +257,13 @@ $a$ stellt den Fourierkoeffizienten des jeweiligen Summanden dar.
 \end{equation}
 
 Um einen Zustand mit definiertem Gesamtimpuls zu erhalten, f"uhren wir die Summation in
-(\ref{supraleitung:WellenfktAllg}) unter der Nebenbedingung $K=k_1+k_2=\texttt{const}$ aus.
+(\ref{supraleitung:WellenfktAllg}) unter der Nebenbedingung $K=k_1+k_2=\text{const}$ aus.
 Zus"atzlich fordern wir, dass eine Wechselwirkung zwischen den Elektronen nur dann bestehen soll,
 wenn sich ihre Zust"ande ausserhalb der Fermikugel mit der Energie
 $(E_F \le E(k_i) \le E_F+\hbar\omega_q)$ befinden.
 Zusammengefasst ergeben sich folgende drei Bedingungen:
 \[
-\overrightarrow{k_1}+\overrightarrow{k_2}=\overrightarrow{K}=const
+\overrightarrow{k_1}+\overrightarrow{k_2}=\overrightarrow{K}=\text{const}
 \]
 \[
 E_F\le|\overrightarrow{k_1}|\le E_F+\hbar\omega_q
@@ -291,42 +293,40 @@ Fl"ache und entsprechend die gr"osste Wahrscheinlichkeit (Abbildung \ref{suprale
 Man findet so heraus, dass die Wahrscheinlichkeit am gr"ossten ist, wenn die
 Wellenzahlvektoren $k_1$ und $k_2$ entgegengesetzt sind.
 
-% Visualisierung der besten K-Vektors
+% Visualisierung des besten K-Vektors
 \begin{figure}
 \centering
-  \begin{tabular}{l l l}
+  \begin{tabular}{l c l}
   \centering
     &
     \begin{minipage}{0.6\textwidth}
 	\includegraphics[width=1.1\textwidth]{supraleitung/Graphics/kGraphic05g.pdf}
     \end{minipage}
-    &
     \\
     &
-    a)\quad beliebiges K gew"ahlt 			%K gr"osser 0, kleiner Ef+hwq, mit Fl"achenmarkierung
+    a)\quad beliebiges K gew"ahlt		%K gr"osser 0, kleiner Ef+hwq, mit Fl"achenmarkierung
     \\
-    &
+    \\
     \\
     &
     \begin{minipage}{0.6\textwidth}
 	\includegraphics[width=1.1\textwidth]{supraleitung/Graphics/kGraphic06g.pdf} 
     \end{minipage}
-    &
     \\
-    &
-    b)\quad K zu gross gew"ahlt							%K zu gross
+    &		
+    b)\quad K zu gross gew"ahlt			%K zu gross
     \\
-    &
+    \\
     \\
     &
     \begin{minipage}{0.6\textwidth}
 	\includegraphics[width=1.1\textwidth]{supraleitung/Graphics/kGraphic09g.pdf}
     \end{minipage}
-    &
     \\
     &
-    c)\quad Maximale Anzahl M"oglichkeiten um $k_1$, $k_2$ zu w"ahlen mit K = 0 	%K gleich 0, mit Fl"achenmarkierung
-    &
+    c)\quad Maximale Anzahl M"oglichkeiten um $k_1$, $k_2$ zu w"ahlen mit K = 0
+    %K gleich 0, mit Fl"achenmarkierung
+    \\
     \\
   \end{tabular}
   \caption{Visualisierung des Gesamtimpulses im $k$-Raum
@@ -339,14 +339,14 @@ Bekanntlich besitzen Elektronen einen Spin.
 Da wir auf der Suche nach der maximalen anziehenden Wechselwirkung sind, nehmen wir an,
 dass die Elektronenspins antiparallel sind.
 Hierzu kann die "Uberlegung mit dem entstehenden magnetischen Feld herbeigezogen werden.
-W"aren die Elektronenspin parallel w"urden sich die entstehenden magnetischen Felder abstossen.
+W"aren die Elektronenspin parallel w"urden sich die entstehenden magnetischen Dipole abstossen.
 Wobei hingegen bei antiparallelem Elektronenspin die Wechselwirkungsenergie durch die
-anziehenden magnetischen Felder verst"arkt wird.
+anziehenden magnetischen Dipole verst"arkt wird.
 
 \subsubsection{Neue Wellenfunktion}
 \rhead{Neue Wellenfunktion}
-Mit den gewonnenen Erkenntnissen, dass der Gesamtimpuls $K=0$ ist und die Elektronenspin
-\texttt{antiparallel} sind, ergibt sich die vereinfachte Wellenfunktion
+Mit den gewonnenen Erkenntnissen, dass der Gesamtimpuls $K=0$ ist und die Elektronenspins
+{\em antiparallel} sind, ergibt sich die vereinfachte Wellenfunktion
 
 \[
 \Psi_{12}=\sum \limits_{k} a(k)c^+_{k}c^+_{-k}|G\rangle.
@@ -359,16 +359,15 @@ Wellenzahlvektoren $(k_1 = -k_2)$ und entgegengesetzten Spin $(\sigma_1 = -\sigm
 
 \section{Ausblick}
 \rhead{Ausblick}
-Wir haben also gesehen, dass es eine Elektron-Elektron Wechselwirkung gibt und wie diese zustande kommt.
+Wir haben gesehen, dass es eine Elektron-Elektron Wechselwirkung gibt und wie diese zustande kommt.
 Das Vorzeichen und somit die Cooper-Paar Bildung sind aber noch nicht gekl"art.
 Um das Vorzeichen zu berechnen sind weitere Vereinfachungen zu treffen.
 Man erh"alt dann eine Gleichung mit einer zu minimierenden Nebenbedingung.
 Durch weitere Approximationen findet man heraus,
-dass 2 Elektronen als Paar weniger Energie ben"otigen, als wenn man sie einzeln zur Fermikugel
+dass zwei Elektronen als Paar weniger Energie ben"otigen, als wenn man sie einzeln zur Fermikugel
 hinzuf"ugen w"urde.
 F"ur die Berechnung und als weiterf"uhrende Literatur verweisen wir auf
-O. Madelung Festk"orper II (\cite{supraleitung:madelung1}).
-
+O. Madelung Festk"orper II \cite{supraleitung:madelung1}.
 
 \printbibliography[heading=subbibliography]
 \end{refsection}

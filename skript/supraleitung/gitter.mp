@@ -124,10 +124,10 @@ gitterverschoben(2,2,0.2*unit,red,(1,0.55,0));
 clip currentpicture to frame;
 
 pickup pencircle scaled 1pt;
-drawarrow ((1.2,5  )*unit)--((  2,2.5)*unit) withcolor blue;
-drawarrow ((  2,2.5)*unit)--((1.2,0  )*unit) withcolor (0.5,0,0.5);
-label.top(btex $k'  $ etex, (1.5,4.5)*unit) withcolor blue;
-label.bot(btex $k'-q$ etex, (1.8,0.5)*unit) withcolor (0.5,0,0.5);
+drawarrow ((1.2,0  )*unit)--((  2,2.5)*unit) withcolor blue;
+drawarrow ((  2,2.5)*unit)--((1.2,5  )*unit) withcolor (0.5,0,0.5);
+label.bot(btex $k'  $ etex, (1.5,0.5)*unit) withcolor blue;
+label.top(btex $k'-q$ etex, (1.8,4.5)*unit) withcolor (0.5,0,0.5);
 label(btex \textbf{\textit{q}} etex, (2.7,2.5)*unit) withcolor (1,0.55,0);
 
 endfig;
@@ -144,10 +144,10 @@ beginfig(4)
 gitterverschoben(4,2,0,red,(1,0.55,0));
 clip currentpicture to frame;
 pickup pencircle scaled 1pt;
-drawarrow ((6.0,5  )*unit)--((5.2,2.5)*unit) withcolor blue;
-drawarrow ((5.2,2.5)*unit)--((6.0,0  )*unit) withcolor (0.5,0,0.5);
-label.top(btex $k  $ etex, (5.7,4.5)*unit) withcolor blue;
-label.bot(btex $k+q$ etex, (5.4,0.5)*unit) withcolor (0.5,0,0.5);
+drawarrow ((6.0,0  )*unit)--((5.2,2.5)*unit) withcolor blue;
+drawarrow ((5.2,2.5)*unit)--((6.0,5  )*unit) withcolor (0.5,0,0.5);
+label.bot(btex $k  $ etex, (5.7,0.5)*unit) withcolor blue;
+label.top(btex $k+q$ etex, (5.4,4.5)*unit) withcolor (0.5,0,0.5);
 endfig;
 
 end
