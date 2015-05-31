@@ -68,7 +68,6 @@ V_0(x)&=
   \end{cases}
 \end{aligned}
 \end{equation}
-
 und erweitern sie mit der St"orung $V_1$, welche wir als lineares Feld definieren:
 \begin{equation}
   V_1(x) = a x + b
@@ -92,14 +91,18 @@ aus welcher wir den Hamilton-Operator berechnen k"onnen:
 
 \subsubsection{Vorgehensweise}
 Wir berechnen in unserem Beispiel die erste N"aherung.
-
 Im Kapitel \ref{skript:stoerungsloesung1ordnung} wird beschrieben wie man von der Schr"odingergleichung 
 auf die erste N"aherung kommt.
 
 Entscheidend hier ist ob die Zust"ande entartet sind oder nicht.
+
+%fixme: entartung
+
 Entartung bedeutet, dass zwei Zust"ande die selbe Energie besitzen, wodurch der Nenner zu Null wird.
 Das w"are der Fall wenn das Elektron aus dem Kasten entkommen w"urde,
 dann h"atten zwei Wellen ausserhalb des Kastens die selbe Energie.
+
+%fixme: /entartung
 
 Diesen Fall schliessen wir mit den unendlich hohen Barrieren aus.
 
@@ -121,7 +124,6 @@ E_k^{(1)} &=
 \label{eq:efeld_ESkalarprodukt}
 \end{aligned}
 \end{equation}
-
 Mit der ersten Gleichung k"onnen wir direkt die Energie der St"orung berechnen.
 
 Man berechnet das Skalarprodukt von $\psi_k^{(0)}$ und $x \psi_k^{(0)}$ "uber 
@@ -135,15 +137,12 @@ Wir k"onnen die Energie nichtsdestotrotz in $E_k(\varepsilon)=E_k^{(0)} + \varep
 und bekommen so die st"orungsabh"angige Energie.
 
 Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger, weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
-
 Wir setzen daher eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
 Mit der zweiten Formel k"onnen wir den Anteil der jeweiligen $\psi$ berechnen.
-
 Wir berechnen also die Summe aller $\langle\psi_l^{(0)}|\psi_k^{(0)}\rangle|\psi_l^{(0)}\rangle$
 und bekommen so $\psi_k^{(0)}$.
 Die Welle $\psi_k^{(0)}$ hat hierbei keinen Anteil in der St"orung $\psi_k^{(1)}$,
 denn $\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt ja die Energie der St"orung.
-
 Wir m"ussen $\gamma$ in der ersten N"aherung nicht ber"ucksichtige und setzen daher $\gamma = 0$.
 
 
@@ -157,7 +156,6 @@ und zum Berechnen von Matrizen eignet.
 Besonders das berechnen von Matrixen und Vektoren wird durch den Syntax der eigenen Programmiersprache erleichtert.
 
 Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
-
 \begin{center}
 \index{Matlab!Syntax}
 \begin{tabular}{ll}
@@ -174,10 +172,10 @@ Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 
 \subsubsection{Berechnung des Modells mit Matlab}
 
-Wir wollen die Wellen $\psi_k(\varepsilon)$ und die Energie auch tats"achlich berechnen.
+Wir wollen jetzt die Wellen $\psi_k(\varepsilon)$ und die Energie auch tats"achlich berechnen.
 Dazu verwenden wir das Programm Matlab.
-Wie beginnen damit das wir Konstanten und das ungest"orte System bestimmen.
 
+Wie beginnen damit das wir Konstanten und das ungest"orte System bestimmen.
 Wir definieren f"ur unseren Potenzialkasten eine Breite von $10^-9$ (1nm links und rechts)
 \begin{lstlisting}[style=Matlab]
 L = 10^-9;
@@ -187,9 +185,7 @@ x = -L : 2*l/xSteps : +L;
 und bekommen so den Vektor x.
 
 Um die ungest"orten Zust"ande $\psi_k^{(0)}$ zu bekommen, k"onnen wir die Sinus- und Kosinus-Funktion diskret abtasten.
-
-Wir berechnen ausserdem die Energien $E_k^{(0)}$
-
+Gleichzeitig k"onnen wir die Energien $E_k^{(0)}$ bestimmen.
 \begin{lstlisting}[style=Matlab]
 m = 9.10938291*10^-31;             # Elektronenmasse
 h = 6062606957*10^-34;             # Planck-Konstante
@@ -205,12 +201,10 @@ for k = 1 : 1000
     Psi(ln, x) = 1/sqrt(2*L) .* y;
 end
 \end{lstlisting}
-
 Wir bekommen so einen Vektor mit den Werten f"ur $E_k^{(0)}$
 und eine Matrix 500 mal 1000 f"ur $\psi_k^{(0)}$.
 
 Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
-
 Wir k"onnen die Energie mit
 \begin{lstlisting}[style=Matlab]
 ...
@@ -221,7 +215,6 @@ for k = 1 : 5
 end
 \end{lstlisting}
 berechnen und plotten, \verb|dot(a, b)| bildet das Skalarprodukt.
-
 Das Resultat sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
 
 \subsubsection{Berechnung $\psi_k^{(0)}$} % FIXME bessere Titel?
@@ -230,7 +223,6 @@ Die Implementierung von $\psi_k^{(0)}$ ist wegen $\sum$ etwas schwieriger.
 
 Normaler Weise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen.
 Wir wollen aber ein Element auslassen.
-
 Um zum Beispiel den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
 $\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle$
  von 1 bis n ausser 5.
@@ -283,30 +275,28 @@ der mit einem korrektem Wert verwechselt werden kann.
 \subsubsection{Auswertung Psi}
 
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
-
 Auf der vertikalen Achse haben wir die Amplituden von $\psi_k$.
 Die Funktion $\psi^2$ entspricht der Wahrscheinlichkeitsdichte dass sich das Elektron an dieser Stelle befindet.
-
 Auf der Horizontalen sehen wir die x-Position vom Teilchen im eindimensionalen Potentialkasten.
 
 Intuitiv nimmt man an, dass die Wellenfunktion nach links gedr"uckt werden wird, da das
 elektrische Feld $x$ im ersten Quadranten ein positives Potential bildet
 und deshalb das Elektron herunterrollen m\"ochte.
-
 Allerdings wird durch die positive Spannung das Elektron angezogen \& die
 Wahrscheinlichkeit es weiter Rechts anzutreffen steigt.
 
 Da wir links eine negative Spannung haben, gibt es dort eine h"ohere Potentielle Energie.
+
+%fixme: umwandlung
+
 Das Elektron gleicht das aus indem es die Energie umwandelt,
 "ahnlich wie bei einem Pendel.
-
 Der Ausgleich wird in der Schr"odingergleichung beschrieben:
 \[
 -\frac{\hbar^2}{2m}\Delta\Psi(x) + V(x)\Psi(x)
 =
 E \Psi(x)
 \]
-
 Weil $E \Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $-\frac{\hbar^2}{2m}\Delta\Psi(x)$,
 was einer Abnahme der Frequenz entspricht.
 
@@ -322,7 +312,6 @@ was einer Abnahme der Frequenz entspricht.
 \subsubsection{Auswertung E}
 
 Wie wir in der Berechnung festgestellt haben ver"andert sich der Energiezustand nicht.
-
 H"atten wir eine Energie in der St"orung w"urde sie gegen oben immer schw"acher werden, weil $E_k^{(0)}$ immer gr"osser wird.
 
 \begin{figure}
