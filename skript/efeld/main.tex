@@ -125,11 +125,9 @@ Mit der ersten Gleichung k"onnen wir direkt die Energie der St"orung berechnen.
 
 Man berechnet das Skalarprodukt von $\psi_k^{(0)}$ und $x \psi_k^{(0)}$ "uber 
 die gesamte L"ange des Potenzialkastens und erh"alt so die Energie der St"orung $E_k^{(1)}$.
-
 In unserem Fall wird jedoch $E_k^{(0)}$ gleich null sein.
 Das kommt daher, dass die Funktion der St"orung gerade ist.
 Die Energie die dazu gegeben wird gleicht sich also im Mittel aus.
-
 Wir k"onnen die Energie nichtsdestotrotz in $E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ einsetzen
 und bekommen so die st"orungsabh"angige Energie.
 
@@ -145,7 +143,6 @@ Wir m"ussen $\gamma$ in der ersten N"aherung nicht ber"ucksichtige und setzen da
 
 
 
-
 \subsubsection{Matlab Umgebung}
 
 Matlab\footnote{MATrix LABoratory} ist ein Programm welches sich gut zum Plotten von Funktionen
@@ -156,8 +153,8 @@ Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 \begin{center}
 \index{Matlab!Syntax}
 \begin{tabular}{ll}
-\verb|vektor = n : m| & ein Vektor wird von $n$ bis $m$ gez"ahlt.\\
-\verb|vektor = n : delta : m| & ein Vektor mit Werten von $n$ bis $m$ die voneinander den Abstand $delta$ haben.\\
+\verb|vektor = n : m| & ein Vektor wird von $n$ bis $m$ gez"ahlt. \\
+\verb|vektor = n : delta : m| & ein Vektor mit Werten von $n$ bis $m$ die voneinander den Abstand $delta$ haben. \\
 \verb|vector(:)| & alle Werte aus einem Vektor werden ausgelesen. \\
 \verb|vector * vector| & entspricht einem Vektorprodukt \\
 \verb|vector .* vector| & multipliziere die Elemente der Vektoren
@@ -204,7 +201,6 @@ und eine Matrix $500 \times 1000$ f"ur $\psi_k^{(0)}$.
 Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
 Wir k"onnen die Energie mit
 \begin{lstlisting}[style=Matlab]
-...
 H1 = x;
 for k = 1 : 5
   E1(k) = dot(Psi(k, :), H1.*Psi(k, :));
@@ -217,7 +213,6 @@ Das Resultat sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
 \subsubsection{Berechnung $\psi_k^{(0)}$} % FIXME bessere Titel?
 
 Die Implementierung von $\psi_k^{(0)}$ ist wegen $\sum$ etwas schwieriger.
-
 Normaler Weise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen.
 Wir wollen aber ein Element auslassen.
 Um zum Beispiel den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
@@ -249,7 +244,6 @@ $summe$ ist nun ein Vektor mit den diskreten Abtastwerten von $Psi_k^{(1)}$.
 
 Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil am Gesammtzustand 
 mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms $E(k)-E(l)$ unter dem Bruchstrich.
-
 In diesem Fall addieren wir beim 90-sten Schritt ($l=90$) nur $1\%$ der St"orung dazu.
 Beim 280-sten Schritt ($l=280$) betr"agt der Anteil nur noch $0.1\%$.
 
@@ -267,6 +261,8 @@ einsetzen und bekommen so die neue Wellenfunktion in Abbildung \ref{abb:efeld_ps
 Das Resultat ist in diesem Fall mit Vorsicht zu geniessen.
 Weil wir hier mit diskreten Werten arbeiten, entsteht beim Skalarprodukt ein Fehler von ca. $8\dot 10^-15$,
 der mit einem korrektem Wert verwechselt werden kann.
+
+
 
 
 \subsubsection{Auswertung Psi}
