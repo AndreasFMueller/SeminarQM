@@ -202,7 +202,7 @@ for k = 1 : 1000
 end
 \end{lstlisting}
 Wir bekommen so einen Vektor mit den Werten f"ur $E_k^{(0)}$
-und eine Matrix 500 mal 1000 f"ur $\psi_k^{(0)}$.
+und eine Matrix $500 \imes 1000$ f"ur $\psi_k^{(0)}$.
 
 Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
 Wir k"onnen die Energie mit
@@ -274,31 +274,29 @@ der mit einem korrektem Wert verwechselt werden kann.
 
 \subsubsection{Auswertung Psi}
 
-In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen dem normalen $\psi$ (schwarz) \& der ersten N"aherung (rot).
+In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen den ungest"orten $\psi$ (schwarz) und der ersten N"aherung (rot).
 Auf der vertikalen Achse haben wir die Amplituden von $\psi_k$.
 Die Funktion $\psi^2$ entspricht der Wahrscheinlichkeitsdichte dass sich das Elektron an dieser Stelle befindet.
 Auf der Horizontalen sehen wir die x-Position vom Teilchen im eindimensionalen Potentialkasten.
 
 Intuitiv nimmt man an, dass die Wellenfunktion nach links gedr"uckt werden wird, da das
 elektrische Feld $x$ im ersten Quadranten ein positives Potential bildet
-und deshalb das Elektron herunterrollen m\"ochte.
+und deshalb das Elektron herunter rollen m\"ochte.
 Allerdings wird durch die positive Spannung das Elektron angezogen \& die
 Wahrscheinlichkeit es weiter Rechts anzutreffen steigt.
 
-Da wir links eine negative Spannung haben, gibt es dort eine h"ohere Potentielle Energie.
-
-%fixme: umwandlung
-
-Das Elektron gleicht das aus indem es die Energie umwandelt,
-"ahnlich wie bei einem Pendel.
-Der Ausgleich wird in der Schr"odingergleichung beschrieben:
+Wegen dem elektrischem Feld haben wir entlang der x-Aachse verschieden Energie-Potentiale.
+Das Elektron hat allerdings immer die selbe Energie,
+die Energie muss sich also irgendwie ausgleichen.
+Wir k"onnen diesen Vorgang einfach mit der Schr"odingergleichung verstehen:
 \[
 -\frac{\hbar^2}{2m}\Delta\Psi(x) + V(x)\Psi(x)
 =
 E \Psi(x)
 \]
-Weil $E \Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $-\frac{\hbar^2}{2m}\Delta\Psi(x)$,
-was einer Abnahme der Frequenz entspricht.
+Weil $E \Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $-\frac{\hbar^2}{2m}\Delta\Psi(x)$.
+Das bedeutet bei einem Elektron eine Abnahme der kinetischen Energie bzw. der Frequenz.
+Der Vorgang ist also "ahnlich einem mechanischem Pendel, welches mal Kinetische Energie hat, mal mechanische.
 
 \begin{figure}
  \centering
