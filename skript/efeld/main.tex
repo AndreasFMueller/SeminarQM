@@ -95,16 +95,13 @@ Im Kapitel \ref{skript:stoerungsloesung1ordnung} wird beschrieben wie man von de
 auf die erste N"aherung kommt.
 
 Entscheidend hier ist ob die Zust"ande entartet sind oder nicht.
-
-%fixme: entartung
-
-Entartung bedeutet, dass zwei Zust"ande die selbe Energie besitzen, wodurch der Nenner zu Null wird.
-Das w"are der Fall wenn das Elektron aus dem Kasten entkommen w"urde,
-dann h"atten zwei Wellen ausserhalb des Kastens die selbe Energie.
-
-%fixme: /entartung
-
-Diesen Fall schliessen wir mit den unendlich hohen Barrieren aus.
+Entartung bedeutet, dass zwei Zust"ande die selbe Energie besitzen, wodurch bei der Berechnung der Nenner zu Null wird.
+Das w"are beispielsweise bei einem zweidimensionalen Kasten der Fall,
+wo wir Symmetrien haben.
+In unserem Fall k"onnen solche Symmetrien nicht auftreten,
+und wir sehen an der Gleichung
+$E_n = \frac{h^2n^2}{32ml^2}$
+das die Energie immer am steigen ist.
 
 Wir benutzen also folgende Gleichungen
 \begin{equation}
@@ -202,7 +199,7 @@ for k = 1 : 1000
 end
 \end{lstlisting}
 Wir bekommen so einen Vektor mit den Werten f"ur $E_k^{(0)}$
-und eine Matrix $500 \imes 1000$ f"ur $\psi_k^{(0)}$.
+und eine Matrix $500 \times 1000$ f"ur $\psi_k^{(0)}$.
 
 Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
 Wir k"onnen die Energie mit
@@ -254,7 +251,7 @@ Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, 
 mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms $E(k)-E(l)$ unter dem Bruchstrich.
 
 In diesem Fall addieren wir beim 90-sten Schritt ($l=90$) nur $1\%$ der St"orung dazu.
-Beim 280-sten Schritt ($l=280$) betr\"at der Anteil nur noch $0.1\%$.
+Beim 280-sten Schritt ($l=280$) betr"agt der Anteil nur noch $0.1\%$.
 
 Wir k"onnen jetzt die St"orung in 
 \begin{equation}
