@@ -12,7 +12,6 @@ um eine St\"orung.
 Grunds"atzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell 
 (Abb \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
 mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
-
 F"ur die erste N"aherung gilt:
 \[
   f(x, \varepsilon) = f_0(x) + \varepsilon f_1(x)
@@ -22,7 +21,7 @@ Mit $\varepsilon$ wird die St"orung gesteuert. Dabei sollte $\varepsilon$ nicht 
 da die N"aherung sonst ungenau wird. 
 Setzen wir $\varepsilon = 0$, k\"onnen wir die St"orung dynamisch abschalten.
 
-Ein grosser Vorteil dabei ist dass wir f"ur die erste N"aherung der St"orung nur einen Term hinzuf"ugen m"ussen.
+Ein grosser Vorteil dabei ist, dass f"ur die erste N"aherung der St"orung nur Term hinzuf"ugen werden muss.
 Dieser kann ausserdem h"aufig aus dem Grundzustand abgeleitet werden.
 
 In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den Hamilton-Operator der 
@@ -91,21 +90,21 @@ aus welcher wir den Hamilton-Operator berechnen k"onnen:
 
 \subsubsection{Vorgehensweise}
 Wir berechnen in unserem Beispiel die erste N"aherung.
-Im Kapitel \ref{skript:stoerungsloesung1ordnung} wird beschrieben wie man von der Schr"odingergleichung 
-auf die erste N"aherung kommt.
+Im Kapitel \ref{skript:stoerungsloesung1ordnung} Schr"odingergleichung wird beschrieben wie man das machen kann.
 
 Entscheidend hier ist ob die Zust"ande entartet sind oder nicht.
 Entartung bedeutet, dass zwei Zust"ande die selbe Energie besitzen, 
 wodurch bei der Berechnung der Nenner zu Null wird.
-Das w"are beispielsweise bei einem zweidimensionalen Kasten der Fall mit Symmetrien haben.
-In unserem Fall k"onnen solche Symmetrien nicht auftreten,
-und wir sehen an der Gleichung
+Das w"are beispielsweise bei einem zweidimensionalen Kasten der Fall,
+wo wir entlang der Diagonalen identische Zust"ande haben.
+In unserem Fall k"onnen solche Symmetrien nicht auftreten.
+Wir sehen ausserdem an der Gleichung
 \[
   E_n = \frac{h^2n^2}{32ml^2}
 \]
-dass die Energie immer steigt.
+dass die Energie immer am steigen ist.
 
-Wir benutzen also folgende Gleichungen:
+Da wir keine Entartung haben folgende Gleichungen:
 \begin{equation}
 \begin{aligned}
 E_k^{(1)} &=
@@ -124,7 +123,6 @@ E_k^{(1)} &=
 \end{aligned}
 \end{equation}
 Mit der ersten Gleichung k"onnen wir direkt die Energie der St"orung berechnen.
-
 Man berechnet das Skalarprodukt von $\psi_k^{(0)}$ und $x \psi_k^{(0)}$ "uber 
 die gesamte L"ange des Potenzialkastens und erh"alt so die Energie der St"orung $E_k^{(1)}$.
 In unserem Fall wird jedoch $E_k^{(0)}$ gleich Null sein.
