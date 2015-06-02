@@ -3,6 +3,9 @@
 \begin{refsection}
 \chapterauthor{Hannes Diethelm}
 
+\renewcommand{\sectionmark}[1]{\markboth{}{~#1}}
+\fancyhead[R]{\nouppercase{\rightmark}}
+
 \section{Einleitung}
 
 Ziel dieses Kapitels ist, auf Basis der Maxwell-Gleichungen, der Fourier-Theorie und einer Quantisierung analog des harmonischen Oszillators (Kapitel \ref{chapter:harmonischeroszillator}) die Feldquantisierung f"ur elektromagnetische Wellen herzuleiten.
@@ -70,6 +73,7 @@ Die Gleichung f"ur $\varphi$ wird nicht ben"otigt und die Gleichung f"ur $A$ wir
 \end{equation}
 
 \section{Vom Wellenfeld zu unabh"angigen Oszillatoren}
+
 L"osungen von (\ref{fq:wave_dgl}) f"ur periodische Randbedingungen und $t=0$ in einem W"urfel mit Seitenl"ange $L = V^{1/3}$ sind durch die Fourier-Reihe gegeben \cite{fq:em_wave_eq}:
 \begin{equation} \label{fq:wave_eq}
 A(x,t) = \frac{1}{\sqrt{V}} \sum_k \sum_{\alpha=1,2} \left(c_{k,\alpha} \varepsilon^{(\alpha)} e^{i (k \cdot x - \omega_k t)} + \bar{c}_{k,\alpha} \varepsilon^{(\alpha)} e^{-i(k \cdot x - \omega_k t)}\right).

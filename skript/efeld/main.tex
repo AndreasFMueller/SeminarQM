@@ -90,7 +90,8 @@ aus welcher wir den Hamilton-Operator berechnen k"onnen:
 
 \subsubsection{Vorgehensweise}
 Wir berechnen in unserem Beispiel die erste N"aherung.
-Im Kapitel \ref{skript:stoerungsloesung1ordnung} Schr"odingergleichung wird beschrieben wie man das machen kann.
+Im Kapitel \ref{skript:stoerungsloesung1ordnung} St\"orungstheorie wird dies 
+theoretisch ausgef\"uhrt.
 
 Entscheidend hier ist ob die Zust"ande entartet sind oder nicht.
 Entartung bedeutet, dass zwei Zust"ande die selbe Energie besitzen, 
@@ -102,9 +103,9 @@ Wir sehen ausserdem an der Gleichung
 \[
   E_n = \frac{h^2n^2}{32ml^2}
 \]
-dass die Energie immer am steigen ist.
+dass die Energie immer steigt.
 
-Da wir keine Entartung haben folgende Gleichungen:
+Da wir keine Entartung haben k\"onnen wir folgende Gleichungen verwenden:
 \begin{equation}
 \begin{aligned}
 E_k^{(1)} &=
@@ -151,15 +152,16 @@ und zum Berechnen von Matrizen eignet.
 Besonders das berechnen von Matrixen und Vektoren wird durch den Syntax der eigenen Programmiersprache erleichtert.
 
 Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
+
 \begin{center}
-\index{Matlab!Syntax}
-\begin{tabular}{ll}
-\verb|vektor = n : m| & ein Vektor wird von $n$ bis $m$ gez"ahlt. \\
-\verb|vektor = n : delta : m| & ein Vektor mit Werten von $n$ bis $m$ die voneinander den Abstand $delta$ haben. \\
-\verb|vector(:)| & alle Werte aus einem Vektor werden ausgelesen. \\
-\verb|vector * vector| & entspricht einem Vektorprodukt \\
-\verb|vector .* vector| & multipliziere die Elemente der Vektoren
-\end{tabular}
+	\index{Matlab!Syntax}
+	\begin{tabular}{lp{9cm}}
+		\verb|vektor = n : m| & ein Vektor wird von $n$ bis $m$ gez"ahlt. \\
+		\verb|vektor = n : delta : m| & ein Vektor mit Werten von $n$ bis $m$, welche voneinander den Abstand $delta$ haben. \\
+		\verb|vector(:)| & alle Werte aus einem Vektor werden ausgelesen. \\
+		\verb|vector * vector| & entspricht einem Vektorprodukt \\
+		\verb|vector .* vector| & multipliziere die Elemente der Vektoren
+	\end{tabular}
 \end{center}
 
 
