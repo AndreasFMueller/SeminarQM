@@ -33,11 +33,9 @@ urspr"unglichen Funktion $H_0$ um $\varepsilon H_1$ erg"anzen:
 
 
 
-\section{Anwendungen}
+\section{Potentialkasten mit elektrischem Feld}
 
-\subsection{Potentialkasten mit elektrischem Feld}
-
-\subsubsection{Ausgangslage}
+\subsection{Ausgangslage}
 
 \begin{figure}
  \centering
@@ -88,7 +86,7 @@ aus welcher wir den Hamilton-Operator berechnen k"onnen:
   \hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) + \varepsilon x
 \]
 
-\subsubsection{Vorgehensweise}
+\subsection{Vorgehensweise}
 Wir berechnen in unserem Beispiel die erste N"aherung.
 Im Kapitel \ref{skript:stoerungsloesung1ordnung} St\"orungstheorie wird dies 
 theoretisch ausgef\"uhrt.
@@ -145,7 +143,7 @@ Wir m"ussen $\gamma$ in der ersten N"aherung nicht ber"ucksichtige und setzen da
 
 
 
-\subsubsection{Matlab Umgebung}
+\subsection{Matlab Umgebung}
 
 Matlab\footnote{MATrix LABoratory} ist ein Programm welches sich gut zum Plotten von Funktionen
 und zum Berechnen von Matrizen eignet.
@@ -167,7 +165,7 @@ Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 
 
 
-\subsubsection{Berechnung des Modells mit Matlab}
+\subsection{Berechnung des Modells mit Matlab}
 
 Wir wollen jetzt die Wellen $\psi_k(\varepsilon)$ und die Energie auch tats"achlich berechnen.
 Dazu verwenden wir das Programm Matlab.
@@ -202,6 +200,7 @@ Wir bekommen so einen Vektor mit den Werten f"ur $E_k^{(0)}$
 und eine Matrix $500 \times 1000$ f"ur $\psi_k^{(0)}$.
 
 Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
+Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
 Wir k"onnen die Energie mit
 \begin{lstlisting}[style=Matlab]
 H1 = x;
@@ -213,7 +212,7 @@ end
 berechnen und plotten. Die Funktion \verb|dot(a, b)| bildet das Skalarprodukt.
 Das Resultat sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
 
-\subsubsection{Berechnung $\psi_k^{(0)}$} % FIXME bessere Titel?
+\subsection{Berechnung $\psi_k^{(0)}$} % FIXME bessere Titel?
 
 Die Implementierung von $\psi_k^{(0)}$ ist wegen $\sum$ etwas schwieriger.
 Normaler Weise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen.
@@ -268,7 +267,7 @@ der mit einem korrektem Wert verwechselt werden kann.
 
 
 
-\subsubsection{Auswertung Psi}
+\subsection{Auswertung Psi}
 
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen den ungest"orten $\psi$ (schwarz) und der ersten N"aherung (rot).
 Auf der vertikalen Achse haben wir die Amplituden von $\psi_k$.
@@ -290,9 +289,9 @@ Wir k"onnen diesen Vorgang einfach mit der Schr"odingergleichung verstehen:
 =
 E \Psi(x)
 \]
-Weil $E \Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $V(x)}$ die Energie $-\frac{\hbar^2}{2m}\Delta\Psi(x)$.
-Das entspricht bei einem Elektron eine Abnahme der kinetischen Energie bzw. der Frequenz.
-Der Vorgang ist also "ahnlich einem mechanischem Pendel, welches mal potentielle Energie hat, mal Kinetische.
+Weil $E \Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $-\frac{\hbar^2}{2m}\Delta\Psi(x)$.
+Das bedeutet bei einem Elektron eine Abnahme der kinetischen Energie bzw. der Frequenz.
+Der Vorgang ist also "ahnlich einem mechanischem Pendel, welches mal Kinetische Energie hat, mal mechanische.
 
 \begin{figure}
  \centering
@@ -303,7 +302,7 @@ Der Vorgang ist also "ahnlich einem mechanischem Pendel, welches mal potentielle
 
 
 
-\subsubsection{Auswertung E}
+\subsection{Auswertung E}
 
 Wie wir in der Berechnung festgestellt haben ver"andert sich der Energiezustand nicht.
 H"atten wir eine Energie in der St"orung w"urde sie gegen oben immer schw"acher werden, weil $E_k^{(0)}$ immer gr"osser wird.
