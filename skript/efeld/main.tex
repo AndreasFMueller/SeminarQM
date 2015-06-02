@@ -33,11 +33,9 @@ urspr"unglichen Funktion $H_0$ um $\varepsilon H_1$ erg"anzen:
 
 
 
-\section{Anwendungen}
+\section{Potentialkasten mit elektrischem Feld}
 
-\subsection{Potentialkasten mit elektrischem Feld}
-
-\subsubsection{Ausgangslage}
+\subsection{Ausgangslage}
 
 \begin{figure}
  \centering
@@ -88,7 +86,7 @@ aus welcher wir den Hamilton-Operator berechnen k"onnen:
   \hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) + \varepsilon x
 \]
 
-\subsubsection{Vorgehensweise}
+\subsection{Vorgehensweise}
 Wir berechnen in unserem Beispiel die erste N"aherung.
 Im Kapitel \ref{skript:stoerungsloesung1ordnung} St\"orungstheorie wird dies 
 theoretisch ausgef\"uhrt.
@@ -145,7 +143,7 @@ Wir m"ussen $\gamma$ in der ersten N"aherung nicht ber"ucksichtige und setzen da
 
 
 
-\subsubsection{Matlab Umgebung}
+\subsection{Matlab Umgebung}
 
 Matlab\footnote{MATrix LABoratory} ist ein Programm welches sich gut zum Plotten von Funktionen
 und zum Berechnen von Matrizen eignet.
@@ -156,19 +154,19 @@ Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 \begin{center}
 	\index{Matlab!Syntax}
 	\begin{tabular}{lp{9cm}}
-		\verb|vektor = n : m| & ein Vektor wird mit Werten von $n$ bis $m$ erzeugt \\
-		\verb|vektor = n : delta : m| & ein Vektor mit Werten von $n$ bis $m$ erzeugt, welche voneinander den Abstand $delta$ haben \\
-		\verb|vector(:)| & alle Werte aus einem Vektor werden ausgelesen \\
-		\verb|matrix * matrix| & entspricht einem Matrixprodukt \\
-		\verb|vector .* vector| & multipliziere die Elemente der Vektoren \\
-		\verb|dot(vectorA, vectorB)| & bildet das Skalarprodukt zweier Vektoren
+		\verb|vektor = n : m| & ein Vektor wird von $n$ bis $m$ gez"ahlt. \\
+		\verb|vektor = n : delta : m| & ein Vektor mit Werten von $n$ bis $m$, welche voneinander den Abstand $delta$ haben. \\
+		\verb|vector(:)| & alle Werte aus dem Vektor $vektor$ werden ausgelesen. \\
+		\verb|matrix * matrix| & Matrix-Multiplikation. \\
+		\verb|vector .* vector| & multipliziere die Elemente der Vektoren. \\
+		\verb|dot(a, b)| & bildet das Skalarprodukt von $a$ und $b$.
 	\end{tabular}
 \end{center}
 
 
 
 
-\subsubsection{Berechnung des Modells mit Matlab}
+\subsection{Berechnung des Modells mit Matlab}
 
 Wir wollen jetzt die Wellen $\psi_k(\varepsilon)$ und die Energie auch tats"achlich berechnen.
 Dazu verwenden wir das Programm Matlab.
@@ -189,7 +187,7 @@ m = 9.10938291*10^-31;             # Elektronenmasse
 h = 6062606957*10^-34;             # Planck-Konstante
 
 for k = 1 : 1000
-    E(k) = h^2*k^2 / (32*m*L^2);
+    E0(k) = h^2*k^2 / (32*m*L^2);
     
     if mod(k, 2) == 0              # Gerade k
         y = sin(k*pi*x/(2*L));
@@ -203,6 +201,7 @@ Wir bekommen so einen Vektor mit den Werten f"ur $E_k^{(0)}$
 und eine Matrix $500 \times 1000$ f"ur $\psi_k^{(0)}$.
 
 Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
+Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
 Wir k"onnen die Energie mit
 \begin{lstlisting}[style=Matlab]
 H1 = x;
@@ -211,10 +210,10 @@ for k = 1 : 5
   plot(epsilon, E0(k) + epsilon*E1_k(k))
 end
 \end{lstlisting}
-berechnen und plotten. Die Funktion \verb|dot(a, b)| bildet das Skalarprodukt.
+berechnen und plotten.
 Das Resultat sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
 
-\subsubsection{Berechnung $\psi_k^{(0)}$} % FIXME bessere Titel?
+\subsection{Berechnung $\psi_k^{(0)}$} % FIXME bessere Titel?
 
 Die Implementierung von $\psi_k^{(0)}$ ist wegen $\sum$ etwas schwieriger.
 Normaler Weise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen.
@@ -239,7 +238,7 @@ summe = 0;            # Initialisierung des SummenVektors
 
 for l = 1 : n
   if l ~= k           # Vergleich l ungleich k
-    Psi_lk = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l)) .* Psi(l, :);
+    Psi_lk = dot(Psi(l, :), H1.*Psi(k, :)) / (E0(k)-E0(l)) .* Psi(l, :);
     summe = summe + Psi_lk;
   end
 end
@@ -247,7 +246,8 @@ end
 $summe$ ist nun ein Vektor mit den diskreten Abtastwerten von $Psi_k^{(1)}$.
 
 Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil am Gesammtzustand 
-mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms $E(k)-E(l)$ unter dem Bruchstrich.
+mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms 
+$E^{(0)}(k)-E^{(0)}(l)$ unter dem Bruchstrich.
 In diesem Fall addieren wir beim 90-sten Schritt ($l=90$) nur $1\%$ der St"orung dazu.
 Beim 280-sten Schritt ($l=280$) betr"agt der Anteil nur noch $0.1\%$.
 
@@ -260,7 +260,7 @@ Wir k"onnen jetzt die St"orung in
 +
 \varepsilon|\psi_k^{(1)}\rangle
 \end{equation}
-einsetzen und bekommen so die neue Wellenfunktion in Abbildung \ref{abb:efeld_psi_gestoert}.
+einsetzen und bekommen so die neue Wellenfunktion dargestellt in Abbildung \ref{abb:efeld_psi_gestoert}.
 
 Das Resultat ist in diesem Fall mit Vorsicht zu geniessen.
 Weil wir mit diskreten Werten arbeiten, entsteht beim Skalarprodukt ein Fehler von ca. $\dot(8, 10^{-15})$,
@@ -269,7 +269,7 @@ der mit einem korrektem Wert verwechselt werden kann.
 
 
 
-\subsubsection{Auswertung Psi}
+\subsection{Auswertung Psi}
 
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen den ungest"orten $\psi$ (schwarz) und der ersten N"aherung (rot).
 Auf der vertikalen Achse haben wir die Amplituden von $\psi_k$.
@@ -291,9 +291,9 @@ Wir k"onnen diesen Vorgang einfach mit der Schr"odingergleichung verstehen:
 =
 E \Psi(x)
 \]
-Weil $E \Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $V(x)}$ die Energie $-\frac{\hbar^2}{2m}\Delta\Psi(x)$.
-Das entspricht bei einem Elektron eine Abnahme der kinetischen Energie bzw. der Frequenz.
-Der Vorgang ist also "ahnlich einem mechanischem Pendel, welches mal potentielle Energie hat, mal Kinetische.
+Weil $E \Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $-\frac{\hbar^2}{2m}\Delta\Psi(x)$.
+Das bedeutet bei einem Elektron eine Abnahme der kinetischen Energie bzw. der Frequenz.
+Der Vorgang ist also "ahnlich einem mechanischem Pendel, welches mal Kinetische Energie hat, mal mechanische.
 
 \begin{figure}
  \centering
@@ -304,7 +304,7 @@ Der Vorgang ist also "ahnlich einem mechanischem Pendel, welches mal potentielle
 
 
 
-\subsubsection{Auswertung E}
+\subsection{Auswertung E}
 
 Wie wir in der Berechnung festgestellt haben ver"andert sich der Energiezustand nicht.
 H"atten wir eine Energie in der St"orung w"urde sie gegen oben immer schw"acher werden, weil $E_k^{(0)}$ immer gr"osser wird.
