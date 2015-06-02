@@ -3,8 +3,10 @@
 \begin{refsection}
 \chapterauthor{Hannes Diethelm}
 
+\renewcommand{\sectionmark}[1]{\markboth{}{~#1}}
+\fancyhead[R]{\nouppercase{\rightmark}}
+
 \section{Einleitung}
-\rhead{Einleitung}
 
 Ziel dieses Kapitels ist, auf Basis der Maxwell-Gleichungen, der Fourier-Theorie und einer Quantisierung analog des harmonischen Oszillators (Kapitel \ref{chapter:harmonischeroszillator}) die Feldquantisierung f"ur elektromagnetische Wellen herzuleiten.
 
@@ -13,7 +15,6 @@ Aufgrund der Quantisierung werden somit aus elektromagnetischen Wellen Energiequ
 Die Ausf"uhrungen in diesem Kapitel basieren gr"osstenteils auf \cite{fq:aqm}.
 
 \section{Maxwell-Gleichungen und elektromagnetische Wellen}
-\rhead{Maxwell-Gleichungen und elektromagnetische Wellen}
 
 Hilfreich dazu ist auch die Beschreibung von Magnetfeldern in Kapitel \ref{chapter:magnetfeld}. In diesem Kapitel wird der Gradient durch $\nabla$ ersetzt \cite{fq:nabla}.
 
@@ -72,7 +73,6 @@ Die Gleichung f"ur $\varphi$ wird nicht ben"otigt und die Gleichung f"ur $A$ wir
 \end{equation}
 
 \section{Vom Wellenfeld zu unabh"angigen Oszillatoren}
-\rhead{Vom Wellenfeld zu unabh"angigen Oszillatoren}
 
 L"osungen von (\ref{fq:wave_dgl}) f"ur periodische Randbedingungen und $t=0$ in einem W"urfel mit Seitenl"ange $L = V^{1/3}$ sind durch die Fourier-Reihe gegeben \cite{fq:em_wave_eq}:
 \begin{equation} \label{fq:wave_eq}
@@ -173,7 +173,6 @@ $Q_{k,\alpha}$ und $P_{k,\alpha}$ k"onnen nun als Koordinaten und Impulse der ei
 \end{equation*}
 
 \section{Quantisierung des Wellenfeldes}
-\rhead{Quantisierung des Wellenfeldes}
 
 Die im vorigen Kapitel hergeleitete Darstellung des Wellenfeldes als einzelne unabh"angige Oszillatoren l"asst deren Interpretation, wie in Kapitel \ref{chapter:harmonischeroszillator} beschrieben, zu. Dadurch ist eine analoge Quantisierung m"oglich, die es erlaubt, Wechselwirkungen zwischen dem Feld und Elektronen zu beschreiben.
 
@@ -327,7 +326,6 @@ H |n_{k_1,\alpha_1}, n_{k_2,\alpha_2}, \, \hdots\rangle = \sum_i \hbar \omega_k 
 \end{equation*}
 
 \section{Wechselwirkung zwischen Photonen und Elektronen}
-\rhead{Wechselwirkung zwischen Photonen und Elektronen}
 
 In diesem Kapitel wird das Ziel erreicht, die Wechselwirkung zwischen Photonen und Elektronen zu beschreiben. Durch diese Beschreibung k"onnen die Einstein-Koeffizienten einfach hergeleitet werden.
 
