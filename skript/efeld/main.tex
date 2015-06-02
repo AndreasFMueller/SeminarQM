@@ -109,6 +109,10 @@ Da wir keine Entartung haben k\"onnen wir folgende Gleichungen verwenden:
 E_k^{(1)} &=
 \langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
 \\
+\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+&=
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
+\\
 |\psi_k(\varepsilon)\rangle &=
 (1+i\varepsilon \gamma)
 \,|\psi_k^{(0)}\rangle
@@ -200,7 +204,8 @@ end
 Wir bekommen so einen Vektor mit den Werten f"ur $E_k^{(0)}$
 und eine Matrix $500 \times 1000$ f"ur $\psi_k^{(0)}$.
 
-Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
+\subsection{Berechnung $E_k^{(1)}$}
+
 Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
 Wir k"onnen die Energie mit
 \begin{lstlisting}[style=Matlab]
@@ -211,11 +216,14 @@ for k = 1 : 5
 end
 \end{lstlisting}
 berechnen und plotten.
-Das Resultat sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
+Das Resultat ist in diesem Fall mit Vorsicht zu geniessen.
+Weil wir mit diskreten Werten arbeiten, entsteht beim Skalarprodukt ein Fehler von ca. $\dot(8, 10^{-15})$,
+der mit einem korrektem Wert verwechselt werden kann.
+Den Plot sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
 
-\subsection{Berechnung $\psi_k^{(0)}$} % FIXME bessere Titel?
+\subsection{Berechnung $\psi_k^{(1)}$}
 
-Die Implementierung von $\psi_k^{(0)}$ ist wegen $\sum$ etwas schwieriger.
+Die Implementierung von $\psi_k^{(1)}$ ist wegen $\sum$ etwas schwieriger.
 Normaler Weise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen.
 Wir wollen aber ein Element auslassen.
 Um zum Beispiel den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
@@ -261,10 +269,6 @@ Wir k"onnen jetzt die St"orung in
 \varepsilon|\psi_k^{(1)}\rangle
 \end{equation}
 einsetzen und bekommen so die neue Wellenfunktion dargestellt in Abbildung \ref{abb:efeld_psi_gestoert}.
-
-Das Resultat ist in diesem Fall mit Vorsicht zu geniessen.
-Weil wir mit diskreten Werten arbeiten, entsteht beim Skalarprodukt ein Fehler von ca. $\dot(8, 10^{-15})$,
-der mit einem korrektem Wert verwechselt werden kann.
 
 
 
