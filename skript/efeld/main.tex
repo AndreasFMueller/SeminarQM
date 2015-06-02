@@ -157,8 +157,9 @@ Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 		\verb|vektor = n : m| & ein Vektor wird von $n$ bis $m$ gez"ahlt. \\
 		\verb|vektor = n : delta : m| & ein Vektor mit Werten von $n$ bis $m$, welche voneinander den Abstand $delta$ haben. \\
 		\verb|vector(:)| & alle Werte aus einem Vektor werden ausgelesen. \\
-		\verb|vector * vector| & entspricht einem Vektorprodukt \\
-		\verb|vector .* vector| & multipliziere die Elemente der Vektoren
+		\verb|matrix * matrix| & Matrix-Multiplikation \\
+		\verb|vector .* vector| & multipliziere die Elemente der Vektoren \\
+		\verb|dot(a, b)| & bildet das Skalarprodukt von $a$ & $b$
 	\end{tabular}
 \end{center}
 
@@ -209,7 +210,7 @@ for k = 1 : 5
   plot(epsilon, E0(k) + epsilon*E1_k(k))
 end
 \end{lstlisting}
-berechnen und plotten. Die Funktion \verb|dot(a, b)| bildet das Skalarprodukt.
+berechnen und plotten.
 Das Resultat sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
 
 \subsection{Berechnung $\psi_k^{(0)}$} % FIXME bessere Titel?
