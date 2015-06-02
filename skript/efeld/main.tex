@@ -187,7 +187,7 @@ m = 9.10938291*10^-31;             # Elektronenmasse
 h = 6062606957*10^-34;             # Planck-Konstante
 
 for k = 1 : 1000
-    E(k) = h^2*k^2 / (32*m*L^2);
+    E0(k) = h^2*k^2 / (32*m*L^2);
     
     if mod(k, 2) == 0              # Gerade k
         y = sin(k*pi*x/(2*L));
@@ -238,7 +238,7 @@ summe = 0;            # Initialisierung des SummenVektors
 
 for l = 1 : n
   if l ~= k           # Vergleich l ungleich k
-    Psi_lk = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l)) .* Psi(l, :);
+    Psi_lk = dot(Psi(l, :), H1.*Psi(k, :)) / (E0(k)-E0(l)) .* Psi(l, :);
     summe = summe + Psi_lk;
   end
 end
@@ -246,7 +246,8 @@ end
 $summe$ ist nun ein Vektor mit den diskreten Abtastwerten von $Psi_k^{(1)}$.
 
 Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil am Gesammtzustand 
-mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms $E(k)-E(l)$ unter dem Bruchstrich.
+mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms 
+$E^{(0)}(k)-E^{(0)}(l)$ unter dem Bruchstrich.
 In diesem Fall addieren wir beim 90-sten Schritt ($l=90$) nur $1\%$ der St"orung dazu.
 Beim 280-sten Schritt ($l=280$) betr"agt der Anteil nur noch $0.1\%$.
 
@@ -259,7 +260,7 @@ Wir k"onnen jetzt die St"orung in
 +
 \varepsilon|\psi_k^{(1)}\rangle
 \end{equation}
-einsetzen und bekommen so die neue Wellenfunktion in Abbildung \ref{abb:efeld_psi_gestoert}.
+einsetzen und bekommen so die neue Wellenfunktion dargestellt in Abbildung \ref{abb:efeld_psi_gestoert}.
 
 Das Resultat ist in diesem Fall mit Vorsicht zu geniessen.
 Weil wir mit diskreten Werten arbeiten, entsteht beim Skalarprodukt ein Fehler von ca. $\dot(8, 10^{-15})$,
