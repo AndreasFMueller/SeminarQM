@@ -3,7 +3,7 @@
   \rhead{BB84}
   \subsection{Das BB84 Protokoll}
   Das BB84 Protokoll, wurde 1984 von Charles H. Bennett and Gilles Brassard entwickelt,
-  was auch den Namen des Protokolls gepr\"agt hat.
+  was auch den Namen des Protokolls pr\"agte.
   Es war das erste Protokoll, welches es erm\"oglichte eine \"Ubertragung \"uber zwei unsichere Kan\"ale zu f\"uhren
   und dabei lauschende Dritte eindeutig zu erkennen und dennoch einen sicheren Schl\"ussel zu \"ubertragen.
 
@@ -12,7 +12,7 @@
   F\"ur das BB84 Protokoll sind zwei Kommunikationskan\"ale n\"otig:
   Ein konventioneller, sowie ein Quantenkanal, oft wird daf\"ur ein optisches Medium verwendet.
   Alice beginnt polarisierte Photonen zu erstellen und \"uber das optische Medium an Bob zu senden.
-  Dabei verwendet sie eine der zwei um $45^{\circ}$ verdrehte Basen,
+  Dabei verwendet sie eine der zwei um $45^{\circ}$ verdrehten Basen,
   welche jeweils zwei um $90^{\circ}$ verdrehte Polarisierungen aufweisen und damit die Werte 1 und 0 repr\"asentieren. Siehe Abbildung \ref{crypto:poltab}
 
   \begin{figure}
@@ -47,7 +47,7 @@
 
   Nachdem gen\"ugend Photonen gesendet wurden, um einen ausreichend starken symmetrischen Schl\"ussel zu erzeugen, findet zwischen Alice und Bob die sogenannte Basendiskussion statt.
   Dazu sendet Bob die Information, welche Basis er f\"ur welches Photon verwendet hat, \"uber den konventionellen Kanal zu Alice.
-  Alice meldet ihm, bei bei welchen Photonen er die richtige Basis, also dieselbe, welche auch sie f\"ur die Polarisation verwandte, verwendet hat.
+  Alice meldet ihm, bei welchen Photonen er die richtige Basis, also dieselbe, welche auch sie f\"ur die Polarisation benutzte, verwendet hat.
   Zur \"Uberpr\"ufung ob die Verbindung belauscht wurde, f\"uhren Alice und Bob eine statistische Analyse der Verteilung der \"Ubertragungsfehler aus.
   Wenn die Verbindung nicht manipuliert wurde, ist mit $P(\text{korrekt})=0.75$ zu rechnen.
   F\"ur Detail siehe Abbildung \ref{crypto:bittab}
@@ -66,7 +66,7 @@
         \hline
         B's Polarisation & $\uparrow$ & $\rightarrow$ & $\searrow$ & $\nearrow$ & $\rightarrow$ & $\nearrow$ & $\rightarrow$ & $\rightarrow$ \\
         \hline
-        B's gemessene Bits & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 \\
+        B's gemessene Bits & 0 & ? & 1 & ? & ? & 0 & ? & 1 \\
         \hline
         Decoypuls & & \checkmark & & & & & \checkmark & \\
         \hline
@@ -115,7 +115,7 @@
     \caption{Schl\"usselaustausch mit Eavesdropper\label{crypto:BB84Eve}}
   \end{figure}
 
-  Die einzige m\"ogliche Art von Eavesdropping ist, wenn Eve bei der Quelle die M\"oglichkeit hat, \"uberz\"ahlige Photonen abzuzweigen,
+  Die einzig m\"ogliche Art von Eavesdropping ist, wenn Eve bei der Quelle die M\"oglichkeit hat, \"uberz\"ahlige Photonen abzuzweigen,
   sie zu lagern und nachdem Alice und Bob die Basendiskussion gef\"uhrt haben,
   mit dem der richtigen Basis zu messen und dadurch einzelne g\"ultige Keybits zu erhalten.
 
@@ -130,7 +130,7 @@
   folgt aus $P_d = 1 - \left(\frac{3}{4}\right)^n$,
   dass 72 Keybits ausgetauscht werden m\"ussen.
 
-  Da es so etwas wie einen Photonen-Kopierer nicht gibt, ist ein Scenario mit undetektierbarem Lauschen nicht m\"oglich (Abbildung \ref{crypto:BB84Clone}).
+  Da es so etwas wie einen Photonen-Kopierer nicht gibt, ist ein Szenario mit undetektierbarem Lauschen nicht m\"oglich (Abbildung \ref{crypto:BB84Clone}).
 
   \begin{figure}
     \centering
