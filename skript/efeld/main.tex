@@ -21,16 +21,28 @@ Mit $\varepsilon$ wird die St"orung gesteuert. Dabei sollte $\varepsilon$ nicht 
 da die N"aherung sonst ungenau wird. 
 Setzen wir $\varepsilon = 0$, k\"onnen wir die St"orung dynamisch abschalten.
 
-Ein grosser Vorteil dabei ist, dass f"ur die erste N"aherung der St"orung nur Term hinzuf"ugen werden muss.
-Dieser kann ausserdem h"aufig aus dem Grundzustand abgeleitet werden.
-
 In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den Hamilton-Operator der 
 urspr"unglichen Funktion $H_0$ um $\varepsilon H_1$ erg"anzen:
 \[
   H = H_0 + \varepsilon H_1
 \]
 
+Ein grosser Vorteil dabei ist, dass f"ur die erste N"aherung der St"orung nur ein Term hinzuf"ugen werden muss.
+Dieser kann ausserdem h"aufig aus dem Grundzustand abgeleitet werden.
 
+
+%FIXME Erk\"arung zu den Formeln
+\[
+  E_c(\varepsilon) = E_n^{(0)} + \varepsilon^1 E_n^{(1} + \varepsilon^2 E_n^{(2)} + \ldots
+\]
+FIXME: Welche Form hat E_n?
+
+\[
+  |\psi_n(\varepsilon)\rangle = |\psi_n^{(0)}(\varepsilon)\rangle + \varepsilon^1 |\psi_n^{(1)}(\varepsilon)\rangle + \varepsilon^2 |\psi_n^{(2)}(\varepsilon)\rangle + \ldots
+\]
+
+Wir betrachten in dieser Anwendung nur die erste N\"aherung und werten darum nur die Terme mit den 
+Indizes $0$ und $1$ aus.
 
 
 \section{Potentialkasten mit elektrischem Feld}
