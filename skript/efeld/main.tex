@@ -59,8 +59,9 @@ Indizes $0$ und $1$ aus.
 Bei unserer Anwendung bauen wir auf dem Potentialkasten (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten}) auf.
 
 Dabei geht es um ein Elektron welches zwischen zwei Barrieren mit unendlich hohem Potential gefangen ist.
-Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$ bewegen,
-ausserhalb kommt es hingegen nicht vor.
+Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$ 
+(definiert in der Gleichung \ref{skript:potentialkasten-psi-normiert} Seite \pageref{skript:potentialkasten-psi-normiert}) bewegen,
+ausserhalb kommt es nicht vor.
 
 Wir erweitern jetzt das System mit einer St"orung, indem wir eine elektrische Spannung anlegen.
 Weil das Elektron eine negative Ladung besitzt ver"andert sich seine Wellenfunktion.
@@ -78,20 +79,37 @@ V_0(x)&=
 \end{aligned}
 \end{equation}
 und erweitern sie mit der St"orung $H_1$, welche wir als lineares 
-Potential\footnote{Das Feld ist die Ableitung des Potentials} 
-definieren:
+Potential definieren:
 \begin{equation}
   H_1(x) = a x + b
 \end{equation}
-Die St"orung kann noch weiter vereinfacht werden:
-% FIXME falsch: Weil die Barrieren unendlich hoch sind, k"onnen wir $b = 0$ setzen,
-und da wir $a$ bereits durch $\varepsilon$ beschreiben, k\"onnen wir mit $a = 1$ vereinfachen.
-$\varepsilon$ entspricht somit dem elektrischen Feld das wir anlegen.
+Da das Potential die Integration des elektrischen Feldes ist entspricht der Parameter $b$ dem $c$ der Integration.
+F\"ur das Potential sind nur Unterschiede relevant, das Niveau, solange es in der ganzen Anwendung ver\"andert wird,
+kann beliebig gew\"ahlt werden. Somit k\"onnen wir mit $b=0$ die Formel nochmals vereinfachen.
 
-% FIXME feld zu spannung korrekt?
-$\varepsilon$ wird hier zur Berschreibung der St\"arke des elektrischen Feldes verwendet.
-$\varepsilon$ ist definiert als die angelegte Spannung geteilt durch die Breite des Spalts
-$\frac{ U }{2 l}$.
+Die Feldst\"arke $a$ h\"angt von der Breite des Spalts und der angelegten Energie $U$ ab.
+\[
+  a = \frac{ U }{2 l}
+\]
+
+Diese Funktion dr\"uckt mit dem Parameter $U$ das eingeschaltete elektrische Feld \"uber dem Potentalskasten
+und erf\"ullt damit die selbe Funktion wie das $\varepsilon$.
+Wollen wir nun das $a = 1$ um die Formeln zu vereinfachen, m\"ussen wir dem $\varepsilon$ alles andere geben.
+
+% TODO evt. bessere Formulierung
+\begin{equation}
+\begin{aligned}
+  \varepsilon H_1(x) &= \varepsilon a e_{-} x +b \\
+                     &= \varepsilon \frac{ U }{2 l} e_{-} x + 0 
+     \Longrightarrow \varepsilon = \frac{ U }{2 l} e_{-} ; a = 1
+\end{aligned}
+\end{equation}
+
+bereits durch $\varepsilon$ beschreiben, k\"onnen wir mit $a = 1$ vereinfachen.
+
+
+
+
 
 Wenn wir jetzt die St"orung einsetzen, bekommen wir die neue Hamilton-Funktion
 \[
@@ -116,11 +134,12 @@ wo wir entlang der Diagonalen identische Zust"ande haben.
 In unserem Fall k"onnen solche Symmetrien nicht auftreten.
 Wir sehen ausserdem an der Gleichung
 \[
-  E_n = \frac{h^2n^2}{32ml^2}
+  E_n^{(0)} = \frac{h^2n^2}{32ml^2}
 \]
-dass die Energie immer steigt.
+dass die Energie mit zunehmendem $n$ immer steigt. 
 
-Da wir keine Entartung haben k\"onnen wir folgende Gleichungen verwenden:
+Zudem haben wir f\"ur jedes $n$ nur genau einen Zustand und dadurch keine Entartung. 
+Deshalb k\"onnen wir folgende Gleichungen verwenden:
 \begin{equation}
 \begin{aligned}
 E_k^{(1)} &=
