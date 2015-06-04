@@ -1,9 +1,13 @@
 \section{E91}
   \index{E91}
   \rhead{E91}
+  \subsection{Verschr\"ankung}
+  Durch Verschr\"ankung lassen sich mehrere Photonen mit dem gleichen Zustand als ein System beschreiben. Diese Beschreibung ist notwendig nichtlokal.\\
+  	Wir besitzen zwei Systeme $A$ und $B$ mit den Hilbert R\"aumen $H_A$ und $H_B$. Pro System sind zwei Basisvektoren,  $ \{|0\rangle_A,|1\rangle_A\}$ und $\{|0\rangle_B,|1\rangle_B\}$ gegeben. Somit ist der folgende Singulett Zustand verschr\"ankt: $\frac{1}{\sqrt{2}}(\lvert0\rangle_A|1\rangle_B - |1\rangle_A|0\rangle_B) $. Dadurch ist der Zustand von $A$ und $B$ \"uberlagert.\\
+	Man nehme jetzt an Alice beobachtet System A und Bob das System B. F\"uhrt Alice nun eine Messung durch k\"onnen folgende Ereignisse gleich wahrscheinlich auftreten. Der Zustand des Systems kollabiert zu $\lvert0\rangle_A|1\rangle_B$ und Alice misst $\psi_0$ oder das System kollabiert zu $\lvert1\rangle_A|0\rangle_B$ und Alice misst $\psi_1$. F\"ur den ersten Fall erh\"alt Bob bei jeder Messung, welche er durchf\"uhrt $\psi_1$ beim zweiten Fall immer $\psi_0$. Dank diesem Verhalten wird ein Abh\"oren/Messen der \"ubertragenen Photonen sofort bemerkt.
   \subsection{Das E91 Protokoll}
   Das E91 Protokoll wurde 1991 von Artur Ekert entworfen.
-  Dabei werden verschr\"aenkte Photonen verwendet, welche von Alice, Bob oder sogar Eve erzeugt werden k\"onnen.
+  Dabei werden verschr\"ankte Photonen verwendet, welche von Alice, Bob oder sogar Eve erzeugt werden k\"onnen.
 
   \subsection{Der Schl\"usselaustausch mit E91}
   Das Protokoll beruht auf der Nutzung der Eigenschaften von Verschr\"ankten Quanten \cite{qc:verschraenkung}.
@@ -48,7 +52,16 @@
   Dabei verwendet es ebenfalls einen konventionellen und einen Quantenkommunikationskanal.
   Dabei k\"onnen ebenfalls beide unsicher sein, dabei darf der Konventionelle auch unauthentisiert sein.
 
+  % Nach der Basendiskussion.
+
+  Die beiden Parteien w\"ahlen jeweils drei aus vier Winkeln als Basis (f"ur Photonen $45^{\circ}$, $22.5^{\circ}$, $0^{\circ}$, $-22.5^{\circ}$), wobei genau 2 davon "ubereinstimmen m"ussen.
+  Dann wird dem Ereignis ``Photon detektiert'' den Bitwert 0 oder 1 zugewiesen.
+  F"ur den Schl"usselaustausch werden mit einer Quelle verschr"ankte Photonen erzeugt und
+  jeweils eins davon an jeden Kommunikationspartner gesendet.
 
 
-  Nach der Basendiskussion
+ 
+  % Detektieren mit Avalanche-Photodioden
+  % Basen: A und B wählen jeweils 3 aus vier Winkel, wovon 2 identisch sein müssen. z.B. A: 45°, 22.5°, 0° B: 22.5°, 0°, -22.5° (für Elektronene wären die Winkel doppelt so gross.
+  % Eve kann detektiert werden, weil die Bellsche Ungleichung einen zu tiefen Wert liefert.
 
