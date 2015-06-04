@@ -16,13 +16,13 @@ Floating Gate Transistoren z"ahlen zu den Feldeffekttransistoren
 (Siehe Abbildung \ref{skript:Floatinggatetransistor}).
 Im Floating Gate wird die Ladung gespeichert, aus dem man einen Bin"aren
 Zustand bestimmen kann.
-Somit k"onnen in einem Floating Gate auch mehrere Bits gespeichert
+Je nach Ladungsmenge im Floating Gate k"onnen auch mehrere Bits gespeichert
 werden, "ublicherweise werden jedoch 2 Bits in einem Floating Gate
 Transistor gespeichert.
 Die Ladung im Floating Gate l"asst sich "uber das Control Gate steuern.
 Wird das Potential am Control Gate erh"oht, beginnt von Drain nach
 Source ein Strom zu fliessen.
-Somit fliesst nun in der n"ahe des Floating Gates Elektronen durch.
+Somit fliessen nun in der n"ahe des Floating Gates Elektronen durch.
 "Ublicherweise wird der Source Anschluss meistens mit GND verbunden und
 Drain wird beim Leseprozess auf 0V geh"angt und beim Schreibprozess
 "ublicherweise auf "uber 10V.
@@ -43,7 +43,7 @@ Diese unterscheiden sich in der Zusammenschaltung der einzelnen Transistoren.
 
 \subsubsection{NAND Typ}
 \rhead{NAND Typ}
-Bei den NAND Flash-Speicher werden die einzelnen Transistoren zu einer
+Bei einem NAND Flash-Speicher werden die einzelnen Transistoren zu einer
 NAND Speicherzelle zusammen geschaltet.
 Die Speicherzellen werden in Gruppen in Serie geschaltet.
 Die Speicherzellengruppe teilt sich eine Datenleitung, daher muss das
@@ -53,28 +53,33 @@ ben"otigt weniger Platz.
 NAND Flash-Speicher haben ihre Verwendung vor allem in Bereichen, wo viel
 Speicher m"oglichst wenig Platz brauchen darf und die Zugriffszeit keine
 grosse Rolle spielt.
+Verwendung finden sie vor allem in USB-Sticks, Flash-Speicherkarten
+(z.B. SD-Speicherkarten) und als Speicher in MP3-Playern.
 
 \subsubsection{NOR Typ}
 \rhead{NOR Typ}
-Bei den NOR Flash-Speicher werden die Transistoren zu einer NOR
+Bei einem NOR Flash-Speicher werden die Transistoren zu einer NOR
 Speicherzelle zusammen geschaltet.
 Die Speicherzellen werden "uber die Datenleitungen parallel geschaltet,
 dadurch kann auf jede Speicherzelle direkt zugegriffen werden.
 Die Parallelleitungen brauchen mehr Platz, es lassen sich jedoch k"urzere
 Zugriffszeiten realisieren.
+Die NOR Flash-Speicher finden z.B. bei Programmspeichern und Firmwarespeichern
+ihre verwendung.
 
 \subsection{L"oschvorgang}
 \rhead{Lo"schvorgang}
-Der L"oschvorgang kann erreicht werden, indem das Potential am Gate
-heruntergesetzt wird.
-So wird erreicht, dass es zum Tunneleffekt kommt.
+Der L"oschvorgang kann erreicht werden, indem das Potential am 
+Controll Gate heruntergesetzt wird.
+So wird erreicht, dass es zum Tunneleffekt kommt und die Ladung fliesst
+aus dem Floating Gate ab.
 Alles zum Tunneleffekt kann im Kapitel \ref{tunnel:tunneleffekt} nachgelesen werden.
 
 \subsection{Schreibvorgang und Zyklenzahl}
 \rhead{Schreibvorgang und Zykklenzahl}
 F"ur den Speichervorgang m"ussen Elektronen mittels 'hot electron injection'
 in das Floating-Gate gebracht werden. Ein grosses Problem bei
-Flashspeichern ist die begrenzte schreib-und Leseanzahl.
+Flashspeichern ist die begrenzte Anzahl Schreibezyklen.
 Wegen dem Schreibvorgang mittels 'hot electron injection', wird die
 Oxidschicht (Isolation \ref{skript:Floatinggatetransistor}) um das Floating Gate herum
 besch"adigt, da bei der 'hot electron injection' eine grosse Leistung
@@ -90,6 +95,8 @@ dadurch immer ein bisschen an Speicher verloren geht.
 \section{Modell f"ur den Schreibvorgang}
 \subsection{Modell des Potentialtopfs und der Anregung}
 \rhead{Modell des Potentialtopfs und der Anregung}
+F"ur den Floating Gate Transistor wird ein vereinfachtes Modell
+gew"ahlt um die Funktionsweise und die Berechnung besser zu illustrieren.
 Als Modell f"ur das Floating-Gate wird ein Potentialtopf verwendet,
 in dem die Elektronen gespeichert werden.
 Als Vereinfachung des Schreibvorgangs kann man sich das Putten beim
@@ -111,14 +118,17 @@ Wird das Elektron stark genug abgebremst, landet es im Potentialtopf.
 Am Anfang befindet sich im Potentialtopf Teilchen im Grundzustand $|0\rangle$
 mit der Grundenergie $E_{0}$.
 Das vorbeifliegende Elektron hat eine h"ohere Energie und st"ort mit
-einer Potentiellenenergie $V_{e}(x,t)$ (Siehe Abbildung \ref{flash:Anregung})
+einem Potential $V_{e}(x,t)$ (Siehe Abbildung \ref{flash:Anregung})
 den Potentialtopf.
 Die Teilchen bremsen das Elektron ab und nehmen Energie auf, dadurch
 wird die Energie $E_{0}$ gr"osser und es kommt zu einem "Ubergang 
 zwischen dem Zustand $|0\rangle$ und dem Zustand $|1\rangle$.
-Das Ganze k"onnte man auch auf ein noch h"oheres Energieniveau ($E_{2}$)
-bringen, jedoch ist dies nicht n"otig, da dass ganze nur ein Modell
-sein soll.
+Die Teilchen im Potentialtopf k"onnten nat"urlich noch mehr Energie
+absorbieren, indem sie zu einem Zustand $|2\rangle$ mit noch h"oherer
+Energie "ubergehen, doch wegen der h"oheren Energiedifferenz ist dieser
+"Ubergang weniger wahrscheinlich.
+Auf die Berechung der Wahrscheinlichkeit mit mehr als zwei Zust"anden
+wir verzichtet, da dies nur ein Modell sein soll.
 
 Die Teilchen im Potentialtopf haben Energien, welche den jeweiligen 
 Wellenfunktionen entsprechen.
@@ -159,12 +169,20 @@ einem Flashspeicher
 \label{flash:Anregung}}
 \end{figure}
 
-\subsubsection{L"osung der Schr"odingergleichung}
+\subsection{"Ubergangswahrscheinlichkeit}
+\rhead{"Ubergangswahrscheinlichkeit}
+Es wird die Wahrscheinlichkeit errechnet mit der die Teilchen
+vom Grundzustand $|0\rangle$ in den Zustand $|1\rangle$ wechseln
+und damit Energie aufnehmen. 
+Diese Wahrscheinlichkiet ist $\vert\langle1|\psi(t)\rangle\vert^2$
+daher muss zuerst $\langle1|\psi(t)\rangle$ berechnet werden.
+
+\subsection{L"osung der Schr"odingergleichung}
 \rhead{L"osung der Schr"odingergleichung}
 Die Schr"odingergleichung ergibt sich aus der kinetischen Energie des
 Potentialtopfes und der potentiellen Energie der Anregung.
-Mit der Schr"odingergleichung wird nicht die Energie der Teilchen
-sondern die Energie der Elektronen berechnet.
+Mit der Schr"odingergleichung wird nicht die Energie der Elektronen
+sondern die Energie der Teilchen berechnet.
 \[
 \ i\hbar\frac{d}{dt}|\psi(t)\rangle = H|\psi(t)\rangle = \Bigg{(}-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}+V(x)+V_{e}(x,t)\Bigg{)}|\psi(t)\rangle
 \]
@@ -189,7 +207,7 @@ Gleichung sieht sehr "ahnlich aus.
 \ i\hbar\frac{d}{dt}\langle0|\psi(t)\rangle = E_{0}\langle0|\psi(t)\rangle+\langle0|\psi(t)\rangle V(t)
 \]
 
-\subsubsection{Skalarprodukt}
+\subsection{Skalarprodukt}
 \rhead{Skalarprodukt}
 
 Mittels Skalarprodukt kann das Differentialgleichungssystem weiter
@@ -220,17 +238,16 @@ Daraus folgt:
 \ i\hbar\dot{a}_1 = V_{0} v_{10} a_{0} + (E_{1} V_{0} v_{11}) a_{1}
 \]
 
-\subsubsection{Variation der Konstanten}
+\subsection{Variation der Konstanten}
 \rhead{Variation der Konstanten}
-Aufgrund der $\cos$schwingung oszilliert die Differtialgleichunug
-schnell.
+Die L"osung der Differentialgleichung oszilliert schnell, da die
+Frequenz der Gundschwingung sehr gross ist.
 Diese Oszillation kann jedoch heraus gefiltert werden, indem man die
 Konstanten variiert.
 Das Prinzip der Variation der Konstanten wird an folgendem Beispiel
 illustriert.
 Die Konstanten entsprechen der Energien und der Potentiale, welche nun
 Zeitabh"angig gemacht werden.
-
 \[
 \ \dot{a} = C a(t) + D(t) \Rightarrow a(t) = k(t) e^{C t}
 \] 
@@ -239,7 +256,8 @@ durch ableiten und das einsetzen von $ a(t)$ und  $ \dot{a} $ erhalten wir:
 \[
 \ k'(t) e^{C t} + C k(t) e^{C t} = C k(t) e^{C t} + D(t)
 \] 
-Hier k"urzt sich $ C k(t) e^{C t} $ raus.
+Hier k"urzt sich $ C k(t) e^{C t} $ heraus und somit ist der schnell
+oszillierende Teil ist weg.
 Daraus folgt:
 \[
 \ k'(t) = D(t) e^{-C t}
@@ -248,7 +266,9 @@ integriert diese Gleichung nach der Zeit folgt:
 \[
 \ k(t) = \int D(t) e^{-C t} dt 
 \]
- 
+
+\subsection{Variation der Konstanden f"ur zwei Differentialgleichungen}
+\rhead{Variation der Konstanden f"ur zwei Differentialgleichungen}
 Angewandt auf das Differentialgleichungssystem, wobei $C_{00}$ $(E_{0} + V_{0} v_{00})$
 entspricht, $C_{01}$ $V_{0} v_{01}$, $C_{10}$ $V_{0} v_{10}$ und $C_{11}$ $(E_{1} V_{0} v_{11})$:
 \[
@@ -260,17 +280,18 @@ entspricht, $C_{01}$ $V_{0} v_{01}$, $C_{10}$ $V_{0} v_{10}$ und $C_{11}$ $(E_{1
 
 Wenn $ C_{01}$ und $ C_{10}$ $ =0$ dann w"are die L"osung:
 \[
-\ a_{0}(t) = \operatorname{konst}_0 e^{C_{00} t} 
+\ a_{0}(t) = \operatorname{k}_0 e^{C_{00} t} 
 \]
 \[
-\ a_{1}(t) = \operatorname{konst}_1 e^{C_{11} t}
+\ a_{1}(t) = \operatorname{k}_1 e^{C_{11} t}
 \]
-Wenn die Konstanten auch von der Zeit abh"angig sind, ist die L"osung: 
+Wenn die Konstanten $ \operatorname{k}_0 $ und $ \operatorname{k}_1 $
+auch von der Zeit abh"angig sind, ist die L"osung: 
 \[
-\ a_{0}(t) = \operatorname{konst}_0(t) e^{C_{00} t} 
+\ a_{0}(t) = \operatorname{k}_0(t) e^{C_{00} t} 
 \]
 \[
-\ a_{1}(t) = \operatorname{konst}_1(t) e^{C_{11} t} 
+\ a_{1}(t) = \operatorname{k}_1(t) e^{C_{11} t} 
 \]
 Eingesetzt in das Differentialgleichungssystem folgt daraus:
 \[
@@ -316,24 +337,28 @@ Die $ \lambda $ der zweite Gleichung lauten:
 \[
 \ \lambda_{3,4} = \frac{(C_{00}-C_{11})\pm \sqrt{(C_{00}-C_{11})^2-4(C_{01}C_{10})}}{2}
 \]
-
 Nun kann man die $\lambda$ wieder in das charakteristische Polynom
 einsetzen und numerisch berechnen lasen, dazu kann zum Beispiel Matlab
 verwendet werden.
 
-\subsubsection{Numerische Resultate}
+\subsection{Numerische Resultate}
 \rhead{Numerische Resultate}
 In der Abbildung \ref{skript:potentialmittel}, sieht man in der unteren
 Grafik, dass man nach ca. 0.02s sagen kann das der Zustand $|0\rangle$, 
-respektive in der oberen Grafik der Zustand $|1\rangle$ eintrifft.
+respektive in der oberen Grafik der Zustand $|1\rangle$ erreicht wird.
 Wenn man das Potential um das 50-Fache erh"oht, sieht man in der Abbildung
-\ref{skript:potentialgross}, dass die Wahrscheinlichkeit, dass der Zustand
-$|0\rangle$ viel schneller eintrifft und die Wahrscheinlichkeit f"ur den
+\ref{skript:potentialgross}, dass die Wahrscheinlichkeit, f"ur  den Zustand
+$|0\rangle$ viel schneller erreicht wird und die Wahrscheinlichkeit f"ur den
 Zustand $|1\rangle$ viel schneller ansteigt.
 Wenn man jedoch das Potential um das ca. 30-Fache verkleinert, dauert es
 um einiges l"anger bis die Wahrscheinlichkeit, dass der Zustand $|0\rangle$,
-wie in Abbildung \ref{skript:potentialklein} eintrifft, respektive bis
-die Wahrscheinlichkeit, dass der Zustand $|1\rangle$ eintrifft.
+wie in Abbildung \ref{skript:potentialklein} erreicht wird, respektive bis
+die Wahrscheinlichkeit, dass der Zustand $|1\rangle$ erreicht wird.
+
+Das Modell zeigt, dass die Teilchen im Potentialtopf dem vorbeifliegenden
+Elektron Energie entziehen und es abbremsen k"onnen.
+Im realen Halbleiter sind die Teilchen Wellen im Elektronengas,
+sogenannte Plasmonen.
 
 \begin{figure}
 \centering
