@@ -30,9 +30,8 @@ Drain wird beim Leseprozess auf 0V geh"angt und beim Schreibprozess
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth]{flash/graphics/Floatinggate.pdf}
-\caption{Abbildung eines Floating Gate Transistors: Quelle:
-\url{http://upload.wikimedia.org/wikipedia/commons/a/ae/Floating_gate_transistor-en.svg}
-\label{skript:Floatinggatetransistor}}
+\cite{Abbildung eines Floting Gate Transistor}
+\label{skript:Floatinggatetransistor}
 \end{figure}
 
 \subsection{Flash-Typen}
@@ -70,7 +69,7 @@ ihre verwendung.
 \subsection{L"oschvorgang}
 \rhead{Lo"schvorgang}
 Der L"oschvorgang kann erreicht werden, indem das Potential am 
-Controll Gate heruntergesetzt wird.
+Control Gate heruntergesetzt wird.
 So wird erreicht, dass es zum Tunneleffekt kommt und die Ladung fliesst
 aus dem Floating Gate ab.
 Alles zum Tunneleffekt kann im Kapitel \ref{tunnel:tunneleffekt} nachgelesen werden.
@@ -231,12 +230,10 @@ Somit ergibt sich dann folgendes Differentialgleichungssystem:
 \]
 
 Daraus folgt:
-\[
-\ i\hbar\dot{a}_0 = (E_{0} + V_{0} v_{00}) a_{0} + V_{0} v_{01} a_{1}
-\]
-\[
-\ i\hbar\dot{a}_1 = V_{0} v_{10} a_{0} + (E_{1} V_{0} v_{11}) a_{1}
-\]
+\begin{align}
+i\hbar\dot{a}_0 = (E_{0} + V_{0} v_{00}) a_{0} + V_{0} v_{01} a_{1}
+i\hbar\dot{a}_1 = V_{0} v_{10} a_{0} + (E_{1} V_{0} v_{11}) a_{1}
+\end{align}
 
 \subsection{Variation der Konstanten}
 \rhead{Variation der Konstanten}
@@ -348,12 +345,13 @@ Grafik, dass man nach ca. 0.02s sagen kann das der Zustand $|0\rangle$,
 respektive in der oberen Grafik der Zustand $|1\rangle$ erreicht wird.
 Wenn man das Potential um das 50-Fache erh"oht, sieht man in der Abbildung
 \ref{skript:potentialgross}, dass die Wahrscheinlichkeit, f"ur  den Zustand
-$|0\rangle$ viel schneller erreicht wird und die Wahrscheinlichkeit f"ur den
+$|0\rangle$ viel schneller kleiner wird und die Wahrscheinlichkeit f"ur den
 Zustand $|1\rangle$ viel schneller ansteigt.
 Wenn man jedoch das Potential um das ca. 30-Fache verkleinert, dauert es
 um einiges l"anger bis die Wahrscheinlichkeit, dass der Zustand $|0\rangle$,
-wie in Abbildung \ref{skript:potentialklein} erreicht wird, respektive bis
-die Wahrscheinlichkeit, dass der Zustand $|1\rangle$ erreicht wird.
+wie in Abbildung \ref{skript:potentialklein} zu sehen ist, erreicht wird,
+respektive bis die Wahrscheinlichkeit, dass der Zustand $|1\rangle$ erreicht
+wird.
 
 Das Modell zeigt, dass die Teilchen im Potentialtopf dem vorbeifliegenden
 Elektron Energie entziehen und es abbremsen k"onnen.
