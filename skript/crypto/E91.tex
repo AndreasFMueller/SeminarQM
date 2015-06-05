@@ -1,3 +1,8 @@
+\newcommand{\qcste}{$-22.5^{\circ}$}
+\newcommand{\qcstz}{$0^{\circ}$}
+\newcommand{\qcstd}{$22.5^{\circ}$}
+\newcommand{\qcstv}{$45^{\circ}$}
+
 \section{E91}
   \index{E91}
   \rhead{E91}
@@ -23,28 +28,17 @@
   \end{enumerate}
 
   \begin{figure}
-  \centering
-    \begin{tabular}{ l || c | c | c | c | c | c | c | r }
-      \hline
-      Erzeugen der versch\"ankten Photonen \\
-      \hline
-      A's gew\"ahlte Basen & $+$ & $+$ & $\times $ & $+$ & $\times $ & $\times $ & $\times $ & $+$ \\
-      \hline
-      A's gemessene Polarisation & $\uparrow$ & $\rightarrow$ & $\searrow$ & $\uparrow$ & $\searrow$ &     $\nearrow$ & $\nearrow$ & $\rightarrow$ \\
-      \hline
-      A's gemessene Bits & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 \\
-      \hline
-      B's gew\"ahlte Basen & $+$ & $+$ & $\times $ & $\times $ & $+$ & $\times $ & $+$ & $+$ \\
-      \hline
-      B's gemessene Polarisation & $\rightarrow$ & $\uparrow$ & $\nearrow$ & $\nearrow$ & $\rightarrow$     & $\searrow$ & $\rightarrow$ & $\uparrow$ \\
-      \hline
-      B's gemessene Bits & 1 & 0 & 0 & ? & ? & 1 & ? & 0 \\
-      \hline
-      Basen Diskussion \\
-      \hline
-      Alice's Key Bits & 0 & 1 & 1 & & & 0 & & 1 \\
-      Alternative Key Bits & 1 & 0 & 0 & & & 1 & & 0 \\
-      \hline
+	\centering
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+    	\hline Anti-/Symmetrische Wellenfkt & A & A & A & A & S & S & S & S \\
+    	\hline Von A genutzte Basen & \qcste & \qcstz & \qcstd & \qcstv & \qcste & \qcstz & \qcstd & \qcstv \\
+    	\hline Von A gemessene Bits & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+    	\hline Von B genutzte Basen & \qcste & \qcstv & \qcstz & \qcste & \qcstd & \qcstd & \qcstd & \qcstd \\
+    	\hline Von B gemessene Bits & 0 & ? & ? & ? & ? & ? & 0 & ? \\
+      \hline Basendiskussion / Nutzen & \checkmark & $\times$ & CHSH & CHSH & $\times$ & CHSH & \checkmark & CHSH \\
+    	\hline Basen Zwischenwinkel & \qcstz & \qcstv & \qcstd & $67.5^{\circ}$ & \qcstv & \qcstd & \qcstz & \qcstd \\
+    	\hline Gemeinsame Schl"usselbits & 1 & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & 0 & $\times$ \\
+    	\hline
     \end{tabular}
     \caption{Die Emittlung des Schl\"ussels mit E91 \label{crypto:tangtab}}
   \end{figure}
@@ -54,14 +48,19 @@
 
   % Nach der Basendiskussion.
 
-  Die beiden Parteien w\"ahlen jeweils drei aus vier Winkeln als Basis (f"ur Photonen $45^{\circ}$, $22.5^{\circ}$, $0^{\circ}$, $-22.5^{\circ}$), wobei genau 2 davon "ubereinstimmen m"ussen.
+  Die beiden Parteien w\"ahlen jeweils drei aus vier Winkeln als Basis (f"ur Photonen \qcste, \qcstz, \qcstd, \qcstv), wobei genau 2 davon "ubereinstimmen m"ussen.
   Dann wird dem Ereignis ``Photon detektiert'' den Bitwert 0 oder 1 zugewiesen.
   F"ur den Schl"usselaustausch werden mit einer Quelle verschr"ankte Photonen erzeugt und
   jeweils eins davon an jeden Kommunikationspartner gesendet.
 
+  Es werden zwei F"alle unterschieden:
+  \begin{itemize}
+      \item Die Photonen haben eine symmetrische Wellenfunktion, dann kann A sichergehen, dass B das gleiche Messresultat bekommen hat, wie sie, wenn B dieselbe Basis verwendet hat.
+      \item  Die Photonen haben eine antisymmetrische Wellenfunktion, dann weiss A, dass B das invertierte Messresultat bekommen hat, wenn B dieselbe Basis verwendet hat.
+  \end{itemize}
+
+  Die F"alle, in denen die Basis um \qcstv verschieden sind, sind nutzlos, da das Resultat bei B nicht definiert ist.
+  Die F"alle mit einem Zwischenwinkel von \qcstd oder $67.5^{\circ}$ werden verwendet um mit der CHSH Ungleichung (Eine verallgemeinerte Form der Bellschen Ungleichung) die Sicherheit des Kommunikationkanals festzustellen.
 
  
   % Detektieren mit Avalanche-Photodioden
-  % Basen: A und B wählen jeweils 3 aus vier Winkel, wovon 2 identisch sein müssen. z.B. A: 45°, 22.5°, 0° B: 22.5°, 0°, -22.5° (für Elektronene wären die Winkel doppelt so gross.
-  % Eve kann detektiert werden, weil die Bellsche Ungleichung einen zu tiefen Wert liefert.
-
