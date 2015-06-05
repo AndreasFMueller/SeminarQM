@@ -167,12 +167,14 @@ Deshalb k\"onnen wir folgende Gleichungen verwenden:
 \begin{aligned}
 E_k^{(1)} &=
 \langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+&&\Longrightarrow
+& E_k(\varepsilon)&=E_k^{(0)} + \varepsilon E_k^{(1)}
 \\
 \langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
 &=
 \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
-\\
-|\psi_k(\varepsilon)\rangle &=
+&&\Longrightarrow
+& |\psi_k(\varepsilon)\rangle &=
 (1+i\varepsilon \gamma)
 \,|\psi_k^{(0)}\rangle
 +
@@ -185,10 +187,18 @@ E_k^{(1)} &=
 \end{aligned}
 \end{equation}
 
+
+
+
+
+
+
+
+\subsection{Symmetrie"uberlegung}
 % FIXME Text ist zu kurz
 St\"orung ist ungerade
 \[
-  \int psi_k(x) x psi_k(x) dx = \int x psi_k^2 dx
+  \int \psi_k(x) x \psi_k(x) dx = \int x \psi_k^2 dx
 \]
 
 
