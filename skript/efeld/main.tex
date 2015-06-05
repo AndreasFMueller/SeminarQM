@@ -8,44 +8,59 @@ In diesem Kapitel erweitern wir das Beispiel des Potentialkastens
 (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten})
 um eine St\"orung.
 
-\section{Grundlagen St"orungstheorie} %Fixme: alles
+\section{Grundlagen St"orungstheorie}
 Grunds"atzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell 
 (Abb \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
 mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
+
+\begin{comment} %fixme
+\[
+  f(x, \varepsilon) = f_0(x) + \varepsilon^1 f_0(x) + \varepsilon^2 f_0(x) + \ldots
+\]
+\[
+  |\psi_n(\varepsilon)\rangle = |\psi_n^{(0)}(\varepsilon)\rangle + \varepsilon^1 |\psi_n^{(1)}(\varepsilon)\rangle + \varepsilon^2 |\psi_n^{(2)}(\varepsilon)\rangle + \ldots
+\]
+Wir betrachten in unserer Anwendung nur die erste N\"aherung
+und werten deshalb nur die Terme mit den Indizes $0$ und $1$ aus.
+\end{comment}
+
 F"ur die erste N"aherung gilt:
 \[
   f(x, \varepsilon) = f_0(x) + \varepsilon f_1(x)
 \]
-Dabei ist $f_0(x)$ die urspr\"ungliche Funktion und $f_1(x)$ die erste  N"aherung der St"orung.
-Mit $\varepsilon$ wird die St"orung gesteuert. Dabei sollte $\varepsilon$ nicht zu gross gew"ahlt werden, 
-da die N"aherung sonst ungenau wird. 
-Setzen wir $\varepsilon = 0$, k\"onnen wir die St"orung dynamisch abschalten.
+Dabei ist $f_0(x)$ die ungest"orte Funktion und $\varepsilon f_1(x)$ die St"orung.
+$\varepsilon$ ist eine Variabel mit der wir den St"orungsterm $f_1(x)$ steuern.
+Dabei sollte $\varepsilon$ nicht zu gross gew"ahlt werden,
+da die N"aherung sonst ungenau wird.
+Setzen wir hingegen $\varepsilon = 0$, k\"onnen wir die St"orung dynamisch abschalten.
 
 
 
 
-In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden indem wir den Hamilton-Operator der 
-urspr"unglichen Funktion $H_0$ um $\varepsilon H_1$ erg"anzen:
+In der Quantenmechanik k"onnen wir die St"orungstheorie anwenden,
+indem wir den Hamilton-Operator der urspr"unglichen Funktion $H_0$
+um $\varepsilon H_1$ erg"anzen:
 \[
-  H = H_0 + \varepsilon H_1
+  H = H_0 + \varepsilon H_1.
 \]
 
-Ein grosser Vorteil dabei ist, dass f"ur die erste N"aherung der St"orung nur ein Term hinzuf"ugen werden muss.
-Dieser kann ausserdem h"aufig aus dem Grundzustand abgeleitet werden.
+Indem wir die Energie und die Wellenfunktion der St"orung berechnen, k"onnen wir das gest"orte System ganz einfach beschreiben:
+\begin{equation}
+\begin{aligned}
+E_k(\varepsilon)&=E_k^{(0)} + \varepsilon E_k^{(1)}
+\\
+\psi_k(\varepsilon)&=\psi_k^{(0)} + \varepsilon \psi_k^{(1)}
+\end{aligned}
+\end{equation}
+
+Ein grosser Vorteil dabei ist,
+dass wir die St"orungsterme $E_k^{(1)}$ und $\psi_k^{(1)}$
+direkt aus dem ungest"ortem System berechnen k"onnen,
+ohne nochmals die Schr"odingergleichung l"osen zu m"ussen.
+Wir m"ussen also f"ur die erste N"aherung nur $E_k^{(0)}$,
+$\psi_k^{(0)}$ und $\varepsilon$ kennen.
 
 
-%FIXME Erk\"arung zu den Formeln
-\[
-  E_c(\varepsilon) = E_n^{(0)} + \varepsilon^1 E_n^{(1} + \varepsilon^2 E_n^{(2)} + \ldots
-\]
-%FIXME: Welche Form hat $E_n$?
-
-\[
-  |\psi_n(\varepsilon)\rangle = |\psi_n^{(0)}(\varepsilon)\rangle + \varepsilon^1 |\psi_n^{(1)}(\varepsilon)\rangle + \varepsilon^2 |\psi_n^{(2)}(\varepsilon)\rangle + \ldots
-\]
-
-Wir betrachten in dieser Anwendung nur die erste N\"aherung und werten darum nur die Terme mit den 
-Indizes $0$ und $1$ aus.
 
 
 \section{Potentialkasten mit elektrischem Feld}
@@ -61,16 +76,10 @@ Indizes $0$ und $1$ aus.
 
 Bei unserer Anwendung bauen wir auf dem Potentialkasten (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten}) auf.
 
-<<<<<<< HEAD
-Dabei geht es um ein Elektron, welches zwischen zwei Barrieren mit unendlich hohem Potential gefangen ist.
-Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$ bewegen,
-ausserhalb kommt es hingegen nicht vor.
-=======
 Dabei geht es um ein Elektron welches zwischen zwei Barrieren mit unendlich hohem Potential gefangen ist.
 Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$ 
 (definiert in der Gleichung \ref{skript:potentialkasten-psi-normiert} Seite \pageref{skript:potentialkasten-psi-normiert}) bewegen,
 ausserhalb kommt es nicht vor.
->>>>>>> bed97d027b77912b939535b9c206b07e304bdca0
 
 Wir erweitern jetzt das System mit einer St"orung, indem wir eine elektrische Spannung anlegen.
 Weil das Elektron eine negative Ladung besitzt ver"andert sich seine Wellenfunktion.
