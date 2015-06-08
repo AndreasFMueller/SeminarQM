@@ -202,7 +202,9 @@ Wir berechnen also das Skalarprodukt $\overline{\psi_k^{(0)}} x \psi_k^{(0)}$
 und erh"alt so die Energie der St"orung.
 In unserem Fall wird diese jedoch gleich Null sein,
 was wir mit Symetrie"uberlegungen erkl"aren bewisen k"onnen.
-Dabei ist wichtig ob unsere Funktionen gerade oder ungerade sind:
+Dabei ist wichtig ob unsere Funktionen
+\footnote{Formeln aus den Gleichungen $H_1$ und \ref{skript:potentialkasten-psi-normiert}}
+gerade oder ungerade sind.
 \begin{equation}
 \begin{aligned}
 x^1 &\Rightarrow \text{ungerade Funktion}
@@ -212,9 +214,17 @@ x^1 &\Rightarrow \text{ungerade Funktion}
 \frac{1}{\sqrt{l}}\sin\frac{n \pi x}{2l} &\Rightarrow \text{ungerade Funktion}
 \end{aligned}
 \end{equation}
-Das $\sin$ ungerade ist, spielt in diesem Fall keine Rolle,
-da wir mit $\overline{\sin(x)} \sin(x) = |\sin(x)|^2$ wieder eine gerade Funktion bekommen.
-Wenn wir allerdings $x |\psi_k^{(0)}|^2$ berechnen, bekommen wir immer eine ungerade Funktion.
+Dass $\sin$ ungerade ist, spielt in diesem Fall keine Rolle, da wir mit 
+\[
+  \overline{\sin(x)} \sin(x) = |\sin(x)|^2
+\]
+wieder eine gerade Funktion bekommen.
+
+% FIXME korrekt?
+Allerdings bekommen wir immer eine ungerade Funktion, wenn wir die folgende, ungerade Funktion quadrieren:
+\[ 
+  x |\psi_k^{(0)}|^2
+\]
 Wir k"onnen das Skalarprodukt auch als ein Integral von zeit-diskreten Werten verstehen.
 Berechnen wir jetzt $\int_{-L}^{+L} x |\psi_k^{(0)}|^2 dt$ wird klar
 dass alle $E_k^{(1)} = 0$ sein m"ussen.
