@@ -272,8 +272,9 @@ Dazu verwenden wir das Programm Matlab.
 Wie beginnen damit das wir Konstanten und das ungest"orte System bestimmen.
 Wir definieren f"ur unseren Potenzialkasten eine Breite von $10^{-9}$ (1nm links und rechts)
 \begin{lstlisting}[style=Matlab]
-L = 10^-9;
-xSteps = 250;
+L = 10^-9;                         # Entfernung der Grenzen der Simulation
+n = 1000;                          # Anzahl aufsummierter Zustaende
+xSteps = 500;
 x = -L : 2*L/xSteps : +L;          # Vektor von -L bis +L mit xSteps Schritten
 \end{lstlisting}
 und bekommen so den Vektor $x$.
@@ -286,7 +287,7 @@ Gleichzeitig bestimmen wir die Energien $E_k^{(0)}$.
 m = 9.10938291*10^-31;             # Elektronenmasse
 h = 6062606957*10^-34;             # Planck-Konstante
 
-for k = 1 : 1000
+for k = 1 : n
     E0(k) = h^2*k^2 / (32*m*L^2);
     
     if mod(k, 2) == 0              # Gerade k
@@ -297,8 +298,8 @@ for k = 1 : 1000
     Psi(k, x) = 1/sqrt(2*L) .* y;
 end
 \end{lstlisting}
-und bekommen so einen Vektor mit den Werten f"ur $E_k^{(0)}$
-sowie eine Matrix $500 \times 1000$ f"ur $\psi_k^{(0)}$. % FIXME woher kommt die Zahl 500? ist das xSteps?
+und bekommen so einen Vektor mit den $n$ Werten f"ur $E_k^{(0)}$
+sowie eine Matrix $xSteps \times n$ (konkret $500 \times 1000$) f"ur $\psi_k^{(0)}$.
 
 \subsection{Berechnung von $E_k^{(1)}$}
 
