@@ -3,6 +3,8 @@
 \begin{refsection}
 \chapterauthor{Michael Cerny und Stefan Schindler}
 
+\index{Potentialkasten!Anwendung}
+
 
 In diesem Kapitel erweitern wir das Beispiel des Potentialkastens 
 (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten})
@@ -197,14 +199,17 @@ E_k^{(1)} &=
 
 
 \subsection{Symmetrie"uberlegung}
-Mit der ersten Gleichung k"onnen wir direkt die Energie der St"orung berechnen.
-Wir berechnen also das Skalarprodukt $\overline{\psi_k^{(0)}} x \psi_k^{(0)}$
-und erh"alt so die Energie der St"orung.
-In unserem Fall wird diese jedoch gleich Null sein,
-was wir mit Symetrie"uberlegungen erkl"aren bewisen k"onnen.
-Dabei ist wichtig ob unsere Funktionen
+\index{Symmetrien}
+Mit der Gleichung \ref{eq:efeld_E_Stoerung} k"onnen wir mit dem Skalarprodukt direkt die Energie der St"orung berechnen.
+\begin{equation}
+  \label{eq:efeld_E_Stoerung}
+  E_{H_1}^{(1)} = \overline{\psi_k^{(0)}} x \psi_k^{(0)}
+\end{equation}
+
+Mit Symmetrie\"uberlegungen wollen wir nunn das Resultat vorhersagen um allf\"allige Fehler erkennen zu k\"onnen.
+Bei Symmetrieen ist wichtig ob die Exponenten unsere Funktionen
 \footnote{Formeln aus den Gleichungen $H_1$ und \ref{skript:potentialkasten-psi-normiert}}
-gerade oder ungerade sind.
+alle gerade oder ungerade sind.
 \begin{equation}
 \begin{aligned}
 x^1 &\Rightarrow \text{ungerade Funktion}
@@ -214,7 +219,7 @@ x^1 &\Rightarrow \text{ungerade Funktion}
 \frac{1}{\sqrt{l}}\sin\frac{n \pi x}{2l} &\Rightarrow \text{ungerade Funktion}
 \end{aligned}
 \end{equation}
-Dass $\sin$ ungerade ist, spielt in diesem Fall keine Rolle, da wir mit 
+Dass die Sinus-Funktion ungerade ist, spielt in diesem Fall keine Rolle, da wir mit 
 \[
   \overline{\sin(x)} \sin(x) = |\sin(x)|^2
 \]
@@ -222,13 +227,19 @@ wieder eine gerade Funktion bekommen.
 
 % FIXME korrekt?
 Allerdings bekommen wir immer eine ungerade Funktion, wenn wir die folgende, ungerade Funktion quadrieren:
+% FIXME Wie sieht es vor/nach dem Quadrieren aus?
 \[ 
-  x |\psi_k^{(0)}|^2
+  ??? = x^1 |\psi_k^{(0)}|^2 = ???
 \]
+
+% FIXME zeit-diskret ???
 Wir k"onnen das Skalarprodukt auch als ein Integral von zeit-diskreten Werten verstehen.
-Berechnen wir jetzt $\int_{-L}^{+L} x |\psi_k^{(0)}|^2 dt$ wird klar
+Berechnen wir nun das Integral der Funktion % FIXME E-Index korrekt?
+\[
+  E_k^{(1)} = \int_{-L}^{+L} x |\psi_k^{(0)}|^2 dt
+\]
 dass alle $E_k^{(1)} = 0$ sein m"ussen.
-Wir k"onnen die Energie nichtsdestotrotz in
+Wir k"onnen die Energie trotzdem in
 $E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ einsetzen
 und bekommen so die st"orungsabh"angige Energie.
 
@@ -258,9 +269,10 @@ Wir berechnen also
 \sum_{k\ne l}
 \langle\psi_l^{(0)}|\psi_k^{(1)}\rangle |\psi_l^{(0)}\rangle
 \]
-Bei $l = k$ hat die Welle keinen Anteil$\psi_k^{(1)}$,
-denn $\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt ja die Energie der St"orung.
+Bei $l = k$ hat die Welle keinen Anteil an $\psi_k^{(1)}$,
+denn $\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt die Energie der St"orung.
 
+% FIXME warum? gamma kam noch nicht vor
 Wir m"ussen $\gamma$ in der ersten N"aherung nicht ber"ucksichtige und setzen daher $\gamma = 0$.
 
 
