@@ -274,12 +274,12 @@ Wir definieren f"ur unseren Potenzialkasten eine Breite von $10^{-9}$ (1nm links
 \begin{lstlisting}[style=Matlab]
 L = 10^-9;
 xSteps = 250;
-x = -L : 2*L/xSteps : +L;
+x = -L : 2*L/xSteps : +L;          # Vektor von -L bis +L mit xSteps Schritten
 \end{lstlisting}
 und bekommen so den Vektor $x$.
 
 Um die ungest"orten Zust"ande $\psi_k^{(0)}$ zu bekommen, tasten wir die Sinus- und Kosinus-Funktion 
-(siehe Gleichung \ref{skript:potentialkasten-psi-normiert} Seite \pageref{skript:potentialkasten-psi-normiert}) diskret ab.
+aus der Gleichung \ref{skript:potentialkasten-psi-normiert} Seite \pageref{skript:potentialkasten-psi-normiert} diskret ab.
 
 Gleichzeitig bestimmen wir die Energien $E_k^{(0)}$.
 \begin{lstlisting}[style=Matlab]
@@ -298,7 +298,7 @@ for k = 1 : 1000
 end
 \end{lstlisting}
 und bekommen so einen Vektor mit den Werten f"ur $E_k^{(0)}$
-sowie eine Matrix $500 \times 1000$ f"ur $\psi_k^{(0)}$. % FIXME woher kommt die Zahl 500?
+sowie eine Matrix $500 \times 1000$ f"ur $\psi_k^{(0)}$. % FIXME woher kommt die Zahl 500? ist das xSteps?
 
 \subsection{Berechnung $E_k^{(1)}$}
 
