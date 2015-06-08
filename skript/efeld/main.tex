@@ -284,7 +284,7 @@ Wir definieren f"ur unseren Potenzialkasten eine Breite von $10^{-9}$ (1nm links
 \begin{lstlisting}[style=Matlab]
 L = 10^-9;                         # Entfernung der Grenzen der Simulation
 n = 1000;                          # Anzahl aufsummierter Zustaende
-xSteps = 500;
+xSteps = 500;                      # Anzahl Abtastwerte in x-Richung
 x = -L : 2*L/xSteps : +L;          # Vektor von -L bis +L mit xSteps Schritten
 \end{lstlisting}
 und bekommen so den Vektor $x$.
