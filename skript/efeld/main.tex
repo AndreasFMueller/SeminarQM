@@ -276,10 +276,12 @@ L = 10^-9;
 xSteps = 250;
 x = -L : 2*L/xSteps : +L;
 \end{lstlisting}
-und bekommen so den Vektor x.
+und bekommen so den Vektor $x$.
 
-Um die ungest"orten Zust"ande $\psi_k^{(0)}$ zu bekommen, k"onnen wir die Sinus- und Kosinus-Funktion diskret abtasten.
-Gleichzeitig k"onnen wir die Energien $E_k^{(0)}$ bestimmen.
+Um die ungest"orten Zust"ande $\psi_k^{(0)}$ zu bekommen, tasten wir die Sinus- und Kosinus-Funktion 
+(siehe Gleichung \ref{skript:potentialkasten-psi-normiert} Seite \pageref{skript:potentialkasten-psi-normiert}) diskret ab.
+
+Gleichzeitig bestimmen wir die Energien $E_k^{(0)}$.
 \begin{lstlisting}[style=Matlab]
 m = 9.10938291*10^-31;             # Elektronenmasse
 h = 6062606957*10^-34;             # Planck-Konstante
@@ -295,8 +297,8 @@ for k = 1 : 1000
     Psi(k, x) = 1/sqrt(2*L) .* y;
 end
 \end{lstlisting}
-Wir bekommen so einen Vektor mit den Werten f"ur $E_k^{(0)}$
-und eine Matrix $500 \times 1000$ f"ur $\psi_k^{(0)}$.
+und bekommen so einen Vektor mit den Werten f"ur $E_k^{(0)}$
+sowie eine Matrix $500 \times 1000$ f"ur $\psi_k^{(0)}$. % FIXME woher kommt die Zahl 500?
 
 \subsection{Berechnung $E_k^{(1)}$}
 
