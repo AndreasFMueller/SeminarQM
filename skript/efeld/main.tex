@@ -410,6 +410,10 @@ im ersten Quadranten ein positives Potential bildet und deshalb das Elektron her
 \begin{tikzpicture}
   \draw[->] (-1.4,0) -- (1.4,0) node[right] {$x$};
   \draw[->] (0,-1.4) -- (0,1.4) node[above] {$y$};
+  \shade[top color=gray!20,bottom color=gray!20] 
+      (0,0) (1,1) |- (0,0);
+  \shade[top color=gray!20,bottom color=gray!20] 
+      (-1,-1) |- (0,0) (-1,-1);
   \draw[scale=0.5,domain=-2:2,smooth,variable=\x,red] plot ({\x},{\x});
   %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
 \end{tikzpicture}
