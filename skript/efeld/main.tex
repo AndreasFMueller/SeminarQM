@@ -313,8 +313,11 @@ sowie eine Matrix $xSteps \times n$ (konkret $500 \times 1000$) f"ur $\psi_k^{(0
 
 \subsection{Berechnung von $E_k^{(1)}$}
 
-Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und $E_k(\varepsilon)$ berechnen.
-Wir k"onnen die Energie mit
+Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und 
+$E_k(\varepsilon)$ berechnen. Die Energie d\"urfte sich in der 1. N\"aherung nicht ver\"andern.
+Dieses Resultat zeigt uns damit die Robustheit der Berechnungen auf.
+
+Implementiert wurde der Test wie folgt:
 \begin{lstlisting}[style=Matlab]
 H1 = x;
 for k = 1 : 5
@@ -322,11 +325,13 @@ for k = 1 : 5
   plot(epsilon, E0(k) + epsilon*E1_k(k))
 end
 \end{lstlisting}
-berechnen und plotten.
 Das Resultat ist in diesem Fall mit Vorsicht zu geniessen.
 Weil wir mit diskreten Werten arbeiten, entsteht beim Skalarprodukt ein Fehler von ca. $8 \cdot 10^{-15}$,
-der mit einem korrektem Wert verwechselt werden kann.
+welches mit einem korrektem Wert verwechselt werden kann.
 Den Plot sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
+
+
+
 
 \subsection{Berechnung von $\psi_k^{(1)}$}
 
