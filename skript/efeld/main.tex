@@ -216,25 +216,22 @@ Das $\sin$ ungerade ist, spielt in diesem Fall keine Rolle,
 da wir mit $\overline{\sin(x)} \sin(x) = |\sin(x)|^2$ wieder eine gerade Funktion bekommen.
 Wenn wir allerdings $x |\psi_k^{(0)}|^2$ berechnen, bekommen wir immer eine ungerade Funktion.
 Wir k"onnen das Skalarprodukt auch als ein Integral von zeit-diskreten Werten verstehen.
-Berechnen wir jetzt $\int_{-L}^{+L} { x |\psi_k^{(0)}} dt$ wird klar
+Berechnen wir jetzt $\int_{-L}^{+L} x |\psi_k^{(0)}|^2 dt$ wird klar
 dass alle $E_k^{(1)} = 0$ sein m"ussen.
+Wir k"onnen die Energie nichtsdestotrotz in
+$E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ einsetzen
+und bekommen so die st"orungsabh"angige Energie.
 
 
 
 
-
-
+\begin{comment}
 % FIXME Text ist zu kurz
 St\"orung ist ungerade
 \[
   \int \psi_k(x) x \psi_k(x) dx = \int x \psi_k^2 dx
 \]
-Das kommt daher, dass die Funktion der St"orung ungerade ist.
-Die Energie die dazu gegeben wird gleicht sich also im Mittel aus.
-Wir k"onnen die Energie nichtsdestotrotz in
-$E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ einsetzen
-und bekommen so die st"orungsabh"angige Energie.
-% FIXME Immernoch alles falsch?
+\end{comment}
 
 
 
@@ -242,7 +239,6 @@ und bekommen so die st"orungsabh"angige Energie.
 
 Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger,
 weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
-
 Wir setzen daher eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
 Mit der zweiten Formel k"onnen wir den Anteil der jeweiligen $\psi$ berechnen.
 Wir berechnen also die Summe aller $\langle\psi_l^{(0)}|\psi_k^{(0)}\rangle|\psi_l^{(0)}\rangle$
