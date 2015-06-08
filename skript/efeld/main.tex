@@ -390,17 +390,37 @@ einsetzen und bekommen so die neue Wellenfunktion dargestellt in Abbildung \ref{
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen den ungest"orten 
 $\psi$ (schwarz) und der ersten N"aherung (rot).
 Auf der vertikalen Achse haben wir die Amplituden von $\psi_k$.
-Die Funktion $|\psi|^2$ entspricht der Wahrscheinlichkeitsdichte, 
+Die Funktion 
+\[
+  \psi \cdot \overline{\psi} = |\psi|^2
+\]
+entspricht der Wahrscheinlichkeitsdichte, 
 dass sich das Elektron an dieser Stelle befindet.
 Auf der Horizontalen sehen wir die $x$-Position vom Teilchen im eindimensionalen Potentialkasten.
 
-Intuitiv nimmt man an, dass die Wellenfunktion nach links gedr"uckt werden wird, da das
-elektrische Feld $x$ im ersten Quadranten ein positives Potential bildet
-und deshalb das Elektron herunter rollen m\"ochte.
-Allerdings wird durch die positive Spannung das Elektron angezogen \& die
+Intuitiv nimmt man an, dass die Wellenfunktion durch die St\"orung $H_1$ in der Abbildung 
+\ref{abb:efeld_H_1} nach links gedr"uckt werden wird, da das elektrische Feld 
+im ersten Quadranten ein positives Potential bildet und deshalb das Elektron herunter rollen m\"ochte.
+\[
+  H_1(x) = x
+\]
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+  \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+  \draw[->] (0,-2) -- (0,2) node[above] {$y$};
+  \draw[scale=0.5,domain=-3:3,smooth,variable=\x,blue] plot ({\x},{\x});
+  %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
+\end{tikzpicture}
+ \caption{St\"orung $H_1$}
+ \label{abb:efeld_H_1}
+\end{figure}
+
+Allerdings wird durch die positive Spannung das Elektron angezogen und die
 Wahrscheinlichkeit es weiter Rechts anzutreffen steigt.
 
-Wegen dem elektrischem Feld haben wir entlang der $x$-Achse verschieden Energie-Potentiale.
+Durch das elektrische Feld haben wir entlang der $x$-Achse verschieden Energie-Potentiale.
 Das Elektron hat allerdings immer die selbe Energie,
 die Energie muss sich also irgendwie ausgleichen.
 Wir k"onnen diesen Vorgang einfach mit der Schr"odingergleichung verstehen:
