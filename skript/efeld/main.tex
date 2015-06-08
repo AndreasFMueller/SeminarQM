@@ -335,13 +335,13 @@ Den Plot sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
 
 \subsection{Berechnung von $\psi_k^{(1)}$}
 
-Die Implementierung von $\psi_k^{(1)}$ ist wegen $\sum$ etwas schwieriger.
-Normaler Weise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen.
-Wir wollen aber ein Element auslassen.
-Um zum Beispiel den f"unften Zustand $\psi_5^{(1)}$ zu bestimmen addieren wir alle 
-$\langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle$
- von 1 bis n ausser 5.
+Die Implementierung von $\psi_k^{(1)}$ gestaltet sich durch die Summe etwas schwieriger.
+Normaler Weise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen lassen.
+Wir wollen aber ein Element auslassen. 
+Um zum Beispiel den f"unften Zustand zu bestimmen summieren wir alle Zust\"ande vom 
+1-sten bis n-ten ausser dem 5-tena auf.
 \begin{equation}
+  \psi_5^{(1)} = \langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle = 
   \sum_{l=1 ; l\ne 5}^{n}
     \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
         \,
