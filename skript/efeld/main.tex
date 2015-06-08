@@ -18,7 +18,9 @@ mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu
   f(x, \varepsilon) = f_0(x) + \varepsilon^1 f_0(x) + \varepsilon^2 f_0(x) + \ldots
 \]
 \[
-  |\psi_n(\varepsilon)\rangle = |\psi_n^{(0)}(\varepsilon)\rangle + \varepsilon^1 |\psi_n^{(1)}(\varepsilon)\rangle + \varepsilon^2 |\psi_n^{(2)}(\varepsilon)\rangle + \ldots
+  |\psi_n(\varepsilon)\rangle =
+  |\psi_n^{(0)}(\varepsilon)\rangle + \varepsilon^1 |\psi_n^{(1)}(\varepsilon)\rangle
+  + \varepsilon^2 |\psi_n^{(2)}(\varepsilon)\rangle + \ldots
 \]
 Wir betrachten in unserer Anwendung nur die erste N\"aherung
 und werten deshalb nur die Terme mit den Indizes $0$ und $1$ aus.
@@ -202,19 +204,31 @@ St\"orung ist ungerade
 \]
 
 
-%  FIXME  Alles falsch?
+
+
+
+
+
 Mit der ersten Gleichung k"onnen wir direkt die Energie der St"orung berechnen.
-Man berechnet das Skalarprodukt von $\psi_k^{(0)}$ und $x \psi_k^{(0)}$ "uber 
-die gesamte L"ange des Potenzialkastens und erh"alt so die Energie der St"orung $E_k^{(1)}$.
+Wir berechnen also das Skalarprodukt $\psi_k^{(0)} x \psi_k^{(0)}$
+und erh"alt so die Energie der St"orung $E_k^{(1)}$.
+
+
 In unserem Fall wird jedoch $E_k^{(0)}$ gleich Null sein.
 Das kommt daher, dass die Funktion der St"orung gerade ist.
 Die Energie die dazu gegeben wird gleicht sich also im Mittel aus.
-Wir k"onnen die Energie nichtsdestotrotz in $E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ einsetzen
+Wir k"onnen die Energie nichtsdestotrotz in
+$E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ einsetzen
 und bekommen so die st"orungsabh"angige Energie.
 % FIXME Immernoch alles falsch?
 
-% FIXME den Absatz in eine Formel verwandeln
-Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger, weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
+
+
+
+
+Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger,
+weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
+
 Wir setzen daher eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
 Mit der zweiten Formel k"onnen wir den Anteil der jeweiligen $\psi$ berechnen.
 Wir berechnen also die Summe aller $\langle\psi_l^{(0)}|\psi_k^{(0)}\rangle|\psi_l^{(0)}\rangle$
