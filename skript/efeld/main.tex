@@ -100,7 +100,7 @@ V_0(x)&=
   \end{cases}
 \end{aligned}
 \end{equation}
-und erweitern sie mit der St"orung $H_1$, welche wir als lineares 
+und erweitern sie mit der St"orung $H_1$ (Abbildung \ref{abb:efeld_H_1}), welche wir als lineares 
 Potential definieren:
 \begin{equation}
   H_1 = V_1(x) = a x + b
@@ -413,9 +413,13 @@ im ersten Quadranten ein positives Potential bildet und deshalb das Elektron her
 \begin{figure}
   \centering
 \begin{tikzpicture}
-  \draw[->] (-2,0) -- (2,0) node[right] {$x$};
-  \draw[->] (0,-2) -- (0,2) node[above] {$y$};
-  \draw[scale=0.5,domain=-3:3,smooth,variable=\x,blue] plot ({\x},{\x});
+  \draw[->] (-1.4,0) -- (1.4,0) node[right] {$x$};
+  \draw[->] (0,-1.4) -- (0,1.4) node[above] {$y$};
+  \shade[top color=gray!20,bottom color=gray!20] 
+      (0,0) (1,1) |- (0,0);
+  \shade[top color=gray!20,bottom color=gray!20] 
+      (-1,-1) |- (0,0) (-1,-1);
+  \draw[scale=0.5,domain=-2:2,smooth,variable=\x,red] plot ({\x},{\x});
   %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
 \end{tikzpicture}
  \caption{St\"orung $H_1$}
