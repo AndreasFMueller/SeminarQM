@@ -212,10 +212,13 @@ E_k^{(1)} &=
 
 \subsection{Symmetrie"uberlegung}
 \index{Symmetrien}
-Mit der Gleichung \ref{eq:efeld_E_Stoerung} k"onnen wir mit dem Skalarprodukt direkt die Energie der St"orung berechnen.
+Mit der Gleichung \ref{eq:efeld_ESkalarprodukt} k"onnen wir direkt die Energie der St"orung berechnen.
 \begin{equation}
-  \label{eq:efeld_E_Stoerung}
-  E_{k}^{(1)} = \overline{\psi_k^{(0)}} x \psi_k^{(0)}
+  E_{k}^{(1)} 
+  = \langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle 
+  = \langle \psi_k^{(0)}|\, x \;|\psi_k^{(0)}\rangle
+  = \overline{\psi_k^{(0)}} x \; \psi_k^{(0)}
+  = \int_{-L}^{L} \psi_n(x) \, x \, \psi_n(x) dx
 \end{equation}
 
 Mit Symmetrie\"uberlegungen wollen wir nunn das Resultat vorhersagen um allf\"allige Fehler erkennen zu k\"onnen.
