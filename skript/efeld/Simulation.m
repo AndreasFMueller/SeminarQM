@@ -90,7 +90,7 @@ hold on;
 s = zeros(1, length(n));
 for ln = nPlot		% ungestoerter Plot
 	%plot(x, Psi(ln, :) + (ln-1)*2e05, 'Color', 'black')		% Psi
-    plot(x, Psi(ln, :) +(ln-1)*kurvenVersatz, 'Color', 'black')		% Psi
+    plot(x, Psi(ln, :) +(ln-1)*kurvenVersatz, 'Color', 'blue')		% Psi
 
 	s(ln) = sum(Psi(ln, :).^2.*delta);
 end
