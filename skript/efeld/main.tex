@@ -74,7 +74,7 @@ $\psi_k^{(0)}$ und $\varepsilon$ kennen.
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Psi_ungestoert.pdf}
- \caption{$\psi$ ungest\"ort}
+ \caption{$\psi_k^{(0)}$ - Die ersten f\"unf ungest\"orten Energieniveaus von $H_0$ }
  \label{abb:efeld_psi_ungestoert}
 \end{figure}
 
@@ -82,15 +82,16 @@ Bei unserer Anwendung bauen wir auf dem Potentialkasten (Kapitel \ref{subsection
 
 Dabei geht es um ein Elektron welches zwischen zwei Barrieren mit unendlich hohem Potential gefangen ist.
 Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$ bewegen
+% FIXME E_k fehlt
 \begin{align}
-\psi_n(x)
+\psi_k(x)
 &=
 \begin{cases}
 \displaystyle
-\frac{1}{\sqrt{l}}\cos\frac{n \pi x}{2l}&\qquad \text{$n$ ungerade}\\
+\frac{1}{\sqrt{l}}\cos\frac{k \pi x}{2l}&\qquad \text{$k$ ungerade}\\
 \\
 \displaystyle
-\frac{1}{\sqrt{l}}\sin\frac{n \pi x}{2l}&\qquad \text{$n$ gerade}.
+\frac{1}{\sqrt{l}}\sin\frac{k \pi x}{2l}&\qquad \text{$k$ gerade}.
 \end{cases}
 \end{align}
 Die Gleichung wird bei \ref{skript:potentialkasten-psi-normiert} Seite \pageref{skript:potentialkasten-psi-normiert} erkl"art.
@@ -101,7 +102,7 @@ und erweitern so das System mit einer St"orung.
 
 Weil das Elektron eine negative Ladung besitzt ver"andert sich seine Wellenfunktion.
 
-Als Grundlage "ubernehmen wir zwei Funktionen aus dem Skript
+Als Grundlagen verwenden wir die Hamiltonfunktion und das Potential des Teilchens im Potentialkasten
 \begin{equation}
 \begin{aligned}
 H_0&=\frac1{2m}p^2+V_0(x)
@@ -165,6 +166,8 @@ theoretisch ausgef\"uhrt.
 Entscheidend ist hier ob die Zust"ande entartet sind oder nicht.
 Entartung bedeutet, dass zwei Zust"ande die selbe Energie besitzen, 
 wodurch bei der Berechnung der Nenner zu Null wird.
+
+% FIXME Bemerkung zum 2D \"uberarbeiten
 Das w"are beispielsweise bei einem zweidimensionalen Kasten der Fall,
 wo wir entlang der Diagonalen identische Zust"ande haben.
 In unserem Fall k"onnen solche Symmetrien nicht auftreten.
