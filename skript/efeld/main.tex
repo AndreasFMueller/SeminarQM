@@ -123,6 +123,22 @@ Potential definieren:
   H_1 = V_1(x) = a x + b
 \end{equation}
 
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+  \draw[->] (-1.4,0) -- (1.4,0) node[right] {$x$};
+  \draw[->] (0,-1.4) -- (0,1.4) node[above] {$V_1$};
+  \shade[top color=gray!20,bottom color=gray!20] 
+      (0,0) (1,1) |- (0,0);
+  \shade[top color=gray!20,bottom color=gray!20] 
+      (-1,-1) |- (0,0) (-1,-1);
+  \draw[scale=0.5,domain=-2:2,smooth,variable=\x,red] plot ({\x},{\x});
+  %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
+\end{tikzpicture}
+ \caption{St\"orung $H_1$}
+ \label{abb:efeld_H_1}
+\end{figure}
+
 Da das Potential die Stammfunktion des elektrischen Feldes ist, entspricht der Parameter $b$ dem $c$ der Integration.
 F\"ur das Potential sind nur Unterschiede relevant, das Niveau, solange es in der ganzen Anwendung ver\"andert wird,
 kann beliebig gew\"ahlt werden. Somit k\"onnen wir mit $b=0$ die Formel nochmals vereinfachen.
@@ -443,22 +459,6 @@ im ersten Quadranten ein positives Potential bildet und deshalb das Elektron her
 \[
   H_1(x) = x
 \]
-
-\begin{figure}
-  \centering
-\begin{tikzpicture}
-  \draw[->] (-1.4,0) -- (1.4,0) node[right] {$x$};
-  \draw[->] (0,-1.4) -- (0,1.4) node[above] {$V_1$};
-  \shade[top color=gray!20,bottom color=gray!20] 
-      (0,0) (1,1) |- (0,0);
-  \shade[top color=gray!20,bottom color=gray!20] 
-      (-1,-1) |- (0,0) (-1,-1);
-  \draw[scale=0.5,domain=-2:2,smooth,variable=\x,red] plot ({\x},{\x});
-  %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
-\end{tikzpicture}
- \caption{St\"orung $H_1$}
- \label{abb:efeld_H_1}
-\end{figure}
 
 Allerdings wird durch die positive Spannung das Elektron angezogen und die
 Wahrscheinlichkeit es weiter Rechts anzutreffen steigt.
