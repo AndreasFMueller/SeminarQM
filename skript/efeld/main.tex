@@ -33,7 +33,7 @@ F"ur die erste N"aherung gilt:
   f(x, \varepsilon) = f_0(x) + \varepsilon f_1(x)
 \]
 Dabei ist $f_0(x)$ die ungest"orte Funktion und $\varepsilon f_1(x)$ die St"orung.
-$\varepsilon$ ist eine Variabel mit der wir den St"orungsterm $f_1(x)$ steuern.
+$\varepsilon$ ist eine Variable mit der wir den St"orungsterm $f_1(x)$ steuern.
 Dabei sollte $\varepsilon$ nicht zu gross gew"ahlt werden,
 da die N"aherung sonst ungenau wird.
 Setzen wir hingegen $\varepsilon = 0$, k\"onnen wir die St"orung dynamisch abschalten.
@@ -81,7 +81,7 @@ $\psi_k^{(0)}$ und $\varepsilon$ kennen.
 Bei unserer Anwendung bauen wir auf dem Potentialkasten (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten}) auf.
 
 Dabei geht es um ein Elektron welches zwischen zwei Barrieren mit unendlich hohem Potential gefangen ist.
-Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$ bewegen
+Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$
 % FIXME E_k fehlt
 \begin{align}
 \psi_k(x)
@@ -94,7 +94,9 @@ Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$ 
 \frac{1}{\sqrt{l}}\sin\frac{k \pi x}{2l}&\qquad \text{$k$ gerade}.
 \end{cases}
 \end{align}
-Die Gleichung wird bei \ref{skript:potentialkasten-psi-normiert} Seite \pageref{skript:potentialkasten-psi-normiert} erkl"art.
+bewegen.
+
+Die Gleichung wird bei (\ref{skript:potentialkasten-psi-normiert}) Seite \pageref{skript:potentialkasten-psi-normiert} erkl"art.
 Ausserhalb des Potenzialkastens kommt das Elektron nicht vor.
 
 Wir legen jetzt eine Spannung "uber dem Potentialkasten an
@@ -103,6 +105,7 @@ und erweitern so das System mit einer St"orung.
 Weil das Elektron eine negative Ladung besitzt ver"andert sich seine Wellenfunktion.
 
 Als Grundlagen verwenden wir die Hamiltonfunktion und das Potential des Teilchens im Potentialkasten
+% FIXME was sagen diese Funktionen?
 \begin{equation}
 \begin{aligned}
 H_0&=\frac1{2m}p^2+V_0(x)
@@ -120,7 +123,7 @@ Potential definieren:
   H_1 = V_1(x) = a x + b
 \end{equation}
 
-Da das Potential die Integration des elektrischen Feldes ist, entspricht der Parameter $b$ dem $c$ der Integration.
+Da das Potential die Stammfunktion des elektrischen Feldes ist, entspricht der Parameter $b$ dem $c$ der Integration.
 F\"ur das Potential sind nur Unterschiede relevant, das Niveau, solange es in der ganzen Anwendung ver\"andert wird,
 kann beliebig gew\"ahlt werden. Somit k\"onnen wir mit $b=0$ die Formel nochmals vereinfachen.
 
@@ -131,20 +134,16 @@ Die Feldst\"arke $a$ h\"angt von der Breite des Potentialkastens und der angeleg
 
 Diese Funktion dr\"uckt mit dem Parameter $U$ das eingeschaltete elektrische Feld \"uber dem Potentalskasten
 und erf\"ullt damit die selbe Funktion wie das $\varepsilon$.
-Wollen wir nun das $a = 1$ um die Formeln zu vereinfachen, m\"ussen wir dem $\varepsilon$ alles andere geben.
+Wollen wir nun das $a = 1$ um die Formeln zu vereinfachen, m\"ussen wir alle relevanten Terme in $\varepsilon$ unterbringen
 
 % TODO evt. bessere Formulierung
 \begin{equation}
 \begin{aligned}
-  \varepsilon H_1(x) &= \varepsilon a e_{-} x +b \\
-                     &= \varepsilon \frac{ U }{2 l} e_{-} x + 0 
-     \Longrightarrow \varepsilon = \frac{ U }{2 l} e_{-} ; a = 1
+  \varepsilon H_1(x) &= \varepsilon a e_{-} x +b  & \\
+                     &= \varepsilon \frac{ U }{2 l} e_{-} x + 0  &\Longrightarrow \varepsilon = \frac{ U }{2 l} e_{-} \\
+                     &                                           & a = 1
 \end{aligned}
-\end{equation}
-
-bereits durch $\varepsilon$ beschreiben, k\"onnen wir mit $a = 1$ vereinfachen.
-
-
+\end{equation} % FIXME LaTeX beibringen, wie a = 1 einger\"uckt werden soll.
 
 
 
