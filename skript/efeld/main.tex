@@ -123,6 +123,22 @@ Potential definieren:
   H_1 = V_1(x) = a x + b
 \end{equation}
 
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+  \draw[->] (-1.4,0) -- (1.4,0) node[right] {$x$};
+  \draw[->] (0,-1.4) -- (0,1.4) node[above] {$V_1$};
+  \shade[top color=gray!20,bottom color=gray!20] 
+      (0,0) (1,1) |- (0,0);
+  \shade[top color=gray!20,bottom color=gray!20] 
+      (-1,-1) |- (0,0) (-1,-1);
+  \draw[scale=0.5,domain=-2:2,smooth,variable=\x,red] plot ({\x},{\x});
+  %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
+\end{tikzpicture}
+ \caption{St\"orung $H_1$}
+ \label{abb:efeld_H_1}
+\end{figure}
+
 Da das Potential die Stammfunktion des elektrischen Feldes ist, entspricht der Parameter $b$ dem $c$ der Integration.
 F\"ur das Potential sind nur Unterschiede relevant, das Niveau, solange es in der ganzen Anwendung ver\"andert wird,
 kann beliebig gew\"ahlt werden. Somit k\"onnen wir mit $b=0$ die Formel nochmals vereinfachen.
@@ -345,7 +361,7 @@ for k = 1 : n
 end
 \end{lstlisting}
 und bekommen so einen Vektor mit den $n$ Werten f"ur $E_k^{(0)}$
-sowie eine Matrix $xSteps \times n$ (konkret $500 \times 1000$) f"ur $\psi_k^{(0)}$.
+sowie eine Matrix $\texttt{xSteps} \times \texttt{n}$ (konkret $500 \times 1000$) f"ur $\psi_k^{(0)}$.
 
 \subsection{Berechnung von $E_k^{(1)}$}
 
@@ -365,6 +381,7 @@ Das Resultat ist in diesem Fall mit Vorsicht zu geniessen.
 Weil wir mit diskreten Werten arbeiten, entsteht beim Skalarprodukt ein Fehler von ca. $8 \cdot 10^{-15}$,
 welches mit einem korrektem Wert verwechselt werden kann.
 Den Plot sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
+% FIXME was schliessen wir daraus?
 
 
 
@@ -375,7 +392,7 @@ Die Implementierung von $\psi_k^{(1)}$ gestaltet sich durch die Summe etwas schw
 Normaler Weise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen lassen.
 Wir wollen aber ein Element auslassen. 
 Um zum Beispiel den f"unften Zustand zu bestimmen summieren wir alle Zust\"ande vom 
-ersten bis n-ten ausser dem f\"unften auf.
+ersten bis $n$-ten ausser dem f\"unften auf.
 \begin{equation}
   \psi_5^{(1)} = \langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle = 
   \sum_{l=1 ; l\ne 5}^{n}
@@ -399,11 +416,11 @@ for l = 1 : n
   end
 end
 \end{lstlisting}
-$summe$ ist nun ein Vektor mit den diskreten Abtastwerten von $\psi_k^{(1)}$.
+\verb|summe| ist nun ein Vektor mit den diskreten Abtastwerten von $\psi_k^{(1)}$.
 
 Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil am Gesammtzustand 
 mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms 
-$E^{(0)}(k)-E^{(0)}(l)$ unter dem Bruchstrich.
+$E^{(0)}_k-E^{(0)}_l$ unter dem Bruchstrich.
 In diesem Fall addieren wir beim 90-sten Schritt ($l=90$) nur $1\%$ der St"orung dazu.
 Beim 280-sten Schritt ($l=280$) betr"agt der Anteil nur noch $0.1\%$.
 
@@ -440,22 +457,6 @@ im ersten Quadranten ein positives Potential bildet und deshalb das Elektron her
 \[
   H_1(x) = x
 \]
-
-\begin{figure}
-  \centering
-\begin{tikzpicture}
-  \draw[->] (-1.4,0) -- (1.4,0) node[right] {$x$};
-  \draw[->] (0,-1.4) -- (0,1.4) node[above] {$y$};
-  \shade[top color=gray!20,bottom color=gray!20] 
-      (0,0) (1,1) |- (0,0);
-  \shade[top color=gray!20,bottom color=gray!20] 
-      (-1,-1) |- (0,0) (-1,-1);
-  \draw[scale=0.5,domain=-2:2,smooth,variable=\x,red] plot ({\x},{\x});
-  %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
-\end{tikzpicture}
- \caption{St\"orung $H_1$}
- \label{abb:efeld_H_1}
-\end{figure}
 
 Allerdings wird durch die positive Spannung das Elektron angezogen und die
 Wahrscheinlichkeit es weiter Rechts anzutreffen steigt.
