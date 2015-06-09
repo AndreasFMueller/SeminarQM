@@ -223,20 +223,18 @@ Dass die Sinus-Funktion ungerade ist, spielt in diesem Fall keine Rolle, da wir 
 \]
 wieder eine gerade Funktion bekommen.
 
-% FIXME korrekt?
-Allerdings bekommen wir immer eine ungerade Funktion, wenn wir die folgende, ungerade Funktion quadrieren:
-% FIXME Wie sieht es vor/nach dem Quadrieren aus?
+Allerdings bekommen wir immer eine ungerade Funktion, wenn wir eine gerade Funktion mit einer ungeraden Funktion multiplizieren:
 \[ 
-  ??? = x^1 |\psi_k^{(0)}|^2 = ???
+  x \cdot \overline{\psi_k^{(0)}(x)} \psi_k^{(0)}(x) = x \cdot |\psi_k^{(0)}(x)|^2
 \]
 
-% FIXME zeit-diskret ???
-Wir k"onnen das Skalarprodukt auch als ein Integral von zeit-diskreten Werten verstehen.
-Berechnen wir nun das Integral der Funktion % FIXME E-Index korrekt?
+Wir k"onnen das Skalarprodukt auch als ein Integral von zeit-diskreten\footnote{Einzelne diskrete Messungen \"uber die Zeit} 
+Werten verstehen.
+Da ungerade Funktionen punktsymmetrisch sind, muss das Integral $0$ sein.
 \[
-  E_k^{(1)} = \int_{-L}^{+L} x |\psi_k^{(0)}|^2 dt
+  E_k^{(1)} = \int_{-L}^{+L} x |\psi_k^{(0)}|^2 dt = 0
 \]
-dass alle $E_k^{(1)} = 0$ sein m"ussen.
+
 Wir k"onnen die Energie trotzdem in
 $E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ einsetzen
 und bekommen so die st"orungsabh"angige Energie.
