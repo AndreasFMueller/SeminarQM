@@ -18,18 +18,17 @@
 %-----Variabeln-----
 l = 10^-9;
 xSteps = 225;
-xSteps = 20000;
+xSteps = 2000;
 delta = (2*l/xSteps);
 %x = -l*1.5 : delta : +l*1.5;
 x = -l : delta : +l;
 n = 1 : 200;
 nPlot = 1 : 5;
-nPlot = [1 : 5, 20];
 kurvenVersatz = 1e5
 %n = [1, 2];
 
 
-safe = 0
+safe = 1
 
 
 %-----Verarbeitung-----
@@ -111,7 +110,7 @@ for ln = nPlot		% gestoerter Plot
 end
 
 % print('Psi_gestoert', '-depsc', '-noui')
-if safe; then print('Psi_gestoert', '-dpdf', '-noui'); end
+if safe; print('Psi_gestoert', '-dpdf', '-noui'); end
 
 %-----Plot grafik 2: E(n, a)-----
 figure
@@ -123,14 +122,14 @@ for ln = nPlot		% Energie Plot
 end
 
 %print('Energie_gestoert', '-depsc', '-noui')
-if safe; then print('Energie_gestoert', '-dpdf', '-noui'); end
+if safe; print('Energie_gestoert', '-dpdf', '-noui'); end
 
 %------------ 100-ste
 figure
 hold on;
 
-nPlot = 50;
-epsilon = 10^-2;
+nPlot = 20;
+epsilon = 10^-3;
 
 s = zeros(1, 2);
 for ln = nPlot		% ungestoerter Plot
@@ -146,18 +145,18 @@ end
 % figure
 % hold on;
 
-sG = zeros(1, 2);
+%sG = zeros(1, 2);
 for ln = nPlot		% gestoerter Plot
 	PsiG(ln, :) = (1+1i*epsilon*gamma).*Psi(ln, :) ...
 													+ epsilon.*psi1_l(ln, :);
 	%plot(x, PsiG(ln, 1:length(x)) + (ln-1)*2e05, 'Color', 'red')		% Psi
     plot(x, PsiG(ln, 1:length(x)), 'Color', 'red')		% Psi
 
-	sG(ln) = sum(PsiG(ln, :).^2.*delta);
+%	sG(ln) = sum(PsiG(ln, :).^2.*delta);
 end
 
 % print('Psi_gestoert', '-depsc', '-noui')
-if safe; then print('Psi_100_gestoert', '-dpdf', '-noui'); end
+if safe; print('Psi_100_gestoert', '-dpdf', '-noui'); end
 
 hold off
 
