@@ -18,13 +18,13 @@
 %-----Variabeln-----
 l = 10^-9;
 xSteps = 225;
-xSteps = 2000;
+xSteps = 20000;
 delta = (2*l/xSteps);
 %x = -l*1.5 : delta : +l*1.5;
 x = -l : delta : +l;
 n = 1 : 200;
-n = 1 : 500;
 nPlot = 1 : 5;
+nPlot = [1 : 5, 20];
 kurvenVersatz = 1e5
 %n = [1, 2];
 
@@ -66,7 +66,7 @@ PsiG = zeros(length(n), length(x));
 
 psi1_l = zeros(length(n), length(x));
 
-for ln = n
+parfor ln = n
 	E1_k(ln) = dot(Psi(ln, :), H1.*Psi(ln, :));
 
 	k = ln;
