@@ -112,6 +112,35 @@ end
 % print('Psi_gestoert', '-depsc', '-noui')
 print('Psi_gestoert', '-dpdf', '-noui')
 
+%------------ 100-ste
+clf('reset')			% clear figure
+hold on;
+
+s = zeros(1, 2);
+for ln = nPlot		% ungestoerter Plot
+	%plot(x, Psi(ln, :) + (ln-1)*2e05, 'Color', 'black')		% Psi
+    plot(x, Psi(ln+100, :) , 'Color', 'blue')		% Psi
+
+	s(ln) = sum(Psi(ln+100, :).^2.*delta);
+end
+
+% print('Psi_ungestoert', '-depsc', '-noui')
+% print('Psi_ungestoert', '-dpdf', '-noui')
+
+% figure
+% hold on;
+
+sG = zeros(1, 2);
+for ln = nPlot		% gestoerter Plot
+	%plot(x, PsiG(ln, 1:length(x)) + (ln-1)*2e05, 'Color', 'red')		% Psi
+    plot(x, PsiG(ln+100, 1:length(x)), 'Color', 'red')		% Psi
+
+	sG(ln) = sum(PsiG(ln+100, :).^2.*delta);
+end
+
+% print('Psi_gestoert', '-depsc', '-noui')
+print('Psi_100_gestoert', '-dpdf', '-noui')
+
 %-----Plot grafik 2: E(n, a)-----
 figure
 hold on;
