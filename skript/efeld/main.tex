@@ -12,7 +12,7 @@ um eine St\"orung.
 
 \section{Grundlagen St"orungstheorie}
 Grunds"atzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell 
-(Abb \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
+(Abbildung \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
 mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
 
 F"ur die erste N"aherung gilt:
@@ -82,7 +82,7 @@ Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen
 \end{align}
 bewegen.
 Die Gleichung wird bei (\ref{skript:potentialkasten-psi-normiert}) Seite \pageref{skript:potentialkasten-psi-normiert} erkl"art.
-Ausserhalb des Potenzialkastens kommt das Elektron nicht vor.
+Ausserhalb des Potentialkastens kommt das Elektron nicht vor.
 
 Es hat die Energie
 \[
@@ -139,7 +139,7 @@ Die Feldst\"arke $a$ h\"angt von der Breite des Potentialkastens und der angeleg
   a = \frac{ U }{2 l}
 \]
 
-Diese Funktion dr\"uckt mit dem Parameter $U$ das eingeschaltete elektrische Feld \"uber dem Potentalskasten
+Diese Funktion dr\"uckt mit dem Parameter $U$ das eingeschaltete elektrische Feld \"uber dem Potentialkasten
 und erf\"ullt damit die selbe Funktion wie das $\varepsilon$.
 Wollen wir nun das $a = 1$ um die Formeln zu vereinfachen, m\"ussen wir alle relevanten Terme in $\varepsilon$ unterbringen
 
@@ -233,7 +233,7 @@ Mit der Gleichung \ref{eq:efeld_ESkalarprodukt} k"onnen wir direkt die Energie d
 \end{equation}
 
 Mit Symmetrie\"uberlegungen wollen wir nun das Resultat vorhersagen um allf\"allige Fehler erkennen zu k\"onnen.
-Bei Symmetrieen ist wichtig ob die Exponenten unsere Funktionen
+Bei Symmetrien ist wichtig ob die Exponenten unsere Funktionen
 \footnote{Formeln aus den Gleichungen $H_1$ und \ref{skript:potentialkasten-psi-normiert}}
 alle gerade oder ungerade sind.
 \begin{equation}
@@ -303,7 +303,7 @@ $\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt also nur einen Beitr
 
 Matlab\footnote{MATrix LABoratory} ist ein Programm welches sich gut zum Plotten von Funktionen
 und zum Berechnen von Matrizen eignet.
-Besonders das berechnen von Matrixen und Vektoren wird durch die Syntax erleichtert.
+Besonders das berechnen von Matrizen und Vektoren wird durch die Syntax erleichtert.
 
 Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 
@@ -328,11 +328,11 @@ Wir wollen jetzt die Wellen $\psi_k(\varepsilon)$ und die Energie auch tats"achl
 Dazu verwenden wir das Programm Matlab.
 
 Wie beginnen damit das wir Konstanten und das ungest"orte System bestimmen.
-Wir definieren f"ur unseren Potenzialkasten eine Breite von $10^{-9}$ (1nm links und rechts)
+Wir definieren f"ur unseren Potentialkasten eine Breite von $10^{-9}$ (1nm links und rechts)
 \begin{lstlisting}[style=Matlab]
 L = 10^-9;                         # Entfernung der Grenzen der Simulation
 n = 1000;                          # Anzahl aufsummierter Zustaende
-xSteps = 500;                      # Anzahl Abtastwerte in x-Richung
+xSteps = 500;                      # Anzahl Abtastwerte in x-Richtung
 x = -L : 2*L/xSteps : +L;          # Vektor von -L bis +L mit xSteps Schritten
 \end{lstlisting}
 und bekommen so den Vektor $x$.
@@ -377,7 +377,7 @@ Das Resultat ist in diesem Fall mit Vorsicht zu geniessen.
 Weil wir mit diskreten Werten arbeiten, entsteht beim Skalarprodukt ein Fehler von ca. $8 \cdot 10^{-15}$,
 welches mit einem korrektem Wert verwechselt werden kann.
 Den Plot sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
-Wir schliessen daraus, dass die Berechung stabil ist und die Werte genau genug sind.
+Wir schliessen daraus, dass die Berechnung stabil ist und die Werte genau genug sind.
 
 
 
@@ -498,7 +498,7 @@ H"atten wir eine Energie in der St"orung w"urde sie gegen oben immer schw"acher 
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Energie_gestoert.pdf}
- \caption{$E$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesammte Energie des Systems}
+ \caption{$E$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesamte Energie des Systems}
  \label{abb:efeld_E_gestoert}
 \end{figure}
 
