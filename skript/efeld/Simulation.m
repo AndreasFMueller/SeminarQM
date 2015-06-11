@@ -129,7 +129,7 @@ figure
 hold on;
 
 nPlot = 20;
-epsilon = 10^-3;
+epsilon100 = 10^-3;
 
 s = zeros(1, 2);
 for ln = nPlot		% ungestoerter Plot
@@ -148,7 +148,7 @@ end
 %sG = zeros(1, 2);
 for ln = nPlot		% gestoerter Plot
 	PsiG(ln, :) = (1+1i*epsilon*gamma).*Psi(ln, :) ...
-													+ epsilon.*psi1_l(ln, :);
+													+ epsilon100.*psi1_l(ln, :);
 	%plot(x, PsiG(ln, 1:length(x)) + (ln-1)*2e05, 'Color', 'red')		% Psi
     plot(x, PsiG(ln, 1:length(x)), 'Color', 'red')		% Psi
 
@@ -158,7 +158,59 @@ end
 % print('Psi_gestoert', '-depsc', '-noui')
 if safe; print('Psi_100_gestoert', '-dpdf', '-noui'); end
 
+%----- experimental -----
+nPlot = [1:5, 20];
+nPlotSise = length(nPlot);
+figure
+hold on
+
+%axis off;
+
+
+
+%s = zeros(1, 2);
+%sG = zeros(1, 2);
+i = nPlotSise;
+for ln = nPlot;		% ungestoerter Plot
+  subplot(nPlotSise, 1, (i))
+  plot(x, Psi(ln, :) , 'Color', 'blue')		% Psi
+	s(ln) = sum(Psi(ln, :).^2.*delta);
+	hold on
+	
+	% gestoert
+	PsiG(ln, :) = (1+1i*epsilon*gamma).*Psi(ln, :) + epsilon.*psi1_l(ln, :);
+  plot(x, PsiG(ln, 1:length(x)), 'Color', 'red')		% Psi
+	
+	ylabel(ln,'rot', 0)
+  set(gca,'YTickLabel',{})
+	if i < nPlotSise
+	set(gca,'XTickLabel',{})
+	end
+
+%	sG(ln) = sum(PsiG(ln, :).^2.*delta);
+  i = i-1;
+end
+
 hold off
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
