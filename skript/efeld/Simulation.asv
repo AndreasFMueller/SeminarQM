@@ -22,7 +22,7 @@ xSteps = 2000;
 delta = (2*l/xSteps);
 %x = -l*1.5 : delta : +l*1.5;
 x = -l : delta : +l;
-n = 1 : 200;
+n = 1 : 2000;
 nPlot = 1 : 5;
 kurvenVersatz = 1e5
 %n = [1, 2];
@@ -58,12 +58,17 @@ end
 
 %-----Verarbeitung gestoert-----
 gamma = 0;
-epsilon = 10^-4;
+epsilon = 5*10^-5;
 E1_k = zeros(1, length(n));
 H1 = x * -1;
 PsiG = zeros(length(n), length(x));
 
 psi1_l = zeros(length(n), length(x));
+
+par
+
+
+
 
 for ln = n
 	E1_k(ln) = dot(Psi(ln, :), H1.*Psi(ln, :));
@@ -73,7 +78,7 @@ for ln = n
 		if mod((l + k), 2) == 1
 %			psi0_l = sum(~Psi(l, :).*H1.*Psi(k, :).*delta) / (E(k)-E(l));
 			psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l));
-			psi1_l(l, :) = psi1_l(l, :) + psi0_l .* Psi(l, :);
+			psi1_l(ln, :) = psi1_l(ln, :) + psi0_l .* Psi(l, :);
 		end
 	end
 end
@@ -122,8 +127,8 @@ end
 figure
 hold on;
 
-nPlot = 100;
-epsilon = 10^-3;
+nPlot = 50;
+%epsilon = 10^-3;
 
 s = zeros(1, 2);
 for ln = nPlot		% ungestoerter Plot

@@ -23,12 +23,13 @@ delta = (2*l/xSteps);
 %x = -l*1.5 : delta : +l*1.5;
 x = -l : delta : +l;
 n = 1 : 200;
+n = 1 : 500;
 nPlot = 1 : 5;
 kurvenVersatz = 1e5
 %n = [1, 2];
 
 
-safe = 1
+safe = 0
 
 
 %-----Verarbeitung-----
@@ -109,6 +110,9 @@ for ln = nPlot		% gestoerter Plot
 	sG(ln) = sum(PsiG(ln, :).^2.*delta);
 end
 
+% print('Psi_gestoert', '-depsc', '-noui')
+if safe; then print('Psi_gestoert', '-dpdf', '-noui'); end
+
 %-----Plot grafik 2: E(n, a)-----
 figure
 hold on;
@@ -118,12 +122,15 @@ for ln = nPlot		% Energie Plot
 	plot(xEpsilon, E(ln) + xEpsilon*E1_k(ln))		% Psis
 end
 
+%print('Energie_gestoert', '-depsc', '-noui')
+if safe; then print('Energie_gestoert', '-dpdf', '-noui'); end
+
 %------------ 100-ste
 figure
 hold on;
 
-nPlot = 100;
-epsilon = 10^-3;
+nPlot = 50;
+epsilon = 10^-2;
 
 s = zeros(1, 2);
 for ln = nPlot		% ungestoerter Plot
@@ -149,10 +156,6 @@ for ln = nPlot		% gestoerter Plot
 	sG(ln) = sum(PsiG(ln, :).^2.*delta);
 end
 
-% print('Psi_gestoert', '-depsc', '-noui')
-if safe; then print('Psi_gestoert', '-dpdf', '-noui'); end
-%print('Energie_gestoert', '-depsc', '-noui')
-if safe; then print('Energie_gestoert', '-dpdf', '-noui'); end
 % print('Psi_gestoert', '-depsc', '-noui')
 if safe; then print('Psi_100_gestoert', '-dpdf', '-noui'); end
 
