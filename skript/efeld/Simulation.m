@@ -18,13 +18,18 @@
 %-----Variabeln-----
 l = 10^-9;
 xSteps = 225;
-delta = (l/xSteps);
+xSteps = 2000;
+delta = (2*l/xSteps);
 %x = -l*1.5 : delta : +l*1.5;
 x = -l : delta : +l;
 n = 1 : 200;
 nPlot = 1 : 5;
 kurvenVersatz = 1e5
 %n = [1, 2];
+
+
+safe = 1
+
 
 %-----Verarbeitung-----
 m = 9.10938291*10^-31;		% Elektronenmasse
@@ -51,34 +56,27 @@ end
 
 
 
-
-
-%-----Verarbeitung gestört-----
+%-----Verarbeitung gestoert-----
 gamma = 0;
-epsilon = 5* 10^-4;
+epsilon = 5*10^-5;
 E1_k = zeros(1, length(n));
 H1 = x * -1;
 PsiG = zeros(length(n), length(x));
 
-for ln = n
+psi1_l = zeros(length(n), length(x));
+
+parfor ln = n
 	E1_k(ln) = dot(Psi(ln, :), H1.*Psi(ln, :));
-	
-	psi1_l = zeros(1, length(x));
 
 	k = ln;
 	for l = n % + ceil(l/2)
-		if l ~= k
+		if mod((l + k), 2) == 1
 %			psi0_l = sum(~Psi(l, :).*H1.*Psi(k, :).*delta) / (E(k)-E(l));
 			psi0_l = dot(Psi(l, :), H1.*Psi(k, :)) / (E(k)-E(l));
-			psi1_l = psi1_l + psi0_l .* Psi(l, :);
+			psi1_l(ln, :) = psi1_l(ln, :) + psi0_l .* Psi(l, :);
 		end
 	end
-	
-	PsiG(ln, 1:length(x)) = (1+1i*epsilon*gamma).*Psi(ln, 1:length(x)) ...
-													+ epsilon.*psi1_l;
 end
-
-
 
 
 
@@ -103,6 +101,8 @@ end
 
 sG = zeros(1, length(n));
 for ln = nPlot		% gestoerter Plot
+	PsiG(ln, :) = (1+1i*epsilon*gamma).*Psi(ln, :) ...
+													+ epsilon.*psi1_l(ln, :);
 	%plot(x, PsiG(ln, 1:length(x)) + (ln-1)*2e05, 'Color', 'red')		% Psi
     plot(x, PsiG(ln, 1:length(x)) + (ln-1)*kurvenVersatz, 'Color', 'red')		% Psi
 
@@ -110,7 +110,7 @@ for ln = nPlot		% gestoerter Plot
 end
 
 % print('Psi_gestoert', '-depsc', '-noui')
-print('Psi_gestoert', '-dpdf', '-noui')
+if safe; print('Psi_gestoert', '-dpdf', '-noui'); end
 
 %-----Plot grafik 2: E(n, a)-----
 figure
@@ -122,9 +122,95 @@ for ln = nPlot		% Energie Plot
 end
 
 %print('Energie_gestoert', '-depsc', '-noui')
-print('Energie_gestoert', '-dpdf', '-noui')
+if safe; print('Energie_gestoert', '-dpdf', '-noui'); end
+
+%------------ 100-ste
+figure
+hold on;
+
+nPlot = 20;
+epsilon100 = 10^-3;
+
+s = zeros(1, 2);
+for ln = nPlot		% ungestoerter Plot
+	%plot(x, Psi(ln, :) + (ln-1)*2e05, 'Color', 'black')		% Psi
+    plot(x, Psi(ln, :) , 'Color', 'blue')		% Psi
+
+	s(ln) = sum(Psi(ln, :).^2.*delta);
+end
+
+% print('Psi_ungestoert', '-depsc', '-noui')
+% print('Psi_ungestoert', '-dpdf', '-noui')
+
+% figure
+% hold on;
+
+%sG = zeros(1, 2);
+for ln = nPlot		% gestoerter Plot
+	PsiG(ln, :) = (1+1i*epsilon*gamma).*Psi(ln, :) ...
+													+ epsilon100.*psi1_l(ln, :);
+	%plot(x, PsiG(ln, 1:length(x)) + (ln-1)*2e05, 'Color', 'red')		% Psi
+    plot(x, PsiG(ln, 1:length(x)), 'Color', 'red')		% Psi
+
+%	sG(ln) = sum(PsiG(ln, :).^2.*delta);
+end
+
+% print('Psi_gestoert', '-depsc', '-noui')
+if safe; print('Psi_100_gestoert', '-dpdf', '-noui'); end
+
+%----- experimental -----
+nPlot = [1:5, 20];
+nPlotSise = length(nPlot);
+figure
+hold on
+
+%axis off;
+
+
+
+%s = zeros(1, 2);
+%sG = zeros(1, 2);
+i = nPlotSise;
+for ln = nPlot;		% ungestoerter Plot
+  subplot(nPlotSise, 1, (i))
+  plot(x, Psi(ln, :) , 'Color', 'blue')		% Psi
+	s(ln) = sum(Psi(ln, :).^2.*delta);
+	hold on
+	
+	% gestoert
+	PsiG(ln, :) = (1+1i*epsilon*gamma).*Psi(ln, :) + epsilon.*psi1_l(ln, :);
+  plot(x, PsiG(ln, 1:length(x)), 'Color', 'red')		% Psi
+	
+	ylabel(ln,'rot', 0)
+  set(gca,'YTickLabel',{})
+	if i < nPlotSise
+	set(gca,'XTickLabel',{})
+	end
+
+%	sG(ln) = sum(PsiG(ln, :).^2.*delta);
+  i = i-1;
+end
 
 hold off
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -12,28 +12,15 @@ um eine St\"orung.
 
 \section{Grundlagen St"orungstheorie}
 Grunds"atzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell 
-(Abb \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
+(Abbildung \ref{abb:efeld_psi_ungestoert} der ersten 5 Energieniveaus) 
 mit einer St\"orung erg"anzen, statt von Anfang an mit einem komplexen Modell zu rechnen.
-
-\begin{comment} %fixme
-\[
-  f(x, \varepsilon) = f_0(x) + \varepsilon^1 f_0(x) + \varepsilon^2 f_0(x) + \ldots
-\]
-\[
-  |\psi_n(\varepsilon)\rangle =
-  |\psi_n^{(0)}(\varepsilon)\rangle + \varepsilon^1 |\psi_n^{(1)}(\varepsilon)\rangle
-  + \varepsilon^2 |\psi_n^{(2)}(\varepsilon)\rangle + \ldots
-\]
-Wir betrachten in unserer Anwendung nur die erste N\"aherung
-und werten deshalb nur die Terme mit den Indizes $0$ und $1$ aus.
-\end{comment}
 
 F"ur die erste N"aherung gilt:
 \[
   f(x, \varepsilon) = f_0(x) + \varepsilon f_1(x)
 \]
 Dabei ist $f_0(x)$ die ungest"orte Funktion und $\varepsilon f_1(x)$ die St"orung.
-$\varepsilon$ ist eine Variabel mit der wir den St"orungsterm $f_1(x)$ steuern.
+$\varepsilon$ ist eine Variable mit der wir den St"orungsterm $f_1(x)$ steuern.
 Dabei sollte $\varepsilon$ nicht zu gross gew"ahlt werden,
 da die N"aherung sonst ungenau wird.
 Setzen wir hingegen $\varepsilon = 0$, k\"onnen wir die St"orung dynamisch abschalten.
@@ -74,34 +61,42 @@ $\psi_k^{(0)}$ und $\varepsilon$ kennen.
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Psi_ungestoert.pdf}
- \caption{$\psi$ ungest\"ort}
+ \caption{$\psi_k^{(0)}$ - Die ersten f\"unf ungest\"orten Energieniveaus von $H_0$ }
  \label{abb:efeld_psi_ungestoert}
 \end{figure}
 
 Bei unserer Anwendung bauen wir auf dem Potentialkasten (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten}) auf.
 
 Dabei geht es um ein Elektron welches zwischen zwei Barrieren mit unendlich hohem Potential gefangen ist.
-Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen $\psi_k$ bewegen
+Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen
 \begin{align}
-\psi_n(x)
+\psi_k(x)
 &=
 \begin{cases}
 \displaystyle
-\frac{1}{\sqrt{l}}\cos\frac{n \pi x}{2l}&\qquad \text{$n$ ungerade}\\
+\frac{1}{\sqrt{l}}\cos\frac{k \pi x}{2l}&\qquad \text{$k$ ungerade}\\
 \\
 \displaystyle
-\frac{1}{\sqrt{l}}\sin\frac{n \pi x}{2l}&\qquad \text{$n$ gerade}.
+\frac{1}{\sqrt{l}}\sin\frac{k \pi x}{2l}&\qquad \text{$k$ gerade}.
 \end{cases}
 \end{align}
-Die Gleichung wird bei \ref{skript:potentialkasten-psi-normiert} Seite \pageref{skript:potentialkasten-psi-normiert} erkl"art.
-Ausserhalb des Potenzialkastens kommt das Elektron nicht vor.
+bewegen.
+Die Gleichung wird bei (\ref{skript:potentialkasten-psi-normiert}) Seite \pageref{skript:potentialkasten-psi-normiert} erkl"art.
+Ausserhalb des Potentialkastens kommt das Elektron nicht vor.
+
+Es hat die Energie
+\[
+E_k = \frac{h^2n^2}{32ml^2}
+\]
+welche bei (\ref{skript:potentialkasten-e})
+Seite \pageref{skript:potentialkasten-e} erkl"art wird.
 
 Wir legen jetzt eine Spannung "uber dem Potentialkasten an
 und erweitern so das System mit einer St"orung.
 
 Weil das Elektron eine negative Ladung besitzt ver"andert sich seine Wellenfunktion.
 
-Als Grundlage "ubernehmen wir zwei Funktionen aus dem Skript
+Als Grundlagen verwenden wir die Hamiltonfunktion und das Potential des Teilchens im Potentialkasten
 \begin{equation}
 \begin{aligned}
 H_0&=\frac1{2m}p^2+V_0(x)
@@ -119,7 +114,23 @@ Potential definieren:
   H_1 = V_1(x) = a x + b
 \end{equation}
 
-Da das Potential die Integration des elektrischen Feldes ist, entspricht der Parameter $b$ dem $c$ der Integration.
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+  \draw[->] (-1.4,0) -- (1.4,0) node[right] {$x$};
+  \draw[->] (0,-1.4) -- (0,1.4) node[above] {$V_1$};
+  \shade[top color=gray!20,bottom color=gray!20] 
+      (0,0) (1,1) |- (0,0);
+  \shade[top color=gray!20,bottom color=gray!20] 
+      (-1,-1) |- (0,0) (-1,-1);
+  \draw[scale=0.5,domain=-2:2,smooth,variable=\x,red] plot ({\x},{\x});
+  %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
+\end{tikzpicture}
+ \caption{St\"orung $H_1$}
+ \label{abb:efeld_H_1}
+\end{figure}
+
+Da das Potential die Stammfunktion des elektrischen Feldes ist, entspricht der Parameter $b$ dem $c$ der Integration.
 F\"ur das Potential sind nur Unterschiede relevant, das Niveau, solange es in der ganzen Anwendung ver\"andert wird,
 kann beliebig gew\"ahlt werden. Somit k\"onnen wir mit $b=0$ die Formel nochmals vereinfachen.
 
@@ -128,22 +139,18 @@ Die Feldst\"arke $a$ h\"angt von der Breite des Potentialkastens und der angeleg
   a = \frac{ U }{2 l}
 \]
 
-Diese Funktion dr\"uckt mit dem Parameter $U$ das eingeschaltete elektrische Feld \"uber dem Potentalskasten
+Diese Funktion dr\"uckt mit dem Parameter $U$ das eingeschaltete elektrische Feld \"uber dem Potentialkasten
 und erf\"ullt damit die selbe Funktion wie das $\varepsilon$.
-Wollen wir nun das $a = 1$ um die Formeln zu vereinfachen, m\"ussen wir dem $\varepsilon$ alles andere geben.
+Wollen wir nun das $a = 1$ um die Formeln zu vereinfachen, m\"ussen wir alle relevanten Terme in $\varepsilon$ unterbringen
 
 % TODO evt. bessere Formulierung
 \begin{equation}
 \begin{aligned}
-  \varepsilon H_1(x) &= \varepsilon a e_{-} x +b \\
-                     &= \varepsilon \frac{ U }{2 l} e_{-} x + 0 
-     \Longrightarrow \varepsilon = \frac{ U }{2 l} e_{-} ; a = 1
+  \varepsilon H_1(x) &= \varepsilon a e_{-} x +b  & \\
+                     &= \varepsilon \frac{ U }{2 l} e_{-} x + 0  &\Longrightarrow \varepsilon = \frac{ U }{2 l} e_{-} \\
+                     &                                           & a = 1
 \end{aligned}
-\end{equation}
-
-bereits durch $\varepsilon$ beschreiben, k\"onnen wir mit $a = 1$ vereinfachen.
-
-
+\end{equation} % FIXME LaTeX beibringen, wie a = 1 einger\"uckt werden soll.
 
 
 
@@ -165,17 +172,15 @@ theoretisch ausgef\"uhrt.
 Entscheidend ist hier ob die Zust"ande entartet sind oder nicht.
 Entartung bedeutet, dass zwei Zust"ande die selbe Energie besitzen, 
 wodurch bei der Berechnung der Nenner zu Null wird.
-Das w"are beispielsweise bei einem zweidimensionalen Kasten der Fall,
-wo wir entlang der Diagonalen identische Zust"ande haben.
-In unserem Fall k"onnen solche Symmetrien nicht auftreten.
-Wir sehen ausserdem an der Gleichung
+
+Wir sehen an der Gleichung
 \[
   E_n^{(0)} = \frac{h^2n^2}{32ml^2}
 \]
 dass die Energie mit zunehmendem $n$ immer steigt. 
 
 Zudem haben wir f\"ur jedes $n$ nur genau einen Zustand und dadurch keine Entartung. 
-Deshalb k\"onnen wir folgende Gleichungen verwenden:
+Deshalb k\"onnen wir die Gleichungen
 \begin{equation}
 \begin{aligned}
 E_k^{(1)} &=
@@ -199,24 +204,36 @@ E_k^{(1)} &=
 \label{eq:efeld_ESkalarprodukt}
 \end{aligned}
 \end{equation}
+aus dem Kapitel \ref{section:nichtentartetezustaende}, Seite \pageref{section:nichtentartetezustaende} verwenden.
 
-
-
-
+Mit $\gamma$ kann man die Wellenfunktion normieren.
+Das ist n"otig wenn die St"orung Energie hinzuf"ugt
+und so die Wahrscheinlichkeitsverteilung nicht mehr stimmt ($P \ne 1$).
+Weil wir aber in der ersten N\"aherung keine 
+Energiever\"anderung durch die St\"orung bekommen, m\"ussen wir
+\[
+  \gamma = 0
+\]
+setzen.
 
 
 
 
 \subsection{Symmetrie"uberlegung}
 \index{Symmetrien}
-Mit der Gleichung \ref{eq:efeld_E_Stoerung} k"onnen wir mit dem Skalarprodukt direkt die Energie der St"orung berechnen.
+Mit der Gleichung \ref{eq:efeld_ESkalarprodukt} k"onnen wir direkt die Energie der St"orung berechnen.
 \begin{equation}
-  \label{eq:efeld_E_Stoerung}
-  E_{k}^{(1)} = \overline{\psi_k^{(0)}} x \psi_k^{(0)}
+\begin{aligned}
+  E_{k}^{(1)} 
+ &= \langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle 
+  = \langle \psi_k^{(0)}|\, x \;|\psi_k^{(0)}\rangle                   \\
+ &= \int_{-L}^{L} \overline{\psi_k^{(0)}} x \; \psi_k^{(0)} dx
+  = \int_{-L}^{L} \psi_n(x) \, x \, \psi_n(x) dx
+\end{aligned}
 \end{equation}
 
-Mit Symmetrie\"uberlegungen wollen wir nunn das Resultat vorhersagen um allf\"allige Fehler erkennen zu k\"onnen.
-Bei Symmetrieen ist wichtig ob die Exponenten unsere Funktionen
+Mit Symmetrie\"uberlegungen wollen wir nun das Resultat vorhersagen um allf\"allige Fehler erkennen zu k\"onnen.
+Bei Symmetrien ist wichtig ob die Exponenten unsere Funktionen
 \footnote{Formeln aus den Gleichungen $H_1$ und \ref{skript:potentialkasten-psi-normiert}}
 alle gerade oder ungerade sind.
 \begin{equation}
@@ -239,11 +256,10 @@ Allerdings bekommen wir immer eine ungerade Funktion, wenn wir eine gerade Funkt
   x \cdot \overline{\psi_k^{(0)}(x)} \psi_k^{(0)}(x) = x \cdot |\psi_k^{(0)}(x)|^2
 \]
 
-Wir k"onnen das Skalarprodukt auch als ein Integral von zeit-diskreten\footnote{Einzelne diskrete Messungen \"uber die Zeit} 
-Werten verstehen.
+Wir k"onnen das Skalarprodukt auch als ein Integral von diskreten Werten verstehen.
 Da ungerade Funktionen punktsymmetrisch sind, muss das Integral $0$ sein.
 \[
-  E_k^{(1)} = \int_{-L}^{+L} x |\psi_k^{(0)}|^2 dt = 0
+  E_k^{(1)} = \int_{-L}^{+L} x |\psi_k^{(0)}|^2 dx = 0
 \]
 
 Wir k"onnen die Energie trotzdem in
@@ -251,15 +267,6 @@ $E_k(\varepsilon)=E_k^{(0)} + \varepsilon E_k^{(1)}$ einsetzen
 und bekommen so die st"orungsabh"angige Energie.
 
 
-
-
-\begin{comment}
-% FIXME Text ist zu kurz
-St\"orung ist ungerade
-\[
-  \int \psi_k(x) x \psi_k(x) dx = \int x \psi_k^2 dx
-\]
-\end{comment}
 
 
 
@@ -279,8 +286,15 @@ Wir berechnen also
 Bei $l = k$ hat die Welle keinen Anteil an $\psi_k^{(1)}$,
 denn $\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt die Energie der St"orung.
 
-% FIXME warum? gamma kam noch nicht vor
-Wir m"ussen $\gamma$ in der ersten N"aherung nicht ber"ucksichtige und setzen daher $\gamma = 0$.
+Wir "uberlegen uns auch hier die Symmetrie.
+$\psi_k^{(0)}$ und $\psi_l^{(0)}$ k"onnen sowohl gerade als auch ungerade sein,
+$H_1$ ist hingegen immer ungerade.
+Uns interessieren die Skalarprodukte die gerade sind, denn nur die ergeben einen Beitrag.
+Das ist der Fall wenn $H_1$ und $\psi_k^{(0)} \psi_l^{(0)}$ ungerade sind.
+$\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt also nur einen Beitrag wenn
+\[
+(k-l) mod 2 = 1.
+\]
 
 
 
@@ -289,7 +303,7 @@ Wir m"ussen $\gamma$ in der ersten N"aherung nicht ber"ucksichtige und setzen da
 
 Matlab\footnote{MATrix LABoratory} ist ein Programm welches sich gut zum Plotten von Funktionen
 und zum Berechnen von Matrizen eignet.
-Besonders das berechnen von Matrixen und Vektoren wird durch die Syntax erleichtert.
+Besonders das berechnen von Matrizen und Vektoren wird durch die Syntax erleichtert.
 
 Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 
@@ -314,17 +328,17 @@ Wir wollen jetzt die Wellen $\psi_k(\varepsilon)$ und die Energie auch tats"achl
 Dazu verwenden wir das Programm Matlab.
 
 Wie beginnen damit das wir Konstanten und das ungest"orte System bestimmen.
-Wir definieren f"ur unseren Potenzialkasten eine Breite von $10^{-9}$ (1nm links und rechts)
+Wir definieren f"ur unseren Potentialkasten eine Breite von $10^{-9}$ (1nm links und rechts)
 \begin{lstlisting}[style=Matlab]
 L = 10^-9;                         # Entfernung der Grenzen der Simulation
 n = 1000;                          # Anzahl aufsummierter Zustaende
-xSteps = 500;                      # Anzahl Abtastwerte in x-Richung
+xSteps = 500;                      # Anzahl Abtastwerte in x-Richtung
 x = -L : 2*L/xSteps : +L;          # Vektor von -L bis +L mit xSteps Schritten
 \end{lstlisting}
 und bekommen so den Vektor $x$.
 
 Um die ungest"orten Zust"ande $\psi_k^{(0)}$ zu bekommen, tasten wir die Sinus- und Kosinus-Funktion 
-aus der Gleichung \ref{skript:potentialkasten-psi-normiert} Seite \pageref{skript:potentialkasten-psi-normiert} diskret ab.
+aus der Gleichung (\ref{skript:potentialkasten-psi-normiert}) Seite \pageref{skript:potentialkasten-psi-normiert} diskret ab.
 
 Gleichzeitig bestimmen wir die Energien $E_k^{(0)}$.
 \begin{lstlisting}[style=Matlab]
@@ -343,7 +357,7 @@ for k = 1 : n
 end
 \end{lstlisting}
 und bekommen so einen Vektor mit den $n$ Werten f"ur $E_k^{(0)}$
-sowie eine Matrix $xSteps \times n$ (konkret $500 \times 1000$) f"ur $\psi_k^{(0)}$.
+sowie eine Matrix $\texttt{xSteps} \times \texttt{n}$ (konkret $500 \times 1000$) f"ur $\psi_k^{(0)}$.
 
 \subsection{Berechnung von $E_k^{(1)}$}
 
@@ -363,6 +377,8 @@ Das Resultat ist in diesem Fall mit Vorsicht zu geniessen.
 Weil wir mit diskreten Werten arbeiten, entsteht beim Skalarprodukt ein Fehler von ca. $8 \cdot 10^{-15}$,
 welches mit einem korrektem Wert verwechselt werden kann.
 Den Plot sehen wir in der Abbildung \ref{abb:efeld_E_gestoert}.
+Wir schliessen daraus, dass die Berechnung stabil ist und die Werte genau genug sind.
+
 
 
 
@@ -373,7 +389,7 @@ Die Implementierung von $\psi_k^{(1)}$ gestaltet sich durch die Summe etwas schw
 Normaler Weise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen lassen.
 Wir wollen aber ein Element auslassen. 
 Um zum Beispiel den f"unften Zustand zu bestimmen summieren wir alle Zust\"ande vom 
-ersten bis n-ten ausser dem f\"unften auf.
+ersten bis $n$-ten ausser dem f\"unften auf.
 \begin{equation}
   \psi_5^{(1)} = \langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle = 
   \sum_{l=1 ; l\ne 5}^{n}
@@ -397,11 +413,11 @@ for l = 1 : n
   end
 end
 \end{lstlisting}
-$summe$ ist nun ein Vektor mit den diskreten Abtastwerten von $\psi_k^{(1)}$.
+\verb|summe| ist nun ein Vektor mit den diskreten Abtastwerten von $\psi_k^{(1)}$.
 
 Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil am Gesammtzustand 
 mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms 
-$E^{(0)}(k)-E^{(0)}(l)$ unter dem Bruchstrich.
+$E^{(0)}_k-E^{(0)}_l$ unter dem Bruchstrich.
 In diesem Fall addieren wir beim 90-sten Schritt ($l=90$) nur $1\%$ der St"orung dazu.
 Beim 280-sten Schritt ($l=280$) betr"agt der Anteil nur noch $0.1\%$.
 
@@ -439,22 +455,6 @@ im ersten Quadranten ein positives Potential bildet und deshalb das Elektron her
   H_1(x) = x
 \]
 
-\begin{figure}
-  \centering
-\begin{tikzpicture}
-  \draw[->] (-1.4,0) -- (1.4,0) node[right] {$x$};
-  \draw[->] (0,-1.4) -- (0,1.4) node[above] {$y$};
-  \shade[top color=gray!20,bottom color=gray!20] 
-      (0,0) (1,1) |- (0,0);
-  \shade[top color=gray!20,bottom color=gray!20] 
-      (-1,-1) |- (0,0) (-1,-1);
-  \draw[scale=0.5,domain=-2:2,smooth,variable=\x,red] plot ({\x},{\x});
-  %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
-\end{tikzpicture}
- \caption{St\"orung $H_1$}
- \label{abb:efeld_H_1}
-\end{figure}
-
 Allerdings wird durch die positive Spannung das Elektron angezogen und die
 Wahrscheinlichkeit es weiter Rechts anzutreffen steigt.
 
@@ -475,7 +475,17 @@ welches mal kinetische Energie hat, mal mechanische.
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Psi_gestoert.pdf}
- \caption{$\psi$ gest\"ort}
+ \caption{$\psi$ ungest\"ort in blau und $\psi$ gest\"ort in rot, zur besseren Anschauung jeweils um $10^5$ versetzt}
+ \label{abb:efeld_psi_gestoert}
+\end{figure}
+
+% FIXME Beschreibung zum 100-sten
+Durch die St\"orung wird das Elektron tendentiel nach rechts verschoben.
+
+\begin{figure}
+ \centering
+ \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Psi_100_gestoert.pdf}
+ \caption{100-stes Energieniveau von $\psi$ ungest\"ort in blau und $\psi$ gest\"ort in rot.}
  \label{abb:efeld_psi_gestoert}
 \end{figure}
 
@@ -489,7 +499,7 @@ H"atten wir eine Energie in der St"orung w"urde sie gegen oben immer schw"acher 
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Energie_gestoert.pdf}
- \caption{$E$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesammte Energie des Systems}
+ \caption{$E$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesamte Energie des Systems}
  \label{abb:efeld_E_gestoert}
 \end{figure}
 
