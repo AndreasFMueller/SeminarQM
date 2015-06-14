@@ -80,14 +80,6 @@ Falls nun das erste Register gemessen wird, liefert diese entweder $x$ oder $x
 \oplus s$. Um bei der Messung nur das $x \oplus s$ herauszumessen wird nun
 wieder die Hadamard Operation angewendet und wie folgt vereinfacht:
 
-F"ur ein $n$-Qubit-Register $|x\rangle$ gilt analog
-\begin{align*}
-H^{\otimes n}\, |x\rangle
-=
-\frac1{(\sqrt{2})^n}
-\sum_y (-1)^{x\cdot y}|y\rangle
-\end{align*}
-
 \begin{align*}
     &H^{ \otimes n } \biggl( 
                      \frac{1}{\sqrt{2}} |x\rangle + 
@@ -97,52 +89,92 @@ H^{\otimes n}\, |x\rangle
     &= H^{ \otimes n } \frac{1}{\sqrt{2}} |x\rangle + 
        H^{ \otimes n } \frac{1}{\sqrt{2}} |x \oplus s\rangle 
     \\ 
-    &= \frac1{\sqrt{2}^n} \sum_{z \in \{0,1\}^n} {( (-1)^{x \cdot z} |z\rangle )} + 
-       \frac1{\sqrt{2}^n}  \sum_{z \in \{0,1\}^n} { ( (-1)^{(x \oplus s) \cdot z } |z\rangle)}
+    &= \frac1{\sqrt{2}} ( H^{ \otimes n } |x\rangle + H^{ \otimes n } |x \oplus s\rangle )
     \\
-    &= \frac1{\sqrt{2}^n} \sum_{z \in \{0,1\}^n} {( (-1)^{x \cdot z} |z\rangle )} + 
-       \frac1{\sqrt{2}^n}  \sum_{z \in \{0,1\}^n} { ( (-1)^{(x \oplus s) \cdot z } |z\rangle)}
+    &= \frac1{\sqrt{2}}
+       \biggl( \frac1{\sqrt{2}^n} \sum_{z \in \{0,1\}^n} {( (-1)^{x \cdot z} |z\rangle )} + 
+               \frac1{\sqrt{2}^n}  \sum_{z \in \{0,1\}^n} { ( (-1)^{(x \oplus s) \cdot z } |z\rangle)}
+       \biggr)
+    \\
+    &= \frac1{\sqrt{2^{n + 1}}}
+       \biggl( \sum_{z \in \{0,1\}^n}  { 
+                   (-1)^{x \cdot z} |z\rangle + (-1)^{(x \oplus s) \cdot z } |z\rangle 
+               } 
+       \biggr)
+    \\
+    &= \frac1{\sqrt{2^{n + 1}}}
+       \biggl( \sum_{z \in \{0,1\}^n}  { 
+                  (-1)^{x \cdot z} |z\rangle + (-1)^{(x \cdot z) \oplus ( s \cdot z) } |z\rangle 
+               } 
+       \biggr)
+    \\
+    &= \frac1{\sqrt{2^{n + 1}}}
+       \biggl( 
+          \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^{ s \cdot z}) |z\rangle } 
+       \biggr)
 \end{align*}
 
+Es werden nun zwei F"alle unterschieden. Falls $s \cdot z = 1$ ist, dann gilt:
+\begin{align*}
+    &\frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^{ s \cdot z}) |z\rangle } 
+    \\
+    &= 
+    \frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^1) |z\rangle } 
+    \\
+    &= 
+    \frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} (0) |z\rangle } 
+    \\
+    &=
+    0 |z\rangle
+\end{align*}
 
-% \begin{align*}
-% |x_1\rangle \otimes |x_2\rangle
-% &\mapsto
-% \frac1{\sqrt{2}} \biggl( |0\rangle + (-1)^{x_1}|1\rangle \biggr)
-% \frac1{\sqrt{2}} \biggl( |0\rangle + (-1)^{x_2}|1\rangle \biggr)
-% \\
-% &=
-% \frac12(
-% |00\rangle
-% +
-% (-1)^{x_1}
-% |10\rangle
-% +
-% (-1)^{x_2}
-% |01\rangle
-% +
-% (-1)^{x_1+x_2}
-% |11\rangle
-% )
-% \\
-% &=
-% \frac12
-% \sum_{y} (-1)^{x\cdot y} |y\rangle.
-% \end{align*}
-% Die zugeh"orige unit"are Matrix in der Basis
-% $\{|00\rangle,
-% |10\rangle,
-% |01\rangle,
-% |11\rangle\}$
-% ist
-% 
-\section{Klassische Lösugn}
+Dies zeigt, dass die Wahrscheinlichkeit diesen Fall zu messen gleich 0 ist und
+somit nie auftritt. Der zweite Fall ist $s \cdot z = 0$, dann gilt:
 
-\section{L\"osung mit einem Quantencomputer}
+\begin{align*}
+    &\frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^{ s \cdot z}) |z\rangle } 
+    \\
+    &= 
+    \frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^0) |z\rangle } 
+    \\
+    &= 
+    \frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} (2) |z\rangle } 
+    \\
+    &= 
+    \frac{2}{\sqrt{2^{n + 1}}} 
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z}|z\rangle } 
+    &= 
+    \frac1{\sqrt{2^{n - 1}}} 
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z}|z\rangle } 
+\end{align*}
 
-\section{Warum ist dies relevant?}
+Bei der Messung des ersten Registers wird nun ein n-String $z$ gemessen mit der
+Bedingung, dass $s \cdot z = 0$ ist. Die Wahrscheinlichkeit dafür liegt bei:
+\[
+    |\frac1{\sqrt{2^{n - 1}}}|^2 = \frac1{2^{n-1}} 
+\]
 
-    % u=\frac1{2^{\frac{n}2}}\sum_{x\in\{0,1\}^n}|x\rangle
+Bei genauer Überglegung macht dies auch Sinn, denn Falls $s \notin \{0,1\}^n)$
+ist gilt, genau $2^{n-1}$ Möglich $z$-Werte. Die Wahrscheinlichkeit einen
+diesen zu messen ist gleich verteilt.
+
+Der Algorithmus von Simon liefert nun einen Wert $z$, um den genaun Werten von
+$s$ zu bestimmen, wird nun der Algorithmus $n-1$-Mal wiederholt, somit liegen
+nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
+
+
+%\section{Klassische L"osugn}
+
+%\section{L\"osung mit einem Quantencomputer}
+
+%\section{Warum ist dies relevant?}
+
 \printbibliography[heading=subbibliography] \end{refsection}
 
 
