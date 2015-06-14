@@ -433,10 +433,10 @@ for l = 1 : n
   end
 end
 \end{lstlisting}
-\verb|summe| ist nun ein Vektor mit den diskreten Abtastwerten von $\psi_k^{(1)}$.
+Die Variable \verb|summe| ist nun ein Vektor mit den diskreten Abtastwerten von $\psi_k^{(1)}$.
 
-Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil am Gesammtzustand 
-mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms 
+Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, da der Anteil am Gesammtzustand 
+mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zunahme des Terms 
 $E^{(0)}_k-E^{(0)}_l$ unter dem Bruchstrich.
 In diesem Fall addieren wir beim 90-sten Schritt ($l=90$) nur $1\%$ der St"orung dazu.
 Beim 280-sten Schritt ($l=280$) betr"agt der Anteil nur noch $0.1\%$.
@@ -458,7 +458,7 @@ einsetzen und bekommen so die neue Wellenfunktion dargestellt in Abbildung \ref{
 \subsection{Auswertung Psi}
 
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen den ungest"orten 
-$\psi$ (schwarz) und der ersten N"aherung (rot).
+$\psi_k$ (schwarz) und der ersten N"aherung (rot).
 Auf der vertikalen Achse haben wir die Amplituden von $\psi_k$.
 Die Funktion 
 \[
@@ -476,7 +476,7 @@ im ersten Quadranten ein positives Potential bildet und deshalb das Elektron her
 \]
 
 Allerdings wird durch die positive Spannung das Elektron angezogen und die
-Wahrscheinlichkeit es weiter Rechts anzutreffen steigt.
+Wahrscheinlichkeit es weiter rechts anzutreffen steigt.
 
 Durch das elektrische Feld haben wir entlang der $x$-Achse verschieden Energie-Potentiale.
 Das Elektron hat allerdings immer die selbe Energie,
