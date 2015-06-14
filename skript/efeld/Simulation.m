@@ -128,7 +128,7 @@ if safe; print('Energie_gestoert', '-dpdf', '-noui'); end
 figure
 hold on;
 
-nPlot = 20;
+nPlot = 100;
 epsilon100 = 10^-3;
 
 s = zeros(1, 2);
@@ -157,6 +157,33 @@ end
 
 % print('Psi_gestoert', '-depsc', '-noui')
 if safe; print('Psi_100_gestoert', '-dpdf', '-noui'); end
+
+
+%------------------ Berechnung der Differenzen zwischen den Übergängen 100-ste Energie -----------------
+figure
+hold on;
+
+nPlot = 100;
+epsilon100 = 10^-3;
+
+s = zeros(1, 2);
+for ln = nPlot    % ungestoerter Plot
+  % plot(x, Psi(ln, :) , 'Color', 'blue')    % Psi
+
+  s(ln) = sum(Psi(ln, :).^2.*delta);
+end
+
+
+%sG = zeros(1, 2);
+for ln = nPlot    % gestoerter Plot
+  PsiG(ln, :) = (1+1i*epsilon*gamma).*Psi(ln, :)  + epsilon100.*psi1_l(ln, :);
+  % plot(x, PsiG(ln, 1:length(x)), 'Color', 'red')    % Psi
+
+  % sG(ln) = sum(PsiG(ln, :).^2.*delta);
+end
+
+% print('Psi_gestoert', '-depsc', '-noui')
+if safe; print('Psi_100_diff_gestoert', '-dpdf', '-noui'); end
 
 %----- experimental -----
 nPlot = [1, 13, 23, 42, 100];
@@ -196,6 +223,4 @@ if safe; print('Psi_SubPlots_gestoert', '-dpdf', '-noui'); end
 
 hold off
 
-
-%------------------ Berechnung der Differenzen zwischen den Übergängen 100-ste Energie -----------------
 
