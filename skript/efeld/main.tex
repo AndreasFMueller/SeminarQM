@@ -206,9 +206,9 @@ E_k^{(1)} &=
 \end{equation}
 aus dem Kapitel \ref{section:nichtentartetezustaende}, Seite \pageref{section:nichtentartetezustaende} verwenden.
 
-Mit $\gamma$ kann man die Wellenfunktion normieren.
-Das ist n"otig wenn die St"orung Energie hinzuf"ugt
-und so die Wahrscheinlichkeitsverteilung nicht mehr stimmt ($P \ne 1$).
+Mit $\gamma$ kann die Wellenfunktion normiert werden.
+Das ist n"otig, wenn die St"orung Energie hinzuf"ugt
+und so die Wahrscheinlichkeitsverteilung ($P \ne 1$) nicht mehr stimmen w\"urde.
 Weil wir aber in der ersten N\"aherung keine 
 Energiever\"anderung durch die St\"orung bekommen, m\"ussen wir
 \[
@@ -233,23 +233,43 @@ Mit der Gleichung \ref{eq:efeld_ESkalarprodukt} k"onnen wir direkt die Energie d
 \end{equation}
 
 Mit Symmetrie\"uberlegungen wollen wir nun das Resultat vorhersagen um allf\"allige Fehler erkennen zu k\"onnen.
-Bei Symmetrien ist wichtig ob die Exponenten unsere Funktionen
+Bei der Betrachtung von Symmetrien an Funktionen erkennen wir den Zustand an den Exponenten.
+Betrachten wir einige Beispiele 
 \footnote{Formeln aus den Gleichungen $H_1$ und \ref{skript:potentialkasten-psi-normiert}}
-alle gerade oder ungerade sind.
 \begin{equation}
 \begin{aligned}
 x^1 &\Rightarrow \text{ungerade Funktion}
 \\
-\frac{1}{\sqrt{l}}\cos\frac{n \pi x}{2l} &\Rightarrow \text{gerade Funktion}
+x^2 &\Rightarrow \text{gerade Funktion}
 \\
-\frac{1}{\sqrt{l}}\sin\frac{n \pi x}{2l} &\Rightarrow \text{ungerade Funktion}
+\frac{1}{\sqrt{l}}\cos\left( \frac{n \pi x}{2l} \right)  &\Rightarrow \text{gerade Funktion}
+\\
+\frac{1}{\sqrt{l}}\sin\left( \frac{n \pi x}{2l} \right)  &\Rightarrow \text{ungerade Funktion}
 \end{aligned}
 \end{equation}
+Betrachten wir unsere Funktionen in Abbildung \ref{abb:efeld_gerade_ungerade} so stellen wir fest, 
+dass gerade Funktionen nur Terme mit geraden Exponenten besitzen und achsensymmetrisch sind.
+Ungerade sind punktsymmetrisch.
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+  \draw[->] (-3.2,0) -- (3.2,0) node[right] {$x$};
+  \draw[->] (0,-1.7) -- (0,3.5) node[above] {$y$};
+  \draw[scale=1,domain=-2:2,smooth,variable=\x,red] plot ({\x},{\x});
+  \draw[scale=1,domain=-2:2,smooth,variable=\x,blue] plot ({\x},{\x*\x});
+  \draw[scale=1,domain=-3:3,smooth,variable=\x,blue]  plot ({\x},{cos(90*\x)});
+  \draw[scale=1,domain=-3:3,smooth,variable=\x,red]  plot ({\x},{sin(90*\x)});
+\end{tikzpicture}
+ \caption{Gerade Funktionen $x^2$ und $\cos(x)$ in blau, ungerade Funktionen $x$ und $\sin(x)$ in rot}
+ \label{abb:efeld_gerade_ungerade}
+\end{figure}
+
 Dass die Sinus-Funktion ungerade ist, spielt in diesem Fall keine Rolle, da wir mit 
 \[
   \overline{\sin(x)} \sin(x) = |\sin(x)|^2
 \]
-wieder eine gerade Funktion bekommen.
+wieder eine gerade Funktion erhalten.
 
 Allerdings bekommen wir immer eine ungerade Funktion, wenn wir eine gerade Funktion mit einer ungeraden Funktion multiplizieren:
 \[ 
