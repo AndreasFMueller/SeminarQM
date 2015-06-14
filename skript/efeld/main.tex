@@ -347,7 +347,7 @@ Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 Wir wollen jetzt die Wellen $\psi_k(\varepsilon)$ und die Energie auch tats"achlich berechnen.
 Dazu verwenden wir das Programm Matlab.
 
-Wie beginnen damit das wir Konstanten und das ungest"orte System bestimmen.
+Wie beginnen damit, dass wir Konstanten und das ungest"orte System bestimmen.
 Wir definieren f"ur unseren Potentialkasten eine Breite von $10^{-9}$ (1nm links und rechts)
 \begin{lstlisting}[style=Matlab]
 L = 10^-9;                         # Entfernung der Grenzen der Simulation
@@ -381,9 +381,9 @@ sowie eine Matrix $\texttt{xSteps} \times \texttt{n}$ (konkret $500 \times 1000$
 
 \subsection{Berechnung von $E_k^{(1)}$}
 
-Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und 
-$E_k(\varepsilon)$ berechnen. Die Energie d\"urfte sich in der 1. N\"aherung nicht ver\"andern.
-Dieses Resultat zeigt uns damit die Robustheit der Berechnungen auf.
+Nun, da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und 
+$E_k(\varepsilon)$ berechnen. Die Energie darf sich in der 1. N\"aherung nicht ver\"andern.
+Dieses Resultat zeigt uns die Robustheit der Berechnungen auf.
 
 Implementiert wurde der Test wie folgt:
 \begin{lstlisting}[style=Matlab]
@@ -406,9 +406,9 @@ Wir schliessen daraus, dass die Berechnung stabil ist und die Werte genau genug 
 \subsection{Berechnung von $\psi_k^{(1)}$}
 
 Die Implementierung von $\psi_k^{(1)}$ gestaltet sich durch die Summe etwas schwieriger.
-Normaler Weise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen lassen.
+Normalerweise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen lassen.
 Wir wollen aber ein Element auslassen. 
-Um zum Beispiel den f"unften Zustand zu bestimmen summieren wir alle Zust\"ande vom 
+Um zum Beispiel den f"unften Zustand zu bestimmen, summieren wir alle Zust\"ande vom 
 ersten bis $n$-ten ausser dem f\"unften auf.
 \begin{equation}
   \psi_5^{(1)} = \langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle = 
