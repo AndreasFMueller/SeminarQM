@@ -1,8 +1,96 @@
-\chapter{Algorithmus von Simon\label{chapter:simon}}
-\lhead{Algorithmus von Simon}
-\begin{refsection}
+\chapter{Algorithmus von Simon\label{chapter:simon}} 
+\lhead{Algorithmus von Simon} 
+\begin{refsection} 
 \chapterauthor{Marc Juchli und Kirusanth Poopalasingam}
 
-\printbibliography[heading=subbibliography]
-\end{refsection}
+\section{Einleitung} 
+
+In diesem Kapitel wird ein der Algorithmus von Simon vorgestellt.  Es wird
+zuerst gezeigt, welches Problem es damit lässt, wie dieses Problem auf einem
+klassischen Computer gelöst werde kann.  Danach wird der eigentlich Algorithmus
+gzeigt. Schliess wird noch gezeigt, warum dieser Algorithums so bedeutend ist.
+
+\section{Problem} 
+
+Gegeben ist eine unbekannte Funktion $f$, welche einen String
+von Bits $x\in\{0,1\}^n$ in ein String von Bits $y\in\{0,1\}^n$ \"uberführt:
+
+\[
+    %|x s\rangle \mapsto |x (s\oplus f(x))\rangle.
+    f\colon\{0,0\}^n\to\{0,1\} 
+\]
+
+Von der Funktion ist bekannt, dass sie bijektiv ist und dass es ein
+$s\in\{0,1\}^n$ gibt, so dass: \[ f(x) = f(x) \leftrightarrow x \oplus y = s \]
+
+Die Funktion hat damit zwei Urbilder falls $s \notin 0^n$, wobei $s$ die
+Periode darstellt Die Aufgabe ist nun $s$ zu finden.
+
+Auf einem klassischen Computer könnte diese Aufgabe mit durchprobieren gelöst
+werden. Dabei wird für alle $x$ das Resultut $f(x)$ ausgewertet, solange ein
+Resultate doppelt vorkommt. Mit dem vorhanden $x$ und $x + s$ kann nun $s$
+bestimmt werden. Dabei müssen $2^(n/2)$ Werte ausprobiert werden.
+
+Auf einem Quantencomputer kann dieses Problem effizienter gelöst werden. Dafür
+wurde ein Algorithmus von Simon vorgestellt, im Folgenden werden dieser
+genauer erklärt.
+
+
+% TODO Kiru: Bild hier einfügen
+
+Schritt 1: 
+
+Als erste werden zwei Quantenregister mit 0 initialisiert.
+
+\[ 
+    |a\rangle = |0 ... 0 \rangle 
+    |b\rangle = |0 ... 0 \rangle 
+\]
+
+
+Schritt 2:
+
+Nun wird die Hadamard-Transformation au fden ersten Register
+angewendet, um diese in eine Superposition von allen möglichen Werten von $0
+- 2^n$ zu bringen.  
+
+\[ 
+    H|a> = 1/\sqrt{2^n}  \sum_{x\in\{0,1\}}} |x\rangle 
+\]
+
+Schritt 3: Nun wird die unbekannte Funktion $f$ angewednet und das Resultate
+$f(x)$ ins zweite Register gespeicher. Die beien Register befinden sich nun im
+Zustand:
+
+\[ 
+    |a> = 1/\sqrt{2^n}  \sum_{x\in\{0,1\}}} |x\rangle |b\rangle = |(f)x\rangle
+\]
+
+Schritt 4: 
+
+Nun wird das zweite Register gemessen. Das Resultate von $f(x)$ ist
+irrelevant. Was wichtiger ist, ist der Zustand des ersten Reigsters. 
+Dieser befinden sich im Falle von $s\in0^n$ im Zustand
+
+\[
+    |a\rangle = |f(x)\rangle
+\]
+
+Im Falle von $s \in \{0,1\}^n$ befindet sich dieser im Zustand:
+\[
+    [a\rangle = 1/\sqrt{2} ( |x\rangle + |x \oplus s \rangle )
+\]
+
+% 
+
+
+\section{Klassische Lösugn}
+
+\section{L\"osung mit einem Quantencomputer}
+
+\section{Warum ist dies relevant?}
+
+    % u=\frac1{2^{\frac{n}2}}\sum_{x\in\{0,1\}^n}|x\rangle
+\printbibliography[heading=subbibliography] \end{refsection}
+
 
