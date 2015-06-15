@@ -27,8 +27,12 @@ nPlot = 1 : 5;
 kurvenVersatz = 1e5
 %n = [1, 2];
 
-
-safe = 1
+if surpress == 1
+	safe = 0
+else
+	safe = 1
+end
+surpess = 0;
 
 
 %-----Verarbeitung-----
@@ -160,6 +164,33 @@ if safe; print('Psi_100_gestoert', '-dpdf', '-noui'); end
 
 
 %------------------ Berechnung der Differenzen zwischen den Übergängen 100-ste Energie -----------------
+
+signPsi(ln, :) = sign(Psi(ln, :));
+zeroA = find(signPsi(ln, :) == 0);
+
+
+for i = 1:length(x)-1
+	if (signPsi(ln, i)*signPsi(ln, i+1)) < 0
+		
+	end
+end
+zeroB = find(abs(diff(signPsi(ln, :))) == 2);
+
+
+
+zero = sort([zeroA(ln, :), zeroB(ln, :)]);
+
+
+zeroA = find(signPsi == 0);
+signPsi(:) 
+find(diff(signPsi))
+
+
+
+
+
+
+
 figure
 hold on;
 
