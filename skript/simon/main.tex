@@ -25,12 +25,18 @@ $s\in\{0,1\}^n$ gibt, so dass: \[ f(x) = f(x) \leftrightarrow x \oplus y = s \]
 Die Funktion hat damit zwei Urbilder falls $s \notin 0^n$, wobei $s$ die
 Periode darstellt. Die Aufgabe ist nun $s$ zu finden.
 
+\section{L"osung}
+
+\subsection{Klassisch}
+
 Auf einem klassischen Computer k"onnte diese Aufgabe mit durchprobieren gel"ost
 werden. Dabei wird f"ur alle $x$ das Resultut $f(x)$ ausgewertet, solange ein
 Resultate doppelt vorkommt. Mit dem vorhandenen $x$ und $x + s$ kann nun $s$
 bestimmt werden. Dabei m"ussen $2^{n/2}$ Werte ausprobiert werden.
 
- Auf einem Quantencomputer kann dieses Problem effizienter gel"ost werden.
+\subsection{Quantencomputer}
+
+Auf einem Quantencomputer kann dieses Problem effizienter gel"ost werden.
 Daf"ur wurde ein Algorithmus von Simon vorgestellt, im Folgenden wird dieser
 genauer erklärt.
 
@@ -167,10 +173,13 @@ Der Algorithmus von Simon liefert nun einen Wert $z$. Um den genauen Wert von
 $s$ zu bestimmen, wird nun der Algorithmus $n-1$-Mal wiederholt, somit liegen
 nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
 
+\section{Schlussfolgerung}
 
-%\section{Klassische L"osugn}
-
-%\section{L\"osung mit einem Quantencomputer}
+Der Algorithmus von Simon zeigt auf, dass mittels eines Quantencomputers die
+Anzahl der Aufrufe der Funktion $f$ auf $O(n)$ reduziert werden k"onnen. Die
+Anzahl der Schritte, welche f"ur die effektive Berechnung von $s$ ben"otigt
+werden, h"angt vom l"osen des linearen Gleichungssystems mit Gaußscher
+Elimination ab, also $O(n^3)$.
 
 %\section{Warum ist dies relevant?}
 
