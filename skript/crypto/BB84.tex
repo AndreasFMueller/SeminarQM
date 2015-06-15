@@ -2,9 +2,9 @@
   \index{BB84}
   \rhead{BB84}
   \subsection{Das BB84 Protokoll}
-  Das BB84 Protokoll, wurde 1984 von Charles H. Bennett and Gilles Brassard entwickelt,
+  Das BB84 Protokoll wurde 1984 von Charles H. Bennett and Gilles Brassard entwickelt,
   was auch den Namen des Protokolls pr"agte.
-  Es war das erste Protokoll, welches es erm"oglichte eine "Ubertragung "uber zwei unsichere Kan"ale zu f"uhren
+  Es war das erste Protokoll, welches es erm"oglichte, eine "Ubertragung "uber zwei unsichere Kan"ale zu f"uhren
   und dabei lauschende Dritte eindeutig zu erkennen und dennoch einen sicheren Schl"ussel zu "ubertragen.
 
   \subsection{Ohne Lauscher}
@@ -30,9 +30,9 @@
 
   Die polarisierten Photonen dienen also als Qubits, das Quanten"aquivalent eines konventionellen Bits.
   Dabei muss sich Alice die Reihenfolge der verwendeten Basen merken,
-  denn sie werden sp"ater ben"otigt um eine statistische Analyse der "Ubertragungsfehler zu erstellen.
+  denn sie werden sp"ater ben"otigt, um eine statistische Analyse der "Ubertragungsfehler zu erstellen.
 
-  Bob nimmt die polarisierten Photonen entgegen und w"ahlt zuf"allig eine der beiden Basen aus durch welche er das Photon analysiert.
+  Bob nimmt die polarisierten Photonen entgegen und w"ahlt zuf"allig eine der beiden Basen aus, durch welche er das Photon analysiert.
   Dabei w"ahlt Bob mit
   $P(\text{richtig})=0.5$
   die richtige Basis.
@@ -43,14 +43,14 @@
   f"ur das korrekte Resultat bei der richtigen Basis ergibt das ein
   $P(\text{korrekt})=0.75$,
   dass ein Photon korrekt gemessen wurde.
-  Siehe Abbildung \ref{crypto:BB84KE}
+  Siehe Abbildung \ref{crypto:BB84KE}.
 
   Nachdem gen"ugend Photonen gesendet wurden, um einen ausreichend starken symmetrischen Schl"ussel zu erzeugen, findet zwischen Alice und Bob die sogenannte Basendiskussion statt.
   Dazu sendet Bob die Information, welche Basis er f"ur welches Photon verwendet hat, "uber den konventionellen Kanal zu Alice.
   Alice meldet ihm, bei welchen Photonen er die richtige Basis, also dieselbe, welche auch sie f"ur die Polarisation benutzte, verwendet hat.
   Zur "Uberpr"ufung ob die Verbindung belauscht wurde, f"uhren Alice und Bob eine statistische Analyse der Verteilung der "Ubertragungsfehler aus.
   Wenn die Verbindung nicht manipuliert wurde, ist mit $P(\text{korrekt})=0.75$ zu rechnen.
-  F"ur Detail siehe Abbildung \ref{crypto:bittab}
+  F"ur Details siehe Abbildung \ref{crypto:bittab}.
 
   \begin{figure}
     \centering
@@ -92,7 +92,7 @@
   wenn er nur einen ausreichend leistungsf"ahigen Rechner hat.
 
   Beim BB84 Protokoll kann ein Lauscher jedoch nicht lauschen, ohne die "Ubertragung zu beinflussen.
-  Doch warum? Was "andert sich wenn Eve lauscht? Siehe Abbildung \ref{crypto:BB84Eve}
+  Doch warum? Was "andert sich wenn Eve lauscht? Siehe Abbildung \ref{crypto:BB84Eve}.
   Eve f"angt die von Alice polarisierten Photonen ab und misst sie mit 50\% Wahrscheinlichkeit korrekt.
   $P(\times)=0.5, P(+)=0.5$
   Danach generiert Eve ein neues Photon, mit derselben Polarisation,
@@ -120,9 +120,9 @@
   mit dem der richtigen Basis zu messen und dadurch einzelne g"ultige Keybits zu erhalten.
 
   \subsection{No-Cloning}
-  Die Grundlage f"ur das Funktionieren dieser Methode bietet die Tatsache, dass man nicht beliebige Zust"ande auf einen anderen kopieren kann, siehe No-Cloning-Theorem (NCT \ref{skript:no-cloning-theorem}).
+  Die Grundlage f"ur das Funktionieren dieser Methode bietet die Tatsache, dass man nicht beliebige Zust"ande auf einen anderen kopieren kann, siehe No-Cloning-Theorem (NCT Satz \ref{skript:no-cloning-theorem}).
   Eve kann aufgrund des No-Cloning-Theorems die Photonen von Alice nicht einfach kopieren und die Kopie an Bob schicken,
-  sondern ist gezwungen anhand ihrer Messungen (von denen h"ochstens 75\% korrekt sind) selbst Photonen zu polarisieren
+  sondern ist gezwungen, anhand Ihrer Messungen (von denen h"ochstens 75\% korrekt sind) selbst Photonen zu polarisieren
   und Bob zu senden, was bei Bob zu einer Trefferrate von weniger als 0.75 f"uhrt.
   $P(\text{korrekt}|\text{Eavesdropper})<0.75$
 
