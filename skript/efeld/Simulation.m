@@ -128,7 +128,7 @@ end
 %print('Energie_gestoert', '-depsc', '-noui')
 if safe; print('Energie_gestoert', '-dpdf', '-noui'); end
 
-%------------ 100-ste
+%----- 100-ste -----
 figure
 hold on;
 
@@ -163,27 +163,24 @@ end
 if safe; print('Psi_100_gestoert', '-dpdf', '-noui'); end
 
 
-%------------------ Berechnung der Differenzen zwischen den Übergängen 100-ste Energie -----------------
+%----- Abstaende 0-Durchgang 100-ste Energie -----
 
-signPsi(ln, :) = sign(Psi(ln, :));
-zeroA = find(signPsi(ln, :) == 0);
+for ln = 100
+	signPsi = sign(Psi(ln, :));
+	zeroA = x(find(signPsi(:) == 0));
 
-
-for i = 1:length(x)-1
-	if (signPsi(ln, i)*signPsi(ln, i+1)) < 0
-		
+	zeroB = [];
+	for i = 1:length(x)-1
+		if (signPsi(i)*signPsi(i+1)) < 0
+			d = (signPsi(i+1)-signPsi(i))/delta;
+			zeroB = [zeroB, x(i) + Psi(ln, i)/d];
+		end
 	end
+
+	zero = sort([zeroA, zeroB]);
 end
-zeroB = find(abs(diff(signPsi(ln, :))) == 2);
 
-
-
-zero = sort([zeroA(ln, :), zeroB(ln, :)]);
-
-
-zeroA = find(signPsi == 0);
-signPsi(:) 
-find(diff(signPsi))
+plot(zero, 0, 'xb')
 
 
 
