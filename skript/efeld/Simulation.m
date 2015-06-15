@@ -166,14 +166,15 @@ if safe; print('Psi_100_gestoert', '-dpdf', '-noui'); end
 %----- Abstaende 0-Durchgang 100-ste Energie -----
 
 for ln = 100
-	signPsi = sign(Psi(ln, :));
-	zeroA = x(find(signPsi(:) == 0));
-
+	signPsiG = sign(PsiG(ln, :));
+	zeroA = x(find(signPsiG(:) == 0));
+	
 	zeroB = [];
 	for i = 1:length(x)-1
-		if (signPsi(i)*signPsi(i+1)) < 0
-			d = (signPsi(i+1)-signPsi(i))/delta;
-			zeroB = [zeroB, x(i) + Psi(ln, i)/d];
+		if (signPsiG(i)*signPsiG(i+1)) < 0
+			d = (PsiG(ln, i)-PsiG(ln, i+1))/delta;
+			zeroB = [zeroB, (x(i) + PsiG(ln, i)/d)];
+	%		zeroB = [zeroB, x(i)];
 		end
 	end
 
