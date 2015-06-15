@@ -1,8 +1,180 @@
-\chapter{Algorithmus von Simon\label{chapter:simon}}
-\lhead{Algorithmus von Simon}
-\begin{refsection}
+\chapter{Algorithmus von Simon\label{chapter:simon}} 
+\lhead{Algorithmus von Simon} 
+\begin{refsection} 
 \chapterauthor{Marc Juchli und Kirusanth Poopalasingam}
 
-\printbibliography[heading=subbibliography]
-\end{refsection}
+\section{Einleitung} 
+
+In diesem Kapitel wird der Algorithmus von Simon vorgestellt.  Es wird zuerst
+gezeigt, welches Problem sich damit l"osen l"asst, wie dieses Problem auf einem
+klassischen Computer gel"ost werde kann. Danach wird der eigentlich Algorithmus
+gzeigt. Schliess wird noch gezeigt, warum dieser Algorithums so bedeutend ist.
+
+\section{Problem} 
+
+Gegeben ist eine unbekannte Funktion $f$, welche einen String
+von Bits $x\in\{0,1\}^n$ in ein String von Bits $y\in\{0,1\}^n$ \"uberführt:
+\[
+    %|x s\rangle \mapsto |x (s\oplus f(x))\rangle.
+    f\colon\{0,0\}^n\to\{0,1\} 
+\]
+Von der Funktion ist bekannt, dass sie bijektiv ist und dass es ein
+$s\in\{0,1\}^n$ gibt, so dass: \[ f(x) = f(x) \leftrightarrow x \oplus y = s \]
+
+Die Funktion hat damit zwei Urbilder falls $s \notin 0^n$, wobei $s$ die
+Periode darstellt. Die Aufgabe ist nun $s$ zu finden.
+
+Auf einem klassischen Computer k"onnte diese Aufgabe mit durchprobieren gel"ost
+werden. Dabei wird f"ur alle $x$ das Resultut $f(x)$ ausgewertet, solange ein
+Resultate doppelt vorkommt. Mit dem vorhandenen $x$ und $x + s$ kann nun $s$
+bestimmt werden. Dabei m"ussen $2^{n/2}$ Werte ausprobiert werden.
+
+ Auf einem Quantencomputer kann dieses Problem effizienter gel"ost werden.
+Daf"ur wurde ein Algorithmus von Simon vorgestellt, im Folgenden wird dieser
+genauer erklärt.
+
+% TODO Kiru: Bild hier einfügen
+
+F"ur den Algorithmus sind zwei Register notwendig. Als erstes werden diese mit
+0 initialisiert.
+
+\[ 
+    |a\rangle=|0 ... 0 \rangle 
+\]
+\[
+    |b\rangle=|0 ... 0 \rangle 
+\]
+
+Nun wird die Hadamard-Transformation auf den ersten Register
+angewendet, um diese in eine Superposition von allen möglichen Werten von $0
+- 2^n$ zu bringen.  
+
+\[ 
+    H|a\rangle=\frac{1}{\sqrt{2^n}} \sum_{x\in\{0,1\}^n}{|x\rangle}
+\]
+ 
+Nun wird die unbekannte Funktion $f$ angewendet und das Resultat $f(x)$ ins
+zweite Register gespeichert. Die beiden Register befinden sich nun im Zustand:
+
+\[ 
+    |a\rangle = \frac{1}{\sqrt{2^n}} \sum_{x\in\{0,1\}^n} {|x\rangle} 
+\]
+\[
+    |b\rangle = |f(x)\rangle
+\]
+
+Nun wird das zweite Register gemessen. Das Resultat von $f(x)$ ist irrelevant.
+Was wichtiger ist, ist der Zustand des ersten Reigsters.  Dieser befinden sich
+im Falle von $s\in0^n$ im Zustand:
+
+\[
+    |a\rangle = |f(x)\rangle
+\]
+
+Im Falle von $s \in \{0,1\}^n$ befindet sich dieser im Zustand:
+\[
+    |a\rangle = \frac{1}{\sqrt{2}} ( |x\rangle + |x \oplus s \rangle )
+\]
+
+Falls nun das erste Register gemessen wird, liefert diese entweder $x$ oder $x
+\oplus s$. Um bei der Messung nur das $x \oplus s$ herauszumessen wird nun
+wieder die Hadamard Operation angewendet und wie folgt vereinfacht:
+
+\begin{align*}
+    &H^{ \otimes n } \biggl( 
+                     \frac{1}{\sqrt{2}} |x\rangle + 
+                     \frac{1}{\sqrt{2}} |x \oplus s\rangle 
+                     \biggr)
+    \\
+    &= H^{ \otimes n } \frac{1}{\sqrt{2}} |x\rangle + 
+       H^{ \otimes n } \frac{1}{\sqrt{2}} |x \oplus s\rangle 
+    \\ 
+    &= \frac1{\sqrt{2}} ( H^{ \otimes n } |x\rangle + H^{ \otimes n } |x \oplus s\rangle )
+    \\
+    &= \frac1{\sqrt{2}}
+       \biggl( \frac1{\sqrt{2}^n} \sum_{z \in \{0,1\}^n} {( (-1)^{x \cdot z} |z\rangle )} + 
+               \frac1{\sqrt{2}^n}  \sum_{z \in \{0,1\}^n} { ( (-1)^{(x \oplus s) \cdot z } |z\rangle)}
+       \biggr)
+    \\
+    &= \frac1{\sqrt{2^{n + 1}}}
+       \biggl( \sum_{z \in \{0,1\}^n}  { 
+                   (-1)^{x \cdot z} |z\rangle + (-1)^{(x \oplus s) \cdot z } |z\rangle 
+               } 
+       \biggr)
+    \\
+    &= \frac1{\sqrt{2^{n + 1}}}
+       \biggl( \sum_{z \in \{0,1\}^n}  { 
+                  (-1)^{x \cdot z} |z\rangle + (-1)^{(x \cdot z) \oplus ( s \cdot z) } |z\rangle 
+               } 
+       \biggr)
+    \\
+    &= \frac1{\sqrt{2^{n + 1}}}
+       \biggl( 
+          \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^{ s \cdot z}) |z\rangle } 
+       \biggr)
+\end{align*}
+
+Es werden nun zwei F"alle unterschieden. Falls $s \cdot z = 1$ ist, dann gilt:
+\begin{align*}
+    &\frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^{ s \cdot z}) |z\rangle } 
+    \\
+    &= 
+    \frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^1) |z\rangle } 
+    \\
+    &= 
+    \frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} (0) |z\rangle } 
+    \\
+    &=
+    0 |z\rangle
+\end{align*}
+
+Dies zeigt, dass die Wahrscheinlichkeit diesen Fall zu messen gleich 0 ist und
+somit nie auftritt. Der zweite Fall ist $s \cdot z = 0$, dann gilt:
+
+\begin{align*}
+    &\frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^{ s \cdot z}) |z\rangle } 
+    \\
+    &= 
+    \frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^0) |z\rangle } 
+    \\
+    &= 
+    \frac1{\sqrt{2^{n + 1}}}
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} (2) |z\rangle } 
+    \\
+    &= 
+    \frac{2}{\sqrt{2^{n + 1}}} 
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z}|z\rangle } 
+    &= 
+    \frac1{\sqrt{2^{n - 1}}} 
+      \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z}|z\rangle } 
+\end{align*}
+
+Bei der Messung des ersten Registers wird nun ein n-String $z$ gemessen mit der
+Bedingung, dass $s \cdot z = 0$ ist. Die Wahrscheinlichkeit dafür liegt bei:
+\[
+    |\frac1{\sqrt{2^{n - 1}}}|^2 = \frac1{2^{n-1}} 
+\]
+
+Bei genauer Überglegung macht dies auch Sinn, denn Falls $s \notin \{0,1\}^n)$
+ist gilt, genau $2^{n-1}$ M"oglich $z$-Werte. Die Wahrscheinlichkeit einen
+diesen zu messen ist gleich verteilt.
+
+Der Algorithmus von Simon liefert nun einen Wert $z$, um den genaun Werten von
+$s$ zu bestimmen, wird nun der Algorithmus $n-1$-Mal wiederholt, somit liegen
+nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
+
+
+%\section{Klassische L"osugn}
+
+%\section{L\"osung mit einem Quantencomputer}
+
+%\section{Warum ist dies relevant?}
+
+\printbibliography[heading=subbibliography] \end{refsection}
+
 
