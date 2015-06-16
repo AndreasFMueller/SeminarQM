@@ -255,9 +255,9 @@ Ungerade sind punktsymmetrisch.
 \begin{tikzpicture}
   \draw[->] (-3.2,0) -- (3.2,0) node[right] {$x$};
   \draw[->] (0,-1.7) -- (0,3.5) node[above] {$y$};
-  \draw[scale=1,domain=-2:2,smooth,variable=\x,red] plot ({\x},{\x});
-  \draw[scale=1,domain=-2:2,smooth,variable=\x,blue] plot ({\x},{\x*\x});
+  \draw[scale=1,domain=-1.9:1.9,smooth,variable=\x,blue] plot ({\x},{\x*\x});
   \draw[scale=1,domain=-3:3,smooth,variable=\x,blue]  plot ({\x},{cos(90*\x)});
+  \draw[scale=1,domain=-1.8:2.2,smooth,variable=\x,red] plot ({\x},{\x});
   \draw[scale=1,domain=-3:3,smooth,variable=\x,red]  plot ({\x},{sin(90*\x)});
 \end{tikzpicture}
  \caption{Gerade Funktionen $x^2$ und $\cos(x)$ in blau, ungerade Funktionen $x$ und $\sin(x)$ in rot}
