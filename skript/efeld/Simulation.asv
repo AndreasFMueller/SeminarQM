@@ -178,16 +178,17 @@ for ln = 100
 		end
 	end
 
-	zero = sort([zeroA, zeroB, -l, l]);
+	zero = unique(sort([zeroA, zeroB, -l, l]));
 	
 	dPsiG = 2*l/ln;
-	diffZero = diff(zero)-dPsiG;
-	diffZero = diffZero .* 10^11;
+	diffZero = (diff(zero)-dPsiG).*1e+18;
 end
 
 plot(zero, 0, 'xb')
-figure
-bar(zero(2:end), diffZero, 1, 'y')
+hold on;
+%bar(zero(1:end-1)+dPsiG/2, diffZero, 1, 'y')
+%bar(zero(2:end), diffZero, 1, 'y')
+bar(zero(1:end-1)+diff(zero)/2, diffZero, 1, 'y')
 
 
 
