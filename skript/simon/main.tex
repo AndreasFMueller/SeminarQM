@@ -13,12 +13,20 @@ bedeutend ist.
 
 \section{Problem} 
 
-Gegeben ist eine unbekannte Funktion $f$, welche einen String
-von Bits $x\in\{0,1\}^n$ in ein String von Bits $y\in\{0,1\}^n$ \"uberf\"uhrt:
+Gegeben ist eine unbekannte Funktion $f$, welche einen Bit String entgegennimmt
+und einen neuen Bit String liefert.  Formal ausgedrückt bedeutet dies:
 \[
-    %|x s\rangle \mapsto |x (s\oplus f(x))\rangle.
-    f\colon\{0,0\}^n\to\{0,1\} 
+    f\colon\{0,0\}^n\to\{0,1\}^n
 \]
+
+Die Defintion der Funktion ist auch bekannt:
+\[
+    f(x) = x \notin s
+\]
+
+Es wird einer 
+
+
 Von der Funktion $f$ ist bekannt, dass sie bijektiv ist und dass es ein
 $s\in\{0,1\}^n$ gibt, so dass: \[ f(x) = f(x) \leftrightarrow x \oplus y = s \]
 
