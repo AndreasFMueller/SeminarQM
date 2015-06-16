@@ -18,7 +18,7 @@
 %-----Variabeln-----
 l = 10^-9;
 xSteps = 225;
-xSteps = 2000;
+xSteps = 4000;
 delta = (2*l/xSteps);
 %x = -l*1.5 : delta : +l*1.5;
 x = -l : delta : +l;
