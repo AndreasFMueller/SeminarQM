@@ -139,10 +139,8 @@ epsilon100 = 10^-3;
 s = zeros(1, 2);
 for ln = nPlot    % ungestoerter Plot
   %plot(x, Psi(ln, :) + (ln-1)*2e05, 'Color', 'black')    % Psi
-    plot(x, Psi(ln, :) , 'Color', 'blue')    % Psi
 
   s(ln) = sum(Psi(ln, :).^2.*delta);
-end
 
 % print('Psi_ungestoert', '-depsc', '-noui')
 % print('Psi_ungestoert', '-dpdf', '-noui')
@@ -151,17 +149,17 @@ end
 % hold on;
 
 %sG = zeros(1, 2);
-for ln = nPlot    % gestoerter Plot
+% gestoerter Plot
   PsiG(ln, :) = (1+1i*epsilon*gamma).*Psi(ln, :) ...
                           + epsilon100.*psi1_l(ln, :);
   %plot(x, PsiG(ln, 1:length(x)) + (ln-1)*2e05, 'Color', 'red')    % Psi
-    plot(x, PsiG(ln, 1:length(x)), 'Color', 'red')    % Psi
 
 %  sG(ln) = sum(PsiG(ln, :).^2.*delta);
-end
 
 
-for ln = 100
+
+
+% differenz
 	signPsiG = sign(PsiG(ln, :));
 	zeroA = x(find(signPsiG(:) == 0));
 	
@@ -178,13 +176,18 @@ for ln = 100
 	
 	dPsiG = 2*l/ln;
 	diffZero = (diff(zero)-dPsiG).*1e+18;
+	
+	
+	plot(zero, 0, 'xb')
+	hold on;
+	%bar(zero(1:end-1)+dPsiG/2, diffZero, 1, 'y')
+	%bar(zero(2:end), diffZero, 1, 'y')
+	bar(zero(1:end-1)+diff(zero)/2, diffZero, 1, 'y')
+	
+	plot(x, Psi(ln, :) , 'Color', 'blue')    % Psi
+	plot(x, PsiG(ln, 1:length(x)), 'Color', 'red')    % Psi
 end
 
-plot(zero, 0, 'xb')
-hold on;
-%bar(zero(1:end-1)+dPsiG/2, diffZero, 1, 'y')
-%bar(zero(2:end), diffZero, 1, 'y')
-bar(zero(1:end-1)+diff(zero)/2, diffZero, 1, 'y')
 
 
 
