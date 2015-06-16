@@ -499,11 +499,14 @@ welches mal kinetische Energie hat, mal mechanische.
  \label{abb:efeld_psi_gestoert}
 \end{figure}
 
+\subsubsection{100-stes Energieniveau}
 % FIXME Beschreibung zum 100-sten
+Betrachten wir nun das 100-ste etwas genauer.
 In der Abbildung \ref{abb:efeld_psi_100_gestoert} sehen wir wie die St\"orung die Frequenz des Elektrons ver\"andert wird.
 Auch k\"onnen wir an den Balken die St\"orung $H_1$ wieder erkennen. 
-Die St\"orung ist in der nummerischen Berechung nicht perfekt, weshalb die Balken etwas verbogen sind.
-Die Fl\"achen ergeben insgesammt wieder $0$, da die Energie sich nicht ver\"andert hat.
+Die St\"orung ist in der nummerischen Berechung nicht perfekt, weshalb der Verlauf der Balken etwas verbogen ist.
+
+Summiert man die Fl\"achen auf, so ergeben sie insgesammt wieder $0$, da die Energie sich nicht ver\"andert hat.
 
 
 \begin{figure}
@@ -518,16 +521,22 @@ Die Fl\"achen ergeben insgesammt wieder $0$, da die Energie sich nicht ver\"ande
 
 \subsection{Auswertung E}
 
-Wie wir in der Berechnung festgestellt haben ver"andert sich der Energiezustand nicht.
-H"atten wir eine Energie in der St"orung w"urde sie gegen oben immer schw"acher werden, weil $E_k^{(0)}$ immer gr"osser wird.
+Mit den Symmetrie\"uberlegungen haben wir vorrausgesagt, dass sich der Energiezustand nicht \"andert.
+Um dies m\"oglichst einfach zu \"uberpr\"ufen, w\"ahlen wir ein grosses $\varepsilon$ und sehen uns das Resultat in der 
+Abbildung \ref{abb:efeld_E_gestoert} an.
 
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Energie_gestoert.pdf}
- \caption{$E$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesamte Energie des Systems}
+ \caption{$E_k^{(1)}$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesamte Energie des Systems}
  \label{abb:efeld_E_gestoert}
 \end{figure}
 
+Mit einem gr\"osseren $\varepsilon$ k\"onnten wir den Anteil des nummerischen Fehlers verringern. 
+Verh\"alt sich das Modell bei einem starken $\varepsilon$ gut, so k\"onnen wir mit diesem sehr einfachen Test
+auf die Robustheit der Berechung von $E_k^{(1)}$ testen.
+
+% FIXME evt. noch genauer ausf\"uhren warum die Linien flach sind.
 
 
 
