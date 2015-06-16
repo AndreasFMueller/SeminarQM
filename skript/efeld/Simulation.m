@@ -32,7 +32,7 @@ if surpress == 1
 else
 	safe = 1
 end
-surpess = 0;
+surpress = 0;
 
 
 %-----Verarbeitung-----
