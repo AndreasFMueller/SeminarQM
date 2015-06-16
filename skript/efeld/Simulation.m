@@ -175,7 +175,7 @@ for ln = nPlot    % ungestoerter Plot
 	zero = unique(sort([zeroA, zeroB, -l, l]));
 	
 	dPsiG = 2*l/ln;
-	diffZero = (diff(zero)-dPsiG).*1e+18;
+	diffZero = (diff(zero)-dPsiG).*2e+17;
 	
 	
 	plot(zero, 0, 'xb')
@@ -238,8 +238,10 @@ hold on
 %s = zeros(1, 2);
 %sG = zeros(1, 2);
 i = nPlotSize;
+nFrac = 1/nPlotSize;
 for ln = nPlot;    % ungestoerter Plot
-  subplot(nPlotSize, 1, (i))
+%  subplot(nPlotSize, 1, (i))
+  subplot('Position', [0.1, (nPlotSize-i)*nFrac*0.9+0.1, 0.8, nFrac*0.9])
   plot(x, Psi(ln, :) , 'Color', 'blue')    % Psi
   s(ln) = sum(Psi(ln, :).^2.*delta);
   hold on
