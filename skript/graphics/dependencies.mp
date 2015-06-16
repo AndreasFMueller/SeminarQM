@@ -14,15 +14,17 @@ verbatimtex
 etex;
 
 numeric unit;
-unit := 10;
+unit := 10.4;
+numeric vunit;
+vunit := 10;
 numeric linewidth;
 linewidth := 0.7pt;
 
 def box(expr position, labelstring, col) =
 	pickup pencircle scaled linewidth;
 	path	p;
-	p := ((-4 * unit, -1.5 * unit)--(4 * unit, -1.5 * unit)
-		--(4 * unit, 1.5 * unit)--(-4 * unit, 1.5 * unit)--cycle)
+	p := ((-4 * unit, -1.5 * vunit)--(4 * unit, -1.5 * vunit)
+		--(4 * unit, 1.5 * vunit)--(-4 * unit, 1.5 * vunit)--cycle)
 			shifted position;
 	fill p withcolor col;
 	draw p;
@@ -33,28 +35,28 @@ beginfig(1)
 pickup pencircle scaled linewidth;
 
 % einfache Quantensysteme
-	z1 = (0, 7 * unit);
-		z17 = (15 * unit, 7 * unit);
-	z2 = (0, 0 * unit);
-		z15 = (10 * unit, 0 * unit);
+	z1 = (0, 7 * vunit);
+		z17 = (15 * unit, 7 * vunit);
+	z2 = (0, 0 * vunit);
+		z15 = (10 * unit, 0 * vunit);
 
-z4 = (-10 * unit, -7 * unit);
-	z5 = (0, -7 * unit);
-		z3 = (10 * unit, -7 * unit);
+z4 = (-10 * unit, -7 * vunit);
+	z5 = (0, -7 * vunit);
+		z3 = (10 * unit, -7 * vunit);
 
-z10 = (-15 * unit, -14 * unit);
-	z6 = (0, -14 * unit);
-		z16 = (15 * unit, -14 * unit);
+z10 = (-15 * unit, -14 * vunit);
+	z6 = (0, -14 * vunit);
+		z16 = (15 * unit, -14 * vunit);
 
-z7 = (-15 * unit, -21 * unit);
-	z8 = (-5 * unit, -21 * unit);
-		z11 = (5 * unit, -21 * unit);
-			z9 = (15 * unit, -21 * unit);
+z7 = (-15 * unit, -21 * vunit);
+	z8 = (-5 * unit, -21 * vunit);
+		z11 = (5 * unit, -21 * vunit);
+			z9 = (15 * unit, -21 * vunit);
 
-		z12 = (15 * unit, -28 * unit);
-		z13 = (10 * unit, -35 * unit);
+		z12 = (15 * unit, -28 * vunit);
+		z13 = (10 * unit, -35 * vunit);
 
-	z14 = (0, -42 * unit);
+	z14 = (0, -42 * vunit);
 
 draw z1--z2;
 draw z2--z5;

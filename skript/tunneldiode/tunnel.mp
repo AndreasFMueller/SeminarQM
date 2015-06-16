@@ -332,6 +332,10 @@ clip currentpicture to
 
 endfig;
 
+%
+% Darstellung der Potentialbarriere
+%
+
 beginfig(4)
 
 fill (-200,-10)--(-30,-10)--(-30,200)--(-200,200)--cycle
@@ -344,6 +348,9 @@ fill (-30,-10)--(30,-10)--(30,200)--(-30,200)--cycle
 label(btex   I etex, (-115,180)) withcolor blue;
 label(btex  II etex, ( -10,180)) withcolor red;
 label(btex III etex, ( 115,180)) withcolor green;
+
+label.bot(btex $-a\mathstrut$ etex, (-30,0));
+label.bot(btex $a\mathstrut$ etex, ( 30,0));
 
 pickup pencircle scaled 1pt;
 
@@ -619,6 +626,27 @@ koordinatensystem(vunit, iunit);
 
 endfig;
 
+
+def omega(expr Omega) =
+	sqrt(2 * Omega)
+enddef;
+
+def hyp(expr x, Omega) =
+	Omega / x
+enddef;
+
+def hyperbola(expr Omega, c, m) =
+	numeric x;
+	x := 3;
+	path p;
+	p := (x, hyp(x,Omega));
+	for x = 4 step 1 until m:
+		p := p..(x, hyp(x,Omega));
+	endfor;
+	draw p withcolor c;
+enddef;
+
+
 beginfig(8)
 
 numeric width;
@@ -630,26 +658,8 @@ numeric A;
 A := 0.25;
 numeric a;
 a := 2 * sqrt(A);
-def omega(expr Omega) =
-	sqrt(2 * Omega)
-enddef;
 
 pickup pencircle scaled 1.5pt;
-
-def hyp(expr x, Omega) =
-	Omega / x
-enddef;
-
-def hyperbola(expr Omega) =
-	numeric x;
-	x := 3;
-	path p;
-	p := (x, hyp(x,Omega));
-	for x = 4 step 1 until width:
-		p := p..(x, hyp(x,Omega));
-	endfor;
-	draw p;
-enddef;
 
 fill (0.6 * width,0)--(width,0)--(width,height)--(0.6*width,height)--cycle
 	withcolor (0.7,0.7,0.7);
@@ -659,13 +669,13 @@ fill ((z2 shifted(-20,-13))--(z2 shifted(20,-13))--(z2 shifted(20,13))
 	--(z2 shifted(-20,13))--cycle) withcolor white;
 label(btex $\displaystyle L \ge \frac1{a\omega}$ etex, z2);
 
-hyperbola(500 *  1);
-hyperbola(500 *  4);
-hyperbola(500 *  9);
-hyperbola(500 * 16);
-hyperbola(500 * 25);
-hyperbola(500 * 36);
-hyperbola(500 * 49);
+hyperbola(500 *  1, black, width);
+hyperbola(500 *  4, black, width);
+hyperbola(500 *  9, black, width);
+hyperbola(500 * 16, black, width);
+hyperbola(500 * 25, black, width);
+hyperbola(500 * 36, black, width);
+hyperbola(500 * 49, black, width);
 
 pickup pencircle scaled 1pt;
 
@@ -684,6 +694,346 @@ label(btex $\displaystyle \frac{C}{L}\le \frac{a^2}4$ etex, (0.8 * width, 0.1 * 
 
 z0 = (0.5 * width, hyp(0.5 * width, 9 * 500));
 z1 = z0 shifted (10,0);
+
+endfig;
+
+%
+% Baendermodell-Bilder für Erklaerung der Charakteristik
+%
+path p;
+path q;
+def band(expr Eup, Edown, w, l) =
+	p := (-l, Eup)--(-w, Eup);
+	numeric delta;
+	delta := 2 * w / 40;
+	for x = -w + delta step delta until w:
+		p := p--(x, (Eup + Edown) / 2
+			+ sind(90 * x / w) * (Edown - Eup) / 2);
+	endfor;
+	p := p--(l,Edown);
+enddef;
+
+def bands(expr Eup, Edown, w, l) =
+	pickup pencircle scaled 1pt;
+	band(Eup,Edown,w,l); draw p;
+	q := p;
+	band(-Edown,-Eup,w,l); draw p;
+	fill p..reverse q..cycle withcolor (1,1,1);
+	label.rt(btex $E_c$ etex, (80,Edown));
+	label.rt(btex $E_v$ etex, (80,-Eup));
+enddef;
+
+def fermi(expr Eup, Edown, w, l) =
+	path p;
+	p := (-l, Eup)--(-w, Eup);
+	numeric delta;
+	delta := 2 * w / 40;
+	for x = -w + delta step delta until w:
+		p := p--(x, (Eup + Edown) / 2
+			+ sind(90 * x / w) * (Edown - Eup) / 2);
+	endfor;
+	p := p--(l,Edown);
+	pickup pencircle scaled 0.3pt;
+	draw p dashed evenly;
+enddef;
+
+def backgrounds(expr l, h, w) =
+	fill (-l,-h)--(-w,-h)--(-w,h)--(-l,h)--cycle withcolor (1,0.9,0.9);
+	fill ( w,-h)--( l,-h)--( l,h)--( w,h)--cycle withcolor (0.9,0.9,1);
+	numeric delta;
+	delta := 2 * w / 10;
+	for i = 0 step 1 until 9:
+		fill (-w + i * delta, -h)
+			--(-w + i * delta + delta, -h)
+			--(-w + i * delta + delta,  h)
+			--(-w + i * delta, h)--cycle
+			withcolor (0.995 - i * 0.01,0.9,0.905 + i * 0.01);
+	endfor;
+	label.top(btex $p\mathstrut$ etex, (-l/2, h)) withcolor red;
+	label.top(btex $n\mathstrut$ etex, ( l/2, h)) withcolor blue;
+enddef;
+
+numeric diodewidth, tunnelwidth;
+diodewidth = 20;
+tunnelwidth = 5;
+
+%
+% Keine Spannung, normale Diode
+%
+beginfig(9)
+
+backgrounds(80,45, diodewidth);
+
+bands(40, 5, diodewidth, 80);
+
+fermi(0, 0, diodewidth, 80);
+label.ulft(btex $E_F$ etex, (-80,0));
+
+endfig;
+
+%
+% Keine Spannung, Tunneldiode (w klein)
+%
+beginfig(10)
+
+backgrounds(80,45, tunnelwidth);
+
+bands(40, -20, tunnelwidth, 80);
+
+fermi(0, 0, tunnelwidth, 80);
+label.llft(btex $E_F$ etex, (-80,0));
+
+endfig;
+
+%
+% Diodenleitung, normale Diode
+%
+beginfig(11)
+
+backgrounds(80,45,diodewidth);
+
+bands(40,20,diodewidth,80);
+
+fermi(-10,10, diodewidth, 80);
+label.ulft(btex $E_F$ etex, (-80,-10));
+
+label(btex $\ominus$ etex, ( 74, 37)) withcolor blue;
+label(btex $\ominus$ etex, ( 69, 29)) withcolor blue;
+label(btex $\ominus$ etex, ( 64, 37)) withcolor blue;
+label(btex $\ominus$ etex, ( 59, 29)) withcolor blue;
+label(btex $\ominus$ etex, ( 54, 37)) withcolor blue;
+label(btex $\ominus$ etex, ( 49, 29)) withcolor blue;
+label(btex $\ominus$ etex, ( 44, 37)) withcolor blue;
+label(btex $\ominus$ etex, ( 39, 29)) withcolor blue;
+label(btex $\ominus$ etex, ( 34, 37)) withcolor blue;
+label(btex $\ominus$ etex, ( 29, 29)) withcolor blue;
+label(btex $\ominus$ etex, ( 24, 37)) withcolor blue;
+label(btex $\ominus$ etex, ( 19, 29)) withcolor blue;
+label(btex $\ominus$ etex, ( 14, 37)) withcolor blue;
+label(btex $\ominus$ etex, (  9, 29)) withcolor blue;
+label(btex $\ominus$ etex, (  4, 37)) withcolor blue;
+%label(btex $\ominus$ etex, (  0, 28)) withcolor blue;
+label(btex $\oplus$ etex, (-74,-37)) withcolor red;
+label(btex $\oplus$ etex, (-69,-29)) withcolor red;
+label(btex $\oplus$ etex, (-64,-37)) withcolor red;
+label(btex $\oplus$ etex, (-59,-29)) withcolor red;
+label(btex $\oplus$ etex, (-54,-37)) withcolor red;
+label(btex $\oplus$ etex, (-49,-29)) withcolor red;
+label(btex $\oplus$ etex, (-44,-37)) withcolor red;
+label(btex $\oplus$ etex, (-39,-29)) withcolor red;
+label(btex $\oplus$ etex, (-34,-37)) withcolor red;
+label(btex $\oplus$ etex, (-29,-29)) withcolor red;
+label(btex $\oplus$ etex, (-24,-37)) withcolor red;
+label(btex $\oplus$ etex, (-19,-29)) withcolor red;
+label(btex $\oplus$ etex, (-14,-37)) withcolor red;
+label(btex $\oplus$ etex, (- 9,-29)) withcolor red;
+label(btex $\oplus$ etex, (- 4,-37)) withcolor red;
+
+endfig;
+
+%
+% Tunneldiode, maximaler Tunnelstrom
+%
+beginfig(12)
+
+backgrounds(80,45,tunnelwidth);
+
+bands(40,-10,tunnelwidth,80);
+
+fermi(-10,10,  tunnelwidth, 80);
+label.llft(btex $E_F$ etex, (-80,-10));
+
+label(btex $\ominus$ etex, ( 10, 4)) withcolor blue;
+label(btex $\ominus$ etex, ( 15,-4)) withcolor blue;
+label(btex $\ominus$ etex, ( 20, 4)) withcolor blue;
+label(btex $\ominus$ etex, ( 25,-4)) withcolor blue;
+label(btex $\ominus$ etex, ( 30, 4)) withcolor blue;
+label(btex $\ominus$ etex, ( 35,-4)) withcolor blue;
+label(btex $\ominus$ etex, ( 40, 4)) withcolor blue;
+label(btex $\ominus$ etex, ( 45,-4)) withcolor blue;
+label(btex $\ominus$ etex, ( 50, 4)) withcolor blue;
+label(btex $\ominus$ etex, ( 55,-4)) withcolor blue;
+label(btex $\ominus$ etex, ( 60, 4)) withcolor blue;
+label(btex $\ominus$ etex, ( 65,-4)) withcolor blue;
+label(btex $\ominus$ etex, ( 70, 4)) withcolor blue;
+label(btex $\ominus$ etex, ( 75,-4)) withcolor blue;
+label(btex $\oplus$ etex, (-10, 4)) withcolor red;
+label(btex $\oplus$ etex, (-15,-4)) withcolor red;
+label(btex $\oplus$ etex, (-20, 4)) withcolor red;
+label(btex $\oplus$ etex, (-25,-4)) withcolor red;
+label(btex $\oplus$ etex, (-30, 4)) withcolor red;
+label(btex $\oplus$ etex, (-35,-4)) withcolor red;
+label(btex $\oplus$ etex, (-40, 4)) withcolor red;
+label(btex $\oplus$ etex, (-45,-4)) withcolor red;
+label(btex $\oplus$ etex, (-50, 4)) withcolor red;
+label(btex $\oplus$ etex, (-55,-4)) withcolor red;
+label(btex $\oplus$ etex, (-60, 4)) withcolor red;
+label(btex $\oplus$ etex, (-65,-4)) withcolor red;
+label(btex $\oplus$ etex, (-70, 4)) withcolor red;
+label(btex $\oplus$ etex, (-75,-4)) withcolor red;
+pickup pencircle scaled 2pt;
+drawarrow (-10,-5)--( 10,-5);
+pickup pencircle scaled 0.5pt;
+draw (0,-5)--(5,-15);
+label.rt(btex $I_{\text{Tunnel}}$ etex, (5,-15));
+
+endfig;
+
+%
+% Tunnel-Strom bricht zusammen
+%
+beginfig(13)
+
+backgrounds(80,45,tunnelwidth);
+
+bands(40,0,tunnelwidth,80);
+
+fermi(-20,20,  tunnelwidth, 80);
+label.llft(btex $E_F$ etex, (-80,-20));
+
+endfig;
+
+%
+% Tunnel-Strom bricht zusammen
+%
+beginfig(14)
+
+backgrounds(80,45,tunnelwidth);
+
+bands(40,20,tunnelwidth,80);
+
+fermi(-40,40,  tunnelwidth, 80);
+label.lft(btex $E_F$ etex, (-80,-40));
+
+label(btex $\ominus$ etex, ( 74, 35)) withcolor blue;
+label(btex $\ominus$ etex, ( 69, 27)) withcolor blue;
+label(btex $\ominus$ etex, ( 64, 35)) withcolor blue;
+label(btex $\ominus$ etex, ( 59, 27)) withcolor blue;
+label(btex $\ominus$ etex, ( 54, 35)) withcolor blue;
+label(btex $\ominus$ etex, ( 49, 27)) withcolor blue;
+label(btex $\ominus$ etex, ( 44, 35)) withcolor blue;
+label(btex $\ominus$ etex, ( 39, 27)) withcolor blue;
+label(btex $\ominus$ etex, ( 34, 35)) withcolor blue;
+label(btex $\ominus$ etex, ( 29, 27)) withcolor blue;
+label(btex $\ominus$ etex, ( 24, 35)) withcolor blue;
+label(btex $\ominus$ etex, ( 19, 27)) withcolor blue;
+label(btex $\ominus$ etex, ( 14, 35)) withcolor blue;
+label(btex $\ominus$ etex, (  9, 27)) withcolor blue;
+label(btex $\ominus$ etex, (  4, 35)) withcolor blue;
+%label(btex $\ominus$ etex, (  0, 28)) withcolor blue;
+label(btex $\oplus$ etex, (-74,-35)) withcolor red;
+label(btex $\oplus$ etex, (-69,-27)) withcolor red;
+label(btex $\oplus$ etex, (-64,-35)) withcolor red;
+label(btex $\oplus$ etex, (-59,-27)) withcolor red;
+label(btex $\oplus$ etex, (-54,-35)) withcolor red;
+label(btex $\oplus$ etex, (-49,-27)) withcolor red;
+label(btex $\oplus$ etex, (-44,-35)) withcolor red;
+label(btex $\oplus$ etex, (-39,-27)) withcolor red;
+label(btex $\oplus$ etex, (-34,-35)) withcolor red;
+label(btex $\oplus$ etex, (-29,-27)) withcolor red;
+label(btex $\oplus$ etex, (-24,-35)) withcolor red;
+label(btex $\oplus$ etex, (-19,-27)) withcolor red;
+label(btex $\oplus$ etex, (-14,-35)) withcolor red;
+label(btex $\oplus$ etex, (- 9,-27)) withcolor red;
+label(btex $\oplus$ etex, (- 4,-35)) withcolor red;
+
+endfig;
+
+%
+% L in Abhaengigkeit von C
+%
+beginfig(15)
+
+numeric width;
+numeric height;
+width := 200;
+height := 140;
+
+numeric A;
+A := 0.25; % A = a^2/4
+numeric a;
+a := 2 * sqrt(A);
+
+def omegapoint(expr omega) =
+	(1 / (omega * a), a / (2 * omega))
+enddef;
+
+pickup pencircle scaled 0.5pt;
+
+draw omegapoint(1. / 20)--( 20, 2 * 225 *  1 / 20) withcolor (0.8,0.8,0.8);
+draw omegapoint(1. / 40)--( 40, 2 * 225 *  4 / 40) withcolor (0.8,0.8,0.8);
+draw omegapoint(1. / 60)--( 60, 2 * 225 *  9 / 60) withcolor (0.8,0.8,0.8);
+draw omegapoint(1. / 80)--( 80, 2 * 225 * 16 / 80) withcolor (0.8,0.8,0.8);
+draw omegapoint(1. /100)--(100, 2 * 225 * 25 /100) withcolor (0.8,0.8,0.8);
+
+pickup pencircle scaled 1pt;
+
+hyperbola(2 * 225 *  1, (0.7,0.7,0.7),  20);
+hyperbola(2 * 225 *  4, (0.7,0.7,0.7),  40);
+hyperbola(2 * 225 *  9, (0.7,0.7,0.7),  60);
+hyperbola(2 * 225 * 16, (0.7,0.7,0.7),  80);
+hyperbola(2 * 225 * 25, (0.7,0.7,0.7), 100);
+
+z2 = (0.8 * width, 0.67 * height);
+
+pickup pencircle scaled 1pt;
+
+fill (0.6 * width,0)--(width + 2,0)--(width + 2,height)--(0.6*width,height)--cycle
+	withcolor (0.7,0.7,0.7);
+
+z2 = (0.8 * width, 0.67 * height);
+%fill ((z2 shifted(-20,-13))--(z2 shifted(20,-13))--(z2 shifted(20,13))
+%	--(z2 shifted(-20,13))--cycle) withcolor white;
+%label(btex $\displaystyle L \ge \frac1{a\omega}$ etex, z2);
+
+fill (0,0)--(width + 5,0)--(width + 5,0.25 * (width + 5))--cycle
+	withcolor (0.9,0.9,0.9);
+
+draw (0,0)--(omegapoint(1. / 210)) withcolor (0.8,0.8,0.8);
+
+def ckurvepunkt(expr omega, C) =
+	(C / (C * omega * C * omega + A), C)
+enddef;
+
+def ckurve(expr omega) =
+	path	p;
+	p := (0,0);
+	for C = 1 step 1 until height:
+		p := p..(ckurvepunkt(omega, C));
+	endfor;
+	if omega = (1 / 160):
+		pickup pencircle scaled 1.5pt;
+	else:
+		pickup pencircle scaled 1pt;
+	fi;
+	draw p;
+	pickup pencircle scaled 3pt;
+	draw omegapoint(omega);
+enddef;
+
+for iomega = 20 step 20 until 200:
+	ckurve(1. / iomega);
+endfor;
+
+pickup pencircle scaled 4pt;
+draw omegapoint(1 / 160);
+
+pickup pencircle scaled 1pt;
+
+clip currentpicture to (0,0)--(width + 2,0)--(width + 2,height)--(0,height)--cycle;
+
+drawarrow (-5, 0)--(width + 7,         0);
+drawarrow ( 0,-5)--(        0,height + 5);
+
+label.top(btex $L$ etex, (width + 7,         0));
+label.lft(btex $C$ etex, (        0,height + 5));
+
+z0 = (0.5 * width, hyp(0.5 * width, 9 * 500));
+z1 = z0 shifted (10,0);
+
+fill ((3,-6)--(37,-6)--(37,6)--(3,6)--cycle) shifted omegapoint(1./160) withcolor white;
+label.rt(btex $(L_\omega,C_\omega)$ etex, omegapoint(1./160));
+label.top(btex $\omega$ etex, ckurvepunkt(1./160, height));
 
 endfig;
 
