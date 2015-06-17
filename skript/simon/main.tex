@@ -27,12 +27,12 @@ Die Defintion der Funktion ist auch bekannt:
     f(x) = x \oplus s
 \]
 
-Die Eingabe wird also eine Und-Verkn"ufung mit dem Werte und einer unbekannten
-Konstant $s$ gemacht.  Gesucht ist nun $s$. Fall $s = 0^n$ ist, dann liefert
-diese Funktion f"ur jeden Wert von $x$ jeweils unterschiedliche Werte von
-$f(x)$, sie ist also bijektiv.
+Mit der Eingabe wird also eine Und-Verkn"ufung mit einer unbekannten Konstante
+$s$ gemacht.  Gesucht ist nun $s$. Fall $s = 0^n$ ist, dann liefert diese
+Funktion f"ur jeden Wert von $x$ jeweils unterschiedliche Werte von $f(x)$, sie
+ist also bijektiv.
 
-Falls nun sonst was anders ist, also $s \in \{0,1\}^n, s \neq 0^n$, liefert die
+Falls $s$ sonst was anders ist, also $s \in \{0,1\}^n, s \neq 0^n$, liefert die
 Funktion f"ur zwei $x$ denselben Wert $f(x)$. Formal kann dies so definiert
 werden:
 
@@ -40,42 +40,41 @@ werden:
     f(x) = f(y) \leftrightarrow x \oplus y = s 
 \]
 
-In diesem Fall die Funktion ist also nicht bijektiv, jedoch periodisch, wobei
+In diesem Fall ist die Funktion also nicht bijektiv, jedoch periodisch, wobei
 $s$ die Period darstellt. Der Kern des Problem ist, dass eine m"oglicherweise
-Periodische Funktion gegeben ist und die Periode gesucht ist.
+periodische Funktion gegeben ist und die Periode gesucht ist.
 
 % TODO -> Grafik mit x -> y ( periodisch und nicht periodisch )
-\begin{figure}
- \centering
- \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
-  \node [] {$X$};
-  \node [xshift=4.0cm] {$Y$};
-  \node[ele,label=left:$1$] (a1) at (0,4) {};
-  \node[ele,label=left:$2$] (a2) at (0,3) {};
-  \node[ele,label=left:$3$] (a3) at (0,2) {};
-  \node[ele,label=left:$4$] (a4) at (0,1) {};
-
-  \node[ele,,label=right:$D$] (b1) at (4,4) {};
-  \node[ele,,label=right:$B$] (b2) at (4,3) {};
-  \node[ele,,label=right:$C$] (b3) at (4,2) {};
-  \node[ele,,label=right:$A$] (b4) at (4,1) {};
-
-  \node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
-  \node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;
-  \draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
-  \draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
-  \draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
-  \draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b4);
- \end{tikzpicture}
-\end{figure}
-
+% \begin{figure}
+%  \centering
+%  \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+%   \node [] {$X$};
+%   \node [xshift=4.0cm] {$Y$};
+%   \node[ele,label=left:$1$] (a1) at (0,4) {};
+%   \node[ele,label=left:$2$] (a2) at (0,3) {};
+%   \node[ele,label=left:$3$] (a3) at (0,2) {};
+%   \node[ele,label=left:$4$] (a4) at (0,1) {};
+% 
+%   \node[ele,,label=right:$D$] (b1) at (4,4) {};
+%   \node[ele,,label=right:$B$] (b2) at (4,3) {};
+%   \node[ele,,label=right:$C$] (b3) at (4,2) {};
+%   \node[ele,,label=right:$A$] (b4) at (4,1) {};
+% 
+%   \node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
+%   \node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;
+%   \draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+%   \draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+%   \draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
+%   \draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b4);
+%  \end{tikzpicture}
+% \end{figure}
 
 \section{L"osung}
 
 \subsection{Klassisch}
 
 Wie w"urde man dise Aufgabe auf einem klassichen Computer l"osen? Ein naiver
-Ansatz w"are alle M"oglichen Werten auszuprobieren. Die folgende Tabelle zeigt
+Ansatz w"are alle m"oglichen Werte auszuprobieren. Die folgende Tabelle zeigt
 f"ur eine Beispielfunktion $f$ die Resultate.
 
 
@@ -97,7 +96,7 @@ f"ur eine Beispielfunktion $f$ die Resultate.
 
 
 Was ist nun die Periode? Die Frage l"asst sich einfach beantworten. Es m"ussen
-nur zwei Werte $f(x)$ gefunden werden, die identisch sind. In diesem beispiel
+nur zwei Werte $f(x)$ gefunden werden, die identisch sind. In diesem Beispiel
 sind es $f(000) = 000$ und $f(100) = 000$. 
 
 Nun kommt die obige Gleichung zum Zug:
@@ -138,9 +137,9 @@ F"ur den Algorithmus sind zwei Register notwendig. Als erstes werden diese mit
 \end{align*}
 
 Nun wird die Hadamard-Transformation auf dem ersten Register angewendet. Damit
-befindet sich das Register in einer Superpostion, bei welcher alle M"oglichen
-Werten von $x$ mit der gleichen Wahrscheinlichkeit auftreten. Sinnhaft
-gesprochen heisst das, dass auf einmal alle möglichen Werte auf dem ersten
+befindet sich das Register in einer Superpostion, bei welcher alle m"oglichen
+Werte von $x$ mit der gleichen Wahrscheinlichkeit auftreten. Sinnhaft
+gesprochen heisst das, dass auf einmal alle m"oglichen Werte auf dem ersten
 Register erzeugt werden.
 
 \[ 
@@ -165,7 +164,7 @@ wichtiger ist nun der Zustand des ersten Registers. Dieser befindet sich im
 
 Falle von $s = 0$ im Zustand:
 \[
-    |a\rangle = |f(x)\rangle
+    |a\rangle = |x\rangle
 \]
 Dies ist auch logisch, denn die Funktion ist bijektiv und f"ur jeden $f(x)$
 gibt es nur ein $x$. %TODO: not sure...
@@ -183,8 +182,8 @@ unterscheiden l"asst, um welchen Wert es sich handelt. Denn falls $x$ gemessen
 wird ist nicht klar, dass diser nicht $x \oplus s$ ist. Es hilft auch nicht
 $s$ zu finden.
 
-Um bei der Messung den Wert nicht zu bekommen wird ein Trick verwendet. Daf"ur
-wird nochmals die Hadamard-Operation auf dem ersten Register angewendet.
+Um bei der Messung den Wert $x$ nicht zu bekommen wird ein Trick verwendet.
+Daf"ur wird nochmals die Hadamard-Operation auf dem ersten Register angewendet.
 
 \begin{align*}
     &H^{ \otimes n } \biggl( 
@@ -267,14 +266,15 @@ Mit diesem Trick wird nun ein Wert $z$ gemessen mit der Eigenschaft:
     s \cdot z = 0
 \]
 
-Bei der Messung des ersten Registers wird nun ein n-String $z$ gemessen mit der
-Bedingung, dass $s \cdot z = 0$ ist. Die Wahrscheinlichkeit daf"ur liegt bei:
+Bei der Messung des ersten Registers wird nun ein n-String langer Wert $z$
+gemessen mit der Bedingung, dass $s \cdot z = 0$ ist. Die Wahrscheinlichkeit
+daf"ur liegt bei:
 \[
     |\frac1{\sqrt{2^{n - 1}}}|^2 = \frac1{2^{n-1}} 
 \]
 
 Bei genauer "Uberglegung macht dies auch Sinn, denn falls $s \notin \{0,1\}^n$
-ist, gibt es genau $2^{n-1}$ M"oglich $z$-Werte. Die Wahrscheinlichkeit einen
+ist, gibt es genau $2^{n-1}$ m"oglichen $z$-Werte. Die Wahrscheinlichkeit einen
 solchen zu messen ist also gleich-verteilt.
 
 Der Algorithmus von Simon liefert nun einen Wert $z$. Um den genauen Wert von
