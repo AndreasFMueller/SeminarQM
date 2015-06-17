@@ -55,13 +55,13 @@ In diesem Fall sind zus"atzlich noch Terme wie $Q^3$ oder $Q^4$ im Potential enh
 			%St"orungstheorie
 \section{St"orungstheorie}
 \rhead{St"orungstheorie}
-Schr"odingergleichung in der St"orungstheorie
+F"ur unsere Berechnungen gehen wir von dieser Schr"odingergleichung aus.
 \begin{equation}
 (H_0+\varepsilon H_1)|\Psi_k(\varepsilon)\rangle
 =
 E_k(\varepsilon)|\Psi_k(\varepsilon)\rangle
 \end{equation}
-Koeffizienten
+Mit den Koeffizienten
 \begin{align*}
 E_k(\varepsilon)
 &=
@@ -296,6 +296,8 @@ signifikant.
 %\end{tabular}
 %\caption{Liste mit den ersten f"unf Hermitpolynomen\label{skript:Hermitpolynom}}
 %\end{table}
+
+\subsection{Tipps zur numerischen Berechnung}
 F"ur die Interessierten unter den Lesern,
 welche diese St"orungstheorie anwenden wollen,
 m"ochten wir noch einige Tipps auf den Weg geben.
