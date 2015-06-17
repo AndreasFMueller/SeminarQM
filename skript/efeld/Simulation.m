@@ -27,8 +27,10 @@ nPlot = 1 : 5;
 kurvenVersatz = 1e5
 %n = [1, 2];
 
-if surpress == 1
-	safe = 0
+if exist('surpress') == 1
+	if surpress == 1
+		safe = 0
+	end
 else
 	safe = 1
 end
