@@ -3,7 +3,8 @@
 \begin{refsection}
 \chapterauthor{Stefan Steiner und Pascal Stump}
 
-\section{Einleitung} % (Aufgabenstellung)
+\section{Einleitung}
+% Aus Aufgabenstellung A. Müller
 %Ein Rubidium-Frequenznormal verwendet eine Eigenschaft von
 %Rubidium-Atomen, um ein hochpräzises Frequenznormal ($10^{-11}$)
 %bereitzustellen. Solche Frequenznormale werden zum Beispiel in 3G
@@ -15,12 +16,17 @@
 %ausserdem ein Exemplar eines LPRO-101 für Experimente und Demonstrationen
 %zur Verfügung.
 
-In der heutigen Zeit sind Atomuhren zwar unscheinbare, aber trotzdem sehr wichtige Geräte, da sie es ermöglichen, Zeit unglaublich präzise zu messen. 
-Gewisse Systeme, wie die Positionsmessung über einen Satelliten durch ein Global Navigation Satellite System (GNSS), oder um Mobilfunk und mobile Datenübertragung zu ermöglichen, hängen sehr stark von solch genauer Zeit ab.
-Mit Atomuhren ist es möglich dies zu bewerkstelligen. %blabla schlecht... aber so in diese Richtung
+Ohne den quantenmechanischen Erkenntnissen, welche besonders zu Beginn des letzten Jahrhunderts gemacht wurden, g"abe es keine Atomuhren. 
+Sie stellen eine pr"azise Zeitmessung sicher und ebnen den Weg f"ur immer genauere Messungen in der praktischen Physik. 
 
-\subsection{Anwendungen}
-	
+Zudem pr"agen diese Ger"ate unseren Alltag, ohne das dies stark bemerkt wird. 
+Ortung durch ein Globales Satelliten Navigationssystem (GNSS) wie GPS oder Galileo sind stark von pr"aziser Zeitmessung abh"angig. 
+Jeder Satellit diesen Systems beinhaltet eine Atomuhr.
+Dies gilt auch f"u das Mobilfunknetz. Die einzelnen Antennen m"ussen untereinander sehr genau synchronisiert sein. 
+
+Dieses Kapitel soll einen kurzen "Uberblick geben, was der Quantenmechanische Hintergrund eines solchen Ger"ates ist. Ausserdem steht auch die Technische Realisation einer Atomuhr im Vordergrund.
+\section{Anwendungen}
+% Wie Vortrag -> Bild aus Folie übernehmen...
 
 \section{Quantenmechnanische Betrachtung}
 
@@ -43,7 +49,7 @@ Aus dem Energieunterschied und dem plankschen Wirkungsquantum lässt sich die Fr
 
 \vspace{.5cm}
 
-Aus Tabelle \ref{skript:h2wellenlaengen} sind die Wellenl"angen solcher "Uberg"ange ersichtlich. Daraus ist es möglich die Photonenfrequenzen zu berechnen.
+Aus Tabelle \ref{skript:h2wellenlaengen} sind die Wellenl"angen solcher "Uberg"ange ersichtlich. Daraus sind nun die Photonenfrequenzen zu berechnen.
 
 \begin{center}
 	"Ubergang $H\alpha: 3 \rightarrow 2: \lambda_1 = 656.3nm$
@@ -58,9 +64,12 @@ $\nu_2 = \dfrac{c}{\lambda_2} = 771.2 THz$
 
 Diese "Uberg"ange sind im Berich von Terahertz bis Petahertz und eignen sich darum nicht um sie elektronisch zu verarbeiten.
 
-
-
-
+\begin{figure}[h!]
+	\centering
+	%TODO im militär ist uploaden teuer, kopiere es dann in den richtigen Ordner, wenn ich zu Hause bin.
+	\includegraphics[width = .6\columnwidth]{../vortrag/pictures/wasserstoffSpektrum.jpg}
+	\caption{Wasserstoffspektrum} %TODO \cite{link im owncloud ordner}}
+\end{figure}
 
 
 % von einem entartungsgrad in einen anderen springen - photon absorbieren, aussenden.
@@ -70,9 +79,25 @@ Diese "Uberg"ange sind im Berich von Terahertz bis Petahertz und eignen sich dar
 
 %Wasserstoffatom übergang -> im GHz bereich
 
-\subsection{Feinstrukturübergang}
+\subsection{Feinstruktur"ubergang}
+Damit jedoch ein solcher "Ubergang elektrisch verarbeitet werden kann, muss es einen Effekt geben, bei welchem das Photon mit einer Frequenz ausgesendet wird, mit der es elektronisch verarbeitet werden kann.
+Der Feinstruktur"ubergang ist ein erster Schritt in diese Richtung. 
+
+Als das Wasserstoffspektrum genauer untersuchte wurde, bemerkte man, dass die Spektrallinien nicht atomar sind. Wenn man beispielsweise auf die $H\alpha$ linie stark herein zoomt, entdeckt man, dass diese eine Linie eigentlich zwei sind. 
+
+\begin{figure}[h!]
+	\centering
+	%TODO im militär ist uploaden teuer, kopiere es dann in den richtigen Ordner, wenn ich zu Hause bin.
+	\includegraphics[width = .6\columnwidth]{../vortrag/pictures/fine_structure_hydrogen.png}
+	\caption{$H\alpha$-Linie stark vergrössert} %TODO \cite{link im owncloud ordner}}
+\end{figure}
+
+Dieser Effekt ist der Anlass
 %Beweis für Elektronenspin
 %Bild von übergang
+
+\subsubsection{Notation Termsymbol $^N L _J$}
+
 \subsection{Hyperfeinstrukturübergang}
 % Wechselwirkung Elektron <-> Spin
 % Rubidium \nu = 6.834 GHz 
