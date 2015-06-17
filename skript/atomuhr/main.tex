@@ -3,7 +3,7 @@
 \begin{refsection}
 \chapterauthor{Stefan Steiner und Pascal Stump}
 
-\Section{Einleitung} % (Aufgabenstellung)
+\section{Einleitung} % (Aufgabenstellung)
 %Ein Rubidium-Frequenznormal verwendet eine Eigenschaft von
 %Rubidium-Atomen, um ein hochpräzises Frequenznormal ($10^{-11}$)
 %bereitzustellen. Solche Frequenznormale werden zum Beispiel in 3G
@@ -19,29 +19,71 @@ In der heutigen Zeit sind Atomuhren zwar unscheinbare, aber trotzdem sehr wichti
 Gewisse Systeme, wie die Positionsmessung über einen Satelliten durch ein Global Navigation Satellite System (GNSS), oder um Mobilfunk und mobile Datenübertragung zu ermöglichen, hängen sehr stark von solch genauer Zeit ab.
 Mit Atomuhren ist es möglich dies zu bewerkstelligen. %blabla schlecht... aber so in diese Richtung
 
-\Subsection{Anwendungen}
+\subsection{Anwendungen}
 	
 
-\Section{Quantenmechnanische Betrachtung}
-%Quantenmechanische Hintergrund
-%\Subsection{Repetition Wasserstoffatom}
-%\ref{chapter:wasserstoff}
+\section{Quantenmechnanische Betrachtung}
+
+In diesem Kapitel soll erl"autert werden, wie mithilfe der Theorie der Quantenmechanik eine Atomuhr technisch realisiert werden kann. Dabei wird zuerst eine kurze Repetition zum Wasserstoff gegeben, die Feinstruktur erläutert was dann zum Schluss zur Theorie der Hyperfeinstruktur f"uhrt.
+
+\subsection{Repetition Wasserstoffatom}
+In Kapitel \ref{chapter:wasserstoff} konnte mithilfe der zeitunabhängigen Schr"odingergleichung hergeleitet werden, dass beim Wasserstoffatom die Entartung gilt.
+Dies gilt nicht nur f"ur das Wasserstoffatom, sondern Allgemein.
+Das bedeutet, Elektronen können sich nur in einem wohldefinierten Abstand um den Atomkern befinden. 
+Diese Erkenntnisse stellte Niels Bohr 1913 mit dem nach ihm benannten Bohrschen Atommodell vor \cite{wiki:bohr}. 
+
+Springt nun ein Elektron von einem tieferen in einen h"oheren Entartungsgrad, so wird ein Photon absorbiert.
+Das passiert bei einer Energiezufuhr zum Atom. 
+Vice versa sendet das Atom ein Photon aus, wenn ein Elektron von einem h"oheren Energiegrad zu einen tieferen einen Quantensprung vollzieht.
+
+Aus dem Energieunterschied und dem plankschen Wirkungsquantum lässt sich die Frequenz des Photons berechnen
+\begin{equation}
+	h\nu = \varDelta E.
+\end{equation}
+
+\vspace{.5cm}
+
+Aus Tabelle \ref{skript:h2wellenlaengen} sind die Wellenl"angen solcher "Uberg"ange ersichtlich. Daraus ist es möglich die Photonenfrequenzen zu berechnen.
+
+\begin{center}
+	"Ubergang $H\alpha: 3 \rightarrow 2: \lambda_1 = 656.3nm$
+
+$\nu_1 = \dfrac{c}{\lambda_1} = 457.3 THz $
+\vspace{.5cm}
+
+"Ubergang $8 \rightarrow 2: \lambda_2 = 388.8nm$
+
+$\nu_2 = \dfrac{c}{\lambda_2} = 771.2 THz$
+\end{center}	
+
+Diese "Uberg"ange sind im Berich von Terahertz bis Petahertz und eignen sich darum nicht um sie elektronisch zu verarbeiten.
+
+
+
+
+
+
+% von einem entartungsgrad in einen anderen springen - photon absorbieren, aussenden.
+% Rechnung machen -> H\alpha, 8 \rightarrow 2. Bild wasserstoffspektrum
+% 
+% Balmer-Serie
+
 %Wasserstoffatom übergang -> im GHz bereich
 
-\Subsection{Feinstrukturübergang}
+\subsection{Feinstrukturübergang}
 %Beweis für Elektronenspin
 %Bild von übergang
-\Subsection{Hyperfeinstrukturübergang}
+\subsection{Hyperfeinstrukturübergang}
 % Wechselwirkung Elektron <-> Spin
 % Rubidium \nu = 6.834 GHz 
 
-\Section{Technische Betrachtung}
+\section{Technische Betrachtung}
 
-\Subsection{Rechnung}
+\subsection{Rechnung}
 
-\Section{Ausblick} 
+\section{Ausblick} 
 
-\Section{Zusammenfassung}
+\section{Zusammenfassung}
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
