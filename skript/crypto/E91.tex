@@ -7,9 +7,19 @@
   \index{E91}
   \rhead{E91}
   \subsection{Verschr"ankung}
-  Durch Verschr"ankung lassen sich mehrere Photonen mit dem gleichen Zustand als ein System beschreiben. Diese Beschreibung ist notwendig nichtlokal.\\
-  	Wir besitzen zwei Systeme $A$ und $B$ mit den Hilbert R"aumen $H_A$ und $H_B$. Pro System sind zwei Basisvektoren,  $ \{|0\rangle_A,|1\rangle_A\}$ und $\{|0\rangle_B,|1\rangle_B\}$ gegeben. Somit ist der folgende Singulett Zustand verschr"ankt: $\frac{1}{\sqrt{2}}(\lvert0\rangle_A|1\rangle_B - |1\rangle_A|0\rangle_B) $. Dadurch ist der Zustand von $A$ und $B$ "uberlagert.\\
-	Man nehme jetzt an Alice beobachtet System A und Bob das System B. F"uhrt Alice nun eine Messung durch k"onnen folgende Ereignisse gleich wahrscheinlich auftreten. Der Zustand des Systems kollabiert zu $\lvert0\rangle_A|1\rangle_B$ und Alice misst $\psi_0$ oder das System kollabiert zu $\lvert1\rangle_A|0\rangle_B$ und Alice misst $\psi_1$. F"ur den ersten Fall erh"alt Bob bei jeder Messung, welche er durchf"uhrt $\psi_1$ beim zweiten Fall immer $\psi_0$. Dank diesem Verhalten wird ein Abh"oren/Messen der "ubertragenen Photonen sofort bemerkt.
+  Durch Verschr"ankung lassen sich mehrere Photonen mit dem gleichen Zustand als ein System beschreiben.\\
+  Nehmen wir an die beiden Teilsysteme $A$ und $B$ haben die Zust"ande $|0\rangle$ und $|0\rangle$. Daraus
+  lassen sich "Uberlagerungszust"ande wie $\frac{1}{\sqrt{2}}\big(|01\rangle + |10\rangle\big)$ bilden. Dies bedeutet, dass sich unsere
+  Teilsysteme bis zur Messung in beiden Zust"anden befinden.
+  Wird nun von Alice eine Messung durchgef"uhrt, erfolgt eine Projektion und
+  das System kollabiert entweder zu $\lvert0\rangle_A|1\rangle_B$ und Alice misst $\psi_0$ oder
+  das System kollabiert zu $\lvert1\rangle_A|0\rangle_B$ und Alice misst $\psi_1$.
+  F"ur den ersten Fall erh"alt Bob bei jeder Messung,
+  welche er durchf"uhrt $\psi_1$, f"ur den zweiten Fall immer $\psi_0$.
+  Dank diesem Verhalten wird ein Abh"oren/Messen der "ubertragenen Photonen sofort bemerkt.
+
+  Dieses Verhalten wurde von Erwin Schr"odinger mit seinem
+  ber"uhmten Gedankenexperiment \ref{section:cat} veranschaulicht.
 
   \subsection{Das E91 Protokoll}
   Das E91 Protokoll wurde 1991 von Artur Ekert entworfen.
@@ -20,10 +30,15 @@
   Die beiden ausschlaggebenden Eigenschaften sind dabei:
 
   \begin{enumerate}
-      \item Bei ``Singulett'' verschr"ankten Quanten ist der Zustand nach dem Messen des Ersten genau bestimmt.
-        Es nimmt den Komplement"arzustand zum Gemessenen an.
+      \item Bei ``Singulett'' verschr"ankten Quanten ist der Zustand des zweiten Teilchens nach dem Messen des Ersten genau bestimmt.
+        Das System nimmt dabei den Komplement"arzustand zum Gemessenen an.
         Siehe Abbildung \ref{crypto:tangtab}
-      \item Jegliche Manipulation an einem der verschr"ankten Quanten "andert die Zust"ande der anderen.
+
+        Da dabei vorallem der Spin die relevante Observable ist,
+        bedeutet ``Singulett-Verschr"ankt'' hier,
+        dass beim Verschr"anken ein System entsteht, f"ur welches bei einer Spinmultiplizit"at von Eins,
+        der Gesammtspin bzw. die Gesammtspin-Quantenzahl gleich Null ist.
+      \item Jegliche Manipulation an einem der verschr"ankten Quanten "andert den Zustand des Anderen.
         Dadurch kann eine Manipulation eines Eavesdropper festgestellt werden.
         Dies gilt auch, wenn mehr als zwei Quanten verschr"ankt wurden.
   \end{enumerate}
@@ -59,6 +74,15 @@
       \item Die Photonen haben eine symmetrische Wellenfunktion, dann kann A sichergehen, dass B das gleiche Messresultat bekommen hat, wie sie, wenn B dieselbe Basis verwendet hat.
       \item  Die Photonen haben eine antisymmetrische Wellenfunktion, dann weiss A, dass B das invertierte Messresultat bekommen hat, wenn B dieselbe Basis verwendet hat.
   \end{itemize}
+
+  Dabei sind die symmetrischen Wellenfunktionen "Uberlagerungszust"ande von der Art:
+
+  $\frac{1}{\sqrt{2}}\big(|10\rangle+|01\rangle\big)$
+
+  Und die antisymmetrischen Wellenfunktionen sind "Uberlagerungszust"ande von der Art:
+
+  $\frac{1}{\sqrt{2}}\big(|10\rangle-|01\rangle\big)$
+
 
   Die F"alle, in denen die Basis um \qcstv verschieden sind, sind nutzlos, da das Resultat bei B nicht definiert ist.
   Die F"alle mit einem Zwischenwinkel von \qcstd oder $67.5^{\circ}$ werden verwendet um mit der CHSH Ungleichung (Eine verallgemeinerte Form der Bellschen Ungleichung \ref{chapter:bell}) die Sicherheit des Kommunikationkanals festzustellen.
