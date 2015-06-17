@@ -178,7 +178,7 @@ for ln = nPlot    % ungestoerter Plot
 	diffZero = (diff(zero)-dPsiG).*2e+17;
 	
 	
-	plot(zero, 0, 'xb')
+%	plot(zero, 0, 'xb')		% x-Markierung an den 0-Stellen
 	hold on;
 	%bar(zero(1:end-1)+dPsiG/2, diffZero, 1, 'y')
 	%bar(zero(2:end), diffZero, 1, 'y')
