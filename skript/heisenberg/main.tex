@@ -22,25 +22,24 @@ Die Fourier-Transformation einer Funktion $\hat{f}=\mathcal{F}(f)$ ist definiert
 \end{equation}
 existiert.
 Anstelle von $\hat{f}=\mathcal{F}(f)$ findet sich in der Literatur auch die Schreibweise
-%$f \circ\,\!\! \!\!-\!\!\!-\!\!\!\bullet \hat{f}$.
 $f \multimapdotbothA \hat{f}$.
 Die inverse Fourier-Transformation $f=\mathcal{F}^{-1}(\hat{f})$ ist symmetrisch. Nur die Variablen $k$ und $x$ sind vertauscht.
 \begin{equation}
 f(x) := \dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-i k x} \, \hat{f}(k) \; dk \qquad \textnormal{f"ur } x \in \mathbb{R}
 \end{equation}
 In der Literatur ist auch der Vorfaktor $\dfrac{1}{\sqrt{2\pi}}$ unterschiedlich. Eine h"aufig anzutreffen Variante ist, wenn der Faktor $\dfrac{1}{\sqrt{2\pi}}$ mit $\dfrac{1}{2\pi}$ ersetzt und nur bei der R"ucktransformation angewendet wird.
-Hier wird $\dfrac{1}{\sqrt{2\pi}}$ verwendet, weil es f"ur die sp"atere physikalische Analyse einfacher ist.
+
 
 \subsection{Beispiel}
 
-An einem simplen Beispiel wird gezeigt, wie die Fourier Transformierte auf eine Funktion wirkt. Dazu betrachten wir die Funktion
+An einem einfachen Beispiel wird gezeigt, wie die Fourier Transformierte auf eine Funktion wirkt. Dazu betrachten wir die Funktion
 \begin{equation}
 f(x)=\begin{cases}
     \frac{1}{\sqrt{2\tau}}       & \qquad |x|< \tau \;\;\; \textnormal{f"ur }  \tau > 0\\
     0  & \qquad\text{sonst.}\\
   \end{cases}
 \end{equation}
-und berechnen davon die Fourier-Transformation. $\hat{f}=\mathcal{F}(f)$
+Nun berechnen wir die Fourier-Transformierte von $f(x)$.
 \begin{align}
 \hat{f}(k)
 &=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-i k x} \, f(x) \; dx\\
@@ -54,26 +53,27 @@ und berechnen davon die Fourier-Transformation. $\hat{f}=\mathcal{F}(f)$
 \begin{figure}
  \centering
  \includegraphics[width=12cm]{heisenberg/fourier_unschaerfeprinzip.pdf}
- \caption{Breites $f(x)$ f"uhrt zu schmalem $\hat{f}(k)$}
+ \caption{"'Breites"' $f(x)$ f"uhrt zu "'schmalem"' $\hat{f}(k)$}
  \label{abb:unschaerfeprinzip}
 \end{figure}
-Werden die beiden Funktionen mit verschiedenen $\tau$ gezeichnet (Abbildung \ref{abb:unschaerfeprinzip}), wird das Unsch\"arfeprinzip erkennbar. Je breiter $f(x)$, desto schmaler wird $\hat{f}(k)$. Analog gilt, dass ein breiteres $\hat{f}(k)$ ein schmaleres $f(x)$ zur Folge hat.
 
-Die Relationen der Breite und Amplituden der Fourier Transformierten gelten allgemein. F"ur ein beliebiges reelles $a$ gilt
+Werden die beiden Funktionen mit verschiedenen $\tau$ gezeichnet (Abbildung \ref{abb:unschaerfeprinzip}), wird das Unsch\"arfeprinzip erkennbar. Je "'breiter"' $f(x)$, desto "'schmaler"' wird $\hat{f}(k)$. Analog gilt, dass ein "breiteres" $\hat{f}(k)$ ein "'schmales"' $f(x)$ zur Folge hat. Mit einer "'breiten"' Funktion ist gemeint, dass dessen Varianz gross ist im Verhältnis zur Varianz einer "'schmalen"' Funktion.
+
+Die Relationen der "'Breite"' und Amplituden der Fourier Transformierten gelten allgemein. F"ur ein beliebiges reelles $a$ gilt
 \begin{equation}
-\mathcal{F}(f(ax)) = \frac{1}{|a|}\cdot\hat{f}\left( \frac{k}{a}\right) 
+\mathcal{F}(f(ax)) = \frac{1}{|a|}\cdot\hat{f}\left( \frac{k}{a}\right).
 \end{equation}
 Aufgrund der Symmetrie gilt auch das umkehrte
 \begin{equation}
-\hat{f}(ak) = \mathcal{F}\left( \frac{1}{|a|}f\left( \frac{x}{a}\right) \right) 
+\hat{f}(ak) = \mathcal{F}\left( \frac{1}{|a|}f\left( \frac{x}{a}\right) \right).
 \end{equation}
 Eine weitere Eigenschaft ist die Normerhaltung. Das heisst
 \begin{equation}
-\int_{-\infty}^{\infty}|f(x)|^{2} \, dx = \int_{-\infty}^{\infty}|\hat{f}(k)|^{2} \, dk
+\int_{-\infty}^{\infty}|f(x)|^{2} \, dx = \int_{-\infty}^{\infty}|\hat{f}(k)|^{2} \, dk.
 \end{equation}
 Unser Beispiel ist so gew"ahlt, dass
 \begin{equation}
-\int_{-\infty}^{\infty}|f(x)|^{2} \, dx = 1 = \int_{-\infty}^{\infty}|\hat{f}(k)|^{2} \, dk
+\int_{-\infty}^{\infty}|f(x)|^{2} \, dx = 1 = \int_{-\infty}^{\infty}|\hat{f}(k)|^{2} \, dk.
 \end{equation}
 Ursache f"ur diese Normerhaltung ist die Tatsache, dass es sich bei der Fourier Transformation um eine unit"are Abbildung handelt.
 Ein Beweis daf"ur kann in \cite{skript:QuantenmechanikMotschmann} nachgeschlagen werden.
@@ -84,7 +84,7 @@ Ein Beweis daf"ur kann in \cite{skript:QuantenmechanikMotschmann} nachgeschlagen
 Weiter untersuchen wir, welche Operation im Spektrum der Ableitung im Zeitbereich entspricht.
 Sei $f(x)$ eine (differenzierbare) Zeitfunktion mit der Fourier transformierten $\hat{f}(k)$
 \begin{equation}
-\mathcal{F}(f(x)) = \hat{f}(k)
+\mathcal{F}(f(x)) = \hat{f}(k).
 \end{equation}
 Die Ableitung $f'(x)$ k"onnen wir in die Definition einsetzen und das resultierende Integral partiell integrieren. 
 \begin{align}
@@ -100,7 +100,7 @@ Es bleibt "ubrig
 \end{equation}
 respektive
 \begin{equation}
-\mathcal{F}(f'(x))= ik\cdot\hat{f}(k)
+\mathcal{F}(f'(x))= ik\cdot\hat{f}(k).
 \end{equation}
 Eine Differentiation entspricht einer Multiplikation in der Fourier Transformierten.
 Aufgrund der Symmetrie gilt dies nat"urlich auch in Gegenrichtung.
@@ -129,25 +129,27 @@ Ein bestimmter Ket $|\psi\rangle$ wird in Ortsdarstellung durch $\langle x\vert 
 \langle x\vert \psi\rangle &= \int_{-\infty}^{\infty} \langle x\vert k\rangle \langle k\vert \psi\rangle \; dk\\
 &=\int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi }}e^{-ikx}  \langle k\vert \psi\rangle \; dk\\
 &= \frac{1}{\sqrt{2\pi }} \int_{-\infty}^{\infty} e^{-ikx}  \langle k\vert \psi\rangle \; dk\\
-\psi(x) &= \frac{1}{\sqrt{2\pi }} \int_{-\infty}^{\infty} e^{-ikx} \hat{\psi}(k) \; dk
+&= \frac{1}{\sqrt{2\pi }} \int_{-\infty}^{\infty} e^{-ikx} \hat{\psi}(k) \; dk\\
+&= \psi(x)
 \end{align}
-Das Resultierende entspricht genau der Fourier Transformation.
+Heraus kommt gerade die Fourier Transformation.
 Umkehrt ist
 \begin{align}
 \langle k\vert \psi\rangle &= \int_{-\infty}^{\infty} \langle k\vert x\rangle \langle x\vert \psi\rangle \; dx\\
-\hat{\psi}(k) &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-ikx} {\psi}(x) \; dx
+&= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-ikx} {\psi}(x) \; dx\\
+&= \hat{\psi}(k).
 \end{align}
 In der Ortsdarstellung kennen wir bereits den Ortsoperator
 \begin{equation}
- x \cdot\psi(x)
+ x \cdot\psi(x).
 \end{equation}
 Weiter wird in Satz \ref{skript:quantisierungsregeln-ortsdarstellung} der Impulsoperator in Ortsdarstellung beschrieben. Er ist
 \begin{equation}
- \hat p  =\frac{\hbar}{i}\frac{\partial}{\partial x}
+ \hat p  =\frac{\hbar}{i}\frac{\partial}{\partial x}.
 \end{equation}
 Setzten wir das $k$ in den Impulsoperator ein, verschwindet das $\hbar$
 \begin{equation}
-\hat p_{k} = -i\frac{\partial}{\partial x}
+\hat p_{k} = -i\frac{\partial}{\partial x}.
 \end{equation}
 Ausserdem rechnen wir die Operatoren f"ur Impuls und Ort in die $k$-Darstellung um.
 Dabei ber"ucksichtigen wir, dass die Fourier Transformation eine Multiplikation mit x durch eine Ableitung nach k umwandelt.
@@ -157,7 +159,7 @@ x\cdot\psi(x) &= \frac{1}{\sqrt{2\pi }} \int_{-\infty}^{\infty} e^{-ikx} x \;\ha
 \end{align}
 Der Ortsoperator in k-Darstellung ist 
 \begin{equation}
-\frac{1}{i}\frac{\partial}{\partial k}
+\frac{1}{i}\frac{\partial}{\partial k}.
 \end{equation}
 In der folgenden Tabelle sind die verschiedenen Operatoren in Orts- und $k$-Darstellung zusammengefasst.
 \begin{center}
@@ -176,12 +178,12 @@ Impulsoperator & $\frac{\hbar}{i}\frac{\partial}{\partial x} \cdot \psi(x)$ & $\
 
 \subsection{Unsch"arferelation}
 
-Da der Impuls und Ortsoperator "uber die Fouriertransformation zusammen verkn"upft sind, sollte die Unsch"arferelation berechnet werden k"onnen, indem zwei Wahrscheinlichkeitsdichterfunktionen "uber die Fouriertransformation miteinander verkn"upft werden.
-Wir nehmen eine Quadratisch integrierbare Funktion und normieren diese auf 1.
+Da der Impuls und Ortsoperator "uber die Fouriertransformation verkn"upft sind, sollte die Unsch"arferelation berechnet werden k"onnen, indem zwei Wahrscheinlichkeitsdichtefunktionen "uber die Fouriertransformation miteinander verkn"upft werden.
+Wir nehmen eine quadratisch integrierbare Funktion und normieren diese auf 1.
 \begin{equation}
 	\int_{-\infty}^{\infty} |f(x)|^{2} \; dx = 1
 \end{equation}
-Wir interpretieren $|f(x)|^{2}$ als eine Wahrscheinlichkeitsdichtefunktion mit Mittelwert 0 und Varianz $V(f)$.
+Wir interpretieren $|f(x)|^{2}$ als eine Wahrscheinlichkeitsdichtefunktion mit Mittelwert 0 und Varianz $\text{var}(f)$.
 \begin{equation}	
 	\text{var}(f) = \varDelta X^{2} = \int_{-\infty}^{\infty} (x)^{2} \cdot |f(x)|^{2} \; dx
 	\label{equation:varianz1.0}
@@ -189,22 +191,24 @@ Wir interpretieren $|f(x)|^{2}$ als eine Wahrscheinlichkeitsdichtefunktion mit M
 Es gilt die Cauchy-Schwarz-Ungleichung
 \begin{equation}	
 	\left| \int_{-\infty}^{\infty} x \overline{f(x)}  f'(x) \; dx\right|^{2} \leq  \int_{-\infty}^{\infty} \left| x f(x)\right|^{2}\; dx \cdot \int_{-\infty}^{\infty} \left| f'(x)\right|^{2}\; dx
-	\label{equation:Cauchy_Schwarz}
+	\label{equation:Cauchy_Schwarz}.
 \end{equation}
-F"ur die Linke Seite m"ussen wir eine Absch"atzung nach unten machen.
+F"ur die linke Seite m"ussen wir eine Absch"atzung nach unten machen.
 Diese kann partiell integriert werden.
 \begin{equation}	
 	\int_{-\infty}^{\infty} x \overline{f(x)}  f'(x) \; dx = \left[ x \overline{f(x)}f(x) \right]_{-\infty}^{\infty}-  \int_{-\infty}^{\infty} \overline{f(x)}f(x) +  x \overline{f'(x)}  f(x)\; dx
 \end{equation} 
-Der erste Teil gibt Null und vom zweiten Teil gen"ugt der Realteil.
-\begin{align}	
+An den grenzen $\pm \infty$ ist $\overline{f(x)}=f(x)=0$ und somit 
+\begin{equation}	
 \left| \int_{-\infty}^{\infty} x \overline{f(x)}  f'(x) \; dx\right|^{2}
-&= \left| -  \int_{-\infty}^{\infty} \overline{f(x)}f(x) +  x \overline{f'(x)}  f(x)\; dx\right| ^{2}\\
-&\geq \left| \text{Re}\left\lbrace -\int_{-\infty}^{\infty} \overline{f(x)}f(x)\; +  x \overline{f'(x)}  f(x)\; dx \right\rbrace\right|^{2}\\
-&\geq\left| -\dfrac{1}{2} \int_{-\infty}^{\infty} \left| f(x)\right|^{2}\; dx \right|^{2}\\
-&\geq \frac{1}{4}
-\end{align}
-Nun haben wir von der linken Seite der Formel \ref{equation:Cauchy_Schwarz} eine Absch"atzung gegen unten.
+= \left| -  \int_{-\infty}^{\infty} \overline{f(x)}f(x) +  x \overline{f'(x)}  f(x)\; dx\right| ^{2}.
+\end{equation}
+Mit Hilfe von $z + \overline{z}= 2 \cdot \text{Re}\lbrace z\rbrace)$ kann der Realteil vom Rest berechnet werden.
+\begin{equation}
+ \text{Re}\left\lbrace -\int_{-\infty}^{\infty} \overline{f(x)} f(x)\; +  x \overline{f'(x)}  f(x)\; dx \right\rbrace^{2} =
+  \left| -\dfrac{1}{2} \int_{-\infty}^{\infty} \left| f(x)\right|^{2}\; dx \right|^{2}  = \frac{1}{4}
+\end{equation}
+Nun haben wir von der linken Seite der Formel (\ref{equation:Cauchy_Schwarz}) mit dem Realteil eine Absch"atzung gegen unten.
 Die rechte Seite ist die Multiplikation zwischen der Varianz von $f(x)$ und einem zweiten Teil, den wir noch genauer analysieren.
 Wir berechnen die Fourier Transformierte von $f'(x)$.
 \begin{equation}	
@@ -212,17 +216,15 @@ Wir berechnen die Fourier Transformierte von $f'(x)$.
 \end{equation}
 Aufgrund der Normerhaltung gilt
 \begin{equation}	
-\int_{-\infty}^{\infty} \left| f'(x)\right|^{2}\; dx = \int_{-\infty}^{\infty} \left| ik \hat{f}(k)\right|^{2}\; dk= \int_{-\infty}^{\infty} \left| k \hat{f}(k)\right|^{2}\; dk
+\int_{-\infty}^{\infty} \left| f'(x)\right|^{2}\; dx = \int_{-\infty}^{\infty} \left| ik \hat{f}(k)\right|^{2}\; dk= \int_{-\infty}^{\infty} \left| k \hat{f}(k)\right|^{2}\; dk.
 \end{equation}
-Dies entspricht gerade der Varianz der Fourier Transformierten von $f(x)$. Wir setzen die Erkenntnisse in \ref{equation:Cauchy_Schwarz} ein und erhalten
-
+Dies entspricht gerade der Varianz der Fourier Transformierten von $f(x)$. Wir setzen die Erkenntnisse in (\ref{equation:Cauchy_Schwarz}) ein und erhalten
 \begin{equation}
 \frac{1}{4}\leq \int_{-\infty}^{\infty} \left| x f(x)\right|^{2}\; dx \cdot \int_{-\infty}^{\infty} \left| k \hat{f}(k)\right|^{2}\; dk
 \end{equation}
 oder
-
 \begin{equation}
-\varDelta X^{2}\cdot\varDelta K^{2}\geq\frac{1}{4}
+\varDelta X^{2}\cdot\varDelta K^{2}\geq\frac{1}{4}.
 \end{equation}
 Wird das $k$ durch seine Definition $k = \frac{p}{\hbar}$ ersetzt, erhalten wir die Unsch"arferelation, wie wir sie bereits aus Kapitel \ref{chapter:heisenberg} kennen.
 \begin{equation}
@@ -249,11 +251,11 @@ Wir setzen f"ur $|f(x)|^{2}$ eine gausssche Dichtefunktion mit $\mu = 0$ ein.
 \begin{equation}
 	|f(x)|^{2}  = \dfrac{1}{\sigma \sqrt{\pi}}e^{-\frac{x^{2}}{\sigma^{2}}}
 \end{equation}
-Durch Wurzel ziehen kann $f(x)$ bestimmt werden
+Durch Wurzel ziehen kann $f(x)$ bestimmt werden.
  \begin{equation}
  	f(x) =\dfrac{1}{\sqrt{\sigma\sqrt{\pi}} }e^{-\frac{x^{2}}{2\sigma}} 
  \end{equation}
-Davon wird die Fourier transformierte berechnet
+Davon wird die Fourier transformierte berechnet.
  \begin{equation}
  	\mathcal{F}(f(x)) = \hat{f}(k) = \sqrt{\dfrac{\sigma}{\sqrt{\pi}} }e^{-\frac{\sigma^{2} k^{2}}{2}}
  \end{equation}
@@ -266,7 +268,7 @@ Dass $|\hat{f}(k)|^{2}$ eine Wahrscheinlichkeitsdichtefunktion ist, kann durch I
 \begin{equation}
 	\int_{-\infty}^{\infty}  |\hat{f}(k)|^{2} \; dk = \int_{-\infty}^{\infty} \dfrac{\sigma}{\sqrt{\pi} }e^{-\sigma^{2} k^{2}} \; dk = 1
 \end{equation}
-Bei genauerer Betrachtung von Formel \ref{equation:fourier_gauss} ist ersichtlich, dass es sich bei $|\hat{f}(k)|^{2}$ wieder um eine Gaussverteilung handelt, wobei $\sigma$ durch $\frac{1}{\sigma}$ ersetzt wurde.
+Bei genauerer Betrachtung von Formel (\ref{equation:fourier_gauss}) ist ersichtlich, dass es sich bei $|\hat{f}(k)|^{2}$ wieder um eine Gaussverteilung handelt, wobei $\sigma$ durch $\frac{1}{\sigma}$ ersetzt wurde.
 Analog zu $f(x)$ kann auch von $\hat{f}(k)$ den Mittelwert und die Varianz berechnet werden.
 \begin{equation}
 	\hat{\mu} = \int_{-\infty}^{\infty} k \cdot  |\hat{f}(k)|^{2}\; dk
@@ -275,14 +277,14 @@ Analog zu $f(x)$ kann auch von $\hat{f}(k)$ den Mittelwert und die Varianz berec
 	\text{var}(\hat{f}) = \varDelta K^{2}  = \int_{-\infty}^{\infty} (k-\mu)^{2} \cdot  |\hat{f}(k)|^{2} \; dk
 	\label{equation:varianz2}
 \end{equation}
-Mit den Formeln \ref{equation:varianz1} und \ref{equation:varianz2} k"onnen nun die Varianzen der beiden Funktionen $f(x)$ und $\hat{f}(k)$ berechnet werden.
+Mit den Formeln (\ref{equation:varianz1}) und (\ref{equation:varianz2}) k"onnen nun die Varianzen der beiden Funktionen $f(x)$ und $\hat{f}(k)$ berechnet werden.
 \begin{equation}	
 	\varDelta X^{2} = \int_{-\infty}^{\infty} x^{2} \cdot \dfrac{1}{\sigma \sqrt{\pi}}e^{-\frac{x^{2}}{\sigma^{2}}} \; dx = \frac{\sigma^{2}}{2}
 \end{equation}
 \begin{equation}	
 	\varDelta K^{2} = \int_{-\infty}^{\infty} (k-\mu)^{2} \cdot  \dfrac{\sigma}{\sqrt{\pi} }e^{-\sigma^{2} k^{2}} \; dk = \dfrac{1}{2\sigma^{2}}
 \end{equation}
-Die beiden Varianzen werden multipliziert
+Die beiden Varianzen werden multipliziert.
 \begin{equation}	
 	\varDelta X^{2} \cdot \varDelta K^{2} = \frac{\sigma^{2}}{2} \cdot \dfrac{1}{2\sigma^{2}} = \dfrac{1}{4}
 \end{equation}
@@ -290,7 +292,7 @@ Wird das $k$ durch $\frac{p}{\hbar}$ ersetzt, so kommt die Unsch"arfere f"ur Imp
 \begin{equation}	
 	\varDelta X^{2} \cdot \varDelta P^{2} = \dfrac{\hbar^{2}}{4}
 \end{equation}
-Wir konnten zeigen, dass die Ungleichung \ref{equation:ort_impuls_unschaerfe} mit Gleichheit erf"ullt wird, wenn als Wahrscheinlichkeitsdichtefunktion eine Gaussverteilung angenommen wird.
+Wir konnten zeigen, dass die Ungleichung (\ref{equation:ort_impuls_unschaerfe}) mit Gleichheit erf"ullt wird, wenn als Wahrscheinlichkeitsdichtefunktion eine Gaussverteilung angenommen wird.
 Es ist sogar so, dass die Normalverteilung die einzige Verteilung mit dieser Eigenschaft ist.
 
 \subsection{Fazit}
