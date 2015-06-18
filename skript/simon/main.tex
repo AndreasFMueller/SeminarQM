@@ -46,31 +46,31 @@ periodische Funktion gegeben ist und die Periode gesucht ist.
 
 Beispiel f"ur einer Funktion mit $s = 0^n$ und $n = 3$:
 
-\begin{figure}
+\begin{figure}[H]
  \centering
  \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
   \node [] {$x$};
   \node [xshift=4.0cm] {$f(x)$};
-  \node[ele,label=left:$000$] (a1) at (0,8) {};
-  \node[ele,label=left:$001$] (a2) at (0,7) {};
-  \node[ele,label=left:$010$] (a3) at (0,6) {};
-  \node[ele,label=left:$011$] (a4) at (0,5) {};
-  \node[ele,label=left:$100$] (a5) at (0,4) {};
-  \node[ele,label=left:$101$] (a6) at (0,3) {};
-  \node[ele,label=left:$110$] (a7) at (0,2) {};
+  \node[ele,label=left:$000$] (a1) at (0,4.5) {};
+  \node[ele,label=left:$001$] (a2) at (0,4) {};
+  \node[ele,label=left:$010$] (a3) at (0,3.5) {};
+  \node[ele,label=left:$011$] (a4) at (0,3) {};
+  \node[ele,label=left:$100$] (a5) at (0,2.5) {};
+  \node[ele,label=left:$101$] (a6) at (0,2) {};
+  \node[ele,label=left:$110$] (a7) at (0,1.5) {};
   \node[ele,label=left:$111$] (a8) at (0,1) {};
 
-  \node[ele,,label=right:$000$] (b1) at (4,8) {};
-  \node[ele,,label=right:$001$] (b2) at (4,7) {};
-  \node[ele,,label=right:$010$] (b3) at (4,6) {};
-  \node[ele,,label=right:$011$] (b4) at (4,5) {};
-  \node[ele,,label=right:$100$] (b5) at (4,4) {};
-  \node[ele,,label=right:$101$] (b6) at (4,3) {};
-  \node[ele,,label=right:$110$] (b7) at (4,2) {};
+  \node[ele,,label=right:$000$] (b1) at (4,4.5) {};
+  \node[ele,,label=right:$001$] (b2) at (4,4) {};
+  \node[ele,,label=right:$010$] (b3) at (4,3.5) {};
+  \node[ele,,label=right:$011$] (b4) at (4,3) {};
+  \node[ele,,label=right:$100$] (b5) at (4,2.5) {};
+  \node[ele,,label=right:$101$] (b6) at (4,2) {};
+  \node[ele,,label=right:$110$] (b7) at (4,1.5) {};
   \node[ele,,label=right:$111$] (b8) at (4,1) {};
 
-  \node[draw,fit= (a1) (a2) (a3) (a4) (a5) (a6) (a7) (a8),minimum width=2cm] {} ;
-  \node[draw,fit= (b1) (b2) (b3) (b4) (b5) (b6) (b7) (b8),minimum width=2cm] {} ;
+  \node[draw,fit= (a1) (a2) (a3) (a4) (a5) (a6) (a7) (a8),minimum width=3cm] {} ;
+  \node[draw,fit= (b1) (b2) (b3) (b4) (b5) (b6) (b7) (b8),minimum width=3cm] {} ;
   \draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
   \draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
   \draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
@@ -84,27 +84,28 @@ Beispiel f"ur einer Funktion mit $s = 0^n$ und $n = 3$:
 
 Eine periodische Funktion mit $s = 110$ ist folglich:
 
-\begin{figure}
+\begin{figure}[H]
  \centering
  \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
-  \node [] {$x$};
-  \node [xshift=4.0cm] {$f(x)$};
-  \node[ele,label=left:$000$] (aa1) at (0,8) {};
-  \node[ele,label=left:$001$] (aa2) at (0,7) {};
-  \node[ele,label=left:$010$] (aa3) at (0,6) {};
-  \node[ele,label=left:$011$] (aa4) at (0,5) {};
-  \node[ele,label=left:$100$] (aa5) at (0,4) {};
-  \node[ele,label=left:$101$] (aa6) at (0,3) {};
-  \node[ele,label=left:$110$] (aa7) at (0,2) {};
+  \node [yshift=0cm] {$x$};
+  \node [xshift=4.0cm, yshift=2cm] {$f(x)$};
+  \node[ele,label=left:$000$] (aa1) at (0,4.5) {};
+  \node[ele,label=left:$001$] (aa2) at (0,4) {};
+  \node[ele,label=left:$010$] (aa3) at (0,3.5) {};
+  \node[ele,label=left:$011$] (aa4) at (0,3) {};
+  \node[ele,label=left:$100$] (aa5) at (0,2.5) {};
+  \node[ele,label=left:$101$] (aa6) at (0,2) {};
+  \node[ele,label=left:$110$] (aa7) at (0,1.5) {};
   \node[ele,label=left:$111$] (aa8) at (0,1) {};
 
-  \node[ele,,label=right:$000$] (bb1) at (4,8) {};
-  \node[ele,,label=right:$001$] (bb2) at (4,7) {};
-  \node[ele,,label=right:$010$] (bb3) at (4,6) {};
-  \node[ele,,label=right:$011$] (bb4) at (4,5) {};
+  \node[ele,,label=right:$000$] (bb1) at (4,4.5) {};
+  \node[ele,,label=right:$001$] (bb2) at (4,4) {};
+  \node[ele,,label=right:$010$] (bb3) at (4,3.5) {};
+  \node[ele,,label=right:$011$] (bb4) at (4,3) {};
 
-  \node[draw,fit= (aa1) (aa2) (aa3) (aa4) (aa5) (aa6) (aa7) (aa8),minimum width=2cm] {} ;
-  \node[draw,fit= (bb1) (bb2) (bb3) (bb4), minimum width=2cm] {} ;
+  \node[draw,fit= (aa1) (aa2) (aa3) (aa4) (aa5) (aa6) (aa7) (aa8),minimum
+  width=3cm] {} ;
+  \node[draw,fit= (bb1) (bb2) (bb3) (bb4), minimum width=3cm] {} ;
   \draw[->,thick,shorten <=2pt,shorten >=2pt] (aa1) -- (bb1);
   \draw[->,thick,shorten <=2pt,shorten >=2] (aa2) -- (bb2);
   \draw[->,thick,shorten <=2pt,shorten >=2] (aa3) -- (bb3);
