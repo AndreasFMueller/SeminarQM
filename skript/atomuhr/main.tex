@@ -22,35 +22,39 @@ Sie stellen eine pr"azise Zeitmessung sicher und ebnen den Weg f"ur immer genaue
 Zudem pr"agen diese Ger"ate unseren Alltag, ohne das dies stark bemerkt wird. 
 Ortung durch ein Globales Satelliten Navigationssystem (GNSS) wie GPS oder Galileo sind stark von pr"aziser Zeitmessung abh"angig. 
 Jeder Satellit diesen Systems beinhaltet eine Atomuhr.
-Dies gilt auch f"u das Mobilfunknetz. Die einzelnen Antennen m"ussen untereinander sehr genau synchronisiert sein. Auch da helfen diese genauen Taktgeber.
+Dies gilt auch f"ur das Mobilfunknetz. Die einzelnen Basisstationen m"ussen untereinander sehr genau synchronisiert sein. Auch da helfen diese genauen Taktgeber.
 
-Dieses Kapitel soll einen kurzen "Uberblick geben, was der Quantenmechanische Hintergrund eines solchen Ger"ates ist. Ausserdem soll die Technische Realisation solch eines Gerätes erläutert werden.
+Dieses Kapitel soll einen kurzen "Uberblick geben, was der Quantenmechanische Hintergrund eines solchen Ger"ates ist. Ausserdem soll die Technische Realisation erl"autert werden.
 \section{Anwendungen}
 % Wie Vortrag -> Bild aus Folie übernehmen...
 
 \section{Quantenmechnanische Betrachtung}
 
-In diesem Kapitel soll erl"autert werden, wie mithilfe der Theorie der Quantenmechanik eine Atomuhr technisch realisiert werden kann. Dabei wird zuerst eine kurze Repetition zum Wasserstoff gegeben, die Feinstruktur erläutert was dann zum Schluss zur Theorie der Hyperfeinstruktur f"uhrt.
+In diesem Teil soll gekl"art werden, wie mithilfe der Theorie der Quantenmechanik eine Atomuhr technisch realisiert werden kann. Dabei wird zuerst eine kurze Repetition zum Wasserstoff gegeben. Dann wird erkl"art, was die Feinstruktur ist. Dies f"uhrt dann zum Schluss zur Theorie der Hyperfeinstruktur.
 
 \subsection{Repetition Wasserstoffatom}
-In Kapitel \ref{chapter:wasserstoff} konnte mithilfe der zeitunabhängigen Schr"odingergleichung hergeleitet werden, dass beim Wasserstoffatom die Entartung gilt.
-Dies gilt nicht nur f"ur das Wasserstoffatom, sondern Allgemein.
-Das bedeutet, Elektronen können sich nur in einem wohldefinierten Abstand um den Atomkern befinden. 
-Diese Erkenntnisse stellte Niels Bohr 1913 mit dem nach ihm benannten Bohrschen Atommodell vor \cite{wiki:bohr}. 
+Ernest Rutherford gewann nach seinen Experimenten anfangs des 20. Jahrhunderts die Erkenntnis, dass Elektronen Planeten förmig um den Kern kreisen müssen. 
+Er versuchte dieses Modell mit der Newtonschen Mechanik zu erklären. 
+Das hätte jedoch zur Folge, dass die Atome in den Kern stürzen müssten. 
+Niels Bohr löste dieses Stabilitätsproblem mithilfe des Plankschen Energiequantum 
+\begin{equation}
+\varDelta E = h\nu.
+\end{equation}
+Daraus resultierte das Bohrsche Atommodell benannt nach dem dänischen Physiker Niels Bohr \cite{wiki:bohr}. 
+
+In Kapitel \ref{chapter:wasserstoff} konnte mithilfe der zeitunabhängigen Schr"odingergleichung dieses Modell hergeleitet werden.
+Es resultiert ein diskreter Abstand der Elektronen zum Kern.
+Dies gilt jedoch nicht nur f"ur das Wasserstoffatom, sondern Allgemein f"ur alle Atome.
+Nach dieser Theorie können sich Elektronen nur in einem wohldefinierten Abstand um den Atomkern befinden. 
 
 Springt nun ein Elektron von einem tieferen in einen h"oheren Entartungsgrad, so wird ein Photon absorbiert.
-Das passiert bei einer Energiezufuhr zum Atom. 
+Das passiert bei jeglicher Energiezufuhr zum Atom. 
 Vice versa sendet das Atom ein Photon aus, wenn ein Elektron von einem h"oheren Energiegrad zu einen tieferen einen Quantensprung vollzieht.
 
-Aus dem Energieunterschied und dem plankschen Wirkungsquantum lässt sich die Frequenz des Photons berechnen
-\begin{equation}
-	h\nu = \varDelta E.
-\end{equation}
+Aus dem Energieunterschied und dem Plankschen Wirkungsquantum lässt sich die Frequenz des Photons berechnen. %, was den Wellencharakter des Photons unterstreicht.
 
-\vspace{.5cm}
-
-Aus Tabelle \ref{skript:h2wellenlaengen} sind die Wellenl"angen solcher "Uberg"ange ersichtlich. Daraus sind nun die Photonenfrequenzen zu berechnen.
-
+Aus Tabelle \ref{skript:h2wellenlaengen} sind die Wellenl"angen solcher "Uberg"ange ersichtlich. Daraus ist es möglich, die Photonenfrequenzen zu berechnen.
+%TODO \cite{Quelle Gertsen, Atomphysik und ...}
 \begin{center}
 	"Ubergang $H\alpha: 3 \rightarrow 2: \lambda_1 = 656.3nm$
 
@@ -62,42 +66,67 @@ $\nu_1 = \dfrac{c}{\lambda_1} = 457.3 THz $
 $\nu_2 = \dfrac{c}{\lambda_2} = 771.2 THz$
 \end{center}	
 
-Diese "Uberg"ange sind im Berich von Terahertz bis Petahertz und eignen sich darum nicht um sie elektronisch zu verarbeiten.
+Diese "Uberg"ange sind im Bereich von Terahertz bis Petahertz und eignen sich darum nicht um elektronisch verarbeitet werden. Elektronische Ger"ate arbeiten im Bereich von Gigahertz.
 
 \begin{figure}[h!]
 	\centering
 	%TODO im militär ist uploaden teuer, kopiere es dann in den richtigen Ordner, wenn ich zu Hause bin.
 	\includegraphics[width = .6\columnwidth]{../vortrag/pictures/wasserstoffSpektrum.jpg}
 	\caption{Wasserstoffspektrum} %TODO \cite{link im owncloud ordner}}
+	\label{atomuhr:wasserstoffspektrum}
 \end{figure}
 
+Auf der Abbildung \ref{atomuhr:wasserstoffspektrum} sieht man das Frequenzspektrum der sogenannte Balmer-Serie des Wasserstoffs, welche zufälligerweise im sichtbaren Bereich ist. Der rote Strich ganz rechts stellt die $H\alpha$-Linie dar. Die nächste links $H\beta$ und so weiter.
 
-% von einem entartungsgrad in einen anderen springen - photon absorbieren, aussenden.
-% Rechnung machen -> H\alpha, 8 \rightarrow 2. Bild wasserstoffspektrum
-% 
-% Balmer-Serie
-
-%Wasserstoffatom übergang -> im GHz bereich
 
 \subsection{Feinstruktur"ubergang}
-Damit jedoch ein solcher "Ubergang elektrisch verarbeitet werden kann, muss es einen Effekt geben, bei welchem das Photon mit einer Frequenz ausgesendet wird, mit der es elektronisch verarbeitet werden kann.
+Damit jedoch ein solcher "Ubergang elektrisch verarbeitet werden kann, muss es einen Effekt geben, bei welchem das Photon mit einer Frequenz im Gigahertz Bereich ausgesendet wird. 
 Der Feinstruktur"ubergang ist ein erster Schritt in diese Richtung. 
 
-Als das Wasserstoffspektrum genauer untersuchte wurde, bemerkte man, dass die Spektrallinien nicht atomar sind. Wenn man beispielsweise auf die $H\alpha$ linie stark herein zoomt, entdeckt man, dass diese eine Linie eigentlich zwei sind. 
+Als das Wasserstoffspektrum genauer untersuchte wurde, bemerkte man, dass die Spektrallinien nicht atomar sind. Wenn man beispielsweise die $H\alpha$ Spektrallinie besser auflöst, so entdeckt man, dass diese eine Linie aus zwei besteht, welche sehr nahe aneinander liegen. 
 
 \begin{figure}[h!]
 	\centering
 	%TODO im militär ist uploaden teuer, kopiere es dann in den richtigen Ordner, wenn ich zu Hause bin.
 	\includegraphics[width = .6\columnwidth]{../vortrag/pictures/fine_structure_hydrogen.png}
-	\caption{$H\alpha$-Linie stark vergrössert} %TODO \cite{link im owncloud ordner}}
+	\caption{$H\alpha$-Linie stark vergr"ossert, erkennbare Doppellinie} %TODO \cite{link im owncloud ordner}}
 \end{figure}
 
-Dieser Effekt ist der Anlass
-%Beweis für Elektronenspin
-%Bild von übergang
+Bis jetzt wurde nur mit der zeitunabhängigen Schr"odingergleichung gearbeitet.
+Als erste N"aherung ist dies sicherlich nicht schlecht.
+In der Realit"at spielt jedoch Zeitabh"angigkeit ein wichtiger Faktor. 
+Mithilfe der St"orungstheorie ist es m"oglich, dieses Verhalten anzun"ahern.
+
+\begin{itemize}
+	\item[]  $H = \textcolor{red}{H_0}+ \textcolor{blue}{W_{SB}} + 
+		\textcolor{green}{W_M} + \textcolor{violet}{W_D} $
+	\item[]  $H$: relativistischer Hamiltonoperator
+	\item[]  \textcolor{red}{$H_0$}: nicht relativistischer Hamiltonoperator
+	\item[]  \textcolor{blue}{$W_{SB}$}: Spin Bahn Kopplung
+	\item[]  \textcolor{green}{$W_M$}: Korrektur kin. Energie
+	\item[]  \textcolor{violet}{$W_D$}: Korrektur pot. Energie
+	
+\end{itemize}
+		
+Auf die Korrekturfaktoren $W_M$ und $W_D$ wird hier nicht n"aher eingegangen, da diese nur zu geringf"ugigen Korrekturen f"uhrt und nicht f"ur die Doppellinie verantwortlich ist.
+
+Der nicht relativistische Hamiltonoperator beschreibt das Bohrsche  Atommodell, welches bereits bekannt ist.
+
+Bei der Spin Bahn Kopplung geht es um die reine Betrachtung des Elektrons. 
+Dieses dreht sich in einer Kreisf"ormigen Bahn. 
+Da das Elektron eine Ladung besitzt, entsteht ein magnetisches Feld. 
+Dieses Feld wechselwirkt nun mit dem magnetischen Spin, den das Elektron auch noch besitzt. 
+Da das Elektron entweder Spin +1/2 oder -1/2 hat, entstehen geringf"ugig unterschiedliche Frequenzen bei einem Quantensprung in das jeweilige Energielevel.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=.2\columnwidth]{../vortrag/pictures/feinstrukturelektron.jpg}
+	\caption{Spin Bahn Kopplung} %TODO \cite{link im owncloud ordner}}
+	\label{atomuhr:spinbahn}
+\end{figure}
 
 \subsubsection{Notation Termsymbol $^N L _J$}
-
+Es ist nun m"oglich 
 \subsection{Hyperfeinstrukturübergang}
 % Wechselwirkung Elektron <-> Spin
 % Rubidium \nu = 6.834 GHz 
