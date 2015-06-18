@@ -344,7 +344,17 @@ nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
 
 \section{Schlussfolgerung}
 
-% TODO: Grafik f"ur linear und beispiel zeigen
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  \draw[->] (0,0) -- (5,0) node[right] {$n$};
+  \draw[->] (0,0) -- (0,5) node[above] {$\mathcal{O}{}$};
+  \draw[scale=0.35,domain=-0:10,smooth,variable=\x,black] plot ({\x},{\x});
+  \draw[scale=0.15,domain=-0:10,smooth,variable=\y,black]  plot ({\y},{2^(\y/2)});
+  \node [xshift=4cm,yshift=4cm] {$\mathcal{O}(n)$};
+  \node [xshift=2cm, yshift=5cm] {$\mathcal{O}(2^{n/2})$};
+\end{tikzpicture}
+\end{figure}
 
 Der Algorithmus von Simon zeigt auf, dass mittels eines Quantencomputers die
 Anzahl der Aufrufe der Funktion $f$ auf $O(n)$ reduziert werden k"onnen. Die
