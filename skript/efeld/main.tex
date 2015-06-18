@@ -111,46 +111,46 @@ V_0(x)&=
 und erweitern sie mit der St"orung $H_1$ (Abbildung \ref{abb:efeld_H_1}), welche wir als lineares 
 Potential definieren:
 \begin{equation}
+	\label{eq:efeld_H_1}
   H_1 = V_1(x) = a x + b
 \end{equation}
 
 \begin{figure}
   \centering
 \begin{tikzpicture}
-  \draw[->] (-1.4,0) -- (1.4,0) node[right] {$x$};
-  \draw[->] (0,-1.4) -- (0,1.4) node[above] {$V_1$};
   \shade[top color=gray!20,bottom color=gray!20] 
       (0,0) (1,1) |- (0,0);
   \shade[top color=gray!20,bottom color=gray!20] 
       (-1,-1) |- (0,0) (-1,-1);
+  \draw[->] (-1.4,0) -- (1.4,0) node[right] {$x$};
+  \draw[->] (0,-1.4) -- (0,1.4) node[above] {$V_1$};
   \draw[scale=0.5,domain=-2:2,smooth,variable=\x,red] plot ({\x},{\x});
-  %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({\y*\y},{\y});
 \end{tikzpicture}
  \caption{St\"orung $H_1$}
  \label{abb:efeld_H_1}
 \end{figure}
 
 Da das Potential die Stammfunktion des elektrischen Feldes ist, entspricht der Parameter $b$ dem $c$ der Integration.
-F\"ur das Potential sind nur Unterschiede relevant, das Niveau, solange es in der ganzen Anwendung ver\"andert wird,
-kann beliebig gew\"ahlt werden. Somit k\"onnen wir mit $b=0$ die Formel nochmals vereinfachen.
+F\"ur das Potential sind nur Unterschiede relevant, w\"ahrend das Niveau, solange es in der ganzen Anwendung ver\"andert wird,
+beliebig gew\"ahlt werden kann. Somit k\"onnen wir mit $b=0$ die Formel nochmals vereinfachen.
 
 Die Feldst\"arke $a$ h\"angt von der Breite des Potentialkastens und der angelegten Spannung $U$ ab.
 \[
   a = \frac{ U }{2 l}
 \]
 
-Diese Funktion dr\"uckt mit dem Parameter $U$ das eingeschaltete elektrische Feld \"uber dem Potentialkasten
+Diese Funktion dr\"uckt mit dem Parameter $U$ das eingeschaltete elektrische Feld \"uber dem Potentialkasten aus
 und erf\"ullt damit die selbe Funktion wie das $\varepsilon$.
-Wollen wir nun das $a = 1$ um die Formeln zu vereinfachen, m\"ussen wir alle relevanten Terme in $\varepsilon$ unterbringen
+Wollen wir nun die Formeln mit $a=1$ vereinfachen, m\"ussen wir alle relevanten Terme  in $\varepsilon$ unterbringen
 
-% TODO evt. bessere Formulierung
+% fixme evt. bessere Formulierung
 \begin{equation}
 \begin{aligned}
-  \varepsilon H_1(x) &= \varepsilon a e_{-} x +b  & \\
-                     &= \varepsilon \frac{ U }{2 l} e_{-} x + 0  &\Longrightarrow \varepsilon = \frac{ U }{2 l} e_{-} \\
-                     &                                           & a = 1
+  \varepsilon H_1(x) &= \varepsilon a e_{-} x +b  \\
+                     &= \varepsilon \frac{ U }{2 l} e_{-} x + 0  \Longrightarrow \\
+         \varepsilon &= \frac{ U }{2 l} e_{-}; \, a = 1
 \end{aligned}
-\end{equation} % FIXME LaTeX beibringen, wie a = 1 einger\"uckt werden soll.
+\end{equation}
 
 
 
@@ -206,9 +206,9 @@ E_k^{(1)} &=
 \end{equation}
 aus dem Kapitel \ref{section:nichtentartetezustaende}, Seite \pageref{section:nichtentartetezustaende} verwenden.
 
-Mit $\gamma$ kann man die Wellenfunktion normieren.
-Das ist n"otig wenn die St"orung Energie hinzuf"ugt
-und so die Wahrscheinlichkeitsverteilung nicht mehr stimmt ($P \ne 1$).
+Mit $\gamma$ kann die Wellenfunktion normiert werden.
+Das ist n"otig, wenn die St"orung Energie hinzuf"ugt
+und so die Wahrscheinlichkeitsverteilung ($P \ne 1$) nicht mehr stimmen w\"urde.
 Weil wir aber in der ersten N\"aherung keine 
 Energiever\"anderung durch die St\"orung bekommen, m\"ussen wir
 \[
@@ -233,23 +233,43 @@ Mit der Gleichung \ref{eq:efeld_ESkalarprodukt} k"onnen wir direkt die Energie d
 \end{equation}
 
 Mit Symmetrie\"uberlegungen wollen wir nun das Resultat vorhersagen um allf\"allige Fehler erkennen zu k\"onnen.
-Bei Symmetrien ist wichtig ob die Exponenten unsere Funktionen
-\footnote{Formeln aus den Gleichungen $H_1$ und \ref{skript:potentialkasten-psi-normiert}}
-alle gerade oder ungerade sind.
+Bei der Betrachtung von Symmetrien an Funktionen erkennen wir den Zustand an den Exponenten.
+Betrachten wir einige Beispiele 
+\footnote{Formeln aus den Gleichungen \ref{skript:potentialkasten-psi-normiert} und \ref{eq:efeld_H_1}}
 \begin{equation}
 \begin{aligned}
 x^1 &\Rightarrow \text{ungerade Funktion}
 \\
-\frac{1}{\sqrt{l}}\cos\frac{n \pi x}{2l} &\Rightarrow \text{gerade Funktion}
+x^2 &\Rightarrow \text{gerade Funktion}
 \\
-\frac{1}{\sqrt{l}}\sin\frac{n \pi x}{2l} &\Rightarrow \text{ungerade Funktion}
+\frac{1}{\sqrt{l}}\cos\left( \frac{n \pi x}{2l} \right)  &\Rightarrow \text{gerade Funktion}
+\\
+\frac{1}{\sqrt{l}}\sin\left( \frac{n \pi x}{2l} \right)  &\Rightarrow \text{ungerade Funktion}
 \end{aligned}
 \end{equation}
+Betrachten wir unsere Funktionen in Abbildung \ref{abb:efeld_gerade_ungerade} so stellen wir fest, 
+dass gerade Funktionen nur Terme mit geraden Exponenten besitzen und achsensymmetrisch sind.
+Ungerade sind punktsymmetrisch.
+
+\begin{figure}
+  \centering
+\begin{tikzpicture}
+  \draw[->] (-3.2,0) -- (3.2,0) node[right] {$x$};
+  \draw[->] (0,-1.7) -- (0,3.5) node[above] {$y$};
+  \draw[scale=1,domain=-1.9:1.9,smooth,variable=\x,blue] plot ({\x},{\x*\x});
+  \draw[scale=1,domain=-3:3,smooth,variable=\x,blue]  plot ({\x},{cos(90*\x)});
+  \draw[scale=1,domain=-1.8:2.2,smooth,variable=\x,red] plot ({\x},{\x});
+  \draw[scale=1,domain=-3:3,smooth,variable=\x,red]  plot ({\x},{sin(90*\x)});
+\end{tikzpicture}
+ \caption{Gerade Funktionen $x^2$ und $\cos(x)$ in blau, ungerade Funktionen $x$ und $\sin(x)$ in rot}
+ \label{abb:efeld_gerade_ungerade}
+\end{figure}
+
 Dass die Sinus-Funktion ungerade ist, spielt in diesem Fall keine Rolle, da wir mit 
 \[
   \overline{\sin(x)} \sin(x) = |\sin(x)|^2
 \]
-wieder eine gerade Funktion bekommen.
+wieder eine gerade Funktion erhalten.
 
 Allerdings bekommen wir immer eine ungerade Funktion, wenn wir eine gerade Funktion mit einer ungeraden Funktion multiplizieren:
 \[ 
@@ -277,7 +297,7 @@ Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger,
 weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
 Wir setzen daher eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
 Mit der zweiten Formel k"onnen wir den Anteil der jeweiligen $\psi$ berechnen.
-Wir berechnen also 
+Wir berechnen 
 \[
 \psi_k^{(1)} =
 \sum_{k\ne l}
@@ -291,9 +311,9 @@ $\psi_k^{(0)}$ und $\psi_l^{(0)}$ k"onnen sowohl gerade als auch ungerade sein,
 $H_1$ ist hingegen immer ungerade.
 Uns interessieren die Skalarprodukte die gerade sind, denn nur die ergeben einen Beitrag.
 Das ist der Fall wenn $H_1$ und $\psi_k^{(0)} \psi_l^{(0)}$ ungerade sind.
-$\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt also nur einen Beitrag wenn
+$\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt nur einen Beitrag wenn
 \[
-(k-l) mod 2 = 1.
+  k-l \mod 2 \equiv 1.
 \]
 
 
@@ -327,7 +347,7 @@ Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 Wir wollen jetzt die Wellen $\psi_k(\varepsilon)$ und die Energie auch tats"achlich berechnen.
 Dazu verwenden wir das Programm Matlab.
 
-Wie beginnen damit das wir Konstanten und das ungest"orte System bestimmen.
+Wie beginnen damit, dass wir Konstanten und das ungest"orte System bestimmen.
 Wir definieren f"ur unseren Potentialkasten eine Breite von $10^{-9}$ (1nm links und rechts)
 \begin{lstlisting}[style=Matlab]
 L = 10^-9;                         # Entfernung der Grenzen der Simulation
@@ -361,9 +381,9 @@ sowie eine Matrix $\texttt{xSteps} \times \texttt{n}$ (konkret $500 \times 1000$
 
 \subsection{Berechnung von $E_k^{(1)}$}
 
-Nun da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und 
-$E_k(\varepsilon)$ berechnen. Die Energie d\"urfte sich in der 1. N\"aherung nicht ver\"andern.
-Dieses Resultat zeigt uns damit die Robustheit der Berechnungen auf.
+Nun, da wir die Grundlagen berechnet haben, k"onnen wir $\psi_k(\varepsilon)$ und 
+$E_k(\varepsilon)$ berechnen. Die Energie darf sich in der 1. N\"aherung nicht ver\"andern.
+Dieses Resultat zeigt uns die Robustheit der Berechnungen auf.
 
 Implementiert wurde der Test wie folgt:
 \begin{lstlisting}[style=Matlab]
@@ -386,9 +406,9 @@ Wir schliessen daraus, dass die Berechnung stabil ist und die Werte genau genug 
 \subsection{Berechnung von $\psi_k^{(1)}$}
 
 Die Implementierung von $\psi_k^{(1)}$ gestaltet sich durch die Summe etwas schwieriger.
-Normaler Weise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen lassen.
+Normalerweise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen lassen.
 Wir wollen aber ein Element auslassen. 
-Um zum Beispiel den f"unften Zustand zu bestimmen summieren wir alle Zust\"ande vom 
+Um zum Beispiel den f"unften Zustand zu bestimmen, summieren wir alle Zust\"ande vom 
 ersten bis $n$-ten ausser dem f\"unften auf.
 \begin{equation}
   \psi_5^{(1)} = \langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle = 
@@ -413,10 +433,10 @@ for l = 1 : n
   end
 end
 \end{lstlisting}
-\verb|summe| ist nun ein Vektor mit den diskreten Abtastwerten von $\psi_k^{(1)}$.
+Die Variable \verb|summe| ist nun ein Vektor mit den diskreten Abtastwerten von $\psi_k^{(1)}$.
 
-Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, weil der Anteil am Gesammtzustand 
-mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zuname des Terms 
+Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, da der Anteil am Gesammtzustand 
+mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zunahme des Terms 
 $E^{(0)}_k-E^{(0)}_l$ unter dem Bruchstrich.
 In diesem Fall addieren wir beim 90-sten Schritt ($l=90$) nur $1\%$ der St"orung dazu.
 Beim 280-sten Schritt ($l=280$) betr"agt der Anteil nur noch $0.1\%$.
@@ -438,8 +458,19 @@ einsetzen und bekommen so die neue Wellenfunktion dargestellt in Abbildung \ref{
 \subsection{Auswertung Psi}
 
 In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen den ungest"orten 
-$\psi$ (schwarz) und der ersten N"aherung (rot).
-Auf der vertikalen Achse haben wir die Amplituden von $\psi_k$.
+$\psi_k$ (schwarz) und der ersten N"aherung (rot).
+Der \"Ubersicht halber haben wir die Amplituden von $\psi_k$ in einzelnen Graphen dargestellt.
+
+Die einzelnen Grafiken zeigen sehr anschaulich wie die Differenz zwischen dem ungest\"orten und dem gest\"orten $\psi$
+immer weiter abnimmt.
+
+\begin{figure}
+ \centering
+ \includegraphics[width=12cm,clip=true,trim=2cm 6.6cm 1cm 8cm]{efeld/Psi_SubPlots_gestoert.pdf}
+ \caption{einige Energieniveaus von $\psi$, ungest\"ort in blau und gest"ort in rot.}
+ \label{abb:efeld_psi_gestoert}
+\end{figure}
+
 Die Funktion 
 \[
   \psi \cdot \overline{\psi} = |\psi|^2
@@ -456,12 +487,12 @@ im ersten Quadranten ein positives Potential bildet und deshalb das Elektron her
 \]
 
 Allerdings wird durch die positive Spannung das Elektron angezogen und die
-Wahrscheinlichkeit es weiter Rechts anzutreffen steigt.
+Wahrscheinlichkeit es weiter rechts anzutreffen steigt.
 
 Durch das elektrische Feld haben wir entlang der $x$-Achse verschieden Energie-Potentiale.
 Das Elektron hat allerdings immer die selbe Energie,
 die Energie muss sich also irgendwie ausgleichen.
-Wir k"onnen diesen Vorgang einfach mit der Schr"odingergleichung verstehen:
+Wir k"onnen diesen Vorgang mit der Schr"odingergleichung einfach verstehen:
 \[
 -\frac{\hbar^2}{2m}\Delta\Psi(x) + V(x)\Psi(x)
 =
@@ -472,37 +503,50 @@ Das bedeutet bei einem Elektron eine Abnahme der kinetischen Energie bzw. der Fr
 Der Vorgang ist also "ahnlich einem mechanischem Pendel, 
 welches mal kinetische Energie hat, mal mechanische.
 
-\begin{figure}
- \centering
- \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Psi_gestoert.pdf}
- \caption{$\psi$ ungest\"ort in blau und $\psi$ gest\"ort in rot, zur besseren Anschauung jeweils um $10^5$ versetzt}
- \label{abb:efeld_psi_gestoert}
-\end{figure}
 
-% FIXME Beschreibung zum 100-sten
-Durch die St\"orung wird das Elektron tendentiel nach rechts verschoben.
+
+\subsubsection{100-stes Energieniveau}
+% FIXME Beschreibung zum 100-sten korrekt?
+Betrachten wir nun das 100-ste etwas genauer.
+In der Abbildung \ref{abb:efeld_psi_100_gestoert} sehen wir wie die St\"orung 
+die Frequenz der Wellenfunktion $\psi$ ver\"andert.
+Die gelben Balken geben an, wie stark die Periodendauer zwischen zwei Nulldurchg"angen von der ungest"orten Funktion abweicht.
+Wir k"onnen an den Balken gut die Form der St"orung $H_1$ wiedererkennen.
+
+Die Kr"ummung in der Kurve entsteht durch Erh"ohung der Amplitude um den Nullpunkt.
+Diese entsteht durch die Stauchung der Wellenfunktion und verursacht das wir mehr Energie bei gleicher Periodendauer haben.
+
+Summiert man die Fl\"achen auf, so ergeben sie insgesammt wieder $0$, da die Energie sich nicht ver\"andert hat.
+
 
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Psi_100_gestoert.pdf}
- \caption{100-stes Energieniveau von $\psi$ ungest\"ort in blau und $\psi$ gest\"ort in rot.}
- \label{abb:efeld_psi_gestoert}
+ \caption{100-stes Energieniveau von $\psi$ ungest\"ort in blau und gest\"ort in rot, mit der Visualisierung der Verschiebung der Periodendauer.}
+ \label{abb:efeld_psi_100_gestoert}
 \end{figure}
+
 
 
 
 \subsection{Auswertung E}
 
-Wie wir in der Berechnung festgestellt haben ver"andert sich der Energiezustand nicht.
-H"atten wir eine Energie in der St"orung w"urde sie gegen oben immer schw"acher werden, weil $E_k^{(0)}$ immer gr"osser wird.
+Mit den Symmetrie\"uberlegungen haben wir vorrausgesagt, dass sich der Energiezustand nicht \"andert.
+Um dies m\"oglichst einfach zu \"uberpr\"ufen, w\"ahlen wir ein grosses $\varepsilon$ und sehen uns das Resultat in der 
+Abbildung \ref{abb:efeld_E_gestoert} an.
 
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Energie_gestoert.pdf}
- \caption{$E$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesamte Energie des Systems}
+ \caption{$E_k^{(1)}$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesamte Energie des Systems}
  \label{abb:efeld_E_gestoert}
 \end{figure}
 
+Mit einem gr\"osseren $\varepsilon$ k\"onnten wir den Anteil des nummerischen Fehlers verringern. 
+Verh\"alt sich das Modell bei einem starken $\varepsilon$ gut, so k\"onnen wir mit diesem sehr einfachen Test
+auf die Robustheit der Berechung von $E_k^{(1)}$ testen.
+
+% FIXME evt. noch genauer ausf\"uhren warum die Linien flach sind.
 
 
 
