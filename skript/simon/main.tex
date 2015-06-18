@@ -14,12 +14,13 @@ bedeutend ist.
 \section{Problem} 
 
 Gegeben ist eine unbekannte Funktion $f$, welche einen n-Bit langen String
-entgegen nimmt und einen neuen Bit String liefert. Formal ausgedr"uckt bedeutet
+entgegen nimmt und einen neuen Bit String liefert \cite{simon:cse599d-dave-bacon}. Formal ausgedr"uckt bedeutet
 dies:
 
 \[
     f\colon\{0,1\}^n\to\{0,1\}^n
 \]
+
 
 Die Defintion der Funktion ist auch bekannt:
 
@@ -44,30 +45,78 @@ In diesem Fall ist die Funktion also nicht bijektiv, jedoch periodisch, wobei
 $s$ die Period darstellt. Der Kern des Problem ist, dass eine m"oglicherweise
 periodische Funktion gegeben ist und die Periode gesucht ist.
 
-% TODO -> Grafik mit x -> y ( periodisch und nicht periodisch )
-% \begin{figure}
-%  \centering
-%  \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
-%   \node [] {$X$};
-%   \node [xshift=4.0cm] {$Y$};
-%   \node[ele,label=left:$1$] (a1) at (0,4) {};
-%   \node[ele,label=left:$2$] (a2) at (0,3) {};
-%   \node[ele,label=left:$3$] (a3) at (0,2) {};
-%   \node[ele,label=left:$4$] (a4) at (0,1) {};
-% 
-%   \node[ele,,label=right:$D$] (b1) at (4,4) {};
-%   \node[ele,,label=right:$B$] (b2) at (4,3) {};
-%   \node[ele,,label=right:$C$] (b3) at (4,2) {};
-%   \node[ele,,label=right:$A$] (b4) at (4,1) {};
-% 
-%   \node[draw,fit= (a1) (a2) (a3) (a4),minimum width=2cm] {} ;
-%   \node[draw,fit= (b1) (b2) (b3) (b4),minimum width=2cm] {} ;
-%   \draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
-%   \draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
-%   \draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
-%   \draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b4);
-%  \end{tikzpicture}
-% \end{figure}
+Beispiel f"ur einer Funktion mit $s = 0^n$ und $n = 3$:
+
+\begin{figure}[H]
+ \centering
+ \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+  \node [] {$x$};
+  \node [xshift=4.0cm] {$f(x)$};
+  \node[ele,label=left:$000$] (a1) at (0,4.5) {};
+  \node[ele,label=left:$001$] (a2) at (0,4) {};
+  \node[ele,label=left:$010$] (a3) at (0,3.5) {};
+  \node[ele,label=left:$011$] (a4) at (0,3) {};
+  \node[ele,label=left:$100$] (a5) at (0,2.5) {};
+  \node[ele,label=left:$101$] (a6) at (0,2) {};
+  \node[ele,label=left:$110$] (a7) at (0,1.5) {};
+  \node[ele,label=left:$111$] (a8) at (0,1) {};
+
+  \node[ele,,label=right:$000$] (b1) at (4,4.5) {};
+  \node[ele,,label=right:$001$] (b2) at (4,4) {};
+  \node[ele,,label=right:$010$] (b3) at (4,3.5) {};
+  \node[ele,,label=right:$011$] (b4) at (4,3) {};
+  \node[ele,,label=right:$100$] (b5) at (4,2.5) {};
+  \node[ele,,label=right:$101$] (b6) at (4,2) {};
+  \node[ele,,label=right:$110$] (b7) at (4,1.5) {};
+  \node[ele,,label=right:$111$] (b8) at (4,1) {};
+
+  \node[draw,fit= (a1) (a2) (a3) (a4) (a5) (a6) (a7) (a8),minimum width=3cm] {} ;
+  \node[draw,fit= (b1) (b2) (b3) (b4) (b5) (b6) (b7) (b8),minimum width=3cm] {} ;
+  \draw[->,thick,shorten <=2pt,shorten >=2pt] (a1) -- (b1);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (a2) -- (b2);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (a3) -- (b3);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (a4) -- (b4);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (a5) -- (b5);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (a6) -- (b6);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (a7) -- (b7);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (a8) -- (b8);
+ \end{tikzpicture}
+\end{figure}
+
+Eine periodische Funktion mit $s = 110$ ist folglich:
+
+\begin{figure}[H]
+ \centering
+ \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+  \node [yshift=0cm] {$x$};
+  \node [xshift=4.0cm, yshift=2cm] {$f(x)$};
+  \node[ele,label=left:$000$] (aa1) at (0,4.5) {};
+  \node[ele,label=left:$001$] (aa2) at (0,4) {};
+  \node[ele,label=left:$010$] (aa3) at (0,3.5) {};
+  \node[ele,label=left:$011$] (aa4) at (0,3) {};
+  \node[ele,label=left:$100$] (aa5) at (0,2.5) {};
+  \node[ele,label=left:$101$] (aa6) at (0,2) {};
+  \node[ele,label=left:$110$] (aa7) at (0,1.5) {};
+  \node[ele,label=left:$111$] (aa8) at (0,1) {};
+
+  \node[ele,,label=right:$000$] (bb1) at (4,4.5) {};
+  \node[ele,,label=right:$001$] (bb2) at (4,4) {};
+  \node[ele,,label=right:$010$] (bb3) at (4,3.5) {};
+  \node[ele,,label=right:$011$] (bb4) at (4,3) {};
+
+  \node[draw,fit= (aa1) (aa2) (aa3) (aa4) (aa5) (aa6) (aa7) (aa8),minimum
+  width=3cm] {} ;
+  \node[draw,fit= (bb1) (bb2) (bb3) (bb4), minimum width=3cm] {} ;
+  \draw[->,thick,shorten <=2pt,shorten >=2pt] (aa1) -- (bb1);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa2) -- (bb2);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa3) -- (bb3);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa4) -- (bb4);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa5) -- (bb1);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa6) -- (bb2);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa7) -- (bb3);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa8) -- (bb4);
+ \end{tikzpicture}
+\end{figure}
 
 \section{L"osung}
 
@@ -113,8 +162,8 @@ Bei genauer "Uberlegung war beim Beispiel nur $f(000)$ und $f(001)$ relevant.
 Die Funktion muss nur solange aufgerufen werden, bis zwei Werte identisch sind.
 Es gen"ugt daher $n^{1/2}$ Werte auszuprobieren.
 
-% TODO Grafik -> Wachstum mit 2^n/2
-% TDOO Grafik kommentierne und "uberleitung zum Quantencomputer
+% TODO Grafik -> Wachstum mit n^1/2
+% TDOO Grafik kommentieren und "uberleitung zum Quantencomputer
 
 \subsection{Quantencomputer}
 
@@ -296,15 +345,24 @@ nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
 
 \section{Schlussfolgerung}
 
-% TODO: Grafik f"ur linear und beispiel zeigen
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  \draw[->] (0,0) -- (5,0) node[right] {$n$};
+  \draw[->] (0,0) -- (0,5) node[above] {$\mathcal{O}{}$};
+  \draw[scale=0.35,domain=-0:10,smooth,variable=\x,black] plot ({\x},{\x});
+  \draw[scale=0.15,domain=-0:10,smooth,variable=\y,black]  plot ({\y},{2^(\y/2)});
+  \node [xshift=4cm,yshift=4cm] {$\mathcal{O}(n)$};
+  \node [xshift=2cm, yshift=5cm] {$\mathcal{O}(2^{n/2})$};
+\end{tikzpicture}
+\end{figure}
 
 Der Algorithmus von Simon zeigt auf, dass mittels eines Quantencomputers die
 Anzahl der Aufrufe der Funktion $f$ auf $O(n)$ reduziert werden k"onnen. Die
 Anzahl der Schritte, welche f"ur die effektive Berechnung von $s$ ben"otigt
 werden, h"angt vom l"osen des linearen Gleichungssystems mit Gaußscher
-Elimination ab, also $O(n^3)$.
-
-%\section{Warum ist dies relevant?}
+Elimination ab, also $O(n^3)$. 
+\cite{simon:cs191}
 
 \printbibliography[heading=subbibliography] \end{refsection}
 
