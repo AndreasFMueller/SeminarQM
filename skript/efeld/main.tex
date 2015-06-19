@@ -309,9 +309,16 @@ Uns interessieren die Skalarprodukte die gerade sind, denn nur die ergeben einen
 Das ist der Fall wenn $H_1$ und $\psi_k^{(0)} \psi_l^{(0)}$ ungerade sind.
 $\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt nur einen Beitrag wenn
 \[
-  k-l \equiv 1 \mod 2.
+  k-l \equiv 1 \mod 2
 \]
-
+und daraus folgt die Bedingung
+\begin{equation}
+  \label{eq:efeld_summebedingung}
+  k\ne l
+  \qquad \text{und} \qquad
+  k-l \equiv 1 \mod 2
+\end{equation}
+welche den Rechenaufwand halbiert.
 
 
 
@@ -403,9 +410,12 @@ Wir schliessen daraus, dass die Berechnung stabil ist und die Werte genau genug 
 
 Die Implementierung von $\psi_k^{(1)}$ gestaltet sich durch die Summe etwas schwieriger.
 Normalerweise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen lassen.
-Wir wollen aber ein Element auslassen. 
+Wir ber\"ucksichtigen aber Bedingung aus (\ref{eq:efeld_summebedingung}) um den Rechenaufwand zu halbieren
+und um keine Division durch $0$ machen zu m\"ussen.
+
+% FIXME Code und Text nachf\"uhren
 Um zum Beispiel den f"unften Zustand zu bestimmen, summieren wir alle Zust\"ande vom 
-ersten bis $n$-ten ausser dem f\"unften auf.
+ersten bis $n$-ten ausser dem f\"unften und den geraden auf.
 \begin{equation}
   \psi_5^{(1)} = \langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle = 
   \sum_{l=1 ; l\ne 5}^{n}
@@ -423,7 +433,7 @@ k = 5;                # Der Zustand den wir plotten
 summe = 0;            # Initialisierung des SummenVektors
 
 for l = 1 : n
-  if l ~= k           # Vergleich l ungleich k
+  if l ~= k           # Vergleich l ungleich k % FIXME l-k = 1 mod 2
     Psi_lk = dot(Psi(l, :), H1.*Psi(k, :)) / (E0(k)-E0(l)) .* Psi(l, :);
     summe = summe + Psi_lk;
   end
