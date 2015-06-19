@@ -202,9 +202,10 @@ Das ist n"otig, wenn die St"orung Energie hinzuf"ugt
 und so die Wahrscheinlichkeitsverteilung ($P \ne 1$) nicht mehr stimmen w\"urde.
 Weil wir aber in der ersten N\"aherung keine 
 Energiever\"anderung durch die St\"orung bekommen, m\"ussen wir
-\[
+\begin{equation}
+  \label{eq:efeld_gamma}
   \gamma = 0
-\]
+\end{equation}
 setzen.
 
 
@@ -293,10 +294,11 @@ Wir berechnen
 \[
 \psi_k^{(1)} =
 \sum_{k\ne l}
-\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle |\psi_l^{(0)}\rangle
+\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle |\psi_l^{(0)}\rangle + \gamma|\psi_k^{(0)}\rangle
 \]
-Bei $l = k$ hat die Welle keinen Anteil an $\psi_k^{(1)}$,
-denn $\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt die Energie der St"orung.
+wobei wir den Term um $\gamma$ durch die Definition (\ref{eq:efeld_gamma}) weglassen k\"onnen.
+%% Bei $l = k$ hat die Welle keinen Anteil an $\psi_k^{(1)}$,
+%% denn $\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt die Energie der St"orung.
 
 Wir "uberlegen uns auch hier die Symmetrie.
 $\psi_k^{(0)}$ und $\psi_l^{(0)}$ k"onnen sowohl gerade als auch ungerade sein,
@@ -305,7 +307,7 @@ Uns interessieren die Skalarprodukte die gerade sind, denn nur die ergeben einen
 Das ist der Fall wenn $H_1$ und $\psi_k^{(0)} \psi_l^{(0)}$ ungerade sind.
 $\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt nur einen Beitrag wenn
 \[
-  k-l \mod 2 \equiv 1.
+  k-l \equiv 1 \mod 2.
 \]
 
 
