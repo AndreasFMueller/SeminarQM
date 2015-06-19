@@ -20,7 +20,7 @@ F"ur die erste N"aherung gilt:
   f(x, \varepsilon) = f_0(x) + \varepsilon f_1(x)
 \]
 Dabei ist $f_0(x)$ die ungest"orte Funktion und $\varepsilon f_1(x)$ die St"orung.
-$\varepsilon$ ist eine Variable mit der wir den St"orungsterm $f_1(x)$ steuern.
+$\varepsilon$ ist eine Variable, mit der wir den St"orungsterm $f_1(x)$ steuern.
 Dabei sollte $\varepsilon$ nicht zu gross gew"ahlt werden,
 da die N"aherung sonst ungenau wird.
 Setzen wir hingegen $\varepsilon = 0$, k\"onnen wir die St"orung dynamisch abschalten.
@@ -66,7 +66,6 @@ $\psi_k^{(0)}$ und $\varepsilon$ kennen.
 \end{figure}
 
 Bei unserer Anwendung bauen wir auf dem Potentialkasten (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten}) auf.
-
 Dabei geht es um ein Elektron welches zwischen zwei Barrieren mit unendlich hohem Potential gefangen ist.
 Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen
 \begin{align}
@@ -83,7 +82,6 @@ Zwischen den Barrieren kann sich das Teilchen mit den Wellenfunktionen
 bewegen.
 Die Gleichung wird bei (\ref{skript:potentialkasten-psi-normiert}) Seite \pageref{skript:potentialkasten-psi-normiert} erkl"art.
 Ausserhalb des Potentialkastens kommt das Elektron nicht vor.
-
 Es hat die Energie
 \[
 E_k = \frac{h^2n^2}{32ml^2}
@@ -95,7 +93,6 @@ Wir legen jetzt eine Spannung "uber dem Potentialkasten an
 und erweitern so das System mit einer St"orung.
 
 Weil das Elektron eine negative Ladung besitzt ver"andert sich seine Wellenfunktion.
-
 Als Grundlagen verwenden wir die Hamiltonfunktion und das Potential des Teilchens im Potentialkasten
 \begin{equation}
 \begin{aligned}
@@ -130,7 +127,7 @@ Potential definieren:
  \label{abb:efeld_H_1}
 \end{figure}
 
-Da das Potential die Stammfunktion des elektrischen Feldes ist, entspricht der Parameter $b$ dem $c$ der Integration.
+Da das Potential die Stammfunktion des elektrischen Feldes ist, entspricht der Parameter $b$ der Integrationskonstante.
 F\"ur das Potential sind nur Unterschiede relevant, w\"ahrend das Niveau, solange es in der ganzen Anwendung ver\"andert wird,
 beliebig gew\"ahlt werden kann. Somit k\"onnen wir mit $b=0$ die Formel nochmals vereinfachen.
 
@@ -138,7 +135,6 @@ Die Feldst\"arke $a$ h\"angt von der Breite des Potentialkastens und der angeleg
 \[
   a = \frac{ U }{2 l}
 \]
-
 Diese Funktion dr\"uckt mit dem Parameter $U$ das eingeschaltete elektrische Feld \"uber dem Potentialkasten aus
 und erf\"ullt damit die selbe Funktion wie das $\varepsilon$.
 Wollen wir nun die Formeln mit $a=1$ vereinfachen, m\"ussen wir alle relevanten Terme  in $\varepsilon$ unterbringen
@@ -147,21 +143,18 @@ Wollen wir nun die Formeln mit $a=1$ vereinfachen, m\"ussen wir alle relevanten 
 \begin{equation}
 \begin{aligned}
   \varepsilon H_1(x) &= \varepsilon a e_{-} x +b  \\
-                     &= \varepsilon \frac{ U }{2 l} e_{-} x + 0  \Longrightarrow \\
-         \varepsilon &= \frac{ U }{2 l} e_{-}; \, a = 1
+                     &= \varepsilon \frac{ U }{2 l} e_{-} x + 0  \\ 
+  \Longrightarrow \qquad \varepsilon &= \frac{ U }{2 l} e_{-}; \, a = 1
 \end{aligned}
 \end{equation}
-
-
-
-Wenn wir jetzt die St"orung einsetzen, bekommen wir die neue Hamilton-Funktion
+Wenn wir jetzt die St"orung einsetzen, bekommen wir die neue Hamilton-Funktion:
 \[
   H = H_0 + H_1 
-    = \frac1{2m}p^2+V_0(x) + \varepsilon x.
+    = \frac1{2m}p^2+V_0(x) + \varepsilon x .
 \]
 aus welcher wir den Hamilton-Operator berechnen k"onnen:
 \[
-  \hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) + \varepsilon x
+  \hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) + \varepsilon x .
 \]
 
 \subsection{Vorgehensweise}
@@ -172,13 +165,11 @@ theoretisch ausgef\"uhrt.
 Entscheidend ist hier ob die Zust"ande entartet sind oder nicht.
 Entartung bedeutet, dass zwei Zust"ande die selbe Energie besitzen, 
 wodurch bei der Berechnung der Nenner zu Null wird.
-
 Wir sehen an der Gleichung
 \[
   E_n^{(0)} = \frac{h^2n^2}{32ml^2}
 \]
 dass die Energie mit zunehmendem $n$ immer steigt. 
-
 Zudem haben wir f\"ur jedes $n$ nur genau einen Zustand und dadurch keine Entartung. 
 Deshalb k\"onnen wir die Gleichungen
 \begin{equation}
@@ -276,10 +267,10 @@ Allerdings bekommen wir immer eine ungerade Funktion, wenn wir eine gerade Funkt
   x \cdot \overline{\psi_k^{(0)}(x)} \psi_k^{(0)}(x) = x \cdot |\psi_k^{(0)}(x)|^2
 \]
 
-Wir k"onnen das Skalarprodukt auch als ein Integral von diskreten Werten verstehen.
-Da ungerade Funktionen punktsymmetrisch sind, muss das Integral $0$ sein.
+Wir k"onnen das Skalarprodukt auch als ein Integral verstehen.
+Da ungerade Funktionen punktsymmetrisch sind, muss das Integral $0$ sein:
 \[
-  E_k^{(1)} = \int_{-L}^{+L} x |\psi_k^{(0)}|^2 dx = 0
+  E_k^{(1)} = \int_{-L}^{+L} x |\psi_k^{(0)}|^2 dx = 0 .
 \]
 
 Wir k"onnen die Energie trotzdem in
@@ -323,7 +314,7 @@ $\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt nur einen Beitrag we
 
 Matlab\footnote{MATrix LABoratory} ist ein Programm welches sich gut zum Plotten von Funktionen
 und zum Berechnen von Matrizen eignet.
-Besonders das berechnen von Matrizen und Vektoren wird durch die Syntax erleichtert.
+Besonders das Berechnen von Matrizen und Vektoren wird durch die Syntax erleichtert.
 
 Eine Auswahl der verwendeten Befehle zum besseren Verst"andnis:
 
@@ -461,8 +452,8 @@ In der Grafik \ref{abb:efeld_psi_gestoert} sehen wir die Unterschiede zwischen d
 $\psi_k$ (schwarz) und der ersten N"aherung (rot).
 Der \"Ubersicht halber haben wir die Amplituden von $\psi_k$ in einzelnen Graphen dargestellt.
 
-Die einzelnen Grafiken zeigen sehr anschaulich wie die Differenz zwischen dem ungest\"orten und dem gest\"orten $\psi$
-immer weiter abnimmt.
+Die einzelnen Grafiken zeigen sehr anschaulich wie der Unterschied zwischen dem ungest\"orten und dem gest\"orten $\psi$
+immer kleiner wird.
 
 \begin{figure}
  \centering
@@ -501,20 +492,22 @@ E \Psi(x)
 Weil $E \Psi(x)$ konstant ist, sinkt bei einem h"oherem Potential $-\frac{\hbar^2}{2m}\Delta\Psi(x)$.
 Das bedeutet bei einem Elektron eine Abnahme der kinetischen Energie bzw. der Frequenz.
 Der Vorgang ist also "ahnlich einem mechanischem Pendel, 
-welches mal kinetische Energie hat, mal mechanische.
+welches mal kinetische Energie hat, mal potentielle.
 
 
 
 \subsubsection{100-stes Energieniveau}
-% FIXME Beschreibung zum 100-sten korrekt?
-Betrachten wir nun das 100-ste etwas genauer.
+% FIXME Beschreibung zum 100-sten korrekt? Das Wort Welle kommt zu oft vor!
+Betrachten wir nun das 100-ste Energieniveau etwas genauer.
 In der Abbildung \ref{abb:efeld_psi_100_gestoert} sehen wir wie die St\"orung 
-die Frequenz der Wellenfunktion $\psi$ ver\"andert.
-Die gelben Balken geben an, wie stark die Periodendauer zwischen zwei Nulldurchg"angen von der ungest"orten Funktion abweicht.
+die Wellenl\"ange der Wellenfunktion $\psi$ ver\"andert.
+Die gelben Balken geben an, wie stark die Periodendauer zwischen zwei Nulldurchg"angen
+von der ungest"orten Funktion abweicht.
 Wir k"onnen an den Balken gut die Form der St"orung $H_1$ wiedererkennen.
 
 Die Kr"ummung in der Kurve entsteht durch Erh"ohung der Amplitude um den Nullpunkt.
-Diese entsteht durch die Stauchung der Wellenfunktion und verursacht das wir mehr Energie bei gleicher Periodendauer haben.
+Diese entsteht durch die Stauchung der Wellenfunktion und verursacht das wir mehr Energie
+bei gleicher Wellenl\"ange haben.
 
 Summiert man die Fl\"achen auf, so ergeben sie insgesammt wieder $0$, da die Energie sich nicht ver\"andert hat.
 
@@ -550,6 +543,33 @@ auf die Robustheit der Berechung von $E_k^{(1)}$ testen.
 
 
 
+\section{Theorie zum Urknall}
+Louis de Broglie
+
+"With every particle of matter with mass m and velocity v a real wave must be 'associated'"
+\[
+  \lambda = \frac{h}{p} = \frac {h}{{m}{v}} \sqrt{1 - \frac{v^2}{c^2}}
+\]
+
+Wollen wir ein Teilchen mit m\"oglichst grosser Wellenl\"ange, so m\"ussen wir die Masse $m$ 
+resuzieren und die Geschwindigkeit $v$ m\"oglichst nah an $0$ halten.
+
+Ganz $0$ darf die Geschwindigkeit nicht werden, da das Teilchen sonst die Energie
+\[
+  sin(0) = 0
+\]
+bek\"ame.
+
+Daraus schliessen wir, dass das Universum am Anfang leer oder komplett ausgeglichen sein k\"onnte.
+Durch diesen Zustand w\"aren dann alle Teile zum Stillstand gekommen.
+
+Da dieser Zustand nicht stabil ist, hat sich in der 
+Mitte\footnote{Annahme, das Universum ist dann endlich gross}
+ein Teilchen (wieder\footnote{wieder, wenn man von einem sich wieder aufbauendem Universum ausgeht})
+bewegt & die Energie so gross war, dass es eine Kettenreaktion ausgel\"osst hat & so den Urknall gestartet hat.
+
+Anders als eine klassische Explusion hat diese Explusion aber die benachbarten Wellen stimuliert
+und so Teilchen aus dem ``Nichts'' (wieder) in das Universum gebracht.
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
