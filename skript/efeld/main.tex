@@ -291,34 +291,29 @@ und bekommen so die st"orungsabh"angige Energie.
 Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger,
 weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
 Wir setzen daher eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
-Mit der zweiten Formel k"onnen wir den Anteil der jeweiligen $\psi$ berechnen.
+Mit der zweiten Formel k"onnen wir den Anteil der jeweiligen $\psi_k^{(1)}$ berechnen.
 Wir berechnen 
 \[
 \psi_k^{(1)} =
 \sum_{k\ne l}
 \langle\psi_l^{(0)}|\psi_k^{(1)}\rangle |\psi_l^{(0)}\rangle + \gamma|\psi_k^{(0)}\rangle
+=
+\sum_{k\ne l}
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}} |\psi_l^{(0)}\rangle
 \]
 wobei wir den Term um $\gamma$ durch die Definition (\ref{eq:efeld_gamma}) weglassen k\"onnen.
-%% Bei $l = k$ hat die Welle keinen Anteil an $\psi_k^{(1)}$,
-%% denn $\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt die Energie der St"orung.
 
 Wir "uberlegen uns auch hier die Symmetrie.
 $\psi_k^{(0)}$ und $\psi_l^{(0)}$ k"onnen sowohl gerade als auch ungerade sein,
 $H_1$ ist hingegen immer ungerade.
 Uns interessieren die Skalarprodukte die gerade sind, denn nur die ergeben einen Beitrag.
 Das ist der Fall wenn $H_1$ und $\psi_k^{(0)} \psi_l^{(0)}$ ungerade sind.
-$\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt nur einen Beitrag wenn
-\[
-  k-l \equiv 1 \mod 2
-\]
-und daraus folgt die Bedingung
+$\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt nur einen Beitrag wenn die Bedingung
 \begin{equation}
   \label{eq:efeld_summebedingung}
-  k\ne l
-  \qquad \text{und} \qquad
   k-l \equiv 1 \mod 2
 \end{equation}
-welche den Rechenaufwand halbiert.
+welche den Rechenaufwand halbiert und $k \ne l$ bereits enh\"alt.
 
 
 
@@ -426,14 +421,14 @@ ersten bis $n$-ten ausser dem f\"unften und den geraden auf.
 
 In Matlab wird das wie folgt implementiert:
 \begin{lstlisting}[style=Matlab]
-H1 = x * -1;          # Die Stoerung des elektrische Feldes mit dem
-                      #   Faktor -1, da das Elektron negativ geladen ist
-n = 1000;             # Anzahl aufsummierter Zustaende
-k = 5;                # Der Zustand den wir plotten
-summe = 0;            # Initialisierung des SummenVektors
+H1 = x * -1;               # Die Stoerung des elektrische Feldes mit dem
+                           #   Faktor -1, da das Elektron negativ geladen ist
+n = 1000;                  # Anzahl aufsummierter Zustaende
+k = 5;                     # Der Zustand den wir plotten
+summe = 0;                 # Initialisierung des SummenVektors
 
 for l = 1 : n
-  if l ~= k           # Vergleich l ungleich k % FIXME l-k = 1 mod 2
+  if mod((l + k), 2) == 1  # Vergleich l ungleich k und Differenz ungerade
     Psi_lk = dot(Psi(l, :), H1.*Psi(k, :)) / (E0(k)-E0(l)) .* Psi(l, :);
     summe = summe + Psi_lk;
   end
