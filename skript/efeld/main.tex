@@ -410,10 +410,10 @@ und um keine Division durch $0$ machen zu m\"ussen.
 
 % FIXME Code und Text nachf\"uhren
 Um zum Beispiel den f"unften Zustand zu bestimmen, summieren wir alle Zust\"ande vom 
-ersten bis $n$-ten ausser dem f\"unften und den geraden auf.
+ersten bis $n$-ten ausser den ungeraden.
 \begin{equation}
   \psi_5^{(1)} = \langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle = 
-  \sum_{l=1 ; l\ne 5}^{n}
+  \sum_{l=1 \, \text{wenn} \, 5-l \equiv 1 \mod 2}^{n}
     \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
         \,
     |\psi_l^{(0)}\rangle
