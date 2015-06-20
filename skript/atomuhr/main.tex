@@ -24,9 +24,44 @@ Ortung durch ein Globales Satelliten Navigationssystem (GNSS) wie GPS oder Galil
 Jeder Satellit diesen Systems beinhaltet eine Atomuhr.
 Dies gilt auch f"ur das Mobilfunknetz. Die einzelnen Basisstationen m"ussen untereinander sehr genau synchronisiert sein. Auch da helfen diese genauen Taktgeber.
 
+Neben diesen pratischen Anwengungen ist die genaue Messung einer
+Sekunde relevant f"ur die fundamentale Definitionen der
+SI-Basiseinheiten. In der Abbildung \ref{fig:siBasis} sind die sieben
+SI-Basiseinheiten dargestellt.  Die gr"unen Einheiten (Sekunde,
+Ampere, Meter und Candela) bauen bei ihrer Definition auf die Sekunde
+auf.  Wie die SI-Sekunde definiert ist, wird im Abschnitt
+\ref{sec:si-basiseinheiten} beschrieben.  Somit profitieren diese
+Einheiten direkt von einer genaueren Messung einer Sekunde.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{nodeStyle} = [circle, very thick,
+                             draw=gray!40!black, fill=gray!30,
+                             minimum size=1cm];
+    \tikzstyle{nodeStyleS} = [circle, very thick,
+                              draw=green!40!black, fill=green!20,
+                              minimum size=1cm];
+    \tikzstyle{conn}      = [->, >=stealth',
+                             shorten >=0.1cm,
+                             very thick];
+
+        
+    \node at (90:1.7cm) [draw, nodeStyle] (K) {\si{\kelvin}};
+    \node at (39:1.7cm) [draw, nodeStyleS] (s) {\si{\second}};
+    \node at (-13:1.7cm) [draw, nodeStyleS] (m) {\si{\meter}};
+    \node at (-64:1.7cm) [draw, nodeStyle] (kg) {\si{\kilogram}};
+    \node at (141:1.7cm) [draw, nodeStyleS] (A) {\si{\ampere}};
+    \node at (193:1.7cm) [draw, nodeStyle] (mol) {\si{\mol}};
+    \node at (244:1.7cm) [draw, nodeStyleS] (cd) {\si{\candela}};
+  \end{tikzpicture}
+  \caption{Die sieben SI-Basiseinheiten (gr"un: Einheiten, welche f"ur
+    ihre eigene Definition die Sekunde ben"otigen)}
+  \label{fig:siBasis}
+\end{figure}
+
 Dieses Kapitel soll einen kurzen "Uberblick geben, was der Quantenmechanische Hintergrund eines solchen Ger"ates ist. Ausserdem soll die Technische Realisation erl"autert werden.
-\section{Anwendungen}
-% Wie Vortrag -> Bild aus Folie übernehmen...
+
 
 \section{Quantenmechnanische Betrachtung}
 
@@ -198,7 +233,12 @@ Rubidium hat einen Hyperfrequenz"ubergang von $\nu = 6.834\;GHz$. Die h"ohere fr
 
 \subsection{Rechnung}
 
-\section{Ausblick} 
+\section{Ausblick}
+
+\subsection{SI-Basiseinheiten}
+\label{sec:si-basiseinheiten}
+Neben den direkt praktischen Einfl"usse einer genauen Zeitmessung, hat
+eine genaue Sekundendefinition 
 
 \section{Zusammenfassung}
 
