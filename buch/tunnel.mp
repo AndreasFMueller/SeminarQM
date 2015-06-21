@@ -226,18 +226,23 @@ Aout := sinh(l * kappa);
 show Ain;
 show Aout;
 
-z0 = (-500,0);
+z0 = (-600,0);
 z1 = (-w/2,0);
 z2 = (-w/2,U);
 z3 = (w/2, U);
 z4 = (w/2,0);
 z5 = (120,0);
 
+% background
+z6 = z0 shifted(  0, -20);
+z7 = z5 shifted( 80, -20);
+z8 = z5 shifted( 80, 120);
+z9 = z0 shifted(  0, 120);
+
 color lightblue;
 lightblue = (0.95,0.95,1);
 
-fill (z0 shifted(-20,-20))--(z5 shifted (20,-20))--(140,120)--(-520,120)--cycle
-	withcolor lightblue;
+fill z6--z7--z8--z9--cycle withcolor lightblue;
 
 fill z1--z4--z3--z2--cycle withcolor (0.9,0.9,0.9);
 fill z1--z4--z3--z2--cycle withcolor (1.0,1.0,0.7);
@@ -282,7 +287,7 @@ enddef;
 
 path psi;
 psi := (-a, Psileft(-a));
-for x = -a - 1 step -0.2 until -520:
+for x = -a - 1 step -0.2 until -600:
 	psi := psi--(x, Psileft(x));
 endfor;
 draw psi withcolor red;
@@ -327,8 +332,9 @@ label.top(btex $l$ etex, (0,-15));
 label.top(btex $V_0$ etex, (0, U));
 label.top(btex $x$ etex, z5 shifted (10, 3));
 
-clip currentpicture to 
-(z0 shifted(0,-20))--(z5 shifted (20,-20))--(140,120)--(-500,120)--cycle;
+%clip currentpicture to 
+%(z0 shifted(0,-20))--(z5 shifted (20,-20))--(140,120)--(-500,120)--cycle;
+clip currentpicture to z6--z7--z8--z9--cycle;
 
 endfig;
 
