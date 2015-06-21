@@ -30,7 +30,7 @@ SI-Basiseinheiten. In der Abbildung \ref{fig:siBasis} sind die sieben
 SI-Basiseinheiten dargestellt.  Die gr"unen Einheiten (Sekunde,
 Ampere, Meter und Candela) bauen bei ihrer Definition auf die Sekunde
 auf.  Wie die SI-Sekunde definiert ist, wird im Abschnitt
-\ref{sec:si-basiseinheiten} beschrieben.  Somit profitieren diese
+\ref{sec:gesch-der-atom} beschrieben.  Somit profitieren diese
 Einheiten direkt von einer genaueren Messung einer Sekunde.
 
 \begin{figure}
@@ -233,12 +233,61 @@ Rubidium hat einen Hyperfrequenz"ubergang von $\nu = 6.834\;GHz$. Die h"ohere fr
 
 \subsection{Rechnung}
 
-\section{Ausblick}
+\section{Geschichte der Atomuhr}
+\label{sec:gesch-der-atom}
+Bereits 1879 hatte Lord Kelvin die Idee Atome als Zeit und Längen
+Standard zu verwenden.  Erst 1949 wurde dann in der USA am National
+Institute of Standards and Technology (NIST) die erste Atomuhr gebaut
+\cite{ieee:nist} Diese Atomuhr verwendete Ammoniak bei einer Frequenz
+von \SI{23.87}{\giga\hertz}.  Die Genauigkeit dieses Atomuhr lag bei
+ca. 1 zu \num{e-7}.
 
-\subsection{SI-Basiseinheiten}
-\label{sec:si-basiseinheiten}
-Neben den direkt praktischen Einfl"usse einer genauen Zeitmessung, hat
-eine genaue Sekundendefinition 
+Diese Genauigkeit ist noch nicht sehr eindr"ucklich, wenn man
+vergleicht, dass ein normaler Quarzoszillator bei einer Genauigkeit
+von ca. \num{e-5} und eine beheizter Quarzoszillator (OCXO) durch den
+reduzierten Temperaturdrift um Bereich von \num{2e-8} liegt.
+
+Mit der Ammoniak Atomuhr konnte aber das Prinzip der Atomuhr
+aufgezeigt werden.  Welche 1952 mit der ersten Caesium Atomuhr NBS-1
+weitergef"uhrt werden konnte.  Die Genauigkeit und Stabilit"at der
+Caesium Atomuhren konnte soweit gesteigert werden, dass 1967 die
+SI-Sekunde als Hyperfeinstruktur"ubergang von Caesium-133 definiert
+werden konnte.  Das f"uhrt dazu, dass eine Sekunde mit
+\num{9192631770} Takten aufgelöst wird.  Somit ist die Genauigkeit auf
+\SI{108.78}{\nano\second} beschr"ankt.
+
+Andere Atomuhren, welche in der Zwischenzeit entwickelt wurden,
+welche ebenfalls einen Hyperfeinstruktur"ubergang benutzen, verwenden
+die Elemente Rubidium und Wasserstoff.  Die Rubidium Atomuhren k"onnen
+sehr einfach und g"unstig aufgebaut werden besitzen jedoch nicht die
+Genauigkeit von Caesium Atomuhren.  Genauer k"onnen die
+Wasserstoffatomuhren gebaut werden.  Benutzen jedoch eine komplezere
+K"uhlung der Atome.
+
+Will man eine genauere Aufl"osung erreichen, gen"ugt es nicht die
+Hyperfeinstruktur"uberg"ange zu benutzen.  Man muss eine h"ohere
+Taktung erreichen.  Diese h"oheren Taktungen k"onnen erreicht werden,
+wenn optische Absorptionslinen der Atome ausgenutzt werden.  Lange
+konnte dieser Bereich nicht genutzt werden.  Da diese hohen Takte
+mit elektronischen Regelkreisen nicht gemessen werden konnten.
+
+Gl"ucklicherweise wurde 1998 der Frequenzkamm entdeckt
+\cite{SdW:kamm}.  Mit dessen Hilft k"onnen Frequenzen im optischen
+Bereich mit einer Schwebung in den technisch messbaren Bereich
+gebracht werden.  Diese Technologie ermöglichte es andere Atome zu
+verwenden, mit welchen man 2014 eine Genauigkeit von \num{e-18}
+erreicht.  In der Abbildung \ref{fig:periode} ist eine nicht
+abschiessende Auflistung der verwendeten Elemente in Atomuhren
+dargestellt.
+
+\begin{figure}
+  \centering
+  \input{atomuhr/elements.tex}
+  \caption{Nicht abschliessende Aufstellung der verwendeten Elemente
+    in Atomuhren (gelb: Hyperfeinstruktur"ubergang; Rot: andere
+    "Uberg"ange)}
+  \label{fig:periode}
+\end{figure}
 
 \section{Zusammenfassung}
 
