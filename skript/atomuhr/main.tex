@@ -24,14 +24,14 @@ Ortung durch ein Globales Satelliten Navigationssystem (GNSS) wie GPS oder Galil
 Jeder Satellit diesen Systems beinhaltet eine Atomuhr.
 Dies gilt auch f"ur das Mobilfunknetz. Die einzelnen Basisstationen m"ussen untereinander sehr genau synchronisiert sein. Auch da helfen diese genauen Taktgeber.
 
-Neben diesen pratischen Anwengungen ist die genaue Messung einer
-Sekunde relevant f"ur die fundamentale Definitionen der
+Neben diesen praktischen Anwendungen ist die genaue Messung einer
+Sekunde relevant f"ur die fundamentalen Definitionen der
 SI-Basiseinheiten. In der Abbildung \ref{fig:siBasis} sind die sieben
 SI-Basis\-ein\-hei\-ten dargestellt.  Die gr"unen Einheiten (Sekunde,
 Ampere, Meter und Candela) bauen bei ihrer Definition auf die Sekunde
-auf.  Wie die SI-Sekunde definiert ist, wird im Abschnitt
-\ref{sec:gesch-der-atom} beschrieben.  Somit profitieren diese
-Einheiten direkt von einer genaueren Messung einer Sekunde.
+auf.  Somit profitieren diese Einheiten direkt von einer genaueren
+Messung einer Sekunde.  Wie die SI-Sekunde definiert ist, wird im
+Abschnitt \ref{sec:gesch-der-atom} beschrieben.
 
 \begin{figure}
   \centering
@@ -234,17 +234,16 @@ Rubidium hat einen Hyperfrequenz"ubergang von $\nu = 6.834\;GHz$. Die h"ohere fr
 In der technischen Betrachtung in diesem Abschnitt wird die
 Funktionsf"ahigkeit des Rubidium-Frequenznormals LPRO-101 aufgezeigt.
 Das Datenblatt dieser Atomuhr kann unter \cite{datasheet:lpro}
-gefunden werden.  Ein Ausf"uhrliches Datenblatt ist unter
+gefunden werden.  Ein ausf"uhrliches Datenblatt ist unter
 \cite{datasheet:prs10m} zu finden, in welchem ein anderes Modell
-erkl"ahrt wird, aber eine bessere Funktionsbeschreibung besitzt.
+erkl"ahrt wird.  Die Funktionsbeschreibung ist jedoch besser.
 
-Solche Rubidium Frequenznormale besitzen die Gr"osse einer
-Handfl"ache und erreichen eine Genauigkeit von ungef"ahr \num{e-9}.
-In der Abbildung \ref{fig:techBlock} ist der schematische Aufbau einer
-solchen Atomuhr aufgezeigt.  Die Hauptfunktion dieser Schaltung, ist
+Solche Rubidium Frequenznormale besitzen die Gr"osse einer Handfl"ache
+und erreichen eine Genauigkeit von ungef"ahr \num{e-9}.  In der
+Abbildung \ref{fig:techBlock} ist der schematische Aufbau einer
+solchen Atomuhr aufgezeigt.  Die Hauptfunktion dieser Schaltung ist
 ein Regelkreis, welcher sich auf den Hyperfeinstrucktur"ubergang des
-Rubidium-87 einregelt.  Welcher bei \SI{6.8346875}{\giga\hertz}
-liegt.
+Rubidium-87 ein regelt, welcher bei \SI{6.8346875}{\giga\hertz} liegt.
 
 \begin{figure}
   \centering
@@ -255,10 +254,10 @@ liegt.
 
 \subsection{Funktionsweise}
 Die Rubidium-87 Entladungslampe wird angeregt und emittiert Licht bei
-ca. \SI{780}{\nano\meter}.  Dieses Licht wird weiter in die
-Resonator-Kammer geleitet, in welcher ein Absorptionsgas aus
-Rubidium-87 vorhanden ist.  Weiter ist in der Entladungslampe und der
-Resonatorkammer ein Filtergas aus Rubidium-85.  In der Abbildung
+ca. \SI{780}{\nano\meter}.  Dieses Licht wird in die Resonator-Kammer
+geleitet, in welcher ein Absorptionsgas aus Rubidium-87 vorhanden ist.
+Weiter ist in der Entladungslampe und der Resonatorkammer ein
+Filtergas aus Rubidium-85 vorhanden.  In der Abbildung
 \ref{fig:uebergaenge} ist die Filterung dargestellt.
 
 \begin{figure}
@@ -269,23 +268,24 @@ Resonatorkammer ein Filtergas aus Rubidium-85.  In der Abbildung
 \end{figure}
 
 Die Entladungslampe emittiert zwei sehr "ahnliche Frequenzen, da das
-Untere Energieniveau 5s der $^{87}$Rb Atome nur durch ihren
+untere Energieniveau 5s der Rubidium-87 Atome nur durch ihren
 unterschiedlichen Spin aufgeteilt wird.  Die zur Filterung
 eingesetzten Rubidium-85 Atome besitzen ein leicht verschobenes
 unteres Energieniveau, welches mit einem der beiden 5s Energieniveaus
 von Rubidium-87 "ubereinstimmt.  Dadurch wird einer der beiden
-Emittierten Frequenzen des Rubidium-87 herausgefiltert.  Somit gelingt
-nur eine der beiden Frequenzen zum Resonator.
+Emittierten Frequenzen des Rubidium-87 herausgefiltert.  So erreicht
+nur eine der beiden Frequenzen die Resonator-Kammer.
 
-Im Resonator absorbiert das Rubidium-87 die eintreffenden Photonen,
-steigt in das h"ohere Energieniveau 5p auf und f"allt spontan mit
-einer Wahrscheinlichkeit von \SI{50}{\percent} in eine der beiden
-unteren Energieniveaus von 5s zur"uck.  Mit der Zeit sammeln sich mehr
-Elektronen im oberen der beiden Energieniveaus von 5s an, da keine
-Photonen mit dieser ben"otigten Frequenz zum Resonator (Filterung durch
-Rubidium-85) gelangen.  Dadurch gelangen immer mehr Photonen zu
-Detektor. (Eine weitere Anwendung, welche mit den Energie"uberg"angen
-arbeitet ist der Laser, zu finden im Kapitel \ref{chapter:laser}.)
+Im Resonator absorbiert das Rubidium-87 die eintreffenden
+Photonen. Das Elektron steigt in das h"ohere Energieniveau 5p auf und
+f"allt spontan mit einer Wahrscheinlichkeit von \SI{50}{\percent} in
+eine der beiden unteren Energieniveaus von 5s zur"uck.  Mit der Zeit
+sammeln sich mehr Elektronen im oberen der beiden Energieniveaus von
+5s an, da keine Photonen mit dieser ben"otigten Frequenz zum Resonator
+(Filterung durch Rubidium-85) gelangen.  Es werden weniger Photonen
+absorbiert, was der Detektor messen kann.  (Eine weitere Anwendung,
+welche mit den Energie"uberg"angen arbeitet ist der Laser, zu finden
+im Kapitel \ref{chapter:laser}.)
 
 Der Detektor steuert einen spannungsgesteuerten Oszillator (VCXO) an,
 welcher eine Frequenz um \SI{20}{\mega\hertz} ausgibt.  Dieses Signal
@@ -296,10 +296,10 @@ Diese hinauf multiplizierte Frequenz liegt nun im Mikrowellenbereich
 und wird zur"uck in den Resonator geleitet.  Wird nun die Frequenz von
 \SI{6.8346875}{\giga\hertz} genau getroffen, wird am VCXO genau
 \SI{20}{\mega\hertz} ausgegeben.  Weiter entspricht die
-Mikrowellenstrahlung genau dem Hyperfeinstrucktur"ubergang, was dazu
-f"uhrt, dass es zu einer Durchmischung des unteren Energieniveaus im
-Resonator kommt.  Die festsitzenden Elektroden gelangen nun wieder in
-den untersten Energiezustand von 5s.  Somit k"onnen wieder mehr
+Mikrowellenstrahlung nun genau dem Hyperfeinstrucktur"ubergang, was
+dazu f"uhrt, dass es zu einer Durchmischung des unteren Energieniveaus
+im Resonator kommt.  Die festsitzenden Elektroden gelangen nun wieder
+in den untersten Energiezustand von 5s.  Somit k"onnen wieder mehr
 Photonen absorbiert werden, was zu einer Abdunklung des Detektors
 f"uhrt.
 
@@ -309,10 +309,10 @@ Resonator und f"uhrt zu einer sehr genauen Ausgangsfrquenz von
 
 \subsection{Tuning}
 Es stellt sich nun die Frage, wie ein solcher Regelkreis abgeglichen
-werden kann.  Zum Beispiel m"ussen die GNSS Sateliten untereinander
+werden kann.  Zum Beispiel m"ussen die GNSS Satelliten untereinander
 und mit der Bodenstation synchronisiert werden.  Wie man in den
-Quantenmechanischen Betrachtungen gesehen hat, h"angt der
-Hyperfeinstruktur"ubergang \ref{sec:hyperf} nur von dem Magnetfeld des
+quantenmechanischen Betrachtungen gesehen hat, h"angt der
+Hyperfeinstruktur"ubergang (\ref{sec:hyperf}) nur vom Magnetfeld des
 Atomkerns und des Spin Magnetfelds ab.
 
 Nun kann man diese Magnetfelder mit einem externen Magnetfeld st"oren,
@@ -322,13 +322,14 @@ dargestellt, am Resonator angelegt.  Mit dieser St"orung kann nun die
 gew"unschte Frequenz mit einer genaueren Caesium Atomuhr oder dem GPS
 Takt abgeglichen werden.
 
-Wie stark sich nun dies Frequenz durch eine magnetische St"orung
+Wie stark sich nun diese Frequenz durch eine magnetische St"orung
 beeinflussen l"asst, wird im n"achsten Abschnitt ausgerechnet.
 
 \begin{figure}
   \centering
   \input{atomuhr/tuning.tex}
-  \caption{Frequenztuning durch St"orung mit einem Magnefeld am Resonator.}
+  \caption{Frequenztuning durch Magnetfeld-St"orung am Resonator
+    (gr"un angelegtes Magnetfeld).}
   \label{fig:tuning}
 \end{figure}
 
@@ -336,50 +337,50 @@ beeinflussen l"asst, wird im n"achsten Abschnitt ausgerechnet.
 
 \section{Geschichte der Atomuhr}
 \label{sec:gesch-der-atom}
-Bereits 1879 hatte Lord Kelvin die Idee Atome als Zeit und Längen
+Bereits 1879 hatte Lord Kelvin die Idee, Atome als Zeit und L"angen
 Standard zu verwenden.  Erst 1949 wurde dann in der USA am National
 Institute of Standards and Technology (NIST) die erste Atomuhr gebaut
-\cite{ieee:nist} Diese Atomuhr verwendete Ammoniak bei einer Frequenz
-von \SI{23.87}{\giga\hertz}.  Die Genauigkeit dieses Atomuhr lag bei
-ca. 1 zu \num{e-7}.
+\cite{ieee:nist}.  Diese Atomuhr verwendete Ammoniak bei einer
+Frequenz von \SI{23.87}{\giga\hertz}.  Die Genauigkeit dieses Atomuhr
+lag bei ca. 1 zu \num{e-7}.
 
 Diese Genauigkeit ist noch nicht sehr eindr"ucklich, wenn man
 vergleicht, dass ein normaler Quarzoszillator bei einer Genauigkeit
 von ca. \num{e-5} und eine beheizter Quarzoszillator (OCXO) durch den
-reduzierten Temperaturdrift um Bereich von \num{2e-8} liegt.
+reduzierten Temperaturdrift im Bereich von \num{2e-8} liegt.
 
 Mit der Ammoniak Atomuhr konnte aber das Prinzip der Atomuhr
 aufgezeigt werden.  Welche 1952 mit der ersten Caesium Atomuhr NBS-1
 weitergef"uhrt werden konnte.  Die Genauigkeit und Stabilit"at der
 Caesium Atomuhren konnte soweit gesteigert werden, dass 1967 die
 SI-Sekunde als Hyperfeinstruktur"ubergang von Caesium-133 definiert
-werden konnte.  Das f"uhrt dazu, dass eine Sekunde mit
-\num{9192631770} Takten aufgelöst wird.  Somit ist die Genauigkeit auf
+wurde.  Das f"uhrt dazu, dass eine Sekunde mit \num{9192631770} Takten
+aufgel"ost wird.  Somit ist die Genauigkeit auf
 \SI{108.78}{\nano\second} beschr"ankt.
 
 Andere Atomuhren, welche in der Zwischenzeit entwickelt wurden,
-welche ebenfalls einen Hyperfeinstruktur"ubergang benutzen, verwenden
-die Elemente Rubidium und Wasserstoff.  Die Rubidium Atomuhren k"onnen
-sehr einfach und g"unstig aufgebaut werden besitzen jedoch nicht die
-Genauigkeit von Caesium Atomuhren.  Genauer k"onnen die
-Wasserstoffatomuhren gebaut werden.  Benutzen jedoch eine komplezere
+verwenden die Elemente Rubidium und Wasserstoff.  Beide verwenden
+ebenfalls den Hyperfeinstruktur"ubergang.  Die Rubidium Atomuhren
+k"onnen sehr einfach und g"unstig aufgebaut werden besitzen jedoch
+nicht die Genauigkeit von Caesium Atomuhren.  Genauer k"onnen die
+Wasserstoffatomuhren gebaut werden, ben"otigen jedoch eine komplexere
 K"uhlung der Atome.
 
 Will man eine genauere Aufl"osung erreichen, gen"ugt es nicht die
 Hyperfeinstruktur"uberg"ange zu benutzen.  Man muss eine h"ohere
 Taktung erreichen.  Diese h"oheren Taktungen k"onnen erreicht werden,
-wenn optische Absorptionslinen der Atome ausgenutzt werden.  Lange
-konnte dieser Bereich nicht genutzt werden.  Da diese hohen Takte
-mit elektronischen Regelkreisen nicht gemessen werden konnten.
+wenn Atome mit Spektrallinien im optische Bereich verwendet werden.
+Lange konnte dieser Bereich nicht genutzt werden, da diese hohen
+Takte mit elektronischen Regelkreisen nicht gemessen werden konnten.
 
 Gl"ucklicherweise wurde 1998 der Frequenzkamm entdeckt
 \cite{SdW:kamm}.  Mit dessen Hilft k"onnen Frequenzen im optischen
-Bereich mit einer Schwebung in den technisch messbaren Bereich
-gebracht werden.  Diese Technologie ermöglichte es andere Atome zu
-verwenden, mit welchen man 2014 eine Genauigkeit von \num{e-18}
-erreicht, was ca. einer Sekunde auf das alter des Universums
-entspricht.  In der Abbildung \ref{fig:periode} ist eine nicht
-abschiessende Auflistung der verwendeten Elemente in Atomuhren
+Spektrum mit einer Schwebung in den technisch messbaren
+Frequenzbereich gebracht werden.  Diese Technologie erm"oglichte es
+andere Atome zu verwenden, mit welchen man 2014 eine Genauigkeit von
+\num{e-18} erreichte, was ca. einer Sekunde auf das alter des
+Universums entspricht.  In der Abbildung \ref{fig:periode} ist eine
+nicht abschiessende Auflistung der verwendeten Elemente in Atomuhren
 dargestellt.
 
 \begin{figure}
