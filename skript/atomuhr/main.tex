@@ -73,30 +73,45 @@ erl"autert werden.
 
 \section{Quantenmechnanische Betrachtung}
 
-In diesem Teil soll gekl"art werden, wie mithilfe der Theorie der Quantenmechanik eine Atomuhr technisch realisiert werden kann. Dabei wird zuerst eine kurze Repetition zum Wasserstoff gegeben. Dann wird erkl"art, was die Feinstruktur ist. Dies f"uhrt dann zum Schluss zur Theorie der Hyperfeinstruktur.
+In diesem Teil soll gekl"art werden, wie mithilfe der Theorie der
+Quantenmechanik eine Atomuhr technisch realisiert werden kann. Dabei
+wird zuerst eine kurze Repetition zum Wasserstoffatom gegeben. Dann
+wird erkl"art, was die Feinstruktur ist. Diese f"uhrt dann zum Schluss
+zur Theorie der Hyperfeinstruktur.
 
 \subsection{Repetition Wasserstoffatom}
-Ernest Rutherford gewann nach seinen Experimenten anfangs des 20. Jahrhunderts die Erkenntnis, dass Elektronen Planeten förmig um den Kern kreisen müssen. 
-Er versuchte dieses Modell mit der Newtonschen Mechanik zu erklären. 
-Das hätte jedoch zur Folge, dass die Atome in den Kern stürzen müssten. 
-Niels Bohr löste dieses Stabilitätsproblem mithilfe des Plankschen Energiequantum 
+Ernest Rutherford gewann nach seinen Experimenten anfangs des
+20. Jahrhunderts die Erkenntnis, dass Elektronen Planeten f"ormig um
+den Kern kreisen m"ussen.  Er versuchte dieses Modell mit der
+Newtonschen Mechanik zu erkl"aren.  Das h"atte jedoch zur Folge, dass
+die Atome in den Kern st"urzen m"ussten.  Niels Bohr l"oste dieses
+Stabilit"atsproblem mithilfe des Plankschen Energiequantums:
 \begin{equation}
 \varDelta E = h\nu.
 \end{equation}
-Daraus resultierte das Bohrsche Atommodell benannt nach dem dänischen Physiker Niels Bohr \cite{wiki:bohr}. 
+Daraus resultierte das Bohrsche Atommodell, benannt nach dem
+d"anischen Physiker Niels Bohr \cite{wiki:bohr}.
 
-In Kapitel \ref{chapter:wasserstoff} konnte mithilfe der zeitunabhängigen Schr"odingergleichung dieses Modell hergeleitet werden.
-Es resultiert ein diskreter Abstand der Elektronen zum Kern.
-Dies gilt jedoch nicht nur f"ur das Wasserstoffatom, sondern Allgemein f"ur alle Atome.
-Nach dieser Theorie können sich Elektronen nur in einem wohldefinierten Abstand um den Atomkern befinden. 
+In Kapitel \ref{chapter:wasserstoff} konnte mithilfe der
+zeitunabh"angigen Schr"odingergleichung dieses Modell hergeleitet
+werden.  Es resultiert ein diskreter Abstand der Elektronen zum Kern.
+Dies gilt jedoch nicht nur f"ur das Wasserstoffatom, sondern allgemein
+f"ur alle Atome.  Nach dieser Theorie k"onnen sich Elektronen nur in
+einem wohldefinierten Abstand um den Atomkern befinden.
 
-Springt nun ein Elektron von einem tieferen in einen h"oheren Entartungsgrad, so wird ein Photon absorbiert.
-Das passiert bei jeglicher Energiezufuhr zum Atom. 
-Vice versa sendet das Atom ein Photon aus, wenn ein Elektron von einem h"oheren Energiegrad zu einen tieferen einen Quantensprung vollzieht.
+Springt nun ein Elektron von einem tieferen in einen h"oheren
+Entartungsgrad, so wird ein Photon absorbiert.  Das passiert bei
+jeglicher Energiezufuhr zum Atom.  Vice versa sendet das Atom ein
+Photon aus, wenn ein Elektron von einem h"oheren Energiegrad zu einen
+tieferen einen Quantensprung vollzieht.
 
-Aus dem Energieunterschied und dem Plankschen Wirkungsquantum lässt sich die Frequenz des Photons berechnen. %, was den Wellencharakter des Photons unterstreicht.
+Aus dem Energieunterschied und dem Plankschen Wirkungsquantum l"asst
+sich die Frequenz des Photons
+berechnen. %, was den Wellencharakter des Photons unterstreicht.
 
-Aus Tabelle \ref{skript:h2wellenlaengen} sind die Wellenl"angen solcher "Uberg"ange ersichtlich. Daraus ist es möglich, die Photonenfrequenzen zu berechnen.
+Aus Tabelle \ref{skript:h2wellenlaengen} sind die Wellenl"angen
+solcher "Uberg"ange ersichtlich. Daraus ist es m"oglich, die
+Photonenfrequenzen zu berechnen.
 %TODO \cite{Quelle Gertsen, Atomphysik und ...}
 \begin{center}
 	"Ubergang $H\alpha: 3 \rightarrow 2: \lambda_1 = \SI{656.3}{\nano\meter}$
@@ -109,7 +124,9 @@ $\nu_1 = \dfrac{c}{\lambda_1} = \SI{457.3}{\tera\hertz}$
 $\nu_2 = \dfrac{c}{\lambda_2} = \SI{771.2}{\tera\hertz}$
 \end{center}	
 
-Diese "Uberg"ange sind im Bereich von Terahertz bis Petahertz und eignen sich darum nicht um elektronisch verarbeitet werden. Elektronische Ger"ate arbeiten im Bereich von Gigahertz.
+Diese "Uberg"ange sind im Bereich von Terahertz bis Petahertz und
+eignen sich darum nicht um elektronisch verarbeitet zu
+werden. Elektronische Ger"ate arbeiten im Bereich von Gigahertz.
 
 \begin{figure}[h!]
 	\centering
@@ -119,14 +136,23 @@ Diese "Uberg"ange sind im Bereich von Terahertz bis Petahertz und eignen sich da
 	\label{atomuhr:wasserstoffspektrum}
 \end{figure}
 
-Auf der Abbildung \ref{atomuhr:wasserstoffspektrum} sieht man das Frequenzspektrum der sogenannte Balmer-Serie des Wasserstoffs, welche zufälligerweise im sichtbaren Bereich ist. Der rote Strich ganz rechts stellt die $H\alpha$-Linie dar. Die nächste links $H\beta$ und so weiter.
+Auf der Abbildung \ref{atomuhr:wasserstoffspektrum} sieht man das
+Frequenzspektrum der sogenannte Balmer-Serie des Wasserstoffs, welche
+zuf"alligerweise im sichtbaren Bereich ist. Der rote Strich ganz rechts
+stellt die $H\alpha$-Linie dar. Die n"achste links $H\beta$ und so
+weiter.
 
 
 \subsection{Feinstruktur"ubergang}
-Damit jedoch ein solcher "Ubergang elektrisch verarbeitet werden kann, muss es einen Effekt geben, bei welchem das Photon mit einer Frequenz im Gigahertz Bereich ausgesendet wird. 
-Der Feinstruktur"ubergang ist ein erster Schritt in diese Richtung. 
+Damit jedoch ein solcher "Ubergang elektrisch verarbeitet werden kann,
+muss es einen Effekt geben, bei welchem das Photon mit einer Frequenz
+im Gigahertz Bereich ausgesendet wird.  Der Feinstruktur"ubergang ist
+ein erster Schritt in diese Richtung.
 
-Als das Wasserstoffspektrum genauer untersuchte wurde, bemerkte man, dass die Spektrallinien nicht atomar sind. Wenn man beispielsweise die $H\alpha$ Spektrallinie besser auflöst, so entdeckt man, dass diese eine Linie aus zwei besteht, welche sehr nahe aneinander liegen. 
+Als das Wasserstoffspektrum genauer untersuchte wurde, bemerkte man,
+dass die Spektrallinien nicht atomar sind. Wenn man beispielsweise die
+$H\alpha$ Spektrallinie besser aufl"ost, so entdeckt man, dass diese
+eine Linie aus zwei besteht, welche sehr nahe aneinander liegen.
 
 \begin{figure}[h!]
 	\centering
@@ -135,7 +161,7 @@ Als das Wasserstoffspektrum genauer untersuchte wurde, bemerkte man, dass die Sp
 	\caption{$H\alpha$-Linie stark vergr"ossert, erkennbare Doppellinie} %TODO \cite{link im owncloud ordner}}
 \end{figure}
 
-Bis jetzt wurde nur mit der zeitunabhängigen Schr"odingergleichung gearbeitet.
+Bis jetzt wurde nur mit der zeitunabh"angigen Schr"odingergleichung gearbeitet.
 Als erste N"aherung ist dies sicherlich nicht schlecht.
 In der Realit"at spielt jedoch Zeitabh"angigkeit ein wichtiger Faktor. 
 Mithilfe der St"orungstheorie ist es m"oglich, dieses Verhalten anzun"ahern.
@@ -151,15 +177,20 @@ Mithilfe der St"orungstheorie ist es m"oglich, dieses Verhalten anzun"ahern.
 	
 \end{itemize}
 		
-Auf die Korrekturfaktoren $W_M$ und $W_D$ wird hier nicht n"aher eingegangen, da diese nur zu geringf"ugigen Korrekturen f"uhrt und nicht f"ur die Doppellinie verantwortlich ist.
+Auf die Korrekturfaktoren $W_M$ und $W_D$ wird hier nicht n"aher
+eingegangen, da diese nur zu geringf"ugigen Korrekturen f"uhrt und
+nicht f"ur die Doppellinie verantwortlich ist.
 
-Der nicht relativistische Hamiltonoperator beschreibt das Bohrsche  Atommodell, welches bereits bekannt ist.
+Der nicht relativistische Hamiltonoperator beschreibt das Bohrsche
+Atommodell, welches bereits bekannt ist.
 
-Bei der Spin Bahn Kopplung geht es um die reine Betrachtung des Elektrons. 
-Dieses dreht sich in einer Kreisf"ormigen Bahn. 
-Da das Elektron eine Ladung besitzt, entsteht ein magnetisches Feld. 
-Dieses Feld wechselwirkt nun mit dem magnetischen Spin, den das Elektron auch noch besitzt. 
-Da das Elektron entweder Spin +1/2 oder -1/2 hat, entstehen geringf"ugig unterschiedliche Frequenzen bei einem Quantensprung in das jeweilige Energielevel.
+Bei der Spin Bahn Kopplung geht es um die reine Betrachtung des
+Elektrons.  Dieses dreht sich in einer Kreisf"ormigen Bahn.  Da das
+Elektron eine Ladung besitzt, entsteht ein magnetisches Feld.  Dieses
+Feld wechselwirkt nun mit dem magnetischen Spin, den das Elektron auch
+noch besitzt.  Da das Elektron entweder Spin +1/2 oder -1/2 hat,
+entstehen geringf"ugig unterschiedliche Frequenzen bei einem
+Quantensprung in das jeweilige Energielevel.
 
 \begin{figure}
 	\centering
@@ -169,7 +200,10 @@ Da das Elektron entweder Spin +1/2 oder -1/2 hat, entstehen geringf"ugig untersc
 \end{figure}
 
 \subsubsection{Notation Termsymbol}
-Jedes Atom hat nun verschiedene Entartungsgrade, in denen sich Elektronen befinden. Zus"atzlich ist die Annahme, dass das Elektron um das Atom kreist falsch. Die Elektronen befinden sich in einem bestimmten Sektor, welchem ein gewisser Bahndrehimpuls zugewiesen ist. 
+Jedes Atom hat nun verschiedene Entartungsgrade, in denen sich
+Elektronen befinden. Zus"atzlich ist die Annahme, dass das Elektron um
+das Atom kreist falsch. Die Elektronen befinden sich in einem
+bestimmten Sektor, welchem ein gewisser Bahndrehimpuls zugewiesen ist.
 Abbildung \ref{}
 \begin{figure}
 	\centering
@@ -177,9 +211,11 @@ Abbildung \ref{}
 	\caption{elektrische Bahndrehimpulse} %TODO \cite{link im owncloud ordner}}
 	\label{atomuhr:bahndrehimpuls}
 \end{figure}
-Ausserdem hat das Elektron zwei verschiedene Spinzust"ande in dem es sich befinden kann. Der Aufenthaltsort eines Elektrons ist ein wenig komplizierter als noch beim Bohrschen Atommodell.
-Dazu wurde die Termsymbol Notation entwickelt, welche den Zustand des Elektrons genau beschreibt. 
-Diese wird nachfolgend kurz erkl"art.
+Ausserdem hat das Elektron zwei verschiedene Spinzust"ande in dem es
+sich befinden kann. Der Aufenthaltsort eines Elektrons ist ein wenig
+komplizierter als noch beim Bohrschen Atommodell.  Dazu wurde die
+Termsymbol Notation entwickelt, welche den Zustand des Elektrons genau
+beschreibt.  Diese wird nachfolgend kurz erkl"art.
 
 \begin{equation}
 	\text{Termsymbol:} \quad ^NL _J
@@ -197,9 +233,10 @@ $L:$ elektrische Bahndrehimpuls
 
 $J:$ Gesamtdrehimpuls
 
-$S:$ Spin elektron
+$S:$ Spin Elektron
 
-Dem elektrischen Bahndrehimpuls sind dabei den Zeichen folgende Zahlen zugewiesen.
+Dem elektrischen Bahndrehimpuls sind dabei den Zeichen die Zahlen in
+Tabelle \ref{atomuhr:drehimpulsnotation} zugewiesen.
 
 \begin{table}
 	\centering	
@@ -218,25 +255,51 @@ Mit diesem Wissen l"asst sich nun ein Feinstruktur"ubergang ausrechnen.
 		$\nu_1 = \dfrac{c}{\lambda_1} = \SI{10.9}{\giga\hertz}$
 \end{center}
 
-Das ausgesendete Photon befindet sich bei diesen Feinstruktur"uberg"angen in einem Bereich, in dem sie schon eher genutzt werden k"onnte. F"ur Atomuhren wird jedoch der  Hyperfeinstruktur"ubergang genutzt. 
+Das ausgesendete Photon befindet sich bei diesen
+Feinstruktur"uberg"angen in einem Bereich, in dem sie schon eher
+genutzt werden k"onnte. F"ur Atomuhren wird jedoch der
+Hyperfeinstruktur"ubergang genutzt.
 
 \subsection{Hyperfeinstruktur"ubergang}
 \label{sec:hyperf}
-Der Feinstruktur"ubergang wurde entdeckt, als das Bohrsche Modell experimentell genauer untersucht wurde. "Ahnlich ergeht es dem Hyperfeinstruktur"ubergang. Als das Spektrum des Feinstruktur"ubergang besser aufgel"ost werden konnte, ist aufgefallen, das es noch einen Effekt gibt, welcher zu einer Aufspaltung eines Energielevels beim Feinstruktur"ubergang f"uhrt. Dieser wurde Hyperfeinstruktur"ubergang genannt und wird hier nun erkl"art.
+Der Feinstruktur"ubergang wurde entdeckt, als das Bohrsche Modell
+experimentell genauer untersucht wurde. "Ahnlich ergeht es dem
+Hyperfeinstruktur"ubergang. Als das Spektrum des Feinstruktur"ubergang
+besser aufgel"ost werden konnte, ist aufgefallen, das es noch einen
+weiteren Effekt gibt, welcher zu einer Aufspaltung eines Energielevels
+beim Feinstruktur"ubergang f"uhrt. Dieser wurde
+Hyperfeinstruktur"ubergang genannt und wird hier nun erkl"art.
 
-Dieser Struktur"ubergang kann mithilfe der Wechselwirkung zwischen Elektron und Kern erkl"art werden. Der Kern besitzt einen gewissen Kernspin. Der magnetische Spin des Elektrons kann nun parallel oder antiparallel zum Kern sein. Was zu unterschiedlichen Energieniveaus f"uhrt. 
+Dieser Struktur"ubergang kann mithilfe der Wechselwirkung zwischen
+Elektron und Kern erkl"art werden. Der Kern besitzt einen gewissen
+Kernspin. Der magnetische Spin des Elektrons kann nun parallel oder
+antiparallel zum Kern sein. Was zu unterschiedlichen Energieniveaus
+f"uhrt.
 
-Beim Wasserstoff, welches im Grundzustand besetzt ist, führt das zu einer Wellenl"ange von $\lambda = \SI{21}{\centi\meter}$, was einer Frequenz von $\nu = \SI{1.42}{\giga\hertz}$ entspricht. Das ist eine Frequenz, welche sich sehr gut mit elektronischen Ger"aten verarbeiten l"asst. 
+Beim Wasserstoff, welches im Grundzustand besetzt ist, f"uhrt das zu
+einer Wellenl"ange von $\lambda = \SI{21}{\centi\meter}$, was einer
+Frequenz von $\nu = \SI{1.42}{\giga\hertz}$ entspricht. Das ist eine
+Frequenz, welche sich sehr gut mit elektronischen Ger"aten verarbeiten
+l"asst.
 
 \subsection{Alkalimetalle}
-Gleich wie Wasserstoff geh"ort auch Rubidium und C"asium zu den Alkalimetallen. speziell an dieser Gruppe von Elementen ist, dass sie nur ein freies Elektron in der letzten besetzten Schale haben. 
+Gleich wie Wasserstoff geh"ort auch Rubidium und C"asium zu den
+Alkalimetallen. Speziell an dieser Gruppe von Elementen ist, dass sie
+nur ein freies Elektron in der letzten besetzten Schale haben.
 
-Da alle Atome Edelgaskonfiguration anstreben, wollen die Alkalimetalle dieses freie Elekron m"oglichst abgeben und sind dadurch relativ Reaktionsfreudig. 
-Die abgeschlossenen Schalen sind elektrisch gesehen neutral. 
-Weshalb die Alkalimetalle mutmasslich f"ur Atomuhren gebraucht wird. 
-Das Frequenzspektrum ist einfacher zu verstehen als bei anderen Atomgruppen mit mehreren Valenzelektronen.
+Da alle Atome Edelgaskonfiguration anstreben, wollen die Alkalimetalle
+dieses freie Elektron m"oglichst abgeben und sind dadurch relativ
+Reaktionsfreudig.  Die abgeschlossenen Schalen sind elektrisch gesehen
+neutral.  Weshalb die Alkalimetalle mutmasslich f"ur Atomuhren
+gebraucht wird.  Da das Frequenzspektrum bei einem Valenzelektron
+einfacher zu verstehen ist, als bei anderen Atomgruppen mit mehreren
+Valenzelektronen.
 
-Rubidium hat einen Hyperfrequenz"ubergang von $\nu = \SI{6.834}{\giga\hertz}$. Die h"ohere frequenz l"asst sich damit erkl"aren, dass sich das Valenzelektron weiter weg vom Kern befindet als beim Wasserstoffatom. Die Kraft auf die Wechselwirkung ist somit kleiner. 
+Rubidium hat einen Hyperfrequenz"ubergang von $\nu =
+\SI{6.834}{\giga\hertz}$. Die h"ohere Frequenz l"asst sich damit
+erkl"aren, dass sich das Valenzelektron weiter weg vom Kern befindet
+als beim Wasserstoffatom. Die Kraft auf die Wechselwirkung ist somit
+kleiner.
 
 \section{Technische Betrachtung}
 In der technischen Betrachtung in diesem Abschnitt wird die
