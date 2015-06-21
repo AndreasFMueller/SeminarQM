@@ -27,7 +27,7 @@ Dies gilt auch f"ur das Mobilfunknetz. Die einzelnen Basisstationen m"ussen unte
 Neben diesen pratischen Anwengungen ist die genaue Messung einer
 Sekunde relevant f"ur die fundamentale Definitionen der
 SI-Basiseinheiten. In der Abbildung \ref{fig:siBasis} sind die sieben
-SI-Basiseinheiten dargestellt.  Die gr"unen Einheiten (Sekunde,
+SI-Basis\-ein\-hei\-ten dargestellt.  Die gr"unen Einheiten (Sekunde,
 Ampere, Meter und Candela) bauen bei ihrer Definition auf die Sekunde
 auf.  Wie die SI-Sekunde definiert ist, wird im Abschnitt
 \ref{sec:gesch-der-atom} beschrieben.  Somit profitieren diese
@@ -55,7 +55,7 @@ Einheiten direkt von einer genaueren Messung einer Sekunde.
     \node at (193:1.7cm) [draw, nodeStyle] (mol) {\si{\mol}};
     \node at (244:1.7cm) [draw, nodeStyleS] (cd) {\si{\candela}};
   \end{tikzpicture}
-  \caption{Die sieben SI-Basiseinheiten (gr"un: Einheiten, welche f"ur
+  \caption{Die sieben SI-Basiseinheiten \cite{wiki:si} (gr"un: Einheiten, welche f"ur
     ihre eigene Definition die Sekunde ben"otigen)}
   \label{fig:siBasis}
 \end{figure}
@@ -213,6 +213,7 @@ Mit diesem Wissen l"asst sich nun ein Feinstruktur"ubergang ausrechnen.
 Das ausgesendete Photon befindet sich bei diesen Feinstruktur"uberg"angen in einem Bereich, in dem sie schon eher genutzt werden k"onnte. F"ur Atomuhren wird jedoch der  Hyperfeinstruktur"ubergang genutzt. 
 
 \subsection{Hyperfeinstruktur"ubergang}
+\label{sec:hyperf}
 Der Feinstruktur"ubergang wurde entdeckt, als das Bohrsche Modell experimentell genauer untersucht wurde. "Ahnlich ergeht es dem Hyperfeinstruktur"ubergang. Als das Spektrum des Feinstruktur"ubergang besser aufgel"ost werden konnte, ist aufgefallen, das es noch einen Effekt gibt, welcher zu einer Aufspaltung eines Energielevels beim Feinstruktur"ubergang f"uhrt. Dieser wurde Hyperfeinstruktur"ubergang genannt und wird hier nun erkl"art.
 
 Dieser Struktur"ubergang kann mithilfe der Wechselwirkung zwischen Elektron und Kern erkl"art werden. Der Kern besitzt einen gewissen Kernspin. Der magnetische Spin des Elektrons kann nun parallel oder antiparallel zum Kern sein. Was zu unterschiedlichen Energieniveaus f"uhrt. 
@@ -230,6 +231,106 @@ Das Frequenzspektrum ist einfacher zu verstehen als bei anderen Atomgruppen mit 
 Rubidium hat einen Hyperfrequenz"ubergang von $\nu = 6.834\;GHz$. Die h"ohere frequenz l"asst sich damit erkl"aren, dass sich das Valenzelektron weiter weg vom Kern befindet als beim Wasserstoffatom. Die Kraft auf die Wechselwirkung ist somit kleiner. 
 
 \section{Technische Betrachtung}
+In der technischen Betrachtung in diesem Abschnitt wird die
+Funktionsf"ahigkeit des Rubidium-Frequenznormals LPRO-101 aufgezeigt.
+Das Datenblatt dieser Atomuhr kann unter \cite{datasheet:lpro}
+gefunden werden.  Ein Ausf"uhrliches Datenblatt ist unter
+\cite{datasheet:prs10m} zu finden, in welchem ein anderes Modell
+erkl"ahrt wird, aber eine bessere Funktionsbeschreibung besitzt.
+
+Solche Rubidium Frequenznormale besitzen die Gr"osse einer
+Handfl"ache und erreichen eine Genauigkeit von ungef"ahr \num{e-9}.
+In der Abbildung \ref{fig:techBlock} ist der schematische Aufbau einer
+solchen Atomuhr aufgezeigt.  Die Hauptfunktion dieser Schaltung, ist
+ein Regelkreis, welcher sich auf den Hyperfeinstrucktur"ubergang des
+Rubidium-87 einregelt.  Welcher bei \SI{6.8346875}{\giga\hertz}
+liegt.
+
+\begin{figure}
+  \centering
+  \input{atomuhr/techBlock.tex}
+  \caption{Schematischer Aufbau einer Rubidium Atomuhr}
+  \label{fig:techBlock}
+\end{figure}
+
+\subsection{Funktionsweise}
+Die Rubidium-87 Entladungslampe wird angeregt und emittiert Licht bei
+ca. \SI{780}{\nano\meter}.  Dieses Licht wird weiter in die
+Resonator-Kammer geleitet, in welcher ein Absorptionsgas aus
+Rubidium-87 vorhanden ist.  Weiter ist in der Entladungslampe und der
+Resonatorkammer ein Filtergas aus Rubidium-85.  In der Abbildung
+\ref{fig:uebergaenge} ist die Filterung dargestellt.
+
+\begin{figure}
+  \centering
+  \input{atomuhr/uebergaenge.tex}
+  \caption{Energie"uberh"ange in einer Rubidium Atomuhr}
+  \label{fig:uebergaenge}
+\end{figure}
+
+Die Entladungslampe emittiert zwei sehr "ahnliche Frequenzen, da das
+Untere Energieniveau 5s der $^{87}$Rb Atome nur durch ihren
+unterschiedlichen Spin aufgeteilt wird.  Die zur Filterung
+eingesetzten Rubidium-85 Atome besitzen ein leicht verschobenes
+unteres Energieniveau, welches mit einem der beiden 5s Energieniveaus
+von Rubidium-87 "ubereinstimmt.  Dadurch wird einer der beiden
+Emittierten Frequenzen des Rubidium-87 herausgefiltert.  Somit gelingt
+nur eine der beiden Frequenzen zum Resonator.
+
+Im Resonator absorbiert das Rubidium-87 die eintreffenden Photonen,
+steigt in das h"ohere Energieniveau 5p auf und f"allt spontan mit
+einer Wahrscheinlichkeit von \SI{50}{\percent} in eine der beiden
+unteren Energieniveaus von 5s zur"uck.  Mit der Zeit sammeln sich mehr
+Elektronen im oberen der beiden Energieniveaus von 5s an, da keine
+Photonen mit dieser ben"otigten Frequenz zum Resonator (Filterung durch
+Rubidium-85) gelangen.  Dadurch gelangen immer mehr Photonen zu
+Detektor. (Eine weitere Anwendung, welche mit den Energie"uberg"angen
+arbeitet ist der Laser, zu finden im Kapitel \ref{chapter:laser}.)
+
+Der Detektor steuert einen spannungsgesteuerten Oszillator (VCXO) an,
+welcher eine Frequenz um \SI{20}{\mega\hertz} ausgibt.  Dieses Signal
+wird mit einem Multiplizierer auf die Frequenz des
+Hyperfeinstruktur"ubergang hinauf multipliziert.
+
+Diese hinauf multiplizierte Frequenz liegt nun im Mikrowellenbereich
+und wird zur"uck in den Resonator geleitet.  Wird nun die Frequenz von
+\SI{6.8346875}{\giga\hertz} genau getroffen, wird am VCXO genau
+\SI{20}{\mega\hertz} ausgegeben.  Weiter entspricht die
+Mikrowellenstrahlung genau dem Hyperfeinstrucktur"ubergang, was dazu
+f"uhrt, dass es zu einer Durchmischung des unteren Energieniveaus im
+Resonator kommt.  Die festsitzenden Elektroden gelangen nun wieder in
+den untersten Energiezustand von 5s.  Somit k"onnen wieder mehr
+Photonen absorbiert werden, was zu einer Abdunklung des Detektors
+f"uhrt.
+
+Der ganze Regelkreis regelt somit auf die maximale Absorption im
+Resonator und f"uhrt zu einer sehr genauen Ausgangsfrquenz von
+\SI{20}{\mega\hertz}.
+
+\subsection{Tuning}
+Es stellt sich nun die Frage, wie ein solcher Regelkreis abgeglichen
+werden kann.  Zum Beispiel m"ussen die GNSS Sateliten untereinander
+und mit der Bodenstation synchronisiert werden.  Wie man in den
+Quantenmechanischen Betrachtungen gesehen hat, h"angt der
+Hyperfeinstruktur"ubergang \ref{sec:hyperf} nur von dem Magnetfeld des
+Atomkerns und des Spin Magnetfelds ab.
+
+Nun kann man diese Magnetfelder mit einem externen Magnetfeld st"oren,
+was zu einer Frequenzverschiebung des Hyperfeinstrucktur"ubergangs
+f"uhrt.  Das Magnetfeld wird wie in Abbildung \ref{fig:tuning}
+dargestellt, am Resonator angelegt.  Mit dieser St"orung kann nun die
+gew"unschte Frequenz mit einer genaueren Caesium Atomuhr oder dem GPS
+Takt abgeglichen werden.
+
+Wie stark sich nun dies Frequenz durch eine magnetische St"orung
+beeinflussen l"asst, wird im n"achsten Abschnitt ausgerechnet.
+
+\begin{figure}
+  \centering
+  \input{atomuhr/tuning.tex}
+  \caption{Frequenztuning durch St"orung mit einem Magnefeld am Resonator.}
+  \label{fig:tuning}
+\end{figure}
 
 \subsection{Rechnung}
 
@@ -276,7 +377,8 @@ Gl"ucklicherweise wurde 1998 der Frequenzkamm entdeckt
 Bereich mit einer Schwebung in den technisch messbaren Bereich
 gebracht werden.  Diese Technologie ermöglichte es andere Atome zu
 verwenden, mit welchen man 2014 eine Genauigkeit von \num{e-18}
-erreicht.  In der Abbildung \ref{fig:periode} ist eine nicht
+erreicht, was ca. einer Sekunde auf das alter des Universums
+entspricht.  In der Abbildung \ref{fig:periode} ist eine nicht
 abschiessende Auflistung der verwendeten Elemente in Atomuhren
 dargestellt.
 
