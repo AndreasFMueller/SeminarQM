@@ -3,6 +3,515 @@
 \begin{refsection}
 \chapterauthor{Stefan Steiner und Pascal Stump}
 
+\section{Einleitung}
+% Aus Aufgabenstellung A. Müller
+%Ein Rubidium-Frequenznormal verwendet eine Eigenschaft von
+%Rubidium-Atomen, um ein hochpräzises Frequenznormal ($10^{-11}$)
+%bereitzustellen. Solche Frequenznormale werden zum Beispiel in 3G
+%Basisstationen oder in Satelliten verwendet.
+%
+%Es wird erwartet, dass Sie anhand eines vereinfachten Modells
+%erklären, wie ein solches Frequenznormal funktioniert. Welche
+%äusseren Umstände könnten die Frequenz beeinflussen? Es steht
+%ausserdem ein Exemplar eines LPRO-101 für Experimente und Demonstrationen
+%zur Verfügung.
+
+Ohne die quantenmechanischen Erkenntnisse, welche besonders zu Beginn
+des letzten Jahrhunderts gemacht wurden, g"abe es keine Atomuhren.
+Sie stellen eine pr"azise Zeitmessung sicher und ebnen den Weg f"ur
+immer genauere Messungen in der praktischen Physik.
+
+Zudem pr"agen diese Ger"ate unseren Alltag, ohne dass dies stark
+bemerkt wird.  Ortung durch ein Globales Satelliten Navigationssystem
+(GNSS), wie GPS oder Galileo, sind stark von pr"aziser Zeitmessung
+abh"angig.  Jeder Satellit dieser Systeme beinhaltet mehrere
+Atomuhren.  Dies gilt auch f"ur das Mobilfunknetz. Die einzelnen
+Basisstationen m"ussen untereinander sehr genau synchronisiert sein,
+auch da helfen diese genauen Taktgeber.
+
+Neben diesen praktischen Anwendungen ist die genaue Messung einer
+Sekunde relevant f"ur die fundamentalen Definitionen der
+SI-Basiseinheiten. In der Abbildung \ref{fig:siBasis} sind die sieben
+SI-Basis\-ein\-hei\-ten dargestellt.  Die gr"unen Einheiten (Sekunde,
+Ampere, Meter und Candela) bauen bei ihrer Definition auf die Sekunde
+auf.  Somit profitieren diese Einheiten direkt von einer genaueren
+Messung einer Sekunde.  Wie die SI-Sekunde definiert ist, wird im
+Abschnitt \ref{sec:gesch-der-atom} beschrieben.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \tikzstyle{nodeStyle} = [circle, very thick,
+                             draw=gray!40!black, fill=gray!30,
+                             minimum size=1cm];
+    \tikzstyle{nodeStyleS} = [circle, very thick,
+                              draw=green!40!black, fill=green!20,
+                              minimum size=1cm];
+    \tikzstyle{conn}      = [->, >=stealth',
+                             shorten >=0.1cm,
+                             very thick];
+
+        
+    \node at (90:1.7cm) [draw, nodeStyle] (K) {\si{\kelvin}};
+    \node at (39:1.7cm) [draw, nodeStyleS] (s) {\si{\second}};
+    \node at (-13:1.7cm) [draw, nodeStyleS] (m) {\si{\meter}};
+    \node at (-64:1.7cm) [draw, nodeStyle] (kg) {\si{\kilogram}};
+    \node at (141:1.7cm) [draw, nodeStyleS] (A) {\si{\ampere}};
+    \node at (193:1.7cm) [draw, nodeStyle] (mol) {\si{\mol}};
+    \node at (244:1.7cm) [draw, nodeStyleS] (cd) {\si{\candela}};
+  \end{tikzpicture}
+  \caption{Die sieben SI-Basiseinheiten \cite{wiki:si} (gr"un: Einheiten, welche f"ur
+    ihre eigene Definition die Sekunde ben"otigen)}
+  \label{fig:siBasis}
+\end{figure}
+
+Dieses Kapitel soll einen kurzen "Uberblick geben, was der
+quantenmechanische Hintergrund eines solchen Ger"ates ist. Ausserdem
+soll die technische Realisierung am Beispiel einer Rubidium Atomuhr
+erl"autert werden.
+
+
+\section{Quantenmechnanische Betrachtung}
+
+In diesem Teil soll gekl"art werden, wie mithilfe der Theorie der
+Quantenmechanik eine Atomuhr technisch realisiert werden kann. Dabei
+wird zuerst eine kurze Repetition zum Wasserstoffatom gegeben. Dann
+wird erkl"art, was die Feinstruktur ist. Diese f"uhrt dann zum Schluss
+zur Theorie der Hyperfeinstruktur.
+
+\subsection{Repetition Wasserstoffatom}
+Ernest Rutherford gewann nach seinen Experimenten anfangs des
+20. Jahrhunderts die Erkenntnis, dass Elektronen Planeten f"ormig um
+den Kern kreisen m"ussen.  Er versuchte dieses Modell mit der
+Newtonschen Mechanik zu erkl"aren.  Das h"atte jedoch zur Folge, dass
+die Atome in den Kern st"urzen m"ussten.  Niels Bohr l"oste dieses
+Stabilit"atsproblem mithilfe des Plankschen Energiequantums:
+\begin{equation}
+\varDelta E = h\nu.
+\end{equation}
+Daraus resultierte das Bohrsche Atommodell, benannt nach dem
+d"anischen Physiker Niels Bohr \cite{wiki:bohr}.
+
+In Kapitel \ref{chapter:wasserstoff} konnte mithilfe der
+zeitunabh"angigen Schr"odingergleichung dieses Modell hergeleitet
+werden.  Es resultiert ein diskreter Abstand der Elektronen zum Kern.
+Dies gilt jedoch nicht nur f"ur das Wasserstoffatom, sondern allgemein
+f"ur alle Atome.  Nach dieser Theorie k"onnen sich Elektronen nur in
+einem wohldefinierten Abstand um den Atomkern befinden.
+
+Springt nun ein Elektron von einem tieferen in einen h"oheren
+Entartungsgrad, so wird ein Photon absorbiert.  Das passiert bei
+jeglicher Energiezufuhr zum Atom.  Vice versa sendet das Atom ein
+Photon aus, wenn ein Elektron von einem h"oheren Energiegrad zu einen
+tieferen einen Quantensprung vollzieht.
+
+Aus dem Energieunterschied und dem Plankschen Wirkungsquantum l"asst
+sich die Frequenz des Photons
+berechnen. %, was den Wellencharakter des Photons unterstreicht.
+
+Aus Tabelle \ref{skript:h2wellenlaengen} sind die Wellenl"angen
+solcher "Uberg"ange ersichtlich. Daraus ist es m"oglich, die
+Photonenfrequenzen zu berechnen \cite{Gerthsen}.
+\begin{center}
+	"Ubergang $H\alpha: 3 \rightarrow 2: \lambda_1 = \SI{656.3}{\nano\meter}$
+
+$\nu_1 = \dfrac{c}{\lambda_1} = \SI{457.3}{\tera\hertz}$
+\vspace{.5cm}
+
+"Ubergang $8 \rightarrow 2: \lambda_2 = \SI{388.8}{\nano\meter}$
+
+$\nu_2 = \dfrac{c}{\lambda_2} = \SI{771.2}{\tera\hertz}$
+\end{center}	
+
+Diese "Uberg"ange sind im Bereich von Terahertz bis Petahertz und
+eignen sich darum nicht um elektronisch verarbeitet zu
+werden. Elektronische Ger"ate arbeiten im Bereich von Gigahertz.
+
+\begin{figure}
+	\centering
+	\includegraphics[width = .6\columnwidth]{atomuhr/wasserstoffSpektrum.jpg}
+	\caption{Wasserstoffspektrum \cite{pic:wasserstoffspektrum}} 
+	\label{atomuhr:wasserstoffspektrum}
+\end{figure}
+
+Auf der Abbildung \ref{atomuhr:wasserstoffspektrum} sieht man das
+Frequenzspektrum der sogenannte Balmer-Serie des Wasserstoffs, welche
+zuf"alligerweise im sichtbaren Bereich ist. Der rote Strich ganz rechts
+stellt die $H\alpha$-Linie dar. Die n"achste links $H\beta$ und so
+weiter.
+
+
+\subsection{Feinstruktur"ubergang}
+Damit jedoch ein solcher "Ubergang elektrisch verarbeitet werden kann,
+muss es einen Effekt geben, bei welchem das Photon mit einer Frequenz
+im Gigahertz Bereich ausgesendet wird.  Der Feinstruktur"ubergang ist
+ein erster Schritt in diese Richtung.
+
+Als das Wasserstoffspektrum genauer untersuchte wurde, bemerkte man,
+dass die Spektrallinien nicht atomar sind. Wenn man beispielsweise die
+$H\alpha$ Spektrallinie besser aufl"ost, so entdeckt man, dass diese
+eine Linie aus zwei besteht, welche sehr nahe aneinander
+liegen (Abbildung \ref{atomuhr:fineStructure}).
+
+\begin{figure}
+	\centering
+	\includegraphics[width = .6\columnwidth]{atomuhr/fine_structure_hydrogen.png}
+	\caption{$H\alpha$-Linie stark vergr"ossert, erkennbare
+          Doppellinie \cite{pic:wasserstoff_feinstruktur}}
+        \label{atomuhr:fineStructure}
+\end{figure}
+
+Bis jetzt wurde nur mit der zeitunabh"angigen Schr"odingergleichung gearbeitet.
+Als erste N"aherung ist dies sicherlich nicht schlecht.
+In der Realit"at spielt jedoch Zeitabh"angigkeit ein wichtiger Faktor. 
+Mithilfe der St"orungstheorie ist es m"oglich, dieses Verhalten anzun"ahern.
+
+\begin{itemize}
+	\item[]  $H = \textcolor{red}{H_0}+ \textcolor{blue}{W_{SB}} + 
+		\textcolor{green}{W_M} + \textcolor{violet}{W_D} $
+	\item[]  $H$: relativistischer Hamiltonoperator
+	\item[]  \textcolor{red}{$H_0$}: nicht relativistischer Hamiltonoperator
+	\item[]  \textcolor{blue}{$W_{SB}$}: Spin Bahn Kopplung
+	\item[]  \textcolor{green}{$W_M$}: Korrektur kin. Energie
+	\item[]  \textcolor{violet}{$W_D$}: Korrektur pot. Energie
+	
+\end{itemize}
+		
+Auf die Korrekturfaktoren $W_M$ und $W_D$ wird hier nicht n"aher
+eingegangen, da diese nur zu geringf"ugigen Korrekturen f"uhrt und
+nicht f"ur die Doppellinie verantwortlich ist.
+
+Der nicht relativistische Hamiltonoperator beschreibt das Bohrsche
+Atommodell, welches bereits bekannt ist.
+
+Bei der Spin Bahn Kopplung geht es um die reine Betrachtung des
+Elektrons. Man stelle sich vor, dieses drehe sich in einer Kreisf"ormigen Bahn.  Da das
+Elektron eine Ladung besitzt, entsteht ein magnetisches Feld.  Dieses
+Feld wechselwirkt nun mit dem magnetischen Spin, den das Elektron auch
+noch besitzt.  Da das Elektron entweder Spin +1/2 oder -1/2 hat,
+entstehen geringf"ugig unterschiedliche Frequenzen bei einem
+Quantensprung in das jeweilige Energielevel.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=.2\columnwidth]{atomuhr/feinstrukturelektron.jpg}
+	\caption{Spin Bahn Kopplung \cite{pic:feinstruktur}}
+	\label{atomuhr:spinbahn}
+\end{figure}
+
+\subsubsection{Notation Termsymbol}
+Jedes Atom hat nun verschiedene Entartungsgrade, in denen sich
+Elektronen befinden. Zus"atzlich ist die Annahme, dass das Elektron um
+das Atom kreist falsch. Die Elektronen befinden sich in einem
+bestimmten Sektor, welchem ein gewisser Bahndrehimpuls zugewiesen ist (Abbildung \ref{atomuhr:drehimpulsnotation}).
+\begin{figure}
+	\centering
+	\includegraphics[width = 0.8\columnwidth]{atomuhr/orbitale.JPG}
+	\caption{elektrische Bahndrehimpulse \cite{pic:orbitale}}
+	\label{atomuhr:bahndrehimpuls}
+\end{figure}
+Ausserdem hat das Elektron zwei verschiedene Spinzust"ande in dem es
+sich befinden kann. Der Aufenthaltsort eines Elektrons ist ein wenig
+komplizierter als noch beim Bohrschen Atommodell.  Dazu wurde die
+Termsymbol Notation entwickelt, welche den Zustand des Elektrons genau
+beschreibt.  Diese wird nachfolgend kurz erkl"art.
+
+\begin{equation}
+	\text{Termsymbol:} \quad ^NL _J
+\end{equation}
+
+wobei
+
+\begin{equation}
+	J = L + S
+\end{equation}
+
+$N:$ Entartungsgrad
+
+$L:$ elektrische Bahndrehimpuls
+
+$J:$ Gesamtdrehimpuls
+
+$S:$ Spin Elektron
+
+Dem elektrischen Bahndrehimpuls sind dabei den Zeichen die Zahlen in
+Tabelle \ref{atomuhr:drehimpulsnotation} zugewiesen.
+
+\begin{table}
+	\centering	
+	\begin{tabular}{llll}
+		s & p & d & f \\
+		1 & 2 & 3 & 4 \\
+	\end{tabular}
+	\caption{elektrische Bahndrehimpulse}
+	\label{atomuhr:drehimpulsnotation}
+\end{table}
+
+Mit diesem Wissen l"asst sich nun ein Feinstruktur"ubergang ausrechnen. 
+\begin{center}
+		"Ubergang: $^2P_{3/2} \rightarrow ^2P_{1/2}: \lambda = \SI{2.76}{\centi\meter}$
+		
+		$\nu_1 = \dfrac{c}{\lambda_1} = \SI{10.9}{\giga\hertz}$
+\end{center}
+
+Das ausgesendete Photon befindet sich bei diesen
+Feinstruktur"uberg"angen in einem Bereich, in dem sie schon eher
+genutzt werden k"onnte. F"ur Atomuhren wird jedoch der
+Hyperfeinstruktur"ubergang genutzt.
+
+\subsection{Hyperfeinstruktur"ubergang}
+\label{sec:hyperf}
+Der Feinstruktur"ubergang wurde entdeckt, als das Bohrsche Modell
+experimentell genauer untersucht wurde. "Ahnlich ergeht es dem
+Hyperfeinstruktur"ubergang. Als das Spektrum des Feinstruktur"ubergang
+besser aufgel"ost werden konnte, ist aufgefallen, das es noch einen
+weiteren Effekt gibt, welcher zu einer Aufspaltung eines Energielevels
+beim Feinstruktur"ubergang f"uhrt. Dieser wurde
+Hyperfeinstruktur"ubergang genannt und wird hier nun erkl"art.
+
+Dieser Struktur"ubergang kann mithilfe der Wechselwirkung zwischen
+Elektron und Kern erkl"art werden. Der Kern besitzt einen gewissen
+Kernspin. Der magnetische Spin des Elektrons kann nun parallel oder
+antiparallel zum Kern sein. Was zu unterschiedlichen Energieniveaus
+f"uhrt.
+
+Beim Wasserstoff, welches im Grundzustand besetzt ist, f"uhrt das zu
+einer Wellenl"ange von $\lambda = \SI{21}{\centi\meter}$, was einer
+Frequenz von $\nu = \SI{1.42}{\giga\hertz}$ entspricht. Das ist eine
+Frequenz, welche sich sehr gut mit elektronischen Ger"aten verarbeiten
+l"asst.
+
+\subsection{Alkalimetalle}
+Gleich wie Wasserstoff geh"ort auch Rubidium und C"asium zu den
+Alkalimetallen. Speziell an dieser Gruppe von Elementen ist, dass sie
+nur ein freies Elektron in der letzten besetzten Schale haben.
+
+Da alle Atome Edelgaskonfiguration anstreben, wollen die Alkalimetalle
+dieses freie Elektron m"oglichst abgeben und sind dadurch relativ
+Reaktionsfreudig.  Die abgeschlossenen Schalen sind elektrisch gesehen
+neutral.  Weshalb die Alkalimetalle mutmasslich f"ur Atomuhren
+gebraucht wird.  Da das Frequenzspektrum bei einem Valenzelektron
+einfacher zu verstehen ist, als bei anderen Atomgruppen mit mehreren
+Valenzelektronen.
+
+Rubidium hat einen Hyperfrequenz"ubergang von $\nu =
+\SI{6.834}{\giga\hertz}$. Die h"ohere Frequenz l"asst sich damit
+erkl"aren, dass sich das Valenzelektron weiter weg vom Kern befindet
+als beim Wasserstoffatom. Die Kraft auf die Wechselwirkung ist somit
+kleiner.
+
+\section{Technische Betrachtung}
+In der technischen Betrachtung in diesem Abschnitt wird die
+Funktionsf"ahigkeit des Rubidium-Frequenznormals LPRO-101 aufgezeigt.
+Das Datenblatt dieser Atomuhr kann unter \cite{datasheet:lpro}
+gefunden werden.  Ein ausf"uhrliches Datenblatt ist unter
+\cite{datasheet:prs10m} zu finden, in welchem ein anderes Modell
+erkl"ahrt wird.  Die Funktionsbeschreibung ist jedoch besser.
+
+Solche Rubidium Frequenznormale besitzen die Gr"osse einer Handfl"ache
+und erreichen eine Genauigkeit von ungef"ahr \num{e-9}.  In der
+Abbildung \ref{fig:techBlock} ist der schematische Aufbau einer
+solchen Atomuhr aufgezeigt.  Die Hauptfunktion dieser Schaltung ist
+ein Regelkreis, welcher sich auf den Hyperfeinstrucktur"ubergang des
+Rubidium-87 ein regelt, welcher bei \SI{6.8346875}{\giga\hertz} liegt.
+
+\begin{figure}
+  \centering
+  \input{atomuhr/techBlock.tex}
+  \caption{Schematischer Aufbau einer Rubidium Atomuhr}
+  \label{fig:techBlock}
+\end{figure}
+
+\subsection{Funktionsweise}
+Die Rubidium-87 Entladungslampe wird angeregt und emittiert Licht bei
+ca. \SI{780}{\nano\meter}.  Dieses Licht wird in die Resonator-Kammer
+geleitet, in welcher ein Absorptionsgas aus Rubidium-87 vorhanden ist.
+Weiter ist in der Entladungslampe und der Resonatorkammer ein
+Filtergas aus Rubidium-85 vorhanden.  In der Abbildung
+\ref{fig:uebergaenge} ist die Filterung dargestellt.
+
+\begin{figure}
+  \centering
+  \input{atomuhr/uebergaenge.tex}
+  \caption{Energie"uberh"ange in einer Rubidium Atomuhr}
+  \label{fig:uebergaenge}
+\end{figure}
+
+Die Entladungslampe emittiert zwei sehr "ahnliche Frequenzen, da das
+untere Energieniveau 5s der Rubidium-87 Atome nur durch ihren
+unterschiedlichen Spin aufgeteilt wird.  Die zur Filterung
+eingesetzten Rubidium-85 Atome besitzen ein leicht verschobenes
+unteres Energieniveau, welches mit einem der beiden 5s Energieniveaus
+von Rubidium-87 "ubereinstimmt.  Dadurch wird einer der beiden
+Emittierten Frequenzen des Rubidium-87 herausgefiltert.  So erreicht
+nur eine der beiden Frequenzen die Resonator-Kammer.
+
+Im Resonator absorbiert das Rubidium-87 die eintreffenden
+Photonen. Das Elektron steigt in das h"ohere Energieniveau 5p auf und
+f"allt spontan mit einer Wahrscheinlichkeit von \SI{50}{\percent} in
+eine der beiden unteren Energieniveaus von 5s zur"uck.  Mit der Zeit
+sammeln sich mehr Elektronen im oberen der beiden Energieniveaus von
+5s an, da keine Photonen mit dieser ben"otigten Frequenz zum Resonator
+(Filterung durch Rubidium-85) gelangen.  Es werden weniger Photonen
+absorbiert, was der Detektor messen kann.  (Eine weitere Anwendung,
+welche mit den Energie"uberg"angen arbeitet ist der Laser, zu finden
+im Kapitel \ref{chapter:laser}.)
+
+Der Detektor steuert einen spannungsgesteuerten Oszillator (VCXO) an,
+welcher eine Frequenz um \SI{20}{\mega\hertz} ausgibt.  Dieses Signal
+wird mit einem Multiplizierer auf die Frequenz des
+Hyperfeinstruktur"ubergang hinauf multipliziert.
+
+Diese hinauf multiplizierte Frequenz liegt nun im Mikrowellenbereich
+und wird zur"uck in den Resonator geleitet.  Wird nun die Frequenz von
+\SI{6.8346875}{\giga\hertz} genau getroffen, wird am VCXO genau
+\SI{20}{\mega\hertz} ausgegeben.  Weiter entspricht die
+Mikrowellenstrahlung nun genau dem Hyperfeinstrucktur"ubergang, was
+dazu f"uhrt, dass es zu einer Durchmischung des unteren Energieniveaus
+im Resonator kommt.  Die festsitzenden Elektroden gelangen nun wieder
+in den untersten Energiezustand von 5s.  Somit k"onnen wieder mehr
+Photonen absorbiert werden, was zu einer Abdunklung des Detektors
+f"uhrt.
+
+Der ganze Regelkreis regelt somit auf die maximale Absorption im
+Resonator und f"uhrt zu einer sehr genauen Ausgangsfrquenz von
+\SI{20}{\mega\hertz}.
+
+\subsection{Tuning}
+Es stellt sich nun die Frage, wie ein solcher Regelkreis abgeglichen
+werden kann.  Zum Beispiel m"ussen die GNSS Satelliten untereinander
+und mit der Bodenstation synchronisiert werden.  Wie man in den
+quantenmechanischen Betrachtungen gesehen hat, h"angt der
+Hyperfeinstruktur"ubergang (\ref{sec:hyperf}) nur vom Magnetfeld des
+Atomkerns und des Spin Magnetfelds ab.
+
+Nun kann man diese Magnetfelder mit einem externen Magnetfeld st"oren,
+was zu einer Frequenzverschiebung des Hyperfeinstrucktur"ubergangs
+f"uhrt.  Das Magnetfeld wird wie in Abbildung \ref{fig:tuning}
+dargestellt, am Resonator angelegt.  Mit dieser St"orung kann nun die
+gew"unschte Frequenz mit einer genaueren Caesium Atomuhr oder dem GPS
+Takt abgeglichen werden.
+
+Wie stark sich nun diese Frequenz durch eine magnetische St"orung
+beeinflussen l"asst, wird im n"achsten Abschnitt ausgerechnet.
+
+\begin{figure}
+  \centering
+  \input{atomuhr/tuning.tex}
+  \caption{Frequenztuning durch Magnetfeld-St"orung am Resonator
+    (gr"un angelegtes Magnetfeld).}
+  \label{fig:tuning}
+\end{figure}
+
+\subsection{Rechnung}
+
+\subsubsection{Kern Magnetfeld}
+Im Kapitel \ref{chapter:spin} wird der Spin im Magnetfeld beschrieben.
+Will man nun das Kernmagnetfeld eines Rubidium Atoms bestimmen, so
+ben"otigt man die Hyperfeinstrukturfrequenz.  Beim Rubidium Atom ist
+dies \SI{6.8346875}{\giga\hertz}.  Formt man nun die gegebenen Formeln
+um,
+
+\begin{align*}
+  \Delta E &= h\cdot\nu = \dfrac{\hbar e}{m_e}B_z
+           &\left(\hbar = \dfrac{h}{2\pi}\right)
+\end{align*}
+
+erh"alt man das Kernmagnetfeld eines Rubidiumatoms:
+
+\begin{equation*}
+  B_z = \dfrac{m_e\cdot2\pi\cdot\nu}{e} = \SI{244.2}{\milli\tesla}
+\end{equation*}
+
+Zum Vergleich, das Erdmagnetfeld variiert je nach Ort zwischen
+\SIrange[range-phrase={ bis }, range-units=single]{30}{60}{\micro\tesla}.
+
+\subsubsection{Enfluss des Erdmagnetfelds}
+Wenn man nach dem Datenblatt \cite{datasheet:prs10m} eine magnetische
+Abh"angigkeit von
+
+\begin{equation*}
+  \dfrac{\Delta f}{f} < 2\cdot 10^{-10} \text{ pro } \SI{100}{\micro\tesla}
+\end{equation*}
+
+annimmt, ergibt sich daraus eine Frequenz"anderung von \(\Delta
+f=\SI{0.698}{\hertz}\).  Bei der Hyperfeinstruckturfrequenz von \(f =
+\SI{6.8346875}{\giga\hertz}\) nur ein kleiner Beitrag.  Nach dem
+Datenblatt l"asst sich die Ausgangsfrequenz um \SI{14}{\hertz}
+ver"andern.  Somit kann der Einfluss des Erdmagnetfeld ohne Problem
+"ubersteuert werden.
+
+\section{Geschichte der Atomuhr}
+\label{sec:gesch-der-atom}
+Bereits 1879 hatte Lord Kelvin die Idee, Atome als Zeit und L"angen
+Standard zu verwenden.  Erst 1949 wurde dann in der USA am National
+Institute of Standards and Technology (NIST) die erste Atomuhr gebaut
+\cite{ieee:nist}.  Diese Atomuhr verwendete Ammoniak bei einer
+Frequenz von \SI{23.87}{\giga\hertz}.  Die Genauigkeit dieses Atomuhr
+lag bei ca. 1 zu \num{e-7}.
+
+Diese Genauigkeit ist noch nicht sehr eindr"ucklich, wenn man
+vergleicht, dass ein normaler Quarzoszillator bei einer Genauigkeit
+von ca. \num{e-5} und eine beheizter Quarzoszillator (OCXO) durch den
+reduzierten Temperaturdrift im Bereich von \num{2e-8} liegt.
+
+Mit der Ammoniak Atomuhr konnte aber das Prinzip der Atomuhr
+aufgezeigt werden.  Welche 1952 mit der ersten Caesium Atomuhr NBS-1
+weitergef"uhrt werden konnte.  Die Genauigkeit und Stabilit"at der
+Caesium Atomuhren konnte soweit gesteigert werden, dass 1967 die
+SI-Sekunde als Hyperfeinstruktur"ubergang von Caesium-133 definiert
+wurde.  Das f"uhrt dazu, dass eine Sekunde mit \num{9192631770} Takten
+aufgel"ost wird.  Somit ist die Genauigkeit auf
+\SI{108.78}{\nano\second} beschr"ankt.
+
+Andere Atomuhren, welche in der Zwischenzeit entwickelt wurden,
+verwenden die Elemente Rubidium und Wasserstoff.  Beide verwenden
+ebenfalls den Hyperfeinstruktur"ubergang.  Die Rubidium Atomuhren
+k"onnen sehr einfach und g"unstig aufgebaut werden besitzen jedoch
+nicht die Genauigkeit von Caesium Atomuhren.  Genauer k"onnen die
+Wasserstoffatomuhren gebaut werden, ben"otigen jedoch eine komplexere
+K"uhlung der Atome.
+
+Will man eine genauere Aufl"osung erreichen, gen"ugt es nicht die
+Hyperfeinstruktur"uberg"ange zu benutzen.  Man muss eine h"ohere
+Taktung erreichen.  Diese h"oheren Taktungen k"onnen erreicht werden,
+wenn Atome mit Spektrallinien im optische Bereich verwendet werden.
+Lange konnte dieser Bereich nicht genutzt werden, da diese hohen
+Takte mit elektronischen Regelkreisen nicht gemessen werden konnten.
+
+Gl"ucklicherweise wurde 1998 der Frequenzkamm entdeckt
+\cite{SdW:kamm}.  Mit dessen Hilft k"onnen Frequenzen im optischen
+Spektrum mit einer Schwebung in den technisch messbaren
+Frequenzbereich gebracht werden.  Diese Technologie erm"oglichte es
+andere Atome zu verwenden, mit welchen man 2014 eine Genauigkeit von
+\num{e-18} erreichte, was ca. einer Sekunde auf das alter des
+Universums entspricht.  In der Abbildung \ref{fig:periode} ist eine
+nicht abschiessende Auflistung der verwendeten Elemente in Atomuhren
+dargestellt.
+
+\begin{figure}
+  \centering
+  \input{atomuhr/elements.tex}
+  \caption{Nicht abschliessende Aufstellung der verwendeten Elemente
+    in Atomuhren (gelb: Hyperfeinstruktur"ubergang; Rot: andere
+    "Uberg"ange)}
+  \label{fig:periode}
+\end{figure}
+
+\section{Zusammenfassung}
+Die heute eingesetzten Atomuhren benutzen den
+Hyperfeinstruktur"ubergang, als hoch genaue Frequenzkonstante.  Dieser
+Hyperfeinstruktur"ubergang kann mit Hilfe der St"orungstheorie
+erkl"art werden, wie am Anfang dieses Kapitels beschrieben wurde.
+Obwohl in den Medien immer wieder von noch genaueren Atomuhren die
+Rede ist, sind die in der Realit"at eingesetzten um einige 10er
+Potenzen weniger genau, besitzen aber eine Langzeitstabilit"at die den
+technischen Anforderungen entsprechen.  Vor allem werden heutzutage
+Caesium Atomuhren eingesetzt, da auch die SI-Sekunde als
+Hyperfeinstruktur"ubergang von Caesium-133 definiert ist.  In Zukunft
+wird die Sekundendefinition nach dem Stand der zuk"unftigen Technik
+angepasst werden.
+
 \printbibliography[heading=subbibliography]
 \end{refsection}
 
