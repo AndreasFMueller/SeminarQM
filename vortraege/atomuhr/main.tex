@@ -1,0 +1,81 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         FILE:  main.tex
+%
+%        USAGE:  ---
+%
+%  DESCRIPTION:  Presentation for MathSem Seminar QM
+%
+%      OPTIONS:  see different input's below
+% REQUIREMENTS:  full LaTeX installations
+%         BUGS:  ---
+%        NOTES:  ---
+%       AUTHOR:  Pascal Stump, pascal-stump@bluewin.ch
+%      VERSION:  ---
+%      CREATED:  26.Apr.2014
+%     REVISION:  ---
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% LaTeX PREAMBLE
+\documentclass[compressd]
+{beamer}
+\usecolortheme[named=orange]{structure}
+\mode<presentation>
+{
+	\usetheme{Frankfurt}
+}
+
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+\input{header/normalHeader}
+
+\usepackage[skins,theorems]{tcolorbox}
+\tcbset{highlight math style={enhanced,
+		colframe=red,colback=white,arc=0pt,boxrule=1pt}}
+
+%%% other packages
+\usepackage{standalone}
+
+%%% BibTeX document
+%\bibliography{testTex/testBibtex}
+
+%%% Title
+\title{Atomuhr}
+\subtitle[MathSem QM]{Mathematisches Seminar Quantenmechanik}
+\author{Stefan Steiner \and Pascal Stump}
+\institute{HSR Hochschule für Technik Rapperswil}
+\date{04.\,Mai 2014}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% BEGIN DOCUMENT
+\begin{document}
+	
+	%%% input tex files
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	%%%
+	% 00_Themen; Begrüssung
+	\section*{Begrüssung}
+	\input{chapters/00_themen}
+	
+	% 01_Einleitung
+	\section{Einleitung}
+	\input{chapters/01_einleitung}
+
+	% 03_Math; Quantenmechanische Beschreibung
+		\section[Math]{Quantenmechanische Betrachtung}
+	\input{chapters/03_math}
+	
+	% 02_Tech; Technischer Aufbau
+	\section[Tech]{Technische Betrachtung}
+	\input{chapters/02_tech} 
+		
+	% 04_Schluss/Fragen
+	\section[Schluss]{ Schluss/Fragen}
+	\input{chapters/04_schluss}
+	
+	%%% END DOCUMENT
+\end{document}

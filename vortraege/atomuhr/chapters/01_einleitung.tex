@@ -1,0 +1,61 @@
+% 01_einleitung
+
+\subsection{Anwendungen}
+\begin{frame}
+  \frametitle{Anwendungen}
+
+  \begin{columns}
+    
+    \column{.5\textwidth}
+    \begin{itemize}
+    \item SI-Basiseinheiten
+\uncover<2>{
+    \item Zeitmessung
+    \item Telekommunikation
+    \item Energieversorgung
+    \item GNSS
+    \item \dots}
+    \end{itemize}
+
+    \column{.5\textwidth}
+    \begin{figure}
+      \centering
+      \begin{tikzpicture}
+        \tikzstyle{nodeStyle} = [circle, very thick,
+                                 draw=gray!40!black, fill=gray!30,
+                                 minimum size=1cm];
+        \tikzstyle{nodeStyleS} = [circle, very thick,
+                                 draw=green!40!black, fill=green!20,
+                                 minimum size=1cm];
+        \tikzstyle{conn}      = [->, >=stealth',
+                                 shorten >=0.1cm,
+                                 very thick];
+
+        
+        \node at (90:1.7cm) [draw, nodeStyle] (K) {\si{\kelvin}};
+        \node at (39:1.7cm) [draw, nodeStyleS] (s) {\si{\second}};
+        \node at (-13:1.7cm) [draw, nodeStyleS] (m) {\si{\meter}};
+        \node at (-64:1.7cm) [draw, nodeStyle] (kg) {\si{\kilogram}};
+        \node at (141:1.7cm) [draw, nodeStyleS] (A) {\si{\ampere}};
+        \node at (193:1.7cm) [draw, nodeStyle] (mol) {\si{\mol}};
+        \node at (244:1.7cm) [draw, nodeStyleS] (cd) {\si{\candela}};
+
+        % connections
+        %\draw[conn] (s.west) -- (A.east);
+        %\draw[conn] (s.south west) -- (cd.north east);
+        %\draw[conn] (s.south) -- (m.north);
+      \end{tikzpicture}
+    \end{figure}
+
+  \end{columns}
+
+\end{frame}
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End: 
