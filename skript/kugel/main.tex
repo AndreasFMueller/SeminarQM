@@ -299,7 +299,7 @@ c_k= \sqrt{a^2_{k}+b^2_{k}}
 Man kann ein Kugelspektrum analog zum komplexen Amplitudenspektrum 
 darstellen. 
 Dabei muss man die Summe der Quadrate $a$- und der $b$-Koeffizienten mit 
-dem gleichen Index $l_m$ bilden. Anschliessend muss man alle 
+dem gleichen Indexpaar $lm$ bilden. Anschliessend muss man alle 
 mit dem selben Index $l$ aufsummieren und von den daraus resultierenden 
 Koeffizienten die Wurzel ziehen. Man erh"alt 
 \begin{align*}
@@ -319,6 +319,8 @@ Qualitativ sind jedoch alle Ergebnisse korrekt.
 
 \section{Spektrum einer Rechteckfunktion}
 \rhead{Spektrum einer Rechteckfunktion}
+\input kugel/wandernd.tex
+\input kugel/dirac.tex
 Um aufzuzeigen, dass das komplexe Amplitudenspektrum unabh"angig von 
 der Phasenlage konstant bleibt, haben wir eine wandernde 
 Rechteckfunktion generiert. 
@@ -362,37 +364,9 @@ Zus"atzlich sieht man in den Videos auch
 die sich st"andig "andernden $a$- und $b$-Koeffizienten. Bei der 
 Rechteckfunktion ist auch noch das Phasendiagramm dargestellt.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck1_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck1_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck2_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck2_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck3_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck3_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck4_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck4_2.pdf}
-\caption{Wandernde Rechteckfunktion
-\label{skript:Spektrum1}}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_1_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_1_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_2_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_2_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_3_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_3_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_4_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_4_2.pdf}
-\caption{Rotierende Funktion auf der Kugeloberfl"ache
-\label{skript:Spektrum2}}
-\end{figure}
 
 \section{Dirac Stoss und konstante Funktion}
 \rhead{Dirac Stoss und konstante Funktion}
-
 In diesem Abschnitt m"ochten wir aufzeigen, dass im Falle eines 
 unendlich schmalen Rechtecksignals, wie auch einem unendlich kleinen 
 Kreisabschnitt auf der Kugeloberfl"ache mit dem Funktionswert 1 beim 
@@ -434,33 +408,7 @@ Funktionswert 1 mit dem zugeh"origen Kugelspektrum zu sehen.
 Wie bei den Videos, die bereits im letzten Abschnitt erw"ahnt wurden, 
 sind ebenfalls die $a$- und $b$-Koeffizienten sowie bei der 
 Rechteckfunktion das Phasendiagramm zu sehen.
-\begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck1_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck1_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck2_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck2_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck3_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck3_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck4_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck4_2.pdf}
-\caption{Breiter werdende Rechteckfunktion
-\label{skript:Dirac1}}
-\end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel1_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel1_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel2_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel2_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel3_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel3_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel4_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel4_2.pdf}
-\caption{Wachsender Kreisabschnitt auf der Kugeloberfl"ache
-\label{skript:Dirac2}}
-\end{figure}
 
 \section{Gibbs-Ph"anomen}
 \rhead{Gibbs-Ph"anomen}
