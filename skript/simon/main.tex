@@ -228,7 +228,7 @@ das erste Register im Zustand:
 Dies sagt aus, dass bei der Messung des ersten Registers entweder $x$ oder $x
 \oplus s$ herausgelesen wird. Das Problem ist nun, dass es sich nicht
 unterscheiden l"asst, um welchen Wert es sich handelt. Denn falls $x$ gemessen
-wird ist nicht klar, dass diser nicht $x \oplus s$ ist. Es hilft auch nicht
+wird, ist nicht klar, dass diser nicht $x \oplus s$ ist. Es hilft auch nicht
 $s$ zu finden.
 
 Um bei der Messung den Wert $x$ nicht zu bekommen wird ein Trick verwendet.
@@ -324,7 +324,7 @@ daf"ur liegt bei:
 
 Bei genauer "Uberglegung macht dies auch Sinn, denn falls $s \notin \{0,1\}^n$
 ist, gibt es genau $2^{n-1}$ m"oglichen $z$-Werte. Die Wahrscheinlichkeit einen
-solchen zu messen ist also gleich-verteilt.
+solchen zu messen ist also gleichverteilt.
 
 Der Algorithmus von Simon liefert nun einen Wert $z$. Um den genauen Wert von
 $s$ zu bestimmen, wird nun der Algorithmus $n-1$-Mal wiederholt, somit liegen
@@ -342,7 +342,6 @@ nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
     s \cdot z_{n} = 0
 \end{align*}
 
-
 \section{Schlussfolgerung}
 
 \begin{figure}[H]
@@ -352,7 +351,7 @@ nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
   \draw[->] (0,0) -- (0,5) node[above] {$\mathcal{O}{}$};
   \draw[scale=0.35,domain=-0:10,smooth,variable=\x,black] plot ({\x},{\x});
   \draw[scale=0.15,domain=-0:10,smooth,variable=\y,black]  plot ({\y},{2^(\y/2)});
-  \node [xshift=4cm,yshift=4cm] {$\mathcal{O}(n)$};
+  \node [xshift=4cm,yshift=4cm] {$\mathcal{O}(n^3)$};
   \node [xshift=2cm, yshift=5cm] {$\mathcal{O}(2^{n/2})$};
 \end{tikzpicture}
 \end{figure}
@@ -363,6 +362,14 @@ Anzahl der Schritte, welche f"ur die effektive Berechnung von $s$ ben"otigt
 werden, h"angt vom l"osen des linearen Gleichungssystems mit Gaußscher
 Elimination ab, also $O(n^3)$. 
 \cite{simon:cs191}
+
+Somit wurde ein Algorithmus, der auf dem klassischen Computer bei sehr grossen
+Zahlen schnell w"achst ( in diesem Fall ist der Wachsumt mit $O(2^{n/2})$
+angegeben ) auf eine L"osung mit einem viel kleineren Wachstum von $O(2^3)$
+reduziert. In der Theoretischen Informatik ist dies ein grosser Schritt, denn
+es zeigt auf, dass gewisse Problem auf dem Quantencomputer weit effizienter
+gel"ost werden k"onnen als auf dem klassischen Computer.
+
 
 \printbibliography[heading=subbibliography] \end{refsection}
 
