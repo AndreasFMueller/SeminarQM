@@ -19,7 +19,7 @@
 Ohne die quantenmechanischen Erkenntnisse, welche besonders zu Beginn
 des letzten Jahrhunderts gemacht wurden, g"abe es keine Atomuhren.
 Sie stellen eine pr"azise Zeitmessung sicher und ebnen den Weg f"ur
-immer genauere Messungen in der praktischen Physik.
+immer genauere Messungen in der experimentellen Physik.
 
 Zudem pr"agen diese Ger"ate unseren Alltag, ohne dass dies stark
 bemerkt wird.  Ortung durch ein Globales Satelliten Navigationssystem
@@ -136,9 +136,8 @@ werden. Elektronische Ger"ate arbeiten im Bereich von Gigahertz.
 
 Auf der Abbildung \ref{atomuhr:wasserstoffspektrum} sieht man das
 Frequenzspektrum der sogenannte Balmer-Serie des Wasserstoffs, welche
-zuf"alligerweise im sichtbaren Bereich ist. Der rote Strich ganz rechts
-stellt die $H\alpha$-Linie dar. Die n"achste links $H\beta$ und so
-weiter.
+zuf"alligerweise im sichtbaren Bereich ist. Die rote Linie ganz rechts
+ist die $H\alpha$-Linie. Die n"achste links $H\beta$ und so weiter.
 
 
 \subsection{Feinstruktur"ubergang}
@@ -148,9 +147,9 @@ im Gigahertz Bereich ausgesendet wird.  Der Feinstruktur"ubergang ist
 ein erster Schritt in diese Richtung.
 
 Als das Wasserstoffspektrum genauer untersuchte wurde, bemerkte man,
-dass die Spektrallinien nicht atomar sind. Wenn man beispielsweise die
+dass die Spektrallinien nicht einfach sind. Wenn man beispielsweise die
 $H\alpha$ Spektrallinie besser aufl"ost, so entdeckt man, dass diese
-eine Linie aus zwei besteht, welche sehr nahe aneinander
+eine Linie aus zwei Linien besteht, welche sehr nahe beieinander
 liegen (Abbildung \ref{atomuhr:fineStructure}).
 
 \begin{figure}
@@ -169,8 +168,9 @@ Mithilfe der St"orungstheorie ist es m"oglich, dieses Verhalten anzun"ahern.
 \begin{itemize}
 	\item[]  $H = \textcolor{red}{H_0}+ \textcolor{blue}{W_{SB}} + 
 		\textcolor{green}{W_M} + \textcolor{violet}{W_D} $
-	\item[]  $H$: relativistischer Hamiltonoperator
-	\item[]  \textcolor{red}{$H_0$}: nicht relativistischer Hamiltonoperator
+	\item[]  $H$: Hamiltonoperator mit Spin- und relativistischer Korrekturen
+	\item[]  \textcolor{red}{$H_0$}: Hamiltonoperator ohne Spin
+          aus Kapitel \ref{chapter:wasserstoff}
 	\item[]  \textcolor{blue}{$W_{SB}$}: Spin Bahn Kopplung
 	\item[]  \textcolor{green}{$W_M$}: Korrektur kin. Energie
 	\item[]  \textcolor{violet}{$W_D$}: Korrektur pot. Energie
@@ -181,14 +181,15 @@ Auf die Korrekturfaktoren $W_M$ und $W_D$ wird hier nicht n"aher
 eingegangen, da diese nur zu geringf"ugigen Korrekturen f"uhrt und
 nicht f"ur die Doppellinie verantwortlich ist.
 
-Der nicht relativistische Hamiltonoperator beschreibt das Bohrsche
-Atommodell, welches bereits bekannt ist.
+Der Hamiltonoperator ohne Spin beschreibt das Modell aus Kapitel
+\ref{chapter:wasserstoff}.
 
 Bei der Spin Bahn Kopplung geht es um die reine Betrachtung des
-Elektrons. Man stelle sich vor, dieses drehe sich in einer Kreisf"ormigen Bahn.  Da das
-Elektron eine Ladung besitzt, entsteht ein magnetisches Feld.  Dieses
-Feld wechselwirkt nun mit dem magnetischen Spin, den das Elektron auch
-noch besitzt.  Da das Elektron entweder Spin +1/2 oder -1/2 hat,
+Elektrons. Man stelle sich vor, dieses drehe sich in einer
+kreisf"ormigen Bahn.  Da das Elektron eine Ladung besitzt, entsteht
+ein magnetisches Feld.  Dieses Feld wechselwirkt nun mit dem
+magnetischen Spin, den das Elektron auch noch besitzt.  Da das
+Elektron entweder Spin \(+\frac{1}{2}\) oder \(-\frac{1}{2}\) hat,
 entstehen geringf"ugig unterschiedliche Frequenzen bei einem
 Quantensprung in das jeweilige Energielevel.
 
@@ -203,11 +204,11 @@ Quantensprung in das jeweilige Energielevel.
 Jedes Atom hat nun verschiedene Entartungsgrade, in denen sich
 Elektronen befinden. Zus"atzlich ist die Annahme, dass das Elektron um
 das Atom kreist falsch. Die Elektronen befinden sich in einem
-bestimmten Sektor, welchem ein gewisser Bahndrehimpuls zugewiesen ist (Abbildung \ref{atomuhr:drehimpulsnotation}).
+bestimmten Sektor, welchem ein gewisser Bahndrehimpuls zugewiesen ist (Abbildung \ref{atomuhr:bahndrehimpuls}).
 \begin{figure}
 	\centering
 	\includegraphics[width = 0.8\columnwidth]{atomuhr/orbitale.JPG}
-	\caption{elektrische Bahndrehimpulse \cite{pic:orbitale}}
+	\caption{Wellenfunktionen zu verschiedenen Bahndrehimpulsen \cite{pic:orbitale}}
 	\label{atomuhr:bahndrehimpuls}
 \end{figure}
 Ausserdem hat das Elektron zwei verschiedene Spinzust"ande in dem es
@@ -295,10 +296,10 @@ einfacher zu verstehen ist, als bei anderen Atomgruppen mit mehreren
 Valenzelektronen.
 
 Rubidium hat einen Hyperfrequenz"ubergang von $\nu =
-\SI{6.834}{\giga\hertz}$. Die h"ohere Frequenz l"asst sich damit
-erkl"aren, dass sich das Valenzelektron weiter weg vom Kern befindet
-als beim Wasserstoffatom. Die Kraft auf die Wechselwirkung ist somit
-kleiner.
+\SI{6.834}{\giga\hertz}$. Die h"ohere Frequenz im Vergleich zum
+Wasserstoffatom l"asst sich damit erkl"aren, dass sich das
+Valenzelektron weiter weg vom Kern befindet.  Die Kraft auf die
+Wechselwirkung ist somit kleiner.
 
 \section{Technische Betrachtung}
 In der technischen Betrachtung in diesem Abschnitt wird die
@@ -412,12 +413,12 @@ ben"otigt man die Hyperfeinstrukturfrequenz.  Beim Rubidium Atom ist
 dies \SI{6.8346875}{\giga\hertz}.  Formt man nun die gegebenen Formeln
 um,
 
-\begin{align*}
-  \Delta E &= h\cdot\nu = \dfrac{\hbar e}{m_e}B_z
-           &\left(\hbar = \dfrac{h}{2\pi}\right)
-\end{align*}
+\begin{equation*}
+  \Delta E = h\cdot\nu = \dfrac{\hbar e}{m_e}B_z
+\end{equation*}
 
-erh"alt man das Kernmagnetfeld eines Rubidiumatoms:
+erh"alt man das f"ur das Elektron sp"urbar, gemittelte Kernmagnetfeld
+eines Rubidiumatoms:
 
 \begin{equation*}
   B_z = \dfrac{m_e\cdot2\pi\cdot\nu}{e} = \SI{244.2}{\milli\tesla}
@@ -433,7 +434,6 @@ Abh"angigkeit von
 \begin{equation*}
   \dfrac{\Delta f}{f} < 2\cdot 10^{-10} \text{ pro } \SI{100}{\micro\tesla}
 \end{equation*}
-
 annimmt, ergibt sich daraus eine Frequenz"anderung von \(\Delta
 f=\SI{0.698}{\hertz}\).  Bei der Hyperfeinstruckturfrequenz von \(f =
 \SI{6.8346875}{\giga\hertz}\) nur ein kleiner Beitrag.  Nach dem
@@ -462,7 +462,7 @@ Caesium Atomuhren konnte soweit gesteigert werden, dass 1967 die
 SI-Sekunde als Hyperfeinstruktur"ubergang von Caesium-133 definiert
 wurde.  Das f"uhrt dazu, dass eine Sekunde mit \num{9192631770} Takten
 aufgel"ost wird.  Somit ist die Genauigkeit auf
-\SI{108.78}{\nano\second} beschr"ankt.
+\SI{108.78}{\pico\second} beschr"ankt.
 
 Andere Atomuhren, welche in der Zwischenzeit entwickelt wurden,
 verwenden die Elemente Rubidium und Wasserstoff.  Beide verwenden
