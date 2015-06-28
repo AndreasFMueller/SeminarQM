@@ -317,19 +317,25 @@ Filtergas aus Rubidium-85 vorhanden.  In der Abbildung
 
 \begin{figure}
   \centering
-  \input{atomuhr/uebergaenge.tex}
+  \subfigure[ohne \SI{6.8}{\giga\hertz} Anregung]{
+    \input{atomuhr/uebergaengeOhne.tex}}\\
+  \subfigure[mit \SI{6.8}{\giga\hertz} Anregung]{
+    \input{atomuhr/uebergaengeMit.tex}}
   \caption{Energie"uberh"ange in einer Rubidium Atomuhr}
   \label{fig:uebergaenge}
 \end{figure}
+
 
 Die Entladungslampe emittiert zwei sehr "ahnliche Frequenzen, da das
 untere Energieniveau 5s der Rubidium-87 Atome nur durch ihren
 unterschiedlichen Spin aufgeteilt wird.  Die zur Filterung
 eingesetzten Rubidium-85 Atome besitzen ein leicht verschobenes
 unteres Energieniveau, welches mit einem der beiden 5s Energieniveaus
-von Rubidium-87 "ubereinstimmt.  Dadurch wird einer der beiden
-Emittierten Frequenzen des Rubidium-87 herausgefiltert.  So erreicht
-nur eine der beiden Frequenzen die Resonator-Kammer.
+von Rubidium-87 "ubereinstimmt.  Diese "Ubereinstimmung ist f"ur die
+Funktionsweise der Rubidium Atomuhr von grosser Bedeutung, da man
+damit einer der beiden Emittierten Frequenzen des Rubidium-87
+herausfiltern kann.  So erreicht nur eine der beiden Frequenzen die
+Resonator-Kammer.
 
 Im Resonator absorbiert das Rubidium-87 die eintreffenden
 Photonen. Das Elektron steigt in das h"ohere Energieniveau 5p auf und
@@ -351,12 +357,11 @@ Diese hinauf multiplizierte Frequenz liegt nun im Mikrowellenbereich
 und wird zur"uck in den Resonator geleitet.  Wird nun die Frequenz von
 \SI{6.8346875}{\giga\hertz} genau getroffen, wird am VCXO genau
 \SI{20}{\mega\hertz} ausgegeben.  Weiter entspricht die
-Mikrowellenstrahlung nun genau dem Hyperfeinstrucktur"ubergang, was
-dazu f"uhrt, dass es zu einer Durchmischung des unteren Energieniveaus
-im Resonator kommt.  Die festsitzenden Elektroden gelangen nun wieder
-in den untersten Energiezustand von 5s.  Somit k"onnen wieder mehr
-Photonen absorbiert werden, was zu einer Abdunklung des Detektors
-f"uhrt.
+Mikrowellenstrahlung nun genau dem Hyperfeinstrucktur"ubergang, was zu
+einer stimulierten Emission f"uhrt.  Durch diese stimulierte Emission
+wird die Entv"olkerung des untersten Energiezustand von 5s aufgehoben.
+Es stehen nun wieder Elektronen zur Verf"uhgung, welche Photonen
+absorbiert k"onnen, was zu einer Abdunklung des Detektors f"uhrt.
 
 Der ganze Regelkreis regelt somit auf die maximale Absorption im
 Resonator und f"uhrt zu einer sehr genauen Ausgangsfrquenz von
