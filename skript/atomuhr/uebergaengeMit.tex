@@ -16,8 +16,7 @@
                            >=stealth',very thick];
 
 
-  \draw (0,0) node[above left] {5s} --++ (7.5cm,0)
-  node[above right] {mit \SI{6.8}{\giga\hertz}};
+  \draw (0,0) node[above left] {5s} --++ (7.5cm,0);
   \draw (0,0.4cm) --++ (7.5cm,0);
   \draw (0,4cm) node[left] {5p} --++ (7.5cm,0);
 
@@ -50,7 +49,7 @@
   \draw[very thick] (6,4cm)   --++ (1.5cm,0);
 
   \draw[trans, red!70!black] (6.5cm,4cm) -- (6.5cm,0.4cm);
-  \draw[trans, orange!70!black] (6.5cm,0.4cm) -- (6.5cm,0cm);
+  \draw[trans, orange!90!black] (6.5cm,0.4cm) -- (6.5cm,0cm);
   \draw[trans, blue!70!black] (7cm,0cm) -- (7cm,4cm);
 
   \node[align=center] at (6.75cm,-1cm) {$^{87}$Rb\\Resonator};
@@ -58,7 +57,11 @@
   % photons
   %   lamp
   \draw[photon, red!70!black] (1.3, 3cm) --++ (1.9cm,0);
-  \draw[photon, blue!70!black] (1.5, 2cm) --++ (4.7cm,0);
+  \draw[photon, blue!70!black, -, decoration={post length=0}]
+    (1.55, 2cm) --++ (5.45cm,0);
+  \draw[photon, blue!70!black, decoration={amplitude=0.3mm}]
+    (7cm, 2cm) --++ (1.5cm,0);
   %   hf
-  \draw[photonHFG, orange!70!black] (9cm, 3cm) --++ (-1.7cm,0);
+  \draw[photonHFG, orange!90!black] (9.5cm, 0.2cm)
+     --++ (-1.7cm,0) node[midway,yshift=3.2mm]{\SI{6.8}{\giga\hertz}};
 \end{tikzpicture}
