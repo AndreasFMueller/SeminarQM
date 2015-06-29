@@ -1,0 +1,118 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         FILE:  normalHeader.tex
+%
+%        USAGE:  ---
+%
+%  DESCRIPTION:  normal header for LaTeX files
+%
+%      OPTIONS:  ---
+% REQUIREMENTS:  full LaTeX installations
+%                main document
+%                biber for bibliography
+%         BUGS:  
+%        NOTES:  ---
+%       AUTHOR:  Pascal Stump, pascal-stump@bluewin.ch
+%      VERSION:  see git repo
+%      CREATED:  18.Apr.2014 - 17:50
+%     REVISION:  see git repo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% language definitions
+\usepackage[T1]{fontenc}         % Umlaute as one character
+\usepackage[utf8]{inputenc}      % character encoding
+
+\usepackage[main=ngerman,        % main language in document
+            english,             % other languages
+            ngerman]
+           {babel}               % correct language support
+                                 %   change language within document :
+                                 %     \selectlanguage{}
+
+\usepackage[babel,               % use babel in background
+            german=swiss]        % define german's style, also:
+                                 %   quotes; guillemets; swiss
+           {csquotes}            % quotes standardisation for whole
+                                 %   document, usage: \enquote{}
+                                 %   csquotes does not now
+                                 %   nswissgerman, therefor definition:
+\DeclareQuoteAlias{german}{nswissgerman}
+                                 %   definition below only works with
+                                 %     babel=german
+\defineshorthand{"`}{\openautoquote}
+\defineshorthand{"'}{\closeautoquote}
+
+%%% miscellaneous
+\usepackage{hyperref}            % url, clickable pdf
+
+\usepackage[style=ieee,
+            backend=biber,
+            language=auto]
+            {biblatex}           % citing of references
+                                 %   usage:
+                                 %     \bibliography{pathTo}
+                                 %     \cite[prenote][postnote]{key}
+                                 %     \printbibliography
+\DeclareLanguageMapping{nswissgerman}{ngerman}
+
+\usepackage{lipsum}              % lorem ipsum text include
+                                 %   \lipsum
+                                 %   \lipsum[4-6]
+                                 
+%%% tabularx
+\usepackage{tabularx}
+
+%%% caption
+\usepackage[font=small]{caption}
+% ähndern der Schriftgrösse bei caption
+
+
+%%% preview
+%\usepackage[showlables,sections,floats,textmath,displaymath]{preview}
+
+%%% picture & graphics
+\usepackage{tikz}                % TikZ graphics
+\usetikzlibrary{arrows,        % include into main only what needed
+                decorations,
+%                 pathmorphing,
+%                 backgrounds,
+                positioning,
+%                 fit,
+%                 petri,
+                calc,
+%                 intersections,
+%                 through
+                shapes,
+                shadings}
+
+%%% units
+\usepackage{siunitx}             % SI unit  \si{unit} or \SI{value}{unit}
+\sisetup{per-mode=symbol-or-fraction,
+         detect-shape,
+         range-phrase = { \translate{bis} } }
+                                 %   fraction; font shape auto detect
+
+%%% chemistry
+\usepackage[version=3]{mhchem}   % easy typesetting of chemical
+                                 %   formula, usage:
+                                 %     \ce{1/2H20}
+                                 %     \ce{^{227}_{90}Th+}
+
+\usepackage{chemfig}             % drawing molecules (with TikZ)
+                                 %   usage:
+                                 %     \chemfig{}
+% http://mirror.switch.ch/ftp/mirror/tex/macros/generic/chemfig/chemfig_doc_en.pdf
+
+%%% electronic                   % drawing electrical circuits (with
+\usepackage[europeanvoltages,
+            europeancurrents,
+            europeanresistors,   % rectangular shape
+            americaninductors,   % "4-bumbs" shape
+            europeanports,       % rectangular logic ports
+            siunitx,             % #1<#2>
+            emptydiodes,
+            noarrowmos,
+            smartlabels]         % lables are rotated in a smart way
+           {circuitikz}          %   TikZ), usage:
+                                 %   \begin{circuitikz}
+% http://mirror.switch.ch/ftp/mirror/tex/graphics/pgf/contrib/circuitikz/circuitikzmanual.pdf
+
