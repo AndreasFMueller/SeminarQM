@@ -14,7 +14,7 @@ n"aherzubringen.
 \rhead{Floating Gate Transistor}
 Floating Gate Transistoren z"ahlen zu den Feldeffekttransistoren
 (Siehe Abbildung \ref{skript:Floatinggatetransistor}).
-Im Floating Gate wird die Ladung gespeichert, aus dem man einen Bin"aren
+Im Floating Gate wird die Ladung gespeichert, aus dem man einen bin"aren
 Zustand bestimmen kann.
 Je nach Ladungsmenge im Floating Gate k"onnen auch mehrere Bits gespeichert
 werden, "ublicherweise werden jedoch 2 Bits in einem Floating Gate
@@ -22,9 +22,9 @@ Transistor gespeichert.
 Die Ladung im Floating Gate l"asst sich "uber das Control Gate steuern.
 Wird das Potential am Control Gate erh"oht, beginnt von Drain nach
 Source ein Strom zu fliessen.
-Somit fliessen nun in der n"ahe des Floating Gates Elektronen durch.
+Somit fliessen nun in der N"ahe des Floating Gates Elektronen durch.
 "Ublicherweise wird der Source Anschluss meistens mit GND verbunden und
-Drain wird beim Leseprozess auf 0V geh"angt und beim Schreibprozess
+Drain wird beim Leseprozess auf 0V verbunden und beim Schreibprozess
 "ublicherweise auf "uber 10V.
 
 \begin{figure}
@@ -64,7 +64,7 @@ dadurch kann auf jede Speicherzelle direkt zugegriffen werden.
 Die Parallelleitungen brauchen mehr Platz, es lassen sich jedoch k"urzere
 Zugriffszeiten realisieren.
 Die NOR Flash-Speicher finden z.B. bei Programmspeichern und Firmwarespeichern
-ihre verwendung.
+ihre Verwendung.
 
 \subsection{L"oschvorgang}
 \rhead{Lo"schvorgang}
@@ -80,13 +80,13 @@ F"ur den Speichervorgang m"ussen Elektronen mittels 'hot electron injection'
 in das Floating-Gate gebracht werden. Ein grosses Problem bei
 Flashspeichern ist die begrenzte Anzahl Schreibezyklen.
 Wegen dem Schreibvorgang mittels 'hot electron injection', wird die
-Oxidschicht (Isolation \ref{skript:Floatinggatetransistor}) um das Floating Gate herum
+Oxidschicht (Isolator in Abbildung \ref{skript:Floatinggatetransistor}) um das Floating Gate herum
 besch"adigt, da bei der 'hot electron injection' eine grosse Leistung
 ben"otigt wird.
 Dies bewirkt, dass durch die Oxidschicht immer mehr Ladung abfliessen kann.
 Bei den NOR-Flashs hat man etwa 10'000 bis 100'000 Zyklen.
 Hingegen bei den NAND-Flashs sind es doch gegen 2 Millionen Zyklen.
-Da der Speicher jedoch in einzelnen Bl"ocken aufgebaut ist, ist dies
+Da der Speicher in einzelnen Bl"ocken aufgebaut ist, ist dies
 eher ein kleines Problem.
 Wenn eine Zelle ausf"allt hat es immer noch gen"ugend andere, auch wenn
 dadurch immer ein bisschen an Speicher verloren geht.
@@ -141,7 +141,7 @@ dieser nicht zus"atzlich in Schwingung versetzt.
 Wird der Wackelpudding jedoch auf der einen Seite angestossen, wird der
 Wackelpudding zus"atzlich in Schwingung versetzt und erreicht ein
 h"oheres Energieniveau.
-F"ur die Berechnung wird der Potentialtopf "uber die h"alfe mit einem
+F"ur die Berechnung wird der Potentialtopf "uber die H"alfe mit einem
 Rechteckimpuls angeregt.
 Dies vereinfacht das L"osen der Differentialgleichungen.
 Da die L"osung der urspr"unglichen Gleichung auf ein partielles
@@ -152,11 +152,11 @@ Differential-Gleichungssystem vereinfacht.
 
 Schlussendlich wird die Wahrscheinlichkeit des Zustand $|0\rangle$ 
 respektive die Wahrscheinlichkeit des Zustand $|1\rangle$ errechnet.
-Steigt die Wahrscheinlichkeit des Zustand $|1\rangle$ sinkt gleichzeitig
+Steigt die Wahrscheinlichkeit des Zustand $|1\rangle$, sinkt gleichzeitig
 die Wahrscheinlichkeit des Zustand $|0\rangle$ und umgekehrt.
 Diese Wahrscheinlichkeit ist abh"angig von der Energie $V_{e}$ 
-des Elektrons, vom Abstand $(x)$ des Elektrons zum Potentialtopf und der 
-Geschwindigkeit respektive der Zeit $(t)$ mit der das Elektron auf den 
+des Elektrons, vom Abstand $x$ des Elektrons zum Potentialtopf und der 
+Geschwindigkeit respektive der Zeit $t$ mit der das Elektron auf den 
 Potentialtopf wirkt.
 
 \begin{figure}
@@ -169,7 +169,7 @@ einem Flashspeicher
 
 \subsection{"Ubergangswahrscheinlichkeit}
 \rhead{"Ubergangswahrscheinlichkeit}
-Es wird die Wahrscheinlichkeit errechnet mit der die Teilchen
+Es wird die Wahrscheinlichkeit errechnet, mit der die Teilchen
 vom Grundzustand $|0\rangle$ in den Zustand $|1\rangle$ wechseln
 und damit Energie aufnehmen. 
 Diese Wahrscheinlichkiet ist $\vert\langle1|\psi(t)\rangle\vert^2$
@@ -195,6 +195,7 @@ dies entspricht der Wahrscheinlichkeit, dass der $|1\rangle$ erreicht ist.
 
 Wenn man die Gleichung nun noch vereinfacht, sieht man, dass diese
 Wahrscheinlichkeit mehrfach vorkommt.
+Wobei $\langle1|V_e(x,t)|\psi(t)\rangle = V(t)\langle1|\psi(t)$.  
 \[
 i\hbar\frac{d}{dt}\langle1|\psi(t)\rangle = E_{1}\langle1|\psi(t)\rangle+\langle1|\psi(t)\rangle V(t)
 \]
@@ -210,7 +211,7 @@ i\hbar\frac{d}{dt}\langle0|\psi(t)\rangle = E_{0}\langle0|\psi(t)\rangle+\langle
 
 Mittels Skalarprodukt kann das Differentialgleichungssystem weiter
 vereinfacht werden.
-Denn wie man weiss ergibt das Skalarprodukt von $\langle0|0\rangle$
+Weil die Zust"ande orthonormal sind, ergibt das Skalarprodukt von $\langle0|0\rangle$
 und $\langle1|1\rangle = 1$.
 Genauso wie das Skalarprodukt von $\langle0|1\rangle$ und
 $\langle1|0\rangle = 0$.
@@ -218,8 +219,8 @@ Ausserdem kann  $\langle0|V(t)|0\rangle$ als $V_{0}v_{00}$ geschrieben
 werden, $\langle1|V(t)|0\rangle$ als $V_{0}v_{01}$,$\langle0|V(t)|0\rangle$
 als $V_{0}v_{11}$ und $\langle1|V(t)|0\rangle$ als $V_{0}v_{10}$.
 
-Einfachheitshalber schreibt man anstatt $\langle1|\psi(t)\rangle$ $a_1$
-entsprechend f"ur $\langle0|\psi(t)\rangle$ $a_0$.
+Einfachheitshalber schreibt man $a_1 = \langle1|\psi(t)\rangle$ und
+entsprechend $a_0 = \langle0|\psi(t)\rangle$.
 Somit ergibt sich dann folgendes Differentialgleichungssystem:
 \begin{align*}
 i\hbar\frac{d}{dt}a_{0}(t)\langle0|0\rangle +i\hbar\frac{d}{dt}a_{1}(t)\langle0|1\rangle&= a_{0}(t)E_{1}\langle0|0\rangle + a_{1}(t)E_{1}\langle0|1\rangle + a_{0}(t)\langle0|V(t)|0\rangle+ a_{1}(t)\langle1|V(t)|0\rangle
@@ -309,9 +310,9 @@ k'_{1}(t)&= k_{0}(t) C_{10} e^{(C_{00}-C_{11}) t}
 Unsere inhomogene Differential-Gleichung erster Ordnung verwandelt
 sich dadurch in eine homogene Differential-Gleichung zweiter Ordnung.
 \begin{align*}
-k''_{0}(t) - (C_{11}-C_{00}) k'_{0}(t) - C_{10}C_{01}k(t)&= 0
+k''_{0}(t) - (C_{11}-C_{00}) k'_{0}(t) - C_{10}C_{01}k_0(t)&= 0
 \\
-k''_{1}(t) - (C_{00}-C_{11}) k'_{1}(t) - C_{01}C_{10}k(t)&= 0
+k''_{1}(t) - (C_{00}-C_{11}) k'_{1}(t) - C_{01}C_{10}k_1(t)&= 0
 \end{align*}
 Das charakteristische Polynom lautet:
 \begin{align*}
@@ -353,11 +354,11 @@ verwendet werden.
 In der Abbildung \ref{skript:potentialmittel}, sieht man in der unteren
 Grafik, dass man nach ca. 0.02s sagen kann das der Zustand $|0\rangle$, 
 respektive in der oberen Grafik der Zustand $|1\rangle$ erreicht wird.
-Wenn man das Potential um das 50-Fache erh"oht, sieht man in der Abbildung
+Wenn man das Potential um das 50-fache erh"oht, sieht man in der Abbildung
 \ref{skript:potentialgross}, dass die Wahrscheinlichkeit, f"ur  den Zustand
 $|0\rangle$ viel schneller kleiner wird und die Wahrscheinlichkeit f"ur den
 Zustand $|1\rangle$ viel schneller ansteigt.
-Wenn man jedoch das Potential um das ca. 30-Fache verkleinert, dauert es
+Wenn man jedoch das Potential um das ca. 30-fache verkleinert, dauert es
 um einiges l"anger bis die Wahrscheinlichkeit, dass der Zustand $|0\rangle$,
 wie in Abbildung \ref{skript:potentialklein} zu sehen ist, erreicht wird,
 respektive bis die Wahrscheinlichkeit, dass der Zustand $|1\rangle$ erreicht
