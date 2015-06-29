@@ -1,6 +1,7 @@
 *.backup
 *.bm
 *.bbl
+*.bcf
 *.blg
 *.dvi
 *.synctex.gz
@@ -25,3 +26,5 @@ mpxerr.tex
 Thumbs.db
 
 *.pdf
+
+*.asv

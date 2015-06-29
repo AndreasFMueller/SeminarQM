@@ -1,0 +1,245 @@
+% 02_analyse
+
+\subsection{Regelkreis}
+\begin{frame}
+  \frametitle{Technischer Aufbau}
+
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}
+    [node distance=1.3cm]
+
+    \tikzstyle{conn} = [->,shorten >=0.1cm,>=stealth',very thick];
+
+    \only<1>{\tikzstyle{connLamp} = [->, shorten >=0.1cm,
+                                     >=stealth',
+                                     very thick];}
+    \only<2->{\tikzstyle{connLamp} = [->, decorate, 
+                                      decoration={snake,
+                                        amplitude=1.5mm,
+                                        segment length=1.7mm,
+                                        post length=2.7mm},
+                                      shorten >=0.1cm,
+                                      >=stealth', very thick,
+                                      color=red!50!black];}
+
+    \only<1->{\tikzstyle{connAbsorber} = [->, shorten >=0.1cm,
+                                          >=stealth', very thick];}
+
+    \only<-2>{\tikzstyle{connHfgen} = [->, shorten >=0.1cm,
+                                       >=stealth', very thick];}
+    \only<3->{\tikzstyle{connHfgen} = [->, decorate,
+                                       decoration={snake,
+                                         amplitude=1.5mm,
+                                         segment length=9mm,
+                                         post length=2.5mm},
+                                       shorten >=0.1cm,
+                                       >=stealth',very thick]; }
+
+    \only<1>{\tikzstyle{lamp} = [draw, thick, circle,
+                                 inner sep=1.5mm];}
+    \only<2->{\tikzstyle{lamp} = [draw=red!50!black,
+                                  thick,circle,inner sep=1.5mm,
+                                  fill=red!30];}
+
+    \only<1>{\tikzstyle{absorber} = [draw, thin, circle,
+                                     shade, shading=radial,
+                                     inner color=black!70];}
+    \only<2->{\tikzstyle{absorber} = [draw, thin, circle,
+                                     shade, shading=radial,
+                                     inner color=blue!70];}
+
+    \tikzstyle{vcxo} = [draw, thick, rectangle, inner sep=5mm,
+                        align=center, minimum width=2.7cm];
+    \tikzstyle{hfgen} = [draw,thick, rectangle, inner sep=5mm];
+
+    % drawing
+    \node[lamp, minimum size=1.7cm] (lamp) {\ce{^{87}Ru}};
+
+    \node[absorber, minimum size=1.7cm] (absorber) [right=of lamp] {};
+
+    \node (diode) [right=of absorber] {};
+
+    \draw[semithick](diode) ++ (0.0,-1.0) to[empty photodiode]
+                            ++ (0.0,2.0);
+
+    \only<-3>  {\node[vcxo] (vcxo) [right=of diode]
+                       {\SI{20}{\mega\hertz}\\VCXO}; }
+
+    \node[hfgen] (hfgen) [below=of absorber] {\(\times\)};
+
+    \only<2>   {\node[] (note) [left=of hfgen] {\SI{780}{\nano\meter}}; }
+    \only<3>   {\node[xshift=1cm] (note) [left=of hfgen]
+                                         {\SI{6.8346875}{\giga\hertz}}; }
+
+    % connections
+    \draw[connLamp] (lamp.east) -- (absorber.west);
+    \draw[connAbsorber, shorten >=0.4cm] (absorber.east) -- (diode.west);
+    \draw[conn] (diode.east) ++ (0.3cm,0.0) -- (vcxo.west);
+    \draw[conn] (vcxo.south) |- (hfgen.east);
+    \draw[connHfgen] (hfgen.north) -- (absorber.south);
+  \end{tikzpicture}
+ \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Detail}
+
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}
+      \tikzstyle{trans} = [->,>=stealth',very thick];
+
+
+      \draw (0,0) node[above left] {5s} --++ (7.5cm,0)
+                  node[above right] {\SI{6.8}{\giga\hertz}};
+      \draw (0,0.4cm) --++ (7.5cm,0);
+      \draw (0,4cm) node[left] {5p} --++ (7.5cm,0);
+
+      % lamp
+      \draw[very thick] (0,0cm)   --++ (1.5cm,0);
+      \draw[very thick] (0,0.4cm) --++ (1.5cm,0);
+
+      \draw[very thick] (0,4cm)   --++ (1.5cm,0);
+
+      \draw[trans, red!70!black] (0.5cm,4cm) -- (0.5cm,0.4cm);
+      \draw[trans, blue!70!black] (1cm,4cm) -- (1cm,0cm);
+
+      \node[align=center] at (0.75cm,-1cm) {\ce{^{87}Rb}\\Emission};
+
+      % filter
+      \draw[very thick] (3,0.4cm) --++ (1.5cm,0);
+      \draw[very thick] (3,0.8cm) --++ (1.5cm,0);
+
+      \draw[very thick] (3,4cm)   --++ (1.5cm,0);
+
+      \draw[trans, red!70!black] (3.5cm,0.4cm) -- (3.5cm,4cm);
+      \draw[trans, red!70!black] (4cm,4cm) -- (4cm,0.4cm);
+
+      \node[align=center] at (3.75cm,-1cm) {\ce{^{85}Rb}\\Filter};
+
+      % resonator
+      \draw[very thick] (6,0cm)   --++ (1.5cm,0);
+      \draw[very thick] (6,0.4cm) --++ (1.5cm,0);
+
+      \draw[very thick] (6,4cm)   --++ (1.5cm,0);
+
+      \draw[trans, red!70!black] (6.5cm,4cm) -- (6.5cm,0.4cm);
+      \draw[trans, blue!70!black] (7cm,0cm) -- (7cm,4cm);
+
+      \node[align=center] at (6.75cm,-1cm) {\ce{^{87}Rb}\\Resonator};
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Tuning}
+
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}
+    [node distance=1.3cm]
+
+    \tikzstyle{conn} = [->,shorten >=0.1cm,>=stealth',very thick];
+
+    \tikzstyle{connLamp} = [->, decorate, 
+                                      decoration={snake,
+                                        amplitude=1.5mm,
+                                        segment length=1.7mm,
+                                        post length=2.7mm},
+                                      shorten >=0.1cm,
+                                      >=stealth', very thick,
+                                      color=red!50!black];
+
+    \tikzstyle{connAbsorber} = [->, shorten >=0.1cm,
+                                          >=stealth', very thick];
+
+    \tikzstyle{connHfgen} = [->, decorate,
+                                       decoration={snake,
+                                         amplitude=1.5mm,
+                                         segment length=9mm,
+                                         post length=2.5mm},
+                                       shorten >=0.1cm,
+                                       >=stealth',very thick];
+
+    \tikzstyle{lamp} = [draw=red!50!black,
+                                  thick,circle,inner sep=1.5mm,
+                                  fill=red!30];
+
+    \tikzstyle{absorber} = [draw, thin, circle,
+                                     shade, shading=radial,
+                                     inner color=blue!70];
+
+    \tikzstyle{vcxo} = [draw, thick, rectangle, inner sep=5mm,
+                        align=center, minimum width=2.7cm];
+    \tikzstyle{hfgen} = [draw,thick, rectangle, inner sep=5mm];
+
+    % drawing
+    \node[lamp, minimum size=1.7cm] (lamp) {\ce{^{87}Ru}};
+
+    \node[absorber, minimum size=1.7cm] (absorber) [right=of lamp] {};
+
+    \node (diode) [right=of absorber] {};
+
+    \draw[semithick](diode) ++ (0.0,-1.0) to[empty photodiode]
+                            ++ (0.0,2.0);
+
+    \node[vcxo] (vcxo) [right=of diode]
+                       {\SI{\approx20}{\mega\hertz}\\VCXO};
+
+    \node[hfgen] (hfgen) [below=of absorber] {\(\times\)};
+
+    \node[xshift=1cm] (note) [left=of hfgen]
+                                  {\SI{\approx6.8346875}{\giga\hertz}};
+
+    % connections
+    \draw[connLamp] (lamp.east) -- (absorber.west);
+    \draw[connAbsorber, shorten >=0.4cm] (absorber.east) -- (diode.west);
+    \draw[conn] (diode.east) ++ (0.3cm,0.0) -- (vcxo.west);
+    \draw[conn] (vcxo.south) |- (hfgen.east);
+    \draw[connHfgen] (hfgen.north) -- (absorber.south);
+
+    % B field
+    \foreach \x in {-1.25, -0.75, -0.25, 0.25, 0.75, 1.25}
+      \draw[->, >=stealth', very thick, green!50!black] (absorber) ++
+      (\x,1.5cm) --++ (0.0,-3cm);
+  \end{tikzpicture}
+ \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rechnung}
+	
+	\begin{align*}
+		\Delta E &= h\cdot\nu = \dfrac{\hbar e}{m_e}B_z
+				 &\left(\hbar = \dfrac{h}{2\pi}\right)
+	\end{align*}
+	
+    Kern Magnetfeld: $B_z = \dfrac{m_e\cdot2\pi\cdot\nu}{e} = 244,2\;mT$
+
+	\vspace{.5cm}
+	Erdmagnetfeld: 30 - 60 $\mu T$
+	
+%	1 Gauss: 1Gs = 100$\;\mu T$
+	
+%	Atomuhr: sensitivity: $\pm$ 2\;Gauss = $\pm200\;\mu T$
+	
+	magn. Feld: $ \dfrac{\Delta f}{f} < 2\cdot 10^{-10} $ pro 100$\;\mu T$ 
+	\vspace{.5cm}	
+
+    Frequenzeinfluss Erdmagnetfeld auf Hyperfeinstruktur
+    
+    $\Delta f = 0.698\;Hz \qquad f=6.8347\cdot 10^9\;Hz$ 
+
+	\vspace{.5cm}
+    Tuning: 14$\;Hz$
+\end{frame}
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End: 

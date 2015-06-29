@@ -6,8 +6,8 @@
 
 \section{Einleitung}
 \rhead{Einleitung}
-In diesem Kapitel m"ochten wir veranschaulichen, dass die Ph"anomene, 
-der klassischen Fourier-Theorie, auch auf der Kugeloberfl"ache zu 
+In diesem Kapitel m"ochten wir veranschaulichen, dass die Ph"anomene 
+der klassischen Fourier-Theorie auch auf der Kugeloberfl"ache zu 
 sehen sind.
 Zur Visualisierung vergleichen wir jeweils ein Rechtecksignal mit 
 dem Analogon auf der Kugeloberfl"ache.
@@ -38,7 +38,7 @@ Abbildung \ref{skript:Koordinaten der Kugel}
 zeigt wie eine Position auf der Kugeloberfl"ache in
 Kugel-Koordinaten definiert ist. 
 Da wir uns in diesem Kapitel aber nur auf der Oberfl"ache der 
-Einheitskugel bewegen wird der Radius r konstant auf 1 gesetzt. 
+Einheitskugel bewegen wird der Radius $r$ konstant auf 1 gesetzt. 
 Durch Variation des Winkels $\vartheta$ ver"andern wir die 
 geographische Breite. 
 Mit dem Winkel $\varphi$ variieren wir die geographische 
@@ -50,7 +50,7 @@ Formeln:
 \left.\begin{aligned}
 x& = \sin\vartheta \cdot \cos\varphi\\
 y& = \sin\vartheta \cdot \sin\varphi\\
-z& = \cdot \cos\vartheta\\      
+z& = \cos\vartheta\\      
 \end{aligned}
 \right\}
 \qquad (0 \leq \vartheta \leq \pi \wedge {-\pi} \leq \varphi \leq \pi)
@@ -101,15 +101,16 @@ Endpunkt auf der Kugeloberfl"ache:
 \label{skript:Vektor c Formel}
 \end{equation}
 $$
-\vartheta_x \in [ 0, \pi ] \wedge \varphi_y \in [ -\pi, \pi ]
+\vartheta_c \in [ 0, \pi ] \wedge \varphi_c \in [ -\pi, \pi ]
 $$
 
-\item Des Weiteren definieren die Vektoren $\vec{r} (\vartheta, \varphi)$.
+\item Des Weiteren definieren wir die Vektoren $\vec{r} (\vartheta, 
+\varphi)$.
 Sie haben, wie der Vektor $\vec{c}$ die Startpunkte im Zentrum der 
 Kugel und die Endpunkte auf der Kugeloberfl"ache. 
-Im Gegensatz zu Vektor $\vec{c}$ werden jedoch die Vektoren  
-$\vec{r}$ der Vektorschar $r$ mit den Kugelkoordinaten
-$\vartheta$ und $\varphi$ definiert.
+Im Gegensatz zum Vektor $\vec{c}$ werden jedoch die Vektoren  
+$\vec{r}$ mit den Kugelkoordinaten $\vartheta$ und $\varphi$ 
+definiert.
 \[
 \vec{r} (\vartheta, \varphi) = 
 \begin{pmatrix}
@@ -150,9 +151,9 @@ Mittels dieser Kugelfl"achenfunktionen $Y_{lm}$ und $Z_{lm}$
 bildet man ein orthogonales System von Funktionen. 
 Die Kugelfl"achenfunktionen sind wie folgt definiert:
 \begin{align*}
-Y_{lm}(\vartheta, \varphi)& = P_{lm} \cdot (\cos \varphi) \cdot \cos(m \cdot \varphi)
+Y_{lm}(\vartheta, \varphi)& = P_{lm} (\cos \varphi) \cdot \cos(m \cdot \varphi)
 \\
-Z_{lm}(\vartheta, \varphi)& = P_{lm} \cdot (\cos \varphi) \cdot \sin(m \cdot \varphi)
+Z_{lm}(\vartheta, \varphi)& = P_{lm} (\cos \varphi) \cdot \sin(m \cdot \varphi)
 \end{align*}
 Bei $P_{lm}$ handelt es sich um das in Kapitel \ref{skript:legendreansatz} 
 hergeleitete Legendre-Polynom. 
@@ -270,7 +271,7 @@ l&\ne 0: & a_{lm} &= \frac{1}{4\pi} \int_{-\pi}^\pi \int_{0}^\pi f(\vartheta,\va
 \end{align*}
 
 \subsection{Berechnung der Funktion aus den Fourier-Koeffizienten}
-Um eine Funktion wieder zu rekonstruieren muss man die einzelnen 
+Um eine Funktion wieder zu rekonstruieren, muss man die einzelnen 
 Wellenfunktionen gewichtet mit den entsprechenden Fourier-Koeffizienten 
 wieder aufsummieren.
 
@@ -281,22 +282,24 @@ f(x)&=a_0 + \sum_{n=0}^\infty \Big( a_k \cdot \cos kx + b_k \sin kx \Big)
 \end{aligned}
 \end{equation}
 Will man eine Funktion auf der Kugeloberfl"ache wieder rekonstruieren 
-muss man folgende Formel verwenden:
+muss man die Formel 
 \begin{equation}
 \begin{aligned}
 f(\vartheta, \varphi) &= a_{00} + \sum_{l=1}^\infty \sum_{m=0}^l \Big( a_{lm} \cdot Y_{lm}(\vartheta, \varphi) + b_{lm} \cdot Z_{lm}(\vartheta, \varphi) \Big)
 \end{aligned}
 \end{equation}
+verwenden.
+
 \subsection{Kugelspektrum}
 Um das komplexe Amplitudenspektrum darstellen zu k"onnen muss man die
-Sinus- und Kosinus-Koeffizienten zusammenfassen.
+Sinus- und Kosinus-Koeffizienten zusammenfassen:
 \begin{align*}
 c_k= \sqrt{a^2_{k}+b^2_{k}}
 \end{align*}
 Man kann ein Kugelspektrum analog zum komplexen Amplitudenspektrum 
 darstellen. 
 Dabei muss man die Summe der Quadrate $a$- und der $b$-Koeffizienten mit 
-dem gleichen Index $l_m$ bilden. Anschliessend muss man alle 
+dem gleichen Indexpaar $lm$ bilden. Anschliessend muss man alle 
 mit dem selben Index $l$ aufsummieren und von den daraus resultierenden 
 Koeffizienten die Wurzel ziehen. Man erh"alt 
 \begin{align*}
@@ -316,6 +319,8 @@ Qualitativ sind jedoch alle Ergebnisse korrekt.
 
 \section{Spektrum einer Rechteckfunktion}
 \rhead{Spektrum einer Rechteckfunktion}
+\input kugel/wandernd.tex
+\input kugel/dirac.tex
 Um aufzuzeigen, dass das komplexe Amplitudenspektrum unabh"angig von 
 der Phasenlage konstant bleibt, haben wir eine wandernde 
 Rechteckfunktion generiert. 
@@ -331,7 +336,7 @@ Es ist zu beachten, dass beim komplexen Amplitudenspektrum der
 Fourier-Koeffizient $c_0$ aus Darstellungsgr"unden abgeschnitten wurde.
 
 Um die Analogie f"ur eine Funktion auf der Kugeloberfl"ache aufzuzeigen, 
-haben wir den Vektor $\vec{c}$ variiert indem wir die Winkel $\vartheta_c$
+haben wir den Vektor $\vec{c}$ variiert, indem wir die Winkel $\vartheta_c$
 und $\varphi_c$ aus der Formel (\ref{skript:Vektor c Formel}) 
 kontinuierlich ver"andert haben. 
 Mittels dieser "Anderung haben wir die Phasenlage variiert.
@@ -359,37 +364,9 @@ Zus"atzlich sieht man in den Videos auch
 die sich st"andig "andernden $a$- und $b$-Koeffizienten. Bei der 
 Rechteckfunktion ist auch noch das Phasendiagramm dargestellt.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck1_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck1_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck2_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck2_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck3_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck3_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck4_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Rechteck4_2.pdf}
-\caption{Wandernde Rechteckfunktion
-\label{skript:Spektrum1}}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_1_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_1_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_2_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_2_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_3_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_3_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_4_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/kSpektrum/Kugel_4_2.pdf}
-\caption{Rotierende Funktion auf der Kugeloberfl"ache
-\label{skript:Spektrum2}}
-\end{figure}
 
 \section{Dirac Stoss und konstante Funktion}
 \rhead{Dirac Stoss und konstante Funktion}
-
 In diesem Abschnitt m"ochten wir aufzeigen, dass im Falle eines 
 unendlich schmalen Rechtecksignals, wie auch einem unendlich kleinen 
 Kreisabschnitt auf der Kugeloberfl"ache mit dem Funktionswert 1 beim 
@@ -431,39 +408,13 @@ Funktionswert 1 mit dem zugeh"origen Kugelspektrum zu sehen.
 Wie bei den Videos, die bereits im letzten Abschnitt erw"ahnt wurden, 
 sind ebenfalls die $a$- und $b$-Koeffizienten sowie bei der 
 Rechteckfunktion das Phasendiagramm zu sehen.
-\begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck1_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck1_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck2_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck2_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck3_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck3_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck4_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Rechteck4_2.pdf}
-\caption{Breiter werdende Rechteckfunktion
-\label{skript:Dirac1}}
-\end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel1_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel1_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel2_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel2_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel3_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel3_2.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel4_1.pdf}
-\includegraphics[width=0.45\textwidth]{kugel/Dkonstant/Kugel4_2.pdf}
-\caption{Wachsender Kreisabschnitt auf der Kugeloberfl"ache
-\label{skript:Dirac2}}
-\end{figure}
 
 \section{Gibbs-Ph"anomen}
 \rhead{Gibbs-Ph"anomen}
 Das Gibbs-Ph"anomen beschreibt, dass man bei der Rekonstruktion einer
-Funktion mit Sprungstellen - vor und nach den urspr"unglichen 
-Sprungstellen - "Uberschwinger von ca. 9\% der Sprungh"ohe feststellen 
+Funktion mit Sprungstellen --- vor und nach den urspr"unglichen 
+Sprungstellen --- "Uberschwinger von ca. 9\% der Sprungh"ohe feststellen 
 kann sofern die Bandbreite begrenzt wird. 
 Bei der Bandbreitenbegrenzung bedeutet, dass nur eine endliche Anzahl 
 Fourier-Koeffizienten zur Rekonstruktion einer Funktion verwendet. 
@@ -482,15 +433,15 @@ mehr vorhanden sind.
 Stattdessen weist die "Ubergangszone von 0 auf 1 nur noch eine hohe 
 Flankensteilheit auf und "uberschwingt kurz vor und nach den 
 urspr"unglichen Sprungstellen.
-Um auch dies noch besser zu veranschaulichen, ist auf der CD zum Buch 
-ein Video zum Gibbs-Ph"anomen bei einer periodischen Funktion.
+%Um auch dies noch besser zu veranschaulichen, ist auf der CD zum Buch 
+%ein Video zum Gibbs-Ph"anomen bei einer periodischen Funktion.
 
 \subsection{Gibbs-Ph"anomen bei einer Funktion auf der Kugeloberl"ache}
 Dasselbe Ph"anomen ist auch bei Funktionen auf der Kugeloberfl"ache 
 zu beobachten. 
 In den Abbildungen \ref{skript:Gibbs1} und \ref{skript:Gibbs2} sieht 
-man die Originalfunktion auf der Kugeloberfl"ache, von der wir - 
-wie bei Rechteckfunktion - die Fourier-Koeffizienten berechnet haben. 
+man die Originalfunktion auf der Kugeloberfl"ache, von der wir --- 
+wie bei Rechteckfunktion --- die Fourier-Koeffizienten berechnet haben. 
 In derselben Abbildung sieht man die rekonstruierten Funktionen auf 
 der Kugeloberfl"ache. 
 Mit dem Parameter $n$ wird jeweils angegeben wie viele 
@@ -501,8 +452,17 @@ immer schmaler wird, je mehr Fourier-Koeffizienten f"ur die
 Rekonstruktion verwendet wurden. 
 Ausserdem sind die "Uberschwinger vor und nach der urspr"unglichen 
 Sprungstelle gut zu erkennen.
+
 Um auch dies noch besser zu veranschaulichen, ist auf der CD zum Buch 
-ein Video zum Gibbs-Ph"anomen bei einer Funktion auf der Kugeloberl"ache.
+je ein Video zum Gibbs-Ph"anomen bei einer periodischen Funktion und 
+einer Funktion auf der Kugeloberl"ache.
+In diesen Videos sieht man die Original-Rechteckfunktion respektive
+die Originalfunktion auf der Kugeloberfl"ache und die jeweilige
+rekonstruierte Funktion. 
+Im Verlauf der Videos werden immer mehr Koeffizienten f"ur die 
+Rekonstruktion der Funktion verwendet.
+Die Anzahl der verwendeten Koeffizienten kann man dem Parameter $n$
+entnehmen.
 
 \begin{figure}
 \begin{minipage}[hbt]{0.5\textwidth}

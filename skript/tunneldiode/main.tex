@@ -10,7 +10,7 @@
 Die Tunneldiode ist ein nicht sehr h"aufig verwendetes, aktives und dynamisches Halbleiterelement.
 Als Halbleitermaterial wird f"ur ihren  Aufbau Germanium verwendet. 
 Um die Tunneldiode und ihren Aufbau besser erkl"aren zu k"onnen, ziehen wir zum Vergleich eine normale Germaniumdiode heran. 
-Die Diode besteht im wesentlichen aus einer positiv und einer negativ dotierten Seite, dem sogenannten p-n-"Ubergang. 
+Die Diode besteht im Wesentlichen aus einer positiv und einer negativ dotierten Seite, dem sogenannten p-n-"Ubergang. 
 Dazwischen befindet sich die Sperrzone, welche man modellhaft auch als Potentialbarriere betrachten kann.
 
 \begin{figure}	%Bild Bändermodell Germaniumdiode Vf = 0
@@ -47,22 +47,23 @@ In Abbildung~\ref{tunnel:Germaniumdioden} ist der Vorw"artsstrom durch die Diode
 \label{tunnel:Germaniumdioden}}
 \end{figure}
 
-Die Tunneldiode unterscheidet sich im Vergleich zur Germaniumdiode in zwei Punkten. 
+Die Tunneldiode unterscheidet sich im Vergleich zur Germaniumdiode in zwei Punkten:
 Zum einen ist die Dotierung des p-n-"Ubergangs gr"osser, zum anderen die Sperrschicht viel d"unner. 
 Diese beiden Unterschiede erm"oglichen den Tunneleffekt.
 
 Das B"andermodell der Tunneldiode ist fast identisch mit dem der Germaniumdiode. 
 Auch hier ist das Ferminiveau ohne Vorw"artsspannung auf derselben H"ohe. 
 Wie in Abbildung~\ref{tunnel:Baendermodell0} ersichtlich, ist auf der p-Seite sowohl das Valenzband als auch das Leitungsband "uber dem Ferminiveau. 
-Auf der n-Seite ist es genau umgekehrt, da sind beide B"ander unter dem Ferminiveau.
-Der Grund daf"ur ist folgender.
+Auf der n-Seite ist es genau umgekehrt. 
+Da sind beide B"ander unter dem Ferminiveau.
+Der Grund daf"ur ist folgender:
 Durch die starke Dotierung werden zus"atzliche Elektronen eingebracht.
 Diese Elektronen sind "uberz"ahlig und stehen somit als Leitungselektronen zur Verf"ugung.
 Darum reicht jetzt das Leitungsband unter das Ferminiveau.
 Liegt keine Vorw"artsspannung an, tunneln etwa gleich viele Elektronen von den zwei Richtungen durch die Barriere.
 Somit haben wir keinen Strom der fliesst, da sich die St"ome genau aufheben.
 Sobald wir eine kleine positive Vorw"artsspannung anlegen, "uberwiegen die in Durchlassrichtung tunnelnden Elektronen.
-Es fliesst also ein Strom.
+Es fliesst also Strom.
 Die Diode beginnt zu leiten, obwohl die Elektronen nicht "uber die Potentialbarriere hin"uber k"onnen. 
 Sie tunneln durch die Barriere hindurch.
 Erh"ohen wir die Vorw"artsspannung weiter, verschieben sich die Energieniveaus.
@@ -91,7 +92,7 @@ Sobald aber die Vorw"artsspannung gen"ugend hoch ist, und somit auch das Potenti
 \label{tunnel:Baendermodellmin}}
 \end{figure}
 
-Die spezielle Kennlinie der Tunneldiode ist in der Abbildung~\ref{tunnel:Tunneldiode} ersichtlich.
+Die spezielle Kennlinie der Tunneldiode ist in Abbildung~\ref{tunnel:Tunneldiode} ersichtlich.
 
 \begin{figure}	%Bild Kennlinien der Tunneldiode und GE-Dioden
 \centering
@@ -118,7 +119,7 @@ Die Energie des einfallenden Teilchens ist $E$ und es gilt
 0 < E < V_0.
 \]
 In der Mitte ist aber eine Barriere, welche ein h"oheres Potential als das Teilchen selber aufweist. 
-In der klassischen Mechanik ist klar, dass dieses Teilchen nicht von links nach rechts kommt sondern an der Barriere bei $-a$ reflektiert wird. 
+In der klassischen Mechanik ist klar, dass dieses Teilchen nicht von links nach rechts kommt, sondern an der Barriere bei $-a$ reflektiert wird. 
 In der Quantenmechanik k"onnen Teilchen jedoch durch die Barriere durchtunneln.
 
 \begin{figure}	%Bild Potentialbarriere
@@ -146,7 +147,7 @@ Der Koeffizient $A$ steht in beiden Bereichen f"ur die einlaufende Welle, $B$ f"
 
 F"ur die Wellenfunktion im Bereich \textrm{II} lautet die Gleichung
 \[
-\Phi_\text{II}(x) = \alpha e^{\kappa x} + \beta e^{-\kappa x}
+\Phi_\text{II}(x) = \alpha e^{\kappa x} + \beta e^{-\kappa x},
 \]
 da wir in der Potentialbarriere einen exponentiellen Abfall oder Anstieg erwarten. 
 $\kappa$ ist
@@ -183,9 +184,9 @@ Wir brauchen also die Ableitungen der allgemeinen Wellenfunktionen:
 \end{align*}
 
 Wir rechnen ab hier mit Matrizen weiter. 
-Dies hat den Vorteil, dass sich Terme in welchen die Exponentialfunktion vorkommt vereinfachen lassen. 
-Auch mit der Matrizenrechnung ist es nicht m"oglich alle sechs Unbekannten zu bestimmen. 
-Es ist aber m"oglich das Verh"altnis zwischen den einfallenden und transmittierten Teilchen zu berechnen. 
+Dies hat den Vorteil, dass sich Terme, in welchen die Exponentialfunktion vorkommt, vereinfachen lassen. 
+Auch mit der Matrizenrechnung ist es nicht m"oglich, alle sechs Unbekannten zu bestimmen. 
+Es ist aber m"oglich, das Verh"altnis zwischen den einfallenden und den transmittierten Teilchen zu berechnen. 
 Die dazu verwendeten Matrizen setzen sich folgendermassen zusammen.
 In der ersten Zeile der Matrizen stehen die Funktionswerte und in der zweiten Zeile die Ableitungen in den entsprechenden Bereichen:
 \[
@@ -338,7 +339,7 @@ Wir berechnen das Matrizenprodukt.
 Zuerst multiplizieren wir die inneren Matrizen miteinander. 
 Anschliessen rechnen wir von links nach rechts:
 \[
-T = T_1(-a)^{-1}T_2(-a)T_2(a)^{-1}T_1(a)
+T = T_1(-a)^{-1}T_2(-a)T_2(a)^{-1}T_1(a).
 \]
 
 Die Berechnung von diesem Matrizenprdukt hat f"ur uns das Computer-Algebra System Maxima "ubernommen. 
@@ -382,7 +383,7 @@ result: facsum(expand(c), sinh(2 * a * kappa), cosh(2 * a * kappa));
 
 \end{lstlisting}
 
-Mit der resultierenden Matrix lassen sich die Amplitude der einfallenden und reflektierten Welle links von der Barriere aus den Amplituden rechts der Barriere berechnen:
+Mit der resultierenden Matrix lassen sich die Amplituden der einfallenden und reflektierten Welle links von der Barriere aus den Amplituden rechts der Barriere berechnen:
 \[
 T =
 \begin{pmatrix}
@@ -538,7 +539,7 @@ Je nachdem wo der DC-Arbeitspunkt liegt, kann das lineare Modell f"ur die Tunnel
 
 \section{Fazit}
 \rhead{Fazit}
-Obwohl die Tunneldiode in der heutigen Zeit fast vollst"andig durch andere Bauelemente ersetzt worden ist, war sie mal ein wichtiges Bauteil in der HF-Technik.
+Obwohl die Tunneldiode in der heutigen Zeit fast vollst"andig durch andere Bauelemente ersetzt worden ist, war sie früher ein wichtiges Bauteil in der HF-Technik.
 In Oszillatoren wurden mit der Tunneldiode Frequenzen bis zu $100\text{GHz}$ erreicht.
 Sie wurde neben der Verwendung in Oszillatoren auch als Schalter f"ur schnelle Signale bis zu $10\text{GHz}$ eingesetzt.
 

@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+    [node distance=1.3cm]
+
+    \tikzstyle{conn} = [->,shorten >=0.1cm,>=stealth',very thick];
+
+    \tikzstyle{connLamp} = [->, decorate, 
+                            decoration={snake,
+                              amplitude=1.5mm,
+                              segment length=1.7mm,
+                              post length=2.7mm},
+                            shorten >=0.1cm,
+                            >=stealth', very thick,
+                            color=red!50!black];
+
+    \tikzstyle{connAbsorber} = [->, shorten >=0.1cm,
+                                >=stealth', very thick];
+
+    \tikzstyle{connHfgen} = [->, decorate,
+                             decoration={snake,
+                               amplitude=1.5mm,
+                               segment length=9mm,
+                               post length=2.5mm},
+                             shorten >=0.1cm,
+                             >=stealth',very thick];
+
+    \tikzstyle{lamp} = [draw=red!50!black,
+                        thick,circle,inner sep=1.5mm,
+                        fill=red!30];
+
+    \tikzstyle{absorber} = [draw, thin, circle,
+                            shade, shading=radial,
+                            inner color=blue!70];
+
+    \tikzstyle{vcxo} = [draw, thick, rectangle, inner sep=5mm,
+                        align=center, minimum width=2.7cm];
+    \tikzstyle{hfgen} = [draw,thick, rectangle, inner sep=5mm];
+
+    % drawing
+    \node[lamp, minimum size=1.7cm] (lamp) {$^{87}$Ru};
+
+    \node[absorber, minimum size=1.7cm] (absorber) [right=of lamp] {};
+
+    \node (diode) [right=of absorber] {};
+
+    \draw[semithick](diode) ++ (0.0,-1.0) to[empty photodiode]
+                            ++ (0.0,2.0);
+
+    \node[vcxo] (vcxo) [right=of diode] {\SI{20}{\mega\hertz}\\VCXO};
+
+    \node[hfgen] (hfgen) [below=of absorber] {\(\times\)};
+
+    \node[xshift=1cm] (note) [left=of hfgen] {\SI{6.8346875}{\giga\hertz}};
+
+    % connections
+    \draw[connLamp] (lamp.east) -- (absorber.west);
+    \draw[connAbsorber, shorten >=0.4cm] (absorber.east) -- (diode.west);
+    \draw[conn] (diode.east) ++ (0.3cm,0.0) -- (vcxo.west);
+    \draw[conn] (vcxo.south) |- (hfgen.east);
+    \draw[connHfgen] (hfgen.north) -- (absorber.south);
+\end{tikzpicture}
