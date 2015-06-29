@@ -8,7 +8,18 @@
 
 In diesem Kapitel erweitern wir das Beispiel des Potentialkastens 
 (Kapitel \ref{subsection:potentialkasten}, Seite \pageref{subsection:potentialkasten})
-um eine St\"orung.
+um eine St\"orung so, dass wir ein Elektron mit einem elektrischen Feld st\"oren.
+Im speziellen betrachten wir Symmetrien in den Wellenfunktionen.
+Mit diese Betrachtungen halbieren wir den Aufwand der nummerischen Berechnung.
+
+Die nummerische Berechnung der 1. N\"aherung wird in diesem Kapitel mit Matlab realisiert und dokumentiert. 
+F\"ur die Simulation wurden empirisch realistische Werte gew\"ahlt.
+Der gesammte Code ist auf der beiligenden CD enthalten.
+
+Zum Schluss warten wir noch mit einem kleinen Vergleich zu den Aussagen von de Broglie \cite{efeld:de_Broglie} auf.
+Wir w\"unschen viel Vergn\"ugen beim Lesen.
+
+
 
 \section{Grundlagen St"orungstheorie}
 Grunds"atzlich k"onnen wir mit der St\"orungstheorie ein einfaches Modell 
@@ -131,7 +142,7 @@ Da das Potential die Stammfunktion des elektrischen Feldes ist, entspricht der P
 F\"ur das Potential sind nur Unterschiede relevant, w\"ahrend das Niveau, solange es in der ganzen Anwendung ver\"andert wird,
 beliebig gew\"ahlt werden kann. Somit k\"onnen wir mit $b=0$ die Formel nochmals vereinfachen.
 
-Die Feldst\"arke $a$ h\"angt von der Breite des Potentialkastens und der angelegten Spannung $U$ ab.
+Die Feldst\"arke $a$ h\"angt von der Breite des Potentialkastens $2 l$ und der angelegten Spannung $U$ ab.
 \[
   a = \frac{ U }{2 l}
 \]
@@ -139,23 +150,23 @@ Diese Funktion dr\"uckt mit dem Parameter $U$ das eingeschaltete elektrische Fel
 und erf\"ullt damit die selbe Funktion wie das $\varepsilon$.
 Wollen wir nun die Formeln mit $a=1$ vereinfachen, m\"ussen wir alle relevanten Terme  in $\varepsilon$ unterbringen
 
-% fixme evt. bessere Formulierung
 \begin{equation}
 \begin{aligned}
   \varepsilon H_1(x) &= \varepsilon a e_{-} x +b  \\
                      &= \varepsilon \frac{ U }{2 l} e_{-} x + 0  \\ 
-  \Longrightarrow \qquad \varepsilon &= \frac{ U }{2 l} e_{-}; \, a = 1
+  \Longrightarrow \qquad \varepsilon &= \frac{ U }{2 l} e_{-} \, \text{ und } \, a = 1
 \end{aligned}
 \end{equation}
-Wenn wir jetzt die St"orung einsetzen, bekommen wir die neue Hamilton-Funktion:
+Wenn wir jetzt die St"orung einsetzen, bekommen wir die neue Hamilton-Funktion
 \[
   H = H_0 + H_1 
-    = \frac1{2m}p^2+V_0(x) + \varepsilon x .
+    = \frac1{2m}p^2+V_0(x) + \varepsilon x
 \]
-aus welcher wir den Hamilton-Operator berechnen k"onnen:
+aus welcher wir den Hamilton-Operator
 \[
-  \hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) + \varepsilon x .
+  \hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V_0(x) + \varepsilon x
 \]
+berechnen k"onnen.
 
 \subsection{Vorgehensweise}
 Wir berechnen in unserem Beispiel die erste N"aherung.
@@ -174,6 +185,7 @@ Zudem haben wir f\"ur jedes $n$ nur genau einen Zustand und dadurch keine Entart
 Deshalb k\"onnen wir die Gleichungen
 \begin{equation}
 \begin{aligned}
+\label{eq:efeld_E_Skalarprodukt}
 E_k^{(1)} &=
 \langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
 &&\Longrightarrow
@@ -192,7 +204,6 @@ E_k^{(1)} &=
 \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
 \,
 |\psi_l^{(0)}\rangle
-\label{eq:efeld_ESkalarprodukt}
 \end{aligned}
 \end{equation}
 aus dem Kapitel \ref{section:nichtentartetezustaende}, Seite \pageref{section:nichtentartetezustaende} verwenden.
@@ -202,17 +213,19 @@ Das ist n"otig, wenn die St"orung Energie hinzuf"ugt
 und so die Wahrscheinlichkeitsverteilung ($P \ne 1$) nicht mehr stimmen w\"urde.
 Weil wir aber in der ersten N\"aherung keine 
 Energiever\"anderung durch die St\"orung bekommen, m\"ussen wir
-\[
+\begin{equation}
+  \label{eq:efeld_gamma}
   \gamma = 0
-\]
+\end{equation}
 setzen.
 
 
 
 
 \subsection{Symmetrie"uberlegung}
-\index{Symmetrien}
-Mit der Gleichung \ref{eq:efeld_ESkalarprodukt} k"onnen wir direkt die Energie der St"orung berechnen.
+\index{Potentialkasten!Symmetrie}
+\index{Symmetrien!Energie}
+Mit der Gleichung \ref{eq:efeld_E_Skalarprodukt} k"onnen wir direkt die Energie der St"orung berechnen.
 \begin{equation}
 \begin{aligned}
   E_{k}^{(1)} 
@@ -282,31 +295,35 @@ und bekommen so die st"orungsabh"angige Energie.
 
 
 
-
+\subsubsection{Wahrscheinlichkeitsverteilung}
+\index{Symmetrien!Wahrscheinlichkeitsverteilung}
 
 Um $\psi_k(\varepsilon)$ zu berechnen wird es etwas schwieriger,
 weil sich in der Quantenmechanik die Energiezust"ande $k$ gegenseitig beeinflussen.
 Wir setzen daher eine St"orung $\psi_k^{(1)}$ aus mehreren $\psi_k^{(0)}$ zusammen.
-Mit der zweiten Formel k"onnen wir den Anteil der jeweiligen $\psi$ berechnen.
+Mit der zweiten Formel k"onnen wir den Anteil der jeweiligen $\psi_k^{(1)}$ berechnen.
 Wir berechnen 
 \[
 \psi_k^{(1)} =
 \sum_{k\ne l}
-\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle |\psi_l^{(0)}\rangle
+\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle |\psi_l^{(0)}\rangle + \gamma|\psi_k^{(0)}\rangle
+=
+\sum_{k\ne l}
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}} |\psi_l^{(0)}\rangle
 \]
-Bei $l = k$ hat die Welle keinen Anteil an $\psi_k^{(1)}$,
-denn $\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt die Energie der St"orung.
+wobei wir den Term um $\gamma$ durch die Definition (\ref{eq:efeld_gamma}) weglassen k\"onnen.
 
 Wir "uberlegen uns auch hier die Symmetrie.
 $\psi_k^{(0)}$ und $\psi_l^{(0)}$ k"onnen sowohl gerade als auch ungerade sein,
 $H_1$ ist hingegen immer ungerade.
 Uns interessieren die Skalarprodukte die gerade sind, denn nur die ergeben einen Beitrag.
 Das ist der Fall wenn $H_1$ und $\psi_k^{(0)} \psi_l^{(0)}$ ungerade sind.
-$\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt nur einen Beitrag wenn
-\[
-  k-l \mod 2 \equiv 1.
-\]
-
+$\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt nur einen Beitrag wenn die Bedingung
+\begin{equation}
+  \label{eq:efeld_summebedingung}
+  k-l \equiv 1 \mod 2
+\end{equation}
+welche den Rechenaufwand halbiert und $k \ne l$ bereits enh\"alt.
 
 
 
@@ -398,12 +415,14 @@ Wir schliessen daraus, dass die Berechnung stabil ist und die Werte genau genug 
 
 Die Implementierung von $\psi_k^{(1)}$ gestaltet sich durch die Summe etwas schwieriger.
 Normalerweise k"onnte man mit \verb|sum(vektor)| alle Elemente zusammenz"ahlen lassen.
-Wir wollen aber ein Element auslassen. 
+Wir ber\"ucksichtigen aber Bedingung aus (\ref{eq:efeld_summebedingung}) um den Rechenaufwand zu halbieren
+und um Division durch $0$ zu vermeiden.
+
 Um zum Beispiel den f"unften Zustand zu bestimmen, summieren wir alle Zust\"ande vom 
-ersten bis $n$-ten ausser dem f\"unften auf.
+ersten bis $n$-ten ausser den ungeraden.
 \begin{equation}
   \psi_5^{(1)} = \langle\psi_l^{(0)}|\psi_5^{(1)}\rangle|\psi_l^{(0)}\rangle = 
-  \sum_{l=1 ; l\ne 5}^{n}
+  \sum_{l=1 \, \text{wenn} \, 5-l \equiv 1 \mod 2}^{n}
     \frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}}
         \,
     |\psi_l^{(0)}\rangle
@@ -411,14 +430,14 @@ ersten bis $n$-ten ausser dem f\"unften auf.
 
 In Matlab wird das wie folgt implementiert:
 \begin{lstlisting}[style=Matlab]
-H1 = x * -1;          # Die Stoerung des elektrische Feldes mit dem
-                      #   Faktor -1, da das Elektron negativ geladen ist
-n = 1000;             # Anzahl aufsummierter Zustaende
-k = 5;                # Der Zustand den wir plotten
-summe = 0;            # Initialisierung des SummenVektors
+H1 = x * -1;               # Die Stoerung des elektrische Feldes mit dem
+                           #   Faktor -1, da das Elektron negativ geladen ist
+n = 1000;                  # Anzahl aufsummierter Zustaende
+k = 5;                     # Der Zustand den wir plotten
+summe = 0;                 # Initialisierung des SummenVektors
 
 for l = 1 : n
-  if l ~= k           # Vergleich l ungleich k
+  if mod((l + k), 2) == 1  # Vergleich l ungleich k und Differenz ungerade
     Psi_lk = dot(Psi(l, :), H1.*Psi(k, :)) / (E0(k)-E0(l)) .* Psi(l, :);
     summe = summe + Psi_lk;
   end
@@ -426,9 +445,11 @@ end
 \end{lstlisting}
 Die Variable \verb|summe| ist nun ein Vektor mit den diskreten Abtastwerten von $\psi_k^{(1)}$.
 
-Beim Aufsummieren zahlt es sich aus nicht alle Zust\"ande zu ber\"ucksichtigen, da der Anteil am Gesammtzustand 
-mit jedem Schritt weiter abnimmt. Der Grund ist die stetige Zunahme des Terms 
-$E^{(0)}_k-E^{(0)}_l$ unter dem Bruchstrich.
+Mit der Abfrage \verb|mod((l + k), 2) == 1| werden die Summanden 
+entsprechend der Symmetrie"uberlegung gefiltert.
+Gleichzeitig wird der Term f"ur $l=k$ entfernt ($0 mod 2 \ne 1$).
+Der Anteil der Summanden am Gesammtzustand nimmt dabei mit jedem Schritt weiter ab.
+Der Grund ist die stetige Zunahme des Terms $E^{(0)}_k-E^{(0)}_l$ unter dem Bruchstrich.
 In diesem Fall addieren wir beim 90-sten Schritt ($l=90$) nur $1\%$ der St"orung dazu.
 Beim 280-sten Schritt ($l=280$) betr"agt der Anteil nur noch $0.1\%$.
 
@@ -497,25 +518,20 @@ welches mal kinetische Energie hat, mal potentielle.
 
 
 \subsubsection{100-stes Energieniveau}
-% FIXME Beschreibung zum 100-sten korrekt? Das Wort Welle kommt zu oft vor!
 Betrachten wir nun das 100-ste Energieniveau etwas genauer.
 In der Abbildung \ref{abb:efeld_psi_100_gestoert} sehen wir wie die St\"orung 
-die Wellenl\"ange der Wellenfunktion $\psi$ ver\"andert.
+die Wellenl\"ange der Wellenfunktion $\psi$ ver\"andert. 
 Die gelben Balken geben an, wie stark die Periodendauer zwischen zwei Nulldurchg"angen
 von der ungest"orten Funktion abweicht.
 Wir k"onnen an den Balken gut die Form der St"orung $H_1$ wiedererkennen.
-
-Die Kr"ummung in der Kurve entsteht durch Erh"ohung der Amplitude um den Nullpunkt.
-Diese entsteht durch die Stauchung der Wellenfunktion und verursacht das wir mehr Energie
-bei gleicher Wellenl\"ange haben.
-
-Summiert man die Fl\"achen auf, so ergeben sie insgesammt wieder $0$, da die Energie sich nicht ver\"andert hat.
+Summiert man die Fl\"achen auf, so ergeben sie insgesamt wieder $0$, da die Energie sich nicht ver\"andert hat.
 
 
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Psi_100_gestoert.pdf}
- \caption{100-stes Energieniveau von $\psi$ ungest\"ort in blau und gest\"ort in rot, mit der Visualisierung der Verschiebung der Periodendauer.}
+ \caption{100-stes Energieniveau von $\psi$ ungest\"ort in blau und gest\"ort in rot, 
+          mit der Visualisierung der Verschiebung der Periodendauer in gelb.}
  \label{abb:efeld_psi_100_gestoert}
 \end{figure}
 
@@ -524,7 +540,7 @@ Summiert man die Fl\"achen auf, so ergeben sie insgesammt wieder $0$, da die Ene
 
 \subsection{Auswertung E}
 
-Mit den Symmetrie\"uberlegungen haben wir vorrausgesagt, dass sich der Energiezustand nicht \"andert.
+Mit den Symmetrie\"uberlegungen haben wir vorausgesagt, dass sich der Energiezustand nicht \"andert.
 Um dies m\"oglichst einfach zu \"uberpr\"ufen, w\"ahlen wir ein grosses $\varepsilon$ und sehen uns das Resultat in der 
 Abbildung \ref{abb:efeld_E_gestoert} an.
 
@@ -535,42 +551,41 @@ Abbildung \ref{abb:efeld_E_gestoert} an.
  \label{abb:efeld_E_gestoert}
 \end{figure}
 
-Mit einem gr\"osseren $\varepsilon$ k\"onnten wir den Anteil des nummerischen Fehlers verringern. 
+Mit einem gr\"osseren $\varepsilon$ wird der Anteil des nummerischen Fehlers gr\"osser.
 Verh\"alt sich das Modell bei einem starken $\varepsilon$ gut, so k\"onnen wir mit diesem sehr einfachen Test
-auf die Robustheit der Berechung von $E_k^{(1)}$ testen.
-
-% FIXME evt. noch genauer ausf\"uhren warum die Linien flach sind.
+auf die Robustheit der Berechnung von $E_k^{(1)}$ testen.
 
 
-
-\section{Theorie zum Urknall}
-Louis de Broglie
-
-"With every particle of matter with mass m and velocity v a real wave must be 'associated'"
-\[
+\section{Vergleich zu Vorhersagen von Louis de Broglie}
+Der franz"osische Physiker Louis de Broglie hat die These gebracht,
+dass jedes Masseteilchen auch eine Quantenmechanische Welle haben muss.
+Die Formel f"ur die Wellenl"ange
+\begin{equation}
+  \label{efeld:eq_deBroglie}
   \lambda = \frac{h}{p} = \frac {h}{{m}{v}} \sqrt{1 - \frac{v^2}{c^2}}
-\]
+\end{equation}
+ist.
 
-Wollen wir ein Teilchen mit m\"oglichst grosser Wellenl\"ange, so m\"ussen wir die Masse $m$ 
-resuzieren und die Geschwindigkeit $v$ m\"oglichst nah an $0$ halten.
-
-Ganz $0$ darf die Geschwindigkeit nicht werden, da das Teilchen sonst die Energie
+Dabei ist $h$ die Planck-Konstante, $m$ die Masse, $v$ die Geschwindigkeit
+und $c$ die Lichtgeschwindigkeit im Vakuum.
+Wir vereinfachen die Gleichung \ref{efeld:eq_deBroglie} mit
 \[
-  sin(0) = 0
+  v \approx 0
 \]
-bek\"ame.
+da sich unser Elektron gegen\"uber der Lichtgeschwindigkeit $c$ fast nicht bewegt:
+\begin{equation}
+  \lambda = \frac{h}{p} \approx \frac{h}{m v}
+\end{equation}
 
-Daraus schliessen wir, dass das Universum am Anfang leer oder komplett ausgeglichen sein k\"onnte.
-Durch diesen Zustand w\"aren dann alle Teile zum Stillstand gekommen.
+In unserem Beispiel hat das Elektron eine konstante Masse $m$.
+Das $\lambda$ der Wellenfunktion $\psi$ ist also umgekehrt proportional zur Geschwindigkeit des Elektrons,
+was mit unserer bisherigen Auswertung "ubereinstimmt.
+Wir k"onnen somit die de Broglie These mit der St"orungstheorie best"atigen.
 
-Da dieser Zustand nicht stabil ist, hat sich in der 
-Mitte\footnote{Annahme, das Universum ist dann endlich gross}
-ein Teilchen (wieder\footnote{wieder, wenn man von einem sich wieder aufbauendem Universum ausgeht})
-bewegt und die Energie so gross war, dass es eine Kettenreaktion ausgel\"osst
-hat und so den Urknall gestartet hat.
 
-Anders als eine klassische Explusion hat diese Explusion aber die benachbarten Wellen stimuliert
-und so Teilchen aus dem ``Nichts'' (wieder) in das Universum gebracht.
+
+
+
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
