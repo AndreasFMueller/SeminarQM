@@ -28,6 +28,18 @@ Die Defintion der Funktion ist auch bekannt:
     f(x) = x \oplus s
 \]
 
+% Von Interesse sind Funktionen mit der zusätzlichen Eigenschaft von
+% Periodizität.
+
+% [Grafik 1:1]
+
+% Nur dies mit dem $s$ reicht nicht aus.
+
+% Des weiteren müssen folgende Einschränkungen bezüglich der Blackbox Funktion
+% zu .. : 2 zu 1 Funktion.
+
+% [Grafik 2:1]
+
 Mit der Eingabe wird also eine Und-Verkn"ufung mit einer unbekannten Konstante
 $s$ gemacht.  Gesucht ist nun $s$. Fall $s = 0^n$ ist, dann liefert diese
 Funktion f"ur jeden Wert von $x$ jeweils unterschiedliche Werte von $f(x)$, sie
@@ -178,11 +190,10 @@ auszuprobieren und zwei Werte f"ur $f(x)$ zu finden, die identisch sind.
 
 F"ur den Algorithmus sind zwei Register notwendig. Als erstes werden diese mit
 0 initialisiert.
-
 \begin{align*}
-    |a\rangle=|0 ... 0 \rangle 
-    \\
-    |b\rangle=|0 ... 0 \rangle 
+  |a\rangle&=|0 \dots 0 \rangle 
+  &
+  |b\rangle&=|0 \dots 0 \rangle 
 \end{align*}
 
 Nun wird die Hadamard-Transformation auf dem ersten Register angewendet. Damit
@@ -190,56 +201,66 @@ befindet sich das Register in einer Superpostion, bei welcher alle m"oglichen
 Werte von $x$ mit der gleichen Wahrscheinlichkeit auftreten. Sinnhaft
 gesprochen heisst das, dass auf einmal alle m"oglichen Werte auf dem ersten
 Register erzeugt werden.
-
 \[ 
     H|a\rangle=\frac{1}{\sqrt{2^n}} \sum_{x\in\{0,1\}^n}{|x\rangle}
 \]
- 
+Dieser Wert wird jetzt im ersten Register gespeichert.
+\begin{align*}
+  |a\rangle &= \frac{1}{\sqrt{2^n}} \sum_{x\in\{0,1\}^n} {|x\rangle} &
+  |b\rangle&=|0 \dots 0 \rangle 
+\end{align*}
+
 Nun wird die unbekannte Funktion $f$ angewendet und das Resultat $f(x)$ ins
 zweite Register gespeichert. Die beiden Register befinden sich nun im Zustand:
 
 \begin{align*}
-  & |a\rangle = \frac{1}{\sqrt{2^n}} \sum_{x\in\{0,1\}^n} {|x\rangle} \\
-  & |b\rangle = |f(x)\rangle \\
+  |a\rangle &= \frac{1}{\sqrt{2^n}} \sum_{x\in\{0,1\}^n} {|x\rangle} &
+  |b\rangle &= |f(a)\rangle
 \end{align*}
 
-Im ersten Register sind alle M"oglichen Werte $x$ representiert und im zweiten
-Register deren $f(x)$. Nun wird das zweite Register $|b\rangle$ gemessen. Bei
-der Messung wird nun ein Resultat $f(x)$ herausgelesen. Gleichzeitig wird auch
-das erste Register $|a\rangle$ beeinflusst.
-
-Das Resultat der Messung des ersten Registers ist nicht relevant. Viel
-wichtiger ist nun der Zustand des ersten Registers. Dieser befindet sich im
-
-Falle von $s = 0$ im Zustand:
-\[
-    |a\rangle = |x\rangle
-\]
-Dies ist auch logisch, denn die Funktion ist bijektiv und f"ur jeden $f(x)$
-gibt es nur ein $x$. %TODO: not sure...
-
-F"ur das L"osen des Problems ist es jedoch mehr relevant, wenn die unbekannte
-Funktion eine Periode hat. Denn im Falle von $s \in \{0,1\}^n$ befindet sich
-das erste Register im Zustand:
-\[
-    |a\rangle = \frac{1}{\sqrt{2}} ( |x\rangle + |x \oplus s \rangle )
-\]
-
+Im ersten Register sind alle m"oglichen Werte $x$ repr"asentiert und im zweiten
+Register deren $f(a)$. Nun wird das zweite Register gemessen, der gemessene Wert
+sei $y$. 
+Gleichzeitig wird auch das erste Register $|a\rangle$ beeinflusst.
+M"ogliche Werte in diesem Register sind alle die von $f$ auf $y$ abgebildet
+werden. Weil $f$ 2--1 und periodisch mit Periode $s$ ist, gibt es genau zwei
+m"ogliche Werte $x$ und $x \oplus s$. Das erste Register befindet sich folglich
+in einem "Uberlagerungszustand.
+\begin{align*}
+  |a\rangle &= \frac{1}{\sqrt{2}} \bigl( |x\rangle + |x \oplus s \rangle \bigr)
+  &
+  |b\rangle &= |y\rangle
+\end{align*}
 Dies sagt aus, dass bei der Messung des ersten Registers entweder $x$ oder $x
 \oplus s$ herausgelesen wird. Das Problem ist nun, dass es sich nicht
-unterscheiden l"asst, um welchen Wert es sich handelt. Denn falls $x$ gemessen
-wird ist nicht klar, dass diser nicht $x \oplus s$ ist. Es hilft auch nicht
-$s$ zu finden.
+unterscheiden l"asst, um welchen Wert es sich handelt.
+Falls $x$ gemessen wird ist nicht klar, dass dieser nicht $x \oplus s$ ist. 
+Es hilft auch nicht $s$ zu finden.
 
 Um bei der Messung den Wert $x$ nicht zu bekommen wird ein Trick verwendet.
 Daf"ur wird nochmals die Hadamard-Operation auf dem ersten Register angewendet.
 
-\begin{align*}
-    &H^{ \otimes n } \biggl( 
+\begin{hilfssatz}
+  Der Wert der Hadamard-Operation auf dem Register $|a\rangle$ ist
+  \begin{align}
+    H^{ \otimes n } \biggl( 
                      \frac{1}{\sqrt{2}} |x\rangle + 
                      \frac{1}{\sqrt{2}} |x \oplus s\rangle 
                      \biggr)
-    \\
+    &= \frac1{\sqrt{2^{n + 1}}}
+       \biggl( 
+          \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^{ s \cdot z}) |z\rangle } 
+       \biggr).
+  \label{simon:smalz}
+\end{align}
+\end{hilfssatz}
+
+\begin{proof}[Beweis]
+\begin{align*}
+    H^{ \otimes n } \biggl( 
+                     \frac{1}{\sqrt{2}} |x\rangle + 
+                     \frac{1}{\sqrt{2}} |x \oplus s\rangle 
+                     \biggr)
     &= H^{ \otimes n } \frac{1}{\sqrt{2}} |x\rangle + 
        H^{ \otimes n } \frac{1}{\sqrt{2}} |x \oplus s\rangle 
     \\ 
@@ -268,12 +289,28 @@ Daf"ur wird nochmals die Hadamard-Operation auf dem ersten Register angewendet.
        \biggr)
     \\
 \end{align*}
+\end{proof}
 
-Es werden nun zwei F"alle unterschieden. Falls $s \cdot z = 1$ ist, dann gilt:
+Das Resultat (\ref{simon:smalz}) zeigt auf, dass das Skalarprodukt $s \cdot z$ im Wesentlichen das
+Resultat bestimmt. Die möglichen Werte sind $0$ oder $1$, da es sich um ein
+bin"ares Skalarprodukt handelt.
+
+\begin{hilfssatz}
+  Die rechte Seite von (\ref{simon:smalz}) wird je nach Wert von $s \cdot z$
+  \[
+    \begin{cases}
+      0 & \qquad s \cdot z = 1 \\
+     \displaystyle \frac1{\sqrt{2^{n - 1}}} \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot
+     z}|z\rangle } & \qquad s \cdot z = 0
+    \end{cases}
+  \]
+\end{hilfssatz}
+
+\begin{proof}
+Falls $s \cdot z = 1$ ist, dann gilt:
 \begin{align*}
-    &\frac1{\sqrt{2^{n + 1}}}
+    \frac1{\sqrt{2^{n + 1}}}
       \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^{ s \cdot z}) |z\rangle } 
-    \\
     &= 
     \frac1{\sqrt{2^{n + 1}}}
       \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^1) |z\rangle } 
@@ -286,13 +323,11 @@ Es werden nun zwei F"alle unterschieden. Falls $s \cdot z = 1$ ist, dann gilt:
     0 |z\rangle
 \end{align*}
 
-Dies zeigt, dass die Wahrscheinlichkeit diesen Fall zu messen gleich 0 ist und
-somit nie auftritt. Der zweite Fall ist $s \cdot z = 0$, dann gilt:
+Der zweite Fall ist $s \cdot z = 0$, dann gilt:
 
 \begin{align*}
-    &\frac1{\sqrt{2^{n + 1}}}
+    \frac1{\sqrt{2^{n + 1}}}
       \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^{ s \cdot z}) |z\rangle } 
-    \\
     &= 
     \frac1{\sqrt{2^{n + 1}}}
       \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^0) |z\rangle } 
@@ -309,7 +344,9 @@ somit nie auftritt. Der zweite Fall ist $s \cdot z = 0$, dann gilt:
     \frac1{\sqrt{2^{n - 1}}} 
       \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z}|z\rangle } 
 \end{align*}
-
+\end{proof}
+Dies zeigt, dass die Wahrscheinlichkeit diesen Fall zu messen gleich 0 ist und
+somit nie auftritt. 
 Mit diesem Trick wird nun ein Wert $z$ gemessen mit der Eigenschaft:
 \[
     s \cdot z = 0
@@ -319,7 +356,7 @@ Bei der Messung des ersten Registers wird nun ein n-String langer Wert $z$
 gemessen mit der Bedingung, dass $s \cdot z = 0$ ist. Die Wahrscheinlichkeit
 daf"ur liegt bei:
 \[
-    |\frac1{\sqrt{2^{n - 1}}}|^2 = \frac1{2^{n-1}} 
+    \biggl|\frac1{\sqrt{2^{n - 1}}}\biggr|^2 = \frac1{2^{n-1}} 
 \]
 
 Bei genauer "Uberglegung macht dies auch Sinn, denn falls $s \notin \{0,1\}^n$
