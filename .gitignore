@@ -1,6 +1,7 @@
 *.backup
 *.bm
 *.bbl
+*.bcf
 *.blg
 *.dvi
 *.synctex.gz

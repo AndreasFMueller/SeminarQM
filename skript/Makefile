@@ -145,4 +145,5 @@ skript16-blx.bbl:	skript16-blx.aux
 skript17-blx.bbl:	skript17-blx.aux
 	bibtex skript17-blx
 
-
+clean:
+	rm -f *.bbl *.aux *.log *.out
