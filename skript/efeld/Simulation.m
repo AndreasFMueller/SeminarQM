@@ -28,11 +28,11 @@ kurvenVersatz = 1e5
 %n = [1, 2];
 
 if exist('surpress') == 1
-	if surpress == 1
-		safe = 0
-	end
+  if surpress == 1
+    safe = 0
+  end
 else
-	safe = 1
+  safe = 1
 end
 surpress = 0;
 
@@ -162,32 +162,32 @@ for ln = nPlot    % ungestoerter Plot
 
 
 % differenz
-	signPsiG = sign(PsiG(ln, :));
-	zeroA = x(find(signPsiG(:) == 0));
-	
-	zeroB = [];
-	for i = 1:length(x)-1
-		if (signPsiG(i)*signPsiG(i+1)) < 0
-			d = (PsiG(ln, i)-PsiG(ln, i+1))/delta;
-			zeroB = [zeroB, (x(i) + PsiG(ln, i)/d)];
-	%		zeroB = [zeroB, x(i)];
-		end
-	end
+  signPsiG = sign(PsiG(ln, :));
+  zeroA = x(find(signPsiG(:) == 0));
+  
+  zeroB = [];
+  for i = 1:length(x)-1
+    if (signPsiG(i)*signPsiG(i+1)) < 0
+      d = (PsiG(ln, i)-PsiG(ln, i+1))/delta;
+      zeroB = [zeroB, (x(i) + PsiG(ln, i)/d)];
+      % zeroB = [zeroB, x(i)];
+    end
+  end
 
-	zero = unique(sort([zeroA, zeroB, -l, l]));
-	
-	dPsiG = 2*l/ln;
-	diffZero = (diff(zero)-dPsiG).*2e+17;
-	
-	
-%	plot(zero, 0, 'xb')		% x-Markierung an den 0-Stellen
-	hold on;
-	%bar(zero(1:end-1)+dPsiG/2, diffZero, 1, 'y')
-	%bar(zero(2:end), diffZero, 1, 'y')
-	bar(zero(1:end-1)+diff(zero)/2, diffZero, 1, 'y')
-	
-	plot(x, Psi(ln, :) , 'Color', 'blue')    % Psi
-	plot(x, PsiG(ln, 1:length(x)), 'Color', 'red')    % Psi
+  zero = unique(sort([zeroA, zeroB, -l, l]));
+  
+  dPsiG = 2*l/ln;
+  diffZero = (diff(zero)-dPsiG).*2e+17;
+  
+  
+  % plot(zero, 0, 'xb')    % x-Markierung an den 0-Stellen
+  hold on;
+  % bar(zero(1:end-1)+dPsiG/2, diffZero, 1, 'y')
+  % bar(zero(2:end), diffZero, 1, 'y')
+  bar(zero(1:end-1)+diff(zero)/2, diffZero, 1, 'y')
+  
+  plot(x, Psi(ln, :) , 'Color', 'blue')             % Psi
+  plot(x, PsiG(ln, 1:length(x)), 'Color', 'red')    % Psi gestört
 end
 
 
