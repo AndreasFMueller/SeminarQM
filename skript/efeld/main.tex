@@ -319,15 +319,15 @@ $H_1$ ist hingegen immer ungerade.
 Uns interessieren die Skalarprodukte die gerade sind, denn nur die ergeben einen Beitrag.
 Das ist der Fall wenn $H_1$ und $\psi_k^{(0)} \psi_l^{(0)}$ ungerade sind.
 $\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle$ ergibt nur einen Beitrag wenn die Bedingung
-\begin{result}
-Die Störung ver\"andert eine gerade bzw. ungerade Wellenfunktion nur um 
-Vielfache der ungeraden bzw. geraden Wellenfunktionen.
-\end{result}
 \begin{equation}
   \label{eq:efeld_summebedingung}
   k-l \equiv 1 \mod 2
 \end{equation}
 welche den Rechenaufwand halbiert und $k \ne l$ bereits enh\"alt.
+\begin{result}
+Die St\"orung ver\"andert eine gerade bzw. ungerade Wellenfunktion nur um 
+Vielfache der ungeraden bzw. geraden Wellenfunktionen.
+\end{result}
 
 
 
@@ -360,7 +360,7 @@ Wir wollen jetzt die Wellenfunktionen $\psi_k(\varepsilon)$ und die Energie auch
 Dazu verwenden wir das Programm Matlab.
 
 Wie beginnen damit, dass wir Konstanten und das ungest\"orte System bestimmen.
-Wir definieren f\"ur unseren Potentialkasten eine Breite von $10^{-9}$ (1nm links und rechts)
+Wir definieren f\"ur unseren Potentialkasten eine Breite von $l \cdot 2 = 2 \cdot 10^{-9}$ (1nm links und rechts)
 \begin{lstlisting}[style=Matlab]
 L = 10^-9;                         # Entfernung der Grenzen der Simulation
 n = 1000;                          # Anzahl aufsummierter Zustaende
@@ -560,7 +560,7 @@ auf die Robustheit der Berechnung von $E_k^{(1)}$ testen.
 
 \section{Vergleich zu Vorhersagen von Louis de Broglie}
 Der franz\"osische Physiker Louis de Broglie hat die These gebracht,
-dass jedes Masseteilchen auch eine Quantenmechanische Welle haben muss.
+dass jedes Masseteilchen auch eine quantenmechanische Welle haben muss.
 Die Formel f\"ur die Wellenl\"ange
 \begin{equation}
   \label{efeld:eq_deBroglie}
