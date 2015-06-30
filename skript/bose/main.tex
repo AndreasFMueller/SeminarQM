@@ -89,33 +89,41 @@ Zwischen dem System und dem Reservoir k"onnen Teilchen ausgetauscht werden. Dies
 	\caption{Reservoir}
 	\label{fig:reservoir}
 \end{figure}
-
 Die Energie eines Teilchens berechnet sich nach der Formel:
 
 \begin{equation}
    E_n = \frac{p^2}{2m}
 \end{equation}
-
 Die Wahrscheinlichkeit, mit der diese Energie im System zu finden ist, l"asst sich mit der folgender Formel berechnen.
 
 \begin{equation}
-    P(E_n) = \frac{E_n}{\sum\limits_{n = 1}^{N} e^{-E_n/kT}}    
+    P(E_n) = \frac{e^{-E_n/kT}}{\sum\limits_{n = 1}^{N} e^{-E_n/kT}}    
 \end{equation}
-
-Der Nenner stellt dabei die Verteilung der Energien dar.
+Der Nenner stellt dabei die Verteilung der Energien dar. Um den Ausdruck etwas kompakter zu formulieren wird $ \beta = \frac{1}{kT}$ eingef"uhrt.
 
 \begin{equation}
-    Q = \sum\limits_{n = 1}^{N} e^{-E_n/kT}
+    Q = \sum\limits_{n = 1}^{N} e^{-E_n/kT} = \sum\limits_{n = 1}^{N} e^{-\beta E_n}
 \end{equation}
 
 Die mittlere Energie des Systems betr"agt:
-
 \begin{equation}
-    \langle U \rangle = \sum_{n} E_n \cdot P(E_n) = - \frac{d}{d \beta} \ln (Q)
+    \langle U \rangle = \sum_{n} E_n \cdot P(E_n) = \sum_{n} E_n \cdot \frac{e^{-\beta E_n}}{Q}
+\end{equation}
+Durch Ableiten der eulerschen Funktion nach $\beta$ kann die Formel weiter vereinfacht werden. Beim Ableiten wird die Energie $E_n$ als Faktor entstehen.
+
+\begin{equation*}
+\langle U \rangle = \sum_{n} E_n \cdot \frac{e^{-\beta E_n}}{Q} = -\frac{1}{Q} \sum_{n} \frac{d}{d \beta} e^{-\beta E_n} 
+\end{equation*}
+Die Ableitung nach $\beta$ kann vor der Summe durchgef"uhrt werden, dadurch erh"alt man die Definition von $Q$.
+\begin{equation*}
+\langle U \rangle = -\frac{1}{Q} \frac{d}{d \beta} \sum_{n}  e^{-\beta E_n}  = -\frac{1}{Q} \frac{d}{d \beta}Q
+\end{equation*}
+In dieser Formel ist $Q$ zweimal vorhanden, einmal im Bruch und einmal abgeleitet. Dieser Term kann auch auf andere Art und Weise geschrieben werden, n"amlich mit der Ableitung des Logarithmus von $Q$. Damit erh"alt man eine sehr kompakte Darstellung der mittleren Energie.
+\begin{equation}
+\langle U \rangle = -\frac{d}{d \beta} ln(Q)
 \end{equation}
 
 Nun werden einige Umformungen durchgef"uhrt um das Berechnen der Gesamtenergie des Systems zu vereinfachen.
-
 Als erstes wird angenommen, dass nur ein einziger Energiezustand existiert.
 Dadurch kann man eine Klammer mit Summanden ausschreiben, in Rot dargestellt.
 Kommen nun weitere Energiezust"ande hinzu, blaue Klammern, so k"onnen diese Klammern miteinander multipliziert werden.
@@ -123,8 +131,8 @@ Dies f"uhrt dazu, dass das Produktzeichen f"ur die Zust"ande verwenden k"onnen.
 
 
 \begin{equation}
-Q = \sum\limits_{i = 0}^{N} e^{- \beta \epsilon_i n_i } 
-=  \sum_{i = 0}^{N}  \textcolor{red}{ e^{- \beta \epsilon_i n_i }} \textcolor{blue} {e^{- \beta \epsilon_1 n_1 }} e^{- \beta \epsilon_2 n_2 } ... 
+Q = \sum\limits_{n_0, n_1,...} e^{- \beta \sum_a \epsilon_a n_a } 
+=  \sum^N  \textcolor{red}{ e^{- \beta \epsilon_0 n_0 }} \textcolor{blue} {e^{- \beta \epsilon_1 n_1 }} e^{- \beta \epsilon_2 n_2 } ... 
 \end{equation}
 
 \begin{equation*}
@@ -132,31 +140,28 @@ Q = \sum\limits_{i = 0}^{N} e^{- \beta \epsilon_i n_i }
 \end{equation*}
 
 \begin{equation}
-\sum_{i} e^{- \beta \epsilon_i n_i } = (1+e^{- \beta \epsilon_0 }+e^{- \beta \epsilon_0*2  }+e^{- \beta \epsilon_0*3  }+...) = \prod_{a} \sum_{n_i} e^{- \beta \epsilon_a n_i }
+\sum\limits_{n_0, n_1,...} e^{- \beta \sum_a \epsilon_a n_a } = \prod_{a} \sum_{n_i} e^{- \beta \epsilon_a n_i }
 \end{equation}
-
-Die Summe stellt die geometrische Reihe dar, dadurch kann die ganze Summe durch einen simplen Bruch ersetzt werden.
+Die Summe stellt die geometrische Reihe dar, dadurch kann die ganze Summe durch einen simplen Bruch ersetzt werden. Substitution der e-Funktion mit $q$ und $n_i$ mit $i$.
 
 \begin{equation}
 \sum_{n_i} (e^{- \beta \epsilon_i })^{n_i} = \sum_{i} q^i = \frac {1}{1-q}
 \end{equation}
+Angewendet ergibt sich damit:
 
 \begin{equation}
     \prod_{a} \sum_{n_i} e^{- \beta \epsilon_a n_i } = \prod_{a} \frac {1}{1-e^{- \beta \epsilon_a}}
 \end{equation}
-
 Das Produkt kann durch Anwendung der Logarithmen Regeln in eine Summe umgeformt werden.
 
 \begin{equation}
 \ln \left[ \left( \frac{1}{1-e^{\beta \epsilon_{a_0}}} \right) \cdot \left( \frac{1}{1-e^{ \beta \epsilon_{a_1}}} \right) \cdot ...\right] = \ln \left( \frac{1}{1-e^{\beta \epsilon_{a_0}}} \right) + \ln \left( \frac{1}{1-e^{\beta \epsilon_{a_1}}} \right) + ...
 \end{equation}
-
 Dies f"uhrt schliesslich zur Formel:
 
 \begin{equation}
 Q = \prod_{a} \frac {1}{1-e^{- \beta \epsilon_a}} = \sum_{a} \ln \left( 1-e^{- \beta \epsilon_a} \right)
 \end{equation}
-
 Damit Teilchen zwischen dem System und dem Reservoir ausgetauscht werden k"onnen, muss Energie aufgewendet werden.
 Dies wird mit einem zus"atzlichen Term abgegolten. Damit wird $Q$ abh"angig von dieser Energie $\mu$.
 
@@ -164,34 +169,29 @@ Dies wird mit einem zus"atzlichen Term abgegolten. Damit wird $Q$ abh"angig von 
  \begin{equation}
  Q^{(\mu)} = \sum e^{- \beta \sum_{a} (\epsilon_a - \mu)n_a} = e^{-\beta g}
  \end{equation}
- 
-umgeformt auf g
+umgeformt auf $g$
 
   \begin{equation}
   -\frac{1}{ \beta } \ln(Q^{\mu}) = g
   \end{equation}
-
 Die Berechnung der Gesamtenergie wird durch folgende Annahme vereinfacht. 
 Es wird angenommen, dass es sich nicht um diskrete sondern um kontinuierliche Energiezust"ande handelt.
 
 \begin{equation}
 \frac{1}{\beta} \sum_{a} \ln(1-e^{-\beta (\epsilon_a -\mu)}) \approx \frac{1}{\beta} \int \ln(1-e^{-\beta (\epsilon_a-\mu)})
 \end{equation}
-
-Damit Berechnet sich die Gesamtenergie des Systems nach.
+Damit Berechnet sich die Gesamtenergie des Systems.
 Da die Teilchen sich in drei Dimensionen bewegen k"onnen, muss ein Dreifachintegral gel"ost werden.
 Ausserdem findet sich im Integral der Term ''Wert mal Wahrscheinlichkeit'' im Bruch wieder, unser Q.
 
 \begin{equation}
 U = s \int  \frac{ \left(e^{ {\frac{- \beta p^2}{2m}} } e^{\beta \mu} \right) \cdot {\frac{p^2}{2m}} }{1-e^{ {\frac{- \beta p^2}{2m}} } e^{\beta \mu}} \cdot \frac{d^3 p}{(2 \pi \hbar)^3}
 \end{equation}
-
-Die Vereinfachung ist bis zu einer kritischen Temperatur zul"assig. Ab dieser Temperatur d"urfen die kleinsten Energien des Systems nicht mehr vernachl"assigt werden.
+Die Vereinfachung ist bis zu einer kritischen Temperatur zul"assig. Ab dieser Temperatur d"urfen die kleinsten Energien des Systems nicht mehr vernachl"assigt werden. F"ur sehr tiefe Temperaturen m"ussen die kleinen Terme ber"ucksichtigt werden. Berechnet man die Gesamtenergie des Systems numerisch, erh"alt man Resultate, welche nicht sinnvoll sind.
 
 \begin{equation}
 \frac{1}{\beta} \sum_{a} \ln(1-e^{-\beta (\epsilon_a-\mu)}) \neq \frac{1}{\beta} \int \ln(1-e^{-\beta (\epsilon_a-\mu)})
 \end{equation}
-
 Dies spiegelt sich bei der W"armekapazit"at wieder, die eine sehr starke Steigung bei eben dieser Temperatur aufweist. Ein Vergleich der W"armekapazit"at zwischen dem Bose-Einstein Gas und fl"ussigem Helium ist in Abbildung \ref{fig:WrmKap} dargestellt. Zu erkennen ist die starke Steigung bei der kritischen Temperatur.
 
 \begin{figure}
@@ -200,32 +200,30 @@ Dies spiegelt sich bei der W"armekapazit"at wieder, die eine sehr starke Steigun
     \caption[W"armekapazit"at eines Bose-Einstein Kondensats und fl"ussigem Helium.]{W"armekapazit"at eines Bose-Einstein Kondensats und fl"ussigem Helium. \cite{bose:feynman}}
     \label{fig:WrmKap}
 \end{figure}
-
 Wenn man sich die kontinuierliche Gaussverteilung eines Gases betrachtet, welches abgek"uhlt wird, verringert sich die Standardabweichung, welche die Temperatur darstellt.
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.6\textwidth]{./bose/gauss1.png}
+    \includegraphics[width = 0.7\textwidth]{./bose/gauss1.png}
     \caption[Verteilung Ausgangstemperatur]{Verteilung zwischen Druck und Volumen eines Gases, Ausgangstemperatur.}
     \label{fig:Gauss1}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.6\textwidth]{./bose/gauss2.png}
+    \includegraphics[width = 0.7\textwidth]{./bose/gauss2.png}
     \caption[Verteilung bei Abk"uhlung]{Verteilung zwischen Druck und Volumen eines Gases, bei Abk"uhlung. Die Standardabweichung wird geringer, damit auch die Temperatur.}
 	\label{fig:Gauss2}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.6\textwidth]{./bose/gauss3.png}
+    \includegraphics[width = 0.7\textwidth]{./bose/gauss3.png}
     \caption[Verteilung bei starker Abk"uhlung]{Verteilung zwischen Druck und Volumen eines Gases, bei starker Abk"uhlung. Die Standardabweichung wird noch geringer, damit auch die Temperatur.}
 	\label{fig:Gauss3}
 \end{figure}
-
 F"ur das Bose-Einstein Kondensat liegt eine diskrete Verteilung vor.
-Also wird eine Abk"uhlung dazu f"uhren, dass sich alle Teilchen in einen Zustand bewegen.
+Also wird eine Abk"uhlung dazu f"uhren, dass sich alle Teilchen in einen Zustand hin verschieben. Die x-Achse wurde unterteilt und soll die verschiedenen Energieniveaus darstellen, zuletzt kann nur noch ein Zustand eingenommen werden, n"amlich $v = 0$. 
 
 \section{Anwendungen}
 \subsection{Erkl"arung quantenphysikalischen Effekten}
