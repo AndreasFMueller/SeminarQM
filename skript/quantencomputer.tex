@@ -14,7 +14,7 @@ Maschine angestrebt hat.
 
 Moderne Computer sind alle konkrete Realsierungen des abstrakten
 \index{Turing, Alan}
-Konzeptes der Turing-Maschine, welches Alan Turing formuliert hat,
+Konzeptes der Turing-Ma\-schi\-ne, welches Alan Turing formuliert hat,
 um zu analysieren, welche Arten von Berechnungen in welcher Zeit
 "uberhaupt durchgef"uhrt werden k"onnen.
 Es wurde erkannt, dass gewisse Probleme auf Turing-Maschinen
@@ -40,7 +40,7 @@ gleichzeitig sein k"onnen, wie wir im Abschnitt~\ref{section:cat}
 illustrieren werden.
 Wenn man also auch das Rechenwerk einer Turingmaschine durch eine
 ``Quantenschaltung'' ersetzen kann, dann kann ein relativ kleiner
-Quantecomputer alle M"oglichkeiten aller Bits gleichzeitig evaluieren,
+Quantencomputer alle M"oglichkeiten aller Bits gleichzeitig evaluieren,
 und damit das Problem in sehr kurzer Zeit l"osen.
 
 \section{Klassische Computer}
@@ -92,7 +92,7 @@ und den "Ubertrag $C_\text{in}$, und gibt die Summe $\Sigma$ und den
 "Ubertrag $C_\text{out}$ aus.
 \label{skript:fulladder}}
 \end{figure}
-Aus den Grundoperationn lassen sich komplexere Schaltungen 
+Aus den Grundoperationen lassen sich komplexere Schaltungen 
 aufbauen, zum Beispiel das Halbaddierwerk in Abbildung~\ref{skript:halfadder}
 oder der Volladdierer in Abbildung~\ref{skript:fulladder}.
 Die Digitaltechnik lehrt, wie man durch Kombination solcher Schaltung
@@ -130,7 +130,7 @@ zu sein braucht, hat Erwin Schr"odinger mit seinem ber"uhmten
 Gedankenexperiment mit der Katze illustriert.
 In einer Kiste befindet sich eine Katze und ein Mechanismus,
 der beim radioaktiven Zerfall des darin befindlichen radioaktiven
-Atomkernes eine Phiole mit Gift zerbricht, so dass es ausweichen und
+Atomkernes eine Phiole mit Gift zerbricht, so dass es entweichen und
 die Katze t"oten kann.
 Die Katze kann offensichtlich in zwei m"oglichen Zust"anden sein,
 lebendig $|\smiley\rangle$ oder tot $|\frownie\rangle$. 
@@ -170,8 +170,8 @@ ist.
 Das einzige, was wir daraus ableiten k"onnen, ist mit welcher
 Wahrscheinlichkeit sie bereits tot ist.
 Gewissheit dar"uber, in welchem Zustand sich die Katze befindet,
-erhalten wer genau in dem Moment, wo wir das Experiment durchf"uhren
-und den Zustand der Katze neu ermitteln.
+erhalten wir genau in dem Moment, wo wir das Experiment durchf"uhren
+und den Zustand der Katze ermitteln.
 
 Durch den Prozess der Beobachtung der Katze "andert sich deren Zustand.
 Lebt sie noch, wissen wir, dass sie sich im Zustand $|\smiley\rangle$ befindet.
@@ -344,7 +344,7 @@ Der Zustand
 =
 \lambda \,|0\rangle + \mu\,|1\rangle
 \]
-hat L"ange $1$ wenn gilt
+hat L"ange $1$, wenn gilt
 \[
 \langle\psi|\psi\rangle
 =
@@ -509,7 +509,7 @@ Solche Gatter d"urfen selbst keine Messungen machen, den die
 Auswertung der Berechnung darf ja erst ganz am Ende der
 Transformationen erfolgen.
 Die Gatter sind also Zustands"anderungen, die umkehrbar sein m"ussen.
-Eine physikalische Ralisierung eines Gatters ist nichts anderes
+Eine physikalische Realisierung eines Gatters ist nichts anderes
 als eine Zeitentwicklung des urspr"unglichen Zustands durch einen
 speziellen Hamilton-Operator.
 
@@ -567,13 +567,13 @@ Die Matrix $X$ ist unit"ar, weil orthogonal.
 mit einem Phasenfaktor versieht:
 \begin{align*}
 |0\rangle &\mapsto |0\rangle\\
-|1\rangle &\mapsto i\,|1\rangle
+|1\rangle &\mapsto e^{i\varphi}\,|1\rangle
 \end{align*}
 Die zugeh"orige Matrix ist
 \[
 \begin{pmatrix}
 1&0\\
-0&i
+0&e^{i\varphi}
 \end{pmatrix},
 \]
 die Matrix ist nicht orthogonal, aber unit"ar.
@@ -664,13 +664,13 @@ Manchmal wird das \textsc{CNOT}-Gatter mit dem Diagramm
 dargestellt werden.
 Man beachtet, dass dieses Diagramm im Gegensatz zu den Analysator-Diagrammen
 von Kapitel~\ref{chapter:einfache-quantensysteme} von links nach rechts
-gelesen werden m"ssen.
+gelesen werden muss.
 \end{beispiel}
 
 \begin{beispiel}
 \index{Tofoli-Gatter}
 \index{Gatter!Tofoli}
-Das {\em Tofoli-Gatter} operatiert auf zwei Qubits $a$ und $b$ und einem
+Das {\em Tofoli-Gatter} operiert auf zwei Qubits $a$ und $b$ und einem
 Scratch-Bit $c$ und implementiert die Abbildung
 \[
 |a\otimes b\otimes c\rangle
@@ -881,7 +881,7 @@ Jede unit"are $n\times n$-Matrix $U$ mit $n\ge 3$ kann beliebig genau
 approximiert werden durch ein Produkt $U_l\dots U_1$ von unit"aren
 Matrizen, die jeweils Hadamard-Gatter, Tofoli-Gatter oder Phasen-Shifts
 sind.
-\cite[-- Theorem 10.12]{skript:arorabarak}
+\cite[Theorem 10.12]{skript:arorabarak}
 \end{satz}
 
 \subsection{Quanten-Algorithmen}
@@ -949,7 +949,7 @@ darstellen. Es ist offensichtlich, dass diese Operation unit"ar ist,
 wir d"urfen also annehmen, dass wir sie mit einem Quantencomputer
 implementieren k"onnen.
 
-Um $a$ zu finden, m"ussen wir jetzt also eine Folge von Quantenoperationen
+Um $a$ zu finden, m"ussen wir jetzt eine Folge von Quantenoperationen
 finden, die aus einem bekannten Zustand den Zustand $|a\rangle$ herstellt.
 Die Quantenoperationen sind unit"are Operatoren, die wir uns als Drehungen
 in einem komplexen Vektorraum vorstellen k"onnen.
@@ -958,7 +958,7 @@ zu finden.
 
 Als Ausgangsvektor verwenden wir einen vollst"andig verschr"ankten Zustand
 \[
-u=\frac1{2^{\frac{n}2}}\sum_{x\in\{0,1\}^n}|x\rangle
+u=\frac1{\sqrt{2^n}}\sum_{x\in\{0,1\}^n}|x\rangle
 \]
 in einem $n$-Qubit-Register.
 Der Winkel zwischen $|a\rangle$ und $u$ ist
@@ -967,16 +967,16 @@ Der Winkel zwischen $|a\rangle$ und $u$ ist
 =
 \langle u|a\rangle
 =
-\frac1{2^{\frac{n}2}}
+\frac1{\sqrt{2^n}}
 \sum_{x\in\{0,1\}^n}\langle x|a\rangle
 =
-\frac1{2^{\frac{n}2}}.
+\frac1{\sqrt{2^n}}.
 \]
 F"ur grosses $n$ ist die rechte Seite nahe bei $0$, der Winkel ist
 also nahe bei einem rechten.
 Er unterscheidet sich von einem rechten Winkel um
-$\sin\vartheta=1/2^{\frac{n}2}$.
-F"ur grosses $n$ ist $\vartheta\simeq 1/2^{\frac{n}2}$.
+$\sin\vartheta=1/{\sqrt{2^n}}$.
+F"ur grosses $n$ ist $\vartheta\simeq 1/{\sqrt{2^n}}$.
 
 Wir suchen jetzt eine Folge von Drehungen, und damit
 eine Folge von Vektoren $w_1$, $w_2$, \dots, die den Vektor $u$ sukzessive
@@ -984,7 +984,7 @@ immer n"aher an $a$ herandreht.
 Wir m"ochten, dass der Winkel zwischen $w_i$ und $a$ in jedem Schritt 
 um $\vartheta$ kleiner wird.
 Um den Vektor $a$ zu erreichen, brauchen wir also eine Anzahl Schritte
-in der Gr"ossenordnung von $O(1/\vartheta)=O(2^{\frac{n}2})$.
+in der Gr"ossenordnung von $O(1/\vartheta)=O(\sqrt{2^n})$.
 
 Um dies durchzuf"uhren m"ussen wir jetzt also nur noch die Drehungen
 konstruieren, die den Winkel zu $a$ kleiner machen.
@@ -999,7 +999,7 @@ e=\sum_{y\ne a}|y\rangle
 \]
 steht senkrecht auf $a$.
 Der Winkel zwischen $u$ und $e$ ist $\vartheta$.
-\ref{skript:hilfssatz-winkel}
+\label{skript:hilfssatz-winkel}
 \end{hilfssatz}
 
 \begin{proof}[Beweis]
@@ -1121,14 +1121,14 @@ Dazu berechnen wir die Wirkung von $H$ auf einem Zustand $u$:
 \begin{align*}
 Hu
 &=
-\frac1{2^{\frac{n}2}}\sum_{x'\in\{0,1\}^{n-1}}(H\,|0x'\rangle + H\,|1x'\rangle)
+\frac1{\sqrt{2^n}}\sum_{x'\in\{0,1\}^{n-1}}(H\,|0x'\rangle + H\,|1x'\rangle)
 =
 \frac1{\sqrt{2}}(H\,|0\rangle + H\,|1\rangle)\otimes
-  \frac1{2^{\frac{n-1}2}}\sum_{x'\in\{0,1\}^{n-1}} |x'\rangle
+  \frac1{\sqrt{2^{n-1}}}\sum_{x'\in\{0,1\}^{n-1}} |x'\rangle
 \\
 &=
 |0\rangle\otimes
-  \frac1{2^{\frac{n-1}2}}\sum_{x'\in\{0,1\}^{n-1}} |x'\rangle
+  \frac1{\sqrt{2^{n-1}}}\sum_{x'\in\{0,1\}^{n-1}} |x'\rangle
 \end{align*}
 Wiederholt man dies f"ur jedes Qubit, entsteht der Vektor $|0\dots 0\rangle$.
 Jetzt muss die $|0\rangle$-Komponente umgekehrt werden, was mit der Abbildung
