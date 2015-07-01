@@ -105,7 +105,7 @@ L"osungen gerade oder ungerade sind.
 Eine gerade L"osung muss von der Form $A\cos kx$ sein, eine ungerade
 L"osung von der Form $B\sin kx$.
 In beiden F"allen ist die Randbedingung am linken Rand automatisch
-erf"ullt, wenn die Bedingun am rechten Rand erf"ullt ist.
+erf"ullt, wenn die Bedingung am rechten Rand erf"ullt ist.
 Wir setzen die Randbedingungen ein:
 \begin{align*}
 A\cos kl&=0
@@ -152,9 +152,22 @@ f"ur ungerades $n$ aber eine gerade L"osungsfunktion.
 Wir m"ussen noch sicherstellen, dass die L"osungsfunktionen korrekt
 normiert sind.
 Dazu m"ussen wir die Integrale von $\cos^2$ und $\sin^2$ berechnen.
-Die Graphen von $\cos^2$ und $\sin^2$ halbieren aber genau das
-Rechteck zwischen $-l$ und $l$ mit H"ohe $1$, also ist der Wert
-des Integrals in jedem Fall $l$, die L"osungsfunktionen mit
+Es gilt
+\begin{align*}
+\int_{-l}^l \cos^2\frac{n\pi x}{2l}\,dx
+&=
+\biggl[
+\frac{l}{2\pi}\sin\frac{\pi x}{l}+\frac{x}2
+\biggr]_{-l}^l
+=l,
+\\
+\int_{-l}^l \sin^2\frac{n\pi x}{2l}\,dx
+&=l.
+\end{align*}
+%Die Graphen von $\cos^2$ und $\sin^2$ halbieren aber genau das
+%Rechteck zwischen $-l$ und $l$ mit H"ohe $1$, also ist der Wert
+%des Integrals in jedem Fall $l$,
+Die L"osungsfunktionen mit
 der richtigen Normierung sind also:
 \begin{align}
 \psi_n(x)
@@ -197,7 +210,7 @@ das Neutron hat eine Masse von $m_n=1.67\cdot 10^{-27}\text{kg}$,
 die Grundzustandsenergie ist daher $E_1=3.28\cdot10^{-13}\text{J}$.
 Mit der Formel $E=mc^2$ entspr"ache dieser Energie die Masse
 $3.656\cdot 10^{-30}\text{kg}$, oder etwa $0.2\%$ der Masse eines
-Neutrons, und mehr als der Masse eines Elektrons.
+Neutrons, und deutlich mehr als die Masse eines Elektrons.
 
 \subsubsection{H"ohere Dimensionen}
 Man kann das Problem eines Teilchens in einem Potentialkasten auch
@@ -256,7 +269,7 @@ drei Gleichungen
 \end{equation}
 mit der zus"atzlichen Bedingung $E=E_x+E_y+E_z$.
 Die Gleichungen (\ref{skript:potentialkasten-einzelgleichungen}) sind drei
-unabh"angige Problem wie der eindimensionale Potentialkasten
+unabh"angige Probleme analog zum eindimensionalen Potentialkasten
 (\ref{skript:schroedingerkasten}), deren Energieniveaus wir bereits berechnet
 haben.
 Daraus k"onnen wir unmittelbar die Energieniveaus im dredimensionalen
