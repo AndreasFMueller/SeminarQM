@@ -16,13 +16,15 @@ entgegen nimmt und einen neuen Bit String liefert
 \begin{align*}
   &f\colon\{0,1\}^n\to\{0,1\}^n
 \end{align*}
-Von Interesse sind Funktionen mit der zus"atzlichen Eigenschaft von
-Periodizit"at.
+Von Interesse sind Funktionen mit der zus"atzlichen Eigenschaft der
+Periodizit"at, d.h. es soll gelten
 \begin{align*}
   &f(x \oplus s) = f(x)
 \end{align*}
-Eine Funktion mit dem Wert von $s = 0^n$ und $n = 3$ w"urde diese Eigenschaft
-somit nicht erf"ullen.
+
+für ein konstantes $s$ und für jeden möglichen Wert von $x$. 
+Der Spezialfall von $s = 0$ ist dabe nicht interessant, denn $f(x \oplus 0)
+= f(x)$ ist immer erfüllt, wie auch die folgende Abbildung zeigt:
 \begin{figure}[H]
  \centering
  \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner
@@ -60,8 +62,8 @@ somit nicht erf"ullen.
  \end{tikzpicture}
 \end{figure}
 Daraus resultiert, dass eine weitere Einschr"ankung bez"uglich der Blackbox
-Funktion gemacht werden muss: Nur 2--1 Funktionen sind von Intersse.
-Ein Beispielfunktion ist etwa $s = 110$ : 
+Funktion gemacht werden muss: Nur 2--1 Funktionen sind von Interesse.
+Ein mögliches Beispiel Periode $s = 110$ ist:
 \begin{figure}[H]
  \centering
  \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner
@@ -312,14 +314,17 @@ daf"ur liegt bei:
 \[
     \biggl|\frac1{\sqrt{2^{n - 1}}}\biggr|^2 = \frac1{2^{n-1}} 
 \]
-
 Bei genauer "Uberglegung macht dies auch Sinn, denn falls $s \notin \{0,1\}^n$
 ist, gibt es genau $2^{n-1}$ m"oglichen $z$-Werte. Die Wahrscheinlichkeit einen
 solchen zu messen ist also gleichverteilt.
 
 Der Algorithmus von Simon liefert nun einen Wert $z$. Um den genauen Wert von
-$s$ zu bestimmen, wird nun der Algorithmus $n-1$-Mal wiederholt, somit liegen
-nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
+$s$ zu bestimmen, wird nun der Algorithmus soviel mal wiederholt, bis $n-1$
+linear unabhängige $z$ Werte vorliegen. Es kann sein, dass derselben $z$ Werte
+zweimal gemessen wird, jedoch ist dei Wahrscheinlichkeit bei grossen $n$
+relativ klein.  Mit $n-1$ linear unabhängigen $z$ liegen auch soviele
+Gleichnungen mit der Unbekannte $s$ vor, somit kann dieses Gleichungssystem mit
+dem Algorithmus von Gauss gelöst werden.
 
 \begin{align*}
     s \cdot z_{1} = 0
@@ -356,12 +361,12 @@ werden, h"angt vom L"osen des linearen Gleichungssystems mit Gaußscher
 Elimination ab, also $O(n^3)$. 
 \cite{simon:cs191}
 
-Somit wurde ein Algorithmus, dessen Laufzeit auf dem klassischen Computer bei sehr grossen
-Zahlen schnell w"achst (in diesem Fall ist das Wachstum mit $O(2^{n/2})$
-angegeben) auf eine L"osung mit einem viel kleineren Wachstum von $O(n^3)$
-reduziert. In der theoretischen Informatik ist dies ein grosser Schritt, denn
-es zeigt auf, dass gewisse Problem auf dem Quantencomputer weit effizienter
-gel"ost werden k"onnen als auf dem klassischen Computer.
+Somit wurde ein Algorithmus, dessen Laufzeit auf dem klassischen Computer bei
+sehr grossen Zahlen schnell w"achst (in diesem Fall ist das Wachstum mit
+$O(2^{n/2})$ angegeben) auf eine L"osung mit einem viel kleineren Wachstum von
+$O(n^3)$ reduziert. In der theoretischen Informatik ist dies ein grosser
+Schritt, denn es zeigt auf, dass gewisse Problem auf dem Quantencomputer weit
+effizienter gel"ost werden k"onnen als auf dem klassischen Computer.
 
 
 \printbibliography[heading=subbibliography] \end{refsection}
