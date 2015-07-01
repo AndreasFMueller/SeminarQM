@@ -10,17 +10,18 @@ Der harmonische Oszillator ist eine gute Approximation f"ur viele
 Quantenmechanische Systeme.
 Will man die Approximation verbessern,
 kann man die Kr"afte im Oszillator nicht mehr linear modellieren.
-Das Potential ist also nicht mehr nur $Q^2$,
+Das Potential ist also nicht mehr nur $x^2$,
 sondern es kommen noch Terme h"oherer Ordnung hinzu.
 Beziehungsweise Konstanten wie in Kapitel~\ref{chapter:efeld} zu sehen ist.
 Diese Terme k"onnen als St"orungen betrachtet werden.
-Wir betrachten in diesem Kapitel nur Zeitunabh"angige und nicht entartete
+Wir betrachten in diesem Kapitel nur zeitunabh"angige und nicht entartete
 St"orungen, da alles Andere den Rahmen sprengen w"urde.
 
 \begin{figure}	%Bild Titelbild.png
 \centering
 \includegraphics[width=0.7\textwidth]{anharmonisch/images/Titelbild.png}
 \caption{Beispiel einer symmetrischen Valenzschwingung eines Kohlendioxid Molek"uls
+(links: Wellenfunktion, rechts: Aufenthaltswahrscheinlichkeit)
 \label{skript:Titelbild}}
 \end{figure}
 
@@ -39,23 +40,31 @@ St"orungen, da alles Andere den Rahmen sprengen w"urde.
 H(p,x)
 =
 \underbrace{\frac1{2m}p^2+\frac12 kx^2}_{H_0}
++
 \underbrace{\vphantom{\frac1{2m}p^2+\frac12 kx^2}
-+a_3 x^3+a_4 x^4+a_5 x^5+\dotsb}_{\varepsilon H_1}
+a_3 x^3+a_4 x^4+a_5 x^5+\dotsb}_{\varepsilon H_1}
 \]
 
 Auf der Abbildung~\ref{skript:Potentiale} sieht man das Potential der mit
-$Q^3$ oder $Q^4$ gest"orten Oszillatoren im Vergleich zum harmonischen Oszillator.
+$x^3$ oder $x^4$ gest"orten Oszillatoren im Vergleich zum harmonischen Oszillator.
 Das System ist linear und wurde in
 Kapitel~\ref{chapter:harmonischeroszillator} vollst"andig gel"ost.
 Rechts sieht man das Potential des gest"orten Oszillators.
 Es wird durch "aussere und innere Kraftfelder,
-wie zum Beispiel der Coulombkraft oder dem Gravitationsfeld gest"ort.
-In diesem Fall sind zus"atzlich noch Terme wie $Q^3$ oder $Q^4$ im Potential enhalten.
+wie zum Beispiel der Coulombkraft oder dem Gravitationsfeld, von benachbarten
+Teilchen, gest"ort.
+In diesem Fall sind zus"atzlich noch Terme wie $x^3$ oder $x^4$ im Potential enhalten.
 
-			%St"orungstheorie
-\section{St"orungstheorie}
-\rhead{St"orungstheorie}
-F"ur unsere Berechnungen gehen wir von dieser Schr"odingergleichung aus.
+			%Erweiterte St"orungstheorie
+\section{St"orungstheorie beliebiger Ordnung}
+\rhead{St"orungstheorie beliebiger Ordnung}
+
+In Kapitel~\ref{chapter:stoerungstheorie} wurde gezeigt,
+wie man die Koeffizienten $E_k^{(1)}$ und die 
+Funktionen $\Psi_k^{(1)}$ berechnen kann. Mit der gleichen Methode kann man 
+aber auch deutlich weiter gehen und eine Rekursionsformel f"ur alle 
+$E_k^{(p)}$ und $\Psi_k^{(p)}$ bekommen.
+F"ur unsere Berechnungen gehen wir wider von dieser Schr"odingergleichung aus.
 \begin{equation}
 (H_0+\varepsilon H_1)|\Psi_k(\varepsilon)\rangle
 =
@@ -72,32 +81,82 @@ E_k^{(0)}+\varepsilon E_k^{(1)}+\varepsilon^2 E_k^{(2)}+\dotsb
 |\Psi_k^{(0)}\rangle+\varepsilon|\Psi_k^{(1)}\rangle+
 \varepsilon^2|\Psi_k^{(2)}\rangle+\dotsb
 \end{align*}
-Durch Ausmultiplizieren,
+Durch Ausmultiplizieren und Koeffizientenvergleich,
 wie in Abschnitt~\ref{section:nichtentartetezustaende} beschrieben,
-kommt man auf folgende generische Gleichungen, mit
-\[
-C_{lk}^{(p)}
-=
-\displaystyle\sum_{j=2}^{p} E_k^{(p-j-1)}
-\langle\Psi_l^{(0)}|\Psi_k^{(j-1)}\rangle
-\]
+kommt man auf folgende generische Gleichungen f"ur $l \neq k$,
 \begin{equation}
+\left.
 \begin{aligned}
+E_k^{(p)}
+&=
+\langle\Psi_l^{(0)}|H_1|\Psi_l^{(p-1)}\rangle-C_{lk}^{(p)}
+\\
 \langle\Psi_l^{(0)}|\Psi_k^{(p)}\rangle
 &=
 \frac{C_{lk}^{(p)}-\langle\Psi_l^{(0)}|H_1|\Psi_k^{(p-1)}\rangle}
 {E_k^{(0)}-E_l^{(0)}}
-\text{mit}
-l&\ne k
-\\
-E_k^{(p)}
+\end{aligned}
+\right\}
+\quad
+C_{lk}^{(p)}
+=
+\displaystyle\sum_{j=2}^{p} E_k^{(p-j+1)}
+\langle\Psi_l^{(0)}|\Psi_k^{(j-1)}\rangle
+\end{equation}
+Der Spezialfall $p=1$ reduziert sich auf
+\begin{equation}
+\begin{aligned}
+E_k^{(1)}
 &=
-\langle\Psi_l^{(0)}|H_1|\Psi_l^{(k)}\rangle-C_{lk}^{(p)}
+\langle \psi_k^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle
+\\
+\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
+&=
+\frac{\langle \psi_l^{(0)}|\, H_1 \,|\psi_k^{(0)}\rangle}{E_k^{(0)}-E_l^{(0)}},
 \end{aligned}
 \end{equation}
-Das ist eine rekursive Formel.
-Das bedeutet, dass aus den vorherigen St"orkoeffizienten,
-die nachfolgenden berechnet werden k"onnen.
+d.h. diese Formeln sind tats"achlich Erweiterungen der Formeln aus
+Kapitel~\ref{chapter:stoerungstheorie}.
+%F"ur unsere Berechnungen gehen wir von dieser Schr"odingergleichung aus.
+%\begin{equation}
+%(H_0+\varepsilon H_1)|\Psi_k(\varepsilon)\rangle
+%=
+%E_k(\varepsilon)|\Psi_k(\varepsilon)\rangle
+%\end{equation}
+%Mit den Koeffizienten
+%\begin{align*}
+%E_k(\varepsilon)
+%&=
+%E_k^{(0)}+\varepsilon E_k^{(1)}+\varepsilon^2 E_k^{(2)}+\dotsb
+%\\
+%|\Psi_k(\varepsilon)\rangle
+%&=
+%|\Psi_k^{(0)}\rangle+\varepsilon|\Psi_k^{(1)}\rangle+
+%\varepsilon^2|\Psi_k^{(2)}\rangle+\dotsb
+%\end{align*}
+%Durch Ausmultiplizieren,
+%wie in Abschnitt~\ref{section:nichtentartetezustaende} beschrieben,
+%kommt man auf folgende generische Gleichungen, mit
+%\begin{equation}
+%\begin{aligned}
+%\langle\Psi_l^{(0)}|\Psi_k^{(p)}\rangle
+%&=
+%\frac{C_{lk}^{(p)}-\langle\Psi_l^{(0)}|H_1|\Psi_k^{(p-1)}\rangle}
+%{E_k^{(0)}-E_l^{(0)}}
+%\text{mit}
+%C_{lk}^{(p)}
+%=
+%\displaystyle\sum_{j=2}^{p} E_k^{(p-j-1)}
+%\langle\Psi_l^{(0)}|\Psi_k^{(j-1)}\rangle
+%\\
+%E_k^{(p)}
+%&=
+%\langle\Psi_l^{(0)}|H_1|\Psi_l^{(k)}\rangle-C_{lk}^{(p)}
+%\end{aligned}
+%\end{equation}
+%Das ist eine rekursive Formel.
+%Das bedeutet, dass aus den vorherigen St"orkoeffizienten,
+%die nachfolgenden berechnet werden k"onnen.
 F"ur die noch fehlenden Skalarprodukte $\langle\Psi_k^{(0)}|\Psi_l^{(0)}\rangle$
 mit $k=l$ sehen wir und die Normierung nochmals genauer an.
 \[
@@ -107,10 +166,11 @@ Mit Hilfe der Bedingung
 \[
 \langle\Psi_a|\Psi_b\rangle
 =
-\langle\Psi_b|\Psi_a\rangle^*,
+\langle\Psi_b|\Psi_a\rangle^*
 \]
-erhalten wir die Werte f"ur die gesuchten Skalare.
-Denn die Koeffizienten der Epsilons m"ussen Null ergeben, damit die Normierung gilt.
+erhalten wir die Werte f"ur die fehlenden Skalarprodukte.
+Denn die Koeffizienten der Potenzen von $\varepsilon$ m"ussen Null ergeben,
+da die Vektoren normiert sind.
 \begin{align*}
 1
 =
@@ -134,17 +194,17 @@ Denn die Koeffizienten der Epsilons m"ussen Null ergeben, damit die Normierung g
 +\langle\Psi_k^{(3)}|\Psi_k^{(1)}\rangle
 +\langle\Psi_k^{(4)}|\Psi_k^{(0)}\rangle\bigr)
 \end{align*}
-Dadurch erhalten wir
+Dadurch erhalten wir f"ur $l=k$
 \begin{equation}
-l=k
-\Rightarrow
 \langle\Psi_l^{(0)}|\Psi_k^{(p)}\rangle
 =
 i\gamma_p+
-\frac12 \displaystyle\sum_{j=2}^{p} 
-\langle\Psi_k^{(p-j+1)}|\Psi_k^{(j-1)}\rangle
+\underbrace{\frac12 \displaystyle\sum_{j=2}^{p} 
+\langle\Psi_k^{(p-j+1)}|\Psi_k^{(j-1)}\rangle}_{\text{Reell}}
 \end{equation}
 $\gamma_p$ muss so gew"ahlt werden, dass die Wellenfunktion in p-ter N"aherung stimmt.
+\\
+\\
 %\[
 %\langle\Psi_k^{(p)}|\Psi_k^{(p)}\rangle=1
 %\]
@@ -165,10 +225,12 @@ in der Zustandskorrektur $|\Psi_k^{(p)}\rangle$ vorkommt.
 \underbrace{\langle\Psi_l^{(0)}|\Psi_k^{(p)}\rangle}_{\text{Koeffizienten}}
 |\Psi_l^{(0)}\rangle
 \end{equation}
+Damit lassen sich jetzt alle Zustandskorrekturen berechnen.
 
 			%Implemeintation
 \section{Implementation}
 \rhead{Implementation}
+\subsection{Berechnung der Grundzust"ande}
 
 \begin{figure}	%Bild Harmonisch.pdf
 \centering
@@ -180,7 +242,7 @@ in der Zustandskorrektur $|\Psi_k^{(p)}\rangle$ vorkommt.
 Der Grundzustand (\ref{skript:grundzustandwellenfunktion})
 hat die Form einer Gausskurve.
 F"ur die Implementierung und Optimierung leiten wir eine Form der Wellenfunktion her,
-bei welcher wir die $e$-Funktion nur einmal ausrechnen m"ussen.
+bei welcher wir die Exponentialfunktion nur einmal ausrechnen m"ussen.
 Das erm"oglicht eine deutlich k"urzere Berechnungszeit.
 Mit der geeigneten Normierung bekommen wir den Grundzustand
 \[
@@ -189,7 +251,7 @@ Mit der geeigneten Normierung bekommen wir den Grundzustand
 \biggl(\frac{m\omega}{\pi\hbar}\biggr)^\frac14
 e^{-\frac12\frac{m\omega}{\hbar}x^2}.
 \]
-Aus der Gleichung
+Mit der Gleichung
 \[
 |n\rangle
 =
@@ -206,7 +268,7 @@ wird die Iterationsformel
 e^{-\frac12\frac{m\omega}{\hbar}x^2}
 \label{skript:iterationsformel}
 \end{equation}
-abgeleitet.
+hergeleitet.
 In die Gleichung substituiert man
 \[
 \alpha=\sqrt{\frac{m\omega}\hbar}
@@ -230,7 +292,10 @@ e^{-\frac12\alpha^2x^2}
 \\
 &=
 H_1(x)e^{-\frac12\alpha^2x^2}
+\quad
+\quad
 \Rightarrow
+\quad
 H_1(x)
 =
 2ax
@@ -253,26 +318,29 @@ e^{-\frac12\alpha^2x^2}
 \\
 &=
 H_2(x)e^{-\frac12\alpha^2x^2}
+\quad
+\quad
 \Rightarrow
+\quad
 H_2(x)
 =
 4a^2x^2-2
 \end{align*}
-Man erh"alt die Hermitpolynome $H_k$,
+Man erh"alt die Hermitpolynome $H_k(x)$,
 welche sich mit der Substitution
 \[
 z
 =
 ax.
 \]
-noch weiter vereinfachen lassen.
+weiter vereinfachen lassen.
 \[
 H_k(z)
 =
 e^{\frac{z^2}2}\biggl(z-\frac{\partial}{\partial z}\biggr)^k
 e^{-\frac{z^2}2}.
 \]
-Dadurch wird die Gleichung~\ref{skript:iterationsformel} gek"urzt zu
+Damit wird die Gleichung~\ref{skript:iterationsformel} gek"urzt zu
 \begin{equation}
 \Psi_k(z)
 =
@@ -282,7 +350,7 @@ e^{-\frac12 z^2}
 \end{equation}
 Der Vorteil dieser Notation ist die sehr einfache Implementierung
 in den g"angigsten Berechnungtools.
-Da die $e$-Funktion bereits ausgeklammert wurde, verk"urzt sich die Rechenzeit
+Da die Exponentialfunktion bereits ausgeklammert wurde, verk"urzt sich die Rechenzeit
 signifikant.
 %\begin{table}
 %\centering
@@ -296,62 +364,62 @@ signifikant.
 %\end{tabular}
 %\caption{Liste mit den ersten f"unf Hermitpolynomen\label{skript:Hermitpolynom}}
 %\end{table}
-
-\subsection{Tipps zur numerischen Berechnung}
-F"ur die Interessierten unter den Lesern,
-welche diese St"orungstheorie anwenden wollen,
-m"ochten wir noch einige Tipps auf den Weg geben.
-Wie ihr bereits erkennen konntet,
-ist die Berechnung der  Ungest"orten Funktionen oft bereits sehr Rechenintensiv.
+\subsection{Tipps zur numerischen Berechnung der Zustandskorrekturen}
+Die numerische Durchf"uhrung der St"orungsrechnung bietet keine grunds"atzlichen 
+Schwierigkeiten, kann aber mit den folgenden Ideen besonders effizient 
+gestaltet werden.
+Die Berechnung der ungest"orten Funktionen ist bereits recht rechenintensiv.
 Aus diesem Grund,
-empfiehlt es hier einer numerischen Auswertung der St"orungstheorie zu machen.
+empfiehlt es sich eine numerischen Auswertung der St"orungstheorie zu machen.
 Dadurch verlagert sich die Berechnungsschwerpunkt
-haupts"achlich auf die $\Psi^{((0))}$ Funktionen.
+haupts"achlich auf die $\Psi^{(0)}$ Funktionen.
+\subsubsection{Matrixform der Wellenfunktionen}
 Wir schlagen aus diesem Grund,
 im Falle des Harmonischen Oszillators, die folgender Matrixform vor.
 \[
 \Psi^{(0)}
 =
 \begin{pmatrix}
-\Psi_0^{(0)}(x_0) & \cdots & \Psi_0^{(0)}(x_m)	\\
-\Psi_1^{(0)}(x_0) & \cdots & \Psi_1^{(0)}(x_m)	\\
-\vdots & \ddots & \vdots			\\
-\Psi_n^{(0)}(x_0) & \cdots & \Psi_n^{(0)}(x_m)	\\
+\Psi_0^{(0)}(-x_{\text{max}}) & \cdots & \Psi_0^{(0)}(x_{\text{max}})	\\
+\Psi_1^{(0)}(-x_{\text{max}}) & \cdots & \Psi_1^{(0)}(x_{\text{max}})	\\
+\vdots & \ddots & \vdots						\\
+\Psi_n^{(0)}(-x_{\text{max}}) & \cdots & \Psi_n^{(0)}(x_{\text{max}})	\\
 \end{pmatrix}
 \]
+\subsubsection{Definitionsbereich}
 Da die  Aufenthaltswahrscheinlichkeit eines Teilchens,
 ausserhalb der Energiebarriere aus Abbildung~\ref{skript:Potentiale},
 exponentiell abnimmt,
 k"onnen wir die Wellenfunktionen mit einem endlichen Bereich beschreiben.
 Zu beachten ist,
-dass man immer mit dem gr"osstm"oglichen Bereich arbeiten sollte.
+dass man immer mit dem gr"osstm"oglichen Bereich arbeiten muss.
 Im Falle des harmonischen Oszillators ist es der Bereich jenes Teilchens,
 welches sich im h"ochstm"oglichen Energieniveau befindet.
 Durch seine Energie oszilliert es weiter vom Arbeitspunkt weg
 als ein Teilchen geringerer Energie.
 Daraus l"asst sich aus
 \begin{align*} 
-E_{\text{pot}}
-&=
-\frac12 kx^2
-\\
-E_k
+E_{k_{\text{max}}}
 &=
 E_{\text{pot}}
 \\
-E_k
+E_{\text{pot}}
 &=
-\hbar\omega\biggl(k+\frac12\biggr)
+\frac12 kx_{\text{max}}^2
 \\
-\hbar\omega(\frac12+n)
+E_{k_{\text{max}}}
 &=
-\frac12 kx^2
+\hbar\omega\biggl(\frac12+k_{\text{max}}\biggr)
+\\
+\hbar\omega\biggl(\frac12+k_{\text{max}}\biggr)
+&=
+\frac12 kx_{\text{max}}^2
 \end{align*}
 folgender Arbeitsbereich ermitteln.
 \[
-x
+x_{\text{max}}
 =
-\pm\sqrt{\frac{2\hbar\omega(\frac12+k_{max})}k}
+\pm\sqrt{\frac{2\hbar\omega(\frac12+k_{\text{max}})}k}
 \]
 Dieser Bereich ist jedoch noch zu klein gew"ahlt.
 Denn die Wahrscheinlichkeit dass sich ein Teilchen
@@ -360,12 +428,12 @@ ist immer noch gross.
 Aus dieser Feststellung muss man den Bereich noch weiter vergr"ossern.
 In unseren Berechnungen haben wir den Bereich um 25\% weiter vergr"ossert.
 \[
-x
+x_{\text{max}}
 =
-\pm\sqrt{\frac{2\hbar\omega(\frac12+k_{max})}k}*1.25
+\pm\sqrt{\frac{2\hbar\omega(\frac12+k_{max})}k}\cdot 1.25
 \]
 Die Wahrscheinlichkeit,
-dass sich nun das Teilchen im n-ten Energieniveau in diesem Bereich aufh"alt,
+dass sich nun das Teilchen, in einem beliebigen Energieniveau, in diesem Bereich aufh"alt,
 ist ausreichend gross.
 
 
@@ -373,9 +441,9 @@ ist ausreichend gross.
 \section{Auswertung}
 \rhead{Auswertung}
 
-Wir haben den Fall $Q^3$ und $Q^4$ mit Matlab durchgerechnet und sind auf
+Wir haben den Fall $x^3$ und $x^4$ mit Matlab durchgerechnet und sind auf
 ein paar interessante Erkenntnisse gestossen.
-Auf den folgenden Abbildungen ist die stellen die Farbe gr"un
+Auf den folgenden Abbildungen stellt die Farbe gr"un
 immer den ungest"orten Fall dar und rot den gest"orten.
 Die Regenbogenfarben dienen in erster Linie dazu, den Verlauf von
 tiefen Wellenfunktionen (blau) zu hohen Wellenfunktionen (rot) besser darzustellen.
@@ -383,12 +451,12 @@ Bei den Berechnungen haben wir die ersten 50 Wellenfunktionen und Energieniveaus
 betrachtet.
 
 			%Erstes Beispiel
-\subsection{Erstes Beispiel $Q^4$}
+\subsection{Erstes Beispiel $x^4$}
 
 \begin{figure}	%Bild Stoerung1Skalare.pdf
 \centering
 \includegraphics[width=1.0\textwidth]{anharmonisch/images/x4/Stoerung1Skalare.pdf}
-\caption{$Q^4$ erster N"aherung: Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(1)}\rangle$
+\caption{$x^4$ erster N"aherung: Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(1)}\rangle$
 \label{skript:x4_Stoerung1Skalare}}
 \end{figure}
 
@@ -406,7 +474,7 @@ mit allen Anteilen von ungest"orten Wellenfunktionen.
 Das heisst auch den unbedeutenden Anteile.
 Unten rechts ist eine logarithmische Darstellung, welche ebenfalls die unbedeutenden
 Anteile zeigt. Diese Anteile wurden durch die numerische Berechnung erzeugt.
-Nun zu den Besonderheiten von bei $Q^4$ in erster N"aherung.
+Nun zu den Besonderheiten von bei $x^4$ in erster N"aherung.
 Die Wellenfunktionen $\Psi_l^{(0)}$ welchen nahe bei der gest"orten Wellenfunktion
 $\Psi_k^{(1)}$ sind haben den gr"ossten Anteil.
 Dies war zu erwarten, da der Nenner der
@@ -424,7 +492,7 @@ zu erkennen.
 \begin{figure}	%Bild EK1.pdf
 \centering
 \includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/EK1.pdf}
-\caption{$Q^4$ erste N"aherung: St"orung der Energieniveaus
+\caption{$x^4$ erste N"aherung: St"orung der Energieniveaus
 \label{skript:x4_EK1}}
 \end{figure}
 
@@ -436,7 +504,7 @@ bleiben. Bei h"oheren Energieniveaus wird die Abweichung immer gr"osser.
 \begin{figure}	%Bild Stoerung1Wellenfunktion.pdf
 \centering
 \includegraphics[width=0.8\textwidth]{anharmonisch/images/x4/Stoerung1Wellenfunktion.pdf}
-\caption{$Q^4$ erster N"aherung: 10. Wellenfunktion und Energieniveaus
+\caption{$x^4$ erster N"aherung: 10. Wellenfunktion und Energieniveaus
 \label{skript:x4_Stoerung1Wellenfunktion}}
 \end{figure}
 
@@ -464,7 +532,7 @@ Wird $\varepsilon$ gr"osser gemacht wird auch die St"orung gr"osser.
 \begin{figure}	%Bild Stoerung2Skalare.pdf
 \centering
 \includegraphics[width=1.0\textwidth]{anharmonisch/images/x4/Stoerung2Skalare.pdf}
-\caption{$Q^4$ zweite N"aherung: Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(2)}\rangle$
+\caption{$x^4$ zweite N"aherung: Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(2)}\rangle$
 \label{skript:x4_Stoerung2Skalare}}
 \end{figure}
 
@@ -477,13 +545,13 @@ Wichtig ist auch zu beachten, dass f"ur die Berechnung dieser Werte die Werte vo
 der ersten N"aherung gebraucht werden.
 Bei der Grafik oben rechts sieht man, dass Werte $>50$, welche von Wellenfunktionen
 aus erster N"aherung stammen, f"ur die letzten acht Wellenfunktionen fehlen.
-Dies "Aussert sich in Randeffekten. 
+Dies "aussert sich in Randeffekten. 
 
 
 \begin{figure}	%Bild EK2.pdf
 \centering
 \includegraphics[width=0.7\textwidth]{anharmonisch/images/x4/EK2.pdf}
-\caption{$Q^4$ zweite N"aherung: St"orung der Energieniveaus  
+\caption{$x^4$ zweite N"aherung: St"orung der Energieniveaus  
 \label{skript:x4_EK2}}
 \end{figure}
 
@@ -493,7 +561,7 @@ Die letzten vier Energieniveaus m"ussen deshalb nicht beachtet werden.
 \begin{figure}	%Bild Stoerung2Wellenfunktion.pdf
 \centering
 \includegraphics[width=0.8\textwidth]{anharmonisch/images/x4/Stoerung2Wellenfunktion.pdf}
-\caption{$Q^4$ zweite N"aherung: 10. Wellenfunktion und Energieniveaus  
+\caption{$x^4$ zweite N"aherung: 10. Wellenfunktion und Energieniveaus  
 \label{skript:x4_Stoerung2Wellenfunktion}}
 \end{figure}
 
@@ -504,25 +572,25 @@ der ungest"orten Wellenfunktion.
 Bei den Energieniveaus kann man die Auswirkungen von $\varepsilon^2$ erkennen.
 
 			%Zweites Beispiel
-\subsection{Zweites Beispiel $Q^3$}
+\subsection{Zweites Beispiel $x^3$}
 
 \begin{figure}	%Bild Stoerung1Skalare.pdf
 \centering
 \includegraphics[width=1.0\textwidth]{anharmonisch/images/x3/Stoerung1Skalare.pdf}
-\caption{$Q^3$ erste N"aherung: Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(1)}\rangle$  
+\caption{$x^3$ erste N"aherung: Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(1)}\rangle$  
 \label{skript:x3_Stoerung1Skalare}}
 \end{figure}
 
-Die Abbildung~\ref{skript:x3_Stoerung1Skalare} zeigt die erste N"aherung f"ur $Q^3$.
+Die Abbildung~\ref{skript:x3_Stoerung1Skalare} zeigt die erste N"aherung f"ur $x^3$.
 Dieses mal geben die Wellenfunktionen, bei welchen $l=k\pm 2,k\pm 4,\dots$ ist,
 keinen Anteil an die gest"orte Wellenfunktion.
 Ausserdem kann man sehen, dass die Anzahl an Wellenfunktionen $\Psi_l^{(0)}$,
-welche einen Einfluss auf $\Psi_k^{(1)}$ kleiner ist als bei $Q^4$
+welche einen Einfluss auf $\Psi_k^{(1)}$ kleiner ist als bei $x^4$
 
 \begin{figure}	%Bild EK1.pdf
 \centering
 \includegraphics[width=0.7\textwidth]{anharmonisch/images/x3/EK1.pdf}
-\caption{$Q^3$ erste N"aherung: St"orung der Energieniveaus  
+\caption{$x^3$ erste N"aherung: St"orung der Energieniveaus  
 \label{skript:x3_EK1}}
 \end{figure}
 
@@ -533,12 +601,12 @@ sieht man, dass eine gerade oder ungerade Wellenfunktion mit einem ungeraden
 St"orterm multipliziert wird.
 Daraus ergibt sich daraus wieder eine ungerade Funktion.
 Wird diese Funktion aufsummiert,
-l"oschen sich die positiven und negativen Anteile auf.
+l"oschen sich die positiven und negativen Anteile aus.
 
 \begin{figure}	%Bild Stoerung1Wellenfunktion.pdf
 \centering
 \includegraphics[width=0.8\textwidth]{anharmonisch/images/x3/Stoerung1Wellenfunktion.pdf}
-\caption{$Q^3$ erste N"aherung: 10. Wellenfunktion und Energieniveaus 
+\caption{$x^3$ erste N"aherung: 10. Wellenfunktion und Energieniveaus 
 \label{skript:x3_Stoerung1Wellenfunktion}}
 \end{figure}
 
@@ -551,11 +619,11 @@ haben sich die Energieniveaus nicht ver"andert.
 \begin{figure}	%Bild Stoerung2Skalare.pdf
 \centering
 \includegraphics[width=1.0\textwidth]{anharmonisch/images/x3/Stoerung2Skalare.pdf}
-\caption{$Q^3$ zweite N"aherung: Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(2)}\rangle$ 
+\caption{$x^3$ zweite N"aherung: Skalarprodukte $\langle\Psi_l^{(0)}|\Psi_k^{(2)}\rangle$ 
 \label{skript:x3_Stoerung2Skalare}}
 \end{figure}
 
-Die Abbildung~\ref{skript:x3_Stoerung2Skalare} zeigt die zweite N"aherung f"ur $Q^3$.
+Die Abbildung~\ref{skript:x3_Stoerung2Skalare} zeigt die zweite N"aherung f"ur $x^3$.
 Bei der zweiten N"aherung geben die Wellenfunktionen,
 bei welchen $l=k\pm 1,k\pm 3,\dots$ ist,
 keinen Anteil an die gest"orte Wellenfunktion.
@@ -564,32 +632,32 @@ Hier sieht man auch, dass alle Skalarprodukte positiv sind.
 \begin{figure}	%Bild EK2.pdf
 \centering
 \includegraphics[width=0.7\textwidth]{anharmonisch/images/x3/EK2.pdf}
-\caption{$Q^3$ zweite N"aherung: St"orung der Energieniveaus  
+\caption{$x^3$ zweite N"aherung: St"orung der Energieniveaus  
 \label{skript:x3_EK2}}
 \end{figure}
 
 Auf der Abbildung~\ref{skript:x3_EK2} sieht man die "Anderung der Energieniveaus
 in zweiter N"aherung.
-Aus dem selben Grund wie schon bei $Q^4$, kann man auch hier diese Randeffekte
+Aus dem selben Grund wie schon bei $x^4$, kann man auch hier diese Randeffekte
 sehen.
 
 \begin{figure}	%Bild Stoerung2Wellenfunktion.pdf
 \centering
 \includegraphics[width=0.8\textwidth]{anharmonisch/images/x3/Stoerung2Wellenfunktion.pdf}
-\caption{$Q^3$ zweite N"aherung: 10. Wellenfunktion und Energieniveaus
-\label{skript:x3_Stoerung1Wellenfunktion}}
+\caption{$x^3$ zweite N"aherung: 10. Wellenfunktion und Energieniveaus
+\label{skript:x3_Stoerung2Wellenfunktion}}
 \end{figure}
 
 Auf der Abbildung~\ref{skript:x3_Stoerung2Wellenfunktion} sieht man,
-dass die Verschiebung nach links noch st"arker Ausgepr"agt ist.
+dass die Verschiebung nach links noch st"arker ausgepr"agt ist.
 Die Energieniveaus verschieben sich in zweiter N"aherung auch wieder nach oben,
-wie es auch bei $Q^4$ der Fall war.
+wie es auch bei $x^4$ der Fall war.
 
 			%Fazit
 \section{Fazit}
 \rhead{Fazit}
 
-Nat"urliche Vorg"ange im Atomaren Bereich lassen sich nur schwer  beschreiben.
+Die Beschreibung nat"urliche Vorg"ange im atomaren Bereich ist anspruchsvoll.
 Die Bewegungen eines Teilchens sind sehr komplex.
 In diesem Kapitel sind wir auf diese Thematik eingegangen.
 Wir haben die bereits behandelte St"orungstheorie vertieft,
