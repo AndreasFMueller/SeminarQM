@@ -14,7 +14,7 @@ Mit diese Betrachtungen halbieren wir den Aufwand der numerischen Berechnung.
 
 Die numerische Berechnung der 1. N\"aherung wird in diesem Kapitel mit Matlab realisiert und dokumentiert. 
 F\"ur die Simulation wurden empirisch realistische Werte gew\"ahlt.
-Der gesammte Code ist auf der beiligenden CD enthalten.
+Der gesamte Code ist auf der beiliegenden CD enthalten.
 
 Zum Schluss warten wir noch mit einem kleinen Vergleich zu den Aussagen von de Broglie \cite{efeld:de_Broglie} auf.
 
@@ -482,7 +482,8 @@ immer kleiner wird.
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 6.6cm 1cm 8cm]{efeld/Psi_SubPlots_gestoert.pdf}
- \caption{einige Energieniveaus von $\psi$, ungest\"ort in blau und gest\"ort in rot.}
+ \caption{Einige Energieniveaus von $\psi$, ungest\"ort in blau und gest\"ort in rot. 
+   Durch das angelegte Feld wird das Elektron nach rechts verschoben, entsprechend verschieben sich die Knoten der Wellenfunktion nach rechts.}
  \label{abb:efeld_psi_gestoert}
 \end{figure}
 
@@ -533,7 +534,8 @@ Summiert man die Fl\"achen auf, so ergeben sie insgesamt wieder $0$, da die Ener
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Psi_100_gestoert.pdf}
  \caption{100-stes Energieniveau von $\psi$ ungest\"ort in blau und gest\"ort in rot, 
-          mit der Visualisierung der Verschiebung der Periodendauer in gelb.}
+          mit der Visualisierung der Verschiebung der Periodendauer in gelb.
+          Im linken Bereich des hohen Potentials ist die kinetische Energie geringer und damit die Wellenl\"ange der Wellenfunktion gr\"osser.}
  \label{abb:efeld_psi_100_gestoert}
 \end{figure}
 
@@ -549,7 +551,9 @@ Abbildung \ref{abb:efeld_E_gestoert} an.
 \begin{figure}
  \centering
  \includegraphics[width=12cm,clip=true,trim=2cm 7cm 1cm 8cm]{efeld/Energie_gestoert.pdf}
- \caption{$E_k^{(1)}$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesamte Energie des Systems}
+ \caption{$E_k^{(1)}$ gest\"ort, horizontale Achse ist $\varepsilon$, vertikale Achse ist die gesamte Energie des Systems.
+       Wegen der Symmetrieeigenschaften ist $E_k^{(1)}=0$, die
+gest\"orten Energien h\"angen also nicht von der Zeit ab. Die Grafik zeigt, dass dies auch numerisch sehr gut erf\"ullt ist, was die Robustheit der numerischen Berechnung beweist.}
  \label{abb:efeld_E_gestoert}
 \end{figure}
 
