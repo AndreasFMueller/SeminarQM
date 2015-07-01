@@ -28,11 +28,11 @@
 
   Dabei sind die symmetrischen Wellenfunktionen "Uberlagerungszust"ande von der Art:
 
-  $\frac{1}{\sqrt{2}}\big(|10\rangle+|01\rangle\big)$
+  \[\frac{1}{\sqrt{2}}\big(|10\rangle+|01\rangle\big)\]
 
   Und die antisymmetrischen Wellenfunktionen sind "Uberlagerungszust"ande von der Art:
 
-  $\frac{1}{\sqrt{2}}\big(|10\rangle-|01\rangle\big)$
+  \[\frac{1}{\sqrt{2}}\big(|10\rangle-|01\rangle\big)\]
 
   Dabei "andert sich im symmetrischen Fall die Wellenfunktion nicht, wenn man die Teilchen vertauscht. Im anderen Fall "andert sich das Vorzeichen.
 
@@ -47,27 +47,42 @@
   \begin{enumerate}
       \item Bei ``Singulett'' verschr"ankten Quanten ist der Zustand des zweiten Teilchens nach dem Messen des Ersten genau bestimmt.
         Das System nimmt dabei den Komplement"arzustand zum Gemessenen an.
-        Siehe Abbildung \ref{crypto:tangtab}
+        Siehe Abbildung \ref{crypto:symtab}
       \item Jegliche Manipulation an einem der verschr"ankten Quanten "andert den Zustand des Anderen.
         Dadurch kann eine Manipulation eines Eavesdropper festgestellt werden.
         Dies gilt auch, wenn mehr als zwei Quanten verschr"ankt wurden.
   \end{enumerate}
 
-  \begin{figure}
-	\centering
-    \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
-    	\hline Anti-/Symmetrische Wellenfkt & A & A & A & A & S & S & S & S \\
-    	\hline Von A genutzte Basen & \qcste & \qcstz & \qcstd & \qcstv & \qcste & \qcstz & \qcstd & \qcstv \\
-    	\hline Von A gemessene Bits & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
-    	\hline Von B genutzte Basen & \qcste & \qcstv & \qcstz & \qcste & \qcstd & \qcstd & \qcstd & \qcstd \\
-    	\hline Von B gemessene Bits & 0 & ? & ? & ? & ? & ? & 0 & ? \\
-      \hline Basendiskussion / Nutzen & \checkmark & $\times$ & CHSH & CHSH & $\times$ & CHSH & \checkmark & CHSH \\
-    	\hline Basen Zwischenwinkel & \qcstz & \qcstv & \qcstd & $67.5^{\circ}$ & \qcstv & \qcstd & \qcstz & \qcstd \\
-    	\hline Gemeinsame Schl"usselbits & 1 & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ & 0 & $\times$ \\
-    	\hline
+  \begin{table}
+    \centering
+    \begin{tabular}{|l|c|c|c|c|}
+      \hline Von A genutzte Basen & \qcste & \qcstz & \qcstd & \qcstv \\
+      \hline Von A gemessene Bits & 0 & 1 & 0 & 0 \\
+      \hline Von B genutzte Basen & \qcstd & \qcstd & \qcstd & \qcstd \\
+      \hline Von B gemessene Bits & ? & ? & 0 & ? \\
+      \hline Basendiskussion / Nutzen & $\times$ & CHSH & \checkmark & CHSH \\
+      \hline Basen Zwischenwinkel & \qcstv & \qcstd & \qcstz & \qcstd \\
+      \hline Gemeinsame Schl"usselbits & $\times$ & $\times$ & 0 & $\times$ \\
+      \hline
     \end{tabular}
-    \caption{Die Emittlung des Schl"ussels mit E91 \label{crypto:tangtab}}
-  \end{figure}
+    \caption{Symmetrische Wellenfunktionen}
+    \label{crypto:symtab}
+  \end{table}
+  \begin{table}
+    \centering
+    \begin{tabular}{|l|c|c|c|c|}
+      \hline Von A genutzte Basen & \qcste & \qcstz & \qcstd & \qcstv \\
+      \hline Von A gemessene Bits & 1 & 0 & 1 & 0\\
+      \hline Von B genutzte Basen & \qcste & \qcstv & \qcstz & \qcste \\
+      \hline Von B gemessene Bits & 0 & ? & ? & ? \\
+      \hline Basendiskussion / Nutzen & \checkmark & $\times$ & CHSH & CHSH \\
+      \hline Basen Zwischenwinkel & \qcstz & \qcstv & \qcstd & $67.5^{\circ}$ \\
+      \hline Gemeinsame Schl"usselbits & 1 & $\times$ & $\times$ & $\times$ \\
+      \hline
+    \end{tabular}
+    \caption{Antisymmetrische Wellenfunktionen}
+    \label{crypto:antsymtab}
+  \end{table}
 
   Dabei verwendet es ebenfalls einen konventionellen und einen Quantenkommunikationskanal.
   Dabei k"onnen ebenfalls beide unsicher sein, dabei darf der konventionelle auch unauthentisiert sein.
