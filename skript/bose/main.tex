@@ -49,7 +49,7 @@ Da die Bewegung eines Atoms ein Mass f"ur seine Energie oder auch Temperatur ist
 	\label{fig:LaserKuehlung}
 \end{figure}
 
-Um die Atome nun noch weiter abk"uhlen zu k"onnen, wird die evaporative K"uhlung\index{Evaporative K\"uhlung} angewendet. Dieses Prinzip kann sehr gut mit einer heissen Tasse Kaffee veranschaulicht werden, wie dies in Abbildung \ref{fig:EvaporativeKuehlung} dargestellt ist. Die schnellen Atome haben eine hohe Temperatur und k"onnen beim ''Anhauchen'' der Tasse diese verlassen. Die langsameren und k"alteren Atome bleiben in der Tasse zur"uck.
+Um die Atome nun noch weiter abk"uhlen zu k"onnen, wird die evaporative K"uhlung\index{Evaporative K\"uhlung} angewendet. Dieses Prinzip kann sehr gut mit einer heissen Tasse Kaffee veranschaulicht werden, wie dies in Abbildung \ref{fig:EvaporativeKuehlung} dargestellt ist. Die schnellen Atome haben eine hohe Temperatur und k"onnen beim ``Anhauchen'' der Tasse diese verlassen. Die langsameren und k"alteren Atome bleiben in der Tasse zur"uck.
 
 Umgesetzt wird die ''Tasse'' durch Magnetfelder, somit entsteht eine Falle in der sich die Atome befinden. Die St"arke des Magnetfeldes bestimmt dabei welche Energien eingeschlossen werden k"onnen, langsame Atome bleiben in der Falle. Durch sukzessive Abschw"achung des Magnetfeldes, im Falle der Tasse eine Verkleinerung des Randes, verlassen immer mehr Teile das Magnetfeld und die Gesamttemperatur wird dadurch geringer. Schlussendlich beinhaltet das Magnetfeld nur noch wenige Teilchen, welche sich sehr nahe am absoluten Nullpunkt befinden. In aktuellen Experimenten am MIT\index{MIT} sind dies Temperaturen um $177~nK$, was "uber einer Million Mal k"alter als im Weltall ist. \cite{bose:WikiEvaporativeKuehlung}
 
@@ -104,12 +104,16 @@ Der Nenner stellt dabei die Verteilung der Energien dar. Um den Ausdruck etwas k
 \begin{equation}
     Q = \sum\limits_{n = 1}^{N} e^{-E_n/kT} = \sum\limits_{n = 1}^{N} e^{-\beta E_n}
 \end{equation}
+In der klassischen Physik zeichnet sich ein Phasenübergang dadurch aus, dass die Wärmekapazität bei einer bestimmten Temperatur sprunghaft ändert. Da man das Bose-Einstein Kondensat als quantenmechanischen Aggregatszustand ansehen kann, wird bei einer kritischen Temperatur die Wärmekapazität stark ändern. Um auf die Wärmekapazität zu schliessen wird zuerst die Temperatur berechnet.
+
+\paragraph{1. Schritt: Innere Energie \newline}
 
 Die mittlere Energie des Systems betr"agt:
+
 \begin{equation}
     \langle U \rangle = \sum_{n} E_n \cdot P(E_n) = \sum_{n} E_n \cdot \frac{e^{-\beta E_n}}{Q}
 \end{equation}
-Durch Ableiten der eulerschen Funktion nach $\beta$ kann die Formel weiter vereinfacht werden. Beim Ableiten wird die Energie $E_n$ als Faktor entstehen.
+Durch Ableiten der Exponentialfunktion nach $\beta$ kann die Formel weiter vereinfacht werden. Beim Ableiten wird die Energie $E_n$ als Faktor entstehen.
 
 \begin{equation*}
 \langle U \rangle = \sum_{n} E_n \cdot \frac{e^{-\beta E_n}}{Q} = -\frac{1}{Q} \sum_{n} \frac{d}{d \beta} e^{-\beta E_n} 
@@ -120,60 +124,72 @@ Die Ableitung nach $\beta$ kann vor der Summe durchgef"uhrt werden, dadurch erh"
 \end{equation*}
 In dieser Formel ist $Q$ zweimal vorhanden, einmal im Bruch und einmal abgeleitet. Dieser Term kann auch auf andere Art und Weise geschrieben werden, n"amlich mit der Ableitung des Logarithmus von $Q$. Damit erh"alt man eine sehr kompakte Darstellung der mittleren Energie.
 \begin{equation}
-\langle U \rangle = -\frac{d}{d \beta} ln(Q)
+\langle U \rangle = -\frac{d}{d \beta} \ln(Q)
 \end{equation}
 
-Nun werden einige Umformungen durchgef"uhrt um das Berechnen der Gesamtenergie des Systems zu vereinfachen.
+\paragraph{2. Schritt: Logarithmus der Zustandssumme Q \newline}
+
+Nun werden einige Umformungen durchgef"uhrt um die Berechnung der Gesamtenergie des Systems zu vereinfachen.
 Als erstes wird angenommen, dass nur ein einziger Energiezustand existiert.
-Dadurch kann man eine Klammer mit Summanden ausschreiben, in Rot dargestellt.
-Kommen nun weitere Energiezust"ande hinzu, blaue Klammern, so k"onnen diese Klammern miteinander multipliziert werden.
+Dadurch kann man eine Klammer mit Summanden ausschreiben, in rot dargestellt.
+Kommen nun weitere Energiezust"ande hinzu, blauer Klammerausdruck, so k"onnen diese Klammern miteinander multipliziert werden.
 Dies f"uhrt dazu, dass das Produktzeichen f"ur die Zust"ande verwenden k"onnen.
 
 
 \begin{equation}
-Q = \sum\limits_{n_0, n_1,...} e^{- \beta \sum_a \epsilon_a n_a } 
-=  \sum^N  \textcolor{red}{ e^{- \beta \epsilon_0 n_0 }} \textcolor{blue} {e^{- \beta \epsilon_1 n_1 }} e^{- \beta \epsilon_2 n_2 } ... 
+Q = \sum\limits_{n_0, n_1, \dots} e^{- \beta \sum_a \epsilon_a n_a } 
+=  \sum^N  \textcolor{red}{ e^{- \beta \epsilon_0 n_0 }} \textcolor{blue} {e^{- \beta \epsilon_1 n_1 }} e^{- \beta \epsilon_2 n_2 } \dots 
 \end{equation}
 
 \begin{equation*}
-= \textcolor{red} {(1+e^{- \beta \epsilon_1 }+e^{- \beta \epsilon_2 \cdot 2  }+e^{- \beta \epsilon_3 \cdot 3  }+...)} \cdot \textcolor{blue} {(1+e^{- \beta \epsilon_1 }+e^{- \beta \epsilon_1 \cdot 2  }+e^{- \beta \epsilon_1 \cdot 3  }+...)} \cdot ...
+= \textcolor{red} {(1+e^{- \beta \epsilon_0 }+e^{- \beta \epsilon_0 \cdot 2  }+e^{- \beta \epsilon_0 \cdot 3  }+ \dots)} \cdot \textcolor{blue} {(1+e^{- \beta \epsilon_1 }+e^{- \beta \epsilon_1 \cdot 2  }+e^{- \beta \epsilon_1 \cdot 3  }+ \dots)} \cdot \dots
 \end{equation*}
 
 \begin{equation}
-\sum\limits_{n_0, n_1,...} e^{- \beta \sum_a \epsilon_a n_a } = \prod_{a} \sum_{n_i} e^{- \beta \epsilon_a n_i }
+\sum\limits_{n_0, n_1, \dots} e^{- \beta \sum_a \epsilon_a n_a } = \prod_{a} \sum_{n_a} e^{- \beta \epsilon_a n_a }
 \end{equation}
-Die Summe stellt die geometrische Reihe dar, dadurch kann die ganze Summe durch einen simplen Bruch ersetzt werden. Substitution der e-Funktion mit $q$ und $n_i$ mit $i$.
+Die Summe stellt die geometrische Reihe dar, dadurch kann die ganze Summe durch einen simplen Bruch ersetzt werden. Substitution der e-Funktion mit $q$ und $n_a$ mit $i$.
 
 \begin{equation}
-\sum_{n_i} (e^{- \beta \epsilon_i })^{n_i} = \sum_{i} q^i = \frac {1}{1-q}
+q_a = e^{- \beta \epsilon_a}
+\end{equation}
+
+\begin{equation}
+\sum_{n_a} (q_a)^{n_a} = \frac {1}{1-q_a}
 \end{equation}
 Angewendet ergibt sich damit:
 
 \begin{equation}
-    \prod_{a} \sum_{n_i} e^{- \beta \epsilon_a n_i } = \prod_{a} \frac {1}{1-e^{- \beta \epsilon_a}}
+    \prod_{a} \sum_{n_a} e^{- \beta \epsilon_a n_a } = \prod_{a} \frac {1}{1-e^{- \beta \epsilon_a}}
 \end{equation}
 Das Produkt kann durch Anwendung der Logarithmen Regeln in eine Summe umgeformt werden.
 
 \begin{equation}
-\ln \left[ \left( \frac{1}{1-e^{\beta \epsilon_{a_0}}} \right) \cdot \left( \frac{1}{1-e^{ \beta \epsilon_{a_1}}} \right) \cdot ...\right] = \ln \left( \frac{1}{1-e^{\beta \epsilon_{a_0}}} \right) + \ln \left( \frac{1}{1-e^{\beta \epsilon_{a_1}}} \right) + ...
+\ln \left[ \left( \frac{1}{1-e^{\beta \epsilon_{a_0}}} \right) \cdot \left( \frac{1}{1-e^{ \beta \epsilon_{a_1}}} \right) \cdot \dots \right] = \ln \left( \frac{1}{1-e^{\beta \epsilon_{a_0}}} \right) + \ln \left( \frac{1}{1-e^{\beta \epsilon_{a_1}}} \right) + \dots
 \end{equation}
 Dies f"uhrt schliesslich zur Formel:
 
 \begin{equation}
-Q = \prod_{a} \frac {1}{1-e^{- \beta \epsilon_a}} = \sum_{a} \ln \left( 1-e^{- \beta \epsilon_a} \right)
+- \ln Q = \prod_{a} \frac {1}{1-e^{- \beta \epsilon_a}} = \sum_{a} \ln \left( 1-e^{- \beta \epsilon_a} \right)
 \end{equation}
+
+\paragraph{3. Schritt: Anzahl der Teilchen konstant halten \newline}
+
 Damit Teilchen zwischen dem System und dem Reservoir ausgetauscht werden k"onnen, muss Energie aufgewendet werden.
-Dies wird mit einem zus"atzlichen Term abgegolten. Damit wird $Q$ abh"angig von dieser Energie $\mu$.
+Dies wird mit einem zus"atzlichen Term abgegolten. Damit wird $Q$ abh"angig von dieser Energie $\mu$. Durch Erhöhung von $\mu$ erhöht sich auch der Erwartungswert der Anzahl Teilchen, also wieviele Teilchen man in der Box findet. Dadurch kann die Anzahl der Teilchen mit diesem Faktor gesteuert werden. \cite{feynman}
 
 
- \begin{equation}
- Q^{(\mu)} = \sum e^{- \beta \sum_{a} (\epsilon_a - \mu)n_a} = e^{-\beta g}
- \end{equation}
+\begin{equation}
+Q^{(\mu)} = \sum e^{- \beta \sum_{a} (\epsilon_a - \mu)n_a} = e^{-\beta g}
+\end{equation}
 umgeformt auf $g$
 
-  \begin{equation}
-  -\frac{1}{ \beta } \ln(Q^{\mu}) = g
-  \end{equation}
+\begin{equation}
+-\frac{1}{ \beta } \ln(Q^{\mu}) = g
+\end{equation}
+  
+\paragraph{4. Schritt: Approximation \newline}  
+  
 Die Berechnung der Gesamtenergie wird durch folgende Annahme vereinfacht. 
 Es wird angenommen, dass es sich nicht um diskrete sondern um kontinuierliche Energiezust"ande handelt.
 
@@ -182,11 +198,14 @@ Es wird angenommen, dass es sich nicht um diskrete sondern um kontinuierliche En
 \end{equation}
 Damit Berechnet sich die Gesamtenergie des Systems.
 Da die Teilchen sich in drei Dimensionen bewegen k"onnen, muss ein Dreifachintegral gel"ost werden.
-Ausserdem findet sich im Integral der Term ''Wert mal Wahrscheinlichkeit'' im Bruch wieder, unser Q.
+Ausserdem findet sich im Integral der Term ``Wert mal Wahrscheinlichkeit'' im Bruch wieder, unser $Q$.
 
 \begin{equation}
 U = s \int  \frac{ \left(e^{ {\frac{- \beta p^2}{2m}} } e^{\beta \mu} \right) \cdot {\frac{p^2}{2m}} }{1-e^{ {\frac{- \beta p^2}{2m}} } e^{\beta \mu}} \cdot \frac{d^3 p}{(2 \pi \hbar)^3}
 \end{equation}
+
+\paragraph{5. Schritt: Schlussfolgerung \newline}
+
 Die Vereinfachung ist bis zu einer kritischen Temperatur zul"assig. Ab dieser Temperatur d"urfen die kleinsten Energien des Systems nicht mehr vernachl"assigt werden. F"ur sehr tiefe Temperaturen m"ussen die kleinen Terme ber"ucksichtigt werden. Berechnet man die Gesamtenergie des Systems numerisch, erh"alt man Resultate, welche nicht sinnvoll sind.
 
 \begin{equation}
@@ -204,21 +223,21 @@ Wenn man sich die kontinuierliche Gaussverteilung eines Gases betrachtet, welche
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.7\textwidth]{./bose/gauss1.png}
+    \includegraphics[width = 0.7\textwidth]{./bose/gauss1.pdf}
     \caption[Verteilung Ausgangstemperatur]{Verteilung zwischen Druck und Volumen eines Gases, Ausgangstemperatur.}
     \label{fig:Gauss1}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.7\textwidth]{./bose/gauss2.png}
+    \includegraphics[width = 0.7\textwidth]{./bose/gauss2.pdf}
     \caption[Verteilung bei Abk"uhlung]{Verteilung zwischen Druck und Volumen eines Gases, bei Abk"uhlung. Die Standardabweichung wird geringer, damit auch die Temperatur.}
 	\label{fig:Gauss2}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.7\textwidth]{./bose/gauss3.png}
+    \includegraphics[width = 0.7\textwidth]{./bose/gauss3.pdf}
     \caption[Verteilung bei starker Abk"uhlung]{Verteilung zwischen Druck und Volumen eines Gases, bei starker Abk"uhlung. Die Standardabweichung wird noch geringer, damit auch die Temperatur.}
 	\label{fig:Gauss3}
 \end{figure}
