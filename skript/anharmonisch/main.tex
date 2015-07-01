@@ -89,7 +89,7 @@ kommt man auf folgende generische Gleichungen f"ur $l \neq k$,
 \begin{aligned}
 E_k^{(p)}
 &=
-\langle\Psi_l^{(0)}|H_1|\Psi_l^{(k)}\rangle-C_{lk}^{(p)}
+\langle\Psi_l^{(0)}|H_1|\Psi_l^{(p-1)}\rangle-C_{lk}^{(p)}
 \\
 \langle\Psi_l^{(0)}|\Psi_k^{(p)}\rangle
 &=
@@ -100,7 +100,7 @@ E_k^{(p)}
 \quad
 C_{lk}^{(p)}
 =
-\displaystyle\sum_{j=2}^{p} E_k^{(p-j-1)}
+\displaystyle\sum_{j=2}^{p} E_k^{(p-j+1)}
 \langle\Psi_l^{(0)}|\Psi_k^{(j-1)}\rangle
 \end{equation}
 Der Spezialfall $p=1$ reduziert sich auf
@@ -199,8 +199,8 @@ Dadurch erhalten wir f"ur $l=k$
 \langle\Psi_l^{(0)}|\Psi_k^{(p)}\rangle
 =
 i\gamma_p+
-\frac12 \displaystyle\sum_{j=2}^{p} 
-\langle\Psi_k^{(p-j+1)}|\Psi_k^{(j-1)}\rangle
+\underbrace{\frac12 \displaystyle\sum_{j=2}^{p} 
+\langle\Psi_k^{(p-j+1)}|\Psi_k^{(j-1)}\rangle}_{\text{Reell}}
 \end{equation}
 $\gamma_p$ muss so gew"ahlt werden, dass die Wellenfunktion in p-ter N"aherung stimmt.
 \\
@@ -380,10 +380,10 @@ im Falle des Harmonischen Oszillators, die folgender Matrixform vor.
 \Psi^{(0)}
 =
 \begin{pmatrix}
-\Psi_0^{(0)}(-x) & \cdots & \Psi_0^{(0)}(x)	\\
-\Psi_1^{(0)}(-x) & \cdots & \Psi_1^{(0)}(x)	\\
-\vdots & \ddots & \vdots			\\
-\Psi_n^{(0)}(-x) & \cdots & \Psi_n^{(0)}(x)	\\
+\Psi_0^{(0)}(-x_{\text{max}}) & \cdots & \Psi_0^{(0)}(x_{\text{max}})	\\
+\Psi_1^{(0)}(-x_{\text{max}}) & \cdots & \Psi_1^{(0)}(x_{\text{max}})	\\
+\vdots & \ddots & \vdots						\\
+\Psi_n^{(0)}(-x_{\text{max}}) & \cdots & \Psi_n^{(0)}(x_{\text{max}})	\\
 \end{pmatrix}
 \]
 \subsubsection{Definitionsbereich}
@@ -405,7 +405,7 @@ E_{\text{pot}}
 \\
 E_{\text{pot}}
 &=
-\frac12 kx^2
+\frac12 kx_{\text{max}}^2
 \\
 E_{k_{\text{max}}}
 &=
@@ -413,11 +413,11 @@ E_{k_{\text{max}}}
 \\
 \hbar\omega\biggl(\frac12+k_{\text{max}}\biggr)
 &=
-\frac12 kx^2
+\frac12 kx_{\text{max}}^2
 \end{align*}
 folgender Arbeitsbereich ermitteln.
 \[
-x
+x_{\text{max}}
 =
 \pm\sqrt{\frac{2\hbar\omega(\frac12+k_{\text{max}})}k}
 \]
@@ -428,7 +428,7 @@ ist immer noch gross.
 Aus dieser Feststellung muss man den Bereich noch weiter vergr"ossern.
 In unseren Berechnungen haben wir den Bereich um 25\% weiter vergr"ossert.
 \[
-x
+x_{\text{max}}
 =
 \pm\sqrt{\frac{2\hbar\omega(\frac12+k_{max})}k}\cdot 1.25
 \]
