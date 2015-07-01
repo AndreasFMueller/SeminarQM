@@ -91,6 +91,12 @@ allen m"oglichen Pfaden, die es vom Zustand $q(t_0)$ in den Zustand
 $q(t_1)$ "uberf"uhren, immer denjenigen w"ahlt, f"ur die die
 Wirkung minimal wird.
 
+\begin{satz}{Maupertuis}
+Unter allen m"oglichen Pfaden $q(t)$ von $q_0 = q(t_0)$ und $q_1=q(t_1)$
+realisiert ein mechanisches denjenigen, f"ur den
+$W[q(t)]$ minimal ist.
+\end{satz}
+
 \subsection{Euler-Gleichungen}
 \index{Euler-Gleichungen}
 \index{Wirkung}
@@ -155,7 +161,8 @@ F"ur $\varepsilon=0$ soll dieser Ausdruck verschwinden:
 \label{skript:erstevariationsgleichung}
 \end{equation}
 Zur Abk"urzung schreiben wir im Folgenden
-\begin{align*}
+\[
+\begin{aligned}
 \frac{\partial L}{\partial q}(t, q(t), \dot q(t))
 &=
 \frac{\partial L}{\partial q}
@@ -165,7 +172,8 @@ Zur Abk"urzung schreiben wir im Folgenden
 \frac{\partial L}{\partial \dot q}(t, q(t), \dot q(t))
 &=
 \frac{\partial L}{\partial \dot q}.
-\end{align*}
+\end{aligned}
+\]
 Der Faktor $\dot \eta(t)$ im zweiten Term hindert uns daran zu verstehen,
 wie dieses Integral verschwinden kann. 
 Wir k"onnen ihn aber zum Verschwinden bringen, indem wir ihn mit
@@ -187,7 +195,8 @@ partieller Integration umformen:
 &=\int_{t_0}^{t_1}\left(\frac{\partial L}{\partial q}
 -\frac{d}{dt}\frac{\partial L}{\partial \dot q}\right) \eta(t)\,dt.
 \end{align*}
-Diese letzte Gleichung ist nur dann f"ur jede beliebige Funktion $\eta(t)$
+Im dritten Schritt verwenden wir, dass $\eta(t_0)=\eta(t_1)=0$.
+Die letzte Gleichung ist nur dann f"ur jede beliebige Funktion $\eta(t)$
 erf"ullbar, wenn der Klammerausdruck verschwindet. So erhalten wir die
 {\em Eulerschen Gleichungen} f"ur das Variationsproblem.
 
@@ -264,9 +273,9 @@ T=\int_{s_0}^{s_1} |x'(s)|\, n(x(s))\frac1c\,ds.
 \]
 Der Faktor $1/c$ hat keinen Einfluss auf das Minimum, wir k"onnen ihn
 weglassen.
-Wir k"onnen jetzt Euler-Gleichungen f"ur die Lagrange-Funktion
+Wir k"onnen jetzt die Euler-Gleichungen f"ur die Lagrange-Funktion
 $L(x', x)= |x'|\,n(x)$ 
-ableiten:
+herleiten:
 \begin{align*}
 \frac{\partial L}{\partial x_i}
 &=
@@ -332,7 +341,7 @@ die Differentialgleichungen zweiter Ordnung f"ur die Funktionen $q_i(t)$
 sind.
 Zwar l"asst sich jede Differentialgleichung zweiter Ordnung einfach
 dadurch als Differentialgleichung erster Ordnung schreiben, indem
-zu den Variablen $q_i$ die zus"atzlichen Variablen $v_i=\dot q_i$ und die
+zu den Variablen $q_i$ die zus"atzlichen Variablen $v_i$ und die
 Gleichungen $\dot q_i=v_i$ hinzugef"ugt werden, doch ist diese Technik
 nicht ganz befriedigend, weil die $v_i$ physikalisch nicht so ``gute''
 Variablen sind.
@@ -378,8 +387,7 @@ kr"ummt, aber immer senkrecht auf der Bahn steht und daher keine Arbeit
 leistet.
 
 \subsection{Von der Lagrange-Funktion zur Hamilton-Funktion}
-Die Frage, welche Impulse zu verwenden sind, wurde noch nicht beantwortet
-worden.
+Die Frage, welche Impulse zu verwenden sind, wurde noch nicht beantwortet.
 Die Euler-Gleichung sagen, dass die Gr"osse, f"ur die wir die Zeitableitung
 berechnen k"onnen, die Ableitung $\partial L/\partial\dot q$ ist.
 Die Euler-Gleichung liefert also eine Bewegungsgleichung im Stile des
@@ -454,10 +462,12 @@ die Hamilton-Funktion ist daher
 H=\frac1{2m}p^2+\frac12Kx^2.
 \]
 Die Bewegungsgleichungen nach dem Hamilton-Formalismus sind:
-\begin{align*}
+\[
+\begin{aligned}
 \frac{dx}{dt}&=\frac{\partial H}{\partial p}=\frac{p}{m}&&\Rightarrow&\dot x&=v\\
 \frac{dp}{dt}&=\frac{\partial H}{\partial x}=-Kx&&\Rightarrow&ma&=-Kx
-\end{align*}
+\end{aligned}
+\]
 Die erste Gleichung besagt, dass die Geschwindigkeit die Ableitung
 der Ortskoordinate ist.
 Die zweite Gleichung ist das erste Newtonsche Gesetz, denn die
@@ -546,14 +556,14 @@ Die zweite Gleichung kann man durch Nachrechnen wie folgt erhalten:
 \begin{align*}
 (F,GH)
 &=
-\sum_{k=1}^3 \biggl(
+\sum_{k=1}^n \biggl(
 \frac{\partial F}{\partial q_k}\frac{\partial GH}{\partial p_k}
 -
 \frac{\partial GH}{\partial q_k}\frac{\partial F}{\partial p_k}
 \biggr)
 \\
 &=
-\sum_{k=1}^3 \biggl(
+\sum_{k=1}^n \biggl(
 \frac{\partial F}{\partial q_k}\frac{\partial G}{\partial p_k}H
 +
 G\frac{\partial F}{\partial q_k}\frac{\partial H}{\partial p_k}
