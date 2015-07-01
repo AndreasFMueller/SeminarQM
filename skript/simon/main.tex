@@ -12,17 +12,17 @@ warum dieser Algorithmus von so grosser Bedeutung ist.
 \section{Problem}
 Gegeben ist eine unbekannte Funktion $f$, welche einen $n$-Bit langen String
 entgegen nimmt und einen neuen Bit String liefert
-\cite{simon:cse599d-dave-bacon}. Formal ausgedr"uckt bedeutet
-dies:
-\[
-    f\colon\{0,1\}^n\to\{0,1\}^n 
-    //
-    f(x \oplus s) = f(x)
-\]
+\cite{simon:cse599d-dave-bacon}. Formal ausgedr"uckt bedeutet dies:
+\begin{align*}
+  &f\colon\{0,1\}^n\to\{0,1\}^n
+\end{align*}
 Von Interesse sind Funktionen mit der zus"atzlichen Eigenschaft von
 Periodizit"at.
-Denn, die eine Funktion mit dem Wert von $s = 0^n$ und $n = 3$ erf"ullt die
-Eigenschaft nicht.
+\begin{align*}
+  &f(x \oplus s) = f(x)
+\end{align*}
+Eine Funktion mit dem Wert von $s = 0^n$ und $n = 3$ w"urde diese Eigenschaft
+somit nicht erf"ullen.
 \begin{figure}[H]
  \centering
  \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner
@@ -131,15 +131,15 @@ muss nun "uberpr"uft werden, ob die folgende Bedingung gilt:
 \[
     f(x) = f(x \oplus s) 
 \]
-Wie effizient ist dieser Algorithmus? Es m"ussen alle M"oglichen Eingaben
-ausprobiert werden. Bei der L"ange $3$ wurden $2^3$ Inputs generiert. Bei einem
-$n$ Bit String werden also $2^n$ Inputs generiert. 
+Wie effizient ist dieser Algorithmus? Es m"ussen alle m"oglichen Eingaben
+ausprobiert werden, womit bei der L"ange $3$ insgesamt $2^3$ Inputs generiert
+werden. Bei einem $n$ Bit String werden also $2^n$ Inputs generiert. 
 
 Bei genauer "Uberlegung war beim Beispiel nur $f(000)$ und $f(001)$ relevant.
 Die Funktion muss nur solange aufgerufen werden, bis zwei Werte identisch sind.
-Es gen"ugt daher $n^{1/2}$ Werte auszuprobieren. 
-Jedoch m"ussen f"ur alle Werte "uberp"ufut werden, ob die Periodizit"at Bedingung
-noch gilt.
+Es gen"ugt daher $2^{n/2}$ Werte auszuprobieren.
+Jedoch m"ussen f"ur alle Werte "uberpr"uft werden, ob die Bedingung der 
+Periodizit"at noch gilt.
 
 \subsection{Quantencomputer}
 
@@ -329,7 +329,7 @@ nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
     \\
     s \cdot z_{3} = 0
     \\
-    ...
+    \dots
     \\
     s \cdot z_{n} = 0
 \end{align*}
