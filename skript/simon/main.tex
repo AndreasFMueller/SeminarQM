@@ -1,67 +1,32 @@
 \chapter{Algorithmus von Simon\label{chapter:simon}} 
 \lhead{Algorithmus von Simon} 
-\begin{refsection} 
+\begin{refsection}
 \chapterauthor{Marc Juchli und Kirusanth Poopalasingam}
 
-\section{Einleitung} 
-
+\section{Einleitung}
 In diesem Kapitel wird der Algorithmus von Simon vorgestellt.  Es wird zuerst
 gezeigt, welches Problem sich damit l"osen l"asst und wie dieses Problem auf
 einem klassischen Computer gel"ost werden kann. Danach wird der eigentliche
-Algorithmus gezeigt. Schliesslich wird noch gezeigt, warum dieser Algorithmus so
-bedeutend ist.
-
-\section{Problem} 
-
-Gegeben ist eine unbekannte Funktion $f$, welche einen n-Bit langen String
-entgegen nimmt und einen neuen Bit String liefert \cite{simon:cse599d-dave-bacon}. Formal ausgedr"uckt bedeutet
-dies:
-
-\[
-    f\colon\{0,1\}^n\to\{0,1\}^n
-\]
-
-
-Die Defintion der Funktion ist auch bekannt:
-
-\[
-    f(x) = x \oplus s
-\]
-
-% Von Interesse sind Funktionen mit der zusätzlichen Eigenschaft von
-% Periodizität.
-
-% [Grafik 1:1]
-
-% Nur dies mit dem $s$ reicht nicht aus.
-
-% Des weiteren müssen folgende Einschränkungen bezüglich der Blackbox Funktion
-% zu .. : 2 zu 1 Funktion.
-
-% [Grafik 2:1]
-
-Mit der Eingabe wird also eine Und-Verkn"ufung mit einer unbekannten Konstante
-$s$ gemacht.  Gesucht ist nun $s$. Fall $s = 0^n$ ist, dann liefert diese
-Funktion f"ur jeden Wert von $x$ jeweils unterschiedliche Werte von $f(x)$, sie
-ist also bijektiv.
-
-Falls $s$ sonst was anders ist, also $s \in \{0,1\}^n, s \neq 0^n$, liefert die
-Funktion f"ur zwei $x$ denselben Wert $f(x)$. Formal kann dies so definiert
-werden:
-
-\[ 
-    f(x) = f(y) \leftrightarrow x \oplus y = s 
-\]
-
-In diesem Fall ist die Funktion also nicht bijektiv, jedoch periodisch, wobei
-$s$ die Period darstellt. Der Kern des Problem ist, dass eine m"oglicherweise
-periodische Funktion gegeben ist und die Periode gesucht ist.
-
-Beispiel f"ur einer Funktion mit $s = 0^n$ und $n = 3$:
-
+Algorithmus gezeigt. Schliesslich wird anhand dem Laufzeitverhalten aufgezeigt,
+warum dieser Algorithmus von so grosser Bedeutung ist.
+\section{Problem}
+Gegeben ist eine unbekannte Funktion $f$, welche einen $n$-Bit langen String
+entgegen nimmt und einen neuen Bit String liefert
+\cite{simon:cse599d-dave-bacon}. Formal ausgedr"uckt bedeutet dies:
+\begin{align*}
+  &f\colon\{0,1\}^n\to\{0,1\}^n
+\end{align*}
+Von Interesse sind Funktionen mit der zus"atzlichen Eigenschaft von
+Periodizit"at.
+\begin{align*}
+  &f(x \oplus s) = f(x)
+\end{align*}
+Eine Funktion mit dem Wert von $s = 0^n$ und $n = 3$ w"urde diese Eigenschaft
+somit nicht erf"ullen.
 \begin{figure}[H]
  \centering
- \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+ \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner
+     sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
   \node [] {$x$};
   \node [xshift=4.0cm] {$f(x)$};
   \node[ele,label=left:$000$] (a1) at (0,4.5) {};
@@ -94,14 +59,15 @@ Beispiel f"ur einer Funktion mit $s = 0^n$ und $n = 3$:
   \draw[->,thick,shorten <=2pt,shorten >=2] (a8) -- (b8);
  \end{tikzpicture}
 \end{figure}
-
-Eine periodische Funktion mit $s = 110$ ist folglich:
-
+Daraus resultiert, dass eine weitere Einschr"ankung bez"uglich der Blackbox
+Funktion gemacht werden muss: Nur 2--1 Funktionen sind von Intersse.
+Ein Beispielfunktion ist etwa $s = 110$ : 
 \begin{figure}[H]
  \centering
- \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
+ \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner
+     sep=1pt},every fit/.style={ellipse,draw,inner sep=-2pt}]
   \node [yshift=0cm] {$x$};
-  \node [xshift=4.0cm, yshift=2cm] {$f(x)$};
+  \node [xshift=4.0cm] {$f(x)$};
   \node[ele,label=left:$000$] (aa1) at (0,4.5) {};
   \node[ele,label=left:$001$] (aa2) at (0,4) {};
   \node[ele,label=left:$010$] (aa3) at (0,3.5) {};
@@ -115,18 +81,23 @@ Eine periodische Funktion mit $s = 110$ ist folglich:
   \node[ele,,label=right:$001$] (bb2) at (4,4) {};
   \node[ele,,label=right:$010$] (bb3) at (4,3.5) {};
   \node[ele,,label=right:$011$] (bb4) at (4,3) {};
+  \node[ele,,label=right:$100$] (bb5) at (4,2.5) {};
+  \node[ele,,label=right:$101$] (bb6) at (4,2) {};
+  \node[ele,,label=right:$110$] (bb7) at (4,1.5) {};
+  \node[ele,,label=right:$111$] (bb8) at (4,1) {};
 
   \node[draw,fit= (aa1) (aa2) (aa3) (aa4) (aa5) (aa6) (aa7) (aa8),minimum
   width=3cm] {} ;
-  \node[draw,fit= (bb1) (bb2) (bb3) (bb4), minimum width=3cm] {} ;
+  \node[draw,fit= (bb1) (bb2) (bb3) (bb4) (bb5) (bb6) (bb7) (bb8), minimum
+  width=3cm] {} ;
   \draw[->,thick,shorten <=2pt,shorten >=2pt] (aa1) -- (bb1);
-  \draw[->,thick,shorten <=2pt,shorten >=2] (aa2) -- (bb2);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa2) -- (bb1);
   \draw[->,thick,shorten <=2pt,shorten >=2] (aa3) -- (bb3);
-  \draw[->,thick,shorten <=2pt,shorten >=2] (aa4) -- (bb4);
-  \draw[->,thick,shorten <=2pt,shorten >=2] (aa5) -- (bb1);
-  \draw[->,thick,shorten <=2pt,shorten >=2] (aa6) -- (bb2);
-  \draw[->,thick,shorten <=2pt,shorten >=2] (aa7) -- (bb3);
-  \draw[->,thick,shorten <=2pt,shorten >=2] (aa8) -- (bb4);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa4) -- (bb3);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa5) -- (bb5);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa6) -- (bb5);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa7) -- (bb7);
+  \draw[->,thick,shorten <=2pt,shorten >=2] (aa8) -- (bb7);
  \end{tikzpicture}
 \end{figure}
 
@@ -137,57 +108,46 @@ Eine periodische Funktion mit $s = 110$ ist folglich:
 Wie w"urde man dise Aufgabe auf einem klassichen Computer l"osen? Ein naiver
 Ansatz w"are alle m"oglichen Werte auszuprobieren. Die folgende Tabelle zeigt
 f"ur eine Beispielfunktion $f$ die Resultate.
-
-
 \begin{center}
    \begin{tabular}{ l | c  }
     \hline
      x   & f(x) \\ \hline
      000 & 000  \\ \hline
-     001 & 001  \\ \hline
+     011 & 010  \\ \hline
+     101 & 100  \\ \hline
+     111 & 110  \\ \hline
+     001 & 000  \\ \hline
      010 & 010  \\ \hline
-     011 & 011  \\ \hline
-     100 & 000  \\ \hline
-     101 & 001  \\ \hline
-     110 & 010  \\ \hline
-     111 & 011  \\ \hline
+     100 & 100  \\ \hline
+     110 & 110  \\ \hline
      \hline
     \end{tabular}
 \end{center}
-
-
 Was ist nun die Periode? Die Frage l"asst sich einfach beantworten. Es m"ussen
 nur zwei Werte $f(x)$ gefunden werden, die identisch sind. In diesem Beispiel
-sind es $f(000) = 000$ und $f(100) = 000$. 
-
-Nun kommt die obige Gleichung zum Zug:
-
+sind es $f(000) = 000$ und $f(001) = 000$. 
+Nun ist aber nicht klar, dass diese Funktion periodisch ist. F"ur jeden Wert
+muss nun "uberpr"uft werden, ob die folgende Bedingung gilt:
 \[
-    f(000) = f(100) \leftrightarrow 000 \oplus 100 = s = 011
-\] \
-
-Wie effizient ist dieser Algorithmus? Es m"ussen alle M"oglichen Eingaben
-ausprobiert werden. Bei der L"ange $3$ wurden $2^3$ Inputs generiert. Bei einem
-$n$ Bit String werden also $2^n$ Inputs generiert. 
+    f(x) = f(x \oplus s) 
+\]
+Wie effizient ist dieser Algorithmus? Es m"ussen alle m"oglichen Eingaben
+ausprobiert werden, womit bei der L"ange $3$ insgesamt $2^3$ Inputs generiert
+werden. Bei einem $n$ Bit String werden also $2^n$ Inputs generiert. 
 
 Bei genauer "Uberlegung war beim Beispiel nur $f(000)$ und $f(001)$ relevant.
 Die Funktion muss nur solange aufgerufen werden, bis zwei Werte identisch sind.
-Es gen"ugt daher $n^{1/2}$ Werte auszuprobieren.
-
-% TODO Grafik -> Wachstum mit n^1/2
-% TDOO Grafik kommentieren und "uberleitung zum Quantencomputer
+Es gen"ugt daher $2^{n/2}$ Werte auszuprobieren.
+Jedoch m"ussen f"ur alle Werte "uberpr"uft werden, ob die Bedingung der 
+Periodizit"at noch gilt.
 
 \subsection{Quantencomputer}
 
 Auf einem Quantencomputer kann dieses Problem effizienter gel"ost werden.
 Daf"ur wurde ein Algorithmus von Daniel R. Simon vorgestellt, im Folgenden wird
 dieser genauer erkl"art.
-
-% TODO Bild vom Schaltkreis.
-
 Die Grundidee des Algorithmus ist es alle M"oglichen Werte von $x$ auf einmal
 auszuprobieren und zwei Werte f"ur $f(x)$ zu finden, die identisch sind.
-
 F"ur den Algorithmus sind zwei Register notwendig. Als erstes werden diese mit
 0 initialisiert.
 \begin{align*}
@@ -212,12 +172,10 @@ Dieser Wert wird jetzt im ersten Register gespeichert.
 
 Nun wird die unbekannte Funktion $f$ angewendet und das Resultat $f(x)$ ins
 zweite Register gespeichert. Die beiden Register befinden sich nun im Zustand:
-
 \begin{align*}
   |a\rangle &= \frac{1}{\sqrt{2^n}} \sum_{x\in\{0,1\}^n} {|x\rangle} &
   |b\rangle &= |f(a)\rangle
 \end{align*}
-
 Im ersten Register sind alle m"oglichen Werte $x$ repr"asentiert und im zweiten
 Register deren $f(a)$. Nun wird das zweite Register gemessen, der gemessene Wert
 sei $y$. 
@@ -225,7 +183,7 @@ Gleichzeitig wird auch das erste Register $|a\rangle$ beeinflusst.
 M"ogliche Werte in diesem Register sind alle die von $f$ auf $y$ abgebildet
 werden. Weil $f$ 2--1 und periodisch mit Periode $s$ ist, gibt es genau zwei
 m"ogliche Werte $x$ und $x \oplus s$. Das erste Register befindet sich folglich
-in einem "Uberlagerungszustand.
+in einem "Uberlagerungszustand. 
 \begin{align*}
   |a\rangle &= \frac{1}{\sqrt{2}} \bigl( |x\rangle + |x \oplus s \rangle \bigr)
   &
@@ -239,7 +197,6 @@ Es hilft auch nicht $s$ zu finden.
 
 Um bei der Messung den Wert $x$ nicht zu bekommen wird ein Trick verwendet.
 Daf"ur wird nochmals die Hadamard-Operation auf dem ersten Register angewendet.
-
 \begin{hilfssatz}
   Der Wert der Hadamard-Operation auf dem Register $|a\rangle$ ist
   \begin{align}
@@ -292,9 +249,8 @@ Daf"ur wird nochmals die Hadamard-Operation auf dem ersten Register angewendet.
 \end{proof}
 
 Das Resultat (\ref{simon:smalz}) zeigt auf, dass das Skalarprodukt $s \cdot z$ im Wesentlichen das
-Resultat bestimmt. Die möglichen Werte sind $0$ oder $1$, da es sich um ein
+Resultat bestimmt. Die m"oglichen Werte sind $0$ oder $1$, da es sich um ein
 bin"ares Skalarprodukt handelt.
-
 \begin{hilfssatz}
   Die rechte Seite von (\ref{simon:smalz}) wird je nach Wert von $s \cdot z$
   \[
@@ -324,7 +280,6 @@ Falls $s \cdot z = 1$ ist, dann gilt:
 \end{align*}
 
 Der zweite Fall ist $s \cdot z = 0$, dann gilt:
-
 \begin{align*}
     \frac1{\sqrt{2^{n + 1}}}
       \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^{ s \cdot z}) |z\rangle } 
@@ -374,7 +329,7 @@ nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
     \\
     s \cdot z_{3} = 0
     \\
-    ...
+    \dots
     \\
     s \cdot z_{n} = 0
 \end{align*}
@@ -384,26 +339,26 @@ nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
-  \draw[->] (0,0) -- (5,0) node[right] {$n$};
-  \draw[->] (0,0) -- (0,5) node[above] {$\mathcal{O}{}$};
-  \draw[scale=0.35,domain=-0:10,smooth,variable=\x,black] plot ({\x},{\x});
-  \draw[scale=0.15,domain=-0:10,smooth,variable=\y,black]  plot ({\y},{2^(\y/2)});
-  \node [xshift=4cm,yshift=4cm] {$\mathcal{O}(n^3)$};
-  \node [xshift=2cm, yshift=5cm] {$\mathcal{O}(2^{n/2})$};
+  \draw[->] (0,0) -- (10,0) node[right] {$n$};
+  \draw[->] (0,0) -- (0,7) node[above] {$\mathcal{O}(log)$};
+  \draw[scale=0.05,domain=-0:200,smooth,variable=\x,black] plot ({\x},{(\x/2)*log2(2)});
+  \draw[scale=0.05,domain=1:200,smooth,variable=\y,black]  plot ({\y},{3*log2(\y)});
+  \node [xshift=10cm,yshift=5.5cm] {$\mathcal{O}(\frac{n}{2} * \log 2)$};
+  \node [xshift=10cm, yshift=1.7cm] {$\mathcal{O}(3 * \log n)$};
 \end{tikzpicture}
 \end{figure}
 
 Der Algorithmus von Simon zeigt auf, dass mittels eines Quantencomputers die
-Anzahl der Aufrufe der Funktion $f$ auf $O(n)$ reduziert werden k"onnen. Die
+Anzahl der Aufrufe der Funktion $f$ auf $O(n)$ reduziert werden kann. Die
 Anzahl der Schritte, welche f"ur die effektive Berechnung von $s$ ben"otigt
-werden, h"angt vom l"osen des linearen Gleichungssystems mit Gaußscher
+werden, h"angt vom L"osen des linearen Gleichungssystems mit Gaußscher
 Elimination ab, also $O(n^3)$. 
 \cite{simon:cs191}
 
-Somit wurde ein Algorithmus, der auf dem klassischen Computer bei sehr grossen
-Zahlen schnell w"achst ( in diesem Fall ist der Wachsumt mit $O(2^{n/2})$
-angegeben ) auf eine L"osung mit einem viel kleineren Wachstum von $O(2^3)$
-reduziert. In der Theoretischen Informatik ist dies ein grosser Schritt, denn
+Somit wurde ein Algorithmus, dessn Laufzeit auf dem klassischen Computer bei sehr grossen
+Zahlen schnell w"achst ( in diesem Fall ist das Wachstum mit $O(2^{n/2})$
+angegeben ) auf eine L"osung mit einem viel kleineren Wachstum von $O(n^3)$
+reduziert. In der theoretischen Informatik ist dies ein grosser Schritt, denn
 es zeigt auf, dass gewisse Problem auf dem Quantencomputer weit effizienter
 gel"ost werden k"onnen als auf dem klassischen Computer.
 
