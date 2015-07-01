@@ -244,7 +244,6 @@ Daf"ur wird nochmals die Hadamard-Operation auf dem ersten Register angewendet.
        \biggl( 
           \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z} ( 1 + (-1)^{ s \cdot z}) |z\rangle } 
        \biggr)
-    \\
 \end{align*}
 \end{proof}
 
@@ -336,16 +335,18 @@ nun $n-1$ Gleichung vor und der Wert $s$ kann mittels Gauss berechnet werden.
 
 \section{Schlussfolgerung}
 
-\begin{figure}[H]
+\begin{figure}
 \centering
 \begin{tikzpicture}
   \draw[->] (0,0) -- (10,0) node[right] {$n$};
-  \draw[->] (0,0) -- (0,7) node[above] {$\mathcal{O}(log)$};
+  \draw[->] (0,0) -- (0,7) node[above] {$\mathcal{O}(\log t(n))$};
   \draw[scale=0.05,domain=-0:200,smooth,variable=\x,black] plot ({\x},{(\x/2)*log2(2)});
   \draw[scale=0.05,domain=1:200,smooth,variable=\y,black]  plot ({\y},{3*log2(\y)});
-  \node [xshift=10cm,yshift=5.5cm] {$\mathcal{O}(\frac{n}{2} * \log 2)$};
-  \node [xshift=10cm, yshift=1.7cm] {$\mathcal{O}(3 * \log n)$};
+  \node [xshift=10cm,yshift=5.5cm] {$\mathcal{O}(\log 2^{\frac{n}{2}})$};
+  \node [xshift=10cm, yshift=1.7cm] {$\mathcal{O}(\log n^3)$};
 \end{tikzpicture}
+\caption{Logarithmische Laufzeit des klassischen Algorithmus und des
+Algorithmus von Simon in Abh"angigkeit von $n$\label{simon:laufzeitgraph}}
 \end{figure}
 
 Der Algorithmus von Simon zeigt auf, dass mittels eines Quantencomputers die
@@ -355,9 +356,9 @@ werden, h"angt vom L"osen des linearen Gleichungssystems mit Gaußscher
 Elimination ab, also $O(n^3)$. 
 \cite{simon:cs191}
 
-Somit wurde ein Algorithmus, dessn Laufzeit auf dem klassischen Computer bei sehr grossen
-Zahlen schnell w"achst ( in diesem Fall ist das Wachstum mit $O(2^{n/2})$
-angegeben ) auf eine L"osung mit einem viel kleineren Wachstum von $O(n^3)$
+Somit wurde ein Algorithmus, dessen Laufzeit auf dem klassischen Computer bei sehr grossen
+Zahlen schnell w"achst (in diesem Fall ist das Wachstum mit $O(2^{n/2})$
+angegeben) auf eine L"osung mit einem viel kleineren Wachstum von $O(n^3)$
 reduziert. In der theoretischen Informatik ist dies ein grosser Schritt, denn
 es zeigt auf, dass gewisse Problem auf dem Quantencomputer weit effizienter
 gel"ost werden k"onnen als auf dem klassischen Computer.
