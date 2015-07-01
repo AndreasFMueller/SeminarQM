@@ -106,7 +106,7 @@ Der Nenner stellt dabei die Verteilung der Energien dar. Um den Ausdruck etwas k
 \end{equation}
 In der klassischen Physik zeichnet sich ein Phasenübergang dadurch aus, dass die Wärmekapazität bei einer bestimmten Temperatur sprunghaft ändert. Da man das Bose-Einstein Kondensat als quantenmechanischen Aggregatszustand ansehen kann, wird bei einer kritischen Temperatur die Wärmekapazität stark ändern. Um auf die Wärmekapazität zu schliessen wird zuerst die Temperatur berechnet.
 
-\paragraph{1. Schritt: Innere Energie \newline}
+\subsubsection{1. Schritt: Innere Energie}
 
 Die mittlere Energie des Systems betr"agt:
 
@@ -127,7 +127,7 @@ In dieser Formel ist $Q$ zweimal vorhanden, einmal im Bruch und einmal abgeleite
 \langle U \rangle = -\frac{d}{d \beta} \ln(Q)
 \end{equation}
 
-\paragraph{2. Schritt: Logarithmus der Zustandssumme Q \newline}
+\subsubsection{2. Schritt: Logarithmus der Zustandssumme Q}
 
 Nun werden einige Umformungen durchgef"uhrt um die Berechnung der Gesamtenergie des Systems zu vereinfachen.
 Als erstes wird angenommen, dass nur ein einziger Energiezustand existiert.
@@ -173,10 +173,10 @@ Dies f"uhrt schliesslich zur Formel:
 - \ln Q = \prod_{a} \frac {1}{1-e^{- \beta \epsilon_a}} = \sum_{a} \ln \left( 1-e^{- \beta \epsilon_a} \right)
 \end{equation}
 
-\paragraph{3. Schritt: Anzahl der Teilchen konstant halten \newline}
+\subsubsection{3. Schritt: Anzahl der Teilchen konstant halten}
 
 Damit Teilchen zwischen dem System und dem Reservoir ausgetauscht werden k"onnen, muss Energie aufgewendet werden.
-Dies wird mit einem zus"atzlichen Term abgegolten. Damit wird $Q$ abh"angig von dieser Energie $\mu$. Durch Erhöhung von $\mu$ erhöht sich auch der Erwartungswert der Anzahl Teilchen, also wieviele Teilchen man in der Box findet. Dadurch kann die Anzahl der Teilchen mit diesem Faktor gesteuert werden. \cite{feynman}
+Dies wird mit einem zus"atzlichen Term abgegolten. Damit wird $Q$ abh"angig von dieser Energie $\mu$. Durch Erhöhung von $\mu$ erhöht sich auch der Erwartungswert der Anzahl Teilchen, also wieviele Teilchen man in der Box findet. Dadurch kann die Anzahl der Teilchen mit diesem Faktor gesteuert werden. \cite{bose:feynman}
 
 
 \begin{equation}
@@ -188,7 +188,7 @@ umgeformt auf $g$
 -\frac{1}{ \beta } \ln(Q^{\mu}) = g
 \end{equation}
   
-\paragraph{4. Schritt: Approximation \newline}  
+\subsubsection{4. Schritt: Approximation}
   
 Die Berechnung der Gesamtenergie wird durch folgende Annahme vereinfacht. 
 Es wird angenommen, dass es sich nicht um diskrete sondern um kontinuierliche Energiezust"ande handelt.
@@ -204,7 +204,7 @@ Ausserdem findet sich im Integral der Term ``Wert mal Wahrscheinlichkeit'' im Br
 U = s \int  \frac{ \left(e^{ {\frac{- \beta p^2}{2m}} } e^{\beta \mu} \right) \cdot {\frac{p^2}{2m}} }{1-e^{ {\frac{- \beta p^2}{2m}} } e^{\beta \mu}} \cdot \frac{d^3 p}{(2 \pi \hbar)^3}
 \end{equation}
 
-\paragraph{5. Schritt: Schlussfolgerung \newline}
+\subsubsection{5. Schritt: Schlussfolgerung}
 
 Die Vereinfachung ist bis zu einer kritischen Temperatur zul"assig. Ab dieser Temperatur d"urfen die kleinsten Energien des Systems nicht mehr vernachl"assigt werden. F"ur sehr tiefe Temperaturen m"ussen die kleinen Terme ber"ucksichtigt werden. Berechnet man die Gesamtenergie des Systems numerisch, erh"alt man Resultate, welche nicht sinnvoll sind.
 
