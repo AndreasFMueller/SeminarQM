@@ -217,7 +217,7 @@ etwas "ubersichtlicher:
 Die linke Seite dieser Gleichung h"angt nicht von $\varphi$ ab, also
 darf auch die rechte Seite nicht von $\varphi$ abh"angen, sie muss
 eine Konstante sein. Wir nennen die Konstante $m^2$ (dies wird sich
-als zweckm"assig herausstellen). Wir haben also aus der urspr"unglichen
+als zweckm"as\-sig herausstellen). Wir haben also aus der urspr"unglichen
 partiellen Differentialgleichung eine gew"ohnliche Differentialgleichung
 \[
 -\frac{\Phi''(\varphi)}{\Phi(\varphi)}=m^2
@@ -308,7 +308,7 @@ oder
 -
 \frac{m^2}{1-z^2}
 \biggr)Z(z)
-=0
+=0.
 \label{skript:legendregleichung}
 \end{equation}
 
@@ -427,17 +427,19 @@ Wir wissen bereits, dass $\lambda=l(l+1)$.
 Ausserdem k"onnen wir die ganze Gleichung durch $\hbar^2/2m_e$ teilen
 und die Ableitung nach $r$ auf der linken Seite ausrechnen. 
 Wir erhalten dann die Gleichung
-\begin{align*}
+\begin{align}
 R''(r)+\frac{2}{r}R'(r)
 +\frac{2m_e}{\hbar^2}
 \biggl(\frac{e^2}{4\pi\varepsilon_0r} + E \biggr) R(r)
 -\frac{l(l+1)}{r^2}
 R(r)
 &=0.
-\end{align*}
+\label{skript:radialgleichung2}
+\end{align}
 In den folgenden Abschnitten suchen wir L"osungen dieser Gleichung.
 Es wird sich zeigen, dass nur f"ur eine diskrete Menge von $E$-Werten
 "uberhaupt eine L"osung existiert.
+
 \subsubsection{Modifiziertes Potential}
 Schreiben wir
 \begin{equation}
@@ -446,7 +448,8 @@ A=\frac{2m_eE}{\hbar^2}
 B=\frac{m_ee^2}{4\pi\varepsilon_0\hbar^2},
 \label{skript:AundB}
 \end{equation}
-k"onnen wir die Gleichung noch etwas "ubersichtlicher als
+k"onnen wir die Gleichung (\ref{skript:radialgleichung2})
+noch etwas "ubersichtlicher als
 \begin{equation}
 R''(r)+\frac2{r}R'(r)+\biggl(A+\frac{2B}r-\frac{l(l+1)}{r^2}\biggr)R(r)=0
 \label{skript:hreduziert}
@@ -455,7 +458,7 @@ schreiben.
 In dieser Form erkennt man, dass $l\ne 0$
 das Potential modifiziert mit einem Term
 $\sim\frac1{r^2}$ (Abbildung~\ref{skript:modifiziertes-potential}).
-Dieser Term bewirkt, dass sich das Elektron bevorzugt in einer
+Er bewirkt, dass sich das Elektron bevorzugt in einer
 gewissen Entfernung vom Kern aufh"alt, die umso gr"osser ist, je
 gr"osser $l$ ist.
 Wir werden im n"achsten Kapitel lernen, dass $l$ die Bedeutung des
@@ -470,14 +473,14 @@ werden, deren Radius durch den Drehimpuls $l(l+1)$ gegeben ist.
 \subsubsection{Verhalten f"ur $r\to\infty$}
 Wir interessieren uns f"ur an das Atom gebundene Elektronen, also
 Zust"ande mit negativer Energie.
-In diesem Fall ist auch $A$ negativ.
+In diesem Fall ist wegen (\ref{skript:AundB}) auch $A$ negativ.
 Aus den Beispielen des Kapitels~\ref{chapter:quantisierung} wissen wir,
 dass in diesem Fall f"ur grosse Entfernung die Wellenfunktion exponentiell
 abfallen muss.
 Wir untersuchen daher das Verhalten der Gleichung (\ref{skript:hreduziert})
 f"ur grosse $r$.
-Indem wir die Terme mit $1/r$ und $1/r^2$ vernachl"assigen, da sie in
-diesem Fall klein sind, erhalten wir f"ur grosse $r$ die Differentialgleichung
+Indem wir die Terme mit $1/r$ und $1/r^2$ vernachl"assigen, da sie 
+f"ur grosses $r$ klein sind, erhalten wir f"ur grosse $r$ die Differentialgleichung
 \[
 R''(r)+AR(r)=0,
 \]
@@ -735,9 +738,9 @@ E&=-\frac{m_e e^4}{32\pi^2\varepsilon_0^2\hbar^2}\cdot\frac{1}{n^2}
 \end{align}
 Die Energie h"angt also nur von $n$ ab, nicht von $l$ oder $m$.
 
-DIe Quantenzahl $n$ ist der Index, ab dem all Koeffizienten verschwinden,
+Die Quantenzahl $n$ ist der Index, ab dem all Koeffizienten verschwinden,
 also hat das Polynom $w(r)$ den Grad $n-1$.
-Andererseits ist $l$ der Index des ersten nicht verschwindenden Koeffiziente
+Andererseits ist $l$ der Index des ersten nicht verschwindenden Koeffizienten
 von $w(r)$, $w(r)$ hat also mindestens den Grad $l$. Es folgt $0\le l < n$.
 
 \section{Spektrum des Wasserstoffatoms}
@@ -778,6 +781,7 @@ $n_2$ wird ein Energiequantum der Gr"osse
 \frac{1}{n_2^2}
 \biggr)
 \end{equation}
+ausgestrahlt oder absorbiert.
 Die Frequenz des ausgestrahlten oder absorbierten Lichtes ist h"angt
 mit der Energie "uber $h\nu=\Delta E$ zusammen, und diese mit der
 Wellenl"ange durch $\lambda = c/\nu$.

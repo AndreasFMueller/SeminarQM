@@ -17,7 +17,7 @@ eines quadratischen Polynoms. Sei also
 \[
 p(x) = ax^2 + bx + c
 \]
-ein quadratisches Polynom, nat"urlich k"onnen wir sofort die Nullstellen
+ein quadratisches Polynom. Nat"urlich k"onnen wir sofort die Nullstellen
 mit Hilfe der L"osungsformel
 \begin{equation}
 x_{\pm}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
@@ -181,7 +181,7 @@ $p_\varepsilon(x)=x^2-2x+1-\varepsilon$
 \label{skript:entartetenullstellen}}
 \end{figure}
 Der Nenner verschwindet also genau dann, wenn die quadratische
-Gleichung eine doppelte Nullstelle hat. In diesem Fall spaltet sich
+Gleichung eine doppelte Nullstelle hat. An diesem Punkt spaltet sich
 die eine doppelte L"osung in zwei verschiedene L"osungen $x_{\pm}$ auf,
 wie das in Abbildung~\ref{skript:entartetenullstellen} f"ur
 das Polynom $p_{\varepsilon}=x^2-2x+1-\varepsilon$ dargestellt ist.
@@ -240,6 +240,8 @@ Die technische realisierbaren Felder sind typischerweise bedeutend
 schw"acher als das Coulombpotential des Atomkernes.
 Man kann solche Felder also als St"orungen des Hamiltonoperators
 des Atoms betrachten.
+Beispiel dazu werden in Kapitel~\ref{chapter:anharmonisch} und
+\ref{chapter:efeld} genauer untersucht.
 
 Die Aufgabe der St"orungstheorie ist, die Zust"ande
 $|\psi_i(\varepsilon)\rangle$
@@ -300,10 +302,10 @@ H_1\,|\psi_k^{(0)}\rangle
 &=
 E_k^{(1)}\,|\psi_k^{(0)}\rangle + E_k^{(0)} \,|\psi_k^{(1)}\rangle+\dots
 \end{align*}
-Die Punkte stehen f"ur Terme, die minstens einen Faktor $\varepsilon$
+Die Punkte stehen f"ur Terme, die mindestens einen Faktor $\varepsilon$
 enthalten.
 Aus diesen Gleichungen m"ussen wir $E_k^{(1)}$ und $|\psi_k^{(1)}\rangle$
-bestimmen. Dazu multiplizieren wir $\langle \psi_l^{(0)}|$.
+bestimmen. Dazu multiplizieren wir mit $\langle \psi_l^{(0)}|$.
 Da die ungest"orten Eigenfunktionen orthogonal sind, kann der erste
 Term auf der rechten Seite durch $\delta_{kl}E_k^{(0)}$ ersetzt werden,
 man bekommt
@@ -458,7 +460,7 @@ in erster N"aherung
 \,
 |\psi_l^{(0)}\rangle
 \end{equation}
-normiert ist.
+normiert ist, d.~h.~\gamma muss von Ordnung $1$ sein.
 
 \section{Zweite N"aherung}
 \rhead{Zweite N"aherung}
@@ -769,7 +771,7 @@ Zust"ande erst eine Basis so w"ahlen, dass alle nicht
 diagonalen Matrixelemente in (\ref{skript:stoerungsloesung1ordnung}) verschwinden.
 Sei $P$ ein Projektor auf den Eigenraum zum entarteten Eigenwert $E$.
 Da $H_1$ ein selbstadjungierter Operator ist, ist $PH_1P$ ebenfalls
-selbstadjungiert, er ist eine Selbstabbildung des des
+selbstadjungiert, er ist eine Selbstabbildung des
 Eigenraumes zum Eigenwert $E$.
 Also gibt es eine Basis von Eigenvektoren von $H_1$ in diesem Raum,
 und wir k"onnen auch annehmen, dass diese orthonormiert ist.
