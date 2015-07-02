@@ -40,8 +40,8 @@ sehr grossen Potentialkasten, aus dem die Elektronen nicht austreten
 k"onnen.
 Die gebundenen Elektronen haben so tiefe Energie, dass wir davon
 ausgehen k"onnen, dass diese Zust"ande immer besetzt sind.
-Zur Leitung tragen sie weiter nichts bei, wir brauchen also f"ur
-doe Modellierung von Leitungsph"anomenen nur diejenigen Elektronen
+Zur elektrischen Leitung tragen sie weiter nichts bei, wir brauchen also f"ur
+die Modellierung von Leitungsph"anomenen nur diejenigen Elektronen
 zu ber"ucksichtigen, die beweglich genug sind, sich im ganzen
 Festk"orper bewegen zu k"onnen.
 Weiter nehmen wir an, dass sich die Elektronen gegenseitig 
@@ -49,7 +49,7 @@ nicht beeinflussen\footnote{Auf diese Annahme kommen wir im
 Abschnitt~\ref{section:hartree-fock} zur"uck.}.
 Jedes Elektron bewegt sich im Potential, welches von den Atomkernen
 und allen anderen Elektronen erzeugt wird.
-Jedes Elektron sieht also im wesentlichen den gleichen Potentialkasten.
+Jedes Elektron sieht also im Wesentlichen den gleichen Potentialkasten.
 Die Energieniveaus f"ur die Zust"ande in einem Potentialkasten haben
 wir in (\ref{skript:3dzustaende}) bereits berechnet.
 \begin{figure}
@@ -189,9 +189,9 @@ von Jupiter und anderen Gas-Riesen finden kann.
 \section{Elektronen in einem periodischen Potential}
 \rhead{Elektronen im periodischen Potential}
 Das im letzten Abschnitt verwendete Modell eines Festk"orpers ging davon aus,
-dass sich die Elektronen innerhalb des Festk"orpers im wesentlichen
+dass sich die Elektronen innerhalb des Festk"orpers im Wesentlichen
 ungehindert bewegen k"onnen.
-Der Festk"orper wurde im wesentlichen ein im Vergleich zum Abstand 
+Der Festk"orper wurde im Wesentlichen ein im Vergleich zum Abstand 
 der Atome untereinander sehr grosser Potentialtopf betrachtet.
 Ein realer Festk"orper zeichnet sich durch mehr oder weniger regelm"assige
 Anordnung der Atomkerne aus, die ein entsprechen strukturiertes Potential
@@ -228,7 +228,7 @@ Wir schreiben f"ur das Gitter
 \Gamma=\{ na\,|\,n\in\mathbb Z\}.
 \]
 Das von Atomen an den Gitterpunkten erzeugte Potential $V(x)$
-ist Translationsinvariant, es gilt
+ist translationsinvariant, es gilt
 \[
 V(x+v)=V(x)\qquad\forall v\in\Gamma.
 \]
@@ -420,7 +420,7 @@ $K$ ist nicht eindeutig bestimmt, denn addiert man $k\in\Gamma'$, dann ist
 e^{i(K+k)a}=e^{iKa}\underbrace{e^{ika}}_{=1}=e^{iKa}.
 \]
 $K$ ist also nur bis auf einen Vektor in $\Gamma'$ bestimmt.
-Insbesondere kann man unter alle in Frage kommenden Vektoren $K$ immer
+Insbesondere kann man unter allen in Frage kommenden Vektoren $K$ immer
 denjenigen ausw"ahlen, der am n"achsten beim Nullpunkt liegt.
 
 Wir schreiben jetzt
@@ -504,7 +504,7 @@ iKe^{iKx}u(x) + e^{iKx}u'(x)
 -K^2e^{iKx}u(x) + iKe^{iKx}u'(x)+iKe^{iKx}u'(x)+e^{iKx}u''(x)
 \\
 &=
--K^2e^{iKx}u(x) + 2iKe^{iKx}u'(x)+e^{iKx}u''(x)
+-K^2e^{iKx}u(x) + 2iKe^{iKx}u'(x)+e^{iKx}u''(x).
 \end{align*}
 Die Wirkung des Hamilton-Operators ist daher
 \begin{align*}
@@ -524,7 +524,7 @@ e^{iKx}\biggl(
 &=\frac{\hbar^2K^2}{2m_e}\,|\psi\rangle
 +e^{iKx}\biggl(\frac{p^2}{2m_e}
 +\hbar K\frac{1}{m_e}\underbrace{\frac{\hbar}{i}\frac{\partial}{\partial x}}_{=p}
-+V(x)\biggr)u(x)
++V(x)\biggr)u(x).
 \end{align*}
 Ausserdem wissen wir, dass $|\psi\rangle$ ein Eigenvektor von $H$ mit 
 Energie $E$ ist.
@@ -782,7 +782,7 @@ $\lambda = 2\pi/|\vec k|$ sein muss, also
 N
 \notag
 \\
-\vec k\cdot \vec K^0=\frac{N}2 |\vec K|
+\vec k\cdot \vec K^0=\frac{N}2 |\vec K|.
 \label{skript:kK0skalarprodukt}
 \end{align}
 Setzen wir den Wert~(\ref{skript:kK0skalarprodukt}) in die Formel
@@ -858,7 +858,7 @@ F"ur $k'=0$ erhalten wir eine ebene Welle.
 Da wir von einem schwachen Potential ausgehen, darf die Wellenfunktion
 nicht stark von der ebenen Welle abweichen. Wir k"onnen also davon ausgehen,
 dass $u_0$ nahe bei $1$ ist und dass die Koeffizienten $u_{k'}$
-mit $k'\ne 0$ sind also wesentlich kleiner als $u_0$.
+mit $k'\ne 0$ wesentlich kleiner als $u_0$ sind.
 
 Das periodische Potential $V(x)$ kann ebenfalls in eine Fourier-Reihe
 entwickelt werden, wir schreiben
@@ -874,7 +874,7 @@ H\psi(k,x)
 =
 -\frac{\hbar^2}{2m_e}\frac{\partial^2}{\partial x^2} \psi(k,x)
 +V(x)\psi(k,x)
-&=E(k)\psi(k,x)
+&=E(k)\psi(k,x),
 \notag
 \\
 \sum_{k'\in\Gamma'}\biggl(
@@ -883,7 +883,7 @@ H\psi(k,x)
 \sum_{k''\in\Gamma'}V_{k''}e^{ik''x}
 \biggr)u_{k'}e^{i(k+k')x}
 &=
-E(k)\sum_{k'\in\Gamma'} u_{k'}e^{i(k+k')x}
+E(k)\sum_{k'\in\Gamma'} u_{k'}e^{i(k+k')x},
 \notag
 \\
 \sum_{k'\in\Gamma'}\biggl(
@@ -893,7 +893,7 @@ E(k)\sum_{k'\in\Gamma'} u_{k'}e^{i(k+k')x}
 \sum_{k''\in\Gamma'}V_{k''}e^{ik''x}
 \biggr)u_{k'}e^{i(k+k')x}
 &=
-0
+0.
 \label{skript:periodicschroedinger}
 \end{align}
 Die innere Summe hindert uns daran, direkt einen Koeffizientenvergleich
@@ -917,7 +917,7 @@ Gleichung~(\ref{skript:periodicschroedinger}) vereinfachen zu
 +
 \sum_{k'\in\Gamma'}\sum_{k''\in\Gamma'}V_{k'-k''}u_{k''}e^{i(k+k')x}
 &=
-0
+0,
 \\
 \sum_{k'\in\Gamma'}\biggl(
 \biggl(
@@ -1004,7 +1004,7 @@ dass $E(k)=\hbar^2k^2/2m_e$.
 Bragg-Reflexionen verst"arken die Komponenten $u_{\pm K}$,
 mit $k'=\frac{2\pi n}a$, man kann also diesen Koeffizienten nicht mehr
 als klein voraussetzen.
-In den Gleichungen~\ref{skript:ukgleichung} m"ussen wir jetzt weitere
+In den Gleichungen~(\ref{skript:ukgleichung}) m"ussen wir jetzt weitere
 Terme hinzunehmen.
 
 Wir schreiben $K=2\pi n/a$.
@@ -1127,7 +1127,7 @@ H_k=\frac{p_k^2}{2m_e}+V(x_k).
 \]
 Die Energie aller Elektronen ist
 \[
-H_0= \sum_{k=1}^N H_k
+H_0= \sum_{k=1}^N H_k.
 \]
 Andererseits muss er die Wechselwirkung aller Elektronen beschreiben.
 Wir nehmen dabei an, dass sich die Elektronen so langsam bewegen, dass
@@ -1205,7 +1205,7 @@ Da dies f"ur jeden Vektor $y$ gilt, folgt $Av-\lambda v$, also $Av=\lambda v$.
 Damit ist gezeigt, dass $v$ ein Eigenvektor sein muss.
 \end{proof}
 
-Im allgemeinen sind quantenmechanische Zustandsr"aume unendlichdimensionale
+Im Allgemeinen sind quantenmechanische Zustandsr"aume unendlichdimensionale
 Hilbertr"aume, wir k"onnen aber argumentieren dass die Zust"ande mit grosser
 Energie ohnehin nicht physikalisch realsierbar sind, und dass wir daher
 jedes Problem durch ein endlichedimensionales Problem approximieren k"onnen.
@@ -1279,11 +1279,11 @@ w"are, mit der gleichen heuristischen Argumentation wie in fr"uheren F"allen.
 
 \subsubsection{Variation}
 Die Methode der Wahl f"ur die L"osung solcher Probleme ist die Methode
-der Lagrange-Multiplikatoren. 
+der Lagrange-Multiplika\-to\-ren. 
 Variabel sind die Funktionen $\varphi_k$, wir m"ussen also zun"achst 
 kl"aren, wie die Ableitungen nach $\varphi_k$ zu interpretieren sind.
 
-Ist eine $\delta\varphi_j$ eine Funktion von $x_j$, und $f$ eine Funktion von
+Ist $\delta\varphi_j$ eine Funktion von $x_j$, und $f$ eine Funktion von
 $\varphi_j$, dann schreiben wir $\delta f(\varphi_j)$ f"ur die
 Ableitung
 \[
@@ -1344,7 +1344,7 @@ $\langle\delta\varphi_j|\,A\,|\varphi_j\rangle=0$
 f"ur jede Wahl von $\delta\varphi_j$ verschwindet, oder dass
 $A\,|\varphi_j\rangle=0$ sein muss.
 
-Die Funktionen $G_k$ und $F$ sind genau von dieser Art.
+Die Funktionen $G_k$ und $F$ sind von der hier betrachteten Art.
 
 \subsubsection{L"osung des Minimalproblems}
 Damit k"onnen wir jetzt die Variationen $\delta_j$
@@ -1376,13 +1376,13 @@ Summen "uberein, wir k"onnen sie also in die eine Summe
 \frac{1}{|x_k-x_j|}
 \,\biggr|\varphi_j\varphi_k\biggr\rangle
 \end{equation*}
-zusammenfassen.
+zusammenfassen. Die Variationen sind damit
 \begin{align}
 \delta_j G_j
 &=
 \delta_j(\langle\varphi_j|\varphi_j\rangle-1)
 =
-2\langle\delta\varphi_j|\varphi_j\rangle
+2\langle\delta\varphi_j|\varphi_j\rangle,
 \label{skript:variationGj}
 \\
 \delta_j F
@@ -1396,10 +1396,10 @@ zusammenfassen.
 2
 \biggl\langle\delta\varphi_j\varphi_k\biggl|\,
 \frac{1}{|x_j-x_k|}
-\,\biggr|\varphi_j\varphi_k \biggr\rangle
+\,\biggr|\varphi_j\varphi_k \biggr\rangle.
 \label{skript:variationF}
 \end{align}
-\index{Lagrange-Multiplikatoren}
+\index{Lagrange-Multiplikatoren}%
 Da $\delta_jG_k=0$ f"ur $j\ne k$ ist, werden in den Lagrange-Gleichungen
 nur $\delta_jG_j$ auftreten.
 Die Methode der Lagrange-Multiplikatoren besagt, dass im Minimum
@@ -1475,7 +1475,7 @@ V_{H,j}(x_j)
 \frac{e^2}{4\pi\varepsilon_0}
 \sum_{k\ne j}\int\frac{|\varphi_k(x_k)|^2}{|x_k-x_j|}\,d^3x_k
 \]
-aller anderen Elektronen.
+aller anderen Elektronen bewegt.
 
 \subsection{Slater-Determinante}
 Bisher haben wir den Spin nicht ber"ucksichtigt.
@@ -1511,7 +1511,7 @@ Wir d"urfen ausserdem annehmen, dass die $\varphi_k$ orthonormiert sind.
 Sind sie es nicht, wenden wir das Orthonormalisierungsverfahren von 
 Gram-Schmidt auf sie an. Dadurch wird jede Funktion $\varphi_k$
 durch eine Linearkombination der Funktion $\varphi_{k'}$ mit $k'\le k$
-ersetzt, die Determinante, also $\Phi$ "andert dabei nicht.
+ersetzt, die Determinante, also $\Phi$, "andert dabei nicht.
 
 Ist $U$ eine unit"are $N\times N$-Matrix mit Matrixelementen
 $u_{kk'}$, dann k"onnen statt der Funktionen $\varphi_k$
@@ -1639,7 +1639,7 @@ Die Variationen davon sind
 \[
 \delta_k G_{kk'}
 =
-\langle\delta\varphi_k |\varphi_{k'}\rangle
+\langle\delta\varphi_k |\varphi_{k'}\rangle.
 \]
 \subsubsection{L"osung des Minimalproblems}
 Die zus"atzlichen Nebenbedingungen liefern uns zus"atzliche
@@ -1810,7 +1810,7 @@ Das Skalarprodukt zweier solcher Funktionen zerf"allt in ein Integral
 \big)
 \]
 Da es nur zwei Spin-Zust"ande gibt, kann das Skalarprodukt der Spinfunktion
-nur $1$ sein, bei parallelem Spin, oder $0$, bei antimparallelem Spin.
+nur $1$ sein, bei parallelem Spin, oder $0$, bei antiparallelem Spin.
 Das gleiche gilt dann f"ur  $c_{kj}$
 \[
 \biggl\langle\varphi_k\biggl|\,
