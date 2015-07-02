@@ -8,7 +8,7 @@ also als ohne Gegenst"uck in der realen Welt.
 Elektroingenieure verwenden komplexe Zahlen mit grossem Erfolg in ihren
 Anwendungen, sie spielen aber vor allem die Rolle eines praktischen
 Werkzeugs. Die Regeln, mit denen am Schluss solcher Rechnungen sichergestellt
-wird, dass die Resultate reell sind zeigt ausserdem, dass man alles auch
+wird, dass die Resultate reell sind, zeigen ausserdem, dass man alles auch
 ohne komplexe Zahlen durchrechnen k"onnte, wenn auch wesentlich weniger
 elegant.
 
@@ -177,7 +177,7 @@ e^{it}=\cos t+i\sin t.
 \end{align}
 \end{satz}
 
-Die komplexe Konjugation kehrt das Vorzeichen des Imagin"arteils, also 
+Die komplexe Konjugation kehrt das Vorzeichen des Imagin"arteils um, also 
 von $\sin t$. Da $\sin t$ eine ungerade Funktion ist, ist dies gleichbedeuten
 damit, das Vorzeichen von $t$ zu kehren: $\overline{e^{it}}=e^{-it}$.
 
@@ -188,7 +188,7 @@ auszudr"ucken:
 z=|r|\cdot e^{i\operatorname{arg}z}.
 \]
 Die Real- und Imagin"arteile von $e^{it}$ sind $\cos t$ und $\sin t$,
-wir k"onnen Sie auch mit den Formeln (\ref{skript:realteil-formel}) und
+wir k"onnen sie auch mit den Formeln (\ref{skript:realteil-formel}) und
 (\ref{skript:imaginaerteil-formel}) ausdr"ucken:
 \begin{align*}
 \cos t
@@ -220,7 +220,8 @@ abgebildet. Man kann nachrechnen, dass $J^2=-E$, und dass die Rechenregeln
 f"ur die komplexen Zahlen durch die Abbildung $\varphi$ in die Rechenregeln
 f"ur Matrizen transformiert werden.
 Wir illustrieren dies f"ur die Multiplikation:
-\begin{align*}
+\[
+\begin{aligned}
 &(a+bi)(c+di)&&\mapsto&
 &\begin{pmatrix}a&b\\-b&a\end{pmatrix}
 \begin{pmatrix}c&d\\-d&c\end{pmatrix}
@@ -230,7 +231,8 @@ Wir illustrieren dies f"ur die Multiplikation:
 ac-bd&ad-bc\\
 -ad+bc&ac-bd
 \end{pmatrix}
-\end{align*}
+\end{aligned}
+\]
 In dieser Darstellung kann man auch $e^{Jt}$ ausrechnen, indem man $Jt$ in
 die Taylorreihe von $e^x$ einsetzt
 \begin{align}
@@ -271,7 +273,7 @@ Eigenschaften der reellen Zahlen verwendet, die nicht auch die komplexen
 Zahlen haben. Der Gauss-Algorithmus, die Konstruktion der Determinanten,
 ja sogar der grundlegende Algorithmus zur L"osung des Eigenwertprobems
 funktioniert genau gleich auch f"ur komplexe Matrizen. Nur im Bereich
-des Skalarproduktes sind minimale Modifikationen notwendig, damit
+des Skalarproduktes sind minimale Modifikationen notwendig.
 
 \subsection{Skalarprodukt f"ur komplexe Vektorr"aume}
 In der linearen Algebra im ersten Semester wird das Skalarprodukt
@@ -382,20 +384,22 @@ gilt dann
 \overline{(e_j,Ae_i)}=\overline{a_{ji}},
 \]
 die Matrix von $A^*$ ist also nicht nur transponiert, sondern auch komplex
-konjugiert. Hat $A$ die Matrixelement $a_{ij}$ dann nennt man
+konjugiert. Hat $A$ die Ma\-trix\-e\-le\-men\-te $a_{ij}$ dann nennt man
 die Matrix $A^*$ mit den Matrixelementen $\bar a_{ji}$ die
-adjungiert Matrix. Eine Matrix, die sich beim adjungieren nicht
-"andert heisst selbstadjungiert.
+adjungiert Matrix. Eine Matrix, die sich beim Adjungieren nicht
+"andert, heisst selbstadjungiert.
 
 Die Rechenregeln f"ur die adjungierte Matrix sind ganz "ahnlich wie
 f"ur die Transposition:
-\begin{align*}
-(\lambda A)^*=\bar\lambda A^*
+\[
+\begin{aligned}
+(\lambda A)^*&=\bar\lambda A^*,
 &
-(A+B)^*&=A^*+B^*
+(A+B)^*&=A^*+B^*,
 &
 (AB)^*=B^*A^*.
-\end{align*}
+\end{aligned}
+\]
 Man beachte, dass $A\mapsto A^*$ nicht linear ist.
 
 \subsubsection{Unit"are Matrizen}
@@ -415,8 +419,9 @@ Eigenschaft, wenn
 \[
 (Ux,Uv)=(U^*Ux,y)=(x,y)\;\forall x,y
 \qquad\Rightarrow\qquad
-U^*U=E,
+U^*U=E
 \]
+gilt,
 eine solche Matrix heisst unit"ar. 
 
 F"ur reelle Matrizen $A$ ist $A^t=A^*$, also sind orthogonale Matrizen
@@ -431,7 +436,7 @@ U(1)=\left\{ z\in\mathbb C\,|\, |z|=1
 \right\}.
 \]
 In der Quantenmechanik k"onnen Zustandsvektoren in der Regel nur bis auf
-einen komplesen Faktor vom Betrag $1$, also bis auf ein Element
+einen komplexen Faktor vom Betrag $1$, also bis auf ein Element
 von $U(1)$ festgelegt werden.
 Man spricht oft von ``bedeutungslosen'' Phasenfaktoren.
 \end{beispiel}
@@ -569,11 +574,13 @@ eingebettet in in einen vierdimensionalen Raum.
 Spur und Determinaten k"onnen samt all ihren Rechenregeln sofort auf
 komplexe Matrizen "ubertragen werden.
 F"ur den Adjunktionsoperator finden wir die Rechenregeln
-\begin{align*}
+\[
+\begin{aligned}
 \det A^*&= \overline{\det A^t}=\overline{\det A},
 &&\text{und}&
 \operatorname{tr} A^*&=\overline{\operatorname{tr}A}.
-\end{align*}
+\end{aligned}
+\]
 F"ur selbstadjungierte Matrizen kann man schliessen, dass sowohl
 die Determinante wie auch die Spur von $A$ reell sein m"ussen.
 
@@ -693,8 +700,8 @@ Eigenschaften wie Orthogonalit"at oder spezielle Werte der Determinanten.
 Allerdings bildet die Menge der invertierbaren Matrizen keinen
 Vektorraum: man kann sie nicht addieren oder mit beliebigen Zahlen
 multiplizeren, weil die Invertierbarkeit oder eine der zus"atzlichen
-Eigenschaften dabei verloren geht. Diese Matrizen sind also nicht
-geeignet daher nicht geeignet als Observable in der Quantenmechanik.
+Eigenschaften dabei verloren gehen kann. Diese Matrizen sind 
+daher nicht geeignet als Observable in der Quantenmechanik.
 
 Ist eine Matrix $A$ invertierbar, dann wird auch eine Matrix, deren
 Matrixelemente nur wenig von $A$ abweichen, invertierbar sein.
@@ -728,9 +735,10 @@ antisymmetrische Matrizen.
 Analog sind die infinitesimalen Versionen von unit"aren Matrizen
 antihermitesch.
 
-Die Matrizenmultiplikation ist kommutativ.
-Diese Mengen tragen eine zus"atzliche algebraische Struktur. 
-\index{Kommutator}
+Die Matrizenmultiplikation ist nicht kommutativ.
+Diese Tatsache kann ausgenutzt werde, um den
+Matrizenmengen eine zus"atzliche algebraische Struktur zu geben.
+\index{Kommutator}%
 Der Kommutator $[A,B]=AB-BA$ zweier Matrizen $A$ und $B$ erh"alt
 die oben genannten Eigenschaften. Ist $A$ antisymmetrisch, dann
 ist auch $[A,B]$ auch antisymmetrisch:
@@ -747,7 +755,7 @@ B^tA^t-A^tB^t
 =
 -[A,B].
 \]
-\index{Jacobi-Identit\"at!f\"ur Operatoren}
+\index{Jacobi-Identit\"at!f\"ur Operatoren}%
 Die Kommutatorklammer hat aber auch noch eine zus"atzliche Eigenschaft,
 f"ur drei Matrixen $A$, $B$ und $C$ gilt n"amlich die sogenannte
 Jacobi-Identit"at:
@@ -761,7 +769,7 @@ Jacobi-Identit"at:
 0
 \label{skript:jacobi}
 \end{equation}
-Um dies einzusehen Rechnen wir die Kommutatoren aus:
+Um dies einzusehen rechnen wir die Kommutatoren aus:
 \begin{align*}
 &
 [A,[B, C]]
@@ -787,7 +795,7 @@ CAB-CBA-ABC+BAC
 &=0
 \end{align*}
 Ein Vektorraum mit einer antisymmetrischen, bilinearen Abbildung
-$[\;\cdot\;,\;\cdot\;]$,
+$[\,\cdot\,,\,\cdot\,]$,
 welche die Jacobi-Identit"at (\ref{skript:jacobi}) erf"ullt, heisst eine
 Lie-Algebra.
 So wie der Hamilton-Operator als Erzeuger der Zeitentwicklung das
@@ -933,7 +941,7 @@ von Landau und Lifschitz.
 
 Die Lie-Algebren sind vollst"andig klassifiziert worden, es gibt
 keine nicht trivialen zweidimensionalen Lie-Algebren.
-Unser dreidimensionaler ist also auch in dieser Hinsicht speziell:
+Unser dreidimensionaler Raum ist also auch in dieser Hinsicht speziell:
 es ist der kleinste Vektorraum, in dem eine nichttriviale Lie-Algebra-Struktur
 m"oglich ist.
 \end{beispiel}
@@ -942,14 +950,14 @@ m"oglich ist.
 Die Gruppe $\operatorname{SU}(2)$ hat als infinitesimale Erzeugende 
 die antihermiteschen Matrizen, also Matrizen mit der Eigenschaft
 \[
-A^*=-A.
+A^*=-A,
 \qquad
 \Rightarrow
 \qquad
 \begin{pmatrix}
    ia&b+ic\\
 -b+ic&  id
-\end{pmatrix}
+\end{pmatrix}.
 \]
 Darin wurde aber die Bedingung noch nicht abgebildet, dass Matrizen
 in $\operatorname{SU}(2)$ die Determinante $1$ haben m"ussen, wir

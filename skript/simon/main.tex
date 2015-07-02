@@ -5,11 +5,14 @@
 
 \section{Einleitung}
 In diesem Kapitel wird der Algorithmus von Simon vorgestellt.  Es wird zuerst
+\index{Algorithmus von Simon}%
+\index{Simon!Algorithmus von}%
 gezeigt, welches Problem sich damit l"osen l"asst und wie dieses Problem auf
 einem klassischen Computer gel"ost werden kann. Danach wird der eigentliche
-Algorithmus gezeigt. Schliesslich wird anhand dem Laufzeitverhalten aufgezeigt,
+Algorithmus gezeigt. Schliesslich wird anhand des Laufzeitverhalten aufgezeigt,
 warum dieser Algorithmus von so grosser Bedeutung ist.
 \section{Problem}
+\rhead{Problem}
 Gegeben ist eine unbekannte Funktion $f$, welche einen $n$-Bit langen String
 entgegen nimmt und einen neuen Bit String liefert
 \cite{simon:cse599d-dave-bacon}. Formal ausgedr"uckt bedeutet dies:
@@ -17,11 +20,12 @@ entgegen nimmt und einen neuen Bit String liefert
   &f\colon\{0,1\}^n\to\{0,1\}^n
 \end{align*}
 Von Interesse sind Funktionen mit der zus"atzlichen Eigenschaft der
-Periodizit"at, d.h. es soll gelten
+Periodizit"at, welche mit einer XOR-Operation ermittelt werden kann.
+\index{Periodizit"at}%
+Es soll also gelten
 \begin{align*}
   &f(x \oplus s) = f(x)
 \end{align*}
-
 f"ur ein konstantes $s$ und f"ur jeden m"oglichen Wert von $x$. 
 Der Spezialfall von $s = 0$ ist dabei nicht interessant, denn $f(x \oplus 0)
 = f(x)$ ist immer erf"ullt, wie auch die folgende Abbildung zeigt:
@@ -62,8 +66,9 @@ Der Spezialfall von $s = 0$ ist dabei nicht interessant, denn $f(x \oplus 0)
  \end{tikzpicture}
 \end{figure}
 Daraus resultiert, dass eine weitere Einschr"ankung bez"uglich der Blackbox
-Funktion gemacht werden muss: Nur 2--1 Funktionen sind von Interesse.
-Ein m"ogliches Beispiel mit Periode $s = 110$ ist:
+Funktion $f$ gemacht werden muss: Nur zwei-zu-eins Funktionen sollen zugelassen sein, sodass es f"ur jeden Wert $y$
+genau zwei $x$ gibt, f"ur die $y=f(x)$. Ein m"ogliches Beispiel mit
+Periode $s = 110$ ist:
 \begin{figure}[H]
  \centering
  \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner
@@ -102,13 +107,14 @@ Ein m"ogliches Beispiel mit Periode $s = 110$ ist:
   \draw[->,thick,shorten <=2pt,shorten >=2] (aa8) -- (bb5);
  \end{tikzpicture}
 \end{figure}
-Die Frage ist nun, wenn eine Blackbox Funktion $f$ gegeben ist, was ist die
+Die Frage ist nun, wenn eine solche Blackbox Funktion $f$ gegeben ist, was ist die
 Periode $s$. 
 \section{L"osung}
+\rhead{L"osung}
 
 \subsection{Klassisch}
 
-Wie w"urde man dise Aufgabe auf einem klassichen Computer l"osen? Ein naiver
+Wie w"urde man diese Aufgabe auf einem klassichen Computer l"osen? Ein naiver
 Ansatz w"are alle m"oglichen Werte auszuprobieren. Die folgende Tabelle zeigt
 f"ur eine Beispielfunktion $f$ die Resultate.
 \begin{center}
@@ -116,19 +122,19 @@ f"ur eine Beispielfunktion $f$ die Resultate.
     \hline
      $x$   & $f(x)$ \\ \hline
      000 & 000  \\ \hline
-     011 & 010  \\ \hline
-     101 & 100  \\ \hline
-     111 & 110  \\ \hline
-     001 & 000  \\ \hline
-     010 & 010  \\ \hline
-     100 & 100  \\ \hline
-     110 & 110  \\ \hline
+     001 & 100  \\ \hline
+     010 & 110  \\ \hline
+     011 & 001  \\ \hline
+     100 & 110  \\ \hline
+     101 & 001  \\ \hline
+     110 & 000  \\ \hline
+     111 & 100  \\ \hline
      \hline
     \end{tabular}
 \end{center}
 Was ist nun die Periode? Die Frage l"asst sich einfach beantworten. Es m"ussen
 nur zwei Werte $f(x)$ gefunden werden, die identisch sind. In diesem Beispiel
-sind es $f(000) = 000$ und $f(001) = 000$. 
+sind es $f(000) = 000$ und $f(110) = 000$. 
 Nun ist aber nicht klar, dass diese Funktion periodisch ist. F"ur jeden Wert
 muss nun "uberpr"uft werden, ob die folgende Bedingung gilt:
 \[
@@ -138,32 +144,32 @@ Wie effizient ist dieser Algorithmus? Es m"ussen alle m"oglichen Eingaben
 ausprobiert werden, womit bei der L"ange $3$ insgesamt $2^3$ Inputs generiert
 werden. Bei einem $n$ Bit String werden also $2^n$ Inputs generiert. 
 
-Bei genauer "Uberlegung war beim Beispiel nur $f(000)$ und $f(001)$ relevant.
+Bei genauer "Uberlegung war beim Beispiel nur $f(000)$ und $f(110)$ relevant.
 Die Funktion muss nur solange aufgerufen werden, bis zwei Werte identisch sind.
-Es gen"ugt daher $2^{n/2}$ Werte auszuprobieren.
-Jedoch m"ussen f"ur alle Werte "uberpr"uft werden, ob die Bedingung der 
-Periodizit"at noch gilt.
+Das ist mit $n^{1/2}$ machbar. Da jedoch f"ur alle Werte "uberpr"uft werden muss
+ob die Bedingung der Periodizit"at noch gilt, summiert sich die Anzahl der
+auszuprobierenden Werte auf $2^{n/2}$.
 
 \subsection{Quantencomputer}
 
 Auf einem Quantencomputer kann dieses Problem effizienter gel"ost werden.
-Daf"ur wurde ein Algorithmus von Daniel R. Simon vorgestellt, im Folgenden wird
-dieser genauer erkl"art.
-Die Grundidee des Algorithmus ist es alle M"oglichen Werte von $x$ auf einmal
+Daf"ur wurde ein Algorithmus von Daniel R. Simon vorgestellt, welcher im
+\index{Simon!Daniel R.}
+Folgenden genauer erkl"art wird.
+Die Grundidee des Algorithmus ist, alle m"oglichen Werte von $x$ auf einmal
 auszuprobieren und zwei Werte f"ur $f(x)$ zu finden, die identisch sind.
 F"ur den Algorithmus sind zwei Register notwendig. Als erstes werden diese mit
-0 initialisiert.
+0 initialisiert:
 \begin{align*}
   |a\rangle&=|0 \dots 0 \rangle 
   &
   |b\rangle&=|0 \dots 0 \rangle 
 \end{align*}
-
-Nun wird die Hadamard-Transformation auf dem ersten Register angewendet. Damit
+Nun wird die Hadamard-Transformation auf das erste Register angewendet. Damit
 befindet sich das Register in einer Superpostion, bei welcher alle m"oglichen
 Werte von $x$ mit der gleichen Wahrscheinlichkeit auftreten. Sinnhaft
-gesprochen heisst das, dass auf einmal alle m"oglichen Werte auf dem ersten
-Register erzeugt werden.
+gesprochen heisst das, dass auf einmal alle m"oglichen Werte im ersten Register
+erzeugt werden.
 \[ 
     H|a\rangle=\frac{1}{\sqrt{2^n}} \sum_{x\in\{0,1\}^n}{|x\rangle}
 \]
@@ -172,7 +178,6 @@ Dieser Wert wird jetzt im ersten Register gespeichert.
   |a\rangle &= \frac{1}{\sqrt{2^n}} \sum_{x\in\{0,1\}^n} {|x\rangle} &
   |b\rangle&=|0 \dots 0 \rangle 
 \end{align*}
-
 Nun wird die unbekannte Funktion $f$ angewendet und das Resultat $f(x)$ ins
 zweite Register gespeichert. Die beiden Register befinden sich nun im Zustand:
 \begin{align*}
@@ -184,24 +189,24 @@ Register deren $f(a)$. Nun wird das zweite Register gemessen, der gemessene Wert
 sei $y$. 
 Gleichzeitig wird auch das erste Register $|a\rangle$ beeinflusst.
 M"ogliche Werte in diesem Register sind alle die von $f$ auf $y$ abgebildet
-werden. Weil $f$ 2--1 und periodisch mit Periode $s$ ist, gibt es genau zwei
+werden. Weil $f$ zwei-zu-eins und periodisch mit Periode $s$ ist, gibt es genau zwei
 m"ogliche Werte $x$ und $x \oplus s$. Das erste Register befindet sich folglich
-in einem "Uberlagerungszustand. 
+in einem "Uberlagerungszustand
 \begin{align*}
   |a\rangle &= \frac{1}{\sqrt{2}} \bigl( |x\rangle + |x \oplus s \rangle \bigr)
   &
-  |b\rangle &= |y\rangle
+  |b\rangle &= |y\rangle.
 \end{align*}
 Dies sagt aus, dass bei der Messung des ersten Registers entweder $x$ oder $x
 \oplus s$ herausgelesen wird. Das Problem ist nun, dass es sich nicht
 unterscheiden l"asst, um welchen Wert es sich handelt.
-Falls $x$ gemessen wird ist nicht klar, dass dieser nicht $x \oplus s$ ist. 
+Falls $x$ gemessen wird ist nicht klar, ob dieser nicht $x \oplus s$ ist. 
 Es hilft auch nicht $s$ zu finden.
 
-Um bei der Messung den Wert $x$ nicht zu bekommen wird ein Trick verwendet.
+Um bei der Messung nicht den Wert $x$ zu bekommen wird ein Trick angewendet.
 Daf"ur wird nochmals die Hadamard-Operation auf dem ersten Register angewendet.
 \begin{hilfssatz}
-  Der Wert der Hadamard-Operation auf dem Register $|a\rangle$ ist
+Der Wert der Hadamard-Operation auf dem Register $|a\rangle$ ist
   \begin{align}
     H^{ \otimes n } \biggl( 
                      \frac{1}{\sqrt{2}} |x\rangle + 
@@ -256,7 +261,7 @@ bin"ares Skalarprodukt handelt.
 \begin{hilfssatz}
   Die rechte Seite von (\ref{simon:smalz}) wird je nach Wert von $s \cdot z$
   \[
-    \begin{cases}
+    =\begin{cases}
       0 & \qquad s \cdot z = 1 \\
      \displaystyle \frac1{\sqrt{2^{n - 1}}} \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot
      z}|z\rangle } & \qquad s \cdot z = 0
@@ -302,29 +307,29 @@ Der zweite Fall ist $s \cdot z = 0$, dann gilt:
       \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z}|z\rangle } 
 \end{align*}
 \end{proof}
-Dies zeigt, dass die Wahrscheinlichkeit diesen Fall zu messen gleich 0 ist und
+Dies zeigt, dass die Wahrscheinlichkeit, diesen Fall zu messen, gleich 0 ist und
 somit nie auftritt. 
-Mit diesem Trick wird nun ein Wert $z$ gemessen mit der Eigenschaft:
+Mit diesem Trick wird nun ein Wert $z$ gemessen mit der Eigenschaft
 \[
-    s \cdot z = 0
+    s \cdot z = 0.
 \]
 
-Bei der Messung des ersten Registers wird nun ein n-String langer Wert $z$
+Bei der Messung des ersten Registers wird nun ein $n$-Bit langer Wert $z$
 gemessen mit der Bedingung, dass $s \cdot z = 0$ ist. Die Wahrscheinlichkeit
 daf"ur liegt bei:
 \[
-    \biggl|\frac1{\sqrt{2^{n - 1}}}\biggr|^2 = \frac1{2^{n-1}} 
+    \biggl|\frac1{\sqrt{2^{n - 1}}}\biggr|^2 = \frac1{2^{n-1}}
 \]
-Bei genauer "Uberglegung macht dies auch Sinn, denn falls $s \notin \{0,1\}^n$
-ist, gibt es genau $2^{n-1}$ m"oglichen $z$-Werte. Die Wahrscheinlichkeit einen
-solchen zu messen ist also gleichverteilt.
+Schliesst man den Spezialfall $s = 0$ aus, gibt es genau $2^{n-1}$
+m"oglichen $z$-Werte.  Die Wahrscheinlichkeit, einen solchen zu messen, ist also
+gleichverteilt.
 
 Der Algorithmus von Simon liefert nun einen Wert $z$. Um den genauen Wert von
 $s$ zu bestimmen, wird nun der Algorithmus soviel mal wiederholt, bis $n-1$
 linear unabh"angige $z$ Werte vorliegen. Es kann sein, dass derselben $z$ Werte
-zweimal gemessen wird, jedoch ist dei Wahrscheinlichkeit bei grossen $n$
-relativ klein.  Mit $n-1$ linear unabh"angigen $z$ liegen auch soviele
-Gleichnungen mit der Unbekannte $s$ vor, somit kann dieses Gleichungssystem mit
+zweimal gemessen wird, jedoch ist die Wahrscheinlichkeit bei grossen $n$
+relativ klein.  Mit $n-1$ linear unabh"angigen Werten $z$ liegen auch soviele
+Gleichnungen mit der Unbekannten $s$ vor, somit kann dieses Gleichungssystem mit
 dem Algorithmus von Gauss gel"ost werden.
 
 \begin{align*}
@@ -340,14 +345,17 @@ dem Algorithmus von Gauss gel"ost werden.
 \end{align*}
 
 \section{Schlussfolgerung}
+\rhead{Schlussfolgerung}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}
   \draw[->] (0,0) -- (10,0) node[right] {$n$};
   \draw[->] (0,0) -- (0,7) node[above] {$\mathcal{O}(\log t(n))$};
   \draw[scale=0.05,domain=-0:200,smooth,variable=\x,black] plot ({\x},{(\x/2)*log2(2)});
   \draw[scale=0.05,domain=1:200,smooth,variable=\y,black]  plot ({\y},{3*log2(\y)});
+  \node [xshift=9.9cm,yshift=6cm] {Klassisch};
+  \node [xshift=10.5cm, yshift=2.2cm] {Quantencomputer};
   \node [xshift=10cm,yshift=5.5cm] {$\mathcal{O}(\log 2^{\frac{n}{2}})$};
   \node [xshift=10cm, yshift=1.7cm] {$\mathcal{O}(\log n^3)$};
 \end{tikzpicture}
@@ -356,9 +364,9 @@ Algorithmus von Simon in Abh"angigkeit von $n$\label{simon:laufzeitgraph}}
 \end{figure}
 
 Der Algorithmus von Simon zeigt auf, dass mittels eines Quantencomputers die
-Anzahl der Aufrufe der Funktion $f$ auf $O(n)$ reduziert werden kann. Die
+Anzahl der Aufrufe der Funktion $f$ auf $O(n)$ reduziert werden k"onnen. Die
 Anzahl der Schritte, welche f"ur die effektive Berechnung von $s$ ben"otigt
-werden, h"angt vom L"osen des linearen Gleichungssystems mit Gaußscher
+werden, h"angen vom L"osen des linearen Gleichungssystems mit Gaussscher
 Elimination ab, also $O(n^3)$. 
 \cite{simon:cs191}
 
@@ -366,8 +374,8 @@ Somit wurde ein Algorithmus, dessen Laufzeit auf dem klassischen Computer bei
 sehr grossen Zahlen schnell w"achst (in diesem Fall ist das Wachstum mit
 $O(2^{n/2})$ angegeben) auf eine L"osung mit einem viel kleineren Wachstum von
 $O(n^3)$ reduziert. In der theoretischen Informatik ist dies ein grosser
-Schritt, denn es zeigt auf, dass gewisse Problem auf dem Quantencomputer weit
-effizienter gel"ost werden k"onnen als auf dem klassischen Computer.
+Schritt, denn er zeigt auf, dass gewisse Problem auf dem Quantencomputer
+deutlich effizienter gel"ost werden k"onnen als auf dem klassischen Computer.
 
 
 \printbibliography[heading=subbibliography] \end{refsection}

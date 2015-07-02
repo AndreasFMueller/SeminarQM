@@ -4,6 +4,7 @@
 \chapterauthor{Stefan Steiner und Pascal Stump}
 
 \section{Einleitung}
+\rhead{Einleitung}
 % Aus Aufgabenstellung A. Müller
 %Ein Rubidium-Frequenznormal verwendet eine Eigenschaft von
 %Rubidium-Atomen, um ein hochpräzises Frequenznormal ($10^{-11}$)
@@ -20,18 +21,23 @@ Ohne die quantenmechanischen Erkenntnisse, welche besonders zu Beginn
 des letzten Jahrhunderts gemacht wurden, g"abe es keine Atomuhren.
 Sie stellen eine pr"azise Zeitmessung sicher und ebnen den Weg f"ur
 immer genauere Messungen in der experimentellen Physik.
+\index{Atomuhr}%
 
 Zudem pr"agen diese Ger"ate unseren Alltag, ohne dass dies stark
 bemerkt wird.  Ortung durch ein Globales Satelliten Navigationssystem
 (GNSS), wie GPS oder Galileo, sind stark von pr"aziser Zeitmessung
+\index{GPS}%
+\index{Galileo}%
 abh"angig.  Jeder Satellit dieser Systeme beinhaltet mehrere
 Atomuhren.  Dies gilt auch f"ur das Mobilfunknetz. Die einzelnen
+\index{Mobilfunknetz}%
 Basisstationen m"ussen untereinander sehr genau synchronisiert sein,
 auch da helfen diese genauen Taktgeber.
 
 Neben diesen praktischen Anwendungen ist die genaue Messung einer
 Sekunde relevant f"ur die fundamentalen Definitionen der
 SI-Basiseinheiten. In der Abbildung \ref{fig:siBasis} sind die sieben
+\index{SI!Basiseinheiten}%
 SI-Basis\-ein\-hei\-ten dargestellt.  Die gr"unen Einheiten (Sekunde,
 Ampere, Meter und Candela) bauen bei ihrer Definition auf die Sekunde
 auf.  Somit profitieren diese Einheiten direkt von einer genaueren
@@ -69,9 +75,10 @@ Dieses Kapitel soll einen kurzen "Uberblick geben, was der
 quantenmechanische Hintergrund eines solchen Ger"ates ist. Ausserdem
 soll die technische Realisierung am Beispiel einer Rubidium Atomuhr
 erl"autert werden.
-
+\index{Atomuhr!Rubidium}
 
 \section{Quantenmechnanische Betrachtung}
+\rhead{Quantenmechanische Betrachtung}
 
 In diesem Teil soll gekl"art werden, wie mithilfe der Theorie der
 Quantenmechanik eine Atomuhr technisch realisiert werden kann. Dabei
@@ -136,6 +143,7 @@ Damit jedoch ein solcher "Ubergang elektrisch verarbeitet werden kann,
 muss es einen Effekt geben, bei welchem das Photon mit einer Frequenz
 im Gigahertz Bereich ausgesendet wird.  Der Feinstruktur"ubergang ist
 ein erster Schritt in diese Richtung.
+\index{Feinstruktur}%
 
 Als das Wasserstoffspektrum genauer untersuchte wurde, bemerkte man,
 dass die Spektrallinien nicht einfach sind. Wenn man beispielsweise die
@@ -174,6 +182,7 @@ Der Hamiltonoperator ohne Spin beschreibt das Modell aus Kapitel
 \ref{chapter:wasserstoff}.
 
 Bei der Spin Bahn Kopplung geht es um die reine Betrachtung des
+\index{Spin-Bahn-Kopplung}%
 Elektrons.  Bei ihrer Bewegung um den Atomkern entsteht durch die
 eigene Ladung ein magnetisches Feld.  Dieses Feld wechselwirkt nun mit
 dem magnetischen Spin, den das Elektron auch noch besitzt.  Da das
@@ -189,6 +198,7 @@ Quantensprung in das jeweilige Energielevel.
 \end{figure}
 
 \subsubsection{Notation Termsymbol}
+\index{Termsymbol}%
 Jedes Atom hat nun verschiedene Energiezust"ande, in denen sich
 Elektronen befinden.  Dabei befinden sich die Elektronen in einem
 bestimmten Sektor, welchem ein gewisser Bahndrehimpuls zugewiesen ist
@@ -220,7 +230,7 @@ Tabelle \ref{atomuhr:drehimpulsnotation} zugewiesen.
 	\centering	
 	\begin{tabular}{llll}
 		s & p & d & f \\
-		1 & 2 & 3 & 4 \\
+		0 & 1 & 2 & 3 \\
 	\end{tabular}
 	\caption{elektrische Bahndrehimpulse}
 	\label{atomuhr:drehimpulsnotation}
@@ -240,6 +250,7 @@ Atomuhren jedoch der Hyperfeinstruktur"ubergang genutzt.
 
 \subsection{Hyperfeinstruktur"ubergang}
 \label{sec:hyperf}
+\index{Hyperfeinstruktur}
 Der Feinstruktur"ubergang wurde entdeckt, als das Bohrsche Modell
 experimentell genauer untersucht wurde. "Ahnlich ergeht es dem
 Hyperfeinstruktur"ubergang. Als das Spektrum des Feinstruktur"ubergang
@@ -261,7 +272,10 @@ Frequenz, welche sich sehr gut mit elektronischen Ger"aten verarbeiten
 l"asst.
 
 \subsection{Alkalimetalle}
+\index{Alkalimetall}%
 Gleich wie Wasserstoff geh"ort auch Rubidium und C"asium zu den
+\index{Rubidium}%
+\index{Caesium}%
 Alkalimetallen. Speziell an dieser Gruppe von Elementen ist, dass sie
 nur ein freies Elektron in der letzten besetzten Schale haben.
 
@@ -273,15 +287,17 @@ weil das Frequenzspektrum bei einem Valenzelektron einfacher zu
 verstehen ist, als bei anderen Atomgruppen mit mehreren
 Valenzelektronen.
 
-Rubidium hat einen Hyperfrequenz"ubergang von $\nu =
+Rubidium hat einen Hyperfeinstrucktur"ubergang von $\nu =
 \SI{6.834}{\giga\hertz}$. Die h"ohere Frequenz im Vergleich zum
 Wasserstoffatom l"asst sich damit erkl"aren, dass sich das
 Valenzelektron weiter weg vom Kern befindet.  Die Kraft auf die
 Wechselwirkung ist somit kleiner.
 
 \section{Technische Betrachtung}
+\rhead{Technische Betrachtung}
 In der technischen Betrachtung in diesem Abschnitt wird die
 Funktionsf"ahigkeit des Rubidium-Frequenznormals LPRO-101 aufgezeigt.
+\index{LPRO-101}%
 Das Datenblatt dieser Atomuhr kann unter \cite{datasheet:lpro}
 gefunden werden.  Ein ausf"uhrliches Datenblatt ist unter
 \cite{datasheet:prs10m} zu finden, in welchem ein anderes Modell
@@ -315,7 +331,7 @@ Filtergas aus Rubidium-85 vorhanden.  In der Abbildung
     \input{atomuhr/uebergaengeOhne.tex}}\\
   \subfigure[mit \SI{6.8}{\giga\hertz} Anregung]{
     \input{atomuhr/uebergaengeMit.tex}}
-  \caption{Energie"uberh"ange in einer Rubidium Atomuhr}
+  \caption{Energie"uberg"ange in einer Rubidium Atomuhr}
   \label{fig:uebergaenge}
 \end{figure}
 
@@ -423,8 +439,9 @@ Datenblatt l"asst sich die Ausgangsfrequenz um \SI{14}{\hertz}
 ver"andern.  Somit kann der Einfluss des Erdmagnetfeld ohne Problem
 "ubersteuert werden.
 
-\section{Geschichte der Atomuhr}
-\label{sec:gesch-der-atom}
+\section{Geschichte der Atomuhr
+\label{sec:gesch-der-atom}}
+\rhead{Geschichte der Atomuhr}
 Bereits 1879 hatte Lord Kelvin die Idee, Atome als Zeit und L"angen
 Standard zu verwenden.  Erst 1949 wurde dann in der USA am National
 Institute of Standards and Technology (NIST) die erste Atomuhr gebaut
@@ -438,16 +455,19 @@ von ca. \num{e-5} und eine beheizter Quarzoszillator (OCXO) durch den
 reduzierten Temperaturdrift im Bereich von \num{2e-8} liegt.
 
 Mit der Ammoniak Atomuhr konnte aber das Prinzip der Atomuhr
+\index{Atomuhr!Ammoniak}
 aufgezeigt werden.  Welche 1952 mit der ersten Caesium Atomuhr NBS-1
 weitergef"uhrt werden konnte.  Die Genauigkeit und Stabilit"at der
 Caesium Atomuhren konnte soweit gesteigert werden, dass 1967 die
 SI-Sekunde als Hyperfeinstruktur"ubergang von Caesium-133 definiert
+\index{SI!Sekundendefinition}%
 wurde.  Das f"uhrt dazu, dass eine Sekunde mit \num{9192631770} Takten
 aufgel"ost wird.  Somit ist die Genauigkeit auf
 \SI{108.78}{\pico\second} beschr"ankt.
 
 Andere Atomuhren, welche in der Zwischenzeit entwickelt wurden,
 verwenden die Elemente Rubidium und Wasserstoff.  Beide verwenden
+\index{Atomuhr!Wasserstoff}
 ebenfalls den Hyperfeinstruktur"ubergang.  Die Rubidium Atomuhren
 k"onnen sehr einfach und g"unstig aufgebaut werden, besitzen jedoch
 nicht die Genauigkeit von Caesium Atomuhren.  Genauer k"onnen die
@@ -462,6 +482,7 @@ Lange konnte dieser Bereich nicht genutzt werden, da diese hohen
 Takte mit elektronischen Regelkreisen nicht gemessen werden konnten.
 
 Gl"ucklicherweise wurde 1998 der Frequenzkamm entdeckt
+\index{Frequenzkamm}%
 \cite{SdW:kamm}.  Mit dessen Hilfe k"onnen Frequenzen im optischen
 Spektrum mit einer Schwebung in den technisch messbaren
 Frequenzbereich gebracht werden.  Diese Technologie erm"oglichte es
@@ -481,6 +502,7 @@ dargestellt.
 \end{figure}
 
 \section{Zusammenfassung}
+\rhead{Zusammenfassung}
 Die heute eingesetzten Atomuhren benutzen den
 Hyperfeinstruktur"ubergang, als hoch genaue Frequenzkonstante.  Dieser
 Hyperfeinstruktur"ubergang kann mit Hilfe der St"orungstheorie

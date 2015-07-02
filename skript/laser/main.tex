@@ -5,6 +5,7 @@
 
 
 \section{Einleitung}
+\rhead{Einleitung}
 Der Begriff Laser stammt aus dem Englischen und steht f"ur 
 "{}Light Amplification by Stimulated Emission of Radiation"{}.
 Auf Deutsch bedeutet Laser Licht-Verst"arkung durch stimulierte Emission 
@@ -45,15 +46,22 @@ Laserprinzip Mikrowellen auszusenden, dieses Produkt wird jedoch Maser genannt.
 \subsection{Geschichte}
 Der Effekt der stimulierten Emission wurde bereits 1916 vom bedeutenden 
 Physiker Albert Einstein entdeckt. Jedoch erst 13 Jahre sp"ater gelang der 
+\index{Einstein, Albert}
 experimentelle Nachweis durch Rudolf Ladenburg. Die Forschung wurde durch 
+\index{Ladenburg, Rudolf}
 Theodore Maiman vorangegetrieben, welcher 1960 den ersten Laser 
 fertigstellte. Von der Entdeckung bis zum ersten Fertigprodukt dauerte es 
 fast 50 Jahre. Dieser Rubinlaser war ein Feststofflaser (Kristall). Sp"ater 
+\index{Rubinlaser}
+\index{Feststofflaser}
 wurden Gaslaser und Fl"ussiglaser entwickelt. Die Halbleiter-Laserdioden, 
 welche langlebiger sind und wir aus dem CD-Player kennen, wurden erst in den 
 sp"aten 1980er Jahren entwickelt.
+\index{Gaslaser}
+\index{Flussiglaser@Fl\"ussiglaser}
 
 \section{Aufbau eines Lasers}
+\rhead{Aufbau eines Lasers}
 Die wichtigsten Bestandteile eines Laser sind das Lasermedium, die Laserpumpe sowie
 der Resonator. Der Laserstrahl wird in einem Lasermedium erzeugt und 
 durch den optischen Resonator mit Hilfe von zwei Spiegeln in die richtige 
@@ -67,7 +75,7 @@ zus"atzlicher Energie elektrische Energie
 Gasentladung, wird das Lasermedium aus dem Grundzustand 
 geholt und der Wechsel der Energieniveaus beginnt. Die Pumpe bringt die 
 Molek"ule oder Atome vom Grundzustand in einen angeregten Zustand. Dadurch 
-wird eine Besezungsinversion erreicht und der Laser beginnt zu leuchten. Wie 
+wird eine Besetzungsinversion erreicht und der Laser beginnt zu leuchten. Wie 
 die Zustandswechsel von statten gehen und wieviele Enegieniveaus f"ur einen funktionierenden Laser vorhanden
 sein m"ussen, wird im Kapitel \ref{Wechselwirkung} genauer erkl"art.
 
@@ -78,7 +86,7 @@ Bei diesem Vorgang wird ein Photon freigesetzt.
 Das Medium wird vor allen durch den Aggregatzustand 
 unterschieden und kann fest (z.B Halbleitermatrial, Kristalle), fl"ussig (z.B 
 Farbstoffl"osungen) oder gasf"ormig (z.B $\text{CO}_{2}$, He-Ne, Sauerstoff oder 
-Stickstoff) sein. Das Lasermedium ist verantwortlich f"ur die Farbe welche
+Stickstoff) sein. Das Lasermedium ist verantwortlich f"ur die Farbe, welche
 einen Laser aussendet.
 Die Farbe ist von der Wellenl"ange der Photonen abh"angig.
 
@@ -100,6 +108,7 @@ Je nach Produkt wird der Laserstrahl mit einer Sammellinse geb"undelt,
 was insbesondere bei der Laserdiode sehr wichtig ist,
 da dort ein breiter F"acher ausgestrahlt wird. Die Laserdiode wird in Kapitel \ref{Laserdiode}
 genauer beschrieben.
+\index{Laserdiode}
 
 \begin{figure}
 \center
@@ -110,16 +119,17 @@ genauer beschrieben.
 \end{figure}
 
 
-\section{Wechselwirkung mit Strahlung}
-\label{Wechselwirkung}
+\section{Wechselwirkung mit Strahlung
+\label{Wechselwirkung}}
+\rhead{Wechselwirkung mit Strahlung}
 Die Atome befinden sich auf unterschiedlichen Energieniveaus. 
 Es gibt verschiedene Prozesse die dieses Energieniveau "andern k"onnen.
 In diesem Kapitel werden genau diese Prozesse beschrieben, erkl"art und
 bildlich dargestellt.
 
-
 \subsection{Spontane Prozesse}
 \label{Spontane Prozesse}
+\index{Emission!spontane}%
 %Quelle: LP_WS_09_10_Zusammenfassung_Laserprinzip.pdf
 Die Atome befinden sich in einem angeregten Zustand mit einer Energie $E_2$. 
 Diese Atome k"onnen durch die Abgabe eines Photons auf ein tieferes
@@ -133,6 +143,7 @@ elektromagnetischen Welle ist dabei rein zuf"allig.
 Hingegen kann die "Ubergangswahrscheinlichkeit des Vorgangs von $E_2$ nach
 $E_1$ mit dem Einsteinkoeffizienten $A_{21}$ angegeben werden.
 Siehe Abbildung \ref{spontane Emission}
+\index{Einstein-Koeffizienten}%
 
 Das abgegebene Photon hat eine Energie von $\Delta E = E_2 - E_1$.
 Die Frequenz des Photons $(\nu)$ ist dabei proportional zur Energie:
@@ -158,6 +169,7 @@ Dieser wird dabei mit dem Buchstaben $B$ angegeben.
 
 %--------------------------------------------------------------------
 \subsubsection{Stimulierte Emission}
+\index{Emission!stimulierte}%
 Findet ein "Ubergang vom h"oheren Energieniveau auf ein tieferes statt,
 so spricht man von einer Emission.
 Dabei erzeugt ein eintreffendes Photon diesen "Ubergang vom h"oheren Niveau
@@ -174,6 +186,7 @@ Dieser Prozess ist in der Abbildung \ref{Stimulierte Prozesse} links bildlich
 dargestellt.
 
 \subsubsection{Stimulierte Absorption}
+\index{Absorption!stimulierte}%
 Bei der Absorption werden Photonen mit einer spezifischen Energie absorbiert.
 Dabei steigt die Energie des Atoms aus dem tieferen Zustand in den
 h"oheren.
@@ -192,8 +205,8 @@ dargestellt.
 \label{Stimulierte Prozesse}
 \end{figure}
 
-\subsection{Einsteinkoeffizienten $B_{21}$ = $B_{12}$}
-\label{B21=B12}
+\subsection{Einsteinkoeffizienten $B_{21}$ = $B_{12}$
+\label{B21=B12}}
 Der Hamilton-Operator, der den Vorgang des Lasers darstellt,
 setzt sich aus einem ungest"orten Teil und einem gest"orten Teil zusammen.
 Der ungest"orte Teil besteht aus den beiden Energieniveaus $E_1$ und $E_2$.
@@ -217,7 +230,7 @@ I\cdot b_{21} & E_2+I\cdot b_{12} \\
 
 Damit diese Matrix symmetrisch sein kann ist es unumg"anglich, dass $b_{12}$
 und $b_{21}$ gleich gross sind.
-Somit mu"ssen auch die Einsteinkoeffizienten $B_{21}$ und $B_{12}$
+Somit m"ussen auch die Einsteinkoeffizienten $B_{21}$ und $B_{12}$
 gleich gross sein.
 Da diese Einsteinkoeffizienten ein Mass f"ur die Wahrscheinlichkeit der
 stimulierten Vorg"ange sind, hat das Auftreten der stimulierten Emission und
@@ -235,14 +248,16 @@ Nur so kann sichergestellt werden, dass der Laser stets mehr stimulierte
 Emissionsvorg"ange als stimulierte Absortionsverg"ange hat. 
 Dies wiederum ergibt die notwendigen Photonen, die den Laser zum leuchten
 bringen.
+\index{Besetzungsinversion}%
 Ohne diese Besetzungsinversion kann kein Laser funktionieren. 
 Dies ist somit die Grundlage jedes Lasers. 
 Wie diese Besetzungsinversion zustande kommt ist je nach Laser
 unterschiedlich.
 
 
-\section{2-Niveau System}
-\label{2-Niveau System}
+\section{2-Niveau System
+\label{2-Niveau System}}
+\rhead{2-Niveau System}
 \begin{figure}
 \centering
 \includegraphics[width = 10cm]{laser/niveau-1.pdf}
@@ -263,10 +278,13 @@ Anhand der Abbildung \ref{2-Niveau Laser Meta} ist die Interpretation der
 Ratengleichungen einfach nachvollziehbar.
 Die Elemente in den Ratengleichungen sind wie in der Abbildung von links
 nach rechts aufgelistet.
-\[ \frac{dN_1}{dt} = -\frac{dN_2}{dt} = 
+\[
+\frac{dN_1}{dt} = -\frac{dN_2}{dt} = 
 +\underbrace{B_{21} \cdot  I \cdot N_2}_{\text{Stimuliete~Emission}}
 +\underbrace{A_{21}\cdot N_2}_{\text{Spontane~Emission}}
--\underbrace{B_{12} \cdot I \cdot N_1}_{\text{Stimulierte~Absorption}}\]
+-\underbrace{B_{12} \cdot I \cdot N_1}_{\text{Stimulierte~Absorption}}
+\]
+\index{Ratengleichungen}%
 Da die Teilchen nur zwischen den zwei Niveaus wechseln k"onnen, ist die
 Zunahme.
 von $N_1$ gleich der Abnahme von $N_2$. 
@@ -296,8 +314,8 @@ Laser funktionieren kann.
 \label{2-Niveau Laser}
 \end{figure}
 
-\subsection{Simulation}
-\label{2-Niveau System Simulation}
+\subsection{Simulation
+\label{2-Niveau System Simulation}}
 Mit den Gleichungen  $\frac{dN_1}{dt} = -\frac{dN_2}{dt}$ ist mit Hilfe von
 Matlab/Simulink numerisch eine Simulation durchgef"uhrt worden.
 Diese ist in Abbildung \ref{2-Niveau Laser}  dargestellt.
@@ -311,8 +329,9 @@ Somit best"atigit die Simulation die Erkenntnis aus Kapitel
 \ref{2-Niveau Ratengleichungen}, dass ein Dauerstrich-Laser nicht
 funktionieren kann.
 
-\section{3-Niveau System}
-\label{3-Niveau System}
+\section{3-Niveau System
+\label{3-Niveau System}}
+\rhead{3-Niveau System}
 
 \begin{figure}
 \centering
@@ -401,15 +420,17 @@ hinterlegt.
 \end{figure}
 \end{flushleft}
 
-\section{Laserdiode}
-\label{Laserdiode}
+\section{Laserdiode
+\label{Laserdiode}}
+\rhead{Laserdiode}
 In diesem Kapitel wird die Laserdiode, welche beispielsweise in einem CD-Player
 vorkommt, etwas genauer erkl"art. Laserdioden zeichnen sich durch eine sehr kompakte Bauform 
 und einen hohen Wirkungsgrad von "uber 50\% aus. Zus"atzlich wird in diesem Kapitel
 ein kleiner Versuch beschrieben, welcher wir im Labor durchgef"uhrt haben.  
 
-\subsection{Unterschied Laser - LED}
-\label{Unterschied Laser - LED}
+\subsection{Unterschied Laser - LED
+\label{Unterschied Laser - LED}}
+\index{LED}%
 Das Licht eines Lasers und einer LED sehen auf den ersten Blick gleich aus.
 Bei genauerem betrachten treten aber entscheidende Unterschiede auf.
 Der Lichtstrahl einer LED leuchtet sehr hell, beinhaltet dabei aber mehrere
@@ -434,7 +455,7 @@ Diese sind eine Folge der Koh"arenz des Laserslichts.
 \centering
 \includegraphics[width = 5cm]{laser/bilder/Objective_speckle.jpg}
 \caption{Rote Speckles eines Lasers \cite{WikiSpeckle}}
-\index{speckles}
+\index{Speckles}
 \end{figure}
 
 \subsection{Funktion}
@@ -562,8 +583,9 @@ dar.
 %Quelle ap-2015 und Wikipedia Laserdiode und Wikipedia LED
 
 
-\section{Helium-Neon-Laser}
-\label{He-Ne-Laser}
+\section{Helium-Neon-Laser
+\label{He-Ne-Laser}}
+\rhead{Helium-Neon-Laser}
 %------------------------------
 %Quelle
 % http://de.wikipedia.org/wiki/Helium-Neon-Laser, 31.M"arz 2015

@@ -199,8 +199,8 @@ Dadurch erhalten wir f"ur $l=k$
 \langle\Psi_l^{(0)}|\Psi_k^{(p)}\rangle
 =
 i\gamma_p+
-\underbrace{\frac12 \displaystyle\sum_{j=2}^{p}}_{\text{Reell}} 
-\langle\Psi_k^{(p-j+1)}|\Psi_k^{(j-1)}\rangle
+\underbrace{\frac12 \displaystyle\sum_{j=2}^{p} 
+\langle\Psi_k^{(p-j+1)}|\Psi_k^{(j-1)}\rangle}_{\text{Reell}}
 \end{equation}
 $\gamma_p$ muss so gew"ahlt werden, dass die Wellenfunktion in p-ter N"aherung stimmt.
 \\
@@ -373,19 +373,6 @@ Aus diesem Grund,
 empfiehlt es sich eine numerischen Auswertung der St"orungstheorie zu machen.
 Dadurch verlagert sich die Berechnungsschwerpunkt
 haupts"achlich auf die $\Psi^{(0)}$ Funktionen.
-\subsubsection{Matrixform der Wellenfunktionen}
-Wir schlagen aus diesem Grund,
-im Falle des Harmonischen Oszillators, die folgender Matrixform vor.
-\[
-\Psi^{(0)}
-=
-\begin{pmatrix}
-\Psi_0^{(0)}(-x_{\text{max}}) & \cdots & \Psi_0^{(0)}(x_{\text{max}})	\\
-\Psi_1^{(0)}(-x_{\text{max}}) & \cdots & \Psi_1^{(0)}(x_{\text{max}})	\\
-\vdots & \ddots & \vdots						\\
-\Psi_n^{(0)}(-x_{\text{max}}) & \cdots & \Psi_n^{(0)}(x_{\text{max}})	\\
-\end{pmatrix}
-\]
 \subsubsection{Definitionsbereich}
 Da die  Aufenthaltswahrscheinlichkeit eines Teilchens,
 ausserhalb der Energiebarriere aus Abbildung~\ref{skript:Potentiale},
@@ -419,7 +406,7 @@ folgender Arbeitsbereich ermitteln.
 \[
 x_{\text{max}}
 =
-\pm\sqrt{\frac{2\hbar\omega(\frac12+k_{\text{max}})}k}
+\sqrt{\frac{2\hbar\omega(\frac12+k_{\text{max}})}k}
 \]
 Dieser Bereich ist jedoch noch zu klein gew"ahlt.
 Denn die Wahrscheinlichkeit dass sich ein Teilchen
@@ -430,12 +417,24 @@ In unseren Berechnungen haben wir den Bereich um 25\% weiter vergr"ossert.
 \[
 x_{\text{max}}
 =
-\pm\sqrt{\frac{2\hbar\omega(\frac12+k_{max})}k}\cdot 1.25
+\sqrt{\frac{2\hbar\omega(\frac12+k_{max})}k}\cdot 1.25
 \]
 Die Wahrscheinlichkeit,
 dass sich nun das Teilchen, in einem beliebigen Energieniveau, in diesem Bereich aufh"alt,
 ist ausreichend gross.
-
+\subsubsection{Matrixform der Wellenfunktionen}
+Wir schlagen aus diesem Grund,
+im Falle des Harmonischen Oszillators, die folgender Matrixform vor.
+\[
+\Psi^{(0)}
+=
+\begin{pmatrix}
+\Psi_0^{(0)}(-x_{\text{max}}) & \cdots & \Psi_0^{(0)}(x_{\text{max}})	\\
+\Psi_1^{(0)}(-x_{\text{max}}) & \cdots & \Psi_1^{(0)}(x_{\text{max}})	\\
+\vdots & \ddots & \vdots						\\
+\Psi_n^{(0)}(-x_{\text{max}}) & \cdots & \Psi_n^{(0)}(x_{\text{max}})	\\
+\end{pmatrix}
+\]
 
 			%Auswertung
 \section{Auswertung}
