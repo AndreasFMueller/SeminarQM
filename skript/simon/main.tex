@@ -7,7 +7,7 @@
 In diesem Kapitel wird der Algorithmus von Simon vorgestellt.  Es wird zuerst
 gezeigt, welches Problem sich damit l"osen l"asst und wie dieses Problem auf
 einem klassischen Computer gel"ost werden kann. Danach wird der eigentliche
-Algorithmus gezeigt. Schliesslich wird anhand dem Laufzeitverhalten aufgezeigt,
+Algorithmus gezeigt. Schliesslich wird anhand des Laufzeitverhalten aufgezeigt,
 warum dieser Algorithmus von so grosser Bedeutung ist.
 \section{Problem}
 Gegeben ist eine unbekannte Funktion $f$, welche einen $n$-Bit langen String
@@ -21,7 +21,6 @@ Periodizit"at, d.h. es soll gelten
 \begin{align*}
   &f(x \oplus s) = f(x)
 \end{align*}
-
 f"ur ein konstantes $s$ und f"ur jeden m"oglichen Wert von $x$. 
 Der Spezialfall von $s = 0$ ist dabei nicht interessant, denn $f(x \oplus 0)
 = f(x)$ ist immer erf"ullt, wie auch die folgende Abbildung zeigt:
@@ -62,8 +61,9 @@ Der Spezialfall von $s = 0$ ist dabei nicht interessant, denn $f(x \oplus 0)
  \end{tikzpicture}
 \end{figure}
 Daraus resultiert, dass eine weitere Einschr"ankung bez"uglich der Blackbox
-Funktion gemacht werden muss: Nur 2--1 Funktionen sind von Interesse.
-Ein m"ogliches Beispiel mit Periode $s = 110$ ist:
+Funktion $f$ gemacht werden muss: Nur 2--1 Funktionen, daher f"ur jedes $f(x)$
+gibt es genau zwei $x$, sind von Interesse. Ein m"ogliches Beispiel mit
+Periode $s = 110$ ist:
 \begin{figure}[H]
  \centering
  \begin{tikzpicture}[ele/.style={fill=black,circle,minimum width=1pt,inner
@@ -108,7 +108,7 @@ Periode $s$.
 
 \subsection{Klassisch}
 
-Wie w"urde man dise Aufgabe auf einem klassichen Computer l"osen? Ein naiver
+Wie w"urde man diese Aufgabe auf einem klassichen Computer l"osen? Ein naiver
 Ansatz w"are alle m"oglichen Werte auszuprobieren. Die folgende Tabelle zeigt
 f"ur eine Beispielfunktion $f$ die Resultate.
 \begin{center}
@@ -141,15 +141,15 @@ werden. Bei einem $n$ Bit String werden also $2^n$ Inputs generiert.
 Bei genauer "Uberlegung war beim Beispiel nur $f(000)$ und $f(001)$ relevant.
 Die Funktion muss nur solange aufgerufen werden, bis zwei Werte identisch sind.
 Es gen"ugt daher $2^{n/2}$ Werte auszuprobieren.
-Jedoch m"ussen f"ur alle Werte "uberpr"uft werden, ob die Bedingung der 
+Jedoch m"uss f"ur alle Werte "uberpr"uft werden, ob die Bedingung der
 Periodizit"at noch gilt.
 
 \subsection{Quantencomputer}
 
 Auf einem Quantencomputer kann dieses Problem effizienter gel"ost werden.
-Daf"ur wurde ein Algorithmus von Daniel R. Simon vorgestellt, im Folgenden wird
-dieser genauer erkl"art.
-Die Grundidee des Algorithmus ist es alle M"oglichen Werte von $x$ auf einmal
+Daf"ur wurde ein Algorithmus von Daniel R. Simon vorgestellt, welcher im
+Folgenden genauer erkl"art wird.
+Die Grundidee des Algorithmus ist es alle m"oglichen Werte von $x$ auf einmal
 auszuprobieren und zwei Werte f"ur $f(x)$ zu finden, die identisch sind.
 F"ur den Algorithmus sind zwei Register notwendig. Als erstes werden diese mit
 0 initialisiert.
@@ -158,12 +158,11 @@ F"ur den Algorithmus sind zwei Register notwendig. Als erstes werden diese mit
   &
   |b\rangle&=|0 \dots 0 \rangle 
 \end{align*}
-
-Nun wird die Hadamard-Transformation auf dem ersten Register angewendet. Damit
+Nun wird die Hadamard-Transformation auf das erste Register angewendet. Damit
 befindet sich das Register in einer Superpostion, bei welcher alle m"oglichen
 Werte von $x$ mit der gleichen Wahrscheinlichkeit auftreten. Sinnhaft
-gesprochen heisst das, dass auf einmal alle m"oglichen Werte auf dem ersten
-Register erzeugt werden.
+gesprochen heisst das, dass auf einmal alle m"oglichen Werte im ersten Register
+erzeugt werden.
 \[ 
     H|a\rangle=\frac{1}{\sqrt{2^n}} \sum_{x\in\{0,1\}^n}{|x\rangle}
 \]
@@ -172,7 +171,6 @@ Dieser Wert wird jetzt im ersten Register gespeichert.
   |a\rangle &= \frac{1}{\sqrt{2^n}} \sum_{x\in\{0,1\}^n} {|x\rangle} &
   |b\rangle&=|0 \dots 0 \rangle 
 \end{align*}
-
 Nun wird die unbekannte Funktion $f$ angewendet und das Resultat $f(x)$ ins
 zweite Register gespeichert. Die beiden Register befinden sich nun im Zustand:
 \begin{align*}
@@ -195,13 +193,13 @@ in einem "Uberlagerungszustand.
 Dies sagt aus, dass bei der Messung des ersten Registers entweder $x$ oder $x
 \oplus s$ herausgelesen wird. Das Problem ist nun, dass es sich nicht
 unterscheiden l"asst, um welchen Wert es sich handelt.
-Falls $x$ gemessen wird ist nicht klar, dass dieser nicht $x \oplus s$ ist. 
+Falls $x$ gemessen wird ist nicht klar, ob dieser nicht $x \oplus s$ ist. 
 Es hilft auch nicht $s$ zu finden.
 
-Um bei der Messung den Wert $x$ nicht zu bekommen wird ein Trick verwendet.
+Um bei der Messung nicht den Wert $x$ zu bekommen wird ein Trick angewendet.
 Daf"ur wird nochmals die Hadamard-Operation auf dem ersten Register angewendet.
 \begin{hilfssatz}
-  Der Wert der Hadamard-Operation auf dem Register $|a\rangle$ ist
+Der Wert der Hadamard-Operation auf dem Register $|a\rangle$ ist
   \begin{align}
     H^{ \otimes n } \biggl( 
                      \frac{1}{\sqrt{2}} |x\rangle + 
@@ -322,9 +320,9 @@ solchen zu messen ist also gleichverteilt.
 Der Algorithmus von Simon liefert nun einen Wert $z$. Um den genauen Wert von
 $s$ zu bestimmen, wird nun der Algorithmus soviel mal wiederholt, bis $n-1$
 linear unabh"angige $z$ Werte vorliegen. Es kann sein, dass derselben $z$ Werte
-zweimal gemessen wird, jedoch ist dei Wahrscheinlichkeit bei grossen $n$
-relativ klein.  Mit $n-1$ linear unabh"angigen $z$ liegen auch soviele
-Gleichnungen mit der Unbekannte $s$ vor, somit kann dieses Gleichungssystem mit
+zweimal gemessen wird, jedoch ist die Wahrscheinlichkeit bei grossen $n$
+relativ klein.  Mit $n-1$ linear unabh"angigen Werten $z$ liegen auch soviele
+Gleichnungen mit der Unbekannten $s$ vor, somit kann dieses Gleichungssystem mit
 dem Algorithmus von Gauss gel"ost werden.
 
 \begin{align*}
@@ -356,9 +354,9 @@ Algorithmus von Simon in Abh"angigkeit von $n$\label{simon:laufzeitgraph}}
 \end{figure}
 
 Der Algorithmus von Simon zeigt auf, dass mittels eines Quantencomputers die
-Anzahl der Aufrufe der Funktion $f$ auf $O(n)$ reduziert werden kann. Die
+Anzahl der Aufrufe der Funktion $f$ auf $O(n)$ reduziert werden k"onnen. Die
 Anzahl der Schritte, welche f"ur die effektive Berechnung von $s$ ben"otigt
-werden, h"angt vom L"osen des linearen Gleichungssystems mit Gaußscher
+werden, h"angen vom L"osen des linearen Gleichungssystems mit Gaussscher
 Elimination ab, also $O(n^3)$. 
 \cite{simon:cs191}
 
@@ -366,8 +364,8 @@ Somit wurde ein Algorithmus, dessen Laufzeit auf dem klassischen Computer bei
 sehr grossen Zahlen schnell w"achst (in diesem Fall ist das Wachstum mit
 $O(2^{n/2})$ angegeben) auf eine L"osung mit einem viel kleineren Wachstum von
 $O(n^3)$ reduziert. In der theoretischen Informatik ist dies ein grosser
-Schritt, denn es zeigt auf, dass gewisse Problem auf dem Quantencomputer weit
-effizienter gel"ost werden k"onnen als auf dem klassischen Computer.
+Schritt, denn er zeigt auf, dass gewisse Problem auf dem Quantencomputer
+deutlich effizienter gel"ost werden k"onnen als auf dem klassischen Computer.
 
 
 \printbibliography[heading=subbibliography] \end{refsection}
