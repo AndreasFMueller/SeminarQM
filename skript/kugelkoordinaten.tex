@@ -51,7 +51,7 @@ Denn es gilt
 +
 \frac{\partial \vartheta}{\partial x} \frac{\partial}{\partial \vartheta}
 +
-\frac{\partial \varphi}{\partial x} \frac{\partial}{\partial \varphi}
+\frac{\partial \varphi}{\partial x} \frac{\partial}{\partial \varphi},
 \\
 \frac{\partial}{\partial y}
 &=
@@ -59,7 +59,7 @@ Denn es gilt
 +
 \frac{\partial \vartheta}{\partial y} \frac{\partial}{\partial \vartheta}
 +
-\frac{\partial \varphi}{\partial y} \frac{\partial}{\partial \varphi}
+\frac{\partial \varphi}{\partial y} \frac{\partial}{\partial \varphi},
 \\
 \frac{\partial}{\partial z}
 &=
@@ -67,7 +67,7 @@ Denn es gilt
 +
 \frac{\partial \vartheta}{\partial z} \frac{\partial}{\partial \vartheta}
 +
-\frac{\partial \varphi}{\partial z} \frac{\partial}{\partial \varphi}
+\frac{\partial \varphi}{\partial z} \frac{\partial}{\partial \varphi}.
 \end{align*}
 Um also einen Differentialoperator in Kugelkoordinaten ausdr"ucken zu
 k"onnen, m"ussen wir als erstes alle Kugelkoordinaten nach kartesischen
@@ -91,7 +91,7 @@ Ableitungen von $r^2$ aus:
 Der Ausdruck  $r^2$ ist quadratisch in den Koordinaten, und ist damit
 viel einfacher auszurechnen:
 \[
-\frac{\partial r^2}{\partial x}=\frac{\partial}{\partial x}(x^2+y^2+z^2)=2x
+\frac{\partial r^2}{\partial x}=\frac{\partial}{\partial x}(x^2+y^2+z^2)=2x.
 \]
 Damit k"onnen wir jetzt die Ableitungen von $r$ nach den kartesischen
 Koordinaten zusammenstellen
@@ -99,15 +99,15 @@ Koordinaten zusammenstellen
 \begin{aligned}
 \frac{\partial r}{\partial x}
 &=
-\frac1{2r}2x=\frac{x}{r}=\sin\vartheta\cos\varphi
+\frac1{2r}2x=\frac{x}{r}=\sin\vartheta\cos\varphi,
 \\
 \frac{\partial r}{\partial y}
 &=
-\frac1{2r}2y=\frac{y}{r}=\sin\vartheta\sin\varphi
+\frac1{2r}2y=\frac{y}{r}=\sin\vartheta\sin\varphi,
 \\
 \frac{\partial r}{\partial z}
 &=
-\frac1{2r}2z=\cos\vartheta
+\frac1{2r}2z=\cos\vartheta.
 \end{aligned}
 \label{skript:ableitungenvonr}
 \end{equation}
@@ -127,7 +127,7 @@ r \sin\vartheta\frac{\partial \vartheta}{\partial z}
 \frac{\partial\vartheta}{\partial z}
 &=
 -\frac1{r\sin\vartheta}
-\biggl(1-\cos\vartheta\frac{\partial r}{\partial z}\biggr)
+\biggl(1-\cos\vartheta\frac{\partial r}{\partial z}\biggr),
 \\
 &&&&
 \frac{\partial z}{\partial x}
@@ -138,7 +138,7 @@ r \sin\vartheta\frac{\partial \vartheta}{\partial z}
 &&\Rightarrow&
 \frac{\partial\vartheta}{\partial x}
 &=
-\frac{\cos\vartheta}{r\sin\vartheta}\frac{\partial r}{\partial x}
+\frac{\cos\vartheta}{r\sin\vartheta}\frac{\partial r}{\partial x},
 \\
 &&&&
 \frac{\partial z}{\partial y}
@@ -149,7 +149,7 @@ r \sin\vartheta\frac{\partial \vartheta}{\partial z}
 &&\Rightarrow&
 \frac{\partial\vartheta}{\partial y}
 &=
-\frac{\cos\vartheta}{r\sin\vartheta}\frac{\partial r}{\partial y}
+\frac{\cos\vartheta}{r\sin\vartheta}\frac{\partial r}{\partial y}.
 \end{align*}
 Die Ableitungn von $r$ wurden in (\ref{skript:ableitungenvonr}) bereits berechnet,
 und k"onnen hier eingesetzt werden:
@@ -161,19 +161,19 @@ und k"onnen hier eingesetzt werden:
 =
 -\frac{1}{r\sin\vartheta}\sin^2\vartheta
 =
--\frac{\sin\vartheta}{r}
+-\frac{\sin\vartheta}{r},
 \\
 \frac{\partial \vartheta}{\partial x}
 &=
 \frac{\cos\vartheta}{r\sin\vartheta}\sin\vartheta\cos\varphi
 =
-\frac{\cos\vartheta\cos\varphi}{r}
+\frac{\cos\vartheta\cos\varphi}{r},
 \\
 \frac{\partial \vartheta}{\partial y}
 &=
 \frac{\cos\vartheta}{r\sin\vartheta}\sin\vartheta\sin\varphi
 =
-\frac{\cos\vartheta\sin\varphi}{r}
+\frac{\cos\vartheta\sin\varphi}{r}.
 \end{aligned}
 \label{skript:ableitungenvonvartheta}
 \end{equation}
@@ -199,7 +199,7 @@ r\cos\vartheta
 r\sin\vartheta\sin\varphi
 \frac{\partial\varphi}{\partial x}
 \\
-&=\cos^2\varphi-r\sin\vartheta\sin\varphi\frac{\partial\varphi}{\partial x}
+&=\cos^2\varphi-r\sin\vartheta\sin\varphi\frac{\partial\varphi}{\partial x},
 \\
 1-\cos^2\varphi
 &=
@@ -207,7 +207,7 @@ r\sin\vartheta\sin\varphi
 -r\sin\vartheta\sin\varphi\frac{\partial\varphi}{\partial x}
 &\Rightarrow\quad
 \frac{\partial\varphi}{\partial x}
-&=-\frac{\sin\varphi}{r\sin\vartheta}
+&=-\frac{\sin\varphi}{r\sin\vartheta},
 \\
 0=
 \frac{\partial y}{\partial x}
@@ -236,7 +236,7 @@ r\sin\vartheta\cos\varphi
 &\Rightarrow\quad
 \frac{\partial\varphi}{\partial x}
 &=
--\frac{\sin\varphi}{r\sin\vartheta}
+-\frac{\sin\varphi}{r\sin\vartheta}.
 \end{align*}
 Die Ableitung von $\varphi$ nach $y$:
 \begin{align*}
@@ -279,7 +279,7 @@ r\sin\vartheta\sin\varphi
 &\Rightarrow\quad
 \frac{\partial\varphi}{\partial y}
 &=
-\frac{\cos\varphi}{r\sin\vartheta}
+\frac{\cos\varphi}{r\sin\vartheta},
 \\
 1=\frac{\partial y}{\partial y}
 &=
@@ -311,7 +311,7 @@ r\sin\vartheta\cos\varphi
 \sin^2\varphi
 +
 r\sin\vartheta\cos\varphi
-\frac{\partial\varphi}{\partial y}
+\frac{\partial\varphi}{\partial y},
 \\
 1-
 \sin^2\varphi
@@ -322,7 +322,7 @@ r\sin\vartheta\cos\varphi
 \Rightarrow\quad
 \frac{\partial\varphi}{\partial y}
 &=
-\frac{\cos\varphi}{r\sin\vartheta}
+\frac{\cos\varphi}{r\sin\vartheta}.
 \end{align*}
 Ableitungen von $\varphi$ nach $z$:
 \begin{align*}
@@ -355,7 +355,7 @@ r\sin\vartheta\sin\varphi
 \frac{\partial\varphi}{\partial z}
 &\Rightarrow\quad
 \frac{\partial\varphi}{\partial z}
-&=0
+&=0,
 \\
 0=\frac{\partial y}{\partial z}
 &=
@@ -385,7 +385,7 @@ r\sin\vartheta\cos\varphi
 \frac{\partial\varphi}{\partial z}
 &\Rightarrow\quad
 \frac{\partial\varphi}{\partial z}
-&=0
+&=0.
 \end{align*}
 Wir haben alle Ableitungen der Kugelkoordinaten nach kartesischen
 Koordinaten berechnet, und stellen die Resultate in der folgenden
@@ -652,7 +652,7 @@ Wir beginnen mit den zweiten Ableitungen nach $x$:
 +
 \frac1{\sin^2\vartheta}
 \biggr)
-\frac{\partial}{\partial\varphi}
+\frac{\partial}{\partial\varphi}.
 \end{align*}
 Des weiteren die zweiten Ableitungen nach $y$:
 \begin{align*}
@@ -772,10 +772,10 @@ Des weiteren die zweiten Ableitungen nach $y$:
 \frac{\cos^2\vartheta}{\sin^2\vartheta}
 -\frac1{\sin^2\vartheta}
 \biggr)
-\frac{\partial}{\partial\varphi}
+\frac{\partial}{\partial\varphi}.
 \end{align*}
 
-Und abschliessen die zweiten Ableitungen nach $z$:
+Und abschliessend die zweiten Ableitungen nach $z$:
 \begin{align*}
 \frac{\partial^2}{\partial z^2}
 &=
@@ -823,7 +823,7 @@ Und abschliessen die zweiten Ableitungen nach $z$:
 +
 \frac1{r^2}\sin^2\vartheta \frac{\partial^2}{\partial\vartheta^2}
 +
-\frac2{r^2}\sin\vartheta\cos\vartheta \frac{\partial}{\partial\vartheta}
+\frac2{r^2}\sin\vartheta\cos\vartheta \frac{\partial}{\partial\vartheta}.
 \end{align*}
 
 Da wir jetzt alle zweiten Ableitungen ausgerechnet haben, k"onnen wir auch
@@ -951,7 +951,7 @@ r^2\frac{\partial}{\partial r}
 +\frac1{r^2\sin\vartheta}\frac{\partial}{\partial\vartheta}\biggl(
 \sin\vartheta\frac{\partial}{\partial\vartheta}
 \biggr)
-+\frac1{r^2}\frac1{\sin^2\vartheta}\frac{\partial^2}{\partial\varphi^2}
++\frac1{r^2}\frac1{\sin^2\vartheta}\frac{\partial^2}{\partial\varphi^2}.
 \label{skript:laplacekugel}
 \end{align}
 Dies ist die Form des Laplace-Operators in Kugelkoordinaten, die
