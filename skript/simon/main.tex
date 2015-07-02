@@ -18,7 +18,8 @@ entgegen nimmt und einen neuen Bit String liefert
   &f\colon\{0,1\}^n\to\{0,1\}^n
 \end{align*}
 Von Interesse sind Funktionen mit der zus"atzlichen Eigenschaft der
-Periodizit"at, d.h. es soll gelten
+Periodizit"at, welche mit einer XOR-Operation ermittelt werden kann.
+Es soll also gelten
 \begin{align*}
   &f(x \oplus s) = f(x)
 \end{align*}
@@ -142,9 +143,9 @@ werden. Bei einem $n$ Bit String werden also $2^n$ Inputs generiert.
 
 Bei genauer "Uberlegung war beim Beispiel nur $f(000)$ und $f(110)$ relevant.
 Die Funktion muss nur solange aufgerufen werden, bis zwei Werte identisch sind.
-Es gen"ugt daher $2^{n/2}$ Werte auszuprobieren.
-Jedoch muss f"ur alle Werte "uberpr"uft werden, ob die Bedingung der
-Periodizit"at noch gilt.
+Das ist mit $n^{1/2}$ machbar. Da jedoch f"ur alle Werte "uberpr"uft werden muss
+ob die Bedingung der Periodizit"at noch gilt, summiert sich die Anzahl der
+auszuprobierenden Werte auf $2^{n/2}$.
 
 \subsection{Quantencomputer}
 
@@ -313,11 +314,11 @@ Bei der Messung des ersten Registers wird nun ein $n$-Bit langer Wert $z$
 gemessen mit der Bedingung, dass $s \cdot z = 0$ ist. Die Wahrscheinlichkeit
 daf"ur liegt bei:
 \[
-    \biggl|\frac1{\sqrt{2^{n - 1}}}\biggr|^2 = \frac1{2^{n-1}} 
+    \biggl|\frac1{\sqrt{2^{n - 1}}}\biggr|^2 = \frac1{2^{n-1}}
 \]
-Bei genauer "Uberglegung macht dies auch Sinn, denn falls $s \notin \{0,1\}^n$
-ist, gibt es genau $2^{n-1}$ m"oglichen $z$-Werte. Die Wahrscheinlichkeit, einen
-solchen zu messen, ist also gleichverteilt.
+Schliesst man den Spezialfall bei welchem $s = 0$ aus, gibt es genau $2^{n-1}$
+m"oglichen $z$-Werte.  Die Wahrscheinlichkeit, einen solchen zu messen, ist also
+gleichverteilt.
 
 Der Algorithmus von Simon liefert nun einen Wert $z$. Um den genauen Wert von
 $s$ zu bestimmen, wird nun der Algorithmus soviel mal wiederholt, bis $n-1$
@@ -342,13 +343,15 @@ dem Algorithmus von Gauss gel"ost werden.
 \section{Schlussfolgerung}
 \rhead{Schlussfolgerung}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}
   \draw[->] (0,0) -- (10,0) node[right] {$n$};
   \draw[->] (0,0) -- (0,7) node[above] {$\mathcal{O}(\log t(n))$};
   \draw[scale=0.05,domain=-0:200,smooth,variable=\x,black] plot ({\x},{(\x/2)*log2(2)});
   \draw[scale=0.05,domain=1:200,smooth,variable=\y,black]  plot ({\y},{3*log2(\y)});
+  \node [xshift=9.9cm,yshift=6cm] {Klassisch};
+  \node [xshift=10.5cm, yshift=2.2cm] {Quantencomputer};
   \node [xshift=10cm,yshift=5.5cm] {$\mathcal{O}(\log 2^{\frac{n}{2}})$};
   \node [xshift=10cm, yshift=1.7cm] {$\mathcal{O}(\log n^3)$};
 \end{tikzpicture}
