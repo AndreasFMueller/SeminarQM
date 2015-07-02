@@ -10,6 +10,7 @@ einem klassischen Computer gel"ost werden kann. Danach wird der eigentliche
 Algorithmus gezeigt. Schliesslich wird anhand des Laufzeitverhalten aufgezeigt,
 warum dieser Algorithmus von so grosser Bedeutung ist.
 \section{Problem}
+\rhead{Problem}
 Gegeben ist eine unbekannte Funktion $f$, welche einen $n$-Bit langen String
 entgegen nimmt und einen neuen Bit String liefert
 \cite{simon:cse599d-dave-bacon}. Formal ausgedr"uckt bedeutet dies:
@@ -61,8 +62,8 @@ Der Spezialfall von $s = 0$ ist dabei nicht interessant, denn $f(x \oplus 0)
  \end{tikzpicture}
 \end{figure}
 Daraus resultiert, dass eine weitere Einschr"ankung bez"uglich der Blackbox
-Funktion $f$ gemacht werden muss: Nur 2--1 Funktionen, daher f"ur jedes $f(x)$
-gibt es genau zwei $x$, sind von Interesse. Ein m"ogliches Beispiel mit
+Funktion $f$ gemacht werden muss: Nur zwei-zu-eins Funktionen sollen zugelassen sein, sodass es f"ur jeden Wert $y$
+genau zwei $x$ gibt, f"ur die $y=f(x)$. Ein m"ogliches Beispiel mit
 Periode $s = 110$ ist:
 \begin{figure}[H]
  \centering
@@ -102,9 +103,10 @@ Periode $s = 110$ ist:
   \draw[->,thick,shorten <=2pt,shorten >=2] (aa8) -- (bb5);
  \end{tikzpicture}
 \end{figure}
-Die Frage ist nun, wenn eine Blackbox Funktion $f$ gegeben ist, was ist die
+Die Frage ist nun, wenn eine solche Blackbox Funktion $f$ gegeben ist, was ist die
 Periode $s$. 
 \section{L"osung}
+\rhead{L"osung}
 
 \subsection{Klassisch}
 
@@ -116,19 +118,19 @@ f"ur eine Beispielfunktion $f$ die Resultate.
     \hline
      $x$   & $f(x)$ \\ \hline
      000 & 000  \\ \hline
-     011 & 010  \\ \hline
-     101 & 100  \\ \hline
-     111 & 110  \\ \hline
-     001 & 000  \\ \hline
-     010 & 010  \\ \hline
-     100 & 100  \\ \hline
-     110 & 110  \\ \hline
+     001 & 100  \\ \hline
+     010 & 110  \\ \hline
+     011 & 001  \\ \hline
+     100 & 110  \\ \hline
+     101 & 001  \\ \hline
+     110 & 000  \\ \hline
+     111 & 100  \\ \hline
      \hline
     \end{tabular}
 \end{center}
 Was ist nun die Periode? Die Frage l"asst sich einfach beantworten. Es m"ussen
 nur zwei Werte $f(x)$ gefunden werden, die identisch sind. In diesem Beispiel
-sind es $f(000) = 000$ und $f(001) = 000$. 
+sind es $f(000) = 000$ und $f(110) = 000$. 
 Nun ist aber nicht klar, dass diese Funktion periodisch ist. F"ur jeden Wert
 muss nun "uberpr"uft werden, ob die folgende Bedingung gilt:
 \[
@@ -138,10 +140,10 @@ Wie effizient ist dieser Algorithmus? Es m"ussen alle m"oglichen Eingaben
 ausprobiert werden, womit bei der L"ange $3$ insgesamt $2^3$ Inputs generiert
 werden. Bei einem $n$ Bit String werden also $2^n$ Inputs generiert. 
 
-Bei genauer "Uberlegung war beim Beispiel nur $f(000)$ und $f(001)$ relevant.
+Bei genauer "Uberlegung war beim Beispiel nur $f(000)$ und $f(110)$ relevant.
 Die Funktion muss nur solange aufgerufen werden, bis zwei Werte identisch sind.
 Es gen"ugt daher $2^{n/2}$ Werte auszuprobieren.
-Jedoch m"uss f"ur alle Werte "uberpr"uft werden, ob die Bedingung der
+Jedoch muss f"ur alle Werte "uberpr"uft werden, ob die Bedingung der
 Periodizit"at noch gilt.
 
 \subsection{Quantencomputer}
@@ -149,10 +151,10 @@ Periodizit"at noch gilt.
 Auf einem Quantencomputer kann dieses Problem effizienter gel"ost werden.
 Daf"ur wurde ein Algorithmus von Daniel R. Simon vorgestellt, welcher im
 Folgenden genauer erkl"art wird.
-Die Grundidee des Algorithmus ist es alle m"oglichen Werte von $x$ auf einmal
+Die Grundidee des Algorithmus ist, alle m"oglichen Werte von $x$ auf einmal
 auszuprobieren und zwei Werte f"ur $f(x)$ zu finden, die identisch sind.
 F"ur den Algorithmus sind zwei Register notwendig. Als erstes werden diese mit
-0 initialisiert.
+0 initialisiert:
 \begin{align*}
   |a\rangle&=|0 \dots 0 \rangle 
   &
@@ -182,13 +184,13 @@ Register deren $f(a)$. Nun wird das zweite Register gemessen, der gemessene Wert
 sei $y$. 
 Gleichzeitig wird auch das erste Register $|a\rangle$ beeinflusst.
 M"ogliche Werte in diesem Register sind alle die von $f$ auf $y$ abgebildet
-werden. Weil $f$ 2--1 und periodisch mit Periode $s$ ist, gibt es genau zwei
+werden. Weil $f$ zwei-zu-eins und periodisch mit Periode $s$ ist, gibt es genau zwei
 m"ogliche Werte $x$ und $x \oplus s$. Das erste Register befindet sich folglich
-in einem "Uberlagerungszustand. 
+in einem "Uberlagerungszustand
 \begin{align*}
   |a\rangle &= \frac{1}{\sqrt{2}} \bigl( |x\rangle + |x \oplus s \rangle \bigr)
   &
-  |b\rangle &= |y\rangle
+  |b\rangle &= |y\rangle.
 \end{align*}
 Dies sagt aus, dass bei der Messung des ersten Registers entweder $x$ oder $x
 \oplus s$ herausgelesen wird. Das Problem ist nun, dass es sich nicht
@@ -254,7 +256,7 @@ bin"ares Skalarprodukt handelt.
 \begin{hilfssatz}
   Die rechte Seite von (\ref{simon:smalz}) wird je nach Wert von $s \cdot z$
   \[
-    \begin{cases}
+    =\begin{cases}
       0 & \qquad s \cdot z = 1 \\
      \displaystyle \frac1{\sqrt{2^{n - 1}}} \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot
      z}|z\rangle } & \qquad s \cdot z = 0
@@ -300,22 +302,22 @@ Der zweite Fall ist $s \cdot z = 0$, dann gilt:
       \sum_{z \in \{0,1\}^n}  { (-1)^{x \cdot z}|z\rangle } 
 \end{align*}
 \end{proof}
-Dies zeigt, dass die Wahrscheinlichkeit diesen Fall zu messen gleich 0 ist und
+Dies zeigt, dass die Wahrscheinlichkeit, diesen Fall zu messen, gleich 0 ist und
 somit nie auftritt. 
-Mit diesem Trick wird nun ein Wert $z$ gemessen mit der Eigenschaft:
+Mit diesem Trick wird nun ein Wert $z$ gemessen mit der Eigenschaft
 \[
-    s \cdot z = 0
+    s \cdot z = 0.
 \]
 
-Bei der Messung des ersten Registers wird nun ein n-String langer Wert $z$
+Bei der Messung des ersten Registers wird nun ein $n$-Bit langer Wert $z$
 gemessen mit der Bedingung, dass $s \cdot z = 0$ ist. Die Wahrscheinlichkeit
 daf"ur liegt bei:
 \[
     \biggl|\frac1{\sqrt{2^{n - 1}}}\biggr|^2 = \frac1{2^{n-1}} 
 \]
 Bei genauer "Uberglegung macht dies auch Sinn, denn falls $s \notin \{0,1\}^n$
-ist, gibt es genau $2^{n-1}$ m"oglichen $z$-Werte. Die Wahrscheinlichkeit einen
-solchen zu messen ist also gleichverteilt.
+ist, gibt es genau $2^{n-1}$ m"oglichen $z$-Werte. Die Wahrscheinlichkeit, einen
+solchen zu messen, ist also gleichverteilt.
 
 Der Algorithmus von Simon liefert nun einen Wert $z$. Um den genauen Wert von
 $s$ zu bestimmen, wird nun der Algorithmus soviel mal wiederholt, bis $n-1$
@@ -338,6 +340,7 @@ dem Algorithmus von Gauss gel"ost werden.
 \end{align*}
 
 \section{Schlussfolgerung}
+\rhead{Schlussfolgerung}
 
 \begin{figure}
 \centering
