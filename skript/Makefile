@@ -70,13 +70,17 @@ BLXFILES = skript1-blx.bbl skript2-blx.bbl skript3-blx.bbl skript4-blx.bbl \
 	skript13-blx.bbl skript14-blx.bbl skript15-blx.bbl skript16-blx.bbl \
 	skript17-blx.bbl
 
-imagetimestamps = tunneldiode_timestamp
+imagetimestamps = tunneldiode_timestamp bose_timestamp
 
 articleimages:	$(imagetimestamps)
 
 tunneldiode_timestamp:
 	cd tunneldiode; make
 	touch tunneldiode/timestamp
+
+bose_timestamp:
+	cd bose; make
+	touch bose/timestamp
 
 skript.pdf:	articleimages skript.tex $(TEXFILES) skript.ind $(IMAGES) \
 			$(BLXFILES)
