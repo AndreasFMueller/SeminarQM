@@ -11,7 +11,6 @@ Das Ziel ist ein einfaches Modell f"ur den Schreib- und Lesevorgang
 n"aherzubringen.
 
 \subsection{Floating Gate Transistor}
-\rhead{Floating Gate Transistor}
 Floating Gate Transistoren z"ahlen zu den Feldeffekttransistoren
 (Siehe Abbildung \ref{skript:Floatinggatetransistor}).
 \index{Floating Gate Transistor}%
@@ -36,13 +35,11 @@ Drain wird beim Leseprozess auf 0V verbunden und beim Schreibprozess
 \end{figure}
 
 \subsection{Flash-Typen}
-\rhead{Flash-Typen}
 Bei den Flash-Speichern wird zwischen zwei Typen unterschieden, den NAND
 und den NOR Typen.
 Diese unterscheiden sich in der Zusammenschaltung der einzelnen Transistoren.
 
 \subsubsection{NAND Typ}
-\rhead{NAND Typ}
 Bei einem NAND Flash-Speicher werden die einzelnen Transistoren zu einer
 NAND Speicherzelle zusammen geschaltet.
 Die Speicherzellen werden in Gruppen in Serie geschaltet.
@@ -57,7 +54,6 @@ Verwendung finden sie vor allem in USB-Sticks, Flash-Speicherkarten
 (z.B. SD-Speicherkarten) und als Speicher in MP3-Playern.
 
 \subsubsection{NOR Typ}
-\rhead{NOR Typ}
 \index{NOR Flash}%
 Bei einem NOR Flash-Speicher werden die Transistoren zu einer NOR
 Speicherzelle zusammen geschaltet.
@@ -69,7 +65,6 @@ Die NOR Flash-Speicher finden z.B. bei Programmspeichern und Firmwarespeichern
 ihre Verwendung.
 
 \subsection{L"oschvorgang}
-\rhead{Lo"schvorgang}
 \index{NAND Flash}%
 Der L"oschvorgang kann erreicht werden, indem das Potential am 
 Control Gate heruntergesetzt wird.
@@ -78,7 +73,6 @@ aus dem Floating Gate ab.
 Alles zum Tunneleffekt kann im Kapitel \ref{tunnel:tunneleffekt} nachgelesen werden.
 
 \subsection{Schreibvorgang und Zyklenzahl}
-\rhead{Schreibvorgang und Zykklenzahl}
 F"ur den Speichervorgang m"ussen Elektronen mittels 'hot electron injection'
 in das Floating-Gate gebracht werden. Ein grosses Problem bei
 Flashspeichern ist die begrenzte Anzahl Schreibezyklen.
@@ -96,7 +90,7 @@ dadurch immer ein bisschen an Speicher verloren geht.
 
 \section{Modell f"ur den Schreibvorgang}
 \subsection{Modell des Potentialtopfs und der Anregung}
-\rhead{Modell des Potentialtopfs und der Anregung}
+\rhead{Modell f"ur den Schreibvorgang}
 F"ur den Floating Gate Transistor wird ein vereinfachtes Modell
 gew"ahlt um die Funktionsweise und die Berechnung besser zu illustrieren.
 Als Modell f"ur das Floating-Gate wird ein Potentialtopf verwendet,
@@ -171,7 +165,6 @@ einem Flashspeicher
 \end{figure}
 
 \subsection{"Ubergangswahrscheinlichkeit}
-\rhead{"Ubergangswahrscheinlichkeit}
 Es wird die Wahrscheinlichkeit errechnet, mit der die Teilchen
 vom Grundzustand $|0\rangle$ in den Zustand $|1\rangle$ wechseln
 und damit Energie aufnehmen. 
@@ -179,7 +172,6 @@ Diese Wahrscheinlichkiet ist $\vert\langle1|\psi(t)\rangle\vert^2$
 daher muss zuerst $\langle1|\psi(t)\rangle$ berechnet werden.
 
 \subsection{L"osung der Schr"odingergleichung}
-\rhead{L"osung der Schr"odingergleichung}
 Die Schr"odingergleichung ergibt sich aus der kinetischen Energie des
 Potentialtopfes und der potentiellen Energie der Anregung.
 Mit der Schr"odingergleichung wird nicht die Energie der Elektronen
@@ -210,7 +202,6 @@ i\hbar\frac{d}{dt}\langle0|\psi(t)\rangle = E_{0}\langle0|\psi(t)\rangle+\langle
 \]
 
 \subsection{Skalarprodukt}
-\rhead{Skalarprodukt}
 
 Mittels Skalarprodukt kann das Differentialgleichungssystem weiter
 vereinfacht werden.
@@ -238,7 +229,6 @@ i\hbar\dot{a}_1&= V_{0} v_{10} a_{0} + (E_{1} V_{0} v_{11}) a_{1}
 \end{align}
 
 \subsection{Variation der Konstanten}
-\rhead{Variation der Konstanten}
 Die L"osung der Differentialgleichung oszilliert schnell, da die
 Frequenz der Gundschwingung sehr gross ist.
 Diese Oszillation kann jedoch heraus gefiltert werden, indem man die
@@ -267,7 +257,6 @@ k(t) = \int D(t) e^{-C t} dt
 \]
 
 \subsection{Variation der Konstanden f"ur zwei Differentialgleichungen}
-\rhead{Variation der Konstanden f"ur zwei Differentialgleichungen}
 Angewandt auf das Differentialgleichungssystem,
 wobei $C_{00}$ $(E_{0} + V_{0} v_{00})$
 entspricht,
@@ -353,7 +342,6 @@ verwendet werden.
 \end{figure}
 
 \subsection{Numerische Resultate}
-\rhead{Numerische Resultate}
 In der Abbildung \ref{skript:potentialmittel}, sieht man in der unteren
 Grafik, dass man nach ca. 0.02s sagen kann das der Zustand $|0\rangle$, 
 respektive in der oberen Grafik der Zustand $|1\rangle$ erreicht wird.
