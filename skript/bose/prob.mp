@@ -65,7 +65,8 @@ def common =
 	drawarrow (z0 shifted (0,-10))--(z3 shifted (0,10));
 
 	label.top(btex $v$ etex, z2 shifted (10,0));
-	label.lft(btex $\frac{1}{\pi\sqrt{kT}}e^{-E(v)/kT}$ etex, z3 shifted (0,10));
+%	label.lft(btex $\frac{1}{\pi\sqrt{kT}}e^{-E(v)/kT}$ etex, z3 shifted (0,10));
+label.lft(btex Wahrscheinlichkeitsdichte etex, z3 shifted (0,10));
 enddef;
 
 def drawgraph(expr s) =
