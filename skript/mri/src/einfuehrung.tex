@@ -1,14 +1,27 @@
-
-MRI (Magnetic Resonance Imaging) ist ein Verfahren, in dem die Protonendichte von dreidimensionalen Objekten gemessen werden und als Bilder dargestellt werden kann. Dazu werden die magnetisches Eigenschaften von Protonen genutzt, um sie in Resonanz zu bringen. Im Englischen ist dieses unter dem Begriff NMR (Nuclear Magnetic Resonance) bekannt. 
+{\parindent 0pt % this is a hack to remove the indentation from the paragraph
+                % normally, the first paragraph is not indented, but this
+                % paragraph is preceded by an image, which makes it 
+                % technically not the first paragraph
+MRI }(Magnetic Resonance Imaging) ist ein Verfahren, in dem die
+\index{MRI}
+Protonendichte von dreidimensionalen Objekten gemessen werden und
+als Bilder dargestellt werden kann. Dazu werden die magnetisches
+Eigenschaften von Protonen genutzt, um sie in Resonanz zu bringen.
+Im Englischen ist dieses unter dem Begriff NMR (Nuclear Magnetic
+Resonance) bekannt.
+\index{NMR}
+\index{Nuclear Magnetic Resonance}
 In den folgenden Kapiteln wird gezeigt, wie die Protonendichte gemessen und wie sie als Bilder dargestellt werden kann. Es werden verschiedene Anwendungen vorgestellt und erkl"art.
 
 \section{Klassisches Modell}
-
+\rhead{Klassisches Modell}
 In diesem Abschnitt soll das Prinzip des MRI mit Hilfe eines klassischen Modells des Verhaltens eines Protons im Magnetfeld erkl"art werden. Eine quantenmechanischen Beschreibung wird in Abschnitt \ref{sec:quant} gegeben. 
 
 	\subsection{Protonen im Magnetfeld}
 	
 	Protonen k"onnen im klassischem Modell als rotierende Stabmagnete modelliert werden. Jedes dieser Magnete hat dadurch ein magnetisches Dipolmoment $\vec{\mu}$. Um das magnetischen Dipolmoment in einem Magnetfeld $\vec{B}$ zu drehen, ist eine Kraft n"otig, es muss Arbeit geleistet werden. Die Energie h"angt somit vom Winkel $\theta$ zwischen Magnetfeld und Dipolmoment ab gem"ass der Formel
+\index{Dipolmoment}
+\index{magnetisches Dipolmoment}
 	\begin{equation}
 		E_{\text{pot}}= -\vec{\mu} \cdot\vec{B} = -\mu B\cos\theta.
 	\end{equation}
@@ -16,7 +29,7 @@ In diesem Abschnitt soll das Prinzip des MRI mit Hilfe eines klassischen Modells
 %	Wie sich in Kapitel \ref{sec:quant} zeigen wird, ist der exakte Winkel für die weiteren Berechnungen nicht entscheidend.
 	
 	\subsection{Larmor-Pr"azession}
-	
+\index{Larmor-Pr"azession}	
 	Bis jetzt wurde der Drehimpuls des Protons nicht ber"ucksichtigt. 
 	Wenn sich nun ein Proton in einem Magnetfeld $\vec{B}$ befindet, versucht dieses den Drehimpuls auszurichten. Das Proton beginnt zu pr"azedieren.
 	Diese Pr"azession heisst, nach dem irischen Physiker Joseph Larmor, Larmorpr"azession. Die Frequenz der Pr"azessionsbewegung wird Lamrorfrequenz $f_{\text{Larmor}}$ genannt \cite{wiki:larmorpraezession}. Sie ist abh"angig von der externen magnetischen Flussdichte $\vec{B_0}$ und von den magnetischen Dipolmoment. Bei einem Proton sind das Dipolmoment und der Drehimpuls gekoppelt. Dies f"uhrt zu folgenden Gleichung:
@@ -24,6 +37,7 @@ In diesem Abschnitt soll das Prinzip des MRI mit Hilfe eines klassischen Modells
 	f_{\text{Larmor}} = \dfrac{\gamma B_0}{2\pi}\label{eq:larmorf}
 	\end{equation}
 	Das gyromagnetische Verh"altnis $\gamma$ variiert je nach Teilchenart. Im klassischen Modell ist dieses Verh"altnis eine Materialkonstante, die nicht aus klassischen Grundprinzipien hergeleitet werden kann.
+\index{gyromagnetisches Verhaltnis@gyromagnetisches Verh\"altnis}
 	
 	Aus Gleichung \ref{eq:larmorf} ist erkennbar, dass die Larmorfrequenz nicht vom Winkel $\theta$ abh"angig ist.
 
@@ -60,8 +74,9 @@ In diesem Abschnitt soll das Prinzip des MRI mit Hilfe eines klassischen Modells
 
 	\begin{figure}
 		\centering
-		\includegraphics[width = 6cm]{./mri/pic/mri_scanner.jpg} 
-		\includegraphics[width = 6cm]{./mri/pic/gradientfield.png}
+		\includegraphics[width=0.48\hsize]{./mri/pic/mri_scanner.jpg} 
+		\quad
+		\includegraphics[width=0.48\hsize]{./mri/pic/gradientfield.jpg}
 		\caption{Links die Hauptbestandteile eines MRI-Scanners und rechts die Zusammensetzung der verschiedenen Spulen \cite{MRIScanner}\cite{gradients}.}
 		\label{fig:MRIScanner}
 	\end{figure}

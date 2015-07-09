@@ -1,9 +1,11 @@
 \section[Quantenmechanik]{Quantenmechanik\footnote{\cite{MRI:quanten}}}
 \label{sec:quant}
+\rhead{Quantenmechanik}
 In diesem Abschnitt wird genauer auf die quantenmechanischen Abl"aufe bei der Magnetresonanztomographie eingegangen, wobei die vorher erl"auterten Grundlagen nur ein klassisches Model sind und wenig mit der Realit"at gemein haben. Die Quantenmechanik erkl"art die realen Abl"aufe.
 
 
 \subsection{Spin}
+\index{Spin}
 Die Grundlagen des Spins sind im Kapitel \ref{chapter:spin} erl"autert. Ein wichtiger Unterschied zur klassischen Physik ist, dass der Spin den Drehimpuls und das magnetische Moment zusammenkoppelt.
 
 Es wird hier gezeigt, wie der Spin eines Wasserstoffatoms in einem Magnetfeld berechnet werden kann. Der daf"ur verwendete Hamilton Operator sieht f"ur ein Elektron wie folgt aus:
@@ -17,9 +19,10 @@ Wobei $\vec{S}$ der Spin ist und $\vec{B}$ das Magnetfeld.
 	\caption{Aufspaltungen der Wasserstoffniveaus unter Einfluss eines Magnetfeldes \cite{Zeeman}}
 	\label{mri:quant:abb:zeeman}
 \end{figure}
+\index{Zeeman-Effekt}
 In dem Kapitel \ref{chapter:atomuhr} wurde auf die Feinstruktur"uberg"ange eingegangen. Die Abbildung \ref{mri:quant:abb:zeeman} zeigt genau diese "Uberg"ange f"ur ein Elektron auf. Da bei der Magnetresonanztomographie aber die Protonen entscheiden sind dient die Abbildung \ref{mri:quant:abb:zeeman} nur als Veranschaulichung des Prozesses. Es wird der Hamiltonoperator f"ur ein Proton ben"otigt, dieser sieht wie folgt aus:
 \begin{equation}
-H = H_0 + \frac{e}{m_p }\cdot \vec{-S} \cdot \vec{B}
+H = H_0 - \frac{e}{m_p }\cdot \vec{S} \cdot \vec{B}
 \label{mri:hamilton}
 \end{equation}
 Der Term $H_0$ beschreibt den Hamiltonoperator ohne der St"orung durch ein Magnetfeld. Er stellt den Grundzustand des Protons dar. Wobei $H_0$ wie folgt definiert ist:
@@ -40,16 +43,17 @@ H_1 = -\frac{\hbar e}{2m_p} \cdot B_z \begin{pmatrix}
 \end{pmatrix}
 \end{equation}
 Aus diesem St"orterm kann nun mit der Hilfe der St"orungstheorie zwei verschiedenen Energieniveaus berechnet werden.
+\index{Storungstheorie@St\"orungstheorie}
 \begin{equation}
 E_\downarrow^{(1)}
 =
 \langle \downarrow|\, H_1 \,|\downarrow\rangle
-=-\frac{\hbar e}{2m_p}
+=-\frac{\hbar e}{2m_p},
 \qquad
 E_\uparrow^{(1)}
 =
 \langle \uparrow|\, H_1 \,|\uparrow\rangle
-=\frac{\hbar e}{2m_p}
+=\frac{\hbar e}{2m_p}.
 \end{equation}
 Der Energieunterschied ist nun also:
 \begin{equation}
@@ -61,16 +65,21 @@ Der Zusammenhang mit der klassischen Physik ist nun in der Larmorfrequenz  zu fi
 \end{equation}
 
 \subsubsection{Einsteinsche Koeffizienten}
+\index{Einstein-Koeffizienten}%
 Mit der Hilfe der einsteinschen Koeffizienten kann das Prinzip wie folgt erkl"art werden.
 \begin{figure}
 	\centering
-	\includegraphics[width= 0.3\textwidth]{./mri/pic/einsteinischeKoeffizienten}
+	%\includegraphics[width= 0.3\textwidth]{./mri/pic/einsteinischeKoeffizienten}
+	\includegraphics{./mri/pic/einsteinischeKoeffizienten}
 	\caption{"Ubergang $m=+1/2 \longleftrightarrow m=-1/2$}
 	\label{mri:relax}
 \end{figure}
 Betrachtet man die beiden Niveaus $m= -1/2$ und $m= +1/2$ in der Abbildung \ref{mri:relax} f"ur den Kernspin $1/2$ ($^1H$) so findet der einzig m"ogliche Resonanzausgleich zwischen den beiden Energieniveaus statt. 
 
 \subsection{Zeitabh"angige Prozesse}
+\index{Relaxationszeit}%
+\index{Relaxationszeit!$T_1$}%
+\index{Relaxationszeit!$T_2$}%
 Zur Erkl"arung der vorg"angig mit der klassischen Physik erl"auterten Relaxationszeiten $T_1$ und $T_2$ werden zeitabh"angige Prozesse ben"otigt. F"ur die Relaxationszeit $T_1$ wird die zeitabh"angige Schr"odingergleichung verwendet:
 \begin{equation}
 \frac{\hbar}{i} \frac{\partial}{\partial x} |\psi\rangle = H\,|\psi\rangle + \text{Wechselwirkung mit der Umgebung}
@@ -83,18 +92,20 @@ $H$ ist in der Formel \ref{mri:hamilton} ersichtlich, dabei ist der zeitabh"angi
 Wobei $\vec{B}(t)$ das wechselgerichtete Magnetfeld des Hochfrequenzimpulses ist.
 
 Bei der Wechselwirkung mit der Umgebung handelt es sich um die sogenannte Spin-Gitter-Wechselwirkung. Durch diese Wechselwirkung mit den in der Umgebung des Protons angesiedelten Atomen und Molek"ulen l"asst sich die Relaxationszeit erkl"aren. Die Zeit $T_1$ ist also nicht nur auf das Proton alleine zur"uckzuf"uhren, sondern auch auf die Atome in der Umgebung und dem Hochfrequenzimpuls.
+\index{Spin-Gitter-Wechselwirkung}%
+\index{Relaxationszeit!longitudinal}
 
 \subsubsection{Relaxationszeit $T_2$}
-
 Die Transversale  Relaxationszeit $T_2$ wird bestimmt durch statistische Gegebenheiten der Protonen. Das heisst, dass die Zeiten mehrerer Protonen ausgewertet werden. Mit der Theorie in diesem Skript kann die Relaxationszeit $T_2$ nicht beschrieben werden. Dazu w"are die Quantenmechanik mehrerer wechselwirkender Teilchen notwendig. 
+\index{Relaxationszeit!transversal}
 
 Zur Veranschaulichung zeigt die Tabelle \ref{mri:quant:tab:zeiten} einige Relaxationszeiten f"ur verschiedene Gewebearten.
 
 \begin{table}
 	\centering
-		\begin{tabular}{|c|c|c|}
+		\begin{tabular}{|l|c|c|}
 			\hline
-			(bei $\vec{B}$ = 1.5 T) & $T_1$ (ms) & $T_2$ (ms) \\
+			Gewebeart & $T_1$ (ms) & $T_2$ (ms) \\
 			\hline
 			Lunge & 830 & 79 \\
 			Leber & 490 & 43 \\
@@ -103,7 +114,8 @@ Zur Veranschaulichung zeigt die Tabelle \ref{mri:quant:tab:zeiten} einige Relaxa
 			Fett & 260 & 84 \\	
 			\hline	
 		\end{tabular}
-		\caption{Unterschiedliche Relaxationszeiten verschiedener Gewebearten}
+		\caption{Unterschiedliche Relaxationszeiten verschiedener
+			Gewebearten bei $|\vec{B}|$ = 1.5 T}
 		\label{mri:quant:tab:zeiten}
 \end{table}
 %TODO Relaxation T_1
