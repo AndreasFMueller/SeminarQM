@@ -20,7 +20,7 @@ Angefangen bei der klassischen Kommunikation, kann man die Informations"ubertrag
 \label{Klassische Kommunikation}
 \end{figure}
 \subsection{Quantenmechanisches Problem}
-Das Problem in der Quanteninformatik ist, dass der Zustand eines Teilchens nicht ohne Weiteres von Alice zu Bob "ubertragen werden kann. Besitzt Alice ein Teilchen im Zustand $\left|\phi\right\rangle$, kann sie dessen Zustand nicht ohne weiteres an Bob "ubertragen. Der naive Versuch einfach das Teilchen zu "ubertragen, birgt verschiedene technische Schwierigkeiten mit sich. Es ist "ausserst schwierig, ein Teilchen unver"andert "uber gr"ossere Distanzen zu transportieren. F"ur den gesamten Transportweg m"ussten s"amtliche Wechselwirkungen eliminiert werden. 
+Das Problem in der Quantenmechanik ist, dass der Zustand eines Teilchens nicht ohne Weiteres von Alice zu Bob "ubertragen werden kann. Besitzt Alice ein Teilchen im Zustand $\left|\phi\right\rangle$, kann sie dessen Zustand nicht ohne weiteres an Bob "ubertragen. Der naive Versuch einfach das Teilchen zu "ubertragen, birgt verschiedene technische Schwierigkeiten mit sich. Es ist "ausserst schwierig, ein Teilchen unver"andert "uber gr"ossere Distanzen zu transportieren. F"ur den gesamten Transportweg m"ussten s"amtliche Wechselwirkungen eliminiert werden. 
 
 Die Heisenbergschen Unsch"arferelation zeigt ausserdem, dass es Alice unm"oglich ist, das zu "ubertragende Teilchen so zu messen, dass Bob daraus den Originalzustand rekonstruieren k"onnte (Reduktionspostulat). Nehmen wir zur Illustration die Polarisationsrichtung eines Photons. Das Photon befindet sich in einem Zustand $\left|\phi\right\rangle$, welcher eine Superposition aus den Zust"anden $\left|\leftrightarrow\right\rangle$ (horizontal polarisiert) und $\left|\updownarrow\right\rangle$ (vertikal polarisiert) darstellt. Das System $\left|\phi\right\rangle$ l"asst sich somit formal schreiben als
 \begin{align}\label{eq:qubit1}
@@ -54,7 +54,7 @@ Auch wenn die Heisenbergsche Unsch"arferelation dem Vorhaben von Alice, ein Teil
 
 \subsection{Voraussetzungen}
 
-Voraussetzung f"ur den Quantenteleportationsprozess ist, dass Alice und Bob je ein Teilchen eines verschr"ankten Paares besitzen, die Teilchen $T_{2}$ und $T_{3}$. Da die beiden Teilchen  verschr"ankt sind, lassen sie sich nur gemeinsam beschreiben, der Zustand der einzelnen Teilchen l"asst sich allerdings nicht bestimmen. Die beiden Teilchen k"onnen sich in einem von vier verschr"ankten Paarzust"anden befinden, den sogenannten Bell States. Im Abschnitt~\ref{sec:bell-states} werden diese noch genauer angeschaut und sind f"ur das Verst"andnis des Quantentelportationsprozesses vorerst noch nicht relevant. Man behalte sich allerdings im Hinterkopf, dass sich alle verschr"ankten Paare w"ahrend dem Prozess in einem Bellschen Zustand befinden.
+Voraussetzung f"ur den Quantenteleportationsprozess ist, dass Alice und Bob je ein Teilchen eines verschr"ankten Paares besitzen, die Teilchen $T_{2}$ und $T_{3}$. Da die beiden Teilchen  verschr"ankt sind, lassen sie sich nur gemeinsam beschreiben, der Zustand der einzelnen Teilchen l"asst sich allerdings nicht bestimmen. Die beiden Teilchen k"onnen sich in einem von vier verschr"ankten Paarzust"anden befinden, den sogenannten Bell States. Im Abschnitt~\ref{sec:bell-states} werden diese noch genauer angeschaut, sind f"ur das Verst"andnis des Quantenteleportationsprozesses vorerst jedoch nicht relevant. Man behalte sich allerdings im Hinterkopf, dass sich alle verschr"ankten Paare w"ahrend dem Prozess in einem Bellschen Zustand befinden.
 
 Ein solches verschr"anktes Paar in einem Bell State nennt sich auch EPR-Paar. F"ur unser Beispiel nehmen wir an, dass sich das Paar in folgendem Zustand befindet:
 \index{EPR-Paar}%
@@ -70,7 +70,7 @@ Nun erh"alt Alice ein Teilchen $T_{1}$ im unbekannten Zustand $\left|\phi\right\
 
 Wir betrachten im Abschnitt~\ref{sec:bell-measurement} genauer, was bei dieser Messung geschieht. F"ur diese Erl"auterung ist wichtig, was bei der Bell-Messung am Ende herauskommt. Das Ergebnis der Bell-Messung sagt uns, in welchem der vier Bell States sich die beiden Teilchen befinden. Befinden sich die Teilchen nicht bereits in einem solchen Zustand, werden sie auf einen Bellschen Zustand projiziert. Da alle Bell States verschr"ankt sind, ist die Bell-Messung auch eine verschr"ankende Operation.
 
-Die Teilchen $T_{1}$ und $T_{2}$ sind also neu miteinander verschr"ankt, was bedeutet, dass $T_{1}$ seinen Identit"at verliert und nur noch gemeinsam mit $T_{2}$ beschreibbar ist. Der Zustand von $T_{1}$ und $T_{2}$ l"asst sich genau mit dem in der Messung erhaltenen Bell State beschreiben. 
+Die Teilchen $T_{1}$ und $T_{2}$ sind also neu miteinander verschr"ankt, was bedeutet, dass $T_{1}$ seine Identit"at verliert und nur noch gemeinsam mit $T_{2}$ beschreibbar ist. Der Zustand von $T_{1}$ und $T_{2}$ l"asst sich genau mit dem in der Messung erhaltenen Bell State beschreiben. 
 
 Gleichzeitig sind auch die Teilchen $T_{2}$ und $T_{3}$ noch miteinander verschr"ankt, und zwar im Zustand (\ref{eq:bell_state1}). Wie erw"ahnt handelt es sich auch bei dieser Gleichung um einen Bellschen Zustand.
 
@@ -83,7 +83,7 @@ Die Teilchen $T_{1}$ und $T_{2}$ befinden sich somit im selben Bell State $\left
 \subsection{Bellsche Zust"ande}\label{sec:bell-states}
 \index{Bellsche Zustande@Bellsche Zust\"ande}%
 
-Im Abschnitt~\ref{sec:teleportation} wurde das grunds"atzliche Konzept der Quantenteleportation erl"autert. Dabei wurde allerdings die Bellsche Zustandsmessung bewusst weggelassen. Diese ist "ausserst zentral bei der Quantenteleportation, dabei wird einerseits das zu teleportierende Teilchen $T_{1}$ mit $T_{2}$ verschr"ankt, welches Teil des Bell Paares ist, das sich Alice und Bob teilen. Andererseits ergibt sie als Resultat auch den Bellschen Zustand, in welchem sich die Teilchen $T_{1}$ und $T_{2}$ befinden. Dies erlaubt es Bob "uberhaupt, den urspr"unglichen Zustand in $T_{3}$ wiederherzustellen. Die Bellsche Zustandsmessung stellt sich bei der experimentellen Realisierbarkeit als "ausserst Komplex heraus und ist eines der Hauptprobleme der Quantenteleporation. Darauf wird in diesem Rahmen aber nicht eingegangen.
+Im Abschnitt~\ref{sec:teleportation} wurde das grunds"atzliche Konzept der Quantenteleportation erl"autert. Dabei wurde allerdings die Bellsche Zustandsmessung bewusst weggelassen. Diese ist "ausserst zentral bei der Quantenteleportation. Einerseits wird dabei das zu teleportierende Teilchen $T_{1}$ mit $T_{2}$ verschr"ankt, welches Teil des Bell Paares ist, das sich Alice und Bob teilen. Andererseits ergibt sie als Resultat auch den Bellschen Zustand, in welchem sich die Teilchen $T_{1}$ und $T_{2}$ befinden. Dies erlaubt es Bob "uberhaupt, den urspr"unglichen Zustand in $T_{3}$ wiederherzustellen. Die Bellsche Zustandsmessung stellt sich bei der experimentellen Realisierbarkeit als "ausserst Komplex heraus und ist eines der Hauptprobleme der Quantenteleporation. Darauf wird in diesem Rahmen aber nicht eingegangen.
 
 Das Resultat der Bell Messung ist einer der vier Bell States. Diese vier Bell States sind sogenannt maximal verschr"ankte Zust"ande. Die einzelnen Bell States sehen folgendermassen aus:
 \begin{align}
@@ -98,12 +98,12 @@ Das Resultat der Bell Messung ist einer der vier Bell States. Diese vier Bell St
 \subsection{Bellsche Zustandsmessung}\label{sec:bell-measurement}
 \index{Bell Messung}%
 
-Nachdem wir die 4 Bellschen Zust"ande betrachten haben, gehen wir nun zur eigentlichen Zustandsmessung "uber. Betrachten wir daf"ur erneut das Bell Paar, welches sich Alice und Bob vor dem Teleportationsvorgang teilen:
+Nachdem wir die 4 Bellschen Zust"ande betrachtet haben, gehen wir nun zur eigentlichen Zustandsmessung "uber. Betrachten wir dazu erneut das Bell Paar, welches sich Alice und Bob vor dem Teleportationsvorgang teilen:
 \begin{align}  \tag{\ref{eq:bell_state1}}
  \left|\Psi^{-}\right\rangle_{23} = \frac{1}{\sqrt{2}} ( \left|0\right\rangle_{2}\left|1\right\rangle_{3} - \left|1\right\rangle_{2}\left|0\right\rangle_{3} ).
 \end{align}
 
-Erh"alt Alice nun das zu teleportierende Teilchen $T_{1}$ im Zustand $\left|\phi\right\rangle = \alpha\left|0\right\rangle + \beta\left|1\right\rangle_{1}$ ergibt sich ein Gesamtsystem aus 3 Teilchen
+Erh"alt Alice nun das zu teleportierende Teilchen $T_{1}$ im Zustand $\left|\phi\right\rangle = \alpha\left|0\right\rangle + \beta\left|1\right\rangle$ ergibt sich ein Gesamtsystem aus 3 Teilchen
 \begin{align}\label{eq:full_system1}
 \left|\Psi_{123}\right\rangle = \left| \phi, \Psi^{-} \right\rangle = \big( \alpha \left| 0 \right\rangle + \beta \left| 1 \right\rangle \big) \otimes \big( \frac{1}{\sqrt{2}} ( \left|0\right\rangle \left|1\right\rangle - \left|1\right\rangle \left|0\right\rangle ) \big)
 \end{align}
@@ -112,7 +112,7 @@ Durch Ausmultiplizieren und Zusammenfassen ergibt sich daraus:
 \left|\Psi_{123}\right\rangle = \frac{\alpha}{\sqrt{2}} \big(\left|0, 0, 1 \right\rangle - \left|0, 1, 0 \right\rangle  \big) + \frac{\beta}{\sqrt{2}} \big(\left|1, 0, 1 \right\rangle - \left|1, 1, 0 \right\rangle \big)
 \end{align}
 
-Ein Trick des Ganzen ist die Darstellung dieses Zustandes in einer anderen Basis. Der Hilbertraum, in welchem (\ref{eq:full_system2}) dargestellt ist, hat als Basis die 8 Produktzust"ande
+Nun kommt der erste Trick; die Darstellung dieses Zustandes in einer anderen Basis. Der Hilbertraum, in welchem (\ref{eq:full_system2}) dargestellt ist, hat als Basis die 8 Produktzust"ande
 \begin{align}
 \left|  0,0,0 \right \rangle,\left|  0,0,1 \right \rangle,\left|  0,1,0 \right \rangle,\left|  0,1,1 \right \rangle,\left|  1,0,0 \right \rangle,\left|  1,0,1 \right \rangle,\left|  1,1,0 \right \rangle,\left|  1,1,1 \right \rangle.
 \end{align}
@@ -128,7 +128,6 @@ Mathematisch betrachtet ist es allerdings m"oglich, eine andere Basis f"ur den H
 \left|\Psi^{-}_{12},0\right\rangle,
 \left|\Psi^{-}_{12},1\right\rangle.
 \end{align}
-
 Stellt man nun den Zustand~(~\ref{eq:full_system2}~) in dieser Basis dar, erh"alt dieser die Form
 \begin{align}\label{eq:full_system3}
 	\begin{split}
@@ -140,7 +139,7 @@ Stellt man nun den Zustand~(~\ref{eq:full_system2}~) in dieser Basis dar, erh"al
 \end{align}
 Auf die Umrechnung soll hier verzichtet werden.
 
-Nun kommt der zweite Trick; die eigentliche Bellsche Zustandsmessung. Alice f"uhrt eine solche auf ihren beiden Teilchen aus. Sie stellt also fest, in welchem Bell Zustand sie sich befinden, oder projiziert sie auf einen solchen. Wie bei jeder Messung wird das Gesamtsystem (\ref{eq:full_system3}) auf einen anderen Zustand projiziert -- es reduziert sich auf einen einzelnen Summanden. Der "ubrig bleibende Summand h"angt davon ab, in welchem Bell Zustand sich $T_{2}$ und $T_{3}$ befinden und auf welchen Zustand $T_{1}$ und $T_{2}$ projiziert wurden. In unserem Beispiel nahmen wir an, das sich beide System im Zustand $\left|\Psi_{12}^{-}\right\rangle$ befanden. In diesem Fall kollabriert das Gesamtsystem zu
+Es folgt der zweite Trick: die eigentliche Bellsche Zustandsmessung. Alice f"uhrt eine solche auf ihren beiden Teilchen aus. Sie stellt also fest, in welchem Bell Zustand sich diese befinden, oder projiziert sie auf einen solchen. Wie bei jeder Messung wird das Gesamtsystem (\ref{eq:full_system3}) auf einen anderen Zustand projiziert -- es reduziert sich auf einen einzelnen Summanden. Der "ubrig bleibende Summand h"angt davon ab, in welchem Bell Zustand sich $T_{2}$ und $T_{3}$ befinden und auf welchen Zustand $T_{1}$ und $T_{2}$ projiziert wurden. In unserem Beispiel nahmen wir an, das sich beide Systeme im Zustand $\left|\Psi^{-}\right\rangle$ befanden. In diesem Fall kollabriert das Gesamtsystem zu
 \begin{align}
 \left| \Psi_{123}^{(1)} \right\rangle = \frac{1}{2} \left| \Psi_{12}^{-} \right \rangle (-\alpha \left| 0 \right \rangle - \beta \left| 1 \right\rangle).
 \end{align}
@@ -168,7 +167,7 @@ F"ur jedes Messergebnis von Alice ist aber jeweils bekannt, in welchem Zustand s
 
 Auffallend ist, dass $\left| \psi_{3}^{(i)} \right\rangle$ zwar jeweils dieselben Koeffizienten wie $\left| \phi \right\rangle$ besitzen, diese aber z.T. vertauscht sind oder unterschiedliche Vorzeichen besitzen. Dies bedeutet, dass die drei Zust"ande kein skalares Vielfaches von $\left| \phi \right\rangle$ sind.
 
-Damit Bob sein Teilchen in den richtigen Zustand "uberf"uhren kann, muss er nur noch eine einfache unit"are Transformation auf seinem Teilchen $T_{3}$ durchf"uhren. Die geltenden Zusammenh"ange werden hier aufgelistet. Der Vollst"andigkeit halber ist auch die Matrix im Falle von $\left|\phi_{3}^{(1)}\right\rangle$ nochmals aufgelistet.
+Damit Bob sein Teilchen in den richtigen Zustand "uberf"uhren kann, muss er nur noch eine einfache unit"are Transformation auf seinem Teilchen $T_{3}$ durchf"uhren. Die geltenden Zusammenh"ange werden hier aufgelistet. Der Vollst"andigkeit halber ist auch die Einheitsmatrix im Falle von $\left|\phi_{3}^{(1)}\right\rangle$ nochmals aufgelistet.
 \begin{align}
 	\left| \psi_{3}^{(1)} \right \rangle & = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \left| \phi \right \rangle \\
 	\left| \psi_{3}^{(2)} \right \rangle & = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix} \left| \phi \right \rangle \\
@@ -176,7 +175,7 @@ Damit Bob sein Teilchen in den richtigen Zustand "uberf"uhren kann, muss er nur 
 	\left| \psi_{3}^{(4)} \right \rangle & = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \left| \phi \right \rangle
 \end{align}
 
-Damit Bob die richtige unit"are Matrix ausw"ahlen kann, muss ihm Alice somit zuerst das Resultat der Bellschen Zustandsmessung mitteilen. Bob hat ohne dieser Information keine M"oglichkeit, die richtige Matrix mit einer besseren Wahrscheinlichkeit als $\frac{1}{4}$ auszuw"ahlen. Deshalb ist die konventionelle "Ubertragung des Messergebnisses zu Bob n"otig. Dies erkl"art auch, warum die  Quantenteleportation keine "uberlichtschnelle Kommunikation erlaubt und somit die Gesetze der Relativit"atstheorie nicht verletzt werden.
+Damit Bob die richtige unit"are Matrix ausw"ahlen kann, muss ihm Alice somit zuerst das Resultat der Bellschen Zustandsmessung mitteilen. Bob hat ohne dieser Information keine M"oglichkeit, die richtige Matrix mit einer Wahrscheinlichkeit höher als $\frac{1}{4}$ auszuw"ahlen. Deshalb ist die konventionelle "Ubertragung des Messergebnisses zu Bob n"otig. Dies erkl"art auch, warum die Quantenteleportation keine "uberlichtschnelle Kommunikation erlaubt. Die Gesetze der Relativit"atstheorie werden somit nicht verletzt.
 
 Es ist noch darauf hinzuweisen, dass sich in dieser Erl"auterung das EPR-Paar von Alice und Bob, die Teilchen $T_{2}$ und $T_{3}$, im Zustand $\left| \Phi^{-} \right\rangle$ befanden. Dies ist keine Einschr"ankung des Protokolls, sondern diente der einfacheren Erl"auterung. Das EPR-Paar kann sich in jedem beliebigen der 4 Bell Zust"ande befinden. Gleichungen (\ref{eq:full_system1}), (\ref{eq:full_system2}) und (\ref{eq:full_system3}) w"urden in diesem Fall etwas anders aussehen, h"atten aber dieselbe Grundstruktur.
 
