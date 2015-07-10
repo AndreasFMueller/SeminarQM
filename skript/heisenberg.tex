@@ -15,8 +15,8 @@ klein sein muss.
 \section{Vertauschungsrelationen und Eigenvektoren}
 \rhead{Vertauschungsrelationen und Eigenvektoren}
 %\subsection{Definitionen}
-\index{Kommutator}
-\index{Antikommutator}
+\index{Kommutator}%
+\index{Antikommutator}%
 Zu zwei Operatoren $A$ und $B$ kann man Kommutator und Antikommutator
 bilden:
 \[
@@ -109,6 +109,7 @@ haben.
 Umgekehrt stellt sich die Frage, unter welchen Voraussetzungen zwei
 Observable eine Basis von gemeinsamen Eigenvektoren haben k"onnen.
 Der n"achste Satz liefert ein Kriterium daf"ur.
+\index{Eigenbasis}%
 
 \begin{satz}
 \label{skript:kommevbasis}
@@ -131,7 +132,8 @@ von $B$ zum gleichen Eigenwert ist.
 
 Zu jedem Eigenwert $a$ von $A$ sie $E_a$ der Raum der von den 
 Eigenvektoren von $A$ zum Eigenwert $a$ aufgespannte Vektorraum.
-$E_a$ heisst Eigenraum von $A$ zum Eigenwert $a$.
+$E_a$ heisst {\em Eigenraum} von $A$ zum Eigenwert $a$.
+\index{Eigenraum}%
 Nach Satz~\ref{skript:evorthogonal} sind die Eigenr"aume $E_a$ 
 f"ur verschiedene $a$ orthogonal, und in jedem Eigenraum wirkt $A$
 wie das $a$-fache der Einheitsmatrix.
@@ -257,6 +259,7 @@ Wir nennen die Standardabweichung, also
 \]
 auch die {\em Unsch"arfe} der Messung von $A$, und schreiben daf"ur abgek"urzt
 auch $\Delta A$.
+\index{Unscharfe@Unsch\"arfe}%
 
 Die Varianz misst, wie scharf ein Messwert in einem bestimmten Zustand
 bekannt sein kann.
@@ -412,6 +415,7 @@ zweier Zust"ande ansehen:
 \langle A,B\rangle = \langle a|b\rangle.
 \end{equation}
 Nat"urlich gilt die Cauchy-Schwarz-Ungleichung f"ur die beiden
+\index{Cauchy-Schwarz-Ungleichung}%
 Zust"ande $|a\rangle$ und $|b\rangle$, also
 \begin{equation}
 |\langle a|b\rangle|^2
@@ -430,6 +434,7 @@ Wenn die Unsch"arfe verkleinert wird, mit der $A$ bekannt ist, dann
 vergr"ossert sich die Unsch"arfe, mit der $B$ bekannt ist.
 
 Um das Unsch"arfeprodukt nach unten absch"atzen zu k"onnen, m"ussen
+\index{Unscharfeprodukt@Unsch\"arfeprodukt}%
 wir $\langle a|b\rangle$ ausrechnen:
 \begin{align}
 \langle a|b\rangle
@@ -479,13 +484,15 @@ nicht direkt ausrechnen.
 \caption{Einstein-Podolsky-Rosen Experiment
 \label{skript:epr-experiment}}
 \end{figure}
+\index{Unscharferelation@Unsch\"arferelation}%
 Werner Heisenberg hat 1926 eine Unsch"arferelation zwischen Ort und Impuls
-\index{Heisenberg, Werner}
+\index{Heisenberg, Werner}%
 mit Hilfe eines klassischen Gedankenexperimentes hergeleitet.
 Seine Erkl"arung beruht auf dem Beobachter-Effekt: jede Messung
 ver"andert das beobachtete System.
-\index{Einstein-Podolsky-Rosen Experiment}
+\index{Einstein-Podolsky-Rosen Experiment}%
 Der Beobachter-Effekt reicht jedoch f"ur die Begr"undung nicht
+\index{Beobachter-Effekt}%
 aus, wie man aus dem folgenden Gedanken-Experiment von Einstein,
 Podolsky und Rosen sehen kann, siehe
 auch Abbildung~\ref{skript:epr-experiment}, \cite{skript:epr}.
@@ -509,7 +516,8 @@ Kapitels zeigt.
 
 
 \subsection{Robertson-Schr"odinger-Unsch"arferelation}
-\index{Robertson-Schr\"odinger-Unsch\"arferelation}
+\index{Robertson-Schr\"odinger-Unsch\"arferelation}%
+\index{Unscharferelation@Unsch\"arferelation!von Robertson-Schr\"odinger}%
 Die Ungleichung (\ref{skript:cauchy-schwarz-uncertainty}) liefert eine
 Unsch"arferelation, falls die linke Seite $>0$ ist. Es ist
 also zu untersuchen, wie gross die linke Seite von 
@@ -569,6 +577,7 @@ Eingesetzt in (\ref{skript:unschaerfe2}) finden wir
 Eingesetzt in die urspr"ungliche Unsch"arferelation
 (\ref{skript:cauchy-schwarz-uncertainty}) erhalten wir jetzt die Unsch"arferelation
 von Robertson und Schr"odinger:
+\index{Schrodinger, Erwin@Schr\"odinger, Erwin}%
 
 \begin{satz}
 \label{skript:robertson-schroedinger-unschaerfe}
@@ -610,6 +619,7 @@ oder
 \Delta X\cdot\Delta P\ge \frac{\hbar}2.
 \end{equation}
 Dies ist die Heisenbergsche Unsch"arferelation. 
+\index{Unscharferelation@Unsch\"arferelation!von Heisenberg}%
 
 \subsection{Drehimpuls und Positionswinkel}
 Heisenberg-Unsch"arfe war auch schon Thema bei XKCD, siehe

@@ -316,6 +316,7 @@ oder andere Art umzusetzen.
 
 Ein Quantencomputer muss zun"achst einen geeignet komplexen
 "Uberlagerungszustand pr"aprieren, den Qubits. Dann muss dieser Zustand
+\index{Qubit}%
 von einem oder mehreren Quanten-Gattern verarbeitet werden, sie
 entsprechen dem Operator $Q$ im Schr"odinger-Katzen-Computer.
 Schliesslich muss man das Experiment mehrmals durchf"uhren, bis man
@@ -399,6 +400,7 @@ Das zugeh"orige quantenmechanische System kann in einer beliebigen
 =1.
 \]
 Wir nennen dies ein ``2-Qubit Register''.
+\index{n-Qubit-Register@$n$-Qubit-Register}%
 
 Praktisch n"utzliche Quantencomputer m"ussen noch wesentlich gr"ossere
 Qubits verarbeiten k"onnen.
@@ -436,6 +438,7 @@ Das Skalarprodukt in $H_1\otimes H_2$ ist gegeben durch
 =
 \langle a|c\rangle\,\langle b|d\rangle.
 \]
+\index{Skalarprodukt!in $H_1\otimes H_2$}%
 Die Zust"ande $|0\otimes 0\rangle$,
 $|0\otimes 1\rangle$,
 $|1\otimes 0\rangle$ und
@@ -516,14 +519,14 @@ als eine Zeitentwicklung des urspr"unglichen Zustands durch einen
 speziellen Hamilton-Operator.
 
 \begin{definition}
-\index{Gatter!Quanten-}
+\index{Gatter!Quanten-}%
 Ein Quanten-Gatter ist ein unit"arer Operator, der auf einem 
 $n$-Qubit Zustand operiert.
 \end{definition}
 
 \begin{beispiel}
-\index{Flip}
-\index{Gatter!Flip}
+\index{Flip}%
+\index{Gatter!Flip}%
 Die {\em Flip Operation} implementiert die Negation eines einzelne Qubit:
 \begin{align*}
 |0\rangle&\mapsto |1\rangle & |1\rangle&\mapsto |0\rangle.
@@ -539,8 +542,8 @@ $F$ ist eine unit"are Matrix, als ein Quanten-Gatter.
 \end{beispiel}
 
 \begin{beispiel}
-\index{Bit-Umordnung}
-\index{Gatter!Bit-Umordnung}
+\index{Bit-Umordnung}%
+\index{Gatter!Bit-Umordnung}%
 Die {\em Bit-Umordnung} vertauscht zwei Qubits, d.~h.~sie implementiert
 die Abbildung:
 \begin{align*}
@@ -563,8 +566,8 @@ Die Matrix $X$ ist unit"ar, weil orthogonal.
 \end{beispiel}
 
 \begin{beispiel}
-\index{Phasenshift}
-\index{Gatter!Phasenshift}
+\index{Phasenshift}%
+\index{Gatter!Phasenshift}%
 {\em Phasenshift} ist eine Operation, die den Zust"and $|1\rangle$ 
 mit einem Phasenfaktor versieht:
 \begin{align*}
@@ -582,8 +585,9 @@ die Matrix ist nicht orthogonal, aber unit"ar.
 \end{beispiel}
 
 \begin{beispiel}
-\index{Hadamard}
-\index{Gatter!Hadamard}
+\index{Hadamard}%
+\index{Hadamard!Gatter}%
+\index{Gatter!Hadamard}%
 Die {\em Hadamard-Operation} implementiert eine lineare Abbildung
 \begin{align*}
 |0\rangle &\mapsto |0\rangle + |1\rangle\\
@@ -604,8 +608,8 @@ Die Matrix $H$ ist orthogonal, also insbesondere auch unit"ar.
 \end{beispiel}
 
 \begin{beispiel}
-\index{Gatter!UND}
-\index{Gatter!ODER}
+\index{Gatter!UND}%
+\index{Gatter!ODER}%
 Es gibt weder ein UND- noch ein ODER-Gatter f"ur Quantencomputer.
 Ein UND-Gatter m"usste die Abbildung
 \begin{align*}
@@ -638,8 +642,8 @@ immer noch nicht invertierbar.
 \end{beispiel}
 
 \begin{beispiel}
-\index{CNOT-Gatter}
-\index{Gatter!CNOT}
+\index{CNOT-Gatter}%
+\index{Gatter!CNOT}%
 Das \textsc{CNOT}-Gatter invertiert das zweite Bit, wenn das erste Bit
 gesetzt ist.
 Es implementiert also die Abbildung
@@ -670,8 +674,8 @@ gelesen werden muss.
 \end{beispiel}
 
 \begin{beispiel}
-\index{Tofoli-Gatter}
-\index{Gatter!Tofoli}
+\index{Tofoli-Gatter}%
+\index{Gatter!Tofoli}%
 Das {\em Tofoli-Gatter} operiert auf zwei Qubits $a$ und $b$ und einem
 Scratch-Bit $c$ und implementiert die Abbildung
 \[
@@ -727,6 +731,7 @@ dargestellt.
 \end{beispiel}
 
 \subsection{Die Hadamard-Operation}
+\index{Hadamard!Operation}%
 Die Hadamard-Operation (\ref{skript:hadamard}) auf einem einzelnen
 Qubit wird durch die Matrix
 \[

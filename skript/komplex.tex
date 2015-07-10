@@ -48,11 +48,18 @@ sogar, nur die Wurzel von $-1$ hinzuzuf"ugen, denn jede andere Wurzel
 einer negativen Zahl ist $\sqrt{-a}=\sqrt{-1}\cdot\sqrt{\mathstrut a}$.
 Euler hat die Bezeichnung $i=\sqrt{-1}$ f"ur die imagin"are Einheit eingef"uhrt.
 Es gilt nat"urlich $i^2=-1$.
+\index{imaginare Einheit@imagin\"are Einheit}
 
 \begin{definition}
 Die Menge $\mathbb C=\{a+bi\,|\,a,b\in\mathbb R\}$ heisst die Menge der
-komplexen Zahlen. Die komplexe Zahl $z=a+bi$ hat
+\index{komplexe Zahl}%
+\index{C@$\mathbb C$}%
+{\em komplexen Zahlen}. Die komplexe Zahl $z=a+bi$ hat
 Realteil $\operatorname{Re}z=a$ und Imagin"arteil $\operatorname{Im}z=b$.
+\index{Realteil}%
+\index{Imaginarteil@Imagin\"arteil}%
+\index{komplexe Zahl!Realteil}%
+\index{komplexe Zahl!Imagin\"arteil}%
 Die Rechenoperationen sind so zu verstehen, dass die Rechenregeln
 der Algebra erhalten bleiben\footnote{Man nennt dies das Permanenz-Prinzip}.
 \end{definition}
@@ -64,10 +71,12 @@ Die Rechenoperationen folgen aus der Definition:
 \end{align*}
 Die Division stellt noch ein Problem dar. Hier hilft das Konzept der
 konjugiert komplexen Zahl.
+\index{komplexe Zahl!Division}%
 
 \begin{definition}
-Die Zahl $\bar z=a-bi$ heisst die zu $z=a+bi$ konjugiert komplexe Zahl.
+Die Zahl $\bar z=a-bi$ heisst die zu $z=a+bi$ {\em konjugiert komplexe} Zahl.
 \end{definition}
+\index{konjugiert komplex}
 
 Zun"achst kann man mit der konjugiert komplexen Zahl den Betrag einer
 komplexen Zahl definieren:
@@ -93,6 +102,8 @@ $x+yi$ der komplexen Zahlenebene (Abbildung~\ref{skript:gaussebene}).
 \caption{Komplexe Zahlenebene
 \label{skript:gaussebene}}
 \end{figure}
+\index{Gauss-Ebene}%
+\index{komplexe Zahlenebene}%
 
 Mit Hilfe der komplexen Konjugation kann man den Real- and Imagin"arteil
 einer komplexen Zahl $z=a+bi$ direkt ausdr"ucken:
@@ -109,16 +120,21 @@ b=\frac{(a+bi)-(a-bi)}{2i}=\frac{z-\bar z}{2i}.
 \end{align}
 
 \subsection{Polardarstellung}
+\index{komplexe Zahl!Polardarstellung}
 Die Darstellung der komplexen Zahlen als Punkte einer Ebene suggeriert
 auch eine alternative Schreibweise.
 Ein Punkt $z$ der komplexen Ebene kann auch charakterisiert werden mit Hilfe von
 Polarkoordinaten, also durch seine Entfernung $r=|z|$ vom Nullpunkt,
 und durch Polarwinkel zwischen der reellen Achse und der Richtung
-zur komplexen Zahl. Der Polarwinkel heisst auch Argument $\operatorname{arg}z$,
+zur komplexen Zahl. Der Polarwinkel heisst auch {\em Argument} $\operatorname{arg}z$,
+\index{Argument}%
 und es gilt
 \[
 \tan\operatorname{arg}z=\frac{\operatorname{Im}z}{\operatorname{Re}z}.
 \]
+\index{komplexe Zahl!Argument}
+\index{komplexe Zahl!Betrag}
+\index{komplexe Zahl!Multiplikation}
 Die Multiplikation von komplexen Zahlen bekommt in der Polardarstellung
 eine besondere Interpretation:
 \begin{align*}
@@ -176,6 +192,7 @@ e^{it}=\cos t+i\sin t.
 \label{skript:euler-formula}
 \end{align}
 \end{satz}
+\index{Euler-Formel}%
 
 Die komplexe Konjugation kehrt das Vorzeichen des Imagin"arteils um, also 
 von $\sin t$. Da $\sin t$ eine ungerade Funktion ist, ist dies gleichbedeuten
@@ -205,6 +222,7 @@ wir k"onnen sie auch mit den Formeln (\ref{skript:realteil-formel}) und
 \end{align*}
 
 \subsection{Matrixdarstellung der komplexen Zahlen\label{subsection:matrixdarstellung}}
+\index{komplexe Zahl!Matrixdarstellung}
 Die Algebra der komplexen Zahlen kann man auch als eine Algebra von Matrizen
 schreiben. Dazu betrachten wir die Abbildung
 \[
@@ -257,6 +275,7 @@ Matrixdarstellung der komplexen Zahlen wiedergewinnen.
 
 \section{Komplexe Matrizen}
 \rhead{Komplexe Matrizen}
+\index{Matrix!komplex}%
 Die Lineare Algebra im Bachelor wird typischerweise nur in den
 reellen Zahlen entwickelt, der einzige untersuchte Vektorraum ist
 der Raum $\mathbb R^n$ der reellen $n$-dimensionalen Vektoren.
@@ -313,7 +332,8 @@ im ersten Faktor {\em konjugiert linear} ist:
 \]
 Eine Funktion von zwei Vektoren, welche linear im zweiten Vektor ist
 und konjugiert linear im ersten heisst {\em sesquilinear}.
-\index{sesquilinear}
+\index{sesquilinear}%
+\index{Sesquilinearform}%
 
 Sei jetzt also $(\,\cdot\,|\,\cdot\,)$ eine Sesquilinearform.
 Wir setzen $\lambda = 1/(u,v)$, dann gilt
@@ -331,6 +351,7 @@ Vertauschung der Faktoren ist also gleichbedeutend mit komplexer Konjugation
 des Wertes des Skalarproduktes. Man nennt eine Funktion von zwei komplexen
 Vektoren {\em hermitesch}, wenn $(u,v)=\overline{(v,u)}$ gilt.
 \index{hermitesch}
+\index{Matrix!hermitesch}
 
 Eine hermitesche Sesquilinearform heisst {\em positiv definit}, wenn
 \index{positiv definit}
@@ -342,7 +363,7 @@ werden kann.
 Ein komplexes Skalarprodukt ist eine positiv definite,
 hermitesche Sesquilinearform.
 \end{definition}
-\index{Skalarprodukt, komplexes}
+\index{Skalarprodukt!komplexes}
 
 Das einfachste Beispiel eines komplexen Skalarproduktes ist
 \[
@@ -355,7 +376,9 @@ orthonormiert.
 % Adjungierte Matrix
 %
 \subsubsection{Adjungierte Matrix}
-\index{adjungierte Matrix}
+\index{adjungiert}
+\index{Matrix!adjungiert}
+\index{Abbildung!linear}
 In den reellen Vektorr"aumen konnte man zu einer linearen $A$ immer
 eine lineare Abbildung $A^t$ finden mit der Eigenschaft
 $(u,Av)=(A^tu,v)$. Mit Hilfe der Standardbasisvektoren konnte
@@ -386,11 +409,14 @@ gilt dann
 die Matrix von $A^*$ ist also nicht nur transponiert, sondern auch komplex
 konjugiert. Hat $A$ die Ma\-trix\-e\-le\-men\-te $a_{ij}$ dann nennt man
 die Matrix $A^*$ mit den Matrixelementen $\bar a_{ji}$ die
-adjungiert Matrix. Eine Matrix, die sich beim Adjungieren nicht
-"andert, heisst selbstadjungiert.
+adjungierte Matrix. Eine Matrix, die sich beim Adjungieren nicht
+"andert, heisst {\em selbstadjungiert}.
+\index{Matrix!selbstadjungiert}
+\index{selbstadjungiert}
 
 Die Rechenregeln f"ur die adjungierte Matrix sind ganz "ahnlich wie
 f"ur die Transposition:
+\index{Transposition}%
 \[
 \begin{aligned}
 (\lambda A)^*&=\bar\lambda A^*,
@@ -406,6 +432,8 @@ Man beachte, dass $A\mapsto A^*$ nicht linear ist.
 \index{unitar@unit\"ar}
 Matrizen, die in reellen Vektorr"aumen das Skalarprodukt nicht "andern,
 heissen orthogonal. Sie sind charakterisiert durch die Eigenschaft
+\index{Matrix!orthogonal}%
+\index{orthogonal}%
 $(Ox,Oy)=(x,y)$, woraus sich mit Hilfe der Transposition ergibt:
 \[
 (Ox,Oy)=(O^tOx,y)=(x,y)\qquad\Rightarrow\qquad O^tO=E,
@@ -422,7 +450,9 @@ Eigenschaft, wenn
 U^*U=E
 \]
 gilt,
-eine solche Matrix heisst unit"ar. 
+eine solche Matrix heisst {\em unit"ar}. 
+\index{unitar@unit\"ar}
+\index{Matrix!unit\"ar}
 
 F"ur reelle Matrizen $A$ ist $A^t=A^*$, also sind orthogonale Matrizen
 auch unit"ar.
@@ -571,7 +601,7 @@ Geometrisch ist $\operatorname{SU}(2)$ also eine dreidimensionale Kugel
 eingebettet in in einen vierdimensionalen Raum.
 
 \subsubsection{Spur und Determinante}
-Spur und Determinaten k"onnen samt all ihren Rechenregeln sofort auf
+Spur und Determinate k"onnen samt all ihren Rechenregeln sofort auf
 komplexe Matrizen "ubertragen werden.
 F"ur den Adjunktionsoperator finden wir die Rechenregeln
 \[
@@ -619,7 +649,9 @@ t^n\biggl(
 %
 \subsection{Eigenwertproblem f"ur komplexe Matrizen}
 \subsubsection{Definition}
-Ein Vektor $v\ne 0$ heisst Eigenvektor zum Eigenwert $\lambda$ einer
+Ein Vektor $v\ne 0$ heisst {\em Eigenvektor zum Eigenwert} $\lambda$ einer
+\index{Eigenwert}
+\index{Eigenvektor}
 Matrix $A$, wenn $Av=\lambda v$ gilt. Diese Definition ist auch f"ur
 komplexe Matrizen g"ultig, ebenso funktioniert der Standardalgorithmus
 f"ur die L"osung des Eigenwertproblems nach wie vor:
@@ -732,6 +764,7 @@ A^t=-A.
 Die infinitesimale Versionen von orthogonalen Matrizen sind also
 antisymmetrische Matrizen.
 \index{antihermitsche Matrix}
+\index{Matrix!antihermitesch}
 Analog sind die infinitesimalen Versionen von unit"aren Matrizen
 antihermitesch.
 
@@ -797,7 +830,8 @@ CAB-CBA-ABC+BAC
 Ein Vektorraum mit einer antisymmetrischen, bilinearen Abbildung
 $[\,\cdot\,,\,\cdot\,]$,
 welche die Jacobi-Identit"at (\ref{skript:jacobi}) erf"ullt, heisst eine
-Lie-Algebra.
+{\em Lie-Algebra}.
+\index{Lie-Algebra}%
 So wie der Hamilton-Operator als Erzeuger der Zeitentwicklung das
 leichter zu manipulierende Objekt ist, ist die Liealgebra zu einer
 Transformationsgruppe wie $\operatorname{SU}(2)$ besser geeignet
@@ -1053,7 +1087,7 @@ IK
 &=
 -J
 \end{align*}
-\index{Quaternionen}
+\index{Quaternionen}%
 Dies ist die Algebra der Quaternionen.
 \end{beispiel}
 

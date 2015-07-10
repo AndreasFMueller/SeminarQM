@@ -4,7 +4,7 @@
 
 \section{Quantisierungsregeln}
 \rhead{Quantisierungsregeln}
-\index{Quantisierungsregeln}%
+\index{Quantisierungsregel}%
 In diesem Abschnitt untersuchen wir, wie ein klassisches System, dessen
 Beschreibung wir bereits kennen, in ein quantenmechanisches System 
 mit dem Formalismus aus Kapitel~\ref{chapter:einfache-quantensysteme}
@@ -15,7 +15,7 @@ wie Position, Impuls, Energie etc.~erhalten erhalten bleiben.
 In der Bohrschen Quantenmechanik wurde gefordert, dass 
 sich Teilchen auf Bahnen bewegen m"ussen, f"ur die eine
 Quantisierungsbedingung gilt.
-\index{Quantisierungsbedingung von Bohr}
+\index{Quantisierungsbedingung von Bohr}%
 Typischerweise musste das Produkt $p\dot q$ entlang einer geschlossenen
 Bahn aufintegriert ein ganzzahliges Vielfaches von $\hbar$ ergeben.
 Dieses Quantisierungsprinzip geht davon aus, dass man immer noch sinnvoll
@@ -32,6 +32,7 @@ Um die klassischen Observablen von den Operatoren unterscheiden zu
 k"onnen, werden wir in diesem Abschnitt die Operatoren mit einem
 Circumflex kennzeichnen.
 Der Hamilton-Operator wird also mit $\hat H$ bezeichnet, 
+\index{Hamilton-Operator}%
 der Operator zur klassischen Variable $X$ wird mit $\hat X$ etc.
 
 \subsection{Zeitentwicklung}
@@ -53,13 +54,14 @@ kennengelernt haben.
 Ein solches System zeichnet sich dadurch aus, dass die {\em Wellenfunktion}
 \label{Wellenfunktion}
 $\Psi(x,t)=\langle x|\psi(t)\rangle$
+\index{Wellenfunktion}%
 sehr gut lokalisiert ist.
-\index{de Broglie, Louis}
+\index{de Broglie, Louis}%
 Nach de~Broglie werden Quantenph"anomene nur auf einer Entfernung sichtbar,
 die der de~Broglie-Wellenl"ange $\lambda=h/p$ des Teilchens entsprechen.
 Weiter als einige de~Broglie-Wellenl"angen von $\langle x\rangle$
 entfernt wird $\Psi$ verschwinden.
-\index{de Broglie-Wellenl"ange}%
+\index{de Broglie-Wellenlange@de Broglie-Wellenl\"ange}%
 
 Eine Observable $A$ des klassischen Systems ist eine Funktion der
 Koordinaten und Impulse, man kann ihre Zeitentwicklung mit den
@@ -72,7 +74,7 @@ Die Quantisierungsregel lautet daher:
 
 \begin{satz}
 \label{skript:quantisierung-poisson}
-\index{Quantisierungsregel!mit Poisson-Klammern und Kommutatoren}
+\index{Quantisierungsregel!mit Poisson-Klammern und Kommutatoren}%
 Ein klassisches System mit Hamilton-Funktion $H$ wird quantisiert, indem
 jede Observable $A$ durch einen Operator $\hat A$ ersetzt wird, die
 Hamilton-Funktion durch einen Hamilton-Operator $\hat H$, und jede
@@ -106,7 +108,10 @@ als Operationen auf $\Psi(x,t)$ ausdr"ucken.
 Nach den allgemeinen Grunds"atzen des fr"uher entwickelten Formalismus
 muss $|\Psi(x,t)|^2$ die Wahrscheinlichkeitsdichte f"ur die Position
 des Teilchens sein.
+\index{Wahrscheinlichkeitsdichte eines Teilchens}%
 F"ur zwei verschiedene Zust"ande muss das Skalarprodukt daher als
+\index{Skalarprodukt}%
+\index{Skalarprodukt!in Ortsdarstellung}%
 Integral gebildet werden:
 \[
 \left.
@@ -129,6 +134,7 @@ Integral gebildet werden:
 \]
 
 Wir erinnern daran, wie Erwartungswerte zu berechnen sind.
+\index{Erwartungswert}%
 F"ur eine klassische  Observable $G$, die nur vom Ort eines Teilchens abh"angt,
 muss f"ur den Erwartungswert gelten
 \[
@@ -195,7 +201,7 @@ gefunden.
 
 \begin{satz}
 \label{skript:quantisierungsregeln-ortsdarstellung}
-\index{Quantisierungsregeln!in Ortsdarstellung}
+\index{Quantisierungsregel!in Ortsdarstellung}
 Ein mechanisches System wird in der Ortsdarstellung quantisiert,
 indem als Impulsoperatoren die Differentialoperatoren
 \[
@@ -209,6 +215,7 @@ $\hat p$ ersetzt.
 {\small
 Alternativ kann man die Quantisierungsregel f"ur den Impulsoperator
 auch wie folgt verstehen.
+\index{Quantisierungsregel!Impulsoperator}%
 Die Anwendung der Produktregel in (\ref{skript:produktregelpG}) kann
 man auch als eine Anwendung der partiellen Integration ansehen.
 Wir berechnen dazu direkt den Erwartungswert von $\partial G/\partial x$:
@@ -311,7 +318,7 @@ und zum Beispiel die Energieniveaus und Wellenfunktionen direkt
 zu berechnen.
 
 \subsection{Schr"odingergleichung in Ortsdarstellung}
-\index{schrodingergleichung@Schr\"odingergleichung!in Ortsdarstellung}
+\index{Schrodingergleichung@Schr\"odingergleichung!in Ortsdarstellung}
 Wir wenden die vereinfachten Quantisierungsregeln auf ein
 Teilchen in einem Potential an.
 Dieses hat die Hamilton-Funktion
@@ -321,6 +328,7 @@ H=\frac1{2m}p^2+V(x).
 Nach den Quantisierungsregeln in
 Satz~\ref{skript:quantisierungsregeln-ortsdarstellung} wird daraus
 der Hamilton-Operator:
+\index{Hamilton-Operator!in Ortsdarstellung}
 \[
 \hat H
 =
@@ -345,6 +353,7 @@ i\hbar\frac{\partial}{\partial t}\Psi(x,t)
 =
 -\frac{\hbar^2}{2m}\Delta\Psi(x,t) + V(x)\Psi(x,t).
 \]
+\index{Schrodingergleichung@Schr\"odingergleichung!zeitabh\"angige}
 Ein Teilchen mit Energie $E$ in einem Potential $V(x)$ wird entsprechend
 durch eine Wellenfunktion $\Psi(x)$ beschrieben, die zeitunabh"angige
 Schr"odingergleichung
@@ -355,6 +364,7 @@ E\Psi(x)
 \]
 erf"ullt.
 Ausserdem m"ussen die Wellenfunktionen nat"urlich normiert sein.
+\index{normiert}%
 
 Damit lassen sich jetzt einfache Potential-Probleme l"osen.
 Wir untersuchen im Folgenden die Bewegung eines Teilchens in einfachen
@@ -416,7 +426,8 @@ Wir teilen durch $\Delta x\,\Delta t$ und lassen $\Delta x$ gegen 0 gehen:
 \end{equation}
 Die Gr"osse $j(x)=\varrho(x)v(x)$ beschreibt den Materialstrom.
 Die Gleichung (\ref{skript:kontinuitaetsgleichung1d}) heisst die
-Kontinuit"atsgleichung.
+{\em Kontinuit"atsgleichung}.
+\index{Kontinuitatsgleichung@Kontinuit\"atsgleichung}
 Sie dr"uckt aus, dass im Verlauf der Str"omung kein Material verlorgen
 gehen kann.
 

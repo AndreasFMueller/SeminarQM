@@ -232,6 +232,8 @@ Darin ist $\varepsilon\ll 1$ ein kleiner Parameter, der ausdr"ucken
 soll, dass $H_1$ den Operator nur ganz wenig "andert, insbesondere
 sind die Zust"ande und Eigenwerte von $E(\varepsilon)$ nahe bei 
 den $E_i^{(0)}$ und $\psi_i^{(0)}$.
+\index{Eigenwert}%
+\index{Eigenvektor}%
 
 Bringt man ein Atom in elektrisches oder magnetisches Feld, "andern
 sich die Energieniveaus.
@@ -326,6 +328,8 @@ E_k^{(0)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle.
 \end{aligned}
 \label{skript:pert-1}
 \end{equation}
+\index{Eigenwert!erste N"aherung}%
+\index{Eigenvektor!erste N"aherung}%
 Da $H_0$ selbstadjungiert ist, kann man auch den zweiten Term auf der
 linken Seite aufl"osen:
 \[
@@ -635,10 +639,12 @@ E_k^{(1)}\langle\psi_l^{(0)}|\psi_k^{(1)}\rangle
 (E_k^{(0)}-E_l^{(0)})
 }
 \end{align*}
+\index{Eigenwert!erste N"aherung}%
 Damit kann man jetzt auch die N"aherung zweiter Ordnung
 f"ur die Zustandsvektoren $|\psi(\varepsilon)\rangle$
 berechnen.
 Wir verzichten darauf, die Formeln explizit darzustellen.
+\index{Eigenvektor!erste N"aherung}%
 
 \section{Entartung}
 \rhead{Entartung}
@@ -760,6 +766,7 @@ verschwindet, nicht aber der Z"ahler:
 e_2^tH_1e_1=e_2^te_2=1.
 \]
 F"uhren wir dagegen die gleiche Rechnung in der Eigenbasis $\{v_\pm\}$
+\index{Eigenbasis}%
 von $H_1$ durch, dann finden wir
 \[
 \langle\psi_-^{(0)}|\,H_1\,|\psi_+^{(0)}\rangle
@@ -814,7 +821,8 @@ Die Eigenvektoren von $H(\varepsilon)$ sind in erster N"aherung
 =
 (1+i\varepsilon\gamma)\,|\psi_k^{(0)}\rangle
 +
-\sum_{{l\ne k}\atop{\text{$E_l^{(0)}$ nicht entartet}}}
+%\sum_{{l\ne k}\atop{\text{$E_l^{(0)}$ nicht entartet}}}
+\sum_{\genfrac{}{}{0pt}{}{l\ne k}{\text{$E_l^{(0)}$ nicht entartet}}}
 \frac{
 \langle \psi_l^{(0)}|\,H_1\,|\psi_k^{(0)}\rangle
 }{

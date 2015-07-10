@@ -92,7 +92,8 @@ w"urde nicht mehr gelten.
 Man verlangt daher, dass das Skalarprodukt eine Funktion von zwei Vektoren
 ist, die linear ist im ersten Faktor, aber konjugiert linear im zweiten:
 \begin{definition}
-Ein Funktion $(a,b)$ von zwei Vektoren heisst Sesquilinearform, wenn
+Ein Funktion $(a,b)$ von zwei Vektoren heisst {\em Sesquilinearform}, wenn
+\index{Sesquilinearform}%
 sie linear im zweiten Faktor und konjugiert linear im ersten Faktor ist.
 \begin{align*}
 (a,\lambda b)&=\lambda (a,b)&(\lambda a,b)=\bar\lambda (a,b).
@@ -112,6 +113,8 @@ Eine Sesquilinearform heist hermitesch, wenn gilt
 (u,v)=\overline{(v,u)}.
 \]
 \end{definition}
+\index{hermitesch}%
+\index{Sesquilinearform!hermitesch}%
 F"ur eine hermitesche Sesquilinearform ist sichergestellt, dass
 das Skalarprodukt eines Vektors mit sich selbst eine reelle Zahl
 ist. Man kann das einsehen, indem man im Produkt $(u,u)$ die beiden
@@ -126,9 +129,14 @@ negativ sein.
 \begin{definition}
 Ein hermitesche Sesquilinearform heist {\em positiv definit}, wenn
 $(u,u)>0$ f"ur $u\ne 0$. Ein positive definite hermitesche Sesquilinearform
-heisst ein Skalarprodukt. Ein komplexer Vektorraum mit einem Skalarprodukt
-heisst ein Pr"ahilbertraum.
+heisst ein {\em Skalarprodukt}. Ein komplexer Vektorraum mit einem Skalarprodukt
+\index{Skalarprodukt}%
+\index{Skalarprodukt!komplex}%
+heisst ein {\em Pr"ahilbertraum}.
+\index{Prahilbertraum@Pr\"ahilbertraum}%
 Wir bezeichnen Pr"ahilbertr"aume und Hilbertr"aume mit ${\cal H}$.
+\index{positiv definit}%
+\index{Sesquilinearform!positiv definit}%
 \end{definition}
 
 
@@ -165,12 +173,14 @@ Die Norm eines Vektors in einem Pr"ahilbertraum ist
 \| v\| = \sqrt{(v,v)}.
 \]
 \end{definition}
+\index{Norm}%
 
 \begin{satz}[Cauchy-Schwarz-Ungleichung] F"ur zwei Vektoren $u$ und $v$
 in einem Pr"ahilbertraum gilt die Ungleichung
 \[
 |(u,v)| \le \| u\|\cdot \| v\|
 \]
+\index{Cauchy-Schwarz-Ungleichung}%
 \end{satz}
 
 \begin{proof}[Beweis]
@@ -207,10 +217,13 @@ dass f"ur jedes $\varepsilon > 0$ eine Zahl $N$ existiert, so dass
 \]
 
 \begin{definition}
-Ein Pr"ahilbertraum heisst vollst"andig, wenn jede Cauchy-Folge einen
+Ein Pr"ahilbertraum heisst {\em vollst"andig}, wenn jede Cauchy-Folge einen
 Grenzwert hat.
-Ein vollst"andiger Pr"ahilbertraum heisst auch ein Hilbertraum.
+Ein vollst"andiger Pr"ahilbertraum heisst auch ein {\em Hilbertraum}.
 \end{definition}
+\index{Hilbertraum}
+\index{Prahilbertraum@Pr\"ahilbertraum!Vollst\"andigkeit}
+\index{vollstandig@vollst\"andig}
 
 Das folgende Beispiel zeigt, dass die Existenz der Grenzwerte von
 Cauchy-Folgen nicht garantiert ist, und wie ein Raum vervollst"andigt
@@ -224,6 +237,7 @@ Rekursionsformel
 \[
 f_{n+1}=f_n+f_{n-1},\qquad f_1=1, \qquad f_0=0.
 \]
+\index{Fibonacci-Zahlen}%
 Daraus bilden wir die rationalen Zahlen
 \[
 v_n=\frac{f_{n+1}}{f_n}\in\mathbb Q.
@@ -238,6 +252,7 @@ alle Cauchy-Folgen einen Grenzwert haben.
 Wie im Beispiel der rationalen und reellen Zahlen,
 kann man auch einen Pr"ahilbertraum durch hinzuf"ugen aller Grenzwerte
 von Cauchy-Folgen zu einem Hilbertraum machen.
+\index{Cauchy-Folge}%
 
 \section{Hilbertbasis}
 \rhead{Hilbertbasis}
@@ -252,10 +267,13 @@ $v_i\in\cal H$ gibt, die alle orthogonal und von L"ange $1$ sind:
 \[
 (v_i,v_j)=\delta_{ij}.
 \]
-Ein Hilbertraum $\cal H$ heisst separabel, wenn es eine solche Folge
+Ein Hilbertraum $\cal H$ heisst {\em separabel}, wenn es eine solche Folge
+\index{Hilbertraum!separabel}%
+\index{separabel}%
 gibt, so dass sich jeder Vektor $v\in\cal H$ beliebig genau als
 Linearkombination von Vektoren $v_i$ approximiert werden kann.
 Die Vektoren $v_i$ heissen Hilbertbasis von $\cal H$.
+\index{Hilbertbasis}%
 
 Um die Darstellung von $v\in\cal H$ als Linearkombination von Vektoren
 der Hilbertbasis zu finden, setzen wir die unbekannten Koeffizienten
@@ -274,7 +292,8 @@ Insbesondere folgt
 v&=\sum_{i\in\mathbb N}(v_i,v) v_i,\\
 \| v\|^2&=\sum_{i\in\mathbb N} |(v_i,v)|^2.
 \end{align*}
-Die zweite Gleichung heisst auch die Parseval-Gleichung.
+Die zweite Gleichung heisst auch {\em die Parseval-Gleichung}.
+\index{Parseval-Gleichung}%
 
 Es gibt Hilbertr"aume, die nicht separabel sind, doch f"ur unsere Zwecke
 der Quantenmechanik reichen die separablen Hilbertr"aume aus.
@@ -474,6 +493,7 @@ oder die Parseval-Identit"at:
 
 \section{Bra-Ket-Notation}
 \rhead{Bra-Ket-Notation}
+\index{Bra-Ket-Notation}%
 Richard Feynman hat eine Notation eingef"uhrt, welche die vielen verschiedenen
 Notationen f"ur in der Quantenmechanik n"utzliche Hilbertr"aume
 vereinheitlicht.
@@ -523,7 +543,8 @@ $A|u\rangle$. Die Linearit"at von $A$ bedeutet
 A(\lambda |u\rangle + \mu |v\rangle)=\lambda A \,|u\rangle + \mu A\,|v\rangle.
 \]
 
-Ein Operator $A$ heisst selbstadjungiert, wenn $A^*=A$ gilt.
+Ein Operator $A$ heisst {\em selbstadjungiert}, wenn $A^*=A$ gilt.
+\index{selbstadjungiert}%
 F"ur das Skalarprodukt bedeutet diese Eigenschaft, dass $(u, Av)=(Au,v)$ 
 In der Bra-Ket-Notation schreiben wir 
 \begin{equation}
