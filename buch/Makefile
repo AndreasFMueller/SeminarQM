@@ -5,6 +5,8 @@
 #
 imagefiles = tunnel-1.pdf tunnel-2.pdf tunnel-3.pdf
 
+all:	$(imagefiles) anschlag.pdf
+
 timestamp:	$(imagefiles)
 	touch timestamp
 
@@ -13,3 +15,6 @@ $(imagefiles):	tunnel.mp
 	mptopdf tunnel.1
 	mptopdf tunnel.2
 	mptopdf tunnel.3
+
+anschlag.pdf:	anschlag.tex qm-title.png
+	pdflatex anschlag.tex
